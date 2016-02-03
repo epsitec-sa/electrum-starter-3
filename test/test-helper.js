@@ -5,8 +5,6 @@
 
 import jsdom from 'jsdom';
 
-process.env.NODE_ENV = 'development';
-
 const doc = jsdom.jsdom ('<!doctype html><html><body><div id="root"/></body></html>');
 const win = doc.defaultView;
 

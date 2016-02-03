@@ -36,6 +36,7 @@ module.exports = {
     new webpack.DefinePlugin ({
       __DEV__: true,
       'process.env': {
+        BABEL_ENV: JSON.stringify ('development'),
         NODE_ENV: JSON.stringify ('development')
       }
     })
