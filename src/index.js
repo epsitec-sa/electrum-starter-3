@@ -66,7 +66,7 @@ class Bus {
 const theme = Theme.create ('default');
 const store = Store.create ();
 const bus = new Bus (store, actuators);
-store.select ('demo').set ('name', 'Paul');
+store.select ('demo').set ('name', '<nobody>');
 store.select ('demo').set ('main', Poc);
 
 // import {theme} from './theme.js';
@@ -76,8 +76,13 @@ Electrum.useBus (bus);
 if (process.env.NODE_ENV === 'development') {
   Electrum.configureLog ('shouldComponentUpdate',
     function (component, nextProps, nextState, result) {
-      console.log (`shouldComponentUpdate=${result} on <${
-        component.constructor.displayName}>, path="${component.props.state.id}"`);
+      const {state, theme} = component.props;
+      const name = component.constructor.displayName;
+      if (!state || !theme) {
+        console.error (`You forgot to link Electrum component <${name}>`);
+      } else {
+        console.log (`shouldComponentUpdate=${result} on <${name}>, path="${state.id}"`);
+      }
     });
 }
 
