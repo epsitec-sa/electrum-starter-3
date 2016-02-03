@@ -6,12 +6,12 @@ import {Theme} from 'electrum-theme';
 
 /******************************************************************************/
 
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Poc} from './views/poc.js';
 import actuators from './actuators.js';
 import 'babel-polyfill';
+
 /******************************************************************************/
 
 class Bus {
@@ -52,8 +52,6 @@ if (process.env.NODE_ENV === 'development') {
     });
 }
 
-
-
 /******************************************************************************/
 
 import {init as initStyleReload} from 'electrum-style-reload';
@@ -61,6 +59,8 @@ import {init as initStyleReload} from 'electrum-style-reload';
 initStyleReload ();
 
 /******************************************************************************/
+
 import {Root} from './root.js';
+
 ReactDOM.render (<Root state={store.root} theme={theme}/>,
   document.getElementById ('root'));
