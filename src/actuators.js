@@ -18,8 +18,6 @@ const doSayHello = (store) => {
   demoState.set ('name', coolNameGenerator.next ().value);
 };
 
-const SAY_HELLO = 'SAY_HELLO';
-
 export default {
-  [SAY_HELLO]: (store) => doSayHello (store)
+  SAY_HELLO: (store) => doSayHello (store)
 };
