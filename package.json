@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electrum": "^2.11.2",
+    "electrum": "^2.12.0",
     "ramda": "^0.19.1"
   },
   "devDependencies": {
@@ -39,9 +39,9 @@
     "react-addons-shallow-compare": "^0.14.6",
     "react-addons-test-utils": "^0.14.6",
     "react-dom": "^0.14.6",
-    "react-transform-catch-errors": "^1.0.1",
-    "react-transform-hmr": "^1.0.1",
-    "redbox-react": "^1.2.0",
+    "react-transform-catch-errors": "^1.0.2",
+    "react-transform-hmr": "^1.0.2",
+    "redbox-react": "^1.2.2",
     "rimraf": "^2.5.1",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"
