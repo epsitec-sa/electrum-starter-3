@@ -4,21 +4,20 @@ import Electrum from 'electrum';
 import {Store} from 'electrum-store';
 import {Theme} from 'electrum-theme';
 
-import {Poc} from './all-components.js';
-
 /******************************************************************************/
+
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import {Poc} from './views/poc.js';
 import 'babel-polyfill';
-
+import state from './state.js';
 /******************************************************************************/
 
 class Bus {
    dispatch (props, message) {
      const {id, action} = props;
-     console.log (`dispatch id=${id} message=${message} action=${action}`);
+     console.log (`id=${id} message=${message} action=${action}`);
    }
    notify (props, value, ...states) {
      console.log (`notify value=${value}`);
@@ -44,13 +43,7 @@ if (process.env.NODE_ENV === 'development') {
     });
 }
 
-class _Root extends React.Component {
-  render () {
-    return <Poc {...this.link ('me')} action='I feel the magic in the air'>Yeah</Poc>;
-  }
-}
 
-const Root = Electrum.wrap ('Root', _Root);
 
 /******************************************************************************/
 
