@@ -3,7 +3,7 @@
 import Electrum from 'electrum';
 import React from 'react';
 import {Button} from '../all-components';
-import createAction from '../actions.js';
+import createAction from '../create-action.js';
 
 class _Poc extends React.Component {
   render () {
