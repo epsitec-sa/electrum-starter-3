@@ -3,6 +3,7 @@
   "env": {
     "test": {
       "plugins": [
+        ["transform-react-display-name"],
         ["transform-decorators"]
       ]
     },

@@ -29,8 +29,8 @@ const bus = new Bus ();
 const theme = Theme.create ('default');
 const store = Store.create ();
 
-store.select ('me').set ('name', 'Paul');
-
+store.select ('demo').set ('name', 'Paul');
+store.select ('demo').set ('main', Poc);
 // import {theme} from './theme.js';
 
 Electrum.reset ();
@@ -59,6 +59,6 @@ import {init as initStyleReload} from 'electrum-style-reload';
 initStyleReload ();
 
 /******************************************************************************/
-
+import {Root} from './root.js';
 ReactDOM.render (<Root state={store.root} theme={theme}/>,
   document.getElementById ('root'));
