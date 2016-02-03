@@ -22,6 +22,7 @@ class Bus {
 
   dispatch (props, message) {
     const {id, action} = props;
+    const oldGen = this.store.generation;
     console.log (`id=${id} message=${message} action=${JSON.stringify (action)}`);
     if (message === 'action') {
       if (this.actuators[action.type]) {
@@ -29,12 +30,38 @@ class Bus {
         console.log (this.store);
       }
     }
+    if (this.store.generation !== oldGen) {
+      this.update ();
+    }
   }
-  
+
   notify (props, value, ...states) {
     console.log (`notify value=${value}`);
   }
+
+  update () {
+    if (this._root) {
+      this._root.forceUpdate ();
+    }
+  }
+
+  attach (root) {
+    if (this._root) {
+      console.log ('Bus.attach called multiple times');
+    }
+    this._root = root;
+  }
+
+  detach (root) {
+    if (this._root === root) {
+      this._root = null;
+    } else {
+      console.log ('Bus.detach called with unexpected root');
+    }
+  }
 }
+
+/******************************************************************************/
 
 const theme = Theme.create ('default');
 const store = Store.create ();
