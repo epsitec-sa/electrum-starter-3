@@ -20,14 +20,14 @@ class Bus {
     this.actuators = actuators;
   }
   dispatch (props, message) {
-     const {id, action} = props;
-     console.log (`id=${id} message=${message} action=${JSON.stringify (action)}`);
-     if (message==='action') {
-       if (this.actuators[action.type]) {
-         this.actuators[action.type](this.store, action);
-         console.log (this.store);
-       }
-     }
+    const {id, action} = props;
+    console.log (`id=${id} message=${message} action=${JSON.stringify (action)}`);
+    if (message === 'action') {
+      if (this.actuators[action.type]) {
+        this.actuators[action.type] (this.store, action);
+        console.log (this.store);
+      }
+    }
   }
   notify (props, value, ...states) {
     console.log (`notify value=${value}`);
