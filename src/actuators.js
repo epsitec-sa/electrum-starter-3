@@ -4,6 +4,7 @@ function * coolName () {
   while (true) {
     yield 'Paul';
     yield 'Mathieu';
+    yield 'Mathieu'; // twice to verify that shouldComponentUpdate returns false
     yield 'Pierre';
     yield 'Catia';
     yield 'Johny';

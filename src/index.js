@@ -16,13 +16,21 @@ import 'babel-polyfill';
 
 class Bus {
   constructor (store, actuators) {
-    this.store = store;
-    this.actuators = actuators;
+    this._store = store;
+    this._actuators = actuators;
+    this._generation = store.generation;
+  }
+
+  get store () {
+    return this._store;
+  }
+
+  get actuators () {
+    return this._actuators;
   }
 
   dispatch (props, message) {
     const {id, action} = props;
-    const oldGen = this.store.generation;
     console.log (`id=${id} message=${message} action=${JSON.stringify (action)}`);
     if (message === 'action') {
       if (this.actuators[action.type]) {
@@ -30,9 +38,7 @@ class Bus {
         console.log (this.store);
       }
     }
-    if (this.store.generation !== oldGen) {
-      this.update ();
-    }
+    this.update ();
   }
 
   notify (props, value, ...states) {
@@ -41,7 +47,10 @@ class Bus {
 
   update () {
     if (this._root) {
-      this._root.forceUpdate ();
+      if (this._generation !== this._store.generation) {
+        this._root.forceUpdate ();
+        this._generation = this._store.generation;
+      }
     }
   }
 
