@@ -19,6 +19,7 @@ class Bus {
     this.store = store;
     this.actuators = actuators;
   }
+
   dispatch (props, message) {
     const {id, action} = props;
     console.log (`id=${id} message=${message} action=${JSON.stringify (action)}`);
@@ -29,6 +30,7 @@ class Bus {
       }
     }
   }
+  
   notify (props, value, ...states) {
     console.log (`notify value=${value}`);
   }
