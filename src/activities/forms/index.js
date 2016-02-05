@@ -6,4 +6,4 @@ import Activity from '../activity.js';
 const initialState = {
   view: Forms
 };
-export const PocActivity = new Activity ('forms', initialState, actuators);
+export const FormsActivity = new Activity ('forms', initialState, actuators);
