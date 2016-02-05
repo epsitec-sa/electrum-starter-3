@@ -8,7 +8,8 @@ import {Theme} from 'electrum-theme';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {actuators, appState} from './apps/poc/';
+// import {actuators, appState} from './apps/poc/';
+import {actuators, appState} from './apps/forms/';
 import Bus from './bus.js';
 import 'babel-polyfill';
 
