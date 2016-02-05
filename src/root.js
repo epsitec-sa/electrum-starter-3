@@ -1,7 +1,7 @@
 'use strict';
 import Electrum from 'electrum';
 import React from 'react';
-import {Viewer } from './all-components.js';
+import {ActivityViewer} from './all-components.js';
 
 class _Root extends React.Component {
   componentWillMount () {
@@ -13,7 +13,10 @@ class _Root extends React.Component {
   }
 
   render () {
-    return (<Viewer  {...this.link ('app')}></Viewer >);
+    const {state} = this.props;
+    const am = state.select ('am');
+    const currentActivity = am.get ('currentActivity');
+    return (<ActivityViewer  {...this.link (currentActivity)} />);
   }
 }
 

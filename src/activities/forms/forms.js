@@ -7,10 +7,13 @@ import createAction from '../../create-action.js';
 
 class _Forms extends React.Component {
   render () {
-    const {state} = this.props;
+    const startWizard = createAction ('START_WIZARD');
     return (
       <div>
-        <h1>Forms</h1>
+        <h1>Forms Wizard Demo</h1>
+        <Button {...this.link ()} action={startWizard}>
+          Start wizard...
+        </Button>
       </div>
     );
   }

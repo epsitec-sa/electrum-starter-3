@@ -15,7 +15,7 @@ function * coolName () {
 const coolNameGenerator = coolName ();
 
 const doSayHello = (store) => {
-  const demoState = store.select ('app');
+  const demoState = store.select ('poc');
   demoState.set ('name', coolNameGenerator.next ().value);
 };
 

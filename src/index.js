@@ -8,19 +8,20 @@ import {Theme} from 'electrum-theme';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {actuators, appState} from './apps/poc/';
-import {actuators, appState} from './apps/forms/';
-import Bus from './bus.js';
+import {PocActivity} from './activities/poc/';
+// import {actuators, appState} from './apps/forms/';
+import ActivitiesManager from './activities-manager.js';
 import 'babel-polyfill';
-
 
 const theme = Theme.create ('default');
 const store = Store.create ();
-const bus = new Bus (store, actuators);
-store.setState (appState);
-
+const am = new ActivitiesManager (store);
+am.registerActivity (PocActivity);
+am.currentActivity = PocActivity.id;
 Electrum.reset ();
-Electrum.useBus (bus);
+Electrum.useBus (am);
+
+
 if (process.env.NODE_ENV === 'development') {
   Electrum.configureLog ('shouldComponentUpdate',
     function (component, nextProps, nextState, result) {
