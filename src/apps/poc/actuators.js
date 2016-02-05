@@ -7,7 +7,7 @@ function * coolName () {
     yield 'Mathieu'; // twice to verify that shouldComponentUpdate returns false
     yield 'Pierre';
     yield 'Catia';
-    yield 'Johny';
+    yield 'Jonny';
     yield 'Sam';
   }
 }
@@ -15,7 +15,7 @@ function * coolName () {
 const coolNameGenerator = coolName ();
 
 const doSayHello = (store) => {
-  const demoState = store.select ('demo');
+  const demoState = store.select ('app');
   demoState.set ('name', coolNameGenerator.next ().value);
 };
 
