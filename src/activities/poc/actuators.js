@@ -14,11 +14,10 @@ function * coolName () {
 
 const coolNameGenerator = coolName ();
 
-const doSayHello = (store) => {
-  const demoState = store.select ('poc');
-  demoState.set ('name', coolNameGenerator.next ().value);
+const doSayHello = (state) => {
+  state.set ('name', coolNameGenerator.next ().value);
 };
 
 export default {
-  SAY_HELLO: (store) => doSayHello (store)
+  SAY_HELLO: (state) => doSayHello (state)
 };

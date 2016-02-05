@@ -7,4 +7,6 @@ const initialState = {
   name: '<nobody>',
   view: Poc
 };
-export const PocActivity = new Activity ('poc', initialState, actuators);
+export default () => {
+  return new Activity ('poc', initialState, actuators);
+};

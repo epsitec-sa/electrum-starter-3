@@ -8,17 +8,17 @@ import {Theme} from 'electrum-theme';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {PocActivity} from './activities/poc/';
-import {FormsActivity} from './activities/forms/';
+import PocActivity from './activities/poc/';
+import FormsActivity from './activities/forms/';
 import ActivitiesManager from './activities-manager.js';
 import 'babel-polyfill';
 
 const theme = Theme.create ('default');
 const store = Store.create ();
 const am = new ActivitiesManager (store);
-am.registerActivity (FormsActivity);
-am.registerActivity (PocActivity);
-am.currentActivity = PocActivity.id;
+am.registerActivity ('forms', FormsActivity);
+am.registerActivity ('poc', PocActivity);
+am.startActivity ('poc');
 Electrum.reset ();
 Electrum.useBus (am);
 

@@ -6,4 +6,6 @@ import Activity from '../activity.js';
 const initialState = {
   view: Forms
 };
-export const FormsActivity = new Activity ('forms', initialState, actuators);
+export default () => {
+  return new Activity ('forms', initialState, actuators);
+};
