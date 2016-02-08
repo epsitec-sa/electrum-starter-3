@@ -15,7 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electrum": "^2.12.0"
+    "electrum": "^2.12.0",
+    "electrum-arc": "^1.12.0"
   },
   "devDependencies": {
     "babel-cli": "^6.4.5",

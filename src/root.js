@@ -1,8 +1,14 @@
 'use strict';
 import Electrum from 'electrum';
 import React from 'react';
-import {ActivityViewer, Button} from './all-components.js';
-import createAction from './create-action.js';
+import {BasicList} from 'electrum-arc';
+import {ActivityViewer, CurrentActivityInfo, Button} from './all-components.js';
+import ActivitiesManager from './activities-manager.js';
+
+const switchActivity = ActivitiesManager.switchActivity;
+
+const startActivity = ActivitiesManager.startActivity;
+
 class _Root extends React.Component {
   componentWillMount () {
     Electrum.bus.attach (this);
@@ -15,62 +21,50 @@ class _Root extends React.Component {
   render () {
     const {state} = this.props;
     const am = state.select ('am');
-    const currentActivity = am.get ('currentActivity');
+    const currentActivityId = am.get ('currentActivityId');
     const activities = am.get ('activities');
     const registry = am.get ('registry');
-    const activityActions = Object.keys (activities[currentActivity]);
     const registeredActivitiesCount = Object.keys (registry).length;
     const runningActivitiesCount = Object.keys (activities).length;
-    const start = (activityName) => createAction ('START_ACTIVITY', {
-      name: activityName
-    });
-    const switchTo = (activityId) => createAction ('SWITCH_ACTIVITY', {
-      id: activityId
-    });
+    const runningTemplate = (state) => {
+      const aid = state.get ('aid');
+      return (
+        <li key={aid}>
+          <Button action={switchActivity (aid)} {...this.link ()}>
+            Show {aid}
+          </Button>
+        </li>
+      );
+    };
+
+    const launchableTemplate = (state) => {
+      const name = state.get ('name');
+      return (
+        <li key={name}>
+          <Button action={startActivity (name)} {...this.link ()}>
+            Start {name}
+          </Button>
+        </li>
+      );
+    };
     return (
     <div>
       <header>
         <h1>Electrum Starter</h1>
         <nav>
-          <ul style={{float: 'left', margin: '0 140 0 0'}}>
-            <li><h1>Start new activities</h1></li>
-            {Object.keys (registry).map ((activity) => {
-              return (
-                <li key={activity}>
-                  <Button action={start (activity)} {...this.link ()}>
-                    Start {activity}
-                  </Button>
-                </li>
-              );
-            })}
-          </ul>
-          <ul style={{float: 'right', margin: '0 140 0 0'}}>
-            <li><h1>Switch</h1></li>
-            {Object.keys (activities).map ((id) => {
-              return (
-                <li key={id}>
-                  <Button action={switchTo (id)} {...this.link ()}>
-                    Show {id}
-                  </Button>
-                </li>
-              );
-            })}
-          </ul>
+          <section style={{float: 'left', margin: '0 140 0 0'}}>
+            <BasicList {...this.link ('am.launchable')} template={launchableTemplate} />
+          </section>
+          <section style={{float: 'right'}}>
+            <BasicList {...this.link ('am.running')} template={runningTemplate} />
+          </section>
         </nav>
       </header>
       <section style={{height: '50%'}}>
-        <ActivityViewer  {...this.link (currentActivity)} />
+        <ActivityViewer  {...this.link (currentActivityId)} />
       </section>
       <aside style={{float: 'right'}}>
-        <p>current activity: <b>{currentActivity}</b></p>
-        <p>actions:</p>
-        <ul>
-          {activityActions.map ((action) => {
-            return (
-              <li key={action}>{action}</li>
-            );
-          })}
-        </ul>
+        <CurrentActivityInfo {...this.link ('am')} />
       </aside>
       <footer>
         <p>registered: {registeredActivitiesCount}</p>
