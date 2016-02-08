@@ -5,7 +5,7 @@ var fs = require ('fs');
 var path = require ('path');
 var babelConfig = JSON.parse (fs.readFileSync (path.join (__dirname, '.babelrc')));
 
-process.env.BABEL_ENV='test';
+process.env.BABEL_ENV = 'test';
 babelConfig.babel = babel;
 
 module.exports = function (wallaby) {
