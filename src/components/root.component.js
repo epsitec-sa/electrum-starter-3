@@ -1,15 +1,17 @@
 'use strict';
+
 import Electrum from 'electrum';
 import React from 'react';
+
 import {BasicList} from 'electrum-arc';
-import {ActivityViewer, CurrentActivityInfo, Button} from './all-components.js';
-import ActivitiesManager from './activities-manager.js';
+import {ActivityViewer, CurrentActivityInfo, Button} from '../all-components.js';
+
+import ActivitiesManager from '../activities-manager.js';
 
 const switchActivity = ActivitiesManager.switchActivity;
+const startActivity  = ActivitiesManager.startActivity;
 
-const startActivity = ActivitiesManager.startActivity;
-
-class _Root extends React.Component {
+export default class Root extends React.Component {
   componentWillMount () {
     Electrum.bus.attach (this);
   }
@@ -73,5 +75,3 @@ class _Root extends React.Component {
     </div>);
   }
 }
-
-export const Root = Electrum.wrap ('Root', _Root);

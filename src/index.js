@@ -44,7 +44,7 @@ initStyleReload ();
 
 /******************************************************************************/
 
-import {Root} from './root.js';
+import {Root} from './all-components.js';
 
 ReactDOM.render (<Root state={store.root} theme={theme}/>,
   document.getElementById ('root'));
