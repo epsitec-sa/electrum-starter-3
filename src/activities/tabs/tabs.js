@@ -11,22 +11,22 @@ class _Tabs extends React.Component {
     const {state, theme} = this.props;
     const select = (key) => createAction ('TABS_SELECT', {key: key});
     const activeTab = state.active;
-    const keys = state.select ('running').keys;
-    const template = (key) => {
-      return (
-        <Label
-          id={state.id}
-          key={key}
-          {...this.link ()}
-          theme={theme}
-          action={() => select (key)}>{key}</Label>
+    const keys = state.store.select ('am.running').keys;
+    const template = (state, index) => { return (
+      <span
+        key={index}
+        id={state.id}
+        {...this.link ()}
+        theme={theme}
+        action={() => select (state)}>{state.id}</span>
       );
     };
+
 
     return (
       <section>
         <nav style={this.styles}>
-          {keys.map (key => template (state.select (key), theme) )}
+          {keys.map ( (key, index) => template (state.select (key), index) )}
         </nav>
         <main>
           {activeTab ?

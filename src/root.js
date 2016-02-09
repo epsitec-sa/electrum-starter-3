@@ -19,6 +19,14 @@ class _Root extends React.Component {
     const {state} = this.props;
     const am = state.select ('am');
     const mainActivityId = am.get ('mainActivityId');
+    const headerStyle = {
+      background: 'rgba(0, 20, 60, 0.2)',
+      fontWeight: 900,
+      border: '2px solid #999',
+      padding: '0 20 0 20',
+      textTransform: 'uppercase',
+      textDecoration: 'none'
+    };
     const launchableTemplate = (state) => {
       const name = state.get ('name');
       return (
@@ -32,16 +40,18 @@ class _Root extends React.Component {
     return (
     <div>
       <header>
-        <h1>Electrum Starter</h1>
         <nav>
-          <section style={{float: 'left', margin: '0 140 0 0'}}>
+          <section style={headerStyle}>
+            <h1>Electrum Starter</h1>
+          </section>
+          <section style={{float: 'left', margin: '0 60 0 0'}}>
             <BasicList
               {...this.link ('am.launchable')}
               template={launchableTemplate} />
           </section>
         </nav>
       </header>
-      <section style={{height: '50%'}}>
+      <section style={{height: '50%', padding: '50 50 50 50'}}>
         <ActivityViewer  {...this.link (mainActivityId)} />
       </section>
       <aside style={{float: 'right'}}>
