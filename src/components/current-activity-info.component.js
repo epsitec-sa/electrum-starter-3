@@ -16,6 +16,7 @@ export default class CurrentActivityInfo extends React.Component {
         <p>actions:</p>
         <ul>
           {activityActions.map ((action) => {
+            console.log (action);
             return (
               <li key={action}>{action}</li>
             );

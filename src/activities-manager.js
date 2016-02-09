@@ -1,6 +1,6 @@
 'use strict';
 
-import createAction from './create-action.js';
+import {startActivity, switchActivity} from './actions.js';
 
 /******************************************************************************/
 
@@ -12,18 +12,6 @@ export default class ActivitiesManager {
       .set (this)
       .set ('currentActivityId', null);
     this._generation = store.generation;
-  }
-
-  static startActivity (activityName) {
-    return createAction ('START_ACTIVITY', {
-      name: activityName
-    });
-  }
-
-  static switchActivity (activityId) {
-    return createAction ('SWITCH_ACTIVITY', {
-      id: activityId
-    });
   }
 
   get store () {
