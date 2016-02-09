@@ -1,5 +1,7 @@
 'use strict';
 
+import 'babel-polyfill';
+
 import Electrum from 'electrum';
 import {Store} from 'electrum-store';
 import {Theme} from 'electrum-theme';
@@ -11,7 +13,6 @@ import ReactDOM from 'react-dom';
 import PocActivity from './activities/poc/';
 import FormsActivity from './activities/forms/';
 import ActivitiesManager from './activities-manager.js';
-import 'babel-polyfill';
 
 const theme = Theme.create ('default');
 const store = Store.create ();

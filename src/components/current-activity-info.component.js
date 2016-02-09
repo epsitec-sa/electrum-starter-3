@@ -5,7 +5,8 @@ import React from 'react';
 export default class CurrentActivityInfo extends React.Component {
   render () {
     const {state} = this.props;
-    const currentActivity = state.get ('currentActivity');
+    const am = state.get ();
+    const currentActivity = am.currentActivity.get ();
     const actuators = currentActivity.actuators;
     const activityActions = Object.keys (actuators);
 

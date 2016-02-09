@@ -22,12 +22,10 @@ export default class Root extends React.Component {
 
   render () {
     const {state} = this.props;
-    const am = state.select ('am');
-    const currentActivityId = am.get ('currentActivityId');
-    const activities = am.get ('activities');
-    const registry = am.get ('registry');
-    const registeredActivitiesCount = Object.keys (registry).length;
-    const runningActivitiesCount = Object.keys (activities).length;
+    const am = state.select ('am').get ();
+    const currentActivityId = am.currentActivityId;
+    const registeredActivitiesCount = am.registry.keys.length;
+    const runningActivitiesCount = am.activities.keys.length;
     const runningTemplate = (state) => {
       const aid = state.get ('aid');
       return (
@@ -63,7 +61,7 @@ export default class Root extends React.Component {
         </nav>
       </header>
       <section style={{height: '50%'}}>
-        <ActivityViewer  {...this.link (currentActivityId)} />
+        <ActivityViewer  {...this.link ('am.activities.' + currentActivityId)} />
       </section>
       <aside style={{float: 'right'}}>
         <CurrentActivityInfo {...this.link ('am')} />

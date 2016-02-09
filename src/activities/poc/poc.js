@@ -9,6 +9,7 @@ class _Poc extends React.Component {
   render () {
     const {state} = this.props;
     const name = state.get ('name');
+    console.log (`Inside POC: name=${name}`);
     const sayHello = createAction ('SAY_HELLO', {to: `${name}`});
     return (
       <div>

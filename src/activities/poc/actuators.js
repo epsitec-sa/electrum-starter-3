@@ -15,7 +15,7 @@ function * coolName () {
 const coolNameGenerator = coolName ();
 
 const doSayHello = (state) => {
-  console.log (state);
+  console.log (`Inside POC's actuator; state.name=${state.get ('name')}, state.id=${state.id}`);
   state.set ('name', coolNameGenerator.next ().value);
 };
 
