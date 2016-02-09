@@ -13,8 +13,8 @@ function activityGuid (id) {
 /******************************************************************************/
 
 export default class Activity {
-  constructor (id, initialStateInitializer, actuators) {
-    this._id = activityGuid (id);
+  constructor (name, initialStateInitializer, actuators) {
+    this._id = activityGuid (name);
     this._actuators = actuators;
     this._init = initialStateInitializer;
   }

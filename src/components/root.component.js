@@ -21,8 +21,7 @@ export default class Root extends React.Component {
   }
 
   render () {
-    const {state} = this.props;
-    const am = state.select ('am').get ();
+    const am = Electrum.bus;
     const currentActivityId = am.currentActivityId;
     const registeredActivitiesCount = am.registry.keys.length;
     const runningActivitiesCount = am.activities.keys.length;

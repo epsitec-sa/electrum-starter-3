@@ -6,12 +6,16 @@ import Electrum from 'electrum';
 import {Store} from 'electrum-store';
 import {Theme} from 'electrum-theme';
 
+export createAction from './create-action.js';
+
+export * from './all-components.js';
+
 /******************************************************************************/
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PocActivity from './activities/poc/';
-import FormsActivity from './activities/forms/';
+import PocActivity from './components/activities/poc/';
+import FormsActivity from './components/activities/forms/';
 import ActivitiesManager from './activities-manager.js';
 
 const theme = Theme.create ('default');

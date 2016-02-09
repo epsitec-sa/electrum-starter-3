@@ -1,6 +1,7 @@
 'use strict';
-import {Forms} from './forms.js';
-import {WizardHome} from './views/wizardHome.js';
+
+import {Forms} from 'electrum-starter-3';
+import {WizardHome} from 'electrum-starter-3';
 
 const changeView = (state, view) => {
   state.set ('view', view);

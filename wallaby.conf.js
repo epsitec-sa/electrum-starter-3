@@ -12,9 +12,9 @@ module.exports = function (wallaby) {
   return {
     files: [
       {pattern: 'test/test-helper.js'},
-      {pattern: 'src/components/*.js'},
-      {pattern: 'src/activities/**/*.js'},
-      {pattern: 'src/*.js'}
+      {pattern: 'src/components/**/*.js'},
+      {pattern: 'src/*.js'},
+      {pattern: 'node_modules/electrum-starter-3.js'}
     ],
     tests: [
       {pattern: 'src/test/**/*.js'},

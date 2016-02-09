@@ -1,6 +1,6 @@
 'use strict';
 
-import {Forms} from './forms.js';
+import {Forms} from 'electrum-starter-3';
 import actuators from './actuators.js';
 import Activity from '../activity.js';
 

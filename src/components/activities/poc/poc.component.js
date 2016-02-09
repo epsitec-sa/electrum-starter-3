@@ -2,10 +2,11 @@
 
 import Electrum from 'electrum';
 import React from 'react';
-import {Button} from '../../all-components';
-import createAction from '../../create-action.js';
 
-class _Poc extends React.Component {
+import {Button} from 'electrum-starter-3';
+import {createAction} from 'electrum-starter-3';
+
+export default class Poc extends React.Component {
   render () {
     const {state} = this.props;
     const name = state.get ('name');
@@ -20,5 +21,3 @@ class _Poc extends React.Component {
     );
   }
 }
-
-export const Poc = Electrum.wrap ('Poc', _Poc);

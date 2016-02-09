@@ -2,10 +2,11 @@
 
 import Electrum from 'electrum';
 import React from 'react';
-import {Button} from '../../../all-components';
-import createAction from '../../../create-action.js';
 
-class _Home extends React.Component {
+import {Button} from 'electrum-starter-3';
+import {createAction} from 'electrum-starter-3';
+
+export default class Home extends React.Component {
   render () {
     const goHome = createAction ('GO_HOME');
     const next = createAction ('NEXT_PAGE');
@@ -22,5 +23,3 @@ class _Home extends React.Component {
     );
   }
 }
-
-export const WizardHome = Electrum.wrap ('WizardHome', _Home);

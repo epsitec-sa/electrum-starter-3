@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "compile": "rimraf ./lib && babel -d lib src",
-    "prepublish": "npm run compile",
+    "prepublish": "npm run compile && require-self",
     "regen": "electrum-require-components --crlf --wrap ./src components .component.js all-components.js",
     "start": "node webpack.devserver.js",
     "test": "mocha src/test/**/*.js",
@@ -42,6 +42,7 @@
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.2",
     "redbox-react": "^1.2.2",
+    "require-self": "^0.1.0",
     "rimraf": "^2.5.1",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"
