@@ -7,5 +7,5 @@ export default class ActivityViewer extends React.Component {
     const {state} = this.props;
     const MainView = state.get ('view');
     return (<MainView {...this.link ()} />);
-   }
+  }
 }

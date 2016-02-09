@@ -22,5 +22,5 @@ export default class CurrentActivityInfo extends React.Component {
         </ul>
       </div>
     );
-   }
+  }
 }
