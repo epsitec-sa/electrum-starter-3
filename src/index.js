@@ -10,7 +10,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PocActivity from './activities/poc/';
 import FormsActivity from './activities/forms/';
+import TabsActivity from './activities/tabs/';
 import ActivitiesManager from './activities-manager.js';
+import createAction from './create-action.js';
 import 'babel-polyfill';
 
 const theme = Theme.create ('default');
@@ -18,7 +20,9 @@ const store = Store.create ();
 const am = new ActivitiesManager (store);
 am.registerActivity ('forms', FormsActivity);
 am.registerActivity ('poc', PocActivity);
-am.startActivity ('poc');
+am.registerActivity ('tabs', TabsActivity);
+const mainActivity = am.startMainActivity ('tabs');
+am.doActionInActivity (mainActivity.id, createAction ('TABS_SET_PATH', {path: mainActivity.path}));
 Electrum.reset ();
 Electrum.useBus (am);
 
@@ -31,7 +35,7 @@ if (process.env.NODE_ENV === 'development') {
       if (!state || !theme) {
         console.error (`You forgot to link Electrum component <${name}>`);
       } else {
-        console.log (`shouldComponentUpdate=${result} on <${name}>, path="${state.id}"`);
+        // console.log (`shouldComponentUpdate=${result} on <${name}>, path="${state.id}"`);
       }
     });
 }

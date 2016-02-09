@@ -7,15 +7,16 @@ import createAction from '../../../create-action.js';
 
 class _Home extends React.Component {
   render () {
+    const {state} = this.props;
     const goHome = createAction ('GO_HOME');
     const next = createAction ('NEXT_PAGE');
     return (
       <div>
         <h1>Wizard Home</h1>
-        <Button {...this.link ()} action={goHome}>
+        <Button id={state.id} {...this.link ()} action={goHome}>
           back to home
         </Button>
-        <Button {...this.link ()} action={next}>
+        <Button id={state.id} {...this.link ()} action={next}>
           next
         </Button>
       </div>

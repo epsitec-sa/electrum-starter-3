@@ -14,7 +14,7 @@ class _Poc extends React.Component {
       <div>
         {`Hello ${name}`}
         <br/>
-        <Button action={sayHello} {...this.link ()}>Say hello...</Button>
+        <Button id={state.id} action={sayHello} {...this.link ()}>Say hello...</Button>
       </div>
     );
   }

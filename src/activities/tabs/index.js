@@ -1,13 +1,12 @@
 'use strict';
-
-import {Forms} from './forms.js';
+import {TabsManager} from './tabs-manager.js';
 import actuators from './actuators.js';
 import Activity from '../activity.js';
 
 const initialState = (state) => {
-  state.set ('view', Forms);
+  state.set ('view', TabsManager);
 };
 
 export default (parent) => {
-  return new Activity ('forms', initialState, actuators, parent);
+  return new Activity ('tabs', initialState, actuators, parent);
 };

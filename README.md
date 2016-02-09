@@ -50,5 +50,5 @@ more examples available in `src/activities/`
 Arguments order:
 
 ```
-(activityState, dispatchedAction, activityId, store, doAction (...))
+(activityState, dispatchedAction, id, store, doAction (...))
 ```

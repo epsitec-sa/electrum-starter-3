@@ -12,10 +12,10 @@ function * coolName () {
   }
 }
 
-
+const coolNameGenerator = coolName ();
 
 const doSayHello = (state) => {
-  const coolNameGenerator = coolName ();
+
   console.log (state);
   state.set ('name', coolNameGenerator.next ().value);
 };

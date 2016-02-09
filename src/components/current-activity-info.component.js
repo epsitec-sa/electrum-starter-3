@@ -10,7 +10,7 @@ export default class CurrentActivityInfo extends React.Component {
     const activityActions = Object.keys (actuators);
 
     return (
-      <div>
+      <div {...this.link ()}>
         <p><b>{currentActivity.id}</b></p>
         <p>actions:</p>
         <ul>
