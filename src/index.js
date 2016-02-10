@@ -16,3 +16,5 @@ ReactDOM.render (<Root state={store.root} theme={theme}/>,
   document.getElementById ('root'));
 
 /******************************************************************************/
+
+import './command.js';
