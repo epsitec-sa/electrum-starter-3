@@ -17,12 +17,11 @@ class _Root extends React.Component {
 
   render () {
     const {state} = this.props;
-
     const amState = state.select ('activity-manager');
-    console.log (amState);
     const am = amState.get ('am');
+    console.log (state);
     return (
-      <ActivityViewer  {...this.link ('activity-manager.' + am.mainActivityId)} />
+      <ActivityViewer  {...this.link ('activity-manager.' + am.mainActivityPath)} />
     );
   }
 }

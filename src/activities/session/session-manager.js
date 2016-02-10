@@ -5,7 +5,7 @@ import React from 'react';
 import act from './actuators.js';
 import {BasicList} from 'electrum-arc';
 import {Button} from '../../all-components';
-import {sessionTemplate} from './session-template.js';
+import sessionTemplate from './session-template.js';
 
 class _SessionManager extends React.Component {
   render () {
@@ -20,7 +20,7 @@ class _SessionManager extends React.Component {
         <h1>Your sessions:</h1>
         <BasicList
           {...this.link ('sessions')}
-          template={sessionTemplate} />
+          template={(key) => sessionTemplate (key, this.props)} />
       </section>
     );
   }

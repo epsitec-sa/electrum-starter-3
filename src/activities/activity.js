@@ -23,6 +23,7 @@ export default class Activity {
     this._parent = parent ? parent : '';
     this._store = null;
     this._state = null;
+    console.log (`Activity ${this._id} constructed from ${this._parent}`);
   }
 
   initialize (store) {
@@ -31,7 +32,7 @@ export default class Activity {
     this.state.set ('aid', this.id);
     this.state.set ('activity', this);
     this.status = 'initialized';
-    console.log ('Activity initialized');
+    console.log (`Activity initialized at ${this.path}`);
   }
 
   run () {
@@ -65,7 +66,7 @@ export default class Activity {
 
   get path () {
     if (this.parent) {
-      return this.parent.path + '.' + this.id;
+      return this.parent + '.' + this.id;
     } else {
       return this.id;
     }

@@ -1,21 +1,20 @@
 'use strict';
 import Command from 'electrum-command';
 
-const switchActivity = ({id}, state) => {
-  const amState = state.getInherited ('activity-manager');
-  const activityManager = amState.get ('am');
-  activityManager.mainActivityId = id;
+const switchActivity = ({path}, state) => {
+  const activityManager = state.getInherited ('am');
+  activityManager.mainActivityPath = path;
 };
 
 const startActivity = (state) => {
-  const amState = state.getInherited ('activity-manager');
-  console.log ('##');
-  console.dir (amState);
-  const activityManager = amState.get ('am');
-  activityManager.startActivity ('desktop', state.id);
+  const activityManager = state.getInherited ('am');
+  const activity = activityManager.startActivity ('desktop', state.id);
+  state.select ('sessions')
+    .add ()
+    .set ('path', activity.path);
 };
 
 export default {
-  SWITCH_ACTIVITY: Command ('SWITCH_ACTIVITY', (cmd, state) => switchActivity (cmd, state)),
+  SWITCH_ACTIVITY: Command ('SWITCH_ACTIVITY', switchActivity),
   START_ACTIVITY: Command ('START_ACTIVITY', (cmd, state) => startActivity (state))
 };

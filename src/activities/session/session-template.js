@@ -1,12 +1,18 @@
 'use strict';
+import React from 'react';
 import act from './actuators.js';
 import {Button} from '../../all-components';
-export default (state) => {
+import Electrum from 'electrum';
+export default (state, props) => {
+  const path = state.get ('path');
+  console.log (path);
   return (
-    <li key={state.aid}>
-      <h1>{state.title}</h1>
-      <Button action={act.SWITCH_ACTIVITY ({id: state.aid})} {...this.link ()}>
-        Restore {state.title}
+    <li key={path}>
+      <h1>{path}</h1>
+      <Button
+        action={act.SWITCH_ACTIVITY ({path: path})}
+        {...Electrum.link (props)} >
+        Restore
       </Button>
     </li>
   );

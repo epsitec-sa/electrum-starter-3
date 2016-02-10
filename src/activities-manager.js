@@ -7,7 +7,7 @@ export default class ActivitiesManager {
     this._store = store;
     this.state
       .set ('am', this)
-      .set ('mainActivityId', null);
+      .set ('mainActivityPath', null);
 
     this._generation = store.generation;
   }
@@ -24,15 +24,15 @@ export default class ActivitiesManager {
     return this.state.select ('registry');
   }
 
-  get mainActivityId () {
-    return this.state.get ('mainActivityId');
+  get mainActivityPath () {
+    return this.state.get ('mainActivityPath');
   }
 
-  set mainActivityId (activityId) {
-    if (!activityId) {
-      throw new Error (`You must provide an activity id`);
+  set mainActivityPath (path) {
+    if (!path) {
+      throw new Error (`You must provide an activity path`);
     }
-    this.state.set ('mainActivityId', activityId);
+    this.state.set ('mainActivityPath', path);
   }
 
   registerActivity (name, activityCreator) {
@@ -45,7 +45,7 @@ export default class ActivitiesManager {
   }
 
   switchActivity (id) {
-    this.mainActivityId = id;
+    this.mainActivityPath = id;
   }
 
   startActivity (name, parent) {
@@ -60,9 +60,9 @@ export default class ActivitiesManager {
   }
 
   startMainActivity (name) {
-    const runningActivity = this.startActivity (name, '');
+    const runningActivity = this.startActivity (name, null);
     // set current activity id
-    this.mainActivityId = runningActivity.id;
+    this.mainActivityPath = runningActivity.id;
     console.log (`Main activity ${name} started with id: ${runningActivity.id}`);
     return runningActivity;
   }
