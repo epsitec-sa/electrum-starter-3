@@ -3,7 +3,7 @@
 import 'babel-core/register';
 import 'babel-polyfill';
 
-import command from '../../../command.js';
+import Command from 'electrum-command';
 
 function * coolName () {
   while (true) {
@@ -25,5 +25,5 @@ const doSayHello = (name, cool, state) => {
 };
 
 export default {
-  SAY_HELLO: command ('SAY_HELLO', (cmd, state) => doSayHello (cmd.name, cmd.cool, state))
+  SAY_HELLO: Command ('SAY_HELLO', (cmd, state) => doSayHello (cmd.name, cmd.cool, state))
 };
