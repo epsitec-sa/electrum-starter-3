@@ -1,9 +1,10 @@
 'use strict';
 import Command from 'electrum-command';
 
-const switchActivity = ({path}, state) => {
+const switchActivity = ({activity}, state) => {
   const activityManager = state.getInherited ('am');
-  activityManager.mainActivityPath = path;
+  activity.callerPath = state.id;
+  activityManager.mainActivityPath = activity.path;
 };
 
 const startActivity = (state) => {

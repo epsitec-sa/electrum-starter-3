@@ -3,9 +3,8 @@ import Command from 'electrum-command';
 
 const leaveDesktop = (cmd, state) => {
   const activityManager = state.getInherited ('am');
-  const sessionManagerPath = state.getInherited ('sessionManagerPath');
-  console.log (sessionManagerPath);
-  activityManager.mainActivityPath = sessionManagerPath;
+  const activity = state.get ();
+  activityManager.mainActivityPath = activity.callerPath;
 };
 
 export default {

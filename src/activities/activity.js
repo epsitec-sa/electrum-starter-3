@@ -16,6 +16,7 @@ export default class Activity {
     this._stateHandlers = stateHandlers;
     this._actuators = actuators;
     this._parent = parent;
+    this._callerPath = this._parent;
     this._store = null;
     this._state = null;
     console.log (`Activity ${this._id} constructed from ${this._parent}`);
@@ -65,6 +66,14 @@ export default class Activity {
     return this._parent;
   }
 
+  get callerPath () {
+    return this._callerPath;
+  }
+
+  set callerPath (path) {
+    this._callerPath = path;
+  }
+
   get actuators () {
     return this._actuators;
   }
@@ -72,8 +81,7 @@ export default class Activity {
   init (store) {
     this._store = store;
     this.onInit (this.state);
-    this.state.set ('aid', this.id);
-    this.state.set ('activity', this);
+    this.state.set (this);
     this.status = 'initialized';
   }
 
