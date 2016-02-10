@@ -4,7 +4,7 @@ import {START_ACTIVITY, SWITCH_ACTIVITY} from './actions.js';
 
 /******************************************************************************/
 
-export default class ActivitiesManager {
+export default class ActivityManager {
   constructor (store) {
     this._store = store;
     this._store
@@ -60,12 +60,10 @@ export default class ActivitiesManager {
     // Map actuators
     const state = this.activities.select (activity.id).set (activity);
     activity.setup (state);
-    console.log (activity.id);
-    console.log (activity.actuators);
     // Add activity id in running list
     this.state.select ('running').add ().set ('aid', activity.id);
     // set current activity id
-    this.currentActivityId = activity.id;
+    this.switchActivity (activity.id);
     console.log (`Activity ${name} started with id: ${activity.id}`);
   }
 

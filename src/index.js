@@ -4,7 +4,7 @@ import 'babel-core/register';
 import 'babel-polyfill';
 
 export * from './all-components.js';
-export ActivitiesManager from './activities-manager.js';
+export ActivityManager from './activity-manager.js';
 
 /******************************************************************************/
 

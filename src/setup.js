@@ -6,14 +6,14 @@ import {Theme} from 'electrum-theme';
 
 /******************************************************************************/
 
-import ActivitiesManager from './activities-manager.js';
+import ActivityManager from './activity-manager.js';
 import PocActivity from './components/activities/poc/';
 import FormsActivity from './components/activities/forms/';
 
 export const theme = Theme.create ('default');
 export const store = Store.create ();
 
-const am = new ActivitiesManager (store);
+const am = new ActivityManager (store);
 am.registerActivity ('forms', FormsActivity);
 am.registerActivity ('poc', PocActivity);
 am.startActivity ('poc');
