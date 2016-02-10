@@ -17,49 +17,13 @@ class _Root extends React.Component {
 
   render () {
     const {state} = this.props;
-    const am = state.select ('am');
-    const mainActivityId = am.get ('mainActivityId');
-    const headerStyle = {
-      background: 'rgba(0, 20, 60, 0.2)',
-      fontWeight: 900,
-      border: '2px solid #999',
-      padding: '0 20 0 20',
-      textTransform: 'uppercase',
-      textDecoration: 'none'
-    };
-    const launchableTemplate = (state) => {
-      const name = state.get ('name');
-      return (
-        <li key={name}>
-          <Button action={startActivity (name)} {...this.link ()}>
-            Start {name}
-          </Button>
-        </li>
-      );
-    };
+
+    const amState = state.select ('activity-manager');
+    console.log (amState);
+    const am = amState.get ('am');
     return (
-    <div>
-      <header>
-        <nav>
-          <section style={headerStyle}>
-            <h1>Electrum Starter</h1>
-          </section>
-          <section style={{float: 'left', margin: '0 60 0 0'}}>
-            <BasicList
-              {...this.link ('am.launchable')}
-              template={launchableTemplate} />
-          </section>
-        </nav>
-      </header>
-      <section style={{height: '50%', padding: '50 50 50 50'}}>
-        <ActivityViewer  {...this.link (mainActivityId)} />
-      </section>
-      <aside style={{float: 'right'}}>
-        {/*<CurrentActivityInfo {...this.link ('am')} />*/}
-      </aside>
-      <footer>
-      </footer>
-    </div>);
+      <ActivityViewer  {...this.link ('activity-manager.' + am.mainActivityId)} />
+    );
   }
 }
 

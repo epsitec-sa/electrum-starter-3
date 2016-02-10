@@ -1,13 +1,13 @@
 'use strict';
 import {Forms} from './forms.js';
 import {WizardHome} from './views/wizardHome.js';
+import Command from 'electrum-command';
 
-const changeView = (state, view) => {
+const changeView = ({view}) => {
   state.set ('view', view);
 };
 
-
 export default {
-  START_WIZARD: (store) => changeView (store, WizardHome),
-  GO_HOME: (store) => changeView (store, Forms)
+  START_WIZARD: () => Command ('START_WIZARD', changeView) ({view: WizardHome}),
+  GO_HOME: () => Command ('GO_HOME', changeView) ({view: Forms})
 };

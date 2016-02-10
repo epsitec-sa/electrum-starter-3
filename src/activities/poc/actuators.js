@@ -1,5 +1,5 @@
 'use strict';
-
+import Command from 'electrum-command';
 function * coolName () {
   while (true) {
     yield 'Paul';
@@ -14,12 +14,11 @@ function * coolName () {
 
 const coolNameGenerator = coolName ();
 
-const doSayHello = (state) => {
-
-  console.log (state);
+const doSayHello = ({name}, state) => {
+  console.log (name);
   state.set ('name', coolNameGenerator.next ().value);
 };
 
 export default {
-  SAY_HELLO: (state) => doSayHello (state)
+  SAY_HELLO: Command ('SAY_HELLO', doSayHello)
 };

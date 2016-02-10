@@ -2,30 +2,14 @@
 import {State} from 'electrum-store';
 import createAction from './create-action.js';
 /******************************************************************************/
-const initialState = State.create ('am', {
-  mainActivityId: null,
-  actuators: {},
-  registry: {}
-});
-
 export default class ActivitiesManager {
   constructor (store) {
     this._store = store;
-    this._store.setState (initialState);
+    this.state
+      .set ('am', this)
+      .set ('mainActivityId', null);
+
     this._generation = store.generation;
-    this._runningCounter = 0;
-  }
-
-  static startActivity (activityName) {
-    return createAction ('START_ACTIVITY', {
-      name: activityName
-    });
-  }
-
-  static switchActivity (activityId) {
-    return createAction ('SWITCH_ACTIVITY', {
-      id: activityId
-    });
   }
 
   get store () {
@@ -33,15 +17,11 @@ export default class ActivitiesManager {
   }
 
   get state () {
-    return this._store.select ('am');
-  }
-
-  get actuators () {
-    return this.state.get ('actuators');
+    return this._store.select ('activity-manager');
   }
 
   get registry () {
-    return this.state.get ('registry');
+    return this.state.select ('registry');
   }
 
   get mainActivityId () {
@@ -56,17 +36,22 @@ export default class ActivitiesManager {
   }
 
   registerActivity (name, activityCreator) {
-    if (this.registry[name]) {
+    if (this.registry.find (name)) {
       throw new Error (`Activity already registered: ${name}`);
     }
-    this.registry[name] = activityCreator;
+    this.registry.select (name).set (activityCreator);
     this.state.select ('launchable').add ().set ('name', name);
     console.log (`Activity registered: ${name}`);
   }
 
+  switchActivity (id) {
+    this.mainActivityId = id;
+  }
+
   startActivity (name, parent) {
     // instantiate via registry
-    const activity = this.registry[name] (parent);
+    const creator  = this.registry.find (name).get ();
+    const activity = creator (parent);
     // Initialize activity
     activity.initialize (this.store);
     // run activity
@@ -82,37 +67,10 @@ export default class ActivitiesManager {
     return runningActivity;
   }
 
-  doActionInActivity (id, action) {
-    if (!id) {
-     return;
-    }
-    if (this.store.select (id).get ('actuators')[action.type]) {
-      console.log (`do ${action.type} in ${this.mainActivityId}`);
-      this.store.select (id).get ('actuators')[action.type] (
-        this.store.select (id),
-        action,
-        id,
-        this.store,
-        this.doActionInActivity
-      );
-    } else {
-      console.log (`cannot do ${action.type} in ${this.mainActivityId}`);
-    }
-  }
-
   dispatch (props, message) {
-    const {id, action} = props;
-    console.log (`id=${id} message=${message} action=${JSON.stringify (action)}`);
-    if (message === 'action') {
-      switch (action.type)
-      {
-      case 'START_ACTIVITY': {
-        this.startActivity (action.name, id ? id : '');
-        break;
-      }
-      default:
-        this.doActionInActivity (id, action);
-      }
+    const {state, action} = props;
+    if (message === 'action' && typeof action === 'function') {
+      action (state);
     }
     this.update ();
   }

@@ -4,17 +4,17 @@ import {State} from 'electrum-store';
 /******************************************************************************/
 function activityGuid (id) {
   function s4 () {
-    return Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
+    return Math.floor ((1 + Math.random ()) * 0x10000)
+      .toString (16)
+      .substring (1);
   }
   return id + '::' + s4 () + s4 () + s4 ();
 }
 /******************************************************************************/
 
 export default class Activity {
-  constructor (id, initializer, actuators, parent) {
-    this._id = activityGuid (id);
+  constructor (name, initializer, actuators, parent) {
+    this._id = activityGuid (name);
     if (typeof initializer !== 'function') {
       throw new Error (`Provided initializer is not a function`);
     }
@@ -29,13 +29,26 @@ export default class Activity {
     this._store = store;
     this.initializer (this.state);
     this.state.set ('aid', this.id);
-    this.state.set ('actuators', this.actuators);
+    this.state.set ('activity', this);
+    this.status = 'initialized';
     console.log ('Activity initialized');
-    console.dir (this.store);
   }
 
   run () {
-    this.store.select ('am.running').add ().set ('aid', this.id);
+    this.status = 'running';
+  }
+
+  kill () {
+    // ? disposer ();
+    this.status = 'killing';
+  }
+
+  get status () {
+    this.state.get ('status');
+  }
+
+  set status (status) {
+    this.state.set ('status', status);
   }
 
   get store () {
@@ -43,7 +56,7 @@ export default class Activity {
   }
 
   get state () {
-    return this.store.select (this.path);
+    return this.store.select ('activity-manager.' + this.path);
   }
 
   get id () {
@@ -53,8 +66,7 @@ export default class Activity {
   get path () {
     if (this.parent) {
       return this.parent.path + '.' + this.id;
-    }
-    else {
+    } else {
       return this.id;
     }
   }
