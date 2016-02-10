@@ -73,26 +73,10 @@ export default class ActivitiesManager {
     this.currentActivityId = id;
   }
 
-  doActionInActivity (state, action) {
-    const activity = state.get ();
-    const actuator = activity.actuators[action.type];
-    if (actuator) {
-      console.log (`do ${action.type} in ${this.currentActivityId}`);
-      actuator (state, action);
-    } else {
-      console.log (`cannot do ${action.type} in ${this.currentActivityId}`);
-    }
-  }
-
   dispatch (props, message) {
     const {state, action} = props;
     if (message === 'action' && typeof action === 'function') {
       action (state);
-    } else {
-      console.log (`id=${state.id} message=${message} action=${JSON.stringify (action)}`);
-      if (message === 'action') {
-        this.doActionInActivity (state, action);
-      }
     }
     this.update ();
   }
