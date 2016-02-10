@@ -1,5 +1,10 @@
 'use strict';
 
+import 'babel-core/register';
+import 'babel-polyfill';
+
+import command from '../../../command.js';
+
 function * coolName () {
   while (true) {
     yield 'Paul';
@@ -14,11 +19,11 @@ function * coolName () {
 
 const coolNameGenerator = coolName ();
 
-const doSayHello = (state) => {
+const doSayHello = (name, cool, state) => {
   console.log (`Inside POC's actuator; state.name=${state.get ('name')}, state.id=${state.id}`);
   state.set ('name', coolNameGenerator.next ().value);
 };
 
 export default {
-  SAY_HELLO: (state) => doSayHello (state)
+  SAY_HELLO: command ('SAY_HELLO', (cmd, state) => doSayHello (cmd.name, cmd.cool, state))
 };

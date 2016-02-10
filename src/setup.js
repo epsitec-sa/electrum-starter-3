@@ -1,7 +1,5 @@
 'use strict';
 
-import 'babel-polyfill';
-
 import Electrum from 'electrum';
 import {Store} from 'electrum-store';
 import {Theme} from 'electrum-theme';

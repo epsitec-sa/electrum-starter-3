@@ -1,6 +1,6 @@
 'use strict';
 
-export default function command (name, handler) {
+export default function command (name, handler, setup) {
   const f = function (args) {
     const c = function (...args) {
       if (!handler) {
@@ -8,7 +8,7 @@ export default function command (name, handler) {
       }
       handler (c.info, ...args);
     };
-    c.info = {};
+    c.info = setup ? setup () : {};
     c.type = name;
     c.factory = f;
     for (let key in args) {
