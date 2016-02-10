@@ -48,13 +48,18 @@ export default class ActivitiesManager {
     this.mainActivityPath = id;
   }
 
-  startActivity (name, parent) {
+  initActivity (name, parent) {
     // instantiate via registry
+    console.log ('#####', parent);
     const creator  = this.registry.find (name).get ();
     const activity = creator (parent);
     // Initialize activity
-    activity.initialize (this.store);
-    // run activity
+    activity.init (this.store);
+    return activity;
+  }
+
+  startActivity (name, parent) {
+    const activity = this.initActivity (name, parent);
     activity.run ();
     return activity;
   }
@@ -62,15 +67,14 @@ export default class ActivitiesManager {
   startMainActivity (name) {
     const runningActivity = this.startActivity (name, null);
     // set current activity id
-    this.mainActivityPath = runningActivity.id;
-    console.log (`Main activity ${name} started with id: ${runningActivity.id}`);
+    this.mainActivityPath = runningActivity.path;
     return runningActivity;
   }
 
   dispatch (props, message) {
     const {state, action} = props;
     if (message === 'action' && typeof action === 'function') {
-      action (state);
+      action.run (state);
     }
     this.update ();
   }

@@ -1,21 +1,14 @@
 'use strict';
 import Command from 'electrum-command';
 
-const leaveDesktop = ({path}, state) => {
+const leaveDesktop = (cmd, state) => {
   const activityManager = state.getInherited ('am');
-  activityManager.mainActivityPath = path;
-};
-
-const startActivity = (state) => {
-  const activityManager = state.getInherited ('am');
-  const activity = activityManager.startActivity ('desktop', state.id);
-  state.select ('sessions')
-    .add ()
-    .set ('path', activity.path);
+  const sessionManagerPath = state.getInherited ('sessionManagerPath');
+  console.log (sessionManagerPath);
+  activityManager.mainActivityPath = sessionManagerPath;
 };
 
 export default {
-  LEAVE_DESKTOP: Command ('LEAVE_DESKTOP',
-                    (cmd, state) => leaveDesktop (cmd, state))
+  LEAVE_DESKTOP: Command ('LEAVE_DESKTOP', leaveDesktop)
 
 };

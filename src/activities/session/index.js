@@ -3,10 +3,20 @@ import {SessionManager} from './session-manager.js';
 import actuators from './actuators.js';
 import Activity from '../activity.js';
 
-const initialState = (state) => {
-  state.set ('view', SessionManager);
+const handlers = {
+  onInit: (state) => {
+    state.set ('view', SessionManager);
+    console.log (`${state.id} initialized!`);
+  },
+  onRun: (state) => {
+    state.set ('sessionManagerPath', state.id);
+    console.log (`${state.id} running! sessionManagerPath=${state.id}`);
+  },
+  onKill: (state) => {
+    console.log (`${state.id} killed!`);
+  }
 };
 
 export default (parent) => {
-  return new Activity ('sessions', initialState, actuators, parent);
+  return new Activity ('sessions', handlers, actuators, parent);
 };

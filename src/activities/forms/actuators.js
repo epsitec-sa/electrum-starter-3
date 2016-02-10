@@ -8,6 +8,6 @@ const changeView = ({view}) => {
 };
 
 export default {
-  START_WIZARD: () => Command ('START_WIZARD', changeView) ({view: WizardHome}),
-  GO_HOME: () => Command ('GO_HOME', changeView) ({view: Forms})
+  START_WIZARD: Command ('START_WIZARD', changeView) ({view: WizardHome}),
+  GO_HOME: Command ('GO_HOME', changeView) ({view: Forms})
 };

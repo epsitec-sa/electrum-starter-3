@@ -2,13 +2,11 @@
 
 import Electrum from 'electrum';
 import React from 'react';
-
+import {Button} from '../../all-components';
+import act from './actuators.js';
 class _Desktop extends React.Component {
   render () {
     const {state} = this.props;
-    const amState = state.select ('am');
-    const am = amState.get ('am');
-    console.log (am);
     const headerStyle = {
       background: 'rgba(0, 20, 60, 0.2)',
       fontWeight: 900,
@@ -36,6 +34,7 @@ class _Desktop extends React.Component {
 
         </aside>
         <footer>
+          <Button action={act.LEAVE_DESKTOP ()} {...this.link ()}>Leave desktop</Button>
         </footer>
       </section>
     );

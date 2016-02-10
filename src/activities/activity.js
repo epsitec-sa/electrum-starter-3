@@ -1,6 +1,4 @@
 'use strict';
-import {State} from 'electrum-store';
-
 /******************************************************************************/
 function activityGuid (id) {
   function s4 () {
@@ -13,35 +11,14 @@ function activityGuid (id) {
 /******************************************************************************/
 
 export default class Activity {
-  constructor (name, initializer, actuators, parent) {
+  constructor (name, stateHandlers, actuators, parent) {
     this._id = activityGuid (name);
-    if (typeof initializer !== 'function') {
-      throw new Error (`Provided initializer is not a function`);
-    }
-    this._initializer = initializer;
+    this._stateHandlers = stateHandlers;
     this._actuators = actuators;
-    this._parent = parent ? parent : '';
+    this._parent = parent;
     this._store = null;
     this._state = null;
     console.log (`Activity ${this._id} constructed from ${this._parent}`);
-  }
-
-  initialize (store) {
-    this._store = store;
-    this.initializer (this.state);
-    this.state.set ('aid', this.id);
-    this.state.set ('activity', this);
-    this.status = 'initialized';
-    console.log (`Activity initialized at ${this.path}`);
-  }
-
-  run () {
-    this.status = 'running';
-  }
-
-  kill () {
-    // ? disposer ();
-    this.status = 'killing';
   }
 
   get status () {
@@ -57,7 +34,7 @@ export default class Activity {
   }
 
   get state () {
-    return this.store.select ('activity-manager.' + this.path);
+    return this.store.select (this.path);
   }
 
   get id () {
@@ -68,12 +45,20 @@ export default class Activity {
     if (this.parent) {
       return this.parent + '.' + this.id;
     } else {
-      return this.id;
+      return 'activity-manager.' + this.id;
     }
   }
 
-  get initializer () {
-    return this._initializer;
+  get onInit () {
+    return this._onEvent ('onInit');
+  }
+
+  get onRun () {
+    return this._onEvent ('onRun');
+  }
+
+  get onKill () {
+    return this._onEvent ('onKill');
   }
 
   get parent () {
@@ -82,6 +67,36 @@ export default class Activity {
 
   get actuators () {
     return this._actuators;
+  }
+
+  init (store) {
+    this._store = store;
+    this.onInit (this.state);
+    this.state.set ('aid', this.id);
+    this.state.set ('activity', this);
+    this.status = 'initialized';
+  }
+
+  run () {
+    this.status = 'running';
+    this.onRun (this.state);
+  }
+
+  kill () {
+    // ? disposer ();
+    this.status = 'killing';
+    this.onKill (this.state);
+  }
+
+  _onEvent (eventName) {
+    if (this._stateHandlers[eventName]) {
+      if (typeof this._stateHandlers[eventName] !== 'function') {
+        throw new Error (`Provided stateHandlers: ${eventName} is not a function`);
+      }
+      return this._stateHandlers[eventName];
+    } else {
+      return () => {};
+    }
   }
 }
 

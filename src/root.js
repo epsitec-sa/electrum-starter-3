@@ -19,9 +19,9 @@ class _Root extends React.Component {
     const {state} = this.props;
     const amState = state.select ('activity-manager');
     const am = amState.get ('am');
-    console.log (state);
+    console.log (am.mainActivityPath);
     return (
-      <ActivityViewer  {...this.link ('activity-manager.' + am.mainActivityPath)} />
+      <ActivityViewer  {...this.link (am.mainActivityPath)} />
     );
   }
 }

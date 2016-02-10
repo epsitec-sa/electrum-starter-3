@@ -3,10 +3,19 @@ import {Login} from './login.js';
 import actuators from './actuators.js';
 import Activity from '../activity.js';
 
-const initialState = (state) => {
-  state.set ('view', Login);
+const handlers = {
+  onInit: (state) => {
+    state.set ('view', Login);
+    console.log (`${state.id} initialized!`);
+  },
+  onRun: (state) => {
+    console.log (`${state.id} running!`);
+  },
+  onKill: (state) => {
+    console.log (`${state.id} killed!`);
+  }
 };
 
 export default (parent) => {
-  return new Activity ('login', initialState, actuators, parent);
+  return new Activity ('login', handlers, actuators, parent);
 };
