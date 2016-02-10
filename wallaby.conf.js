@@ -14,7 +14,8 @@ module.exports = function (wallaby) {
       {pattern: 'test/test-helper.js'},
       {pattern: 'src/components/**/*.js'},
       {pattern: 'src/*.js'},
-      {pattern: 'node_modules/electrum-starter-3.js'}
+      {pattern: 'node_modules/electrum-starter-3.js'},
+      {pattern: 'package.json', instrument: false}
     ],
     tests: [
       {pattern: 'src/test/**/*.js'},
