@@ -8,10 +8,7 @@ const switchActivity = ({path}, state) => {
 
 const startActivity = (state) => {
   const activityManager = state.getInherited ('am');
-  const activity = activityManager.startActivity ('desktop', state.id);
-  state.select ('sessions')
-    .add ()
-    .set ('path', activity.path);
+  activityManager.startActivity (state, 'desktop', 'sessions');
 };
 
 export default {

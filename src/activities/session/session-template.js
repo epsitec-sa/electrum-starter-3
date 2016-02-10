@@ -4,13 +4,13 @@ import act from './actuators.js';
 import {Button} from '../../all-components';
 import Electrum from 'electrum';
 export default (state, props) => {
-  const path = state.get ('path');
-  console.log (path);
+  const activity = state.get ();
+  console.log (activity.path);
   return (
-    <li key={path}>
-      <h1>{path}</h1>
+    <li key={activity.path}>
+      <h1>{activity.path}</h1>
       <Button
-        action={act.SWITCH_ACTIVITY ({path: path})}
+        action={act.SWITCH_ACTIVITY ({path: activity.path})}
         {...Electrum.link (props)} >
         Restore
       </Button>

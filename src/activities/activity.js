@@ -12,7 +12,7 @@ function activityGuid (id) {
 
 export default class Activity {
   constructor (name, stateHandlers, actuators, parent) {
-    this._id = activityGuid (name);
+    this._id = name;
     this._stateHandlers = stateHandlers;
     this._actuators = actuators;
     this._parent = parent;

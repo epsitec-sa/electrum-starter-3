@@ -58,14 +58,19 @@ export default class ActivitiesManager {
     return activity;
   }
 
-  startActivity (name, parent) {
-    const activity = this.initActivity (name, parent);
+  startActivity (state, name, collection) {
+    const node = state.select (collection)
+                      .add ();
+    const activity = this.initActivity (name, node.id);
+    state.store
+      .find (node.id)
+      .set (activity);
     activity.run ();
     return activity;
   }
 
   startMainActivity (name) {
-    const runningActivity = this.startActivity (name, null);
+    const runningActivity = this.startActivity (this.state, name, 'activities');
     // set current activity id
     this.mainActivityPath = runningActivity.path;
     return runningActivity;

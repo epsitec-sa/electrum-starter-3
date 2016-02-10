@@ -18,5 +18,5 @@ const handlers = {
 };
 
 export default (parent) => {
-  return new Activity ('sessions', handlers, actuators, parent);
+  return new Activity ('session', handlers, actuators, parent);
 };
