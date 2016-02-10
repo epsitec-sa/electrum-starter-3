@@ -5,7 +5,7 @@ import React from 'react';
 
 import {BasicList} from 'electrum-arc';
 import {ActivityViewer, CurrentActivityInfo, Button} from 'electrum-starter-3';
-import {startActivity, switchActivity} from '../actions.js';
+import {START_ACTIVITY, SWITCH_ACTIVITY} from '../actions.js';
 
 export default class Root extends React.Component {
   componentWillMount () {
@@ -25,7 +25,7 @@ export default class Root extends React.Component {
       const aid = state.get ('aid');
       return (
         <li key={aid}>
-          <Button action={switchActivity (aid)} {...this.link ()}>
+          <Button action={SWITCH_ACTIVITY ({id: aid})} {...this.link ()}>
             Show {aid}
           </Button>
         </li>
@@ -36,7 +36,7 @@ export default class Root extends React.Component {
       const name = state.get ('name');
       return (
         <li key={name}>
-          <Button action={startActivity (name)} {...this.link ()}>
+          <Button action={START_ACTIVITY ({name})} {...this.link ()}>
             Start {name}
           </Button>
         </li>

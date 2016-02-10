@@ -1,13 +1,19 @@
 'use strict';
 
-function command (name, handler) {
+export default function command (name, handler) {
   const f = function (args) {
     const c = function (...args) {
-      handler (c, ...args);
+      if (!handler) {
+        throw new Error (`Command ${name} does not define a command handler`);
+      }
+      handler (c.info, ...args);
     };
+    c.info = {};
+    c.type = name;
+    c.factory = f;
     for (let key in args) {
       if (args.hasOwnProperty (key)) {
-        c[key] = args[key];
+        c.info[key] = args[key];
       }
     }
     return c;
@@ -17,16 +23,21 @@ function command (name, handler) {
 }
 
 const INCREMENT = command ('INCREMENT', (cmd, state) => state.value += cmd.step);
+const DECREMENT = command ('DECREMENT', (cmd, state) => state.value -= cmd.step);
 
 const INC_1 = INCREMENT ({step: 1});
 const INC_10 = INCREMENT ({step: 10});
+const DEC_2 = DECREMENT ({step: 2});
+
+console.log (INCREMENT.type);
 
 let x = {
   value: 0
 };
 
 INC_10 (x);
-INC_10 (x);
 INC_1 (x);
+INC_10 (x);
+DEC_2 (x);
 
 console.log (x);

@@ -1,15 +1,12 @@
 'use strict';
 
-import createAction from './create-action.js';
+import Electrum from 'electrum';
+
+import command from './command.js';
 
 /******************************************************************************/
 
-export function startActivity (activityName) {
-  return createAction ('START_ACTIVITY', {name: activityName});
-}
-
-export function switchActivity (activityId) {
-  return createAction ('SWITCH_ACTIVITY', {id: activityId});
-}
+export const START_ACTIVITY = command ('START_ACTIVITY', cmd => Electrum.bus.startActivity (cmd.name));
+export const SWITCH_ACTIVITY = command ('SWITCH_ACTIVITY', cmd => Electrum.bus.switchActivity (cmd.id));
 
 /******************************************************************************/

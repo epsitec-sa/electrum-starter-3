@@ -1,6 +1,6 @@
 'use strict';
 
-import {startActivity, switchActivity} from './actions.js';
+import {START_ACTIVITY, SWITCH_ACTIVITY} from './actions.js';
 
 /******************************************************************************/
 
@@ -69,6 +69,10 @@ export default class ActivitiesManager {
     console.log (`Activity ${name} started with id: ${activity.id}`);
   }
 
+  switchActivity (id) {
+    this.currentActivityId = id;
+  }
+
   doActionInActivity (state, action) {
     const activity = state.get ();
     const actuator = activity.actuators[action.type];
@@ -82,19 +86,12 @@ export default class ActivitiesManager {
 
   dispatch (props, message) {
     const {state, action} = props;
-    console.log (`id=${state.id} message=${message} action=${JSON.stringify (action)}`);
-    if (message === 'action') {
-      switch (action.type) {
-        case 'SWITCH_ACTIVITY': {
-          this.currentActivityId = action.id;
-          break;
-        }
-        case 'START_ACTIVITY': {
-          this.startActivity (action.name);
-          break;
-        }
-        default:
-          this.doActionInActivity (state, action);
+    if (message === 'action' && typeof action === 'function') {
+      action (state);
+    } else {
+      console.log (`id=${state.id} message=${message} action=${JSON.stringify (action)}`);
+      if (message === 'action') {
+        this.doActionInActivity (state, action);
       }
     }
     this.update ();
