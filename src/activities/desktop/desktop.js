@@ -2,11 +2,12 @@
 
 import Electrum from 'electrum';
 import React from 'react';
-import {Button} from '../../all-components';
+import {ActivityViewer, Button} from '../../all-components';
 import act from './actuators.js';
 class _Desktop extends React.Component {
   render () {
     const {state} = this.props;
+    const mainActivity = state.get ('mainActivity');
     const headerStyle = {
       background: 'rgba(0, 20, 60, 0.2)',
       fontWeight: 900,
@@ -18,17 +19,22 @@ class _Desktop extends React.Component {
     return (
       <section data-view='Desktop'>
         <header>
-          <nav>
+
             <section style={headerStyle}>
-              <h1>Desktop</h1>
+              <h1>Desktop {state.id}</h1>
             </section>
-            <section style={{float: 'left', margin: '0 60 0 0'}}>
 
-            </section>
-          </nav>
         </header>
-        <section style={{height: '50%', padding: '50 50 50 50'}}>
+        <section style={{float: 'left', margin: '0 60 0 0'}}>
+          <nav>
 
+          </nav>
+        </section>
+        <section style={{height: '50%', padding: '50 50 50 50'}}>
+          {mainActivity ?
+            <ActivityViewer {...this.link (mainActivity)} /> :
+            <span>__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.___</span>
+          }
         </section>
         <aside style={{float: 'right'}}>
 

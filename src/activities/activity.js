@@ -106,6 +106,33 @@ export default class Activity {
       return () => {};
     }
   }
+
+  static Create (name, mainView, actuators, onInit, onRun, onKill) {
+    const handlers = {
+      onInit: (state) => {
+        state.set ('view', mainView);
+        if (typeof onInit === 'function') {
+            onInit (state);
+        }
+        console.log (`${state.id} initialized!`);
+      },
+      onRun: (state) => {
+        if (typeof onRun === 'function') {
+          onRun (state);
+        }
+        console.log (`${state.id} running!`);
+      },
+      onKill: (state) => {
+        if (typeof onKill === 'function') {
+          onKill (state);
+        }
+        console.log (`${state.id} killed!`);
+      }
+    };
+    return (parent) => {
+      return new Activity (name, handlers, actuators, parent);
+    };
+  }
 }
 
 /******************************************************************************/

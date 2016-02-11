@@ -19,36 +19,43 @@ Electrum-wrapped React components.
 
 ## Activity crafting
 
+`Activity.Create ('name', MainView, actuators, onInit, onRun, onKill);`
+
 Simple activity:
 
 ```
 // Example activity:
 
-import {ViewComponent} from './forms.js';
+'use strict';
 import Activity from '../activity.js';
+import {MainView} from './component.js';
+import actuators from './actuators.js';
 
-const setName = (state, action) => {
-  state.set ('name', action.name);
-};
-const actuators =  {
-  SET_NAME: (state, action) => setName (state, action)
-};
-
-const initialState = {
-  view: ViewComponent
+// add some state on init
+const onInit = (state) => {
+  state.set ('name', '<nobody>');
 };
 
-export default () => {
-  return new Activity ('forms', initialState, actuators);
-};
+export default Activity.Create ('poc', MainView, actuators, onInit);
 ```
 
 more examples available in `src/activities/`
 
 ## actuators
 
-Arguments order:
+An actuator is your activity action dispatcher.
+You wire electrum commands (see `electrum-command`) on verbs.
+Example:
 
 ```
-(activityState, dispatchedAction, id, store, doAction (...))
+import Command from 'electrum-command';
+
+const leaveDesktop = (cmd, state) => {
+  // do something on the state, with cmd parameters...
+};
+
+export default {
+  LEAVE_DESKTOP: Command ('LEAVE_DESKTOP', leaveDesktop)
+};
+
 ```
