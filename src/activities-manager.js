@@ -58,9 +58,11 @@ export default class ActivitiesManager {
     return activity;
   }
 
-  startActivity (state, name, collection) {
-    const node = state.select (collection)
-                      .add ();
+  startActivity (state, name, nodePath, isSingle) {
+    let node = state.select (nodePath);
+    if (!isSingle) {
+      node = node.add ();
+    }
     const activity = this.initActivity (name, node.id);
     state.store
       .find (node.id)

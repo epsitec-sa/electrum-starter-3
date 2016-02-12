@@ -59,3 +59,14 @@ export default {
 };
 
 ```
+
+## Starting activity from actuators
+
+```
+// this example start 'desktop' activity in the 'sessions' collection
+// based in the current state node
+const startActivity = (state) => {
+  const activityManager = state.getInherited ('am');
+  activityManager.startActivity (state, 'desktop', 'sessions');
+};
+```

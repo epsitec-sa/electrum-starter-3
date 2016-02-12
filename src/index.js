@@ -15,7 +15,6 @@ import DesktopActivity from './activities/desktop/';
 import LoginActivity from './activities/login/';
 import SessionActivity from './activities/session/';
 import ActivitiesManager from './activities-manager.js';
-import createAction from './create-action.js';
 import 'babel-polyfill';
 
 const theme = Theme.create ('default');
@@ -27,7 +26,7 @@ am.registerActivity ('desktop', DesktopActivity);
 am.registerActivity ('forms', FormsActivity);
 am.registerActivity ('poc', PocActivity);
 am.registerActivity ('tabs', TabsActivity);
-const mainActivity = am.startMainActivity ('session');
+am.startMainActivity ('session');
 Electrum.reset ();
 Electrum.useBus (am);
 

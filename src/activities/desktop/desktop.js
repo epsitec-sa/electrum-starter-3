@@ -2,46 +2,58 @@
 
 import Electrum from 'electrum';
 import React from 'react';
-import {ActivityViewer, Button} from '../../all-components';
+import {ActivityViewer, Button, Label} from '../../all-components';
+import {Contextualizer} from './contextualizer.js';
+import {Launcher} from './launcher.js';
+import {LauncherItem} from './Launcher-item.js';
 import act from './actuators.js';
 class _Desktop extends React.Component {
   render () {
     const {state} = this.props;
-    const mainActivity = state.get ('mainActivity');
-    const headerStyle = {
-      background: 'rgba(0, 20, 60, 0.2)',
-      fontWeight: 900,
-      border: '2px solid #999',
-      padding: '0 20 0 20',
-      textTransform: 'uppercase',
-      textDecoration: 'none'
+    const layout = state.select ('layout');
+    const aCount = state.select ('activities').keys.length;
+    const mainActivity = state.get ('mainActivityKey');
+    console.log (aCount);
+    const lWidth = layout.get ('lWidth');
+    const cHeight = layout.get ('cHeight');
+
+    const bgStyle = {
+      display: 'flex',
+      alignItems: 'center',
+      background: '#000',
+      height: '100%',
+      width: '100%'
+    };
+    const deskStyle = {
+      flex: 0.9,
+      height: '100%',
+      alignSelf: 'flex-start',
+      background: 'linear-gradient(135deg, #1f2022, #212932)'
     };
     return (
-      <section data-view='Desktop'>
-        <header>
-
-            <section style={headerStyle}>
-              <h1>Desktop {state.id}</h1>
-            </section>
-
-        </header>
-        <section style={{float: 'left', margin: '0 60 0 0'}}>
-          <nav>
-
-          </nav>
+      <section data-view='Desktop' style={bgStyle}>
+        <Launcher {...this.link ('layout')}>
+          <LauncherItem type='logo' {...this.link ()}>
+            <Label action={act.LEAVE_DESKTOP ()} {...this.link ()}>
+              <i className="fa fa-modx fa-4x"></i>
+            </Label>
+          </LauncherItem>
+          <LauncherItem type='separator' {...this.link ()}/>
+          <LauncherItem type='main' action={act.START_MAIN ()} {...this.link ()}>
+            <i className="fa fa-rocket fa-2x"></i>
+          </LauncherItem>
+        </Launcher>
+        <section style={deskStyle}>
+          <Contextualizer {...this.link ('layout')} >
+            CONTEXT 1
+          </Contextualizer>
+          <main>
+            {aCount > 0 ?
+              <ActivityViewer {...this.link ('activities.' + mainActivity)} /> :
+              <span>{`__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.___`}</span>
+            }
+          </main>
         </section>
-        <section style={{height: '50%', padding: '50 50 50 50'}}>
-          {mainActivity ?
-            <ActivityViewer {...this.link (mainActivity)} /> :
-            <span>__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.___</span>
-          }
-        </section>
-        <aside style={{float: 'right'}}>
-
-        </aside>
-        <footer>
-          <Button action={act.LEAVE_DESKTOP ()} {...this.link ()}>Leave desktop</Button>
-        </footer>
       </section>
     );
   }

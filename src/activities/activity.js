@@ -80,8 +80,8 @@ export default class Activity {
 
   init (store) {
     this._store = store;
-    this.onInit (this.state);
     this.state.set (this);
+    this.onInit (this.state);
     this.status = 'initialized';
   }
 
@@ -107,24 +107,24 @@ export default class Activity {
     }
   }
 
-  static Create (name, mainView, actuators, onInit, onRun, onKill) {
+  static Create (name, mainView, actuators, _onInit, _onRun, _onKill) {
     const handlers = {
       onInit: (state) => {
-        state.set ('view', mainView);
-        if (typeof onInit === 'function') {
-            onInit (state);
+        const initialState = state.set ('view', mainView);
+        if (typeof _onInit === 'function') {
+          _onInit (initialState);
         }
         console.log (`${state.id} initialized!`);
       },
       onRun: (state) => {
-        if (typeof onRun === 'function') {
-          onRun (state);
+        if (typeof _onRun === 'function') {
+          _onRun (state);
         }
         console.log (`${state.id} running!`);
       },
       onKill: (state) => {
-        if (typeof onKill === 'function') {
-          onKill (state);
+        if (typeof _onKill === 'function') {
+          _onKill (state);
         }
         console.log (`${state.id} killed!`);
       }
