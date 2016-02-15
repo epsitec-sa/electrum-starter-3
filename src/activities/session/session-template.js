@@ -10,7 +10,7 @@ export default (state, props) => {
     <li key={activity.path}>
       <h1>{activity.path}</h1>
       <Button
-        action={act.SWITCH_ACTIVITY ({activity: activity})}
+        action={act.SWITCH_SESSION ({activity: activity})}
         {...Electrum.link (props)} >
         Restore
       </Button>

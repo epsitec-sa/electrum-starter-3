@@ -3,16 +3,14 @@
 import Electrum from 'electrum';
 import React from 'react';
 import {Button} from '../../all-components';
-import createAction from '../../create-action.js';
+import act from './actuators.js';
 
 class _Forms extends React.Component {
   render () {
-    const {state} = this.props;
-    const startWizard = createAction ('START_WIZARD');
     return (
       <div>
         <h1>Forms Wizard Demo</h1>
-        <Button id={state.id} {...this.link ()} action={startWizard}>
+        <Button {...this.link ()} action={act.START_WIZARD}>
           Start wizard...
         </Button>
       </div>

@@ -13,7 +13,7 @@ class _SessionManager extends React.Component {
     return (
       <section data-view='SessionManager'>
         <main>
-          <Button action={act.START_ACTIVITY ()} {...this.link ()}>
+          <Button action={act.START_SESSION ()} {...this.link ()}>
             New session
           </Button>
         </main>

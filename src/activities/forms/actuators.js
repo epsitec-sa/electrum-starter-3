@@ -3,7 +3,7 @@ import {Forms} from './forms.js';
 import {WizardHome} from './views/wizardHome.js';
 import Command from 'electrum-command';
 
-const changeView = ({view}) => {
+const changeView = ({view}, state) => {
   state.set ('view', view);
 };
 

@@ -2,7 +2,7 @@
 
 import Electrum from 'electrum';
 import React from 'react';
-import {Button} from '../../all-components';
+import {ActivityViewer, Button} from '../../all-components';
 import act from './actuators.js';
 
 class _Poc extends React.Component {
@@ -14,6 +14,7 @@ class _Poc extends React.Component {
         {`Hello ${name}`}
         <br/>
         <Button id={state.id} action={act.SAY_HELLO} {...this.link ()}>Say hello...</Button>
+        <ActivityViewer {...this.link ('wizard.forms')} />
       </div>
     );
   }

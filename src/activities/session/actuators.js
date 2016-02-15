@@ -13,6 +13,6 @@ const startActivity = (state) => {
 };
 
 export default {
-  SWITCH_ACTIVITY: Command ('SWITCH_ACTIVITY', switchActivity),
-  START_ACTIVITY: Command ('START_ACTIVITY', (cmd, state) => startActivity (state))
+  SWITCH_SESSION: Command ('SWITCH_SESSION', switchActivity),
+  START_SESSION: Command ('START_SESSION', (cmd, state) => startActivity (state))
 };
