@@ -8,32 +8,28 @@ class _LauncherItem extends React.Component {
     const {state} = this.props;
 
     const logoItem = {
-      flex: 1,
+      flex: 2,
       fontSize: '2rem',
-      width: '100%',
       cursor: 'pointer',
-      minHeight: '128px',
-      borderTop: 'hsl(248, 8%, 15%) 1px solid',
-      borderBottom: '#292929 1px solid'
+      color: '#222222',
+      backgroundColor: '#FFFFFF',
+      alignSelf: 'center',
+      padding: '4 4 4 4'
     };
 
     const activityItem = {
       flex: 1,
       fontSize: '2rem',
-      width: '100%',
       cursor: 'pointer',
-      minHeight: '64px',
-      borderBottom: '#292929 1px solid',
-      borderTop: 'hsl(248, 8%, 15%) 1px solid',
       ':hover': {
-        background: 'hsla(120, 0%, 21%, 0.49)'
-      }
+        background: '#FFFFFF'
+      },
+      alignSelf: 'center'
     };
 
     const separatorItem = {
       flex: 1,
       fontSize: '2rem',
-      width: '100%',
       minHeight: '64px'
     };
 

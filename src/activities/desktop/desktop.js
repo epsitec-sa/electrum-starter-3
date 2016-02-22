@@ -1,62 +1,71 @@
 'use strict';
 
-import Electrum from 'electrum';
 import React from 'react';
-import {ActivityViewer, Button, Label} from '../../all-components';
+import {ActivityViewer, Label} from '../../all-components';
 import {Contextualizer} from './contextualizer.js';
+import {StatusBar} from './StatusBar.js';
 import {Launcher} from './launcher.js';
 import {LauncherItem} from './Launcher-item.js';
+import {Tabs} from './tabs.js';
 import act from './actuators.js';
-class _Desktop extends React.Component {
+
+export default class Desktop extends React.Component {
   render () {
     const {state} = this.props;
-    const layout = state.select ('layout');
-    const aCount = state.select ('activities').keys.length;
-    const mainActivity = state.get ('mainActivityKey');
-    console.log (aCount);
-    const lWidth = layout.get ('lWidth');
-    const cHeight = layout.get ('cHeight');
-
-    const bgStyle = {
+    // use lenses...
+    const mainActivityKey = state.get ('mainActivityKey');
+    const mainActivityPath = 'activities.' + state.get ('mainActivityKey');
+    const MainActivity = mainActivityKey ?
+      state.select (mainActivityPath).get ().view :
+      null;
+    const mainLayout = {
       display: 'flex',
-      alignItems: 'center',
-      background: '#000',
-      height: '100%',
+      background: '#24415f',
+      alignItems: 'stretch',
+      flexDirection: 'row',
+      alignContents: 'stretch'
+    };
+
+    const deskStyle = {
+      display: 'flex',
+      alignItems: 'stretch',
+      flexDirection: 'column',
       width: '100%'
     };
-    const deskStyle = {
-      flex: 0.9,
-      height: '100%',
-      alignSelf: 'flex-start',
-      background: 'linear-gradient(135deg, #1f2022, #212932)'
+
+    const mainContent = {
+      flex: 2,
+      borderTop: '.01em solid #cccccc'
     };
+
     return (
-      <section data-view='Desktop' style={bgStyle}>
-        <Launcher {...this.link ('layout')}>
+      <section data-view='Desktop' style={mainLayout}>
+        <Launcher {...this.link ()}>
           <LauncherItem type='logo' {...this.link ()}>
             <Label action={act.LEAVE_DESKTOP ()} {...this.link ()}>
-              <i className="fa fa-modx fa-4x"></i>
+              <i className="fa fa-modx fa-2x"></i>
             </Label>
           </LauncherItem>
           <LauncherItem type='separator' {...this.link ()}/>
           <LauncherItem type='main' action={act.START_MAIN ()} {...this.link ()}>
-            <i className="fa fa-rocket fa-2x"></i>
+            <i className="fa fa-rocket fa-1x"></i>
           </LauncherItem>
         </Launcher>
         <section style={deskStyle}>
-          <Contextualizer {...this.link ('layout')} >
+          <Contextualizer {...this.link ()} >
             CONTEXT 1
           </Contextualizer>
-          <main>
-            {aCount > 0 ?
-              <ActivityViewer {...this.link ('activities.' + mainActivity)} /> :
-              <span>{`__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.___`}</span>
-            }
+          <Tabs {...this.link ()} />
+          <main style={mainContent}>
+            {mainActivityKey ?
+            <MainActivity {...this.link (mainActivityPath)} />
+            : null}
           </main>
+          <StatusBar {...this.link ()}>
+            OPTIONS
+          </StatusBar>
         </section>
       </section>
     );
   }
 }
-
-export const Desktop = Electrum.wrap ('Desktop', _Desktop);

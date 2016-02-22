@@ -10,7 +10,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PocActivity from './activities/poc/';
 import FormsActivity from './activities/forms/';
-import TabsActivity from './activities/tabs/';
 import DesktopActivity from './activities/desktop/';
 import LoginActivity from './activities/login/';
 import SessionActivity from './activities/session/';
@@ -25,8 +24,7 @@ am.registerActivity ('session', SessionActivity);
 am.registerActivity ('desktop', DesktopActivity);
 am.registerActivity ('forms', FormsActivity);
 am.registerActivity ('poc', PocActivity);
-am.registerActivity ('tabs', TabsActivity);
-am.startMainActivity ('session');
+am.startMainActivity ('session', true);
 Electrum.reset ();
 Electrum.useBus (am);
 
