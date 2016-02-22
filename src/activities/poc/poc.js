@@ -1,23 +1,21 @@
 'use strict';
 
-import Electrum from 'electrum';
 import React from 'react';
 import {Button} from '../../all-components';
-import createAction from '../../create-action.js';
+import act from './actuators.js';
 
-class _Poc extends React.Component {
+export default class Poc extends React.Component {
   render () {
     const {state} = this.props;
     const name = state.get ('name');
-    const sayHello = createAction ('SAY_HELLO', {to: `${name}`});
+    const Wizard = state.select ('wizard.[forms]').get ().view;
     return (
       <div>
         {`Hello ${name}`}
         <br/>
-        <Button action={sayHello} {...this.link ()}>Say hello...</Button>
+        <Button id={state.id} action={act.SAY_HELLO} {...this.link ()}>Say hello...</Button>
+        <Wizard {...this.link ('wizard.[forms]')} />
       </div>
     );
   }
 }
-
-export const Poc = Electrum.wrap ('Poc', _Poc);

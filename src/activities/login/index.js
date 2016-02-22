@@ -1,7 +1,6 @@
 'use strict';
-
-import Forms from './forms.js';
+import {Login} from './login.js';
 import actuators from './actuators.js';
 import Activity from '../activity.js';
 
-export default Activity.Create ('forms', Forms, actuators);
+export default Activity.Create ('login', Login, actuators);

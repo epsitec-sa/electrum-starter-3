@@ -2,31 +2,14 @@
 import {State} from 'electrum-store';
 import createAction from './create-action.js';
 /******************************************************************************/
-const initialState = State.create ('am', {
-  currentActivityId: null,
-  activities: {},
-  registry: {}
-});
-
 export default class ActivitiesManager {
   constructor (store) {
     this._store = store;
-    this._store.setState (initialState);
+    this.state
+      .set ('am', this)
+      .set ('mainActivityPath', null);
+
     this._generation = store.generation;
-    this._runningCounter = 0;
-    this._launchableCounter = 0;
-  }
-
-  static startActivity (activityName) {
-    return createAction ('START_ACTIVITY', {
-      name: activityName
-    });
-  }
-
-  static switchActivity (activityId) {
-    return createAction ('SWITCH_ACTIVITY', {
-      id: activityId
-    });
   }
 
   get store () {
@@ -34,87 +17,71 @@ export default class ActivitiesManager {
   }
 
   get state () {
-    return this._store.select ('am');
-  }
-
-  get activities () {
-    return this.state.get ('activities');
+    return this._store.select ('activity-manager');
   }
 
   get registry () {
-    return this.state.get ('registry');
+    return this.state.select ('registry');
   }
 
-  get currentActivityId () {
-    return this.state.get ('currentActivityId');
+  get mainActivityPath () {
+    return this.state.get ('mainActivityPath');
   }
 
-  set currentActivityId (activityId) {
-    if (!activityId) {
-      throw new Error (`You must provide an activity id`);
+  set mainActivityPath (path) {
+    if (!path) {
+      throw new Error (`You must provide an activity path`);
     }
-    this.state.set ('currentActivityId', activityId);
-    const activity = this.activities[activityId];
-    this.state.set  ('currentActivity', activity);
+    this.state.set ('mainActivityPath', path);
   }
 
   registerActivity (name, activityCreator) {
-    if (this.registry[name]) {
+    if (this.registry.find (name)) {
       throw new Error (`Activity already registered: ${name}`);
     }
-    this.registry[name] = activityCreator;
-    this.state.select ('launchable.' + this._launchableCounter++).set ('name', name);
+    this.registry.select (name).set (activityCreator);
+    this.state.select ('launchable').add ().set ('name', name);
     console.log (`Activity registered: ${name}`);
   }
 
-  startActivity (name) {
-    const activity = this.registry[name] ();
-    // Map actuators
-    this.activities[activity.id] = activity;
-    // Initialize activity state
-    this.store.setState (activity.state);
-    // Add activity id in running list
-    this.state.select ('running.' + this._runningCounter++).set ('aid', activity.id);
-    // set current activity id
-    this.currentActivityId = activity.id;
-    console.log (`Activity ${name} started with id: ${activity.id}`);
+  switchActivity (id) {
+    this.mainActivityPath = id;
   }
 
-  doActionInActivity (action) {
-    if (!this.currentActivityId) {
-      throw new Error (`Please set a current activity before running action in your app`);
+  initActivity (name, parent) {
+    // instantiate via registry
+    console.log ('#####', parent);
+    const creator  = this.registry.find (name).get ();
+    const activity = creator (parent);
+    // Initialize activity
+    activity.init (this.store);
+    return activity;
+  }
+
+  startActivity (state, name, nodePath, isSingle) {
+    let node = state.select (nodePath);
+    if (!isSingle) {
+      node = node.add ();
     }
-    if (this.activities[this.currentActivityId].actuators[action.type]) {
-      console.log (`do ${action.type} in ${this.currentActivityId}`);
-      this.activities[this.currentActivityId].actuators[action.type] (
-        this.store.select (this.currentActivityId),
-        action,
-        this.store,
-        this.store,
-        this.doActionInActivity
-      );
-    } else {
-      console.log (`cannot do ${action.type} in ${this.currentActivityId}`);
-    }
+    const activity = this.initActivity (name, node.id);
+    state.store
+      .find (node.id)
+      .set (activity);
+    activity.run ();
+    return activity;
+  }
+
+  startMainActivity (name) {
+    const runningActivity = this.startActivity (this.state, name, 'main', true);
+    // set current activity id
+    this.mainActivityPath = runningActivity.path;
+    return runningActivity;
   }
 
   dispatch (props, message) {
-    const {id, action} = props;
-    console.log (`id=${id} message=${message} action=${JSON.stringify (action)}`);
-    if (message === 'action') {
-      switch (action.type)
-      {
-      case 'SWITCH_ACTIVITY': {
-        this.currentActivityId = action.id;
-        break;
-      }
-      case 'START_ACTIVITY': {
-        this.startActivity (action.name);
-        break;
-      }
-      default:
-        this.doActionInActivity (action);
-      }
+    const {state, action} = props;
+    if (message === 'action' && typeof action === 'function') {
+      action.run (state);
     }
     this.update ();
   }
