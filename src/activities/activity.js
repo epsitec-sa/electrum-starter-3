@@ -1,25 +1,16 @@
 'use strict';
-/******************************************************************************/
-function activityGuid (id) {
-  function s4 () {
-    return Math.floor ((1 + Math.random ()) * 0x10000)
-      .toString (16)
-      .substring (1);
-  }
-  return id + '::' + s4 () + s4 () + s4 ();
-}
-/******************************************************************************/
-
+import Electrum from 'electrum';
+import React from 'react';
 export default class Activity {
   constructor (name, stateHandlers, actuators, parent) {
-    this._id = name;
+    this._id = Symbol.for ('[' + name + ']');
     this._stateHandlers = stateHandlers;
     this._actuators = actuators;
     this._parent = parent;
     this._callerPath = this._parent;
     this._store = null;
     this._state = null;
-    console.log (`Activity ${this._id} constructed from ${this._parent}`);
+    console.log (`Activity ${this.id} constructed from ${this._parent}`);
   }
 
   get status () {
@@ -39,7 +30,7 @@ export default class Activity {
   }
 
   get id () {
-    return this._id;
+    return Symbol.keyFor (this._id);
   }
 
   get path () {
