@@ -69,6 +69,38 @@ export default class Activity {
     return this._actuators;
   }
 
+  set view (component) {
+    const view = Electrum.wrap (component.name, component);
+    this.state.set ('view', view);
+  }
+
+  get view () {
+    return (props) => {
+      const {state} = props;
+      console.log ('#AV:', state.id);
+      console.dir (state);
+      const MainView = state.get ('view');
+      const viewerStyle = {
+        color: '#222222',
+        backgroundColor: '#f5f5f5',
+        width: '100%'
+      };
+      if (MainView) {
+        return (
+          <section style={viewerStyle} data-activity={state.id}>
+            <MainView {...Electrum.link (props)} />
+          </section>
+        );
+      } else {
+        return (
+          <section style={viewerStyle} data-activity="No activity">
+            <small>Unable to mount activity view for {state.id}</small>
+          </section>
+        );
+      }
+    };
+  }
+
   init (store) {
     this._store = store;
     this.state.set (this);
