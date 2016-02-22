@@ -1,6 +1,6 @@
 'use strict';
 
-import {Poc} from './poc.js';
+import Poc from './poc.js';
 import actuators from './actuators.js';
 import Activity from '../activity.js';
 

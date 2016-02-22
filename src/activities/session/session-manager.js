@@ -7,7 +7,7 @@ import {BasicList} from 'electrum-arc';
 import {Button} from '../../all-components';
 import sessionTemplate from './session-template.js';
 
-class _SessionManager extends React.Component {
+export default class SessionManager extends React.Component {
   render () {
     const {state} = this.props;
     return (
@@ -25,5 +25,3 @@ class _SessionManager extends React.Component {
     );
   }
 }
-
-export const SessionManager = Electrum.wrap ('SessionManager', _SessionManager);

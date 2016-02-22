@@ -1,10 +1,12 @@
 'use strict';
-import {Forms} from './forms.js';
-import {WizardHome} from './views/wizardHome.js';
+import WizardHome from './views/wizardHome.js';
 import Command from 'electrum-command';
-
+import Forms from './forms.js';
 const changeView = ({view}, state) => {
-  state.set ('view', view);
+  if (view) {
+    const activity = state.get ();
+    activity.view = view;
+  }
 };
 
 export default {

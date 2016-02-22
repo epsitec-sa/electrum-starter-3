@@ -1,10 +1,9 @@
 'use strict';
 
-import Electrum from 'electrum';
 import React from 'react';
 import {Button} from '../../../all-components';
 import act from '../actuators.js';
-class _Home extends React.Component {
+export default class WizardHome extends React.Component {
   render () {
     return (
       <div>
@@ -16,5 +15,3 @@ class _Home extends React.Component {
     );
   }
 }
-
-export const WizardHome = Electrum.wrap ('WizardHome', _Home);
