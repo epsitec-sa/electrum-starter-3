@@ -72,7 +72,7 @@ export default class ActivitiesManager {
   }
 
   startMainActivity (name) {
-    const runningActivity = this.startActivity (this.state, name, 'activities');
+    const runningActivity = this.startActivity (this.state, name, 'main', true);
     // set current activity id
     this.mainActivityPath = runningActivity.path;
     return runningActivity;

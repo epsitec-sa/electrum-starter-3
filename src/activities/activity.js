@@ -110,7 +110,8 @@ export default class Activity {
   static Create (name, mainView, actuators, _onInit, _onRun, _onKill) {
     const handlers = {
       onInit: (state) => {
-        const initialState = state.set ('view', mainView);
+        const view = Electrum.wrap (mainView.name, mainView);
+        const initialState = state.set ('view', view);
         if (typeof _onInit === 'function') {
           _onInit (initialState);
         }
