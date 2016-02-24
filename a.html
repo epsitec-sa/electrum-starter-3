@@ -1,0 +1,70 @@
+<html>
+<head>
+<style type="text/css">
+  body {
+    margin: 0;
+  }
+  #header {
+    display: flex;
+    background-color: #fdf560;
+    height: 50px;
+  }
+  #body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #eeeeee;
+  }
+  #root {
+    display: flex;
+    background-color: #dddddd;
+    flex-grow: 1;
+  }
+  #main {
+    background-color: #cccccc;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  #AppBadge {
+    width: 100px;
+    height: 100px;
+    background-color: #ffe060;
+  }
+  #PageSwitcher {
+    flex-grow: 1;
+  }
+  #UserBadge {
+    width: 50px;
+    height: 50px;
+    background-color: #ffe060;
+  }
+  #nav {
+    background-color: #cceeff;
+    width: min-content;
+  }
+  #footer {
+    background-color: #f7c640;
+    padding:.5em;
+  }
+</style>
+</head>
+<body>
+  <div id="body">
+    <div id="root">
+      <div id="nav">
+        <div id="AppBadge">App</div>
+        <div width="200px">This is the Task Bar</div>
+      </div>
+      <div id="main">
+        <div id="header">
+          <div id="PageSwitcher">Page switcher</div>
+          <div id="UserBadge">User</div>
+        </div>
+        <main>Content</main>
+      </div>
+    </div>
+    <div id="footer">FOOTER</id>
+  </div>
+</body>
+</html>
