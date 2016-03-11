@@ -9,5 +9,5 @@ export default class Button extends React.Component {
         {this.props.children}
       </button>
     );
-   }
+  }
 }

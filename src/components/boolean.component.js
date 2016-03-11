@@ -14,5 +14,5 @@ export default class Boolean extends React.Component {
         {text}
       </label>
     );
-   }
+  }
 }
