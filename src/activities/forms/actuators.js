@@ -1,5 +1,5 @@
 'use strict';
-import WizardHome from './views/wizardHome.js';
+import WizardHome from './views/wizard-home.js';
 import Command from 'electrum-command';
 import Forms from './forms.js';
 const changeView = ({view}, state) => {
