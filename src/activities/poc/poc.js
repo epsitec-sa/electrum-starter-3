@@ -13,9 +13,9 @@ export default class Poc extends React.Component {
       <div>
         {`Hello ${name}`}
         <br/>
-        <Icon {...this.link ()}/>
+        <Icon {...this.link ('icon')}/>
         <br/>
-        <Badge {...this.link ()}/>
+        <Badge {...this.link ('badge')}/>
         <Button id={state.id} action={act.SAY_HELLO} {...this.link ()}>Say hello...</Button>
         <Wizard {...this.link ('wizard.[forms]')} />
       </div>

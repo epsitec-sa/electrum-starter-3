@@ -5,9 +5,20 @@ import actuators from './actuators.js';
 import Activity from '../activity.js';
 
 const onInit = (state) => {
-  state.set ('name', '<nobody>')
-    .set ('glyph', 'binoculars').set ('size', '5x')
-    .set ('value', '12');
+
+  state.set ('name', '<nobody>');
+
+  const store = state.store;
+  const id    = state.id;
+
+  store.select (id)
+    .select ('icon')
+    .set ('glyph', 'binoculars').set ('size', '5x');
+
+  store.select (id)
+    .select ('badge')
+    .set ('value', '1234');
+
   const activityManager = state.getInherited ('am');
   activityManager.startActivity (state, 'forms', 'wizard', true);
 };
