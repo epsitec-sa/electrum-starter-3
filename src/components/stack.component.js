@@ -4,11 +4,13 @@ import React from 'react';
 
 export default class Stack extends React.Component {
   render () {
-    const {width, backgroundColor, children} = this.props;
+    const {backgroundColor, children} = this.props;
 
     return (
-      <div style={{width: width, backgroundColor: backgroundColor}}>
-        {children}
+      <div style={{display: 'flex', flexDirection: 'column', width: '100%', backgroundColor: backgroundColor}}>
+        <div style={this.styles}>
+          {children}
+        </div>
       </div>
     );
   }
