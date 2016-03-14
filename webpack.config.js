@@ -29,8 +29,8 @@ module.exports = {
     modulesDirectories: ['node_modules'],
     extensions: ['', '.js'],
     alias: {
-      electrum:       path.join (__dirname, 'node_modules/electrum'),
-      'electrum-arc': path.join (__dirname, 'node_modules/electrum-arc')
+      electrum:       path.join (__dirname, '../electrum'),
+      'electrum-arc': path.join (__dirname, '../electrum-arc')
     }
   },
 
