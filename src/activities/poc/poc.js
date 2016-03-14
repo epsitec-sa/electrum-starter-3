@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {Button, Boolean} from '../../all-components';
+import {Button, Icon} from '../../all-components';
 import act from './actuators.js';
 
 export default class Poc extends React.Component {
@@ -13,7 +13,7 @@ export default class Poc extends React.Component {
       <div>
         {`Hello ${name}`}
         <br/>
-        <Boolean text="coucou123" checked={true} />
+        <Icon {...this.link ('icon')}/>
         <Button id={state.id} action={act.SAY_HELLO} {...this.link ()}>Say hello...</Button>
         <Wizard {...this.link ('wizard.[forms]')} />
       </div>
