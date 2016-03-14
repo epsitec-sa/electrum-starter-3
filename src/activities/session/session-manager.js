@@ -4,7 +4,7 @@ import Electrum from 'electrum';
 import React from 'react';
 import act from './actuators.js';
 import {BasicList} from 'electrum-arc';
-import {Button} from '../../all-components';
+import {Button, Checkbox} from '../../all-components';
 import sessionTemplate from './session-template.js';
 
 export default class SessionManager extends React.Component {
@@ -16,6 +16,9 @@ export default class SessionManager extends React.Component {
           <Button action={act.START_SESSION ()} {...this.link ()}>
             New session
           </Button>
+          <Checkbox {...this.link ()} />
+          <Button action={act.CHANGE_TITLE ({text: 'I\'m happy!'})} {...this.link ()}>Be happy</Button>
+          <Button action={act.CHANGE_TITLE ({text: 'I\'m sad!'})} {...this.link ()}>Be sad</Button>
         </main>
         <h1>Your sessions:</h1>
         <BasicList

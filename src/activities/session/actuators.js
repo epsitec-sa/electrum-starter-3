@@ -12,7 +12,12 @@ const startActivity = (cmd, state) => {
   activityManager.startActivity (state, 'desktop', 'sessions');
 };
 
+const changeTitle = ({text}, state) => {
+  state.set ('title', text);
+}
+
 export default {
   SWITCH_SESSION: Command ('SWITCH_SESSION', switchActivity),
-  START_SESSION: Command ('START_SESSION', startActivity)
+  START_SESSION: Command ('START_SESSION', startActivity),
+  CHANGE_TITLE: Command ('CHANGE_TITLE', changeTitle)
 };

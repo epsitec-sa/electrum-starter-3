@@ -2,10 +2,13 @@
 import Electrum from 'electrum';
 import _Button from './components/button.component.js';
 import _Button$styles from './components/button.styles.js';
+import _Checkbox from './components/checkbox.component.js';
+import _Checkbox$styles from './components/checkbox.styles.js';
 import _Collection from './components/collection.component.js';
 import _CurrentActivityInfo from './components/current-activity-info.component.js';
 import _Label from './components/label.component.js';
 export const Button = Electrum.wrap ('Button', _Button, {styles: _Button$styles});
+export const Checkbox = Electrum.wrap ('Checkbox', _Checkbox, {styles: _Checkbox$styles});
 export const Collection = Electrum.wrap ('Collection', _Collection);
 export const CurrentActivityInfo = Electrum.wrap ('CurrentActivityInfo', _CurrentActivityInfo);
 export const Label = Electrum.wrap ('Label', _Label);
