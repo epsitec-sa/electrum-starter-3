@@ -4,7 +4,8 @@ import Electrum from 'electrum';
 import React from 'react';
 import act from './actuators.js';
 import {BasicList} from 'electrum-arc';
-import {Button, Checkbox, Stack, Stackrow, Stackelement} from '../../all-components';
+import {Button, Checkbox, Stack, Stackrow, Text} from '../../all-components';
+
 import sessionTemplate from './session-template.js';
 
 export default class SessionManager extends React.Component {
@@ -16,17 +17,19 @@ export default class SessionManager extends React.Component {
 
           <Stack backgroundColor='white' {...this.link ()}>
             <Stackrow aligned {...this.link ()}>
-              <Stackelement alignLeft {...this.link ()}>hello</Stackelement>
-              <Stackelement alignRight {...this.link ()}>pretty</Stackelement>
-              <Stackelement alignRight {...this.link ()}>kitty</Stackelement>
+              <Text alignLeft{...this.link ()} kind="title"/>
+              <Text alignRight{...this.link ()} kind="title"/>
+              <Text alignRight{...this.link ()} />
+
             </Stackrow>
             <Stackrow {...this.link ()}>
-              <Stackelement {...this.link ()}>how are you???</Stackelement>
-              <Stackelement {...this.link ()}>i m fine</Stackelement>
+              <div>how are you???</div>
+
+              <div>i m fine</div>
             </Stackrow>
           </Stack>
-        </main>
 
+        </main>
       </section>
     );
   }

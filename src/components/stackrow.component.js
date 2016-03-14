@@ -25,7 +25,7 @@ export default class Stackrow extends React.Component {
             {
               children.map ((child) => {
                 if (child.props.alignLeft !== undefined) {
-                  return (child);
+                  return (<div style={{margin: '0px 3px 0px 3px'}}>{child}</div>);
                 }
               })
             }
@@ -34,7 +34,7 @@ export default class Stackrow extends React.Component {
             {
               children.map ((child) => {
                 if (child.props.alignRight !== undefined) {
-                  return (child);
+                  return (<div style={{margin: '0px 3px 0px 3px'}}>{child}</div>);
                 }
               })
             }
@@ -45,7 +45,11 @@ export default class Stackrow extends React.Component {
     } else {
       return (
         <div style={this.styles}>
-          {children}
+          {
+            children.map ((child) => {
+              return (<div style={{margin: '0px 3px 0px 3px'}}>{child}</div>);
+            })
+          }
         </div>
       );
     }

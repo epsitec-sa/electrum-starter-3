@@ -3,9 +3,9 @@
 import React from 'react';
 import {ActivityViewer, Label} from '../../all-components';
 import {Contextualizer} from './contextualizer.js';
-import {StatusBar} from './StatusBar.js';
+import {StatusBar} from './status-bar.js';
 import {Launcher} from './launcher.js';
-import {LauncherItem} from './Launcher-item.js';
+import {LauncherItem} from './launcher-item.js';
 import {Tabs} from './tabs.js';
 import act from './actuators.js';
 

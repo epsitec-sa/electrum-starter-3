@@ -4,8 +4,10 @@ import actuators from './actuators.js';
 import Activity from '../activity.js';
 
 const onRun = (state) => {
+
   state.set ('sessionManagerPath', state.id)
-       .set ('title', 'I\'m confused...');
+       .set ('text', '?????');
+
   console.log (`sessionManagerPath=${state.id}`);
 };
 
