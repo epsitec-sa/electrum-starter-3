@@ -13,7 +13,7 @@ export default class Poc extends React.Component {
       <div>
         {`Hello ${name}`}
         <br/>
-        <Icon {...this.link ('icon')}/>
+        <Icon glyph="binoculars" size="2x" {...this.link ('icon')}/>
         <br/>
         <Badge {...this.link ('badge')}/>
         <Button id={state.id} action={act.SAY_HELLO} {...this.link ()}>Say hello...</Button>
