@@ -4,7 +4,7 @@ import React from 'react';
 
 export default class Stackrow extends React.Component {
   render () {
-    const {aligned, children} = this.props;
+    const {align, children} = this.props;
 
     let childrenArray = Array.isArray (children) ? children : [children];
 
@@ -44,12 +44,12 @@ export default class Stackrow extends React.Component {
     };
 
     if (childrenArray !== undefined) {
-      if (aligned === true) {
+      if (align === true) {
         return (
           <div style={this.styles}>
-            {renderAlignedChildren (childrenArray.filter ((child) => child.props.alignLeft === true), 'flex-start')}
+            {renderAlignedChildren (childrenArray.filter ((child) => child.props.alignedLeft === true), 'flex-start')}
 
-            {renderAlignedChildren (childrenArray.filter ((child) => child.props.alignRight === true), 'flex-end')}
+            {renderAlignedChildren (childrenArray.filter ((child) => child.props.alignedRight === true), 'flex-end')}
           </div>
         );
       } else {

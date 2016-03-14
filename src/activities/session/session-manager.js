@@ -17,10 +17,10 @@ export default class SessionManager extends React.Component {
 
           <Stack backgroundColor='white' {...this.link ()}>
 
-            <Stackrow aligned {...this.link ()}>
-              <div expanded alignLeft>al. left</div>
+            <Stackrow align {...this.link ()}>
+              <div alignedLeft>al. left</div>
 
-              <div expanded alignRight>al. right</div>
+              <div  alignedRight>al. right</div>
             </Stackrow>
             <Stackrow {...this.link ()}>
               <div expanded>expanded</div>
@@ -33,9 +33,9 @@ export default class SessionManager extends React.Component {
               <div expanded>same</div>
             </Stackrow>
             <Stackrow {...this.link ()}>
-              <div expanded>a</div>
-              <div expanded>aaaaa</div>
-              <div expanded>aaaaaaaaa</div>
+              <div>a</div>
+              <div>aaaaa</div>
+              <div>aaaaaaaaa</div>
             </Stackrow>
           </Stack>
 
