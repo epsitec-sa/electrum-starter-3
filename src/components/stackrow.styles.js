@@ -10,8 +10,7 @@ export default function (theme) {
       alignItems: 'center',
       justifyContent: 'space-between',
       marginTop: '5px',
-      marginBottom: '5px',
-      minHeight: '5px'
+      marginBottom: '5px'
     }
   };
 }
