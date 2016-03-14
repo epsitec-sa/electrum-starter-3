@@ -3,7 +3,7 @@
 export default function (theme) {
   return {
     base: {
-      fontFamily: `'Open Sans', Helvetica, Arial, Verdana, sans-serif`
+      fontFamily: `'Open Sans', Helvetica, Arial, Verdana, sans-serif`,
     },
     title: {
       textTransform: 'uppercase',

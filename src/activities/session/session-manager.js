@@ -16,17 +16,26 @@ export default class SessionManager extends React.Component {
         <main style={{height: '100%', width: '400px'}}>
 
           <Stack backgroundColor='white' {...this.link ()}>
-            <Stackrow aligned {...this.link ()}>
-              <Text alignLeft {...this.link ()} kind="title"/>
-              <Text alignRight {...this.link ()} kind="title"/>
-              <Text alignRight {...this.link ()} kind="title"/>
-              <Text alignRight {...this.link ()} />
 
+            <Stackrow aligned {...this.link ()}>
+              <div expanded alignLeft>al. left</div>
+
+              <div expanded alignRight>al. right</div>
             </Stackrow>
             <Stackrow {...this.link ()}>
-              <div>how are you???</div>
-              <div>i m fine</div>
-              <div>i m not</div>
+              <div expanded>expanded</div>
+
+              <div>normal 2</div>
+            </Stackrow>
+            <Stackrow {...this.link ()}>
+              <div expanded>all</div>
+              <div expanded>the</div>
+              <div expanded>same</div>
+            </Stackrow>
+            <Stackrow {...this.link ()}>
+              <div expanded>a</div>
+              <div expanded>aaaaa</div>
+              <div expanded>aaaaaaaaa</div>
             </Stackrow>
           </Stack>
 

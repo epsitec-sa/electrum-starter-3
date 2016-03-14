@@ -6,51 +6,34 @@ export default class Stackrow extends React.Component {
   render () {
     const {aligned, children} = this.props;
 
+    let childrenArray = Array.isArray (children) ? children : [children];
+
+
     const basicAlignStyle = {
       display: 'flex',
       flexDirection: 'row',
-      flexGrow: '1',
-      flexBasis: '0',
       alignItems: 'center'
     };
 
     const elementStyle = {
-      margin: '0px 3px 0px 3px'
+      margin: '0px 3px 0px 3px',
+      border: '1px solid green',
+      flexBasis: '0'
     };
 
     let renderChild = function (child) {
-      return (<div style={elementStyle}>{child}</div>);
+      if (child.props.expanded === true) {
+        return (<div style={{...elementStyle, flexGrow: '1'}}>{child}</div>);
+      } else {
+        return (<div style={{...elementStyle}}>{child}</div>);
+      }
     };
 
+    let renderAlignedChildren = function (children, justify) {
+      let grow = children.filter ((child) => child.props.expanded === true).length > 0 ? '1' : '0';
 
-    if (aligned !== undefined && children !== undefined) {
       return (
-        <div style={this.styles}>
-
-          <div style={{...basicAlignStyle, justifyContent: 'flex-start'}}>
-            {
-              children.map ((child) => {
-                if (child.props.alignLeft !== undefined) {
-                  return (renderChild (child));
-                }
-              })
-            }
-          </div>
-          <div style={{...basicAlignStyle, justifyContent: 'flex-end'}}>
-            {
-              children.map ((child) => {
-                if (child.props.alignRight !== undefined) {
-                  return (renderChild (child));
-                }
-              })
-            }
-          </div>
-
-        </div>
-      );
-    } else {
-      return (
-        <div style={this.styles}>
+        <div style={{...basicAlignStyle, flexGrow: grow, justifyContent: justify}}>
           {
             children.map ((child) => {
               return (renderChild (child));
@@ -58,6 +41,30 @@ export default class Stackrow extends React.Component {
           }
         </div>
       );
+    };
+
+    if (childrenArray !== undefined) {
+      if (aligned === true) {
+        return (
+          <div style={this.styles}>
+            {renderAlignedChildren (childrenArray.filter ((child) => child.props.alignLeft === true), 'flex-start')}
+
+            {renderAlignedChildren (childrenArray.filter ((child) => child.props.alignRight === true), 'flex-end')}
+          </div>
+        );
+      } else {
+        return (
+          <div style={this.styles}>
+            {
+              childrenArray.map ((child) => {
+                return (renderChild (child));
+              })
+            }
+          </div>
+        );
+      }
+    } else {
+      return null;
     }
   }
 }

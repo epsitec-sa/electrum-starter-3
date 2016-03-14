@@ -7,7 +7,8 @@ export default function (theme) {
       flexDirection: 'column',
       minWidth: '100%',
       maxWidth: '100%',
-      margin: '15px 12px 15px 12px'
+      margin: '15px 12px 15px 12px',
+      whiteSpace: 'nowrap'
     }
   };
 }
