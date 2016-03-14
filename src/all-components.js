@@ -1,5 +1,6 @@
 'use strict';
 import Electrum from 'electrum';
+import _Badge from './components/badge.component.js';
 import _Boolean from './components/boolean.component.js';
 import _Button from './components/button.component.js';
 import _Button$styles from './components/button.styles.js';
@@ -7,6 +8,7 @@ import _Collection from './components/collection.component.js';
 import _CurrentActivityInfo from './components/current-activity-info.component.js';
 import _Icon from './components/icon.component.js';
 import _Label from './components/label.component.js';
+export const Badge = Electrum.wrap ('Badge', _Badge);
 export const Boolean = Electrum.wrap ('Boolean', _Boolean);
 export const Button = Electrum.wrap ('Button', _Button, {styles: _Button$styles});
 export const Collection = Electrum.wrap ('Collection', _Collection);

@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {Button, Icon} from '../../all-components';
+import {Button, Icon, Badge} from '../../all-components';
 import act from './actuators.js';
 
 export default class Poc extends React.Component {
@@ -13,7 +13,9 @@ export default class Poc extends React.Component {
       <div>
         {`Hello ${name}`}
         <br/>
-        <Icon {...this.link ('icon')}/>
+        <Icon {...this.link ()}/>
+        <br/>
+        <Badge {...this.link ()}/>
         <Button id={state.id} action={act.SAY_HELLO} {...this.link ()}>Say hello...</Button>
         <Wizard {...this.link ('wizard.[forms]')} />
       </div>
