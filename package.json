@@ -1,22 +1,26 @@
 {
   "name": "electrum-starter-3",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "src/index.js",
+  "private": true,
   "scripts": {
-    "compile": "rimraf ./lib && babel -d lib src",
+    "babel": "babel --quiet --out-dir lib src && babel --quiet --out-dir lib.test src.test",
+    "clean": "rimraf ./lib && rimraf ./lib.test",
+    "compile": "npm run clean && npm run regen && npm run babel",
+    "mocha": "cross-env BABEL_ENV=test mocha lib.test/**/*.js",
     "prepublish": "npm run compile",
     "regen": "electrum-require-components --crlf --wrap ./src components .component.js all-components.js",
     "start": "node webpack.devserver.js",
-    "test": "mocha src/test/**/*.js",
+    "test": "npm run compile && npm run mocha",
     "watch": "webpack --watch --progress --colors -d",
     "webpack": "webpack -d"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electrum": "^2.19.2",
-    "electrum-arc": "^1.13.7",
+    "electrum": "^2.22.0",
+    "electrum-arc": "^2.1.0",
     "electrum-command": "^2.0.0"
   },
   "peerDependencies": {
@@ -24,17 +28,15 @@
   },
   "devDependencies": {
     "babel-env": "^1.0.0",
-    "chai": "^3.5.0",
+    "cross-env": "^1.0.7",
     "electrum-require-components": "^1.4.1",
     "electrum-style-reload": "^1.0.2",
-    "jsdom": "^8.0.1",
-    "mai-chai": "^1.1.2",
-    "mocha": "^2.4.5",
+    "mai-chai": "^2.3.0",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.2",
     "redbox-react": "^1.2.2",
-    "rimraf": "^2.5.1",
-    "webpack": "^1.12.12",
+    "rimraf": "^2.5.2",
+    "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   }
 }
