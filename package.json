@@ -10,26 +10,25 @@
     "compile": "npm run clean && npm run regen && npm run babel",
     "mocha": "cross-env BABEL_ENV=test mocha lib.test/**/*.js",
     "prepublish": "npm run compile",
-    "regen": "electrum-require-components --crlf --wrap ./src components .component.js all-components.js",
+    "regen": "require-self && electrum-require-components --crlf --wrap ./src components .component.js all-components.js",
     "start": "node webpack.devserver.js",
     "test": "npm run compile && npm run mocha",
     "watch": "webpack --watch --progress --colors -d",
     "webpack": "webpack -d"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Epsitec SA",
+  "license": "MIT",
   "dependencies": {
-    "electrum": "^2.22.0",
-    "electrum-arc": "^2.1.0",
-    "electrum-command": "^2.0.0"
+    "electrum": "*",
+    "electrum-arc": "*",
+    "electrum-command": "*"
   },
   "peerDependencies": {
     "react": "^0.14.7"
   },
   "devDependencies": {
-    "babel-env": "^1.0.0",
+    "babel-env": "^1.1.0",
     "babel-loader": "^6.2.4",
-    "babel-plugin-react-transform": "^2.0.2",
     "cross-env": "^1.0.7",
     "electrum-require-components": "^1.4.1",
     "electrum-style-reload": "^1.0.2",
@@ -37,6 +36,7 @@
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.2",
     "redbox-react": "^1.2.2",
+    "require-self": "^0.1.0",
     "rimraf": "^2.5.2",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"

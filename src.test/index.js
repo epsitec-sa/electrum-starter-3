@@ -1,7 +1,7 @@
 'use strict';
 
 import {expect} from 'mai-chai';
-import '../src/index.js';
+import 'electrum-starter-3';
 
 describe ('Starter', () => {
   it ('works', () => {
