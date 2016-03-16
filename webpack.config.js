@@ -27,7 +27,11 @@ module.exports = {
 
   resolve: {
     modulesDirectories: ['node_modules'],
-    extensions: ['', '.js']
+    extensions: ['', '.js'],
+    alias: {
+      electrum:       path.join (__dirname, '../electrum'),
+      'electrum-arc': path.join (__dirname, '../electrum-arc')
+    }
   },
 
   plugins: [

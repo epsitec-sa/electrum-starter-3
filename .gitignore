@@ -1,5 +1,6 @@
 lib/
+lib.test/
 dist/
-node_modules/
+node_modules
 .directory
 .DS_Store
