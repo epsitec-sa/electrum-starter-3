@@ -13,13 +13,14 @@ export default class IconBadge extends React.Component {
       position: 'relative',
     };
     const divStyle2 = {
-      position: 'relative',
+      position: 'absolute',
       bottom: '0px',
       right: '0px',
       width: '20px',
       height: '20px',
-    };
-    const badgeStyle = {
+      textAlign: 'center',
+      lineHeight: '20px',
+      borderRadius: '2em',
       backgroundColor: '#00f',
       color: '#fff',
     };
@@ -33,7 +34,7 @@ export default class IconBadge extends React.Component {
       <div style={divStyle1}>
         <Icon glyph={g} size={s} {...this.link ()}/>
         <div style={divStyle2}>
-          <label style={badgeStyle}>5</label>
+          5
         </div>
       </div>
     );
