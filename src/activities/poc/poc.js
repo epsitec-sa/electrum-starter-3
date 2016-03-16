@@ -13,11 +13,15 @@ export default class Poc extends React.Component {
       <div>
         {`Hello ${name}`}
         <br/>
-        <Icon glyph="binoculars" size="2x" {...this.link ('icon')}/>
-        <br/>
+        <Icon glyph="car" size="2x" {...this.link ('icon')}/>
+        <Badge {...this.link ('badge')} value="1"/>
+        <Badge {...this.link ('badge')} value="12"/>
+        <Badge {...this.link ('badge')} value="123"/>
         <Badge {...this.link ('badge')}/>
-        <br/>
+        <br/><br/>
+        <IconBadge glyph="car" size="1x" value="7" {...this.link ('icon-badge')}/>
         <IconBadge glyph="car" size="2x" value="7" {...this.link ('icon-badge')}/>
+        <IconBadge glyph="car" size="3x" value="7" {...this.link ('icon-badge')}/>
         <Button id={state.id} action={act.SAY_HELLO} {...this.link ()}>Say hello...</Button>
         <Wizard {...this.link ('wizard.[forms]')} />
       </div>

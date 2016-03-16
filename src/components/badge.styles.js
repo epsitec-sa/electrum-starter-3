@@ -6,9 +6,15 @@ export default function (theme) {
       backgroundColor: '#f00',
       color: '#fff',
       borderRadius: '2em',
-      fontSize: '75%',
+      fontSize: '60%',
       fontWeight: 'bold',
       padding: '0.4em'
+    },
+    float: {
+      backgroundColor: '#0f0',
+      position: 'relative',
+      bottom: 0,
+      left: 0
     }
   };
 }

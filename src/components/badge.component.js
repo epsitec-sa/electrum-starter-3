@@ -9,7 +9,7 @@ export default class Badge extends React.Component {
 
     return (
       <label style={this.styles}>
-          {v}
+        {v}
       </label>
     );
   }

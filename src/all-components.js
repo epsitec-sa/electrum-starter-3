@@ -10,6 +10,7 @@ import _Collection from './components/collection.component.js';
 import _CurrentActivityInfo from './components/current-activity-info.component.js';
 import _IconBadge from './components/icon-badge.component.js';
 import _Icon from './components/icon.component.js';
+import _Icon$styles from './components/icon.styles.js';
 import _Label from './components/label.component.js';
 export const Badge = Electrum.wrap ('Badge', _Badge, {styles: _Badge$styles, component: _Badge$component});
 export const Boolean = Electrum.wrap ('Boolean', _Boolean);
@@ -17,5 +18,5 @@ export const Button = Electrum.wrap ('Button', _Button, {styles: _Button$styles}
 export const Collection = Electrum.wrap ('Collection', _Collection);
 export const CurrentActivityInfo = Electrum.wrap ('CurrentActivityInfo', _CurrentActivityInfo);
 export const IconBadge = Electrum.wrap ('IconBadge', _IconBadge);
-export const Icon = Electrum.wrap ('Icon', _Icon);
+export const Icon = Electrum.wrap ('Icon', _Icon, {styles: _Icon$styles});
 export const Label = Electrum.wrap ('Label', _Label);

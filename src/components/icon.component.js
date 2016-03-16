@@ -9,7 +9,7 @@ export default class Icon extends React.Component {
     const s = size  || state.get ('size');
 
     return (
-      <i className={`fa fa-${g} fa-${s}`}/>
+      <i style={this.styles} className={`fa fa-${g} fa-${s}`}/>
     );
   }
 }
