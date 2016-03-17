@@ -12,7 +12,8 @@ export default class Poc extends React.Component {
 
     const mainStyle = {
       display: 'flex',
-      flexWrap: 'wrap'
+      flexWrap: 'wrap',
+      alignItems: 'flex-end',
     };
 
     return (
@@ -28,12 +29,12 @@ export default class Poc extends React.Component {
           <Badge {...this.link ('badge')}/>
         </div>
         <div style={mainStyle}>
-          <IconBadge glyph="car" size="1x" value="7" {...this.link ('icon-badge')}/>
-          <IconBadge glyph="car" size="2x" value="7" {...this.link ('icon-badge')}/>
-          <IconBadge glyph="car" size="3x" value="7" {...this.link ('icon-badge')}/>
-          <IconBadge glyph="car" size="2x" value="12" {...this.link ('icon-badge')}/>
-          <IconBadge glyph="car" size="2x" value="123" {...this.link ('icon-badge')}/>
-          <IconBadge glyph="car" size="2x" value="1234" {...this.link ('icon-badge')}/>
+          <IconBadge glyph="car" size="1x" value="7" {...this.link ('icon-badge')}/>__
+          <IconBadge glyph="car" size="2x" value="7" {...this.link ('icon-badge')}/>__
+          <IconBadge glyph="car" size="3x" value="7" {...this.link ('icon-badge')}/>__
+          <IconBadge glyph="car" size="2x" value="12" {...this.link ('icon-badge')}/>__
+          <IconBadge glyph="car" size="2x" value="123" {...this.link ('icon-badge')}/>__
+          <IconBadge glyph="car" size="2x" value="1234" {...this.link ('icon-badge')}/>__
         </div>
         <div style={mainStyle}>
           <Button id={state.id} action={act.SAY_HELLO} {...this.link ()}>Say hello...</Button>
