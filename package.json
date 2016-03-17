@@ -30,7 +30,7 @@
     "babel-env": "^1.1.0",
     "babel-loader": "^6.2.4",
     "cross-env": "^1.0.7",
-    "electrum-require-components": "^1.4.1",
+    "electrum-require-components": "^1.5.1",
     "electrum-style-reload": "^1.0.2",
     "mai-chai": "^2.3.0",
     "react-transform-catch-errors": "^1.0.2",
