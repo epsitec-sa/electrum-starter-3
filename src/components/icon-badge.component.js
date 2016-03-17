@@ -9,42 +9,44 @@ export default class IconBadge extends React.Component {
     const s = size  || state.get ('size');
     const v = value || state.get ('value');
 
-    var dim = '1em';
+    var dim = 1;
     switch (s) {
       case '1x':
-        dim = '1em';
+        dim = 1;
         break;
       case '2x':
-        dim = '2em';
+        dim = 2;
         break;
       case '3x':
-        dim = '3em';
+        dim = 3;
         break;
       case '4x':
-        dim = '4em';
+        dim = 4;
         break;
       case '5x':
-        dim = '5em';
+        dim = 5;
         break;
     }
 
+    const radius = dim * 4;
+
     const divStyle1 = {
       position: 'relative',
-      width: dim,
-      height: dim,
+      width: dim + 'em',
+      height: dim + 'em',
     };
     const divStyle2 = {
       position: 'absolute',
       bottom: '0px',
       right: '0px',
-      width: '20px',
-      height: '20px',
+      width: (radius * 2) + 'px',
+      height: (radius * 2) + 'px',
       textAlign: 'center',
-      lineHeight: '20px',
-      fontSize: '60%',
+      lineHeight: (radius * 2) + 'px',
+      fontSize: (radius * 1.5) + 'px',
       fontWeight: 'bold',
-      padding: '2px',
-      borderRadius: '2em',
+      padding: (radius / 5) + 'px',
+      borderRadius: radius * 2,
       backgroundColor: '#f00',
       color: '#fff',
     };
