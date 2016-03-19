@@ -28,7 +28,7 @@ export default class IconBadge extends React.Component {
         break;
     }
 
-    const radius = dim * 4;
+    const radius = 10;
 
     const divStyle1 = {
       position: 'relative',
@@ -39,7 +39,7 @@ export default class IconBadge extends React.Component {
       position: 'absolute',
       bottom: '0px',
       right: '0px',
-      width: (radius * 2) + 'px',
+      minWidth: (radius * 2) + 'px',
       height: (radius * 2) + 'px',
       textAlign: 'center',
       lineHeight: (radius * 2) + 'px',
