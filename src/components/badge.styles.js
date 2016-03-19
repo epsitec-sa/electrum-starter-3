@@ -15,10 +15,9 @@ export default function (theme) {
       padding: '0.4em'
     },
     float: {
-      backgroundColor: '#0f0',
-      position: 'relative',
+      position: 'absolute',
       bottom: 0,
-      left: 0
+      right: 0
     }
   };
 }

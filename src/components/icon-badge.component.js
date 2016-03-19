@@ -32,8 +32,8 @@ export default class IconBadge extends React.Component {
 
     const divStyle1 = {
       position: 'relative',
-      width: dim + 'em',
-      height: dim + 'em',
+      // width: dim + 'em',
+      // height: dim + 'em',
     };
     const divStyle2 = {
       position: 'absolute',
@@ -52,14 +52,14 @@ export default class IconBadge extends React.Component {
     };
 
     return (
-
       // <div>
       //   <Icon glyph={g} size={s} {...this.link ()}/>
       //   <Badge kind="float" value={v} {...this.link ()} />
+      // <div style={divStyle2}>{v}</div>
       // </div>
       <div style={divStyle1}>
         <Icon glyph={g} size={s} {...this.link ()}/>
-        <div style={divStyle2}>{v}</div>
+        <Badge kind="float" value={v} {...this.link ()} />
       </div>
     );
   }

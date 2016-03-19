@@ -22,7 +22,9 @@ export default class Poc extends React.Component {
           {`Hello ${name}`}
         </div>
         <div style={mainStyle}>
-          <Icon glyph="car" size="2x" {...this.link ('icon')}/>
+          <Icon kind="small"  glyph="camera" size="1x" {...this.link ('icon')}/>
+          <Icon kind="normal" glyph="camera" size="2x" {...this.link ('icon')}/>
+          <Icon kind="large"  glyph="camera" size="3x" {...this.link ('icon')}/>
           <Badge {...this.link ('badge')} value="1"/>
           <Badge {...this.link ('badge')} value="12"/>
           <Badge {...this.link ('badge')} value="123"/>
