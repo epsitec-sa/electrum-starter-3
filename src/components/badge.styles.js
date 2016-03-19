@@ -3,6 +3,10 @@
 export default function (theme) {
   return {
     base: {
+      minWidth: '16px',
+      height: '16px',
+      lineHeight: '16px',
+      textAlign: 'center',
       backgroundColor: '#f00',
       color: '#fff',
       borderRadius: '2em',
