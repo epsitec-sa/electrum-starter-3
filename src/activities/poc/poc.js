@@ -30,6 +30,7 @@ export default class Poc extends React.Component {
           <Icon kind="normal" glyph="shield" size="2x" flip="horizontal" {...this.link ('icon')}/>
           <Icon kind="normal" glyph="shield" size="2x" flip="vertical" {...this.link ('icon')}/>
           <Icon kind="normal" glyph="cog" size="2x" spin="on" {...this.link ('icon')}/>
+          <Icon kind="normal" glyph="cog" size="2x" spin="on" rounded="true" {...this.link ('icon')}/>
           <Icon kind="normal" glyph="refresh" size="2x" spin="on" {...this.link ('icon')}/>
           <Badge {...this.link ('badge')} value="1"/>
           <Badge {...this.link ('badge')} value="12"/>
