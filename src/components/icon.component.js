@@ -23,26 +23,6 @@ export default class Icon extends React.Component {
     // const divStyle2 = {
     // };
 
-    var renderRotate;
-    if (inputRotate === '90') {
-      renderRotate = 'fa-rotate-90';
-    } else if (inputRotate === '180') {
-      renderRotate = 'fa-rotate-180';
-    } else if (inputRotate === '270') {
-      renderRotate = 'fa-rotate-270';
-    } else {
-      renderRotate = '';
-    }
-
-    var renderFlip;
-    if (inputFlip === 'horizontal') {
-      renderFlip = 'fa-flip-horizontal';
-    } else if (inputFlip === 'vertical') {
-      renderFlip = 'fa-flip-vertical';
-    } else {
-      renderFlip = '';
-    }
-
     var renderSpin;
     if (inputSpin === 'on') {
       renderSpin = 'fa-spin';
@@ -77,7 +57,12 @@ export default class Icon extends React.Component {
     return (
       <div style={divStyle}>
         <i style={x}
-          className={`fa fa-${inputGlyph} fa-${inputSize} ${renderRotate} ${renderFlip} ${renderSpin}`}/>
+          className={`
+            fa fa-${inputGlyph}
+            fa-${inputSize}
+            fa-rotate-${inputRotate}
+            fa-flip-${inputFlip}
+            ${renderSpin}`}/>
       </div>
     );
   }
