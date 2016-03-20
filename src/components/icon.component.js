@@ -50,6 +50,8 @@ export default class Icon extends React.Component {
       renderSpin = '';
     }
 
+    var x = this.styles;
+
     var divStyle;
     if (inputRounded === 'true') {
       var padding = '5px';
@@ -59,16 +61,23 @@ export default class Icon extends React.Component {
         padding = '20px';
       }
       divStyle = {
-       backgroundColor: '#336699',
-       borderRadius: '1000px',
-       padding: padding,
-       color: '#fff',
-     };
+        backgroundColor: '#336699',
+        borderRadius: '1000px',
+        padding: padding,
+        color: '#fff',
+      };
+      // Le but est de modifier la couleur hover lorsque l'icône est rounded,
+      // mais cela ne fonctionne pas !!!
+      const y = {
+        color: '#f00',
+      };
+      x[':hover'] = y;
     }
 
     return (
       <div style={divStyle}>
-        <i style={this.styles} className={`fa fa-${inputGlyph} fa-${inputSize} ${renderRotate} ${renderFlip} ${renderSpin}`}/>
+        <i style={x}
+          className={`fa fa-${inputGlyph} fa-${inputSize} ${renderRotate} ${renderFlip} ${renderSpin}`}/>
       </div>
     );
   }
