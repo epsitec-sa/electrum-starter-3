@@ -8,7 +8,7 @@ export default function (theme) {
       height: '32px',
       textAlign: 'center',
       verticalAlign: 'middle',
-      backgroundColor: '#bbb',
+      // backgroundColor: '#bbb',
       ':hover': {
         color: '#777'
       }

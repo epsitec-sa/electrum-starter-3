@@ -12,7 +12,7 @@ export default function (theme) {
       borderRadius: '2em',
       fontSize: '60%',
       fontWeight: 'bold',
-      padding: '0.4em'
+      padding: '0.2em'
     },
     float: {
       position: 'absolute',

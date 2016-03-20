@@ -5,11 +5,11 @@ import React from 'react';
 export default class Icon extends React.Component {
   render () {
     const {state, glyph, size, rotate, flip, spin} = this.props;
-    const renderGlyph  = glyph  || state.get ('glyph');
-    const renderSize   = size   || state.get ('size');
-    const renderRotate = rotate || state.get ('rotate');
-    const renderFlip   = flip   || state.get ('flip');
-    const renderSpin   = spin   || state.get ('spin');
+    const inputGlyph  = glyph  || state.get ('glyph');
+    const inputSize   = size   || state.get ('size');
+    const inputRotate = rotate || state.get ('rotate');
+    const inputFlip   = flip   || state.get ('flip');
+    const inputSpin   = spin   || state.get ('spin');
 
     // const divStyle1 = {
     //   display: 'table-cell',
@@ -22,36 +22,36 @@ export default class Icon extends React.Component {
     // const divStyle2 = {
     // };
 
-    var finalRotate;
-    if (renderRotate === '90') {
-      finalRotate = 'fa-rotate-90';
-    } else if (renderRotate === '180') {
-      finalRotate = 'fa-rotate-180';
-    } else if (renderRotate === '270') {
-      finalRotate = 'fa-rotate-270';
+    var renderRotate;
+    if (inputRotate === '90') {
+      renderRotate = 'fa-rotate-90';
+    } else if (inputRotate === '180') {
+      renderRotate = 'fa-rotate-180';
+    } else if (inputRotate === '270') {
+      renderRotate = 'fa-rotate-270';
     } else {
-      finalRotate = '';
+      renderRotate = '';
     }
 
-    var finalFlip;
-    if (renderFlip === 'horizontal') {
-      finalFlip = 'fa-flip-horizontal';
-    } else if (renderFlip === 'vertical') {
-      finalFlip = 'fa-flip-vertical';
+    var renderFlip;
+    if (inputFlip === 'horizontal') {
+      renderFlip = 'fa-flip-horizontal';
+    } else if (inputFlip === 'vertical') {
+      renderFlip = 'fa-flip-vertical';
     } else {
-      finalFlip = '';
+      renderFlip = '';
     }
 
-    var finalSpin;
-    if (renderSpin === 'on') {
-      finalSpin = 'fa-spin';
+    var renderSpin;
+    if (inputSpin === 'on') {
+      renderSpin = 'fa-spin';
     } else {
-      finalSpin = '';
+      renderSpin = '';
     }
 
     return (
       <div>
-        <i style={this.styles} className={`fa fa-${renderGlyph} fa-${renderSize} ${finalRotate} ${finalFlip} ${finalSpin}`}/>
+        <i style={this.styles} className={`fa fa-${inputGlyph} fa-${inputSize} ${renderRotate} ${renderFlip} ${renderSpin}`}/>
       </div>
     );
   }
