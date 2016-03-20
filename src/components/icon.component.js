@@ -68,7 +68,7 @@ export default class Icon extends React.Component {
 
     return (
       <div style={divStyle}>
-        <i style={this.styles}
+        <i style={this.styles}  // pourquoi est-ce ko avec style={iconStyle} ?
           className={`
             fa fa-${inputGlyph}
             fa-${inputSize}
