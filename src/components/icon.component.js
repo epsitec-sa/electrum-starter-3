@@ -41,7 +41,7 @@ export default class Icon extends React.Component {
     }
 
     const iconStyle = {
-      base: {
+      base: {  // il n'est pas possible d'avoir une sous-table ! Comment faire ?
         display: 'table-cell',
         width: '32px',
         height: '32px',
@@ -69,8 +69,8 @@ export default class Icon extends React.Component {
     return (
       <div style={divStyle}>
         <i style={this.styles}  // pourquoi est-ce ko avec style={iconStyle} ?
-          className={`
-            fa fa-${inputGlyph}
+          className={`fa
+            fa-${inputGlyph}
             fa-${inputSize}
             fa-rotate-${inputRotate}
             fa-flip-${inputFlip}
