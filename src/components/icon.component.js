@@ -59,9 +59,10 @@ export default class Icon extends React.Component {
         padding = '20px';
       }
       divStyle = {
-       backgroundColor: '#82a1c2',
+       backgroundColor: '#336699',
        borderRadius: '1000px',
-       padding: padding
+       padding: padding,
+       color: '#fff',
      };
     }
 
