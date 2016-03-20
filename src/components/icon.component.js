@@ -12,17 +12,6 @@ export default class Icon extends React.Component {
     const inputSpin    = spin    || state.get ('spin');
     const inputRounded = rounded || state.get ('rounded');
 
-    // const divStyle1 = {
-    //   display: 'table-cell',
-    //   width: '64px',
-    //   height: '64px',
-    //   textAlign: 'center',
-    //   verticalAlign: 'middle',
-    //   backgroundColor: '#bbb',
-    // };
-    // const divStyle2 = {
-    // };
-
     var renderSpin;
     if (inputSpin === 'on') {
       renderSpin = 'fa-spin';
@@ -30,7 +19,8 @@ export default class Icon extends React.Component {
       renderSpin = '';
     }
 
-    var x = this.styles;
+    var iconColor = '#000';
+    var iconHoverColor = '#777';
 
     var divStyle;
     if (inputRounded === 'true') {
@@ -40,23 +30,45 @@ export default class Icon extends React.Component {
       } else if (inputSize === '3x') {
         padding = '20px';
       }
+      iconColor = '#fff';
+      iconHoverColor = '#aaa';
       divStyle = {
         backgroundColor: '#336699',
         borderRadius: '1000px',
         padding: padding,
-        color: '#fff',
+        color: iconColor,
       };
-      // Le but est de modifier la couleur hover lorsque l'icône est rounded,
-      // mais cela ne fonctionne pas !!!
-      const y = {
-        color: '#f00',
-      };
-      x[':hover'] = y;
     }
+
+    const iconStyle = {
+      base: {
+        display: 'table-cell',
+        width: '32px',
+        height: '32px',
+        textAlign: 'center',
+        verticalAlign: 'middle',
+        // backgroundColor: '#bbb',
+        ':hover': {
+          color: iconHoverColor,
+        }
+      },
+      small: {
+        width: '32px',
+        height: '32px',
+      },
+      normal: {
+        width: '48px',
+        height: '48px',
+      },
+      large: {
+        width: '64px',
+        height: '64px',
+      },
+    };
 
     return (
       <div style={divStyle}>
-        <i style={x}
+        <i style={this.styles}
           className={`
             fa fa-${inputGlyph}
             fa-${inputSize}
