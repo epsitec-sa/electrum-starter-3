@@ -1,16 +1,20 @@
 {
-  "presets": ["stage-0", "es2015", "react"],
+  "presets": ["stage-0", "node5", "react"],
   "env": {
     "test": {
       "plugins": [
-        ["transform-react-display-name"],
-        ["transform-decorators"]
+        "transform-react-display-name",
+        "transform-decorators",
+        "transform-class-properties",
+        "transform-es2015-classes"
       ]
     },
     "development": {
       "plugins": [
-        ["transform-react-display-name"],
-        ["transform-decorators"],
+        "transform-react-display-name",
+        "transform-decorators",
+        "transform-class-properties",
+        "transform-es2015-classes",
         ["react-transform", {
           "transforms": [{
             "transform": "react-transform-hmr",
