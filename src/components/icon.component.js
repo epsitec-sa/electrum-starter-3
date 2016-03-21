@@ -24,12 +24,15 @@ export default class Icon extends React.Component {
 
     var divStyle;
     if (inputRounded === 'true') {
-      var padding = '5px';
-      if (inputSize === '2x') {
-        padding = '10px';
-      } else if (inputSize === '3x') {
-        padding = '20px';
+      const paddingArray = {
+        '2x': '10px',
+        '3x': '20px',
+      };
+      var padding = paddingArray[inputSize];
+      if (!padding) {
+        padding = '5px';
       }
+
       iconColor = '#fff';
       iconHoverColor = '#aaa';
       divStyle = {
