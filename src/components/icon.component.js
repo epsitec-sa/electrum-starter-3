@@ -4,13 +4,14 @@ import React from 'react';
 
 export default class Icon extends React.Component {
   render () {
-    const {state, glyph, size, rotate, flip, spin, rounded} = this.props;
+    const {state, glyph, size, rotate, flip, spin, rounded, active} = this.props;
     const inputGlyph   = glyph   || state.get ('glyph');
     const inputSize    = size    || state.get ('size');
     const inputRotate  = rotate  || state.get ('rotate');
     const inputFlip    = flip    || state.get ('flip');
     const inputSpin    = spin    || state.get ('spin');
     const inputRounded = rounded || state.get ('rounded');
+    const inputActive  = active  || state.get ('active');
 
     var renderSpin;
     if (inputSpin === 'on') {
@@ -50,10 +51,12 @@ export default class Icon extends React.Component {
       textAlign: 'center',
       verticalAlign: 'middle',
       // backgroundColor: '#bbb',
-      ':hover': {
-        color: iconHoverColor,
-      }
     };
+    if (inputActive === 'on') {
+      iconStyle[':hover'] = {
+        color: iconHoverColor,
+      };
+    }
     if (this.props.kind === 'normal') {
       iconStyle.width = '48px';
       iconStyle.height = '48px';

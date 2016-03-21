@@ -40,7 +40,7 @@ export default class Poc extends React.Component {
         <div style={mainStyle}>
           <Icon kind="small"  glyph="camera" rounded="true" size="1x" {...this.link ('icon')}/>
           <Icon kind="normal" glyph="camera" rounded="true" size="2x" {...this.link ('icon')}/>
-          <Icon kind="large"  glyph="camera" rounded="true" size="3x" {...this.link ('icon')}/>
+          <Icon kind="large"  glyph="camera" rounded="true" size="3x" active="on" {...this.link ('icon')}/>
         </div>
         <div style={mainStyle}>
           <IconBadge glyph="car" size="1x" value="7" {...this.link ('icon-badge')}/>__
