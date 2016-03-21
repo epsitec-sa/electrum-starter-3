@@ -13,27 +13,21 @@ export default class Icon extends React.Component {
     const inputRounded = rounded || state.get ('rounded');
     const inputActive  = active  || state.get ('active');
 
-    var renderSpin;
-    if (inputSpin === 'on') {
-      renderSpin = 'fa-spin';
-    } else {
-      renderSpin = '';
-    }
+    const renderSpin = inputSpin ? 'fa-spin' : '';
 
     var iconColor = '#000';
     var iconHoverColor = '#777';
 
     var divStyle;
     if (inputRounded === 'true') {
-      const paddingArray = {
+      const paddingDict = {
         '2x': '10px',
         '3x': '20px',
       };
-      var padding = paddingArray[inputSize];
+      var padding = paddingDict[inputSize];
       if (!padding) {
         padding = '5px';
       }
-
       iconColor = '#fff';
       iconHoverColor = '#aaa';
       divStyle = {
