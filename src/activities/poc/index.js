@@ -14,19 +14,16 @@ const onInit = (state) => {
   store.select (id)
     .select ('icon')
     .set ('glyph', 'binoculars')
-    .set ('size', '1x')
-    .set ('active', '');
+    .set ('size', '1x');
 
   store.select (id)
     .select ('badge')
-    .set ('value', '666')
-    .set ('active', '');
+    .set ('value', '666');
 
   store.select (id)
     .select ('icon-badge')
     .set ('glyph', 'binoculars')
-    .set ('size', '1x')
-    .set ('active', '');
+    .set ('size', '1x');
 
   const activityManager = state.getInherited ('am');
   activityManager.startActivity (state, 'forms', 'wizard', true);
