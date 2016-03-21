@@ -24,7 +24,7 @@ export default class Poc extends React.Component {
         <div style={mainStyle}>
           <Icon kind="small"  glyph="camera" size="1x" {...this.link ('icon')}/>
           <Icon kind="normal" glyph="camera" size="2x" {...this.link ('icon')}/>
-          <Icon kind="large"  glyph="camera" size="3x" active="on" {...this.link ('icon')}/>
+          <Icon kind="large"  glyph="camera" size="3x" active {...this.link ('icon')}/>
           <Icon kind="normal" glyph="shield" size="2x" rotate="90" {...this.link ('icon')}/>
           <Icon kind="normal" glyph="shield" size="2x" rotate="180" {...this.link ('icon')}/>
           <Icon kind="normal" glyph="shield" size="2x" flip="horizontal" {...this.link ('icon')}/>
@@ -38,9 +38,9 @@ export default class Poc extends React.Component {
           <Badge {...this.link ('badge')}/>
         </div>
         <div style={mainStyle}>
-          <Icon kind="small"  glyph="camera" rounded="true" size="1x" active="on" {...this.link ('icon')}/>
-          <Icon kind="normal" glyph="camera" rounded="true" size="2x" active="off" {...this.link ('icon')}/>
-          <Icon kind="large"  glyph="camera" rounded="true" size="3x" active="on" {...this.link ('icon')}/>
+          <Icon kind="small"  glyph="camera" rounded="true" size="1x" active {...this.link ('icon')}/>
+          <Icon kind="normal" glyph="camera" rounded="true" size="2x" {...this.link ('icon')}/>
+          <Icon kind="large"  glyph="camera" rounded="true" size="3x" active {...this.link ('icon')}/>
         </div>
         <div style={mainStyle}>
           <IconBadge glyph="car" size="1x" value="7" {...this.link ('icon-badge')}/>__

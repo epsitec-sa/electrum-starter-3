@@ -46,7 +46,7 @@ export default class Icon extends React.Component {
       verticalAlign: 'middle',
       // backgroundColor: '#bbb',
     };
-    if (inputActive === 'on') {
+    if (inputActive) {
       iconStyle[':hover'] = {
         color: iconHoverColor,
       };
