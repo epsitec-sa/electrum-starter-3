@@ -43,35 +43,29 @@ export default class Icon extends React.Component {
       };
     }
 
-    const iconStyle = {
-      base: {  // il n'est pas possible d'avoir une sous-table ! Comment faire ?
-        display: 'table-cell',
-        width: '32px',
-        height: '32px',
-        textAlign: 'center',
-        verticalAlign: 'middle',
-        // backgroundColor: '#bbb',
-        ':hover': {
-          color: iconHoverColor,
-        }
-      },
-      small: {
-        width: '32px',
-        height: '32px',
-      },
-      normal: {
-        width: '48px',
-        height: '48px',
-      },
-      large: {
-        width: '64px',
-        height: '64px',
-      },
+    var iconStyle = {
+      display: 'table-cell',
+      width: '32px',
+      height: '32px',
+      textAlign: 'center',
+      verticalAlign: 'middle',
+      // backgroundColor: '#bbb',
+      ':hover': {
+        color: iconHoverColor,
+      }
     };
+    if (this.props.kind === 'normal') {
+      iconStyle.width = '48px';
+      iconStyle.height = '48px';
+    }
+    if (this.props.kind === 'large') {
+      iconStyle.width = '64px';
+      iconStyle.height = '64px';
+    }
 
     return (
       <div style={divStyle}>
-        <i style={this.styles}  // pourquoi est-ce ko avec style={iconStyle} ?
+        <i style={iconStyle}
           className={`fa
             fa-${inputGlyph}
             fa-${inputSize}
