@@ -39,10 +39,10 @@ export default class Icon extends React.Component {
     }
 
     var iconStyle = {
-      display: 'table-cell',
-      width: '32px',
-      height: '32px',
-      textAlign: 'center',
+      display:       'table-cell',
+      width:         '32px',
+      height:        '32px',
+      textAlign:     'center',
       verticalAlign: 'middle',
       // backgroundColor: '#bbb',
     };
@@ -52,11 +52,11 @@ export default class Icon extends React.Component {
       };
     }
     if (this.props.kind === 'normal') {
-      iconStyle.width = '48px';
+      iconStyle.width  = '48px';
       iconStyle.height = '48px';
     }
     if (this.props.kind === 'large') {
-      iconStyle.width = '64px';
+      iconStyle.width  = '64px';
       iconStyle.height = '64px';
     }
 
