@@ -31,8 +31,7 @@ const onInit = (state) => {
 
   const radioRed = state.select ('radioRed');
   radioRed
-  .set ('label', 'coucou')
-  .set ('checked', 'true');
+    .set ('checked', 'true');
 
   const checkRed = state.select ('checkRed');
   checkRed
