@@ -29,12 +29,21 @@ const onInit = (state) => {
     .set ('hint', 'placeholder text')
     .set ('error', '');
 
-  const list = state.select ('list');
-  list.add ().set ('title', '1.');
-  list.add ().set ('title', '2.');
-  list.add ().set ('title', '3.');
-  list.add ().set ('title', '4.');
-  list.add ().set ('title', '5.');
+  const radioRed = state.select ('radioRed');
+  radioRed
+  .set ('label', 'coucou')
+  .set ('checked', 'true');
+
+  const checkRed = state.select ('checkRed');
+  checkRed
+    .set ('checked', 'true');
+
+  const basiclist = state.select ('basiclist');
+  basiclist.add ().set ('title', '1.');
+  basiclist.add ().set ('title', '2.');
+  basiclist.add ().set ('title', '3.');
+  basiclist.add ().set ('title', '4.');
+  basiclist.add ().set ('title', '5.');
 };
 
 export default Activity.Create ('catalog', Catalog, actuators, onInit);

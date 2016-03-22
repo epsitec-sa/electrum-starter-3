@@ -39,7 +39,7 @@ export default class Catalog extends React.Component {
         <RaisedButton action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
         <RaisedButton primary action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
         <RaisedButton secondary action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
-        <IconButton action={act.TEST} tooltip="click me" id="totoflat" {...this.link ()} />
+        <IconButton action={act.TEST} tooltip="Close the window" id="totoflat" {...this.link ()} />
         <hr />
         <div>
           <RaisedButton primary action={act.TEST} label="Button with badge" id="totoflat" {...this.link ()} />
@@ -47,17 +47,17 @@ export default class Catalog extends React.Component {
         </div>
         <hr />
         <h1>Radio buttons</h1>
-        <RadioButton action={act.TEST} label="Rouge" checked id="radioRed" {...this.link ()} />
-        <RadioButton action={act.TEST} label="Vert" id="radioGreen" {...this.link ()} />
-        <RadioButton action={act.TEST} label="Bleu" id="radioBlue" {...this.link ()} />
+        <RadioButton action={act.TEST} label="Rouge" id="radioRed"   {...this.link ('radioRed')} />
+        <RadioButton action={act.TEST} label="Vert"  id="radioGreen" {...this.link ('radioGreen')} />
+        <RadioButton action={act.TEST} label="Bleu"  id="radioBlue"  {...this.link ('radioBlue')} />
         <hr />
         <h1>Checkbox buttons</h1>
-        <Checkbox action={act.TEST} label="Rouge" checked id="radioRed" {...this.link ()} />
-        <Checkbox action={act.TEST} label="Vert" id="radioGreen" {...this.link ()} />
-        <Checkbox action={act.TEST} label="Bleu" id="radioBlue" {...this.link ()} />
+        <Checkbox action={act.TEST} label="Rouge" id="checkRed"   {...this.link ('checkRed')} />
+        <Checkbox action={act.TEST} label="Vert"  id="checkGreen" {...this.link ('checkGreen')} />
+        <Checkbox action={act.TEST} label="Bleu"  id="checkBlue"  {...this.link ('checkBlue')} />
         <hr />
         <h1>Basic list exemple</h1>
-        <BasicList {...this.link ('list')} template={listTemplate}>
+        <BasicList {...this.link ('basiclist')} template={listTemplate}>
           <ListItem disabled={true} primaryText="end" />
         </BasicList>
       </div>
