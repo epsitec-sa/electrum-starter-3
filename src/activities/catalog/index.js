@@ -37,6 +37,15 @@ const onInit = (state) => {
   checkRed
     .set ('checked', 'true');
 
+  const toggle1 = state.select ('toggle1');
+  toggle1
+    .set ('labelPosition', 'right')
+    .set ('toggled', 'true');
+
+  const toggle2 = state.select ('toggle2');
+  toggle2
+    .set ('labelPosition', 'right');
+
   const datePicker = state.select ('datePicker');
   datePicker
     .set ('defaultDate', '3/31/2016');

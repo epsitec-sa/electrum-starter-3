@@ -11,6 +11,7 @@ import {
   IconButton,
   RadioButton,
   Checkbox,
+  Toggle,
   Badge,
   TextField,
   DatePicker,
@@ -81,6 +82,10 @@ export default class Catalog extends React.Component {
         <Checkbox action={act.TEST} label="Rouge" id="checkRed"   {...this.link ('checkRed')} />
         <Checkbox action={act.TEST} label="Vert"  id="checkGreen" {...this.link ('checkGreen')} />
         <Checkbox action={act.TEST} label="Bleu"  id="checkBlue"  {...this.link ('checkBlue')} />
+        <hr />
+        <h1>Toggle buttons</h1>
+        <Toggle action={act.TEST} label="Paul"   id="toggle1" {...this.link ('toggle1')} />
+        <Toggle action={act.TEST} label="Alfred" id="toggle2" {...this.link ('toggle2')} />
         <hr />
         <h1>Basic list exemple</h1>
         <BasicList {...this.link ('basiclist')} template={listTemplate}>
