@@ -8,16 +8,16 @@ const onInit = (state) => {
   const field = state.select ('field');
   field
     .set ('', '')
-    .set ('floating', 'TextField example')
-    .set ('hint', 'placeholder text')
-    .set ('error', '');
+    .set ('floatingLabelText', 'TextField example')
+    .set ('hintText', 'placeholder text')
+    .set ('errorText', '');
 
   const fieldWithError = state.select ('fieldWithError');
   fieldWithError
     .set ('', 'i love banana')
-    .set ('floating', 'With error')
-    .set ('hint', 'placeholder/hint text')
-    .set ('error', 'oops... error');
+    .set ('floatingLabelText', 'With error')
+    .set ('hintText', 'placeholder/hint text')
+    .set ('errorText', 'oops... error');
 
   const multilineField = state.select ('multilineField');
   multilineField
@@ -25,9 +25,9 @@ const onInit = (state) => {
     .set ('multiLine', true)
     .set ('rows', 2)
     .set ('rowsMax', 10)
-    .set ('floating', 'Mutliline example')
-    .set ('hint', 'placeholder text')
-    .set ('error', '');
+    .set ('floatingLabelText', 'Mutliline example')
+    .set ('hintText', 'placeholder text')
+    .set ('errorText', '');
 
   const radioRed = state.select ('radioRed');
   radioRed
