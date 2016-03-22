@@ -37,6 +37,10 @@ const onInit = (state) => {
   checkRed
     .set ('checked', 'true');
 
+  const datePicker = state.select ('datePicker');
+  datePicker
+    .set ('defaultDate', '3/31/2016');
+
   const basiclist = state.select ('basiclist');
   basiclist.add ().set ('title', '1.');
   basiclist.add ().set ('title', '2.');

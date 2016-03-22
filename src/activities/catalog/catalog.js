@@ -13,6 +13,7 @@ import {
   Checkbox,
   Badge,
   TextField,
+  DatePicker,
   BasicList,
   ListItem
 } from 'electrum-arc';
@@ -51,6 +52,14 @@ export default class Catalog extends React.Component {
         <br/>
         <br/>
         <TextField id="multilineField" {...this.link ('multilineField')} />
+          <h1>Date picker</h1>
+          <DatePicker action={act.TEST}
+            autoOk="true"
+            container="dialog"
+            hintText="Date de naissance"
+            value="3/31/2016"
+            id="datePicker" {...this.link ('datePicker')} />
+          <hr />
         <h1>Buttons</h1>
         <FlatButton action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
         <RaisedButton action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
