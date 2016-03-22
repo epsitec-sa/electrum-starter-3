@@ -2,6 +2,10 @@
 
 import React from 'react';
 import {
+  Toolbar,
+  ToolbarGroup,
+  ToolbarSeparator,
+  ToolbarTitle,
   FlatButton,
   RaisedButton,
   IconButton,
@@ -26,6 +30,15 @@ export default class Catalog extends React.Component {
       <div style={{padding: '10px 0px 0px 30px'}}>
         <h1>Catalog of components</h1>
         <h6><a href="http://www.material-ui.com/#/components/">documentation</a></h6>
+        <h1>Toolbars</h1>
+        <Toolbar>
+          <ToolbarGroup float="left">
+            <ToolbarTitle text="Options" />
+          </ToolbarGroup>
+          <ToolbarGroup float="right">
+            <RaisedButton primary action={act.TEST} label="Open" id="totoflat" {...this.link ()} />
+          </ToolbarGroup>
+        </Toolbar>
         <h1>Forms</h1>
         <TextField id="field" {...this.link ('field')} />
         <br/>
