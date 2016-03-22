@@ -31,11 +31,11 @@ export default class Catalog extends React.Component {
         <h1>Catalog of components</h1>
         <h6><a href="http://www.material-ui.com/#/components/">documentation</a></h6>
         <h1>Toolbars</h1>
-        <Toolbar>
-          <ToolbarGroup float="left">
-            <ToolbarTitle text="Options" />
+        <Toolbar {...this.link ()}>
+          <ToolbarGroup float="left" {...this.link ()}>
+            <ToolbarTitle text="Options" {...this.link ()} />
           </ToolbarGroup>
-          <ToolbarGroup float="right">
+          <ToolbarGroup float="right" {...this.link ()}>
             <RaisedButton primary action={act.TEST} label="Open" id="totoflat" {...this.link ()} />
           </ToolbarGroup>
         </Toolbar>
