@@ -22,11 +22,17 @@ export default class Catalog extends React.Component {
       );
     };
     return (
-      <div>
+      <div style={{padding: '10px 0px 0px 30px'}}>
         <h1>Catalog of components</h1>
         <h6><a href="http://www.material-ui.com/#/components/">documentation</a></h6>
         <h1>Forms</h1>
-        <TextField id="field0" {...this.link ('field')} />
+        <TextField id="field" {...this.link ('field')} />
+        <br/>
+        <br/>
+        <TextField id="fieldWithError" {...this.link ('fieldWithError')} />
+        <br/>
+        <br/>
+        <TextField id="multilineField" {...this.link ('multilineField')} />
         <h1>Buttons</h1>
         <FlatButton action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
         <RaisedButton action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
