@@ -68,10 +68,11 @@ export default class Catalog extends React.Component {
         <RaisedButton secondary action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
         <IconButton action={act.TEST} tooltip="Close the window" id="totoflat" {...this.link ()} />
         <hr />
-        <div>
-          <RaisedButton primary action={act.TEST} label="Button with badge" id="totoflat" {...this.link ()} />
-          <Badge badgeContent="12" {...this.link ()} />
-        </div>
+        <RaisedButton action={act.TEST} label="Button with primary badge" {...this.link ()} />
+        <Badge badgeContent="12" primary="true" {...this.link ()} />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <RaisedButton action={act.TEST} label="Button with secondary badge" {...this.link ()} />
+        <Badge badgeContent="7" secondary="true" {...this.link ()} />
         <hr />
         <h1>Radio buttons</h1>
         <RadioButton action={act.TEST} label="Rouge" id="radioRed"   {...this.link ('radioRed')} />
