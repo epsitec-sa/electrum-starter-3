@@ -1,8 +1,16 @@
 'use strict';
 
 import React from 'react';
-import {FlatButton, RaisedButton, IconButton, RadioButton, Checkbox, Badge,
-  Label, TextField, BasicField, BasicList, ListItem} from 'electrum-arc';
+import {
+  FlatButton,
+  RaisedButton,
+  IconButton,
+  RadioButton,
+  Checkbox,
+  TextField,
+  BasicList,
+  ListItem
+} from 'electrum-arc';
 import act from './actuators.js';
 
 export default class Catalog extends React.Component {
@@ -16,13 +24,23 @@ export default class Catalog extends React.Component {
     // <Label>Coucou</Label>
     // <TextField hintText="Tralala" id="textField2" {...this.link ()} />
     return (
-      <div>
-        <h1>Catalog of buttons</h1>
+      <div style={{padding: '10px 0px 0px 30px'}}>
+        <h1>Catalog of components</h1>
+        <h6><a href="http://www.material-ui.com/#/components/">documentation</a></h6>
+        <h1>Forms</h1>
+        <TextField id="field" {...this.link ('field')} />
+        <br/>
+        <br/>
+        <TextField id="fieldWithError" {...this.link ('fieldWithError')} />
+        <br/>
+        <br/>
+        <TextField id="multilineField" {...this.link ('multilineField')} />
+        <h1>Buttons</h1>
         <FlatButton action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
         <RaisedButton action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
         <RaisedButton primary action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
         <RaisedButton secondary action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
-        <IconButton action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
+        <IconButton action={act.TEST} tooltip="click me" id="totoflat" {...this.link ()} />
         <hr />
         <div>
           <RaisedButton primary action={act.TEST} label="Button with badge" id="totoflat" {...this.link ()} />
@@ -44,7 +62,7 @@ export default class Catalog extends React.Component {
         <hr />
         <h1>Basic list exemple</h1>
         <BasicList {...this.link ('list')} template={listTemplate}>
-          <ListItem disabled={true} primaryText="FIN" />
+          <ListItem disabled={true} primaryText="end" />
         </BasicList>
       </div>
     );
