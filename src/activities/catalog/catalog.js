@@ -36,7 +36,11 @@ export default class Catalog extends React.Component {
             <ToolbarTitle text="Options" {...this.link ()} />
           </ToolbarGroup>
           <ToolbarGroup float="right" {...this.link ()}>
+            <ToolbarSeparator {...this.link ()} />
             <RaisedButton primary action={act.TEST} label="Open" id="totoflat" {...this.link ()} />
+            <RaisedButton action={act.TEST} label="Close" id="totoflat" {...this.link ()} />
+            <ToolbarSeparator {...this.link ()} />
+            <IconButton action={act.TEST} tooltip="Close the toolbar" id="totoflat" {...this.link ()} />
           </ToolbarGroup>
         </Toolbar>
         <h1>Forms</h1>
