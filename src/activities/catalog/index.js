@@ -19,15 +19,15 @@ const onInit = (state) => {
     .set ('hint', 'placeholder/hint text')
     .set ('error', 'oops... error');
 
-    const multilineField = state.select ('multilineField');
-    multilineField
-      .set ('', `Hello,\ni am a multiline field!\nbye bye :)`)
-      .set ('multiLine', true)
-      .set ('rows', 2)
-      .set ('rowsMax', 10)
-      .set ('floating', 'Mutliline example')
-      .set ('hint', 'placeholder text')
-      .set ('error', '');
+  const multilineField = state.select ('multilineField');
+  multilineField
+    .set ('', `Hello,\ni am a multiline field!\nbye bye :)`)
+    .set ('multiLine', true)
+    .set ('rows', 2)
+    .set ('rowsMax', 10)
+    .set ('floating', 'Mutliline example')
+    .set ('hint', 'placeholder text')
+    .set ('error', '');
 
   const list = state.select ('list');
   list.add ().set ('title', '1.');
