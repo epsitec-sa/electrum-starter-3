@@ -7,6 +7,7 @@ import {
   IconButton,
   RadioButton,
   Checkbox,
+  Badge,
   TextField,
   BasicList,
   ListItem
@@ -21,8 +22,6 @@ export default class Catalog extends React.Component {
         <ListItem key={state.key} primaryText={title} />
       );
     };
-    // <Label>Coucou</Label>
-    // <TextField hintText="Tralala" id="textField2" {...this.link ()} />
     return (
       <div style={{padding: '10px 0px 0px 30px'}}>
         <h1>Catalog of components</h1>
@@ -56,9 +55,6 @@ export default class Catalog extends React.Component {
         <Checkbox action={act.TEST} label="Rouge" checked id="radioRed" {...this.link ()} />
         <Checkbox action={act.TEST} label="Vert" id="radioGreen" {...this.link ()} />
         <Checkbox action={act.TEST} label="Bleu" id="radioBlue" {...this.link ()} />
-        <hr />
-        <h1>Fields</h1>
-        <BasicField id="textField1" {...this.link ()} />
         <hr />
         <h1>Basic list exemple</h1>
         <BasicList {...this.link ('list')} template={listTemplate}>
