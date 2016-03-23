@@ -15,10 +15,12 @@ import {
   Toggle,
   Badge,
   TextField,
+  SelectField,
   DatePicker,
   TimePicker,
   BasicList,
   ListItem,
+  MenuItem,
   Paper,
   Divider
 } from 'electrum-arc';
@@ -78,6 +80,7 @@ export default class Catalog extends React.Component {
           </ToolbarGroup>
         </Toolbar>
 
+        <h1>Text fields</h1>
         <TextField id="field" {...this.link ('field')} />
         <br/>
         <br/>
@@ -85,6 +88,15 @@ export default class Catalog extends React.Component {
         <br/>
         <br/>
         <TextField id="multilineField" {...this.link ('multilineField')} />
+
+        <h1>Select fields</h1>
+        <SelectField value="Mardi" {...this.link ()} >
+          <MenuItem value={1} primaryText="Lundi"    {...this.link ()} />
+          <MenuItem value={2} primaryText="Mardi"    {...this.link ()} />
+          <MenuItem value={3} primaryText="Mercredi" {...this.link ()} />
+          <MenuItem value={4} primaryText="Jeudi"    {...this.link ()} />
+          <MenuItem value={5} primaryText="Vendredi" {...this.link ()} />
+        </SelectField>
 
         <h1>Date picker</h1>
         <DatePicker action={act.TEST}
