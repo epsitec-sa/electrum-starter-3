@@ -88,7 +88,7 @@ export default class Catalog extends React.Component {
           hintText="Date de naissance"
           value="3/31/2016"
           id="datePicker" {...this.link ('datePicker')} />
-        <hr />
+        <Divider {...this.link ()} />
 
         <h1>Time picker</h1>
         <TimePicker action={act.TEST}
@@ -157,12 +157,6 @@ export default class Catalog extends React.Component {
         <Toggle action={act.TEST} label="Alfred" id="toggle2" {...this.link ('toggle2')} />
         <Divider {...this.link ()} />
 
-        <h1>Basic list exemple</h1>
-        <BasicList {...this.link ('basiclist')} template={listTemplate}>
-          <ListItem disabled={true} primaryText="end" />
-        </BasicList>
-        <Divider {...this.link ()} />
-
         <h1>Paper</h1>
         <div>
         <Paper zDepth={1} style={paperStyle1} {...this.link ()} />
@@ -191,6 +185,15 @@ export default class Catalog extends React.Component {
           <br />
           <RaisedButton style={style.button} primary action={act.TEST} label="OK"     {...this.link ()} />
           <RaisedButton style={style.button}         action={act.TEST} label="Cancel" {...this.link ()} />
+        </Paper>
+        <br />
+        <Divider {...this.link ()} />
+
+        <h1>Basic list</h1>
+        <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
+          <BasicList {...this.link ('basiclist')} template={listTemplate}>
+            <ListItem disabled={true} primaryText="end" />
+          </BasicList>
         </Paper>
 
       </div>
