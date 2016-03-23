@@ -46,7 +46,10 @@ export default class Catalog extends React.Component {
     const paperStyle1 = {
       height: 100,
       width: 100,
-      margin: 20,
+      marginTop: 20,
+      marginRight: 20,
+      marginBottom: 20,
+      marginLeft: 0,
       textAlign: 'center',
       display: 'inline-block',
     };
