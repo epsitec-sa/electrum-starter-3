@@ -172,8 +172,19 @@ export default class Catalog extends React.Component {
         <Paper zDepth={5} style={paperStyle1} {...this.link ()} />
         </div>
         <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
-          <TextField floatingLabelText="Prénom" id="field" {...this.link ()} />
-          <TextField floatingLabelText="Nom" id="field" {...this.link ()} />
+          <TextField floatingLabelText="Prénom" {...this.link ()} />
+          <TextField floatingLabelText="Nom"    {...this.link ()} />
+          <Checkbox action={act.TEST} label="Rouge" id="checkRed"   {...this.link ('checkRed')} />
+          <Checkbox action={act.TEST} label="Vert"  id="checkGreen" {...this.link ('checkGreen')} />
+          <Checkbox action={act.TEST} label="Bleu"  id="checkBlue"  {...this.link ('checkBlue')} />
+          <br />
+          <RaisedButton style={style.button} primary action={act.TEST} label="OK"     {...this.link ()} />
+          <RaisedButton style={style.button}         action={act.TEST} label="Cancel" {...this.link ()} />
+        </Paper>
+        <br />
+        <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
+          <TextField hintText="Prénom" {...this.link ()} />
+          <TextField hintText="Nom"    {...this.link ()} />
           <Checkbox action={act.TEST} label="Rouge" id="checkRed"   {...this.link ('checkRed')} />
           <Checkbox action={act.TEST} label="Vert"  id="checkGreen" {...this.link ('checkGreen')} />
           <Checkbox action={act.TEST} label="Bleu"  id="checkBlue"  {...this.link ('checkBlue')} />
