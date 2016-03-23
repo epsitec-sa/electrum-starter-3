@@ -30,6 +30,13 @@ export default class Catalog extends React.Component {
         <ListItem key={state.key} primaryText={title} />
       );
     };
+
+    const style = {
+      button: {
+        marginRight: 20,
+      }
+    };
+
     return (
       <div style={{padding: '10px 0px 0px 30px'}}>
         <h1>Catalog of components</h1>
@@ -68,28 +75,28 @@ export default class Catalog extends React.Component {
 
         <h1>Buttons</h1>
         <div>
-          <FlatButton action={act.TEST} label="click me" {...this.link ()} />
-          <FlatButton primary action={act.TEST} label="click me" {...this.link ()} />
-          <FlatButton secondary action={act.TEST} label="click me" {...this.link ()} />
-          <FlatButton linkButton={true} href="http://www.epsitec.ch"a label="Epsitec" {...this.link ()} />
+          <FlatButton style={style.button} action={act.TEST} label="click me" {...this.link ()} />
+          <FlatButton style={style.button} primary action={act.TEST} label="click me" {...this.link ()} />
+          <FlatButton style={style.button} secondary action={act.TEST} label="click me" {...this.link ()} />
+          <FlatButton style={style.button} linkButton={true} href="http://www.epsitec.ch"a label="Epsitec" {...this.link ()} />
         </div>
         <div>
-          <RaisedButton action={act.TEST} label="click me" {...this.link ()} />
-          <RaisedButton primary action={act.TEST} label="click me" {...this.link ()} />
-          <RaisedButton secondary action={act.TEST} label="click me" {...this.link ()} />
+          <RaisedButton style={style.button} action={act.TEST} label="click me" {...this.link ()} />
+          <RaisedButton style={style.button} primary action={act.TEST} label="click me" {...this.link ()} />
+          <RaisedButton style={style.button} secondary action={act.TEST} label="click me" {...this.link ()} />
           <IconButton action={act.TEST} tooltip="Close the window" {...this.link ()} />
         </div>
         <div>
           <RaisedButton action={act.TEST} label="Button with primary badge" {...this.link ()} />
-          <Badge badgeContent="12" primary={true} {...this.link ()} />
+          <Badge style={style.button} badgeContent="12" primary={true} {...this.link ()} />
           <RaisedButton action={act.TEST} label="Button with secondary badge" {...this.link ()} />
-          <Badge badgeContent="7" secondary={true} {...this.link ()} />
+          <Badge style={style.button} badgeContent="7" secondary={true} {...this.link ()} />
         </div>
-        <div>
-          <FloatingActionButton {...this.link ()}><ContentAdd /></FloatingActionButton>
-          <FloatingActionButton mini={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
-          <FloatingActionButton secondary={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
-          <FloatingActionButton secondary={true} mini={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
+        <div style={style}>
+          <FloatingActionButton style={style.button} {...this.link ()}><ContentAdd /></FloatingActionButton>
+          <FloatingActionButton style={style.button} mini={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
+          <FloatingActionButton style={style.button} secondary={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
+          <FloatingActionButton style={style.button} secondary={true} mini={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
         </div>
         <hr />
 
