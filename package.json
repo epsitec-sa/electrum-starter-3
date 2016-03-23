@@ -27,12 +27,12 @@
     "react": "^0.14.7"
   },
   "devDependencies": {
-    "babel-env": "^1.2.1",
+    "babel-env": "^1.2.2",
     "babel-loader": "^6.2.4",
     "cross-env": "^1.0.7",
-    "electrum-require-components": "^1.6.1",
+    "electrum-require-components": "^1.6.2",
     "electrum-style-reload": "^1.0.2",
-    "mai-chai": "^2.5.2",
+    "mai-chai": "^2.5.3",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.2",
     "redbox-react": "^1.2.2",
