@@ -78,7 +78,8 @@ export default class Catalog extends React.Component {
           <FlatButton style={style.button} action={act.TEST} label="click me" {...this.link ()} />
           <FlatButton style={style.button} primary action={act.TEST} label="click me" {...this.link ()} />
           <FlatButton style={style.button} secondary action={act.TEST} label="click me" {...this.link ()} />
-          <FlatButton style={style.button} linkButton={true} href="http://www.epsitec.ch"a label="Epsitec" {...this.link ()} />
+          <FlatButton style={style.button}
+            linkButton={true} href="http://www.epsitec.ch"a label="Epsitec" {...this.link ()} />
         </div>
         <div>
           <RaisedButton style={style.button} action={act.TEST} label="click me" {...this.link ()} />
@@ -93,10 +94,14 @@ export default class Catalog extends React.Component {
           <Badge style={style.button} badgeContent="7" secondary={true} {...this.link ()} />
         </div>
         <div style={style}>
-          <FloatingActionButton style={style.button} {...this.link ()}><ContentAdd /></FloatingActionButton>
-          <FloatingActionButton style={style.button} mini={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
-          <FloatingActionButton style={style.button} secondary={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
-          <FloatingActionButton style={style.button} secondary={true} mini={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
+          <FloatingActionButton style={style.button}
+            {...this.link ()}><ContentAdd /></FloatingActionButton>
+          <FloatingActionButton style={style.button} mini={true}
+            {...this.link ()}><ContentAdd /></FloatingActionButton>
+          <FloatingActionButton style={style.button} secondary={true}
+            {...this.link ()}><ContentAdd /></FloatingActionButton>
+          <FloatingActionButton style={style.button} secondary={true} mini={true}
+            {...this.link ()}><ContentAdd /></FloatingActionButton>
         </div>
         <hr />
 
