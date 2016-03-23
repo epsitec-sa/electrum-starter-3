@@ -95,7 +95,7 @@ export default class Catalog extends React.Component {
           hintText="Heure de livraison"
           value="12:25"
           id="timePicker" {...this.link ('datePicker')} />
-        <hr />
+        <Divider {...this.link ()} />
 
         <h1>Buttons</h1>
         <div>
@@ -138,30 +138,30 @@ export default class Catalog extends React.Component {
           <FloatingActionButton style={style.button} secondary={true} mini={true}
             {...this.link ()}><ContentAdd /></FloatingActionButton>
         </div>
-        <hr />
+        <Divider {...this.link ()} />
 
         <h1>Radio buttons</h1>
         <RadioButton action={act.TEST} label="Rouge" id="radioRed"   {...this.link ('radioRed')} />
         <RadioButton action={act.TEST} label="Vert"  id="radioGreen" {...this.link ('radioGreen')} />
         <RadioButton action={act.TEST} label="Bleu"  id="radioBlue"  {...this.link ('radioBlue')} />
-        <hr />
+        <Divider {...this.link ()} />
 
         <h1>Checkbox</h1>
         <Checkbox action={act.TEST} label="Rouge" id="checkRed"   {...this.link ('checkRed')} />
         <Checkbox action={act.TEST} label="Vert"  id="checkGreen" {...this.link ('checkGreen')} />
         <Checkbox action={act.TEST} label="Bleu"  id="checkBlue"  {...this.link ('checkBlue')} />
-        <hr />
+        <Divider {...this.link ()} />
 
         <h1>Toggle</h1>
         <Toggle action={act.TEST} label="Paul"   id="toggle1" {...this.link ('toggle1')} />
         <Toggle action={act.TEST} label="Alfred" id="toggle2" {...this.link ('toggle2')} />
-        <hr />
+        <Divider {...this.link ()} />
 
         <h1>Basic list exemple</h1>
         <BasicList {...this.link ('basiclist')} template={listTemplate}>
           <ListItem disabled={true} primaryText="end" />
         </BasicList>
-        <hr />
+        <Divider {...this.link ()} />
 
         <h1>Paper</h1>
         <div>
