@@ -18,8 +18,10 @@ import {
   DatePicker,
   TimePicker,
   BasicList,
-  ListItem
+  ListItem,
+  Paper
 } from 'electrum-arc';
+
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
 import CodeIcon from 'material-ui/lib/svg-icons/action/code';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
@@ -38,6 +40,14 @@ export default class Catalog extends React.Component {
       button: {
         marginRight: 20,
       }
+    };
+
+    const paperStyle = {
+      height: 100,
+      width: 100,
+      margin: 20,
+      textAlign: 'center',
+      display: 'inline-block',
     };
 
     return (
@@ -145,6 +155,17 @@ export default class Catalog extends React.Component {
         <BasicList {...this.link ('basiclist')} template={listTemplate}>
           <ListItem disabled={true} primaryText="end" />
         </BasicList>
+        <hr />
+
+        <h1>Paper</h1>
+        <div>
+        <Paper zDepth={1} style={paperStyle} {...this.link ()} />
+        <Paper zDepth={2} style={paperStyle} {...this.link ()} />
+        <Paper zDepth={3} style={paperStyle} {...this.link ()} />
+        <Paper zDepth={4} style={paperStyle} {...this.link ()} />
+        <Paper zDepth={5} style={paperStyle} {...this.link ()} />
+        </div>
+
       </div>
     );
   }
