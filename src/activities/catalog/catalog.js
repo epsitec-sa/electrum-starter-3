@@ -23,6 +23,7 @@ import {
   MenuItem,
   IconMenu,
   Popover,
+  Slider,
   Paper,
   Divider
 } from 'electrum-arc';
@@ -89,7 +90,7 @@ export default class Catalog extends React.Component {
       padding: 20,
     };
 
-    // The iconButtonElement traps !!!
+    // TODO: The iconButtonElement traps !!!
     // <h1>Icon menu</h1>
     // <IconMenu
     //   iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
@@ -101,6 +102,16 @@ export default class Catalog extends React.Component {
     //   <MenuItem primaryText="Jeudi"    {...this.link ()} />
     //   <MenuItem primaryText="Vendredi" {...this.link ()} />
     // </IconMenu>
+
+    // TODO: The Slider breaks !!!
+    // <h1>Sliders</h1>
+    // <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
+    //   <Slider description="Rouge" {...this.link ()} />
+    //   <Slider description="Vert"  defaultValue={0.5} {...this.link ()} />
+    //   <Slider description="Bleu"  defaultValue={1} step={0.10} {...this.link ()} />
+    // </Paper>
+    // <br />
+    // <Divider {...this.link ()} />
 
     return (
       <div style={{padding: '10px 0px 0px 30px'}}>
