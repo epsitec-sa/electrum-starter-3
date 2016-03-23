@@ -97,6 +97,12 @@ export default class Catalog extends React.Component {
           <MenuItem value={4} primaryText="Jeudi"    {...this.link ()} />
           <MenuItem value={5} primaryText="Vendredi" {...this.link ()} />
         </SelectField>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <SelectField value={3} {...this.link ()} >
+          <MenuItem value={1} label="8h - 12h"  primaryText="Matin"      {...this.link ()} />
+          <MenuItem value={2} label="14h - 17h" primaryText="Après-midi" {...this.link ()} />
+          <MenuItem value={3} label="8h - 17h"  primaryText="Journée"    {...this.link ()} />
+        </SelectField>
 
         <h1>Date picker</h1>
         <DatePicker action={act.TEST}
