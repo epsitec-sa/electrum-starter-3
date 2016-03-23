@@ -32,6 +32,7 @@ export default class Catalog extends React.Component {
       <div style={{padding: '10px 0px 0px 30px'}}>
         <h1>Catalog of components</h1>
         <h6><a href="http://www.material-ui.com/#/components/">documentation</a></h6>
+
         <h1>Toolbars</h1>
         <Toolbar {...this.link ()}>
           <ToolbarGroup float="left" {...this.link ()}>
@@ -39,13 +40,13 @@ export default class Catalog extends React.Component {
           </ToolbarGroup>
           <ToolbarGroup float="right" {...this.link ()}>
             <ToolbarSeparator {...this.link ()} />
-            <RaisedButton primary action={act.TEST} label="Open" id="totoflat" {...this.link ()} />
-            <RaisedButton action={act.TEST} label="Close" id="totoflat" {...this.link ()} />
+            <RaisedButton primary action={act.TEST} label="Open" {...this.link ()} />
+            <RaisedButton action={act.TEST} label="Close" {...this.link ()} />
             <ToolbarSeparator {...this.link ()} />
-            <IconButton action={act.TEST} tooltip="Close the toolbar" id="totoflat" {...this.link ()} />
+            <IconButton action={act.TEST} tooltip="Close the toolbar" {...this.link ()} />
           </ToolbarGroup>
         </Toolbar>
-        <h1>Forms</h1>
+
         <TextField id="field" {...this.link ('field')} />
         <br/>
         <br/>
@@ -53,41 +54,54 @@ export default class Catalog extends React.Component {
         <br/>
         <br/>
         <TextField id="multilineField" {...this.link ('multilineField')} />
-          <h1>Date picker</h1>
-          <DatePicker action={act.TEST}
-            autoOk="true"
-            container="dialog"
-            hintText="Date de naissance"
-            value="3/31/2016"
-            id="datePicker" {...this.link ('datePicker')} />
-          <hr />
+
+        <h1>Date picker</h1>
+        <DatePicker action={act.TEST}
+          autoOk={true}
+          container="dialog"
+          hintText="Date de naissance"
+          value="3/31/2016"
+          id="datePicker" {...this.link ('datePicker')} />
+        <hr />
+
         <h1>Buttons</h1>
-        <FlatButton action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
-        <RaisedButton action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
-        <RaisedButton primary action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
-        <RaisedButton secondary action={act.TEST} label="click me" id="totoflat" {...this.link ()} />
-        <IconButton action={act.TEST} tooltip="Close the window" id="totoflat" {...this.link ()} />
+        <div>
+          <FlatButton action={act.TEST} label="click me" {...this.link ()} />
+          <FlatButton primary action={act.TEST} label="click me" {...this.link ()} />
+          <FlatButton secondary action={act.TEST} label="click me" {...this.link ()} />
+          <FlatButton linkButton={true} href="http://www.epsitec.ch"a label="Epsitec" {...this.link ()} />
+        </div>
+        <div>
+          <RaisedButton action={act.TEST} label="click me" {...this.link ()} />
+          <RaisedButton primary action={act.TEST} label="click me" {...this.link ()} />
+          <RaisedButton secondary action={act.TEST} label="click me" {...this.link ()} />
+          <IconButton action={act.TEST} tooltip="Close the window" {...this.link ()} />
+        </div>
+        <div>
+          <RaisedButton action={act.TEST} label="Button with primary badge" {...this.link ()} />
+          <Badge badgeContent="12" primary={true} {...this.link ()} />
+          <RaisedButton action={act.TEST} label="Button with secondary badge" {...this.link ()} />
+          <Badge badgeContent="7" secondary={true} {...this.link ()} />
+        </div>
         <hr />
-        <RaisedButton action={act.TEST} label="Button with primary badge" {...this.link ()} />
-        <Badge badgeContent="12" primary="true" {...this.link ()} />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <RaisedButton action={act.TEST} label="Button with secondary badge" {...this.link ()} />
-        <Badge badgeContent="7" secondary="true" {...this.link ()} />
-        <hr />
+
         <h1>Radio buttons</h1>
         <RadioButton action={act.TEST} label="Rouge" id="radioRed"   {...this.link ('radioRed')} />
         <RadioButton action={act.TEST} label="Vert"  id="radioGreen" {...this.link ('radioGreen')} />
         <RadioButton action={act.TEST} label="Bleu"  id="radioBlue"  {...this.link ('radioBlue')} />
         <hr />
-        <h1>Checkbox buttons</h1>
+
+        <h1>Checkbox</h1>
         <Checkbox action={act.TEST} label="Rouge" id="checkRed"   {...this.link ('checkRed')} />
         <Checkbox action={act.TEST} label="Vert"  id="checkGreen" {...this.link ('checkGreen')} />
         <Checkbox action={act.TEST} label="Bleu"  id="checkBlue"  {...this.link ('checkBlue')} />
         <hr />
-        <h1>Toggle buttons</h1>
+
+        <h1>Toggle</h1>
         <Toggle action={act.TEST} label="Paul"   id="toggle1" {...this.link ('toggle1')} />
         <Toggle action={act.TEST} label="Alfred" id="toggle2" {...this.link ('toggle2')} />
         <hr />
+
         <h1>Basic list exemple</h1>
         <BasicList {...this.link ('basiclist')} template={listTemplate}>
           <ListItem disabled={true} primaryText="end" />
