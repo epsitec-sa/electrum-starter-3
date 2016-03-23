@@ -16,6 +16,7 @@ import {
   Badge,
   TextField,
   DatePicker,
+  TimePicker,
   BasicList,
   ListItem
 } from 'electrum-arc';
@@ -68,11 +69,16 @@ export default class Catalog extends React.Component {
 
         <h1>Date picker</h1>
         <DatePicker action={act.TEST}
-          autoOk={true}
-          container="dialog"
           hintText="Date de naissance"
           value="3/31/2016"
           id="datePicker" {...this.link ('datePicker')} />
+        <hr />
+
+        <h1>Time picker</h1>
+        <TimePicker action={act.TEST}
+          hintText="Heure de livraison"
+          value="12:25"
+          id="timePicker" {...this.link ('datePicker')} />
         <hr />
 
         <h1>Buttons</h1>
