@@ -19,6 +19,8 @@ import {
   BasicList,
   ListItem
 } from 'electrum-arc';
+import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
+import CodeIcon from 'material-ui/lib/svg-icons/action/code';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import act from './actuators.js';
 
@@ -85,7 +87,12 @@ export default class Catalog extends React.Component {
           <RaisedButton style={style.button} action={act.TEST} label="click me" {...this.link ()} />
           <RaisedButton style={style.button} primary action={act.TEST} label="click me" {...this.link ()} />
           <RaisedButton style={style.button} secondary action={act.TEST} label="click me" {...this.link ()} />
-          <IconButton action={act.TEST} tooltip="Close the window" {...this.link ()} />
+          <IconButton action={act.TEST} tooltip="Close the window" {...this.link ()}>
+            <NavigationClose />
+          </IconButton>
+          <IconButton action={act.TEST} tooltip="Show code" {...this.link ()}>
+            <CodeIcon />
+          </IconButton>
         </div>
         <div>
           <RaisedButton action={act.TEST} label="Button with primary badge" {...this.link ()} />
