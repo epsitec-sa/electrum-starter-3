@@ -9,6 +9,7 @@ import {
   FlatButton,
   RaisedButton,
   IconButton,
+  FloatingActionButton,
   RadioButton,
   Checkbox,
   Toggle,
@@ -18,6 +19,7 @@ import {
   BasicList,
   ListItem
 } from 'electrum-arc';
+import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import act from './actuators.js';
 
 export default class Catalog extends React.Component {
@@ -82,6 +84,12 @@ export default class Catalog extends React.Component {
           <Badge badgeContent="12" primary={true} {...this.link ()} />
           <RaisedButton action={act.TEST} label="Button with secondary badge" {...this.link ()} />
           <Badge badgeContent="7" secondary={true} {...this.link ()} />
+        </div>
+        <div>
+          <FloatingActionButton {...this.link ()}><ContentAdd /></FloatingActionButton>
+          <FloatingActionButton mini={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
+          <FloatingActionButton secondary={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
+          <FloatingActionButton secondary={true} mini={true} {...this.link ()}><ContentAdd /></FloatingActionButton>
         </div>
         <hr />
 
