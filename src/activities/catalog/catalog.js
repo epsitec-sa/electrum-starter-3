@@ -19,7 +19,8 @@ import {
   TimePicker,
   BasicList,
   ListItem,
-  Paper
+  Paper,
+  Divider
 } from 'electrum-arc';
 
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
@@ -42,12 +43,17 @@ export default class Catalog extends React.Component {
       }
     };
 
-    const paperStyle = {
+    const paperStyle1 = {
       height: 100,
       width: 100,
       margin: 20,
       textAlign: 'center',
       display: 'inline-block',
+    };
+
+    const paperStyle2 = {
+      width: 400,
+      padding: 20,
     };
 
     return (
@@ -159,12 +165,24 @@ export default class Catalog extends React.Component {
 
         <h1>Paper</h1>
         <div>
-        <Paper zDepth={1} style={paperStyle} {...this.link ()} />
-        <Paper zDepth={2} style={paperStyle} {...this.link ()} />
-        <Paper zDepth={3} style={paperStyle} {...this.link ()} />
-        <Paper zDepth={4} style={paperStyle} {...this.link ()} />
-        <Paper zDepth={5} style={paperStyle} {...this.link ()} />
+        <Paper zDepth={1} style={paperStyle1} {...this.link ()} />
+        <Paper zDepth={2} style={paperStyle1} {...this.link ()} />
+        <Paper zDepth={3} style={paperStyle1} {...this.link ()} />
+        <Paper zDepth={4} style={paperStyle1} {...this.link ()} />
+        <Paper zDepth={5} style={paperStyle1} {...this.link ()} />
         </div>
+        <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
+          <TextField hintText="Prénom" id="field" {...this.link ()} />
+          <Divider {...this.link ()} />
+          <TextField hintText="Nom" id="field" {...this.link ()} />
+          <Divider {...this.link ()} />
+          <Checkbox action={act.TEST} label="Rouge" id="checkRed"   {...this.link ('checkRed')} />
+          <Checkbox action={act.TEST} label="Vert"  id="checkGreen" {...this.link ('checkGreen')} />
+          <Checkbox action={act.TEST} label="Bleu"  id="checkBlue"  {...this.link ('checkBlue')} />
+          <Divider {...this.link ()} />
+          <RaisedButton style={style.button} primary action={act.TEST} label="OK"     {...this.link ()} />
+          <RaisedButton style={style.button}         action={act.TEST} label="Cancel" {...this.link ()} />
+        </Paper>
 
       </div>
     );
