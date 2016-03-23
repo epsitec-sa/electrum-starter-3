@@ -90,7 +90,7 @@ export default class Catalog extends React.Component {
         <TextField id="multilineField" {...this.link ('multilineField')} />
 
         <h1>Select fields</h1>
-        <SelectField value="Mardi" {...this.link ()} >
+        <SelectField value={2} {...this.link ()} >
           <MenuItem value={1} primaryText="Lundi"    {...this.link ()} />
           <MenuItem value={2} primaryText="Mardi"    {...this.link ()} />
           <MenuItem value={3} primaryText="Mercredi" {...this.link ()} />
@@ -103,14 +103,12 @@ export default class Catalog extends React.Component {
           hintText="Date de naissance"
           value="3/31/2016"
           id="datePicker" {...this.link ('datePicker')} />
-        <Divider {...this.link ()} />
 
         <h1>Time picker</h1>
         <TimePicker action={act.TEST}
           hintText="Heure de livraison"
           value="12:25"
           id="timePicker" {...this.link ('datePicker')} />
-        <Divider {...this.link ()} />
 
         <h1>Buttons</h1>
         <div>
