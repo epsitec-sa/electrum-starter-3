@@ -22,6 +22,7 @@ import {
   ListItem,
   MenuItem,
   IconMenu,
+  Popover,
   Paper,
   Divider
 } from 'electrum-arc';
@@ -33,6 +34,28 @@ import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import act from './actuators.js';
 
 export default class Catalog extends React.Component {
+
+  constructor (props) {
+    super (props);
+
+    this.state = {
+      open: false,
+    };
+  }
+
+  handleTouchTap = (event) => {
+    this.setState ({
+      open: true,
+      anchorEl: event.currentTarget,
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState ({
+      open: false,
+    });
+  };
+
   render () {
     const listTemplate = (state) => {
       const title = state.get ('title');
@@ -44,7 +67,10 @@ export default class Catalog extends React.Component {
     const style = {
       button: {
         marginRight: 20,
-      }
+      },
+      popover: {
+        padding: 20,
+      },
     };
 
     const paperStyle1 = {
@@ -228,6 +254,28 @@ export default class Catalog extends React.Component {
           <BasicList template={listTemplate} {...this.link ('basiclist')} />
         </Paper>
         <br />
+        <Divider {...this.link ()} />
+
+        <h1>Popover</h1>
+        <div>
+          <RaisedButton onTouchTap={this.handleTouchTap} label="Filtrer" {...this.link ()} />
+          <Popover
+            open={this.state.open}
+            anchorEl={this.state.anchorEl}
+            anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+            targetOrigin={{horizontal: 'left', vertical: 'top'}}
+            onRequestClose={this.handleRequestClose}
+            {...this.link ()}
+          >
+            <div style={style.popover}>
+              <TextField hintText="Critère" {...this.link ()} />
+              <Checkbox label="Mots entiers" {...this.link ()} />
+              <br />
+              <RaisedButton primary={true} label="Valider" {...this.link ()} />
+            </div>
+          </Popover>
+        </div>
+        <br /><br /><br /><br /><br /><br /><br />
         <Divider {...this.link ()} />
 
       </div>
