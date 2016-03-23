@@ -21,6 +21,7 @@ import {
   BasicList,
   ListItem,
   MenuItem,
+  IconMenu,
   Paper,
   Divider
 } from 'electrum-arc';
@@ -28,6 +29,7 @@ import {
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
 import CodeIcon from 'material-ui/lib/svg-icons/action/code';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
+import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import act from './actuators.js';
 
 export default class Catalog extends React.Component {
@@ -60,6 +62,19 @@ export default class Catalog extends React.Component {
       width: 400,
       padding: 20,
     };
+
+    // The iconButtonElement traps !!!
+    // <h1>Icon menu</h1>
+    // <IconMenu
+    //   iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+    //   anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+    //   targetOrigin={{horizontal: 'left', vertical: 'top'}} {...this.link ()} >
+    //   <MenuItem primaryText="Lundi"    {...this.link ()} />
+    //   <MenuItem primaryText="Mardi"    {...this.link ()} />
+    //   <MenuItem primaryText="Mercredi" {...this.link ()} />
+    //   <MenuItem primaryText="Jeudi"    {...this.link ()} />
+    //   <MenuItem primaryText="Vendredi" {...this.link ()} />
+    // </IconMenu>
 
     return (
       <div style={{padding: '10px 0px 0px 30px'}}>
