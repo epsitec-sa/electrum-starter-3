@@ -31,16 +31,16 @@ const onInit = (state) => {
 
   const radioRed = state.select ('radioRed');
   radioRed
-    .set ('checked', 'true');
+    .set ('checked', true);
 
   const checkRed = state.select ('checkRed');
   checkRed
-    .set ('checked', 'true');
+    .set ('checked', true);
 
   const toggle1 = state.select ('toggle1');
   toggle1
     .set ('labelPosition', 'right')
-    .set ('toggled', 'true');
+    .set ('toggled', true);
 
   const toggle2 = state.select ('toggle2');
   toggle2
