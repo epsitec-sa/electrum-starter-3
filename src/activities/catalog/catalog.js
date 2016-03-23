@@ -93,6 +93,7 @@ export default class Catalog extends React.Component {
           <IconButton action={act.TEST} tooltip="Show code" {...this.link ()}>
             <CodeIcon />
           </IconButton>
+          <IconButton awesome={true} action={act.TEST} tooltip="Font Awesome" {...this.link ()} />
         </div>
         <div>
           <RaisedButton action={act.TEST} label="Button with primary badge" {...this.link ()} />
