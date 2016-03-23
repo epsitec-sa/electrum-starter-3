@@ -206,8 +206,8 @@ export default class Catalog extends React.Component {
           <Checkbox action={act.TEST} label="Vert"  id="checkGreen" {...this.link ('checkGreen')} />
           <Checkbox action={act.TEST} label="Bleu"  id="checkBlue"  {...this.link ('checkBlue')} />
           <br />
-          <RaisedButton style={style.button} primary action={act.TEST} label="OK"     {...this.link ()} />
-          <RaisedButton style={style.button}         action={act.TEST} label="Cancel" {...this.link ()} />
+          <RaisedButton style={style.button} primary action={act.TEST} label="OK"      {...this.link ()} />
+          <RaisedButton style={style.button}         action={act.TEST} label="Annuler" {...this.link ()} />
         </Paper>
         <br />
         <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
@@ -217,18 +217,18 @@ export default class Catalog extends React.Component {
           <Checkbox action={act.TEST} label="Vert"  id="checkGreen" {...this.link ('checkGreen')} />
           <Checkbox action={act.TEST} label="Bleu"  id="checkBlue"  {...this.link ('checkBlue')} />
           <br />
-          <RaisedButton style={style.button} primary action={act.TEST} label="OK"     {...this.link ()} />
-          <RaisedButton style={style.button}         action={act.TEST} label="Cancel" {...this.link ()} />
+          <RaisedButton style={style.button} primary action={act.TEST} label="OK"      {...this.link ()} />
+          <RaisedButton style={style.button}         action={act.TEST} label="Annuler" {...this.link ()} />
         </Paper>
         <br />
         <Divider {...this.link ()} />
 
         <h1>Basic list</h1>
         <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
-          <BasicList {...this.link ('basiclist')} template={listTemplate}>
-            <ListItem disabled={true} primaryText="end" />
-          </BasicList>
+          <BasicList template={listTemplate} {...this.link ('basiclist')} />
         </Paper>
+        <br />
+        <Divider {...this.link ()} />
 
       </div>
     );

@@ -51,11 +51,13 @@ const onInit = (state) => {
     .set ('defaultDate', '3/31/2016');
 
   const basiclist = state.select ('basiclist');
-  basiclist.add ().set ('title', '1.');
-  basiclist.add ().set ('title', '2.');
-  basiclist.add ().set ('title', '3.');
-  basiclist.add ().set ('title', '4.');
-  basiclist.add ().set ('title', '5.');
+  basiclist.add ().set ('title', '1. Jean-Paul');
+  basiclist.add ().set ('title', '2. Bernard');
+  basiclist.add ().set ('title', '3. Sandra');
+  basiclist.add ().set ('title', '4. Marie-Sophie');
+  basiclist.add ().set ('title', '5. Victor');
+  basiclist.add ().set ('title', '6. Géraldine');
+  basiclist.add ().set ('title', '7. Jean-François');
 };
 
 export default Activity.Create ('catalog', Catalog, actuators, onInit);
