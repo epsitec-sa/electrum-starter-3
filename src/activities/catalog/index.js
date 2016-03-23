@@ -7,21 +7,21 @@ import Activity from '../activity.js';
 const onInit = (state) => {
   const field = state.select ('field');
   field
-    .set ('', '')
+    .set ('value', '')
     .set ('floatingLabelText', 'TextField example')
     .set ('hintText', 'placeholder text')
     .set ('errorText', '');
 
   const fieldWithError = state.select ('fieldWithError');
   fieldWithError
-    .set ('', 'i love banana')
+    .set ('value', 'i love banana')
     .set ('floatingLabelText', 'With error')
     .set ('hintText', 'placeholder/hint text')
     .set ('errorText', 'oops... error');
 
   const multilineField = state.select ('multilineField');
   multilineField
-    .set ('', `Hello,\ni am a multiline field!\nbye bye :)`)
+    .set ('value', `Hello,\ni am a multiline field!\nbye bye :)`)
     .set ('multiLine', true)
     .set ('rows', 2)
     .set ('rowsMax', 10)
