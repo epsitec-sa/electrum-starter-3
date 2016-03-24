@@ -90,19 +90,6 @@ export default class Catalog extends React.Component {
       padding: 20,
     };
 
-    // TODO: The iconButtonElement traps !!!
-    // <h1>Icon menu</h1>
-    // <IconMenu
-    //   iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-    //   anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-    //   targetOrigin={{horizontal: 'left', vertical: 'top'}} {...this.link ()} >
-    //   <MenuItem primaryText="Lundi"    {...this.link ()} />
-    //   <MenuItem primaryText="Mardi"    {...this.link ()} />
-    //   <MenuItem primaryText="Mercredi" {...this.link ()} />
-    //   <MenuItem primaryText="Jeudi"    {...this.link ()} />
-    //   <MenuItem primaryText="Vendredi" {...this.link ()} />
-    // </IconMenu>
-
     // TODO: The Slider breaks !!!
     // <h1>Sliders</h1>
     // <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
@@ -266,6 +253,18 @@ export default class Catalog extends React.Component {
         </Paper>
         <br />
         <Divider {...this.link ()} />
+
+        <h1>Icon menu</h1>
+        <IconMenu
+          iconButtonElement={<IconButton {...this.link ()}><MoreVertIcon /></IconButton>}
+          anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+          targetOrigin={{horizontal: 'left', vertical: 'top'}} {...this.link ()} >
+          <MenuItem primaryText="Lundi"    {...this.link ()} />
+          <MenuItem primaryText="Mardi"    {...this.link ()} />
+          <MenuItem primaryText="Mercredi" {...this.link ()} />
+          <MenuItem primaryText="Jeudi"    {...this.link ()} />
+          <MenuItem primaryText="Vendredi" {...this.link ()} />
+        </IconMenu>
 
         <h1>Popover</h1>
         <div>
