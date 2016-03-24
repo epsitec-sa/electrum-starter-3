@@ -26,8 +26,8 @@ function levenshteinDistance (searchText, key) {
 }
 
 export function caseInsensitiveFilter (searchText, key) {
-  let k = removeDiacritics (key.toLowerCase ());
-  let s = removeDiacritics (searchText.toLowerCase ());
+  const k = removeDiacritics (key.toLowerCase ());
+  const s = removeDiacritics (searchText.toLowerCase ());
   return k.indexOf (s) !== -1;
 }
 
@@ -47,7 +47,9 @@ export function fuzzyFilter (searchText, key) {
   }
 
   const subMatchKey = key.substring (0, searchText.length);
-  const distance = levenshteinDistance (searchText.toLowerCase (), subMatchKey.toLowerCase ());
+  const s = removeDiacritics (searchText.toLowerCase ());
+  const k = removeDiacritics (subMatchKey.toLowerCase ());
+  const distance = levenshteinDistance (s, k);
 
   return searchText.length > 3 ? distance < 2 : distance === 0;
 }
