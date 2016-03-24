@@ -16,6 +16,7 @@ import {
   Badge,
   TextField,
   SelectField,
+  AutoComplete,
   DatePicker,
   TimePicker,
   BasicList,
@@ -89,6 +90,39 @@ export default class Catalog extends React.Component {
       width: 400,
       padding: 20,
     };
+
+    const dataSource = [
+      'Mercure',
+      'Vénus',
+      'Terre',
+      'Mars',
+      'Jupiter',
+      'Saturne',
+      'Uranus',
+      'Neptune',
+      'Pluton'
+    ];
+
+    // const dataSource1 = [
+    //   {
+    //     text: 'text-value1',
+    //     value: (
+    //       <MenuItem
+    //         primaryText="text-value1"
+    //         secondaryText="&#9786;"
+    //       />
+    //     ),
+    //   },
+    //   {
+    //     text: 'text-value2',
+    //     value: (
+    //       <MenuItem
+    //         primaryText="text-value2"
+    //         secondaryText="&#9786;"
+    //       />
+    //     ),
+    //   },
+    // ];
 
     return (
       <div style={{padding: '10px 0px 0px 30px'}}>
@@ -275,7 +309,19 @@ export default class Catalog extends React.Component {
             </div>
           </Popover>
         </div>
-        <br /><br /><br /><br /><br /><br /><br />
+        <br />
+        <Divider {...this.link ()} />
+
+        <h1>Auto complete</h1>
+        <div>
+          <AutoComplete
+            hintText="Planète"
+            filter={AutoComplete.noFilter}
+            dataSource={dataSource}
+            {...this.link ()}
+          />
+        </div>
+        <br />
         <Divider {...this.link ()} />
 
         <h1>Sliders</h1>
