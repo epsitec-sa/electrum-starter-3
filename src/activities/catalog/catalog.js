@@ -154,6 +154,13 @@ export default class Catalog extends React.Component {
           <MenuItem value={3} label="8h - 17h"  primaryText="Journée"    {...this.link ()} />
         </SelectField>
 
+        <h1>Auto complete</h1>
+        <AutoComplete floatingLabelText="Planète" filter={caseInsensitiveFilter} dataSource={planets} {...this.link ()} />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <AutoComplete floatingLabelText="Couleur" filter={fuzzyFilter} dataSource={colors} {...this.link ()} />
+        <br />
+        <Divider {...this.link ()} />
+
         <h1>Date picker</h1>
         <DatePicker action={act.TEST}
           hintText="Date de naissance"
@@ -296,13 +303,6 @@ export default class Catalog extends React.Component {
             </div>
           </Popover>
         </div>
-        <br />
-        <Divider {...this.link ()} />
-
-        <h1>Auto complete</h1>
-        <AutoComplete floatingLabelText="Planète" filter={caseInsensitiveFilter} dataSource={planets} {...this.link ()} />
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <AutoComplete floatingLabelText="Couleur" filter={fuzzyFilter} dataSource={colors} {...this.link ()} />
         <br />
         <Divider {...this.link ()} />
 
