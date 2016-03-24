@@ -90,16 +90,6 @@ export default class Catalog extends React.Component {
       padding: 20,
     };
 
-    // TODO: The Slider breaks !!!
-    // <h1>Sliders</h1>
-    // <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
-    //   <Slider description="Rouge" {...this.link ()} />
-    //   <Slider description="Vert"  defaultValue={0.5} {...this.link ()} />
-    //   <Slider description="Bleu"  defaultValue={1} step={0.10} {...this.link ()} />
-    // </Paper>
-    // <br />
-    // <Divider {...this.link ()} />
-
     return (
       <div style={{padding: '10px 0px 0px 30px'}}>
         <h1>Catalog of components</h1>
@@ -286,6 +276,21 @@ export default class Catalog extends React.Component {
           </Popover>
         </div>
         <br /><br /><br /><br /><br /><br /><br />
+        <Divider {...this.link ()} />
+
+        <h1>Sliders</h1>
+        <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
+          <Slider {...this.link ()} />
+          <Slider defaultValue={0.5} {...this.link ()} />
+          <Slider defaultValue={1} step={0.10} {...this.link ()} />
+        </Paper>
+        <br />
+        <Paper zDepth={3} style={paperStyle2} {...this.link ()}>
+          <Slider description="Rouge" defaultValue={0.1} {...this.link ()} />
+          <Slider description="Vert"  defaultValue={0.5} {...this.link ()} />
+          <Slider description="Bleu"  defaultValue={0.6} {...this.link ()} />
+        </Paper>
+        <br />
         <Divider {...this.link ()} />
 
       </div>
