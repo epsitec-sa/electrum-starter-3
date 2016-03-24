@@ -92,7 +92,7 @@ export default class Catalog extends React.Component {
       padding: 20,
     };
 
-    const dataSource = [
+    const planets = [
       'Mercure',
       'Vénus',
       'Terre',
@@ -104,10 +104,61 @@ export default class Catalog extends React.Component {
       'Pluton'
     ];
 
-    function CaseInsensitiveFilter (searchText, key) {
+    const colors = [
+      'Noir', 'Blanc', 'Rouge', 'Vert', 'Bleu', 'Jaune', 'Orange', 'Gris', 'Violet', 'Marron',
+      'Cyan', 'Magenta', 'Ocre', 'Brun', 'Rose', 'Terracota', 'Lilas', 'Pourpre', 'Bordeaux', 'Bronze',
+      'Menthe', 'Olive', 'Prune', 'Or', 'Ambre', 'Aubergine', 'Auburn', 'Avocat', 'Beige', 'Anthracite',
+      'Argent', 'Azur', 'Acajou', 'Turquoie', 'Petrol', 'Fauve', 'Fouchsia', 'Indigo', 'Lapis-lazuli',
+    ];
+
+    function caseInsensitiveFilter (searchText, key) {
       let k = removeDiacritics (key.toLowerCase ());
       let s = removeDiacritics (searchText.toLowerCase ());
       return k.indexOf (s) !== -1;
+    };
+
+    function levenshteinDistance (searchText, key) {
+      const current = [];
+      let prev;
+      let value;
+
+      for (let i = 0; i <= key.length; i++) {
+        for (let j = 0; j <= searchText.length; j++) {
+          if (i && j) {
+            if (searchText.charAt (j - 1) === key.charAt (i - 1)) {
+              value = prev;
+            } else {
+              value = Math.min (current[j], current[j - 1], prev) + 1;
+            }
+          } else {
+            value = i + j;
+          }
+          prev = current[j];
+          current[j] = value;
+        }
+      }
+      return current.pop ();
+    };
+
+    function levenshteinDistanceFilter (distanceLessThan) {
+      if (distanceLessThan === undefined) {
+        return AutoComplete.levenshteinDistance;
+      } else if (typeof distanceLessThan !== 'number') {
+        throw 'Error: AutoComplete.levenshteinDistanceFilter is a filter generator, not a filter!';
+      }
+
+      return (s, k) => levenshteinDistance (s, k) < distanceLessThan;
+    };
+
+    function fuzzyFilter (searchText, key) {
+      if (searchText.length === 0) {
+        return false;
+      }
+
+      const subMatchKey = key.substring (0, searchText.length);
+      const distance = levenshteinDistance (searchText.toLowerCase (), subMatchKey.toLowerCase ());
+
+      return searchText.length > 3 ? distance < 2 : distance === 0;
     };
 
     return (
@@ -299,14 +350,9 @@ export default class Catalog extends React.Component {
         <Divider {...this.link ()} />
 
         <h1>Auto complete</h1>
-        <div>
-          <AutoComplete
-            hintText="Planète"
-            filter={CaseInsensitiveFilter}
-            dataSource={dataSource}
-            {...this.link ()}
-          />
-        </div>
+        <AutoComplete floatingLabelText="Planète" filter={caseInsensitiveFilter} dataSource={planets} {...this.link ()} />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <AutoComplete floatingLabelText="Couleur" filter={fuzzyFilter} dataSource={colors} {...this.link ()} />
         <br />
         <Divider {...this.link ()} />
 
