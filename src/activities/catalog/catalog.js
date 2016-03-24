@@ -34,7 +34,7 @@ import CodeIcon from 'material-ui/lib/svg-icons/action/code';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import act from './actuators.js';
-import { removeDiacritics } from './remove-diacritics';
+import { caseInsensitiveFilter, fuzzyFilter } from './filter';
 
 export default class Catalog extends React.Component {
 
@@ -110,56 +110,6 @@ export default class Catalog extends React.Component {
       'Menthe', 'Olive', 'Prune', 'Or', 'Ambre', 'Aubergine', 'Auburn', 'Avocat', 'Beige', 'Anthracite',
       'Argent', 'Azur', 'Acajou', 'Turquoie', 'Petrol', 'Fauve', 'Fouchsia', 'Indigo', 'Lapis-lazuli',
     ];
-
-    function caseInsensitiveFilter (searchText, key) {
-      let k = removeDiacritics (key.toLowerCase ());
-      let s = removeDiacritics (searchText.toLowerCase ());
-      return k.indexOf (s) !== -1;
-    };
-
-    function levenshteinDistance (searchText, key) {
-      const current = [];
-      let prev;
-      let value;
-
-      for (let i = 0; i <= key.length; i++) {
-        for (let j = 0; j <= searchText.length; j++) {
-          if (i && j) {
-            if (searchText.charAt (j - 1) === key.charAt (i - 1)) {
-              value = prev;
-            } else {
-              value = Math.min (current[j], current[j - 1], prev) + 1;
-            }
-          } else {
-            value = i + j;
-          }
-          prev = current[j];
-          current[j] = value;
-        }
-      }
-      return current.pop ();
-    };
-
-    function levenshteinDistanceFilter (distanceLessThan) {
-      if (distanceLessThan === undefined) {
-        return AutoComplete.levenshteinDistance;
-      } else if (typeof distanceLessThan !== 'number') {
-        throw 'Error: AutoComplete.levenshteinDistanceFilter is a filter generator, not a filter!';
-      }
-
-      return (s, k) => levenshteinDistance (s, k) < distanceLessThan;
-    };
-
-    function fuzzyFilter (searchText, key) {
-      if (searchText.length === 0) {
-        return false;
-      }
-
-      const subMatchKey = key.substring (0, searchText.length);
-      const distance = levenshteinDistance (searchText.toLowerCase (), subMatchKey.toLowerCase ());
-
-      return searchText.length > 3 ? distance < 2 : distance === 0;
-    };
 
     return (
       <div style={{padding: '10px 0px 0px 30px'}}>
