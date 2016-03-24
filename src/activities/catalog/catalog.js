@@ -34,6 +34,7 @@ import CodeIcon from 'material-ui/lib/svg-icons/action/code';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import act from './actuators.js';
+import { removeDiacritics } from './remove-diacritics';
 
 export default class Catalog extends React.Component {
 
@@ -103,26 +104,11 @@ export default class Catalog extends React.Component {
       'Pluton'
     ];
 
-    // const dataSource1 = [
-    //   {
-    //     text: 'text-value1',
-    //     value: (
-    //       <MenuItem
-    //         primaryText="text-value1"
-    //         secondaryText="&#9786;"
-    //       />
-    //     ),
-    //   },
-    //   {
-    //     text: 'text-value2',
-    //     value: (
-    //       <MenuItem
-    //         primaryText="text-value2"
-    //         secondaryText="&#9786;"
-    //       />
-    //     ),
-    //   },
-    // ];
+    function CaseInsensitiveFilter (searchText, key) {
+      let k = removeDiacritics (key.toLowerCase ());
+      let s = removeDiacritics (searchText.toLowerCase ());
+      return k.indexOf (s) !== -1;
+    };
 
     return (
       <div style={{padding: '10px 0px 0px 30px'}}>
@@ -316,7 +302,7 @@ export default class Catalog extends React.Component {
         <div>
           <AutoComplete
             hintText="Planète"
-            filter={AutoComplete.noFilter}
+            filter={CaseInsensitiveFilter}
             dataSource={dataSource}
             {...this.link ()}
           />
