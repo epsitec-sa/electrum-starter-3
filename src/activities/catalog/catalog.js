@@ -34,7 +34,7 @@ import CodeIcon from 'material-ui/lib/svg-icons/action/code';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import act from './actuators.js';
-import { caseInsensitiveFilter, fuzzyFilter } from './filter';
+import Filter from './filter';
 
 export default class Catalog extends React.Component {
 
@@ -155,11 +155,9 @@ export default class Catalog extends React.Component {
         </SelectField>
 
         <h1>Auto complete</h1>
-        <AutoComplete floatingLabelText="Planète" filter={caseInsensitiveFilter} dataSource={planets} {...this.link ()} />
+        <AutoComplete floatingLabelText="Planète" filter={Filter.caseInsensitiveFilter} dataSource={planets} {...this.link ()} />
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <AutoComplete floatingLabelText="Couleur" filter={fuzzyFilter} dataSource={colors} {...this.link ()} />
-        <br />
-        <Divider {...this.link ()} />
+        <AutoComplete floatingLabelText="Couleur" filter={Filter.fuzzyFilter} dataSource={colors} {...this.link ()} />
 
         <h1>Date picker</h1>
         <DatePicker action={act.TEST}

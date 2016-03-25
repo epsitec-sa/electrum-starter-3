@@ -2,7 +2,9 @@
 
 import { removeDiacritics } from './remove-diacritics';
 
-function levenshteinDistance (searchText, key) {
+const Filter = {};
+
+Filter.levenshteinDistance = (searchText, key) => {
   const current = [];
   let prev;
   let value;
@@ -23,25 +25,25 @@ function levenshteinDistance (searchText, key) {
     }
   }
   return current.pop ();
-}
+};
 
-export function caseInsensitiveFilter (searchText, key) {
+Filter.caseInsensitiveFilter = (searchText, key) => {
   const k = removeDiacritics (key.toLowerCase ());
   const s = removeDiacritics (searchText.toLowerCase ());
   return k.indexOf (s) !== -1;
-}
+};
 
-export function levenshteinDistanceFilter (distanceLessThan) {
+Filter.levenshteinDistanceFilter = (distanceLessThan) => {
   if (distanceLessThan === undefined) {
-    return levenshteinDistance;
+    return Filter.levenshteinDistance;
   } else if (typeof distanceLessThan !== 'number') {
     throw 'Error: AutoComplete.levenshteinDistanceFilter is a filter generator, not a filter!';
   }
 
-  return (s, k) => levenshteinDistance (s, k) < distanceLessThan;
-}
+  return (s, k) => Filter.levenshteinDistance (s, k) < distanceLessThan;
+};
 
-export function fuzzyFilter (searchText, key) {
+Filter.fuzzyFilter = (searchText, key) => {
   if (searchText.length === 0) {
     return false;
   }
@@ -49,7 +51,9 @@ export function fuzzyFilter (searchText, key) {
   const subMatchKey = key.substring (0, searchText.length);
   const s = removeDiacritics (searchText.toLowerCase ());
   const k = removeDiacritics (subMatchKey.toLowerCase ());
-  const distance = levenshteinDistance (s, k);
+  const distance = Filter.levenshteinDistance (s, k);
 
   return searchText.length > 3 ? distance < 2 : distance === 0;
-}
+};
+
+export default Filter;
