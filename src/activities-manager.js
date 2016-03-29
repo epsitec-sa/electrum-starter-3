@@ -1,6 +1,4 @@
 'use strict';
-import {State} from 'electrum-store';
-import createAction from './create-action.js';
 /******************************************************************************/
 export default class ActivitiesManager {
   constructor (store) {
@@ -87,7 +85,7 @@ export default class ActivitiesManager {
   }
 
   notify (props, value, ...states) {
-    console.log (`notify value=${value}`);
+    console.log (`notify value=${value} states=${states}`);
   }
 
   update () {
