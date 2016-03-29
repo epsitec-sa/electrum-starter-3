@@ -4,13 +4,16 @@ import act from './actuators.js';
 import {Label} from '../../all-components';
 import Electrum from 'electrum';
 export default (state, props) => {
+  let active = false;
   const activity = state.get ();
   if (!activity) {
     return null;
   }
   const key = activity.parent.split ('.').pop ();
   const path = key + '.' + activity.id;
-
+  if (path === props.state.get ('mainActivityKey')) {
+    active = true;
+  }
   const tabLabel = {
     transformOrigin: 'initial',
     cursor: 'pointer',
@@ -23,6 +26,7 @@ export default (state, props) => {
 
   const tabContainer = {
     flex: 0.1,
+    backgroundColor: active ? '#cccccc' : 'none',
     order: key,
     content: `''`,
     zIndex: 1,
