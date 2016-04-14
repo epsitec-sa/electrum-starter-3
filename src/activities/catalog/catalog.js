@@ -19,6 +19,7 @@ import {
   AutoComplete,
   DatePicker,
   TimePicker,
+  BasicField,
   BasicList,
   ListItem,
   MenuItem,
@@ -329,7 +330,7 @@ export default class Catalog extends React.Component {
         <br />
         <Divider {...this.link ()} />
 
-        <h1>Polyphème</h1>
+        <h1>Polyphème material-ui</h1>
         <Paper zDepth={3} style={paperStyle3} {...this.link ()}>
           <div>
             Expéditeur
@@ -364,6 +365,40 @@ export default class Catalog extends React.Component {
         <br />
         <Divider {...this.link ()} />
 
+        <h1>Polyphème custom</h1>
+        <Paper zDepth={3} style={paperStyle3} {...this.link ()}>
+          <div>
+            Expéditeur
+            <Paper zDepth={1} style={paperStyle4} {...this.link ()}>
+              <Toggle action={act.TEST} label="Nouveau" id="toggle1" {...this.link ()} />
+            </Paper>
+            <RaisedButton style={style.button} action={act.TEST} label="Ajouter" {...this.link ()} />
+            <IconMenu
+              iconButtonElement={<IconButton {...this.link ()}><MoreVertIcon /></IconButton>}
+              anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+              targetOrigin={{horizontal: 'left', vertical: 'top'}} {...this.link ()} >
+              <MenuItem primaryText="Supprimer" {...this.link ()} />
+              <MenuItem primaryText="Chercher"  {...this.link ()} />
+              <MenuItem primaryText="Autre"     {...this.link ()} />
+            </IconMenu>
+          </div>
+          <div>
+            <BasicField hintText="Date" {...this.link ()} />
+            &nbsp;&nbsp;
+            <BasicField hintText="Période" {...this.link ()} />
+            &nbsp;&nbsp;
+            <BasicField hintText="Zone" {...this.link ()} />
+          </div>
+          <div>
+            <BasicField hintText="Nom du client" {...this.link ()} />
+          </div>
+          <div>
+            <BasicField hintText="Référence client" {...this.link ()} />
+            <Checkbox action={act.TEST} label="Facturé à" id="" {...this.link ()} />
+          </div>
+        </Paper>
+        <br />
+        <Divider {...this.link ()} />
       </div>
     );
   }
