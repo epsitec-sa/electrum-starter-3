@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {
+  Label,
   Toolbar,
   ToolbarGroup,
   ToolbarSeparator,
@@ -9,9 +10,11 @@ import {
   FlatButton,
   RaisedButton,
   IconButton,
+  RichButton,
   FloatingActionButton,
   RadioButton,
   Checkbox,
+  BasicCheckbox,
   Toggle,
   Badge,
   TextField,
@@ -101,6 +104,10 @@ export default class Catalog extends React.Component {
     const paperStyle4 = {
       width: 200,
       padding: 0,
+    };
+
+    const lineStyle = {
+      marginBottom: '10px',
     };
 
     const planets = [
@@ -367,34 +374,28 @@ export default class Catalog extends React.Component {
 
         <h1>Polyphème custom</h1>
         <Paper zDepth={3} style={paperStyle3} {...this.link ()}>
-          <div>
-            Expéditeur
-            <Paper zDepth={1} style={paperStyle4} {...this.link ()}>
-              <Toggle action={act.TEST} label="Nouveau" id="toggle1" {...this.link ()} />
-            </Paper>
-            <RaisedButton style={style.button} action={act.TEST} label="Ajouter" {...this.link ()} />
-            <IconMenu
-              iconButtonElement={<IconButton {...this.link ()}><MoreVertIcon /></IconButton>}
-              anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-              targetOrigin={{horizontal: 'left', vertical: 'top'}} {...this.link ()} >
-              <MenuItem primaryText="Supprimer" {...this.link ()} />
-              <MenuItem primaryText="Chercher"  {...this.link ()} />
-              <MenuItem primaryText="Autre"     {...this.link ()} />
-            </IconMenu>
+          <div style={lineStyle}>
+            <RichButton glyph="plus" text="Ajouter" {...this.link ()} />
+            <RichButton glyph="ellipsis-v" {...this.link ()} />
           </div>
-          <div>
-            <BasicField hintText="Date" {...this.link ()} />
+          <div style={lineStyle}>
+            <BasicField hintText="Date" size="10" width="100px" {...this.link ()} />
+            <RichButton glyph="calendar" {...this.link ()} />
             &nbsp;&nbsp;
-            <BasicField hintText="Période" {...this.link ()} />
+            <BasicField hintText="Période" width="100px" {...this.link ()} />
+            <RichButton glyph="clock-o" {...this.link ()} />
             &nbsp;&nbsp;
-            <BasicField hintText="Zone" {...this.link ()} />
+            <BasicField hintText="Zone" width="100px" {...this.link ()} />
+            <RichButton glyph="map-marker" {...this.link ()} />
           </div>
-          <div>
-            <BasicField hintText="Nom du client" {...this.link ()} />
+          <div style={lineStyle}>
+            <RichButton glyph="user" {...this.link ()} />
+            <BasicField hintText="Nom du client" width="395px" {...this.link ()} />
           </div>
-          <div>
-            <BasicField hintText="Référence client" {...this.link ()} />
-            <Checkbox action={act.TEST} label="Facturé à" id="" {...this.link ()} />
+          <div style={lineStyle}>
+            <RichButton glyph="tag" {...this.link ()} />
+            <BasicField hintText="Référence client" width="300px" {...this.link ()} />
+            <BasicCheckbox label="Facturé à" checked {...this.link ()} />
           </div>
         </Paper>
         <br />
