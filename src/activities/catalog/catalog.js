@@ -92,6 +92,16 @@ export default class Catalog extends React.Component {
       padding: 20,
     };
 
+    const paperStyle3 = {
+      width: 850,
+      padding: 20,
+    };
+
+    const paperStyle4 = {
+      width: 200,
+      padding: 0,
+    };
+
     const planets = [
       'Mercure',
       'Vénus',
@@ -315,6 +325,41 @@ export default class Catalog extends React.Component {
           <Slider description="Rouge" defaultValue={0.1} {...this.link ()} />
           <Slider description="Vert"  defaultValue={0.5} {...this.link ()} />
           <Slider description="Bleu"  defaultValue={0.6} {...this.link ()} />
+        </Paper>
+        <br />
+        <Divider {...this.link ()} />
+
+        <h1>Polyphème</h1>
+        <Paper zDepth={3} style={paperStyle3} {...this.link ()}>
+          <div>
+            Expéditeur
+            <Paper zDepth={1} style={paperStyle4} {...this.link ()}>
+              <Toggle action={act.TEST} label="Nouveau" id="toggle1" {...this.link ()} />
+            </Paper>
+            <RaisedButton style={style.button} action={act.TEST} label="Ajouter" {...this.link ()} />
+            <IconMenu
+              iconButtonElement={<IconButton {...this.link ()}><MoreVertIcon /></IconButton>}
+              anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+              targetOrigin={{horizontal: 'left', vertical: 'top'}} {...this.link ()} >
+              <MenuItem primaryText="Supprimer" {...this.link ()} />
+              <MenuItem primaryText="Chercher"  {...this.link ()} />
+              <MenuItem primaryText="Autre"     {...this.link ()} />
+            </IconMenu>
+          </div>
+          <div>
+            <TextField hintText="Date" {...this.link ()} />
+            &nbsp;&nbsp;
+            <TextField hintText="Période" {...this.link ()} />
+            &nbsp;&nbsp;
+            <TextField hintText="Zone" {...this.link ()} />
+          </div>
+          <div>
+            <TextField hintText="Nom du client" {...this.link ()} />
+          </div>
+          <div>
+            <TextField hintText="Référence client" {...this.link ()} />
+            <Checkbox action={act.TEST} label="Facturé à" id="" {...this.link ()} />
+          </div>
         </Paper>
         <br />
         <Divider {...this.link ()} />
