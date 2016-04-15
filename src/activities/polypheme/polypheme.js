@@ -164,9 +164,9 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="arrows-h" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <BasicLabel text="Nb de colis 1"     grow="1" {...this.link ()} />
-              <BasicLabel text="Total 3.6 kg"      grow="1" {...this.link ()} />
-              <BasicLabel text="IATA total 3.6 kg" grow="1" {...this.link ()} />
+              <BasicLabel text="Nb de colis 1"     info grow="1" {...this.link ()} />
+              <BasicLabel text="Total 3.6 kg"      info grow="1" {...this.link ()} />
+              <BasicLabel text="IATA total 3.6 kg" info grow="1" {...this.link ()} />
             </BasicRow>
             <BasicRow>
               <RichButton glyph="comment" flowContinuation="overlay" {...this.link ()} />
