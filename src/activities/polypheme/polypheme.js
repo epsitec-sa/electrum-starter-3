@@ -146,6 +146,36 @@ export default class Polypheme extends React.Component {
         </Paper>
 
         <br />
+
+        <Paper zDepth={3} style={paperStyle3} {...this.link ()} >
+          <BasicContainer width='600px' {...this.link ()} >
+            <BasicRow>
+              <BasicLabel text="COLIS" grow="1" {...this.link ()} />
+              <RichButton glyph="plus" text="Ajouter" flowContinuation="spacing" {...this.link ()} />
+              <RichButton glyph="ellipsis-v" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <RichButton glyph="trash-o" flowContinuation="spacing" {...this.link ()} />
+              <BasicField hintText="Type" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="cube" flowContinuation="spacing" {...this.link ()} />
+              <BasicField hintText="Poids" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="balance-scale" flowContinuation="spacing" {...this.link ()} />
+              <BasicField hintText="Dimensions" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="arrows-h" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <BasicLabel text="Nb de colis 1"     grow="1" {...this.link ()} />
+              <BasicLabel text="Total 3.6 kg"      grow="1" {...this.link ()} />
+              <BasicLabel text="IATA total 3.6 kg" grow="1" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <RichButton glyph="comment" flowContinuation="overlay" {...this.link ()} />
+              <BasicField hintText="Remarque" {...this.link ()} />
+            </BasicRow>
+          </BasicContainer>
+        </Paper>
+
+        <br />
       </div>
     );
   }
