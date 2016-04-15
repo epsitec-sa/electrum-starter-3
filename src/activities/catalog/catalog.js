@@ -31,7 +31,8 @@ import {
   Slider,
   Paper,
   Divider,
-  BasicRow
+  BasicRow,
+  BasicLabel
 } from 'electrum-arc';
 
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
@@ -110,14 +111,6 @@ export default class Catalog extends React.Component {
     const paperStyle5 = {
       width: 600,
       padding: 20,
-    };
-
-    const lineStyle = {
-      display:         'flex',
-      flexDirection:   'row',
-      justifyContent:  'space-between',
-      alignItems:      'center',
-      marginBottom:    '10px',
     };
 
     const planets = [
@@ -385,7 +378,7 @@ export default class Catalog extends React.Component {
         <h1>Polyphème custom</h1>
         <Paper zDepth={3} style={paperStyle5} {...this.link ()}>
           <BasicRow>
-            <label>EXPÉDITEUR</label>
+            <BasicLabel text="EXPÉDITEUR" grow="1" {...this.link ()} />
             <RichButton glyph="toggle-off" text="Nouveau" borderless {...this.link ()} />
             <RichButton glyph="plus" text="Ajouter" {...this.link ()} />
             <RichButton glyph="ellipsis-v" {...this.link ()} />
