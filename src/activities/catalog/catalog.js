@@ -32,6 +32,7 @@ import {
   Paper,
   Divider,
   BasicRow,
+  BasicContainer,
   BasicLabel
 } from 'electrum-arc';
 
@@ -99,18 +100,7 @@ export default class Catalog extends React.Component {
     };
 
     const paperStyle3 = {
-      width: 850,
-      padding: 20,
-    };
-
-    const paperStyle4 = {
-      width: 200,
-      padding: 0,
-    };
-
-    const paperStyle5 = {
-      width: 600,
-      padding: 20,
+      width: 640,
     };
 
     const planets = [
@@ -340,66 +330,33 @@ export default class Catalog extends React.Component {
         <br />
         <Divider {...this.link ()} />
 
-        <h1>Polyphème material-ui</h1>
-        <Paper zDepth={3} style={paperStyle3} {...this.link ()}>
-          <div>
-            Expéditeur
-            <Paper zDepth={1} style={paperStyle4} {...this.link ()}>
-              <Toggle action={act.TEST} label="Nouveau" id="toggle1" {...this.link ()} />
-            </Paper>
-            <RaisedButton style={style.button} action={act.TEST} label="Ajouter" {...this.link ()} />
-            <IconMenu
-              iconButtonElement={<IconButton {...this.link ()}><MoreVertIcon /></IconButton>}
-              anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-              targetOrigin={{horizontal: 'left', vertical: 'top'}} {...this.link ()} >
-              <MenuItem primaryText="Supprimer" {...this.link ()} />
-              <MenuItem primaryText="Chercher"  {...this.link ()} />
-              <MenuItem primaryText="Autre"     {...this.link ()} />
-            </IconMenu>
-          </div>
-          <div>
-            <TextField hintText="Date" {...this.link ()} />
-            &nbsp;&nbsp;
-            <TextField hintText="Période" {...this.link ()} />
-            &nbsp;&nbsp;
-            <TextField hintText="Zone" {...this.link ()} />
-          </div>
-          <div>
-            <TextField hintText="Nom du client" {...this.link ()} />
-          </div>
-          <div>
-            <TextField hintText="Référence client" {...this.link ()} />
-            <Checkbox action={act.TEST} label="Facturé à" id="" {...this.link ()} />
-          </div>
-        </Paper>
-        <br />
-        <Divider {...this.link ()} />
-
         <h1>Polyphème custom</h1>
-        <Paper zDepth={3} style={paperStyle5} {...this.link ()}>
-          <BasicRow>
-            <BasicLabel text="EXPÉDITEUR" grow="1" {...this.link ()} />
-            <RichButton glyph="toggle-off" text="Nouveau" borderless flowContinuation="spacing" {...this.link ()} />
-            <RichButton glyph="plus" text="Ajouter" flowContinuation="spacing" {...this.link ()} />
-            <RichButton glyph="ellipsis-v" {...this.link ()} />
-          </BasicRow>
-          <BasicRow>
-            <BasicField hintText="Date" grow="1" flowContinuation="overlay" {...this.link ()} />
-            <RichButton glyph="calendar" flowContinuation="spacing" {...this.link ()} />
-            <BasicField hintText="Période" grow="2" flowContinuation="overlay" {...this.link ()} />
-            <RichButton glyph="clock-o" flowContinuation="spacing" {...this.link ()} />
-            <BasicField hintText="Zone" grow="1" flowContinuation="overlay" {...this.link ()} />
-            <RichButton glyph="map-marker" {...this.link ()} />
-          </BasicRow>
-          <BasicRow>
-            <RichButton glyph="user" flowContinuation="overlay" {...this.link ()} />
-            <BasicField hintText="Nom du client" {...this.link ()} />
-          </BasicRow>
-          <BasicRow>
-            <RichButton glyph="tag" flowContinuation="overlay" {...this.link ()} />
-            <BasicField hintText="Référence client" flowContinuation="spacing" {...this.link ()} />
-            <RichButton glyph="check-square" text="facturé à" borderless rightIcon {...this.link ()} />
-          </BasicRow>
+        <Paper zDepth={3} style={paperStyle3} {...this.link ()} >
+          <BasicContainer width='600px' {...this.link ()} >
+            <BasicRow>
+              <BasicLabel text="EXPÉDITEUR" grow="1" {...this.link ()} />
+              <RichButton glyph="toggle-off" text="Nouveau" borderless flowContinuation="spacing" {...this.link ()} />
+              <RichButton glyph="plus" text="Ajouter" flowContinuation="spacing" {...this.link ()} />
+              <RichButton glyph="ellipsis-v" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <BasicField hintText="Date" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="calendar" flowContinuation="spacing" {...this.link ()} />
+              <BasicField hintText="Période" grow="2" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="clock-o" flowContinuation="spacing" {...this.link ()} />
+              <BasicField hintText="Zone" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="map-marker" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <RichButton glyph="user" flowContinuation="overlay" {...this.link ()} />
+              <BasicField hintText="Nom du client" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <RichButton glyph="tag" flowContinuation="overlay" {...this.link ()} />
+              <BasicField hintText="Référence client" flowContinuation="spacing" {...this.link ()} />
+              <RichButton glyph="check-square" text="facturé à" borderless rightIcon {...this.link ()} />
+            </BasicRow>
+          </BasicContainer>
         </Paper>
         <br />
         <Divider {...this.link ()} />
