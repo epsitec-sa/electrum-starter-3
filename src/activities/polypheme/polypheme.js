@@ -103,14 +103,14 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton text="Standard (1h)" grow="1" flowContinuation="spacing" {...this.link ()} />
-              <RichButton text="Urgent (30 min)" grow="1" flowContinuation="spacing" {...this.link ()} />
-              <RichButton text="Dring Dring" grow="1" {...this.link ()} />
+              <RichButton text="Standard (1h)"    width="100" grow="1" flowContinuation="spacing" {...this.link ()} />
+              <RichButton text="Urgent (30 min)"  width="100" grow="1" flowContinuation="spacing" {...this.link ()} />
+              <RichButton text="Dring Dring"      width="100" grow="1" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton text="Course régulière" grow="1" flowContinuation="spacing" {...this.link ()} />
-              <RichButton text="Multi" grow="1" flowContinuation="spacing" {...this.link ()} />
-              <RichButton text="Case postale" grow="1" {...this.link ()} />
+              <RichButton text="Course régulière" width="100" grow="1" flowContinuation="spacing" {...this.link ()} />
+              <RichButton text="Multi"            width="100" grow="1" flowContinuation="spacing" {...this.link ()} />
+              <RichButton text="Case postale"     width="100" grow="1" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
         </Paper>
