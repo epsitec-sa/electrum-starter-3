@@ -106,10 +106,15 @@ export default class Catalog extends React.Component {
       padding: 0,
     };
 
+    const paperStyle5 = {
+      width: 600,
+      padding: 20,
+    };
+
     const lineStyle = {
       display:         'flex',
       flexDirection:   'row',
-      justifyContent:  'flex-start',
+      justifyContent:  'space-between ',
       alignItems:      'center',
       marginBottom:    '10px',
     };
@@ -377,7 +382,7 @@ export default class Catalog extends React.Component {
         <Divider {...this.link ()} />
 
         <h1>Polyphème custom</h1>
-        <Paper zDepth={3} style={paperStyle3} {...this.link ()}>
+        <Paper zDepth={3} style={paperStyle5} {...this.link ()}>
           <div style={lineStyle}>
             <label>EXPÉDITEUR</label>
             <RichButton glyph="toggle-off" text="Nouveau" borderless {...this.link ()} />
@@ -385,22 +390,22 @@ export default class Catalog extends React.Component {
             <RichButton glyph="ellipsis-v" {...this.link ()} />
           </div>
           <div style={lineStyle}>
-            <BasicField hintText="Date" size="10" width="100px" {...this.link ()} />
+            <BasicField hintText="Date" grow="1" {...this.link ()} />
             <RichButton glyph="calendar" {...this.link ()} />
             &nbsp;&nbsp;
-            <BasicField hintText="Période" width="100px" {...this.link ()} />
+            <BasicField hintText="Période" grow="2" {...this.link ()} />
             <RichButton glyph="clock-o" {...this.link ()} />
             &nbsp;&nbsp;
-            <BasicField hintText="Zone" width="100px" {...this.link ()} />
+            <BasicField hintText="Zone" grow="1" {...this.link ()} />
             <RichButton glyph="map-marker" {...this.link ()} />
           </div>
           <div style={lineStyle}>
             <RichButton glyph="user" {...this.link ()} />
-            <BasicField hintText="Nom du client" width="395px" {...this.link ()} />
+            <BasicField hintText="Nom du client" {...this.link ()} />
           </div>
           <div style={lineStyle}>
             <RichButton glyph="tag" {...this.link ()} />
-            <BasicField hintText="Référence client" width="300px" {...this.link ()} />
+            <BasicField hintText="Référence client" {...this.link ()} />
             <BasicCheckbox label="Facturé à" checked {...this.link ()} />
           </div>
         </Paper>
