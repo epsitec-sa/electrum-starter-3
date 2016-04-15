@@ -156,6 +156,15 @@ export default class Polypheme extends React.Component {
             </BasicRow>
             <BasicRow>
               <RichButton glyph="trash-o" flowContinuation="spacing" {...this.link ()} />
+              <BasicField value="Standard box" hintText="Type" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="cube" flowContinuation="spacing" {...this.link ()} />
+              <BasicField value="3.6 kg" hintText="Poids" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="balance-scale" flowContinuation="spacing" {...this.link ()} />
+              <BasicField value="50 x 75 x 20" hintText="Dimensions" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="arrows-h" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <RichButton glyph="trash-o" flowContinuation="spacing" {...this.link ()} />
               <BasicField hintText="Type" grow="1" flowContinuation="overlay" {...this.link ()} />
               <RichButton glyph="cube" flowContinuation="spacing" {...this.link ()} />
               <BasicField hintText="Poids" grow="1" flowContinuation="overlay" {...this.link ()} />
@@ -164,7 +173,7 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="arrows-h" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <BasicLabel text="Nb de colis 1"     info grow="1" {...this.link ()} />
+              <BasicLabel text="Nb de colis 2"     info grow="1" {...this.link ()} />
               <BasicLabel text="Total 3.6 kg"      info grow="1" {...this.link ()} />
               <BasicLabel text="IATA total 3.6 kg" info grow="1" {...this.link ()} />
             </BasicRow>
