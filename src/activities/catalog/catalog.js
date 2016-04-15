@@ -107,7 +107,11 @@ export default class Catalog extends React.Component {
     };
 
     const lineStyle = {
-      marginBottom: '10px',
+      display:         'flex',
+      flexDirection:   'row',
+      justifyContent:  'flex-start',
+      alignItems:      'center',
+      marginBottom:    '10px',
     };
 
     const planets = [
@@ -375,6 +379,8 @@ export default class Catalog extends React.Component {
         <h1>Polyphème custom</h1>
         <Paper zDepth={3} style={paperStyle3} {...this.link ()}>
           <div style={lineStyle}>
+            <label>Expéditeur</label>
+            <RichButton glyph="toggle-off" text="Nouveau" {...this.link ()} />
             <RichButton glyph="plus" text="Ajouter" {...this.link ()} />
             <RichButton glyph="ellipsis-v" {...this.link ()} />
           </div>
