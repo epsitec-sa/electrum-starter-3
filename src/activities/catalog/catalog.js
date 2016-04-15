@@ -30,7 +30,8 @@ import {
   Popover,
   Slider,
   Paper,
-  Divider
+  Divider,
+  BasicRow
 } from 'electrum-arc';
 
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
@@ -114,7 +115,7 @@ export default class Catalog extends React.Component {
     const lineStyle = {
       display:         'flex',
       flexDirection:   'row',
-      justifyContent:  'space-between ',
+      justifyContent:  'space-between',
       alignItems:      'center',
       marginBottom:    '10px',
     };
@@ -383,13 +384,13 @@ export default class Catalog extends React.Component {
 
         <h1>Polyphème custom</h1>
         <Paper zDepth={3} style={paperStyle5} {...this.link ()}>
-          <div style={lineStyle}>
+          <BasicRow>
             <label>EXPÉDITEUR</label>
             <RichButton glyph="toggle-off" text="Nouveau" borderless {...this.link ()} />
             <RichButton glyph="plus" text="Ajouter" {...this.link ()} />
             <RichButton glyph="ellipsis-v" {...this.link ()} />
-          </div>
-          <div style={lineStyle}>
+          </BasicRow>
+          <BasicRow>
             <BasicField hintText="Date" grow="1" {...this.link ()} />
             <RichButton glyph="calendar" {...this.link ()} />
             &nbsp;&nbsp;
@@ -398,16 +399,17 @@ export default class Catalog extends React.Component {
             &nbsp;&nbsp;
             <BasicField hintText="Zone" grow="1" {...this.link ()} />
             <RichButton glyph="map-marker" {...this.link ()} />
-          </div>
-          <div style={lineStyle}>
+          </BasicRow>
+          <BasicRow>
             <RichButton glyph="user" {...this.link ()} />
             <BasicField hintText="Nom du client" {...this.link ()} />
-          </div>
-          <div style={lineStyle}>
+          </BasicRow>
+          <BasicRow>
             <RichButton glyph="tag" {...this.link ()} />
             <BasicField hintText="Référence client" {...this.link ()} />
+            &nbsp;&nbsp;
             <BasicCheckbox label="Facturé à" checked {...this.link ()} />
-          </div>
+          </BasicRow>
         </Paper>
         <br />
         <Divider {...this.link ()} />
