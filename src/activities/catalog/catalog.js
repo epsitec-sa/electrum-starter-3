@@ -398,7 +398,7 @@ export default class Catalog extends React.Component {
           <BasicRow>
             <RichButton glyph="tag" flowContinuation="overlay" {...this.link ()} />
             <BasicField hintText="Référence client" flowContinuation="spacing" {...this.link ()} />
-            <RichButton glyph="check-square" text="facturé à" borderless {...this.link ()} />
+            <RichButton glyph="check-square" text="facturé à" borderless rightIcon {...this.link ()} />
           </BasicRow>
         </Paper>
         <br />
