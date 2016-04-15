@@ -379,28 +379,25 @@ export default class Catalog extends React.Component {
         <Paper zDepth={3} style={paperStyle5} {...this.link ()}>
           <BasicRow>
             <BasicLabel text="EXPÉDITEUR" grow="1" {...this.link ()} />
-            <RichButton glyph="toggle-off" text="Nouveau" borderless {...this.link ()} />
-            <RichButton glyph="plus" text="Ajouter" {...this.link ()} />
+            <RichButton glyph="toggle-off" text="Nouveau" borderless flowContinuation="spacing" {...this.link ()} />
+            <RichButton glyph="plus" text="Ajouter" flowContinuation="spacing" {...this.link ()} />
             <RichButton glyph="ellipsis-v" {...this.link ()} />
           </BasicRow>
           <BasicRow>
-            <BasicField hintText="Date" grow="1" {...this.link ()} />
-            <RichButton glyph="calendar" {...this.link ()} />
-            &nbsp;&nbsp;
-            <BasicField hintText="Période" grow="2" {...this.link ()} />
-            <RichButton glyph="clock-o" {...this.link ()} />
-            &nbsp;&nbsp;
-            <BasicField hintText="Zone" grow="1" {...this.link ()} />
+            <BasicField hintText="Date" grow="1" flowContinuation="overlay" {...this.link ()} />
+            <RichButton glyph="calendar" flowContinuation="spacing" {...this.link ()} />
+            <BasicField hintText="Période" grow="2" flowContinuation="overlay" {...this.link ()} />
+            <RichButton glyph="clock-o" flowContinuation="spacing" {...this.link ()} />
+            <BasicField hintText="Zone" grow="1" flowContinuation="overlay" {...this.link ()} />
             <RichButton glyph="map-marker" {...this.link ()} />
           </BasicRow>
           <BasicRow>
-            <RichButton glyph="user" {...this.link ()} />
+            <RichButton glyph="user" flowContinuation="overlay" {...this.link ()} />
             <BasicField hintText="Nom du client" {...this.link ()} />
           </BasicRow>
           <BasicRow>
-            <RichButton glyph="tag" {...this.link ()} />
-            <BasicField hintText="Référence client" {...this.link ()} />
-            &nbsp;&nbsp;
+            <RichButton glyph="tag" flowContinuation="overlay" {...this.link ()} />
+            <BasicField hintText="Référence client" flowContinuation="spacing" {...this.link ()} />
             <BasicCheckbox label="Facturé à" checked {...this.link ()} />
           </BasicRow>
         </Paper>
