@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {
-  Label,
   MuToolbar,
   MuToolbarGroup,
   MuToolbarSeparator,
