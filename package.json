@@ -19,7 +19,7 @@
   "author": "Epsitec SA",
   "license": "MIT",
   "dependencies": {
-    "electrum": "^2.26.3",
+    "electrum": "^3.0.0",
     "electrum-arc": "^2.3.1",
     "electrum-command": "^2.2.0"
   },
