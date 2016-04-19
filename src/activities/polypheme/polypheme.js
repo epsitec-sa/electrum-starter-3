@@ -5,7 +5,7 @@ import {
   MuPaper,
   RichButton,
   BasicCheckbox,
-  BasicField,
+  TextField,
   BasicRow,
   BasicContainer,
   Label
@@ -74,20 +74,20 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <BasicField hintText="Date" grow="1" spacing="overlap" {...this.link ()} />
+              <TextField hintText="Date" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="calendar" spacing="large" {...this.link ()} />
-              <BasicField hintText="Période" grow="2" spacing="overlap" {...this.link ()} />
+              <TextField hintText="Période" grow="2" spacing="overlap" {...this.link ()} />
               <RichButton glyph="clock-o" spacing="large" {...this.link ()} />
-              <BasicField hintText="Zone" grow="1" spacing="overlap" {...this.link ()} />
+              <TextField hintText="Zone" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="map-marker" {...this.link ()} />
             </BasicRow>
             <BasicRow>
               <RichButton glyph="user" spacing="overlap" {...this.link ()} />
-              <BasicField hintText="Nom du client" {...this.link ()} />
+              <TextField hintText="Nom du client" {...this.link ()} />
             </BasicRow>
             <BasicRow>
               <RichButton glyph="tag" spacing="overlap" {...this.link ()} />
-              <BasicField hintText="Référence client" spacing="large" {...this.link ()} />
+              <TextField hintText="Référence client" spacing="large" {...this.link ()} />
               <RichButton glyph="check-square" text="facturé à" border="none" icon="right" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
@@ -125,20 +125,20 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <BasicField hintText="Date" grow="1" spacing="overlap" {...this.link ()} />
+              <TextField hintText="Date" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="calendar" spacing="large" {...this.link ()} />
-              <BasicField hintText="Période" grow="2" spacing="overlap" {...this.link ()} />
+              <TextField hintText="Période" grow="2" spacing="overlap" {...this.link ()} />
               <RichButton glyph="clock-o" spacing="large" {...this.link ()} />
-              <BasicField hintText="Zone" grow="1" spacing="overlap" {...this.link ()} />
+              <TextField hintText="Zone" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="map-marker" {...this.link ()} />
             </BasicRow>
             <BasicRow>
               <RichButton glyph="user" spacing="overlap" {...this.link ()} />
-              <BasicField hintText="Nom du client" {...this.link ()} />
+              <TextField hintText="Nom du client" {...this.link ()} />
             </BasicRow>
             <BasicRow>
               <RichButton glyph="comment" spacing="overlap" {...this.link ()} />
-              <BasicField hintText="Remarque" spacing="large" {...this.link ()} />
+              <TextField hintText="Remarque" spacing="large" {...this.link ()} />
               <RichButton glyph="square-o" text="facturé à" border="none" icon="right" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
@@ -155,20 +155,20 @@ export default class Polypheme extends React.Component {
             </BasicRow>
             <BasicRow>
               <RichButton glyph="trash-o" spacing="large" {...this.link ()} />
-              <BasicField value="Standard box" hintText="Type" grow="1" spacing="overlap" {...this.link ()} />
+              <TextField value="Standard box" hintText="Type" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="cube" spacing="large" {...this.link ()} />
-              <BasicField value="3.6 kg" hintText="Poids" grow="1" spacing="overlap" {...this.link ()} />
+              <TextField value="3.6 kg" hintText="Poids" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="balance-scale" spacing="large" {...this.link ()} />
-              <BasicField value="50 x 75 x 20" hintText="Dimensions" grow="1" spacing="overlap" {...this.link ()} />
+              <TextField value="50 x 75 x 20" hintText="Dimensions" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="arrows-h" {...this.link ()} />
             </BasicRow>
             <BasicRow>
               <RichButton glyph="trash-o" spacing="large" {...this.link ()} />
-              <BasicField hintText="Type" grow="1" spacing="overlap" {...this.link ()} />
+              <TextField hintText="Type" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="cube" spacing="large" {...this.link ()} />
-              <BasicField hintText="Poids" grow="1" spacing="overlap" {...this.link ()} />
+              <TextField hintText="Poids" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="balance-scale" spacing="large" {...this.link ()} />
-              <BasicField hintText="Dimensions" grow="1" spacing="overlap" {...this.link ()} />
+              <TextField hintText="Dimensions" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="arrows-h" {...this.link ()} />
             </BasicRow>
             <BasicRow>
@@ -178,7 +178,7 @@ export default class Polypheme extends React.Component {
             </BasicRow>
             <BasicRow>
               <RichButton glyph="comment" spacing="overlap" {...this.link ()} />
-              <BasicField hintText="Remarque" {...this.link ()} />
+              <TextField hintText="Remarque" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
         </MuPaper>
