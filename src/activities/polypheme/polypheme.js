@@ -6,7 +6,7 @@ import {
   BasicCheckbox,
   BasicField,
   BasicList,
-  Paper,
+  MuPaper,
   BasicRow,
   BasicContainer,
   BasicLabel
@@ -66,7 +66,7 @@ export default class Polypheme extends React.Component {
       <div style={{padding: '10px 0px 0px 30px'}}>
         <h1>Polyphème prototype</h1>
 
-        <Paper zDepth={3} style={paperStyle3} {...this.link ()} >
+        <MuPaper zDepth={3} style={paperStyle3} {...this.link ()} >
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
               <BasicLabel text="EXPÉDITEUR" grow="1" {...this.link ()} />
@@ -92,11 +92,11 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="check-square" text="facturé à" border="none" icon="right" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
-        </Paper>
+        </MuPaper>
 
         <br />
 
-        <Paper zDepth={3} style={paperStyle3} {...this.link ()} >
+        <MuPaper zDepth={3} style={paperStyle3} {...this.link ()} >
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
               <BasicLabel text="PRESTATION" grow="1" {...this.link ()} />
@@ -113,11 +113,11 @@ export default class Polypheme extends React.Component {
               <RichButton text="Case postale"     width="0px" grow="1" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
-        </Paper>
+        </MuPaper>
 
         <br />
 
-        <Paper zDepth={3} style={paperStyle3} {...this.link ()} >
+        <MuPaper zDepth={3} style={paperStyle3} {...this.link ()} >
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
               <BasicLabel text="DESTINATAIRE" grow="1" {...this.link ()} />
@@ -143,11 +143,11 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="square-o" text="facturé à" border="none" icon="right" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
-        </Paper>
+        </MuPaper>
 
         <br />
 
-        <Paper zDepth={3} style={paperStyle3} {...this.link ()} >
+        <MuPaper zDepth={3} style={paperStyle3} {...this.link ()} >
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
               <BasicLabel text="COLIS" grow="1" {...this.link ()} />
@@ -182,7 +182,7 @@ export default class Polypheme extends React.Component {
               <BasicField hintText="Remarque" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
-        </Paper>
+        </MuPaper>
 
         <br />
       </div>
