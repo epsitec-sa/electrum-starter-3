@@ -89,7 +89,7 @@ export default class Polypheme extends React.Component {
             <BasicRow>
               <RichButton glyph="tag" spacing="overlap" {...this.link ()} />
               <BasicField hintText="Référence client" spacing="large" {...this.link ()} />
-              <RichButton glyph="check-square" text="facturé à" border="none" rightIcon {...this.link ()} />
+              <RichButton glyph="check-square" text="facturé à" border="none" icon="right" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
         </Paper>
@@ -140,7 +140,7 @@ export default class Polypheme extends React.Component {
             <BasicRow>
               <RichButton glyph="comment" spacing="overlap" {...this.link ()} />
               <BasicField hintText="Remarque" spacing="large" {...this.link ()} />
-              <RichButton glyph="square-o" text="facturé à" border="none" rightIcon {...this.link ()} />
+              <RichButton glyph="square-o" text="facturé à" border="none" icon="right" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
         </Paper>
