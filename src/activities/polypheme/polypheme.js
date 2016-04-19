@@ -70,25 +70,25 @@ export default class Polypheme extends React.Component {
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
               <BasicLabel text="EXPÉDITEUR" grow="1" {...this.link ()} />
-              <RichButton glyph="toggle-off" text="Nouveau" borderless flowContinuation="spacing" {...this.link ()} />
-              <RichButton glyph="plus" text="Ajouter" flowContinuation="spacing" {...this.link ()} />
+              <RichButton glyph="toggle-off" text="Nouveau" borderless spacing="large" {...this.link ()} />
+              <RichButton glyph="plus" text="Ajouter" spacing="large" {...this.link ()} />
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <BasicField hintText="Date" grow="1" flowContinuation="overlay" {...this.link ()} />
-              <RichButton glyph="calendar" flowContinuation="spacing" {...this.link ()} />
-              <BasicField hintText="Période" grow="2" flowContinuation="overlay" {...this.link ()} />
-              <RichButton glyph="clock-o" flowContinuation="spacing" {...this.link ()} />
-              <BasicField hintText="Zone" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <BasicField hintText="Date" grow="1" spacing="overlap" {...this.link ()} />
+              <RichButton glyph="calendar" spacing="large" {...this.link ()} />
+              <BasicField hintText="Période" grow="2" spacing="overlap" {...this.link ()} />
+              <RichButton glyph="clock-o" spacing="large" {...this.link ()} />
+              <BasicField hintText="Zone" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="map-marker" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton glyph="user" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="user" spacing="overlap" {...this.link ()} />
               <BasicField hintText="Nom du client" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton glyph="tag" flowContinuation="overlay" {...this.link ()} />
-              <BasicField hintText="Référence client" flowContinuation="spacing" {...this.link ()} />
+              <RichButton glyph="tag" spacing="overlap" {...this.link ()} />
+              <BasicField hintText="Référence client" spacing="large" {...this.link ()} />
               <RichButton glyph="check-square" text="facturé à" borderless rightIcon {...this.link ()} />
             </BasicRow>
           </BasicContainer>
@@ -103,13 +103,13 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton text="Standard (1h)"    width="100" grow="1" flowContinuation="spacing" {...this.link ()} />
-              <RichButton text="Urgent (30 min)"  width="100" grow="1" flowContinuation="spacing" {...this.link ()} />
+              <RichButton text="Standard (1h)"    width="100" grow="1" spacing="large" {...this.link ()} />
+              <RichButton text="Urgent (30 min)"  width="100" grow="1" spacing="large" {...this.link ()} />
               <RichButton text="Dring Dring"      width="100" grow="1" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton text="Course régulière" width="100" grow="1" flowContinuation="spacing" {...this.link ()} />
-              <RichButton text="Multi"            width="100" grow="1" flowContinuation="spacing" {...this.link ()} />
+              <RichButton text="Course régulière" width="100" grow="1" spacing="large" {...this.link ()} />
+              <RichButton text="Multi"            width="100" grow="1" spacing="large" {...this.link ()} />
               <RichButton text="Case postale"     width="100" grow="1" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
@@ -121,25 +121,25 @@ export default class Polypheme extends React.Component {
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
               <BasicLabel text="DESTINATAIRE" grow="1" {...this.link ()} />
-              <RichButton glyph="toggle-off" text="Nouveau" borderless flowContinuation="spacing" {...this.link ()} />
-              <RichButton glyph="plus" text="Ajouter" flowContinuation="spacing" {...this.link ()} />
+              <RichButton glyph="toggle-off" text="Nouveau" borderless spacing="large" {...this.link ()} />
+              <RichButton glyph="plus" text="Ajouter" spacing="large" {...this.link ()} />
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <BasicField hintText="Date" grow="1" flowContinuation="overlay" {...this.link ()} />
-              <RichButton glyph="calendar" flowContinuation="spacing" {...this.link ()} />
-              <BasicField hintText="Période" grow="2" flowContinuation="overlay" {...this.link ()} />
-              <RichButton glyph="clock-o" flowContinuation="spacing" {...this.link ()} />
-              <BasicField hintText="Zone" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <BasicField hintText="Date" grow="1" spacing="overlap" {...this.link ()} />
+              <RichButton glyph="calendar" spacing="large" {...this.link ()} />
+              <BasicField hintText="Période" grow="2" spacing="overlap" {...this.link ()} />
+              <RichButton glyph="clock-o" spacing="large" {...this.link ()} />
+              <BasicField hintText="Zone" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="map-marker" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton glyph="user" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="user" spacing="overlap" {...this.link ()} />
               <BasicField hintText="Nom du client" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton glyph="comment" flowContinuation="overlay" {...this.link ()} />
-              <BasicField hintText="Remarque" flowContinuation="spacing" {...this.link ()} />
+              <RichButton glyph="comment" spacing="overlap" {...this.link ()} />
+              <BasicField hintText="Remarque" spacing="large" {...this.link ()} />
               <RichButton glyph="square-o" text="facturé à" borderless rightIcon {...this.link ()} />
             </BasicRow>
           </BasicContainer>
@@ -151,25 +151,25 @@ export default class Polypheme extends React.Component {
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
               <BasicLabel text="COLIS" grow="1" {...this.link ()} />
-              <RichButton glyph="plus" text="Ajouter" flowContinuation="spacing" {...this.link ()} />
+              <RichButton glyph="plus" text="Ajouter" spacing="large" {...this.link ()} />
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton glyph="trash-o" flowContinuation="spacing" {...this.link ()} />
-              <BasicField value="Standard box" hintText="Type" grow="1" flowContinuation="overlay" {...this.link ()} />
-              <RichButton glyph="cube" flowContinuation="spacing" {...this.link ()} />
-              <BasicField value="3.6 kg" hintText="Poids" grow="1" flowContinuation="overlay" {...this.link ()} />
-              <RichButton glyph="balance-scale" flowContinuation="spacing" {...this.link ()} />
-              <BasicField value="50 x 75 x 20" hintText="Dimensions" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="trash-o" spacing="large" {...this.link ()} />
+              <BasicField value="Standard box" hintText="Type" grow="1" spacing="overlap" {...this.link ()} />
+              <RichButton glyph="cube" spacing="large" {...this.link ()} />
+              <BasicField value="3.6 kg" hintText="Poids" grow="1" spacing="overlap" {...this.link ()} />
+              <RichButton glyph="balance-scale" spacing="large" {...this.link ()} />
+              <BasicField value="50 x 75 x 20" hintText="Dimensions" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="arrows-h" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton glyph="trash-o" flowContinuation="spacing" {...this.link ()} />
-              <BasicField hintText="Type" grow="1" flowContinuation="overlay" {...this.link ()} />
-              <RichButton glyph="cube" flowContinuation="spacing" {...this.link ()} />
-              <BasicField hintText="Poids" grow="1" flowContinuation="overlay" {...this.link ()} />
-              <RichButton glyph="balance-scale" flowContinuation="spacing" {...this.link ()} />
-              <BasicField hintText="Dimensions" grow="1" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="trash-o" spacing="large" {...this.link ()} />
+              <BasicField hintText="Type" grow="1" spacing="overlap" {...this.link ()} />
+              <RichButton glyph="cube" spacing="large" {...this.link ()} />
+              <BasicField hintText="Poids" grow="1" spacing="overlap" {...this.link ()} />
+              <RichButton glyph="balance-scale" spacing="large" {...this.link ()} />
+              <BasicField hintText="Dimensions" grow="1" spacing="overlap" {...this.link ()} />
               <RichButton glyph="arrows-h" {...this.link ()} />
             </BasicRow>
             <BasicRow>
@@ -178,7 +178,7 @@ export default class Polypheme extends React.Component {
               <BasicLabel text="IATA total 3.6 kg" info grow="1" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <RichButton glyph="comment" flowContinuation="overlay" {...this.link ()} />
+              <RichButton glyph="comment" spacing="overlap" {...this.link ()} />
               <BasicField hintText="Remarque" {...this.link ()} />
             </BasicRow>
           </BasicContainer>

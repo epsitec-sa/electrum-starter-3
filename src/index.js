@@ -29,7 +29,7 @@ am.registerActivity ('forms', FormsActivity);
 am.registerActivity ('poc', PocActivity);
 am.registerActivity ('catalog', CatalogActivity);
 am.registerActivity ('polypheme', PolyphemeActivity);
-am.startMainActivity ('catalog', true);
+am.startMainActivity ('polypheme', true);
 Electrum.reset ();
 Electrum.useBus (am);
 
