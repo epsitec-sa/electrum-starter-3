@@ -70,7 +70,7 @@ export default class Polypheme extends React.Component {
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
               <BasicLabel text="EXPÉDITEUR" grow="1" {...this.link ()} />
-              <RichButton glyph="toggle-off" text="Nouveau" borderless spacing="large" {...this.link ()} />
+              <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" {...this.link ()} />
               <RichButton glyph="plus" text="Ajouter" spacing="large" {...this.link ()} />
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
@@ -89,7 +89,7 @@ export default class Polypheme extends React.Component {
             <BasicRow>
               <RichButton glyph="tag" spacing="overlap" {...this.link ()} />
               <BasicField hintText="Référence client" spacing="large" {...this.link ()} />
-              <RichButton glyph="check-square" text="facturé à" borderless rightIcon {...this.link ()} />
+              <RichButton glyph="check-square" text="facturé à" border="none" rightIcon {...this.link ()} />
             </BasicRow>
           </BasicContainer>
         </Paper>
@@ -121,7 +121,7 @@ export default class Polypheme extends React.Component {
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
               <BasicLabel text="DESTINATAIRE" grow="1" {...this.link ()} />
-              <RichButton glyph="toggle-off" text="Nouveau" borderless spacing="large" {...this.link ()} />
+              <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" {...this.link ()} />
               <RichButton glyph="plus" text="Ajouter" spacing="large" {...this.link ()} />
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
@@ -140,7 +140,7 @@ export default class Polypheme extends React.Component {
             <BasicRow>
               <RichButton glyph="comment" spacing="overlap" {...this.link ()} />
               <BasicField hintText="Remarque" spacing="large" {...this.link ()} />
-              <RichButton glyph="square-o" text="facturé à" borderless rightIcon {...this.link ()} />
+              <RichButton glyph="square-o" text="facturé à" border="none" rightIcon {...this.link ()} />
             </BasicRow>
           </BasicContainer>
         </Paper>
