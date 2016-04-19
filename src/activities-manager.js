@@ -84,8 +84,8 @@ export default class ActivitiesManager {
     this.update ();
   }
 
-  notify (props, value, ...states) {
-    console.log (`notify value=${value} states=${states}`);
+  notify (props, source, value, ...states) {
+    console.log (`notify source=${source} value=${value} states=${states}`);
   }
 
   update () {
