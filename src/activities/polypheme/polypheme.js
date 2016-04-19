@@ -2,14 +2,13 @@
 
 import React from 'react';
 import {
+  MuPaper,
   RichButton,
   BasicCheckbox,
   BasicField,
-  BasicList,
-  MuPaper,
   BasicRow,
   BasicContainer,
-  BasicLabel
+  Label
 } from 'electrum-arc';
 
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
@@ -69,7 +68,7 @@ export default class Polypheme extends React.Component {
         <MuPaper zDepth={3} style={paperStyle3} {...this.link ()} >
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
-              <BasicLabel text="EXPÉDITEUR" grow="1" {...this.link ()} />
+              <Label text="EXPÉDITEUR" grow="1" {...this.link ()} />
               <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" {...this.link ()} />
               <RichButton glyph="plus" text="Ajouter" spacing="large" {...this.link ()} />
               <RichButton glyph="ellipsis-v" {...this.link ()} />
@@ -99,7 +98,7 @@ export default class Polypheme extends React.Component {
         <MuPaper zDepth={3} style={paperStyle3} {...this.link ()} >
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
-              <BasicLabel text="PRESTATION" grow="1" {...this.link ()} />
+              <Label text="PRESTATION" grow="1" {...this.link ()} />
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
             <BasicRow>
@@ -120,7 +119,7 @@ export default class Polypheme extends React.Component {
         <MuPaper zDepth={3} style={paperStyle3} {...this.link ()} >
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
-              <BasicLabel text="DESTINATAIRE" grow="1" {...this.link ()} />
+              <Label text="DESTINATAIRE" grow="1" {...this.link ()} />
               <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" {...this.link ()} />
               <RichButton glyph="plus" text="Ajouter" spacing="large" {...this.link ()} />
               <RichButton glyph="ellipsis-v" {...this.link ()} />
@@ -150,7 +149,7 @@ export default class Polypheme extends React.Component {
         <MuPaper zDepth={3} style={paperStyle3} {...this.link ()} >
           <BasicContainer width='600px' {...this.link ()} >
             <BasicRow>
-              <BasicLabel text="COLIS" grow="1" {...this.link ()} />
+              <Label text="COLIS" grow="1" {...this.link ()} />
               <RichButton glyph="plus" text="Ajouter" spacing="large" {...this.link ()} />
               <RichButton glyph="ellipsis-v" {...this.link ()} />
             </BasicRow>
@@ -173,9 +172,9 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="arrows-h" {...this.link ()} />
             </BasicRow>
             <BasicRow>
-              <BasicLabel text="Nb de colis 2"     kind="info" width="0px" grow="1" {...this.link ()} />
-              <BasicLabel text="Total 3.6 kg"      kind="info" width="0px" grow="1" {...this.link ()} />
-              <BasicLabel text="IATA total 3.6 kg" kind="info" width="0px" grow="1" {...this.link ()} />
+              <Label text="Nb de colis 2"     kind="info" width="0px" grow="1" {...this.link ()} />
+              <Label text="Total 3.6 kg"      kind="info" width="0px" grow="1" {...this.link ()} />
+              <Label text="IATA total 3.6 kg" kind="info" width="0px" grow="1" {...this.link ()} />
             </BasicRow>
             <BasicRow>
               <RichButton glyph="comment" spacing="overlap" {...this.link ()} />
