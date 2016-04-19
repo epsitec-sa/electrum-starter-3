@@ -4,7 +4,6 @@ import React from 'react';
 import {
   MuPaper,
   RichButton,
-  BasicCheckbox,
   TextField,
   BasicRow,
   BasicContainer,
