@@ -33,7 +33,7 @@ export default class Polypheme extends React.Component {
       <div style={{padding: '10px 0px 0px 30px'}}>
         <h1>Polyphème prototype</h1>
 
-        <BasicContainer width='600px' zDepth={3} spacing="large" {...this.link ()} >
+        <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
           <BasicRow>
             <Label text="EXPÉDITEUR" grow="1" {...this.link ()} />
             <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" id="exp.newButton" {...this.link ()} />
@@ -59,7 +59,7 @@ export default class Polypheme extends React.Component {
           </BasicRow>
         </BasicContainer>
 
-        <BasicContainer width='600px' zDepth={3} spacing="large" {...this.link ()} >
+        <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
           <BasicRow>
             <Label text="PRESTATION" grow="1" {...this.link ()} />
             <RichButton glyph="ellipsis-v" id="custom.miscButton" {...this.link ()} />
@@ -76,7 +76,7 @@ export default class Polypheme extends React.Component {
           </BasicRow>
         </BasicContainer>
 
-        <BasicContainer width='600px' zDepth={3} spacing="large" {...this.link ()} >
+        <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
           <BasicRow>
             <Label text="DESTINATAIRE" grow="1" {...this.link ()} />
             <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" id="dest.newButton" {...this.link ()} />
@@ -102,7 +102,7 @@ export default class Polypheme extends React.Component {
           </BasicRow>
         </BasicContainer>
 
-        <BasicContainer width='600px' zDepth={3} spacing="large" {...this.link ()} >
+        <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
           <BasicRow>
             <Label text="COLIS" grow="1" {...this.link ()} />
             <RichButton glyph="plus" text="Ajouter" spacing="large" id="package.addButton" {...this.link ()} />
