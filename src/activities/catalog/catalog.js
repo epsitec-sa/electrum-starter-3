@@ -35,10 +35,10 @@ import {
   BasicLabel
 } from 'electrum-arc';
 
-import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
-import CodeIcon from 'material-ui/lib/svg-icons/action/code';
-import ContentAdd from 'material-ui/lib/svg-icons/content/add';
-import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import CodeIcon from 'material-ui/svg-icons/action/code';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import act from './actuators.js';
 import Filter from './filter';
 
