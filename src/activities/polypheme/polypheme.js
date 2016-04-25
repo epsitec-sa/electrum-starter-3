@@ -35,7 +35,7 @@ export default class Polypheme extends React.Component {
 
         <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
           <BasicRow>
-            <Label text="EXPÉDITEUR" grow="1" {...this.link ()} />
+            <Label text="Expéditeur" grow="1" transform="uppercase" {...this.link ()} />
             <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" id="exp.newButton" {...this.link ()} />
             <RichButton glyph="plus" text="Ajouter" spacing="large" id="exp.addButton" {...this.link ()} />
             <RichButton glyph="ellipsis-v" id="exp.extButton" {...this.link ()} />
@@ -61,7 +61,7 @@ export default class Polypheme extends React.Component {
 
         <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
           <BasicRow>
-            <Label text="PRESTATION" grow="1" {...this.link ()} />
+            <Label text="Prestation" grow="1" transform="uppercase" {...this.link ()} />
             <RichButton glyph="ellipsis-v" id="custom.miscButton" {...this.link ()} />
           </BasicRow>
           <BasicRow>
@@ -78,7 +78,7 @@ export default class Polypheme extends React.Component {
 
         <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
           <BasicRow>
-            <Label text="DESTINATAIRE" grow="1" {...this.link ()} />
+            <Label text="Destinataire" grow="1" transform="uppercase" {...this.link ()} />
             <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" id="dest.newButton" {...this.link ()} />
             <RichButton glyph="plus" text="Ajouter" spacing="large" id="dest.addButton" {...this.link ()} />
             <RichButton glyph="ellipsis-v" id="dest.miscButton" {...this.link ()} />
@@ -104,7 +104,7 @@ export default class Polypheme extends React.Component {
 
         <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
           <BasicRow>
-            <Label text="COLIS" grow="1" {...this.link ()} />
+            <Label text="Colis" grow="1" transform="uppercase" {...this.link ()} />
             <RichButton glyph="plus" text="Ajouter" spacing="large" id="package.addButton" {...this.link ()} />
             <RichButton glyph="ellipsis-v" id="package.miscButton" {...this.link ()} />
           </BasicRow>
