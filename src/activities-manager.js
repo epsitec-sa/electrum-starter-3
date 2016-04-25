@@ -3,11 +3,9 @@
 export default class ActivitiesManager {
   constructor (store) {
     this._store = store;
-    this.state
-      .set ('am', this)
-      .set ('mainActivityPath', null);
-
     this._generation = store.generation;
+    this.state
+      .set ('mainActivityPath', null);
   }
 
   get store () {
