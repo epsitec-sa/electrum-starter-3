@@ -36,16 +36,16 @@ export default class Polypheme extends React.Component {
 
         <BasicContainer border="none" kind="root" {...this.link ()} >
           <TabContainer>
-            <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="tab" id="exp.Tab" {...this.link ()} />
-            <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="tab" id="exp.Tab" {...this.link ()} />
-            <RichButton text="Destinataire" width="0px" grow="1" active="false" kind="tab" id="exp.Tab" {...this.link ()} />
-            <RichButton text="Colis"        width="0px" grow="1" active="false" kind="tab" id="exp.Tab" {...this.link ()} />
-            <RichButton text="Facture"      width="0px" grow="1" active="false" kind="tab" id="exp.Tab" {...this.link ()} />
+            <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="tab" id="exp.Tab"     {...this.link ()} />
+            <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="tab" id="custom.Tab"  {...this.link ()} />
+            <RichButton text="Destinataire" width="0px" grow="1" active="false" kind="tab" id="dest.Tab"    {...this.link ()} />
+            <RichButton text="Colis"        width="0px" grow="1" active="false" kind="tab" id="package.Tab" {...this.link ()} />
+            <RichButton text="Facture"      width="0px" grow="1" active="false" kind="tab" id="fact.Tab"    {...this.link ()} />
           </TabContainer>
 
           <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
             <BasicRow>
-              <Label text="Expéditeur" grow="1" transform="uppercase" kind="title" {...this.link ()} />
+              <Label text="Expéditeur" grow="1" kind="title" {...this.link ()} />
               <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" id="exp.newButton" {...this.link ()} />
               <RichButton glyph="plus" text="Ajouter" spacing="large" id="exp.addButton" {...this.link ()} />
               <RichButton glyph="ellipsis-v" id="exp.extButton" {...this.link ()} />
@@ -71,7 +71,7 @@ export default class Polypheme extends React.Component {
 
           <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
             <BasicRow>
-              <Label text="Prestation" grow="1" transform="uppercase" kind="title" {...this.link ()} />
+              <Label text="Prestation" grow="1" kind="title" {...this.link ()} />
               <RichButton glyph="ellipsis-v" id="custom.miscButton" {...this.link ()} />
             </BasicRow>
             <BasicRow>
@@ -88,7 +88,7 @@ export default class Polypheme extends React.Component {
 
           <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
             <BasicRow>
-              <Label text="Destinataire" grow="1" transform="uppercase" kind="title" {...this.link ()} />
+              <Label text="Destinataire" grow="1" kind="title" {...this.link ()} />
               <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" id="dest.newButton" {...this.link ()} />
               <RichButton glyph="plus" text="Ajouter" spacing="large" id="dest.addButton" {...this.link ()} />
               <RichButton glyph="ellipsis-v" id="dest.miscButton" {...this.link ()} />
@@ -114,7 +114,7 @@ export default class Polypheme extends React.Component {
 
           <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
             <BasicRow>
-              <Label text="Colis" grow="1" transform="uppercase" kind="title" {...this.link ()} />
+              <Label text="Colis" grow="1" kind="title" {...this.link ()} />
               <RichButton glyph="plus" text="Ajouter" spacing="large" id="package.addButton" {...this.link ()} />
               <RichButton glyph="ellipsis-v" id="package.miscButton" {...this.link ()} />
             </BasicRow>
