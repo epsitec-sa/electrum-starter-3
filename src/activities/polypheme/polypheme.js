@@ -147,7 +147,35 @@ export default class Polypheme extends React.Component {
             </BasicRow>
           </BasicContainer>
 
-                                                                </BasicContainer>
+          <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
+            <BasicRow>
+              <Label text="Facture" grow="1" kind="title" {...this.link ()} />
+              <RichButton glyph="plus" text="Ajouter" spacing="large" id="fact.addButton" {...this.link ()} />
+              <RichButton glyph="ellipsis-v" id="fact.extButton" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <Label text="Standard A - C"   kind="article" width="0px" grow="4" {...this.link ()} />
+              <Label text="50.00"            kind="price"   width="0px" grow="1" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <Label text="Supplément poids" kind="article" width="0px" grow="4" {...this.link ()} />
+              <Label text="12.00"            kind="price"   width="0px" grow="1" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <Label text="Sous-total"       kind="articleFooter" width="0px" grow="4" {...this.link ()} />
+              <Label text="62.00"            kind="priceFooter"   width="0px" grow="1" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <Label text="Avance d'argent"  kind="article" width="0px" grow="4" {...this.link ()} />
+              <Label text="55.00"            kind="price"   width="0px" grow="1" {...this.link ()} />
+            </BasicRow>
+            <BasicRow>
+              <Label text="Total"            kind="articleFooter" width="0px" grow="4" {...this.link ()} />
+              <Label text="117.00"           kind="priceFooter"   width="0px" grow="1" {...this.link ()} />
+            </BasicRow>
+          </BasicContainer>
+
+        </BasicContainer>
 
       </div>
     );
