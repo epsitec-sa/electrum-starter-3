@@ -34,6 +34,13 @@ export default class Polypheme extends React.Component {
         <h1>Polyphème prototype</h1>
 
         <BasicContainer border="none" kind="root" {...this.link ()} >
+          <BasicRow>
+            <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="tab" id="exp.Tab" {...this.link ()} />
+            <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="tab" id="exp.Tab" {...this.link ()} />
+            <RichButton text="Destinataire" width="0px" grow="1" active="false" kind="tab" id="exp.Tab" {...this.link ()} />
+            <RichButton text="Colis"        width="0px" grow="1" active="false" kind="tab" id="exp.Tab" {...this.link ()} />
+            <RichButton text="Facture"      width="0px" grow="1" active="false" kind="tab" id="exp.Tab" {...this.link ()} />
+          </BasicRow>
 
           <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
             <BasicRow>
