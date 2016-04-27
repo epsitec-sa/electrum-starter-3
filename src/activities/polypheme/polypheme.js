@@ -153,19 +153,19 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="plus" text="Ajouter" spacing="large" id="fact.addButton" {...this.link ()} />
               <RichButton glyph="ellipsis-v" id="fact.extButton" {...this.link ()} />
             </BasicRow>
-            <BasicRow>
+            <BasicRow spacing="compact">
               <Label text="Standard A - C"   kind="article" width="0px" grow="4" {...this.link ()} />
               <Label text="50.00"            kind="price"   width="0px" grow="1" {...this.link ()} />
             </BasicRow>
-            <BasicRow>
+            <BasicRow spacing="compact">
               <Label text="Supplément poids" kind="article" width="0px" grow="4" {...this.link ()} />
               <Label text="12.00"            kind="price"   width="0px" grow="1" {...this.link ()} />
             </BasicRow>
-            <BasicRow>
+            <BasicRow spacing="compact">
               <Label text="Sous-total"       kind="articleFooter" width="0px" grow="4" {...this.link ()} />
               <Label text="62.00"            kind="priceFooter"   width="0px" grow="1" {...this.link ()} />
             </BasicRow>
-            <BasicRow>
+            <BasicRow spacing="compact">
               <Label text="Avance d'argent"  kind="article" width="0px" grow="4" {...this.link ()} />
               <Label text="55.00"            kind="price"   width="0px" grow="1" {...this.link ()} />
             </BasicRow>
