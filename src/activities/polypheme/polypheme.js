@@ -7,6 +7,7 @@ import {
   BasicRow,
   BasicContainer,
   TabContainer,
+  FooterContainer,
   Label
 } from 'electrum-arc';
 
@@ -174,6 +175,13 @@ export default class Polypheme extends React.Component {
               <Label text="117.00"           kind="priceFooter"   width="0px" grow="1" {...this.link ()} />
             </BasicRow>
           </BasicContainer>
+
+          <FooterContainer>
+            <RichButton glyph="trash-o" text="Annuler"  width="0px" grow="1" kind="footerFirst"  {...this.link ()} />
+            <RichButton glyph="paste"   text="Modèle"   width="0px" grow="1" kind="footerMiddle" {...this.link ()} />
+            <RichButton glyph="inbox"   text="Attendre" width="0px" grow="1" kind="footerMiddle" {...this.link ()} />
+            <RichButton glyph="check"   text="Valider"  width="0px" grow="1" kind="footerLast"   {...this.link ()} />
+          </FooterContainer>
 
         </BasicContainer>
 
