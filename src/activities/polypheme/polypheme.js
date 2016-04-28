@@ -7,8 +7,9 @@ import {
   BasicRow,
   BasicContainer,
   MainTabContainer,
-  TabContainer,
-  FooterContainer,
+  ViewTabContainer,
+  PageNavigatorContainer,
+  ActionContainer,
   Label
 } from 'electrum-arc';
 
@@ -33,25 +34,29 @@ export default class Polypheme extends React.Component {
     };
 
     return (
-      <div style={{padding: '10px 0px 0px 30px'}}>
-        <h1>Polyphème prototype</h1>
+      <div style={{padding: '0px'}}>
 
-        <MainTabContainer>
-          <RichButton text="Dispo"      width="150px" active="false" kind="mainTab" id="exp.Tab"     {...this.link ()} />
-          <RichButton text="Co-dispo"   width="150px" active="true"  kind="mainTab" id="custom.Tab"  {...this.link ()} />
-          <RichButton text="Facturtion" width="150px" active="false" kind="mainTab" id="dest.Tab"    {...this.link ()} />
-          <RichButton text="Clients"    width="150px" active="false" kind="mainTab" id="package.Tab" {...this.link ()} />
-          <RichButton text="Équipe"     width="150px" active="false" kind="mainTab" id="fact.Tab"    {...this.link ()} />
+        <MainTabContainer width='1000px' {...this.link ()} >
+          <RichButton text="Dispo"       width="160px" active="false" kind="mainTab" {...this.link ()} />
+          <RichButton text="Co-dispo"    width="160px" active="true"  kind="mainTab" {...this.link ()} />
+          <RichButton text="Facturation" width="160px" active="false" kind="mainTab" {...this.link ()} />
+          <RichButton text="Clients"     width="160px" active="false" kind="mainTab" {...this.link ()} />
+          <RichButton text="Équipe"      width="160px" active="false" kind="mainTab" {...this.link ()} />
         </MainTabContainer>
 
+        <ViewTabContainer width='1000px' {...this.link ()} >
+          <RichButton glyph="close" text="Nom du client | 10:30"     active="true"  kind="viewTab" {...this.link ()} />
+          <RichButton glyph="close" text="Nom de la mission | 09:56" active="false" kind="viewTab" {...this.link ()} />
+        </ViewTabContainer>
+
         <BasicContainer width='640px' border="none" kind="root" {...this.link ()} >
-          <TabContainer>
-            <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="tab" id="exp.Tab"     {...this.link ()} />
-            <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="tab" id="custom.Tab"  {...this.link ()} />
-            <RichButton text="Destinataire" width="0px" grow="1" active="false" kind="tab" id="dest.Tab"    {...this.link ()} />
-            <RichButton text="Colis"        width="0px" grow="1" active="false" kind="tab" id="package.Tab" {...this.link ()} />
-            <RichButton text="Facture"      width="0px" grow="1" active="false" kind="tab" id="fact.Tab"    {...this.link ()} />
-          </TabContainer>
+          <PageNavigatorContainer>
+            <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="pageNavigator" id="exp.Tab"     {...this.link ()} />
+            <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="pageNavigator" id="custom.Tab"  {...this.link ()} />
+            <RichButton text="Destinataire" width="0px" grow="1" active="false" kind="pageNavigator" id="dest.Tab"    {...this.link ()} />
+            <RichButton text="Colis"        width="0px" grow="1" active="false" kind="pageNavigator" id="package.Tab" {...this.link ()} />
+            <RichButton text="Facture"      width="0px" grow="1" active="false" kind="pageNavigator" id="fact.Tab"    {...this.link ()} />
+          </PageNavigatorContainer>
 
           <BasicContainer width='600px' zDepth={3} spacing="large" border="none" {...this.link ()} >
             <BasicRow>
@@ -185,12 +190,12 @@ export default class Polypheme extends React.Component {
             </BasicRow>
           </BasicContainer>
 
-          <FooterContainer>
-            <RichButton glyph="trash-o" text="Annuler"  width="0px" grow="1" kind="footerFirst"  {...this.link ()} />
-            <RichButton glyph="paste"   text="Modèle"   width="0px" grow="1" kind="footerMiddle" {...this.link ()} />
-            <RichButton glyph="inbox"   text="Attendre" width="0px" grow="1" kind="footerMiddle" {...this.link ()} />
-            <RichButton glyph="check"   text="Valider"  width="0px" grow="1" kind="footerLast"   {...this.link ()} />
-          </FooterContainer>
+          <ActionContainer>
+            <RichButton glyph="trash-o" text="Annuler"  width="0px" grow="1" kind="actionFirst"  {...this.link ()} />
+            <RichButton glyph="paste"   text="Modèle"   width="0px" grow="1" kind="actionMiddle" {...this.link ()} />
+            <RichButton glyph="inbox"   text="Attendre" width="0px" grow="1" kind="actionMiddle" {...this.link ()} />
+            <RichButton glyph="check"   text="Valider"  width="0px" grow="1" kind="actionLast"   {...this.link ()} />
+          </ActionContainer>
 
         </BasicContainer>
 
