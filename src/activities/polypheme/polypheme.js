@@ -6,6 +6,7 @@ import {
   TextField,
   BasicRow,
   BasicContainer,
+  MainTabContainer,
   TabContainer,
   FooterContainer,
   Label
@@ -35,7 +36,15 @@ export default class Polypheme extends React.Component {
       <div style={{padding: '10px 0px 0px 30px'}}>
         <h1>Polyphème prototype</h1>
 
-        <BasicContainer border="none" kind="root" {...this.link ()} >
+        <MainTabContainer>
+          <RichButton text="Dispo"      width="150px" active="false" kind="mainTab" id="exp.Tab"     {...this.link ()} />
+          <RichButton text="Co-dispo"   width="150px" active="true"  kind="mainTab" id="custom.Tab"  {...this.link ()} />
+          <RichButton text="Facturtion" width="150px" active="false" kind="mainTab" id="dest.Tab"    {...this.link ()} />
+          <RichButton text="Clients"    width="150px" active="false" kind="mainTab" id="package.Tab" {...this.link ()} />
+          <RichButton text="Équipe"     width="150px" active="false" kind="mainTab" id="fact.Tab"    {...this.link ()} />
+        </MainTabContainer>
+
+        <BasicContainer width='640px' border="none" kind="root" {...this.link ()} >
           <TabContainer>
             <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="tab" id="exp.Tab"     {...this.link ()} />
             <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="tab" id="custom.Tab"  {...this.link ()} />
