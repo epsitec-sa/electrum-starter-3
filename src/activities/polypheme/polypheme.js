@@ -45,7 +45,7 @@ export default class Polypheme extends React.Component {
 
         <div style={{padding: '0px', backgroundColor: '#24415f'}}>
 
-          <MainTabContainer width='1000px' {...this.link ()} >
+          <MainTabContainer width='2000px' {...this.link ()} >
             <RichButton text="Dispo"       width="160px" active="false" kind="mainTab" {...this.link ()} />
             <RichButton text="Co-dispo"    width="160px" active="true"  kind="mainTab" {...this.link ()} />
             <RichButton text="Facturation" width="160px" active="false" kind="mainTab" {...this.link ()} />
@@ -53,7 +53,7 @@ export default class Polypheme extends React.Component {
             <RichButton text="Équipe"      width="160px" active="false" kind="mainTab" {...this.link ()} />
           </MainTabContainer>
 
-          <ViewTabContainer width='1000px' {...this.link ()} >
+          <ViewTabContainer width='2000px' {...this.link ()} >
             <RichButton glyph="close" text="Nom du client | 10:30"     active="true"  kind="viewTab" {...this.link ()} />
             <RichButton glyph="close" text="Nom de la mission | 09:56" active="false" kind="viewTab" {...this.link ()} />
           </ViewTabContainer>
