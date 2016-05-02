@@ -55,10 +55,8 @@ class _Root extends React.Component {
     console.log (mainActivity);
     const View = mainActivity.get ('view');
     const mainContainer = {
-      display: 'flex',
-      minHeight: '100%',
-      minWidth: '100%',
-      alignItems: 'stretch'
+      minHeight: '100vh',
+      minWidth: '100vh',
     };
     console.log (state);
     return (

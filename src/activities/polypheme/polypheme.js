@@ -39,7 +39,7 @@ export default class Polypheme extends React.Component {
 
     return (
       <div id='main' style={{display: 'flex', flexDirection: 'row', height: '100vh', backgroundColor: 'cyan',
-                            padding: '10px', boxSizing: 'borderBox'}}>
+                            padding: '10px', boxSizing: 'border-box'}}>
       <div id='left' style={{backgroundColor: 'lightblue', width: '200px'}} ></div>
       <div id='right' style={{flexGrow: '1', backgroundColor: 'gold',
                              padding: '10px', boxSizing: 'border-box',
