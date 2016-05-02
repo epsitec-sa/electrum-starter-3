@@ -54,13 +54,9 @@ class _Root extends React.Component {
     const mainActivity = state.select (mainActivityPath);
     console.log (mainActivity);
     const View = mainActivity.get ('view');
-    const mainContainer = {
-      minHeight: '100vh',
-      minWidth: '100vh',
-    };
     console.log (state);
     return (
-      <main style={mainContainer} data-main-activity={mainActivityPath}>
+      <main data-main-activity={mainActivityPath}>
         <View  {...this.link (mainActivityPath)} />
       </main>
     );
