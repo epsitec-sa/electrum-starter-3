@@ -49,7 +49,8 @@ export default class Polypheme extends React.Component {
           </RichContainer>
 
           <RichContainer kind='viewTab' {...this.link ()} >
-            <RichButton glyph="close" text="Nom du client | 10:30"     active="true"  kind="viewTab" {...this.link ()} />
+            <RichButton glyph="close" text="Nom du client | 10:42"     active="true"  kind="viewTab" {...this.link ()} />
+            <RichButton glyph="close" text="Nom du client | 10:30"     active="false" kind="viewTab" {...this.link ()} />
             <RichButton glyph="close" text="Nom de la mission | 09:56" active="false" kind="viewTab" {...this.link ()} />
           </RichContainer>
 
@@ -205,6 +206,10 @@ export default class Polypheme extends React.Component {
           </RichContainer>
 
           <RichContainer kind='footer' {...this.link ()} >
+            <RichButton glyph="gears" text="Options" kind="footer" {...this.link ()} />
+            <Label text="Marc Sandoz | 09h56" grow="1" kind="footer" {...this.link ()} />
+            <RichButton glyph="ellipsis-v" kind="footer" {...this.link ()} />
+            <RichButton glyph="clock-o" text="Missions" kind="footer" {...this.link ()} />
           </RichContainer>
 
         </RichContainer>
