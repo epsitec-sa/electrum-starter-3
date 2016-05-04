@@ -3,18 +3,9 @@
 import React from 'react';
 import {
   RichContainer,
-  MainWindow,
-  LeftContainer,
-  RightContainer,
   RichButton,
   TextField,
   BasicRow,
-  BasicContainer,
-  MainTabContainer,
-  ViewTabContainer,
-  PageNavigatorContainer,
-  ContentContainer,
-  ActionContainer,
   Label
 } from 'electrum-arc';
 
@@ -62,7 +53,7 @@ export default class Polypheme extends React.Component {
             <RichButton glyph="close" text="Nom de la mission | 09:56" active="false" kind="viewTab" {...this.link ()} />
           </RichContainer>
 
-          <RichContainer kind='view' width='640px' {...this.link ()} >
+          <RichContainer kind='view' width='700px' {...this.link ()} >
             <RichContainer kind='pageNavigator' {...this.link ()} >
               <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="pageNavigator" id="exp.Tab"     {...this.link ()} />
               <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="pageNavigator" id="custom.Tab"  {...this.link ()} />
