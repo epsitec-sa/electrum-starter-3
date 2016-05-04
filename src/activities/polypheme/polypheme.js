@@ -55,12 +55,12 @@ export default class Polypheme extends React.Component {
           </RichContainer>
 
           <RichContainer kind='view' width='700px' {...this.link ()} >
-            <RichContainer kind='pageNavigator' {...this.link ()} >
-              <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="pageNavigator" id="exp.Tab"     {...this.link ()} />
-              <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="pageNavigator" id="custom.Tab"  {...this.link ()} />
-              <RichButton text="Destinataire" width="0px" grow="1" active="false" kind="pageNavigator" id="dest.Tab"    {...this.link ()} />
-              <RichButton text="Colis"        width="0px" grow="1" active="false" kind="pageNavigator" id="package.Tab" {...this.link ()} />
-              <RichButton text="Facture"      width="0px" grow="1" active="false" kind="pageNavigator" id="fact.Tab"    {...this.link ()} />
+            <RichContainer kind='paneNavigator' {...this.link ()} >
+              <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="paneNavigator" id="exp.Tab"     {...this.link ()} />
+              <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="paneNavigator" id="custom.Tab"  {...this.link ()} />
+              <RichButton text="Destinataire" width="0px" grow="1" active="false" kind="paneNavigator" id="dest.Tab"    {...this.link ()} />
+              <RichButton text="Colis"        width="0px" grow="1" active="false" kind="paneNavigator" id="package.Tab" {...this.link ()} />
+              <RichButton text="Facture"      width="0px" grow="1" active="false" kind="paneNavigator" id="fact.Tab"    {...this.link ()} />
             </RichContainer>
 
             <RichContainer kind='panes' {...this.link ()} >
