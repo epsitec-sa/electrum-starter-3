@@ -202,13 +202,13 @@ export default class Polypheme extends React.Component {
               <RichButton glyph="inbox"   text="Attendre" width="0px" grow="1" kind="actionMiddle" {...this.link ()} />
               <RichButton glyph="check"   text="Valider"  width="0px" grow="1" kind="actionLast"   {...this.link ()} />
             </RichContainer>
-          </RichContainer>  /* view */
+          </RichContainer>
 
           <RichContainer kind='footer' {...this.link ()} >
-          </RichContainer>  /* footer */
+          </RichContainer>
 
-        </RichContainer>  /* right */
-      </RichContainer>  /* root */
+        </RichContainer>
+      </RichContainer>
     );
   }
 }
