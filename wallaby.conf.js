@@ -3,9 +3,8 @@
 var babel = require ('babel-core');
 var fs = require ('fs');
 var path = require ('path');
-var babelConfig = JSON.parse (fs.readFileSync (path.join (__dirname, '.babelrc')));
 
-process.env.BABEL_ENV = 'test';
+var babelConfig = JSON.parse (fs.readFileSync (path.join (__dirname, '.babelrc')));
 babelConfig.babel = babel;
 
 module.exports = function (wallaby) {
