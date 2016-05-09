@@ -13,8 +13,8 @@
     "regen": "require-self && electrum-require-components --wrap ./src components .component.js all-components.js",
     "start": "node webpack.devserver.js",
     "test": "npm run compile && npm run mocha",
-    "watch": "webpack --watch --progress --colors -d",
-    "webpack": "webpack -d"
+    "watch": "webpack --display-error-details --watch --progress --colors -d",
+    "webpack": "webpack --display-error-details -d"
   },
   "author": "Epsitec SA",
   "license": "MIT",
