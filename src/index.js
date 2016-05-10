@@ -19,7 +19,12 @@ import ActivitiesManager from './activities-manager.js';
 
 import 'babel-polyfill';
 
-const theme = Theme.create ('default');
+// const theme = Theme.create ('default');
+// import DefaultThemeConfig from '../../electrum-theme/src/themes/green.js';
+// const theme = Theme.create ('green', DefaultThemeConfig);
+import DefaultThemeConfig from '../../electrum-theme/src/themes/pink.js';
+const theme = Theme.create ('pink', DefaultThemeConfig);
+
 const store = Store.create ();
 const am = new ActivitiesManager (store);
 am.registerActivity ('login', LoginActivity);
