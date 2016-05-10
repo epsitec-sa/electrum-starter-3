@@ -63,7 +63,7 @@ export default class Polypheme extends React.Component {
             </RichContainer>
 
             <RichContainer kind='panes' {...this.link ()} >
-              <RichContainer kind='pane' width='600px' {...this.link ()} >
+              <RichContainer kind='pane' {...this.link ()} >
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <Label text="Expéditeur" grow="1" kind="title" {...this.link ()} />
                   <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" id="exp.newButton" {...this.link ()} />
@@ -89,7 +89,7 @@ export default class Polypheme extends React.Component {
                 </RichContainer>
               </RichContainer>
 
-              <RichContainer kind='pane' width='600px' {...this.link ()} >
+              <RichContainer kind='pane' {...this.link ()} >
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <Label text="Prestation" grow="1" kind="title" {...this.link ()} />
                   <RichButton glyph="ellipsis-v" id="custom.miscButton" {...this.link ()} />
@@ -106,7 +106,7 @@ export default class Polypheme extends React.Component {
                 </RichContainer>
               </RichContainer>
 
-              <RichContainer kind='pane' width='600px' {...this.link ()} >
+              <RichContainer kind='pane' {...this.link ()} >
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <Label text="Destinataire" grow="1" kind="title" {...this.link ()} />
                   <RichButton glyph="toggle-off" text="Nouveau" border="none" spacing="large" id="dest.newButton" {...this.link ()} />
@@ -132,7 +132,7 @@ export default class Polypheme extends React.Component {
                 </RichContainer>
               </RichContainer>
 
-              <RichContainer kind='pane' width='600px' {...this.link ()} >
+              <RichContainer kind='pane' {...this.link ()} >
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <Label text="Colis" grow="1" kind="title" {...this.link ()} />
                   <RichButton glyph="plus" text="Ajouter" spacing="large" id="package.addButton" {...this.link ()} />
@@ -167,7 +167,7 @@ export default class Polypheme extends React.Component {
                 </RichContainer>
               </RichContainer>
 
-              <RichContainer kind='pane' width='600px' {...this.link ()} >
+              <RichContainer kind='pane' {...this.link ()} >
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <Label text="Facture" grow="1" kind="title" {...this.link ()} />
                   <RichButton glyph="plus" text="Ajouter" spacing="large" id="fact.addButton" {...this.link ()} />
