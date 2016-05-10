@@ -31,10 +31,10 @@ export default class Polypheme extends React.Component {
     return (
       <RichContainer kind='root' {...this.link ()} >
 
-        <RichContainer kind='left' {...this.link ()} >
+        <RichContainer kind='task' {...this.link ()} >
           <RichButton glyph="cube"        text="Poly"     kind="logo" {...this.link ()} />
-          <RichButton glyph="plus-square" text="Activité" kind="left" {...this.link ()} />
-          <RichButton glyph="inbox"       text="En cours" kind="left" {...this.link ()} />
+          <RichButton glyph="plus-square" text="Activité" kind="task" {...this.link ()} />
+          <RichButton glyph="inbox"       text="En cours" kind="task" {...this.link ()} />
         </RichContainer>
 
         <RichContainer kind='right' {...this.link ()} >
