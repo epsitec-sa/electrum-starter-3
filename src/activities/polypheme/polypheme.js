@@ -5,7 +5,7 @@ import {
   RichContainer,
   RichButton,
   TextField,
-  GlyphTxtField,
+  GlyphTextField,
   Label
 } from 'electrum-arc';
 
@@ -80,7 +80,7 @@ export default class Polypheme extends React.Component {
                   <RichButton glyph="map-marker" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <GlyphTxtField glyph="user" hintText="Nom du client" id="exp.customer" {...this.link ()} />
+                  <GlyphTextField glyph="user" hintText="Nom du client" id="exp.customer" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <RichButton glyph="tag" spacing="overlap" {...this.link ()} />
