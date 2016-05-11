@@ -83,8 +83,7 @@ export default class Polypheme extends React.Component {
                   <GlyphTextField glyph="user" hintText="Nom du client" id="exp.customer" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <RichButton glyph="tag" spacing="overlap" {...this.link ()} />
-                  <TextField hintText="Référence client" spacing="large" id="exp.ref" {...this.link ()} />
+                  <GlyphTextField glyph="tag" hintText="Référence client" spacing="large" id="exp.ref" {...this.link ()} />
                   <RichButton glyph="check-square" text="facturé à" border="none" glyphPosition="right" {...this.link ()} />
                 </RichContainer>
               </RichContainer>
@@ -122,13 +121,11 @@ export default class Polypheme extends React.Component {
                   <RichButton glyph="map-marker" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <RichButton glyph="user" spacing="overlap" {...this.link ()} />
-                  <TextField hintText="Nom du client" id="dest.customer" {...this.link ()} />
+                  <GlyphTextField glyph="user" hintText="Nom du client" id="dest.customer" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <RichButton glyph="comment" spacing="overlap" {...this.link ()} />
-                  <TextField hintText="Remarque" spacing="large" id="dest.comment" {...this.link ()} />
-                  <RichButton glyph="square-o" text="facturé à" border="none" glyphPosition="right" {...this.link ()} />
+                  <GlyphTextField glyph="comment" hintText="Remarque" spacing="large" id="dest.comment" {...this.link ()} />
+                  <RichButton glyph="comment" glyph="square-o" text="facturé à" border="none" glyphPosition="right" {...this.link ()} />
                 </RichContainer>
               </RichContainer>
 
@@ -142,19 +139,15 @@ export default class Polypheme extends React.Component {
                   <RichButton glyph="trash-o" spacing="large" id="package.delete.1" {...this.link ()} />
                   <TextField value="Standard box" hintText="Type" grow="1" spacing="overlap" id="package.box.1" {...this.link ()} />
                   <RichButton glyph="cube" spacing="large" {...this.link ()} />
-                  <TextField value="3.6 kg" hintText="Poids" grow="1" spacing="overlap" id="package.weight.1" {...this.link ()} />
-                  <RichButton glyph="balance-scale" spacing="large" {...this.link ()} />
-                  <TextField value="50 x 75 x 20" hintText="Dimensions" grow="1" spacing="overlap" id="package.dim.1" {...this.link ()} />
-                  <RichButton glyph="arrows-h" {...this.link ()} />
+                  <GlyphTextField glyph="balance-scale" value="3.6 kg" hintText="Poids" grow="1" spacing="large" id="package.weight.1" {...this.link ()} />
+                  <GlyphTextField glyph="arrows-h" value="50 x 75 x 20" hintText="Dimensions" grow="1" spacing="overlap" id="package.dim.1" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <RichButton glyph="trash-o" spacing="large" id="package.delete.2" {...this.link ()} />
                   <TextField hintText="Type" grow="1" spacing="overlap" id="package.box.2" {...this.link ()} />
                   <RichButton glyph="cube" spacing="large" {...this.link ()} />
-                  <TextField hintText="Poids" grow="1" spacing="overlap" id="package.weight.2" {...this.link ()} />
-                  <RichButton glyph="balance-scale" spacing="large" {...this.link ()} />
-                  <TextField hintText="Dimensions" grow="1" spacing="overlap" id="package.dim.2" {...this.link ()} />
-                  <RichButton glyph="arrows-h" {...this.link ()} />
+                  <GlyphTextField glyph="balance-scale" hintText="Poids" grow="1" spacing="large" id="package.weight.2" {...this.link ()} />
+                  <GlyphTextField glyph="arrows-h" hintText="Dimensions" grow="1" spacing="overlap" id="package.dim.2" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <Label text="Nb de colis 2"     kind="info" width="0px" grow="1" id="package.infoCount" {...this.link ()} />
@@ -162,8 +155,7 @@ export default class Polypheme extends React.Component {
                   <Label text="IATA total 3.6 kg" kind="info" width="0px" grow="1" id="package.infoTotal" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <RichButton glyph="comment" spacing="overlap" {...this.link ()} />
-                  <TextField hintText="Remarque" id="package.comment" {...this.link ()} />
+                  <GlyphTextField glyph="comment" hintText="Remarque" id="package.comment" {...this.link ()} />
                 </RichContainer>
               </RichContainer>
 
