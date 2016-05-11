@@ -4,6 +4,7 @@ import React from 'react';
 import {
   RichContainer,
   RichButton,
+  TabButton,
   TextField,
   GlyphTextField,
   TextFieldCombo,
@@ -50,9 +51,9 @@ export default class Polypheme extends React.Component {
           </RichContainer>
 
           <RichContainer kind='viewTab' {...this.link ()} >
-            <RichButton glyph="close" text="Nom du client | 10:42"     active="true"  kind="viewTab" {...this.link ()} />
-            <RichButton glyph="close" text="Nom du client | 10:30"     active="false" kind="viewTab" {...this.link ()} />
-            <RichButton glyph="close" text="Nom de la mission | 09:56" active="false" kind="viewTab" {...this.link ()} />
+            <TabButton text="Nom du client | 10:42"     active="true"  {...this.link ()} />
+            <TabButton text="Nom du client | 10:30"     active="false" {...this.link ()} />
+            <TabButton text="Nom de la mission | 09:56" active="false" {...this.link ()} />
           </RichContainer>
 
           <RichContainer kind='view' width='700px' {...this.link ()} >
