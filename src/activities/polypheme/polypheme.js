@@ -6,6 +6,7 @@ import {
   RichButton,
   TextField,
   GlyphTextField,
+  TextFieldCombo,
   Label
 } from 'electrum-arc';
 
@@ -72,12 +73,9 @@ export default class Polypheme extends React.Component {
                   <RichButton glyph="ellipsis-v" id="exp.extButton" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <TextField hintText="Date" grow="1" spacing="overlap" id="exp.date" {...this.link ()} />
-                  <RichButton glyph="calendar" spacing="large" {...this.link ()} />
-                  <TextField hintText="Période" grow="2" spacing="overlap" id="exp.period" {...this.link ()} />
-                  <RichButton glyph="clock-o" spacing="large" {...this.link ()} />
-                  <TextField hintText="Zone" grow="1" spacing="overlap" id="exp.zone" {...this.link ()} />
-                  <RichButton glyph="map-marker" {...this.link ()} />
+                  <TextFieldCombo hintText="Date" glyph="calendar" grow="1" spacing="large" id="exp.date" {...this.link ()} />
+                  <TextFieldCombo hintText="Période" glyph="clock-o" grow="2" spacing="large" id="exp.period" {...this.link ()} />
+                  <TextFieldCombo hintText="Zone" glyph="map-marker" grow="1" id="exp.zone" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <GlyphTextField glyph="user" hintText="Nom du client" id="exp.customer" {...this.link ()} />
@@ -113,12 +111,9 @@ export default class Polypheme extends React.Component {
                   <RichButton glyph="ellipsis-v" id="dest.miscButton" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <TextField hintText="Date" grow="1" spacing="overlap" id="dest.date" {...this.link ()} />
-                  <RichButton glyph="calendar" spacing="large" {...this.link ()} />
-                  <TextField hintText="Période" grow="2" spacing="overlap" id="dest.period" {...this.link ()} />
-                  <RichButton glyph="clock-o" spacing="large" {...this.link ()} />
-                  <TextField hintText="Zone" grow="1" spacing="overlap" id="dest.zone" {...this.link ()} />
-                  <RichButton glyph="map-marker" {...this.link ()} />
+                  <TextFieldCombo hintText="Date" glyph="calendar" grow="1" spacing="large" id="dest.date" {...this.link ()} />
+                  <TextFieldCombo hintText="Période" glyph="clock-o" grow="2" spacing="large" id="dest.period" {...this.link ()} />
+                  <TextFieldCombo hintText="Zone" glyph="map-marker" grow="1" id="dest.zone" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <GlyphTextField glyph="user" hintText="Nom du client" id="dest.customer" {...this.link ()} />
@@ -137,15 +132,13 @@ export default class Polypheme extends React.Component {
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <RichButton glyph="trash-o" spacing="large" id="package.delete.1" {...this.link ()} />
-                  <TextField value="Standard box" hintText="Type" grow="1" spacing="overlap" id="package.box.1" {...this.link ()} />
-                  <RichButton glyph="cube" spacing="large" {...this.link ()} />
+                  <TextFieldCombo value="Standard box" glyph="cube" hintText="Type" grow="1" spacing="large" id="package.box.1" {...this.link ()} />
                   <GlyphTextField glyph="balance-scale" value="3.6 kg" hintText="Poids" grow="1" spacing="large" id="package.weight.1" {...this.link ()} />
                   <GlyphTextField glyph="arrows-h" value="50 x 75 x 20" hintText="Dimensions" grow="1" spacing="overlap" id="package.dim.1" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <RichButton glyph="trash-o" spacing="large" id="package.delete.2" {...this.link ()} />
-                  <TextField hintText="Type" grow="1" spacing="overlap" id="package.box.2" {...this.link ()} />
-                  <RichButton glyph="cube" spacing="large" {...this.link ()} />
+                  <TextFieldCombo hintText="Type" glyph="cube" grow="1" spacing="large" id="package.box.2" {...this.link ()} />
                   <GlyphTextField glyph="balance-scale" hintText="Poids" grow="1" spacing="large" id="package.weight.2" {...this.link ()} />
                   <GlyphTextField glyph="arrows-h" hintText="Dimensions" grow="1" spacing="overlap" id="package.dim.2" {...this.link ()} />
                 </RichContainer>
