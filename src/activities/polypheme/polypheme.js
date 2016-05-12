@@ -8,7 +8,8 @@ import {
   TextField,
   GlyphTextField,
   TextFieldCombo,
-  Label
+  Label,
+  Badge
 } from 'electrum-arc';
 
 import act from './actuators.js';
@@ -180,6 +181,23 @@ export default class Polypheme extends React.Component {
                   <Label text="117.00"           kind="priceFooter"   width="0px" grow="1" {...this.link ()} />
                 </RichContainer>
               </RichContainer>
+
+              <RichContainer kind='pane' {...this.link ()} >
+                <RichContainer kind='rowPane' {...this.link ()} >
+                  <Label text="Divers" grow="1" kind="title" {...this.link ()} />
+                  <RichButton glyph="ellipsis-v" {...this.link ()} />
+                </RichContainer>
+                <RichContainer kind='rowPane' {...this.link ()} >
+                  <Label text="Essai du composant Badge" grow="1" {...this.link ()} />
+                  <RichButton glyph="plus" text="Ajouter" id="package.addButton" {...this.link ()} />
+                  <Badge value="1" {...this.link ()} />
+                  <Badge value="12" {...this.link ()} />
+                  <Badge value="123" {...this.link ()} />
+                  <Badge value="1234" {...this.link ()} />
+                  <Badge value="12345" {...this.link ()} />
+                </RichContainer>
+              </RichContainer>
+
             </RichContainer>
 
             <RichContainer kind='actions' {...this.link ()} >
