@@ -212,7 +212,7 @@ export default class Polypheme extends React.Component {
             <RichButton glyph="gears" text="Options" kind="footer" {...this.link ()} />
             <Label text="Marc Sandoz | 09h56" grow="1" kind="footer" {...this.link ()} />
             <RichButton glyph="ellipsis-v" kind="footer" {...this.link ()} />
-            <RichButton glyph="clock-o" text="Missions" glyphPosition="right" kind="footer" {...this.link ()} />
+            <RichButton glyph="clock-o" text="Missions" glyphPosition="right" kind="footer" badgeValue="92" {...this.link ()} />
           </RichContainer>
 
         </RichContainer>
