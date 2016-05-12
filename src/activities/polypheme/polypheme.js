@@ -184,10 +184,26 @@ export default class Polypheme extends React.Component {
 
               <RichContainer kind='pane' {...this.link ()} >
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <Label text="Divers" grow="1" kind="title" {...this.link ()} />
+                  <Label text="Paramètres" grow="1" kind="title" {...this.link ()} />
                   <RichButton glyph="ellipsis-v" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
+                  <LabelTextField labelText="ID SC" labelWidth="110" fieldWidth="200" hintText="Numéro d'identificateur" grow="1" {...this.link ()} />
+                </RichContainer>
+                <RichContainer kind='rowPane' {...this.link ()} >
+                  <LabelTextField labelText="Références" labelWidth="110" fieldWidth="200" hintText="Références" grow="1" {...this.link ()} />
+                </RichContainer>
+                <RichContainer kind='rowPane' {...this.link ()} >
+                  <LabelTextField labelText="Paiement" labelWidth="110" fieldWidth="200" hintText="Mode de paiement" grow="1" {...this.link ()} />
+                </RichContainer>
+              </RichContainer>
+
+              <RichContainer kind='pane' {...this.link ()} >
+                <RichContainer kind='rowPane' {...this.link ()} >
+                  <Label text="Divers" grow="1" kind="title" {...this.link ()} />
+                  <RichButton glyph="ellipsis-v" {...this.link ()} />
+                </RichContainer>
+                <RichContainer kind='rowPane' spacing="large" {...this.link ()} >
                   <Label text="Essai du composant Badge" grow="1" {...this.link ()} />
                   <RichButton glyph="plus" text="Ajouter" id="package.addButton" {...this.link ()} />
                   <Badge value="1" {...this.link ()} />
