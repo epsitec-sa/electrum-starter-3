@@ -207,6 +207,16 @@ export default class Polypheme extends React.Component {
                   <RichButton glyph="toggle-off" text="Détaillé" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
                   <RichButton glyph="toggle-on" text="Résumé" glyphPosition="right" width="140px" {...this.link ()} />
                 </RichContainer>
+                <RichContainer kind='rowPane' {...this.link ()} >
+                  <LabelTextField labelText="Rabais" labelWidth="100px" hintText="Rabais accordé" grow="1" spacing="large"  {...this.link ()} />
+                  <RichButton glyph="check-square" text="Personnel" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
+                  <RichButton glyph="square-o" text="Cumulé" glyphPosition="right" width="140px" {...this.link ()} />
+                </RichContainer>
+                <RichContainer kind='rowPane' {...this.link ()} >
+                  <Label text="" grow="1" {...this.link ()} />
+                  <RichButton glyph="toggle-on" text="TVA incluse" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
+                  <Label text="" width="140px" {...this.link ()} />
+                </RichContainer>
               </RichContainer>
 
               <RichContainer kind='pane' {...this.link ()} >
