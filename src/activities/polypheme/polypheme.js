@@ -188,13 +188,24 @@ export default class Polypheme extends React.Component {
                   <RichButton glyph="ellipsis-v" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <LabelTextField labelText="ID SC" labelWidth="110" fieldWidth="200" hintText="Numéro d'identificateur" grow="1" {...this.link ()} />
+                  <LabelTextField labelText="ID SC" labelWidth="100px" hintText="Numéro d'identificateur" grow="1" spacing="large" {...this.link ()} />
+                  <Label text="" width="140px" spacing="large" {...this.link ()} />
+                  <Label text="" width="140px" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <LabelTextField labelText="Références" labelWidth="110" fieldWidth="200" hintText="Références" grow="1" {...this.link ()} />
+                  <LabelTextField labelText="Références" labelWidth="100px" hintText="Références" grow="1" spacing="large" {...this.link ()} />
+                  <RichButton glyph="toggle-on" text="Obligatoire" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
+                  <Label text="" width="140px" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
-                  <LabelTextField labelText="Paiement" labelWidth="110" fieldWidth="200" hintText="Mode de paiement" grow="1" {...this.link ()} />
+                  <LabelTextField labelText="Paiement" labelWidth="100px" hintText="Mode de paiement" grow="1" spacing="large"  {...this.link ()} />
+                  <RichButton glyph="check-square" text="Facture BVR" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
+                  <RichButton glyph="square-o" text="Facture PDF" glyphPosition="right" width="140px" {...this.link ()} />
+                </RichContainer>
+                <RichContainer kind='rowPane' {...this.link ()} >
+                  <Label text="" grow="1" {...this.link ()} />
+                  <RichButton glyph="toggle-off" text="Détaillé" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
+                  <RichButton glyph="toggle-on" text="Résumé" glyphPosition="right" width="140px" {...this.link ()} />
                 </RichContainer>
               </RichContainer>
 
