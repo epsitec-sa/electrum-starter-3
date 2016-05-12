@@ -37,7 +37,7 @@ export default class Polypheme extends React.Component {
 
         <RichContainer kind='task' {...this.link ()} >
           <RichButton glyph="cube"        text="Poly"     kind="taskLogo" {...this.link ()} />
-          <RichButton glyph="plus-square" text="Activité" kind="task" {...this.link ()} />
+          <RichButton glyph="plus-square" text="Activité" kind="task" badgeValue="27" {...this.link ()} />
           <RichButton glyph="inbox"       text="En cours" kind="task" {...this.link ()} />
         </RichContainer>
 
