@@ -36,34 +36,34 @@ export default class Polypheme extends React.Component {
       <RichContainer kind='root' {...this.link ()} >
 
         <RichContainer kind='task' {...this.link ()} >
-          <RichButton glyph="cube"        text="Poly"     kind="taskLogo" {...this.link ()} />
-          <RichButton glyph="plus-square" text="Activité" kind="task" badgeValue="27" {...this.link ()} />
+          <RichButton glyph="cube"        text="Poly"     kind="badge-value" {...this.link ()} />
+          <RichButton glyph="plus-square" text="Activité" kind="task" badge-value="27" {...this.link ()} />
           <RichButton glyph="inbox"       text="En cours" kind="task" {...this.link ()} />
         </RichContainer>
 
         <RichContainer kind='right' {...this.link ()} >
 
-          <RichContainer kind='mainTab' {...this.link ()} >
-            <RichButton text="Dispo"       width="160px" active="false" kind="mainTab" {...this.link ()} />
-            <RichButton text="Co-dispo"    width="160px" active="true"  kind="mainTab" {...this.link ()} />
-            <RichButton text="Facturation" width="160px" active="false" kind="mainTab" {...this.link ()} />
-            <RichButton text="Clients"     width="160px" active="false" kind="mainTab" {...this.link ()} />
-            <RichButton text="Équipe"      width="160px" active="false" kind="mainTab" {...this.link ()} />
+          <RichContainer kind='main-tab' {...this.link ()} >
+            <RichButton text="Dispo"       width="160px" active="false" kind="main-tab" {...this.link ()} />
+            <RichButton text="Co-dispo"    width="160px" active="true"  kind="main-tab" {...this.link ()} />
+            <RichButton text="Facturation" width="160px" active="false" kind="main-tab" {...this.link ()} />
+            <RichButton text="Clients"     width="160px" active="false" kind="main-tab" {...this.link ()} />
+            <RichButton text="Équipe"      width="160px" active="false" kind="main-tab" {...this.link ()} />
           </RichContainer>
 
-          <RichContainer kind='viewTab' {...this.link ()} >
+          <RichContainer kind='view-tab' {...this.link ()} >
             <TabButton text="Nom du client | 10:42"     active="true"  {...this.link ()} />
             <TabButton text="Nom du client | 10:30"     active="false" {...this.link ()} />
             <TabButton text="Nom de la mission | 09:56" active="false" {...this.link ()} />
           </RichContainer>
 
           <RichContainer kind='view' width='700px' {...this.link ()} >
-            <RichContainer kind='paneNavigator' {...this.link ()} >
-              <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="paneNavigator" id="exp.Tab"     {...this.link ()} />
-              <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="paneNavigator" id="custom.Tab"  {...this.link ()} />
-              <RichButton text="Destinataire" width="0px" grow="1" active="false" kind="paneNavigator" id="dest.Tab"    {...this.link ()} />
-              <RichButton text="Colis"        width="0px" grow="1" active="false" kind="paneNavigator" id="package.Tab" {...this.link ()} />
-              <RichButton text="Facture"      width="0px" grow="1" active="false" kind="paneNavigator" id="fact.Tab"    {...this.link ()} />
+            <RichContainer kind='pane-navigator' {...this.link ()} >
+              <RichButton text="Expéditeur"   width="0px" grow="1" active="true"  kind="pane-navigator" id="exp.Tab"     {...this.link ()} />
+              <RichButton text="Prestation"   width="0px" grow="1" active="false" kind="pane-navigator" id="custom.Tab"  {...this.link ()} />
+              <RichButton text="Destinataire" width="0px" grow="1" active="false" kind="pane-navigator" id="dest.Tab"    {...this.link ()} />
+              <RichButton text="Colis"        width="0px" grow="1" active="false" kind="pane-navigator" id="package.Tab" {...this.link ()} />
+              <RichButton text="Facture"      width="0px" grow="1" active="false" kind="pane-navigator" id="fact.Tab"    {...this.link ()} />
             </RichContainer>
 
             <RichContainer kind='panes' {...this.link ()} >
@@ -249,7 +249,7 @@ export default class Polypheme extends React.Component {
             <RichButton glyph="gears" text="Options" kind="footer" {...this.link ()} />
             <Label text="Marc Sandoz | 09h56" grow="1" kind="footer" {...this.link ()} />
             <RichButton glyph="ellipsis-v" kind="footer" {...this.link ()} />
-            <RichButton glyph="clock-o" text="Missions" glyph-position="right" kind="footer" badgeValue="92" {...this.link ()} />
+            <RichButton glyph="clock-o" text="Missions" glyph-position="right" kind="footer" badge-value="92" {...this.link ()} />
           </RichContainer>
 
         </RichContainer>
