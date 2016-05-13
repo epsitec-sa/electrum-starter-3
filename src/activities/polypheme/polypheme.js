@@ -238,10 +238,10 @@ export default class Polypheme extends React.Component {
             </RichContainer>
 
             <RichContainer kind='actions' {...this.link ()} >
-              <RichButton glyph="trash-o" text="Annuler"  width="0px" grow="1" kind="actionFirst"  {...this.link ()} />
-              <RichButton glyph="paste"   text="Modèle"   width="0px" grow="1" kind="actionMiddle" {...this.link ()} />
-              <RichButton glyph="inbox"   text="Attendre" width="0px" grow="1" kind="actionMiddle" {...this.link ()} />
-              <RichButton glyph="check"   text="Valider"  width="0px" grow="1" kind="actionLast"   {...this.link ()} />
+              <RichButton glyph="trash-o" text="Annuler"  width="0px" grow="1" kind="action" place="left"   {...this.link ()} />
+              <RichButton glyph="paste"   text="Modèle"   width="0px" grow="1" kind="action" place="middle" {...this.link ()} />
+              <RichButton glyph="inbox"   text="Attendre" width="0px" grow="1" kind="action" place="middle" {...this.link ()} />
+              <RichButton glyph="check"   text="Valider"  width="0px" grow="1" kind="action" place="right"  {...this.link ()} />
             </RichContainer>
           </RichContainer>
 
