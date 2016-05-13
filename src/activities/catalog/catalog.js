@@ -9,7 +9,7 @@ import {
   MuFlatButton,
   MuRaisedButton,
   MuIconButton,
-  RichButton,
+  Button,
   MuFloatingActionButton,
   MuRadioButton,
   MuCheckbox,
