@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "electrum": "^4.5.0",
-    "electrum-arc": "^4.0.0",
+    "electrum-arc": "^4.0.1",
     "electrum-command": "^2.2.0"
   },
   "peerDependencies": {
