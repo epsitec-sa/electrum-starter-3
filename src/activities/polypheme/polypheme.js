@@ -84,7 +84,7 @@ export default class Polypheme extends React.Component {
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <LabelTextField labelGlyph="tag" hintText="Référence client" spacing="large" id="exp.ref" {...this.link ()} />
-                  <RichButton glyph="check-square" text="facturé à" border="none" glyphPosition="right" {...this.link ()} />
+                  <RichButton glyph="check-square" text="facturé à" border="none" glyph-position="right" {...this.link ()} />
                 </RichContainer>
               </RichContainer>
 
@@ -122,7 +122,7 @@ export default class Polypheme extends React.Component {
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <LabelTextField labelGlyph="comment" hintText="Remarque" spacing="large" id="dest.comment" {...this.link ()} />
-                  <RichButton glyph="comment" glyph="square-o" text="facturé à" border="none" glyphPosition="right" {...this.link ()} />
+                  <RichButton glyph="comment" glyph="square-o" text="facturé à" border="none" glyph-position="right" {...this.link ()} />
                 </RichContainer>
               </RichContainer>
 
@@ -194,27 +194,27 @@ export default class Polypheme extends React.Component {
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <LabelTextField labelText="Références" labelWidth="100px" hintText="Références" grow="1" spacing="large" {...this.link ()} />
-                  <RichButton glyph="toggle-on" text="Obligatoire" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
+                  <RichButton glyph="toggle-on" text="Obligatoire" glyph-position="right" width="140px" spacing="large" {...this.link ()} />
                   <Label text="" width="140px" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <LabelTextField labelText="Paiement" labelWidth="100px" hintText="Mode de paiement" grow="1" spacing="large"  {...this.link ()} />
-                  <RichButton glyph="check-square" text="Facture BVR" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
-                  <RichButton glyph="square-o" text="Facture PDF" glyphPosition="right" width="140px" {...this.link ()} />
+                  <RichButton glyph="check-square" text="Facture BVR" glyph-position="right" width="140px" spacing="large" {...this.link ()} />
+                  <RichButton glyph="square-o" text="Facture PDF" glyph-position="right" width="140px" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <Label text="" grow="1" {...this.link ()} />
-                  <RichButton glyph="toggle-off" text="Détaillé" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
-                  <RichButton glyph="toggle-on" text="Résumé" glyphPosition="right" width="140px" {...this.link ()} />
+                  <RichButton glyph="toggle-off" text="Détaillé" glyph-position="right" width="140px" spacing="large" {...this.link ()} />
+                  <RichButton glyph="toggle-on" text="Résumé" glyph-position="right" width="140px" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <LabelTextField labelText="Rabais" labelWidth="100px" hintText="Rabais accordé" grow="1" spacing="large"  {...this.link ()} />
-                  <RichButton glyph="check-square" text="Personnel" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
-                  <RichButton glyph="square-o" text="Cumulé" glyphPosition="right" width="140px" {...this.link ()} />
+                  <RichButton glyph="check-square" text="Personnel" glyph-position="right" width="140px" spacing="large" {...this.link ()} />
+                  <RichButton glyph="square-o" text="Cumulé" glyph-position="right" width="140px" {...this.link ()} />
                 </RichContainer>
                 <RichContainer kind='rowPane' {...this.link ()} >
                   <Label text="" grow="1" {...this.link ()} />
-                  <RichButton glyph="toggle-on" text="TVA incluse" glyphPosition="right" width="140px" spacing="large" {...this.link ()} />
+                  <RichButton glyph="toggle-on" text="TVA incluse" glyph-position="right" width="140px" spacing="large" {...this.link ()} />
                   <Label text="" width="140px" {...this.link ()} />
                 </RichContainer>
               </RichContainer>
@@ -249,7 +249,7 @@ export default class Polypheme extends React.Component {
             <RichButton glyph="gears" text="Options" kind="footer" {...this.link ()} />
             <Label text="Marc Sandoz | 09h56" grow="1" kind="footer" {...this.link ()} />
             <RichButton glyph="ellipsis-v" kind="footer" {...this.link ()} />
-            <RichButton glyph="clock-o" text="Missions" glyphPosition="right" kind="footer" badgeValue="92" {...this.link ()} />
+            <RichButton glyph="clock-o" text="Missions" glyph-position="right" kind="footer" badgeValue="92" {...this.link ()} />
           </RichContainer>
 
         </RichContainer>
