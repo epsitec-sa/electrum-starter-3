@@ -246,7 +246,7 @@ export default class Polypheme extends React.Component {
               </Container>
             </Container>
 
-            <Container kind='view' width='400px' {...this.link ()} >
+            <Container kind='view' height-type='short' width='400px' {...this.link ()} >
               <Container kind='pane-navigator' {...this.link ()} >
                 <Button text="Recherche" width="0px" grow="1" active="true"  kind="pane-navigator" {...this.link ()} />
               </Container>
