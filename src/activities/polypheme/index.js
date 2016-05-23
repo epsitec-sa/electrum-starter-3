@@ -9,16 +9,14 @@ const onInit = (state) => {
   expDateModifier.set ('onChange', (value, state) => {
     console.log (`CHANGE ${value}`);
     console.dir (state);
-    state
-      .set ('toto', `TOTO:${value}`)
-      .set ('combo-glyph', value);
+    state.set ('tooltip', `${value}`);
   }).set ('onFocus', (value, state) => {
     console.log (`ONFOCUS ${value}`);
-    state.set ('combo-glyph', 'car');
+    state.set ('tooltip', `${value}`);
     console.dir (state);
   }).set ('onDefocus', (value, state) => {
     console.log (`ONDEFOCUS ${value}`);
-    state.set ('combo-glyph', '');
+    state.set ('tooltip', null);
     console.dir (state);
   });
 
