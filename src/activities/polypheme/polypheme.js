@@ -119,9 +119,9 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' id='dest.miscButton' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' glyph='calendar' grow='1' spacing='large' id='dest.date' {...this.link ()} />
-                    <TextFieldCombo hint-text='Période' glyph='clock-o' grow='2' spacing='large' id='dest.period' {...this.link ()} />
-                    <TextFieldCombo hint-text='Zone' glyph='map-marker' grow='1' id='dest.zone' {...this.link ()} />
+                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' id='dest.date' {...this.link ()} />
+                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' id='dest.period' {...this.link ()} />
+                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' id='dest.zone' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <LabelTextField label-glyph='user' hint-text='Nom du client' id='dest.customer' {...this.link ()} />
@@ -140,13 +140,13 @@ export default class Polypheme extends React.Component {
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <Button glyph='trash-o' spacing='large' id='package.delete.1' {...this.link ()} />
-                    <TextFieldCombo value='Standard box' glyph='cube' hint-text='Type' grow='1' spacing='large' id='package.box.1' {...this.link ()} />
+                    <TextFieldCombo value='Standard box' combo-glyph='cube' hint-text='Type' grow='1' spacing='large' id='package.box.1' {...this.link ()} />
                     <LabelTextField label-glyph='balance-scale' value='3.6 kg' hint-text='Poids' grow='1' spacing='large' id='package.weight.1' {...this.link ()} />
                     <LabelTextField label-glyph='arrows-h' value='50 x 75 x 20' hint-text='Dimensions' grow='1' spacing='overlap' id='package.dim.1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <Button glyph='trash-o' spacing='large' id='package.delete.2' {...this.link ()} />
-                    <TextFieldCombo hint-text='Type' glyph='cube' grow='1' spacing='large' id='package.box.2' {...this.link ()} />
+                    <TextFieldCombo hint-text='Type' combo-glyph='cube' grow='1' spacing='large' id='package.box.2' {...this.link ()} />
                     <LabelTextField label-glyph='balance-scale' hint-text='Poids' grow='1' spacing='large' id='package.weight.2' {...this.link ()} />
                     <LabelTextField label-glyph='arrows-h' hint-text='Dimensions' grow='1' spacing='overlap' id='package.dim.2' {...this.link ()} />
                   </Container>
