@@ -83,7 +83,34 @@ export default class ActivitiesManager {
   }
 
   notify (props, source, value, ...states) {
-    console.log (`notify source=${source} value=${value} states=${states}`);
+    console.log (`notify source=${source.type} value=${value}`);
+    const state = props.state;
+    if (source.type === 'change') {
+      const notifier = state.get ('onChange');
+      if (notifier) {
+        notifier (value, props.state);
+        this.update ();
+      }
+      return;
+    }
+
+    if (source.type === 'focus') {
+      const notifier = state.get ('onFocus');
+      if (notifier) {
+        notifier (value, props.state);
+        this.update ();
+      }
+      return;
+    }
+
+    if (source.type === 'defocus') {
+      const notifier = state.get ('onDefocus');
+      if (notifier) {
+        notifier (value, props.state);
+        this.update ();
+      }
+      return;
+    }
   }
 
   update () {
