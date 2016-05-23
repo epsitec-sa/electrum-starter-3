@@ -24,6 +24,7 @@ import DefaultThemeConfig from '../../electrum-theme/src/themes/default.js';
 // import DefaultThemeConfig from '../../electrum-theme/src/themes/default-pink.js';
 // import DefaultThemeConfig from '../../electrum-theme/src/themes/special-green.js';
 // import DefaultThemeConfig from '../../electrum-theme/src/themes/compact-pink.js';
+// import DefaultThemeConfig from '../../electrum-theme/src/themes/compact-mono.js';
 const theme = Theme.create ('default', DefaultThemeConfig);
 
 const store = Store.create ();
