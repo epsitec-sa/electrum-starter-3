@@ -76,9 +76,14 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' id='exp.extButton' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' glyph='calendar' grow='1' spacing='large' id='exp.date' {...this.link ()} />
-                    <TextFieldCombo hint-text='Période' glyph='clock-o' grow='2' spacing='large' id='exp.period' {...this.link ()} />
-                    <TextFieldCombo hint-text='Zone' glyph='map-marker' grow='1' id='exp.zone' {...this.link ()} />
+                    <TextFieldCombo
+                      hint-text='Date'
+                      grow='1'
+                      spacing='large'
+                      {...this.link ('exp-date')} //
+                    />
+                  <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' data-id='exp.period' {...this.link ()} />
+                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' data-id='exp.zone' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <LabelTextField label-glyph='user' hint-text='Nom du client' id='exp.customer' {...this.link ()} />
