@@ -65,6 +65,68 @@ function FormatDate (brut) {
   return {message, result};
 }
 
+function FormatTime (brut) {
+  let message = null;
+  let result = '';
+  brut = brut.trim ();
+  // brut = brut.replace (/./g, ' ');
+  // brut = brut.replace (/:/g, ' ');
+  let a = brut.split (' ');
+  if (a.length < 1 || brut === '') {
+    a[0] = 12;
+  }
+  if (a.length < 2) {
+    a[1] = 0;
+  }
+  if (a.length < 3) {
+    a[2] = 0;
+  }
+  let i;
+  for (i = 0; i < a.length; i++) {
+    let p = parseInt (a[i]);
+    if (isNaN (p)) {
+      if (i === 0) {
+        p = 12;
+      } else if (i === 1) {
+        p = 0;
+      } else if (i === 2) {
+        p = 0;
+      }
+      message = 'Date incorrecte';
+    }
+    if (i === 0) {
+      if (p > 23) {
+        p = 23;
+        message = 'L\'heure est incorrecte';
+      }
+    } else if (i === 1) {
+      if (p > 59) {
+        p = 59;
+        message = 'Les minutes sont incorrectes';
+      }
+    } else if (i === 2) {
+      if (p > 59) {
+        p = 59;
+        message = 'Les secondes sont incorrectes';
+      }
+    }
+    if (i < 3) {
+      if (i > 0) {
+        result += ':';
+      }
+      if (p < 10) {
+        result += '0' + p;
+      } else {
+        result += p;
+      }
+    } else {
+      message = 'Heure trop longue';
+    }
+  }
+
+  return {message, result};
+}
+
 function DateTooltip (brut) {
   var f = FormatDate (brut);
   if (f.message) {
@@ -74,8 +136,19 @@ function DateTooltip (brut) {
   }
 }
 
+function TimeTooltip (brut) {
+  var f = FormatTime (brut);
+  if (f.message) {
+    return f.message + '|' + f.result;
+  } else {
+    return f.result;
+  }
+}
+
 const onInit = (state) => {
   const dateModifier = state.select ('date');
+  const timeModifier = state.select ('time');
+
   Activity.RegisterNotifiers (dateModifier,
   (value, state) => {
     const t = DateTooltip (value);
@@ -93,6 +166,19 @@ const onInit = (state) => {
     state.set ('tooltip', null);
     // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
     // console.dir (state);
+  });
+
+  Activity.RegisterNotifiers (timeModifier,
+  (value, state) => {
+    const t = TimeTooltip (value);
+    state.set ('tooltip', `${t}`);
+  }, (value, state) => {
+    const t = TimeTooltip (value);
+    state.set ('tooltip', `${t}`);
+  }, (value, state) => {
+    const t = TimeTooltip (value);
+    state.set ('tooltip', null);
+    // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
   });
 
   const field = state.select ('field');
