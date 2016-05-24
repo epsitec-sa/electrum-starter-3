@@ -26,27 +26,35 @@ function FormatDate (brut) {
       result += '.';
     }
     let p = parseInt (a[i]);
-    if (!p.isNaN) {
+    if (isNaN (p)) {
       if (i === 0) {
-        if (p > 31) {
-          p = 31;
-          message = 'Le jour est incorrect';
-        }
+        p = 25;
       } else if (i === 1) {
-        if (p > 12) {
-          p = 12;
-          message = 'Le mois est incorrect';
-        }
+        p = 12;
       } else if (i === 2) {
-        if (p < 2000) {
-          p += 2000;
-        }
+        p = 2016;
       }
-      if (p < 10) {
-        result += '0' + p;
-      } else {
-        result += p;
+      message = 'Date incorrecte';
+    }
+    if (i === 0) {
+      if (p > 31) {
+        p = 31;
+        message = 'Le jour est incorrect';
       }
+    } else if (i === 1) {
+      if (p > 12) {
+        p = 12;
+        message = 'Le mois est incorrect';
+      }
+    } else if (i === 2) {
+      if (p < 2000) {
+        p += 2000;
+      }
+    }
+    if (p < 10) {
+      result += '0' + p;
+    } else {
+      result += p;
     }
   }
 
@@ -78,7 +86,7 @@ const onInit = (state) => {
   }, (value, state) => {
     const t = DateTooltip (value);
     console.log (`ONDEFOCUS ${value} ${t}`);
-    state.set ('tooltip', null);
+    // -state.set ('tooltip', null);
     // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
     // console.dir (state);
   });
