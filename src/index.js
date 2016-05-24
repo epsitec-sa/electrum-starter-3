@@ -19,30 +19,8 @@ import ActivitiesManager from './activities-manager.js';
 
 import 'babel-polyfill';
 
-import DefaultThemeConfig from '../../electrum-theme/src/themes/default.js';
-import DefaultGreenThemeConfig from '../../electrum-theme/src/themes/default-green.js';
-import DefaultPinkThemeConfig from '../../electrum-theme/src/themes/default-pink.js';
-import SpecialGreenThemeConfig from '../../electrum-theme/src/themes/special-green.js';
-import CompactPinkThemeConfig from '../../electrum-theme/src/themes/compact-pink.js';
-import CompactMonoThemeConfig from '../../electrum-theme/src/themes/compact-mono.js';
-const defaultTheme = Theme.create ('default', DefaultThemeConfig);
-const defaultGreenTheme = Theme.create ('default', DefaultGreenThemeConfig);
-const defaultPinkTheme = Theme.create ('default', DefaultPinkThemeConfig);
-const specialGreenTheme = Theme.create ('default', SpecialGreenThemeConfig);
-const compactPinkTheme = Theme.create ('default', CompactPinkThemeConfig);
-const compactMonoTheme = Theme.create ('default', CompactMonoThemeConfig);
-
-const themes = [
-  defaultTheme,
-  defaultGreenTheme,
-  defaultPinkTheme,
-  specialGreenTheme,
-  compactPinkTheme,
-  compactMonoTheme
-];
-
 const store = Store.create ();
-const currentTheme = 0;
+const currentTheme = 'default';
 const am = new ActivitiesManager (store);
 am.registerActivity ('login', LoginActivity);
 am.registerActivity ('session', SessionActivity);
@@ -79,5 +57,5 @@ initStyleReload ();
 
 import {Root} from './root.js';
 
-ReactDOM.render (<Root state={store.root} theme={themes[currentTheme]} />,
+ReactDOM.render (<Root state={store.root} theme={Theme.create (currentTheme)} />,
   document.getElementById ('root'));
