@@ -60,31 +60,31 @@ export default class Polypheme extends React.Component {
           <Container kind='views' {...this.link ()} >
             <Container kind='view' width='700px' {...this.link ()} >
               <Container kind='pane-navigator' {...this.link ()} >
-                <Button text='Expéditeur'   width='0px' grow='1' active='true'  kind='pane-navigator' id='exp.Tab'     {...this.link ()} />
-                <Button text='Prestation'   width='0px' grow='1' active='false' kind='pane-navigator' id='custom.Tab'  {...this.link ()} />
-                <Button text='Destinataire' width='0px' grow='1' active='false' kind='pane-navigator' id='dest.Tab'    {...this.link ()} />
-                <Button text='Colis'        width='0px' grow='1' active='false' kind='pane-navigator' id='package.Tab' {...this.link ()} />
-                <Button text='Facture'      width='0px' grow='1' active='false' kind='pane-navigator' id='fact.Tab'    {...this.link ()} />
+                <Button text='Expéditeur'   width='0px' grow='1' active='true'  kind='pane-navigator' {...this.link ()} />
+                <Button text='Prestation'   width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
+                <Button text='Destinataire' width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
+                <Button text='Colis'        width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
+                <Button text='Facture'      width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
               </Container>
 
               <Container kind='panes' {...this.link ()} >
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
                     <Label text='Expéditeur' grow='1' kind='title' {...this.link ()} />
-                    <Button glyph='toggle-off' text='Nouveau' border='none' spacing='large' id='exp.newButton' {...this.link ()} />
-                    <Button glyph='plus' text='Ajouter' spacing='large' id='exp.addButton' {...this.link ()} />
-                    <Button glyph='ellipsis-v' id='exp.extButton' {...this.link ()} />
+                    <Button glyph='toggle-off' text='Nouveau' border='none' spacing='large' {...this.link ()} />
+                    <Button glyph='plus' text='Ajouter' spacing='large' {...this.link ()} />
+                    <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' {...this.link ('date')} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' data-id='exp.period' {...this.link ()} />
-                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' data-id='exp.zone' {...this.link ()} />
+                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' {...this.link ()} />
+                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' {...this.link ()} />
+                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='user' hint-text='Nom du client' id='exp.customer' {...this.link ()} />
+                    <LabelTextField label-glyph='user' hint-text='Nom du client' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='tag' hint-text='Référence client' spacing='large' id='exp.ref' {...this.link ()} />
+                    <LabelTextField label-glyph='tag' hint-text='Référence client' spacing='large' {...this.link ()} />
                     <Button glyph='check-square' text='facturé à' border='none' glyph-position='right' {...this.link ()} />
                   </Container>
                 </Container>
@@ -92,37 +92,37 @@ export default class Polypheme extends React.Component {
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
                     <Label text='Prestation' grow='1' kind='title' {...this.link ()} />
-                    <Button glyph='ellipsis-v' id='custom.miscButton' {...this.link ()} />
+                    <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <Button text='Standard (1h)'    width='0px' grow='1' spacing='large' id='custom.1' {...this.link ()} />
-                    <Button text='Urgent (30 min)'  width='0px' grow='1' spacing='large' id='custom.2' {...this.link ()} />
-                    <Button text='Dring Dring'      width='0px' grow='1' id='custom.3' {...this.link ()} />
+                    <Button text='Standard (1h)'    width='0px' grow='1' spacing='large' {...this.link ()} />
+                    <Button text='Urgent (30 min)'  width='0px' grow='1' spacing='large' {...this.link ()} />
+                    <Button text='Dring Dring'      width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <Button text='Course régulière' width='0px' grow='1' spacing='large' id='custom.4' {...this.link ()} />
-                    <Button text='Multi'            width='0px' grow='1' spacing='large' id='custom.5' {...this.link ()} />
-                    <Button text='Case postale'     width='0px' grow='1' id='custom.6' {...this.link ()} />
+                    <Button text='Course régulière' width='0px' grow='1' spacing='large' {...this.link ()} />
+                    <Button text='Multi'            width='0px' grow='1' spacing='large' {...this.link ()} />
+                    <Button text='Case postale'     width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
 
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
                     <Label text='Destinataire' grow='1' kind='title' {...this.link ()} />
-                    <Button glyph='toggle-off' text='Nouveau' border='none' spacing='large' id='dest.newButton' {...this.link ()} />
-                    <Button glyph='plus' text='Ajouter' spacing='large' id='dest.addButton' {...this.link ()} />
-                    <Button glyph='ellipsis-v' id='dest.miscButton' {...this.link ()} />
+                    <Button glyph='toggle-off' text='Nouveau' border='none' spacing='large' {...this.link ()} />
+                    <Button glyph='plus' text='Ajouter' spacing='large' {...this.link ()} />
+                    <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' id='dest.date' {...this.link ()} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' id='dest.period' {...this.link ()} />
-                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' id='dest.zone' {...this.link ()} />
+                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' {...this.link ('date')} />
+                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' {...this.link ()} />
+                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='user' hint-text='Nom du client' id='dest.customer' {...this.link ()} />
+                    <LabelTextField label-glyph='user' hint-text='Nom du client' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='comment' hint-text='Remarque' spacing='large' id='dest.comment' {...this.link ()} />
+                    <LabelTextField label-glyph='comment' hint-text='Remarque' spacing='large' {...this.link ()} />
                     <Button glyph='comment' glyph='square-o' text='facturé à' border='none' glyph-position='right' {...this.link ()} />
                   </Container>
                 </Container>
@@ -130,36 +130,36 @@ export default class Polypheme extends React.Component {
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
                     <Label text='Colis' grow='1' kind='title' {...this.link ()} />
-                    <Button glyph='plus' text='Ajouter' spacing='large' id='package.addButton' {...this.link ()} />
-                    <Button glyph='ellipsis-v' id='package.miscButton' {...this.link ()} />
+                    <Button glyph='plus' text='Ajouter' spacing='large' {...this.link ()} />
+                    <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <Button glyph='trash-o' spacing='large' id='package.delete.1' {...this.link ()} />
-                    <TextFieldCombo value='Standard box' combo-glyph='cube' hint-text='Type' grow='1' spacing='large' id='package.box.1' {...this.link ()} />
-                    <LabelTextField label-glyph='balance-scale' value='3.6 kg' hint-text='Poids' grow='1' spacing='large' id='package.weight.1' {...this.link ()} />
-                    <LabelTextField label-glyph='arrows-h' value='50 x 75 x 20' hint-text='Dimensions' grow='1' spacing='overlap' id='package.dim.1' {...this.link ()} />
+                    <Button glyph='trash-o' spacing='large' {...this.link ()} />
+                    <TextFieldCombo value='Standard box' combo-glyph='cube' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
+                    <LabelTextField label-glyph='balance-scale' value='3.6 kg' hint-text='Poids' grow='1' spacing='large' {...this.link ()} />
+                    <LabelTextField label-glyph='arrows-h' value='50 x 75 x 20' hint-text='Dimensions' grow='1' spacing='overlap' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <Button glyph='trash-o' spacing='large' id='package.delete.2' {...this.link ()} />
-                    <TextFieldCombo hint-text='Type' combo-glyph='cube' grow='1' spacing='large' id='package.box.2' {...this.link ()} />
-                    <LabelTextField label-glyph='balance-scale' hint-text='Poids' grow='1' spacing='large' id='package.weight.2' {...this.link ()} />
-                    <LabelTextField label-glyph='arrows-h' hint-text='Dimensions' grow='1' spacing='overlap' id='package.dim.2' {...this.link ()} />
+                    <Button glyph='trash-o' spacing='large' {...this.link ()} />
+                    <TextFieldCombo hint-text='Type' combo-glyph='cube' grow='1' spacing='large' {...this.link ()} />
+                    <LabelTextField label-glyph='balance-scale' hint-text='Poids' grow='1' spacing='large' {...this.link ()} />
+                    <LabelTextField label-glyph='arrows-h' hint-text='Dimensions' grow='1' spacing='overlap' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Nb de colis 2'     kind='info' width='0px' grow='1' id='package.infoCount' {...this.link ()} />
-                    <Label text='Total 3.6 kg'      kind='info' width='0px' grow='1' id='package.infoWeight' {...this.link ()} />
-                    <Label text='IATA total 3.6 kg' kind='info' width='0px' grow='1' id='package.infoTotal' {...this.link ()} />
+                    <Label text='Nb de colis 2'     kind='info' width='0px' grow='1' {...this.link ()} />
+                    <Label text='Total 3.6 kg'      kind='info' width='0px' grow='1' {...this.link ()} />
+                    <Label text='IATA total 3.6 kg' kind='info' width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='comment' hint-text='Remarque' id='package.comment' {...this.link ()} />
+                    <LabelTextField label-glyph='comment' hint-text='Remarque' {...this.link ()} />
                   </Container>
                 </Container>
 
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
                     <Label text='Facture' grow='1' kind='title' {...this.link ()} />
-                    <Button glyph='plus' text='Ajouter' spacing='large' id='fact.addButton' {...this.link ()} />
-                    <Button glyph='ellipsis-v' id='fact.extButton' {...this.link ()} />
+                    <Button glyph='plus' text='Ajouter' spacing='large' {...this.link ()} />
+                    <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='compact' {...this.link ()} >
                     <Label text='Standard A - C'   kind='article' width='0px' grow='4' {...this.link ()} />
@@ -227,7 +227,7 @@ export default class Polypheme extends React.Component {
                   </Container>
                   <Container kind='row-pane' spacing='large' {...this.link ()} >
                     <Label text='Essai du composant Badge' grow='1' {...this.link ()} />
-                    <Button glyph='plus' text='Ajouter' id='package.addButton' {...this.link ()} />
+                    <Button glyph='plus' text='Ajouter' {...this.link ()} />
                     <Badge value='1' {...this.link ()} />
                     <Badge value='12' {...this.link ()} />
                     <Badge value='123' {...this.link ()} />
