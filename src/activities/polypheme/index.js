@@ -52,17 +52,18 @@ function FormattingDate (brut) {
 
 const onInit = (state) => {
   const dateModifier = state.select ('date');
-  dateModifier.set ('onChange', (value, state) => {
+  Activity.RegisterNotifiers (dateModifier,
+  (value, state) => {
     const t = FormattingDate (value);
     console.log (`CHANGE ${value} ${t}`);
     // console.dir (state);
     state.set ('tooltip', `${t}`);
-  }).set ('onFocus', (value, state) => {
+  }, (value, state) => {
     const t = FormattingDate (value);
     console.log (`ONFOCUS ${value} ${t}`);
     state.set ('tooltip', `${t}`);
     // console.dir (state);
-  }).set ('onDefocus', (value, state) => {
+  }, (value, state) => {
     const t = FormattingDate (value);
     console.log (`ONDEFOCUS ${value} ${t}`);
     state.set ('tooltip', null);
