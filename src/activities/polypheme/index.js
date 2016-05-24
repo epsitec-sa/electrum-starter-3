@@ -4,12 +4,37 @@ import Polypheme from './polypheme.js';
 import actuators from './actuators.js';
 import Activity from '../activity.js';
 
+function Replace (text, search, replacement) {
+  let result = '';
+  let i;
+  for (i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (c === search) {
+      result += replacement;
+    } else {
+      result += c;
+    }
+  }
+  return result;
+}
+
+function Trim (text, search) {
+  while (text.startsWith (search)) {
+    text = text.substring (search.length, text.length);
+  }
+  while (text.endsWith (search)) {
+    text = text.substring (0, text.length - search.length);
+  }
+  return text;
+}
+
 function FormatDate (brut) {
   let message = null;
   let result = '';
+  brut = Replace (brut, '.', ' ');
+  brut = Replace (brut, ':', ' ');
+  brut = Replace (brut, '/', ' ');
   brut = brut.trim ();
-  // brut = brut.replace (/./g, ' ');
-  // brut = brut.replace (/:/g, ' ');
   let a = brut.split (' ');
   if (a.length < 1 || brut === '') {
     a[0] = 25;
@@ -68,9 +93,10 @@ function FormatDate (brut) {
 function FormatTime (brut) {
   let message = null;
   let result = '';
+  brut = Replace (brut, '.', ' ');
+  brut = Replace (brut, ':', ' ');
+  brut = Replace (brut, '/', ' ');
   brut = brut.trim ();
-  // brut = brut.replace (/./g, ' ');
-  // brut = brut.replace (/:/g, ' ');
   let a = brut.split (' ');
   if (a.length < 1 || brut === '') {
     a[0] = 12;
@@ -92,7 +118,7 @@ function FormatTime (brut) {
       } else if (i === 2) {
         p = 0;
       }
-      message = 'Date incorrecte';
+      message = 'Heure incorrecte';
     }
     if (i === 0) {
       if (p > 23) {
