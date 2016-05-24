@@ -4,7 +4,8 @@ import Polypheme from './polypheme.js';
 import actuators from './actuators.js';
 import Activity from '../activity.js';
 
-function FormattingDate (brut) {
+function FormatDate (brut) {
+  let message = null;
   let result = '';
   brut = brut.trim ();
   // brut = brut.replace (/./g, ' ');
@@ -29,10 +30,12 @@ function FormattingDate (brut) {
       if (i === 0) {
         if (p > 31) {
           p = 31;
+          message = 'Le jour est incorrect';
         }
       } else if (i === 1) {
         if (p > 12) {
           p = 12;
+          message = 'Le mois est incorrect';
         }
       } else if (i === 2) {
         if (p < 2000) {
@@ -47,27 +50,36 @@ function FormattingDate (brut) {
     }
   }
 
-  return result;
+  return {message, result};
+}
+
+function DateTooltip (brut) {
+  var f = FormatDate (brut);
+  if (f.message) {
+    return f.message + '|' + f.result;
+  } else {
+    return f.result;
+  }
 }
 
 const onInit = (state) => {
   const dateModifier = state.select ('date');
   Activity.RegisterNotifiers (dateModifier,
   (value, state) => {
-    const t = FormattingDate (value);
+    const t = DateTooltip (value);
     console.log (`CHANGE ${value} ${t}`);
     // console.dir (state);
     state.set ('tooltip', `${t}`);
   }, (value, state) => {
-    const t = FormattingDate (value);
+    const t = DateTooltip (value);
     console.log (`ONFOCUS ${value} ${t}`);
     state.set ('tooltip', `${t}`);
     // console.dir (state);
   }, (value, state) => {
-    const t = FormattingDate (value);
+    const t = DateTooltip (value);
     console.log (`ONDEFOCUS ${value} ${t}`);
     state.set ('tooltip', null);
-    // state.set ('value', t);  // TODO: pourquoi ça ne marche pas ???
+    // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
     // console.dir (state);
   });
 
