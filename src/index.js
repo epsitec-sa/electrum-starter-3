@@ -30,7 +30,6 @@ const themes = [
 ];
 const store = Store.create ();
 store.root.set ('currentThemeIndex', 0);
-const currentTheme = 'default';
 const am = new ActivitiesManager (store);
 am.registerActivity ('login', LoginActivity);
 am.registerActivity ('session', SessionActivity);
