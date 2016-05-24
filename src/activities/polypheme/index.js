@@ -22,9 +22,6 @@ function FormatDate (brut) {
   }
   let i;
   for (i = 0; i < a.length; i++) {
-    if (i > 0) {
-      result += '.';
-    }
     let p = parseInt (a[i]);
     if (isNaN (p)) {
       if (i === 0) {
@@ -51,10 +48,17 @@ function FormatDate (brut) {
         p += 2000;
       }
     }
-    if (p < 10) {
-      result += '0' + p;
+    if (i < 3) {
+      if (i > 0) {
+        result += '.';
+      }
+      if (p < 10) {
+        result += '0' + p;
+      } else {
+        result += p;
+      }
     } else {
-      result += p;
+      message = 'Date trop longue';
     }
   }
 
@@ -86,7 +90,7 @@ const onInit = (state) => {
   }, (value, state) => {
     const t = DateTooltip (value);
     console.log (`ONDEFOCUS ${value} ${t}`);
-    // -state.set ('tooltip', null);
+    state.set ('tooltip', null);
     // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
     // console.dir (state);
   });
