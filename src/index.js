@@ -19,8 +19,17 @@ import ActivitiesManager from './activities-manager.js';
 
 import 'babel-polyfill';
 
+const themes = [
+  'default',
+  'dark',
+  'compact-mono',
+  'compact-pink',
+  'default-green',
+  'default-pink',
+  'special-green'
+];
 const store = Store.create ();
-const currentTheme = 'default';
+store.root.set ('currentThemeIndex', 0);
 const am = new ActivitiesManager (store);
 am.registerActivity ('login', LoginActivity);
 am.registerActivity ('session', SessionActivity);
@@ -57,5 +66,5 @@ initStyleReload ();
 
 import {Root} from './root.js';
 
-ReactDOM.render (<Root state={store.root} theme={Theme.create (currentTheme)} />,
+ReactDOM.render (<Root store={store} themes={themes} />,
   document.getElementById ('root'));

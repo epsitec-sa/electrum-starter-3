@@ -1,6 +1,7 @@
 'use strict';
 import Electrum from 'electrum';
 import React from 'react';
+import {Theme} from 'electrum-theme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import * as Colors from 'material-ui/styles/colors';
@@ -48,8 +49,10 @@ class _Root extends React.Component {
   }
 
   render () {
-    const {state} = this.props;
+    const {store, themes} = this.props;
+    const state = store.root;
     const amState = state.select ('activity-manager');
+    const currentTheme = themes[state.get ('currentThemeIndex') % themes.length];
     const mainActivityPath = amState.get ('mainActivityPath');
     const mainActivity = state.select (mainActivityPath);
     console.log (mainActivity);
@@ -57,7 +60,7 @@ class _Root extends React.Component {
     console.log (state);
     return (
       <main data-main-activity={mainActivityPath}>
-        <View  {...this.link (mainActivityPath)} />
+        <View state={state.select (mainActivityPath)} theme={Theme.create (currentTheme)}  />
       </main>
     );
   }

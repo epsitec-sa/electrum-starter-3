@@ -130,6 +130,13 @@ export default class Activity {
     }
   }
 
+  static RegisterNotifiers (state, onChange, onFocus, onDefocus) {
+    state
+      .set ('onChange', (value, state) => onChange (value, state))
+      .set ('onFocus', (value, state) => onFocus (value, state))
+      .set ('onDefocus', (value, state) => onDefocus (value, state));
+  }
+
   static Create (name, mainView, actuators, _onInit, _onRun, _onKill) {
     const handlers = {
       onInit: (state) => {
