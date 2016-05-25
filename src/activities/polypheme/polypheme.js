@@ -77,9 +77,9 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' calendar='false' {...this.link ()} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' calendar='false' {...this.link ()} />
-                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' calendar='false' {...this.link ()} />
+                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' {...this.link ()} />
+                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' {...this.link ()} />
+                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <LabelTextField label-glyph='user' hint-text='Nom du client' {...this.link ()} />
@@ -115,9 +115,9 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' {...this.link ('date')} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' {...this.link ('time')} />
-                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' {...this.link ()} />
+                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' calendar='false' {...this.link ('date')} />
+                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' calendar='false' {...this.link ('time')} />
+                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' calendar='false' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <LabelTextField label-glyph='user' hint-text='Nom du client' {...this.link ()} />
