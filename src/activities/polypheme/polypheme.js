@@ -236,7 +236,7 @@ export default class Polypheme extends React.Component {
                     <Badge value='12345' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='large' {...this.link ()} >
-                    <Calendar date={new Date (2016, 2 - 1, 22)} {...this.link ()} />
+                    <Calendar date={Date.now ()} {...this.link ()} />
                   </Container>
                 </Container>
 
