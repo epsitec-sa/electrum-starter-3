@@ -207,12 +207,6 @@ const onInit = (state) => {
     // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
   });
 
-  const field = state.select ('field');
-  field
-    .set ('value', '')
-    .set ('floatingLabelText', 'TextField example')
-    .set ('hintText', 'placeholder text')
-    .set ('errorText', '');
 };
 
 export default Activity.Create ('polypheme', Polypheme, actuators, onInit);
