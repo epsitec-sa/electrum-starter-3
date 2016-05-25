@@ -9,7 +9,8 @@ import {
   LabelTextField,
   TextFieldCombo,
   Label,
-  Badge
+  Badge,
+  Calendar
 } from 'electrum-arc';
 
 import act from './actuators.js';
@@ -76,7 +77,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' {...this.link ()} />
+                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' calendar='true' {...this.link ()} />
                     <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' {...this.link ()} />
                     <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' {...this.link ()} />
                   </Container>
@@ -233,6 +234,9 @@ export default class Polypheme extends React.Component {
                     <Badge value='123' {...this.link ()} />
                     <Badge value='1234' {...this.link ()} />
                     <Badge value='12345' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' spacing='large' {...this.link ()} >
+                    <Calendar date={Date.now ()} {...this.link ()} />
                   </Container>
                 </Container>
 
