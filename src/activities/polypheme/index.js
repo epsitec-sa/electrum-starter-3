@@ -172,9 +172,10 @@ function TimeTooltip (brut) {
 }
 
 const onInit = (state) => {
-  const dateModifier = state.select ('date');
-  const timeModifier = state.select ('time');
+  const testCalendar = state.select ('test-calendar');
+  testCalendar.set ('date', new Date (Date.now ()));
 
+  const dateModifier = state.select ('date');
   Activity.RegisterNotifiers (dateModifier,
   (value, state) => {
     const t = DateTooltip (value);
@@ -194,6 +195,7 @@ const onInit = (state) => {
     // console.dir (state);
   });
 
+  const timeModifier = state.select ('time');
   Activity.RegisterNotifiers (timeModifier,
   (value, state) => {
     const t = TimeTooltip (value);
@@ -206,7 +208,6 @@ const onInit = (state) => {
     state.set ('tooltip', null);
     // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
   });
-
 };
 
 export default Activity.Create ('polypheme', Polypheme, actuators, onInit);

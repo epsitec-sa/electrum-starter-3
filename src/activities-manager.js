@@ -77,7 +77,11 @@ export default class ActivitiesManager {
   dispatch (props, message) {
     const {state, action} = props;
     if (message === 'action' && typeof action === 'function') {
-      action.run (state);
+      if (action.run) {
+        action.run (state);
+      } else {
+        action ();
+      }
     }
     this.update ();
   }
