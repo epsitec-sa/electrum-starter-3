@@ -77,9 +77,9 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' {...this.link ('exp-date')} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' {...this.link ('exp-time')} />
-                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' {...this.link ('exp-zone')} />
+                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' combo-type='calendar' {...this.link ('exp-date')} />
+                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' combo-type='calendar' {...this.link ('exp-time')} />
+                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' combo-type='zone' {...this.link ('exp-zone')} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <LabelTextField label-glyph='user' hint-text='Nom du client' {...this.link ()} />
@@ -115,9 +115,9 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' {...this.link ('dest-date')} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' {...this.link ('dest-time')} />
-                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' {...this.link ('dest-zone')} />
+                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' combo-type='calendar' {...this.link ('dest-date')} />
+                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' combo-type='calendar' {...this.link ('dest-time')} />
+                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' combo-type='zone' {...this.link ('dest-zone')} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <LabelTextField label-glyph='user' hint-text='Nom du client' {...this.link ()} />
@@ -136,13 +136,13 @@ export default class Polypheme extends React.Component {
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <Button glyph='trash-o' spacing='large' {...this.link ()} />
-                    <TextFieldCombo value='Standard box' combo-glyph='cube' hint-text='Type' grow='1' spacing='large' {...this.link ('box1-type')} />
+                    <TextFieldCombo value='Standard box' combo-glyph='cube' hint-text='Type' grow='1' spacing='large' combo-type='box' {...this.link ('box1-type')} />
                     <LabelTextField label-glyph='balance-scale' value='3.6 kg' hint-text='Poids' grow='1' spacing='large' {...this.link ()} />
                     <LabelTextField label-glyph='arrows-h' value='50 x 75 x 20' hint-text='Dimensions' grow='1' spacing='overlap' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <Button glyph='trash-o' spacing='large' {...this.link ()} />
-                    <TextFieldCombo hint-text='Type' combo-glyph='cube' grow='1' spacing='large' {...this.link ('box2-type')} />
+                    <TextFieldCombo hint-text='Type' combo-glyph='cube' grow='1' spacing='large' combo-type='box' {...this.link ('box2-type')} />
                     <LabelTextField label-glyph='balance-scale' hint-text='Poids' grow='1' spacing='large' {...this.link ()} />
                     <LabelTextField label-glyph='arrows-h' hint-text='Dimensions' grow='1' spacing='overlap' {...this.link ()} />
                   </Container>
