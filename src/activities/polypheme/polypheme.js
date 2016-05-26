@@ -77,7 +77,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' combo-type='calendar' {...this.link ('exp-date')} />
+                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' combo-type='calendar' combo-direction='right' {...this.link ('exp-date')} />
                     <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' combo-type='calendar' {...this.link ('exp-time')} />
                     <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' combo-type='zone' {...this.link ('exp-zone')} />
                   </Container>
@@ -115,7 +115,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' combo-type='calendar' {...this.link ('dest-date')} />
+                    <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' combo-type='calendar' combo-direction='right' {...this.link ('dest-date')} />
                     <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' combo-type='calendar' {...this.link ('dest-time')} />
                     <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' combo-type='zone' {...this.link ('dest-zone')} />
                   </Container>
