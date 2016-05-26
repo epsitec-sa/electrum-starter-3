@@ -172,8 +172,11 @@ function TimeTooltip (brut) {
 }
 
 const onInit = (state) => {
+  const destDateCalendar = state.select ('dest-date');
+  destDateCalendar.set ('date', new Date (2016, 3 - 1, 31));
+
   const testCalendar = state.select ('test-calendar');
-  testCalendar.set ('date', new Date (Date.now ()));
+  testCalendar.set ('date', Date.now ());
 
   const dateModifier = state.select ('dest-date');
   Activity.RegisterNotifiers (dateModifier,
