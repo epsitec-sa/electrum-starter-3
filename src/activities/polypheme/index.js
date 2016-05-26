@@ -175,7 +175,7 @@ const onInit = (state) => {
   const testCalendar = state.select ('test-calendar');
   testCalendar.set ('date', new Date (Date.now ()));
 
-  const dateModifier = state.select ('date');
+  const dateModifier = state.select ('dest-date');
   Activity.RegisterNotifiers (dateModifier,
   (value, state) => {
     const t = DateTooltip (value);
@@ -195,7 +195,7 @@ const onInit = (state) => {
     // console.dir (state);
   });
 
-  const timeModifier = state.select ('time');
+  const timeModifier = state.select ('dest-time');
   Activity.RegisterNotifiers (timeModifier,
   (value, state) => {
     const t = TimeTooltip (value);
