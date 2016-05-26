@@ -171,14 +171,9 @@ function TimeTooltip (brut) {
   }
 }
 
-const onInit = (state) => {
-  const destDateCalendar = state.select ('dest-date');
-  destDateCalendar.set ('date', new Date (2016, 3 - 1, 31));
+function initDate (state, name) {
+  const dateModifier = state.select (name);
 
-  const testCalendar = state.select ('test-calendar');
-  testCalendar.set ('date', Date.now ());
-
-  const dateModifier = state.select ('dest-date');
   Activity.RegisterNotifiers (dateModifier,
   (value, state) => {
     const t = DateTooltip (value);
@@ -197,8 +192,11 @@ const onInit = (state) => {
     // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
     // console.dir (state);
   });
+}
 
-  const timeModifier = state.select ('dest-time');
+function initTime (state, name) {
+  const timeModifier = state.select (name);
+
   Activity.RegisterNotifiers (timeModifier,
   (value, state) => {
     const t = TimeTooltip (value);
@@ -211,6 +209,19 @@ const onInit = (state) => {
     state.set ('tooltip', null);
     // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
   });
+}
+
+const onInit = (state) => {
+  const destDateCalendar = state.select ('dest-date');
+  destDateCalendar.set ('date', new Date (2016, 3 - 1, 31));
+
+  const testCalendar = state.select ('test-calendar');
+  testCalendar.set ('date', Date.now ());
+
+  initDate (state, 'exp-date');
+  initTime (state, 'exp-time');
+  initDate (state, 'dest-date');
+  initTime (state, 'dest-time');
 };
 
 export default Activity.Create ('polypheme', Polypheme, actuators, onInit);
