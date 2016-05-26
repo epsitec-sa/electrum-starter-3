@@ -10,7 +10,8 @@ import {
   TextFieldCombo,
   Label,
   Badge,
-  Calendar
+  Calendar,
+  Clock
 } from 'electrum-arc';
 
 import act from './actuators.js';
@@ -78,7 +79,7 @@ export default class Polypheme extends React.Component {
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' combo-type='calendar' combo-direction='right' {...this.link ('exp-date')} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' combo-type='calendar' {...this.link ('exp-time')} />
+                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' combo-type='clock' {...this.link ('exp-time')} />
                     <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' combo-type='zone' {...this.link ('exp-zone')} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
@@ -116,7 +117,7 @@ export default class Polypheme extends React.Component {
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <TextFieldCombo hint-text='Date' combo-glyph='calendar' grow='1' spacing='large' combo-type='calendar' combo-direction='right' {...this.link ('dest-date')} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' combo-type='calendar' {...this.link ('dest-time')} />
+                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o' grow='2' spacing='large' combo-type='clock' {...this.link ('dest-time')} />
                     <TextFieldCombo hint-text='Zone' combo-glyph='map-marker' grow='1' combo-type='zone' {...this.link ('dest-zone')} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
@@ -237,6 +238,9 @@ export default class Polypheme extends React.Component {
                   </Container>
                   <Container kind='row-pane' spacing='large' {...this.link ()} >
                     <Calendar onChange={(date) => console.log (date)} {...this.link ('test-calendar')} />
+                  </Container>
+                  <Container kind='row-pane' spacing='large' {...this.link ()} >
+                    <Clock onChange={(time) => console.log (time)} {...this.link ('test-clock')} />
                   </Container>
                 </Container>
 

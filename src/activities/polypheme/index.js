@@ -218,6 +218,9 @@ const onInit = (state) => {
   const testCalendar = state.select ('test-calendar');
   testCalendar.set ('date', Date.now ());
 
+  const testClock = state.select ('test-calendar');
+  testClock.set ('time', Date.now ());
+
   initDate (state, 'exp-date');
   initTime (state, 'exp-time');
   initDate (state, 'dest-date');
