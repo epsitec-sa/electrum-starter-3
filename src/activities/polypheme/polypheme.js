@@ -179,7 +179,7 @@ export default class Polypheme extends React.Component {
                     <Label text='Avance d´argent'  kind='article' width='0px' grow='4' {...this.link ()} />
                     <Label text='55.00'            kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' subkind='info' {...this.link ()} >
+                  <Container kind='row-pane' subkind='info' spacing='glued' {...this.link ()} >
                     <Label text='Total'            kind='article' width='0px' grow='4' {...this.link ()} />
                     <Label text='117.00'           kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
