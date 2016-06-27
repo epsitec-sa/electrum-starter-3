@@ -147,7 +147,7 @@ export default class Polypheme extends React.Component {
                     <LabelTextField label-glyph='balance-scale' hint-text='Poids' grow='1' spacing='large' {...this.link ()} />
                     <LabelTextField label-glyph='arrows-h' hint-text='Dimensions' grow='1' spacing='overlap' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' {...this.link ()} >
+                  <Container kind='row-pane' subkind='info' {...this.link ()} >
                     <Label text='Nb de colis 2'     kind='info' width='0px' grow='1' {...this.link ()} />
                     <Label text='Total 3.6 kg'      kind='info' width='0px' grow='1' {...this.link ()} />
                     <Label text='IATA total 3.6 kg' kind='info' width='0px' grow='1' {...this.link ()} />
@@ -171,17 +171,17 @@ export default class Polypheme extends React.Component {
                     <Label text='Supplément poids' kind='article' width='0px' grow='4' {...this.link ()} />
                     <Label text='12.00'            kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' spacing='compact' {...this.link ()} >
-                    <Label text='Sous-total'       kind='article-footer' width='0px' grow='4' {...this.link ()} />
-                    <Label text='62.00'            kind='price-footer'   width='0px' grow='1' {...this.link ()} />
+                  <Container kind='row-pane' subkind='info' spacing='compact' {...this.link ()} >
+                    <Label text='Sous-total'       kind='article' width='0px' grow='4' {...this.link ()} />
+                    <Label text='62.00'            kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='compact' {...this.link ()} >
                     <Label text='Avance d´argent'  kind='article' width='0px' grow='4' {...this.link ()} />
                     <Label text='55.00'            kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Total'            kind='article-footer' width='0px' grow='4' {...this.link ()} />
-                    <Label text='117.00'           kind='price-footer'   width='0px' grow='1' {...this.link ()} />
+                  <Container kind='row-pane' subkind='info' {...this.link ()} >
+                    <Label text='Total'            kind='article' width='0px' grow='4' {...this.link ()} />
+                    <Label text='117.00'           kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
 
@@ -278,6 +278,26 @@ export default class Polypheme extends React.Component {
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <TextField grow='1' {...this.link ()} />
+                  </Container>
+                </Container>
+              </Container>
+            </Container>
+
+            <Container kind='view' height-type='short' width='600px' {...this.link ()} >
+              <Container kind='pane-navigator' {...this.link ()} >
+                <Button text='Client' width='0px' grow='1' active='true'  kind='pane-navigator' {...this.link ()} />
+              </Container>
+              <Container kind='panes' {...this.link ()} >
+                <Container kind='pane' {...this.link ()} >
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='Informations' grow='1' kind='title' {...this.link ()} />
+                    <TextFieldCombo hint-text='Recherche' combo-glyph='Search' spacing='large' {...this.link ()} />
+                    <Button glyph='plus' text='Ajouter' spacing='large' {...this.link ()} />
+                  </Container>
+                </Container>
+                <Container kind='pane' {...this.link ()} >
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='Dernières missions' grow='1' kind='title' {...this.link ()} />
                   </Container>
                 </Container>
               </Container>
