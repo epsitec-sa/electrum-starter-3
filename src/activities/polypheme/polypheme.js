@@ -249,7 +249,7 @@ export default class Polypheme extends React.Component {
             <Container kind='view-wedge' {...this.link ()} >
             </Container>
 
-            <Container kind='view' height-type='short' width='600px' {...this.link ()} >
+            <Container kind='view' width='600px' {...this.link ()} >
               <Container kind='pane-header' height='100px' {...this.link ()} >
                 <Label text='Mon beau bouquet SA' kind='pane-header' {...this.link ()} />
               </Container>
@@ -266,9 +266,31 @@ export default class Polypheme extends React.Component {
               <Container kind='panes' {...this.link ()} >
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
+                    <Label text='Adresse principale' grow='1' kind='title' {...this.link ()} />
+                    <Button glyph='ellipsis-v' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='Lausanne'   kind='article' width='0px' grow='4' {...this.link ()} />
+                    <Label text='13:05'      kind='price'   width='0px' grow='1' {...this.link ()} />
+                  </Container>
+                </Container>
+
+                <Container kind='pane' {...this.link ()} >
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='Contacts' grow='1' kind='title' {...this.link ()} />
+                    <Button glyph='plus' text='Ajouter' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='Lausanne'   kind='article' width='0px' grow='4' {...this.link ()} />
+                    <Label text='13:05'      kind='price'   width='0px' grow='1' {...this.link ()} />
+                  </Container>
+                </Container>
+
+                <Container kind='pane' {...this.link ()} >
+                  <Container kind='row-pane' {...this.link ()} >
                     <Label text='Informations' grow='1' kind='title' {...this.link ()} />
                     <TextFieldCombo hint-text='Recherche' combo-glyph='Search' spacing='large' {...this.link ()} />
-                    <Button glyph='plus' text='Ajouter' spacing='large' {...this.link ()} />
+                    <Button glyph='plus' text='Ajouter' {...this.link ()} />
                   </Container>
                 </Container>
 
@@ -285,15 +307,15 @@ export default class Polypheme extends React.Component {
                     <Label text='14:00'      kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' mark='primary' {...this.link ()} >
-                    <Label text='Lausanne'  kind='article' width='0px' grow='4' {...this.link ()} />
+                    <Label text='Lausanne'   kind='article' width='0px' grow='4' {...this.link ()} />
                     <Label text='15:05'      kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' mark='secondary' {...this.link ()} >
-                    <Label text='Lausanne'  kind='article' width='0px' grow='4' {...this.link ()} />
+                    <Label text='Lausanne'   kind='article' width='0px' grow='4' {...this.link ()} />
                     <Label text='15:20'      kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='Lausanne'  kind='article' width='0px' grow='4' {...this.link ()} />
+                    <Label text='Lausanne'   kind='article' width='0px' grow='4' {...this.link ()} />
                     <Label text='17:40'      kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
@@ -332,6 +354,24 @@ export default class Polypheme extends React.Component {
                     <Label text='' grow='1' {...this.link ()} />
                     <Button glyph='toggle-on' text='TVA incluse' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
                     <Label text='' width='140px' {...this.link ()} />
+                  </Container>
+                </Container>
+
+                <Container kind='pane' {...this.link ()} >
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='Documents' grow='1' kind='title' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='02.01.16'    kind='article' width='0px' grow='1' {...this.link ()} />
+                    <Label text='Facture 563' kind='price'   width='0px' grow='4' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='31.03.16'    kind='article' width='0px' grow='1' {...this.link ()} />
+                    <Label text='Offre 602'   kind='price'   width='0px' grow='4' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='01.04.16'    kind='article' width='0px' grow='1' {...this.link ()} />
+                    <Label text='Facture 581' kind='price'   width='0px' grow='4' {...this.link ()} />
                   </Container>
                 </Container>
 
