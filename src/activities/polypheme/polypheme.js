@@ -9,6 +9,7 @@ import {
   LabelTextField,
   TextFieldCombo,
   Label,
+  Box,
   Badge,
   Calendar,
   Clock
@@ -273,7 +274,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='Mon beau bouquet SA<br/>Place du Marché 12<br/>1002 Lausanne'   kind='justify-left' width='0px' grow='4' {...this.link ()} />
+                    <Box glyph='map-marker' text='Mon beau bouquet SA<br/>Place du Marché 12<br/>1002 Lausanne' width='0px' grow='4' {...this.link ()} />
                     <Label text='13:05' kind='justify-right' width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
