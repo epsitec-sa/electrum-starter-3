@@ -187,43 +187,6 @@ export default class Polypheme extends React.Component {
 
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Paramètres' grow='1' kind='title' {...this.link ()} />
-                    <Button glyph='ellipsis-v' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-text='ID SC' label-width='100px' hint-text='Numéro d´identificateur' grow='1' spacing='large' {...this.link ()} />
-                    <Label text='' width='140px' spacing='large' {...this.link ()} />
-                    <Label text='' width='140px' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-text='Références' label-width='100px' hint-text='Références' grow='1' spacing='large' {...this.link ()} />
-                    <Button glyph='toggle-on' text='Obligatoire' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
-                    <Label text='' width='140px' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-text='Paiement' label-width='100px' hint-text='Mode de paiement' grow='1' spacing='large'  {...this.link ()} />
-                    <Button glyph='check-square' text='Facture BVR' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
-                    <Button glyph='square-o' text='Facture PDF' glyph-position='right' width='140px' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='' grow='1' {...this.link ()} />
-                    <Button glyph='toggle-off' text='Détaillé' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
-                    <Button glyph='toggle-on' text='Résumé' glyph-position='right' width='140px' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-text='Rabais' label-width='100px' hint-text='Rabais accordé' grow='1' spacing='large'  {...this.link ()} />
-                    <Button glyph='check-square' text='Personnel' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
-                    <Button glyph='square-o' text='Cumulé' glyph-position='right' width='140px' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='' grow='1' {...this.link ()} />
-                    <Button glyph='toggle-on' text='TVA incluse' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
-                    <Label text='' width='140px' {...this.link ()} />
-                  </Container>
-                </Container>
-
-                <Container kind='pane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
                     <Label text='Divers' grow='1' kind='title' {...this.link ()} />
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
@@ -287,9 +250,19 @@ export default class Polypheme extends React.Component {
             </Container>
 
             <Container kind='view' height-type='short' width='600px' {...this.link ()} >
-              <Container kind='pane-navigator' {...this.link ()} >
-                <Button text='Client' width='0px' grow='1' active='true'  kind='pane-navigator' {...this.link ()} />
+              <Container kind='pane-header' height='100px' {...this.link ()} >
+                <Label text='Mon beau bouquet SA' kind='pane-header' {...this.link ()} />
               </Container>
+
+              <Container kind='pane-navigator' {...this.link ()} >
+                <Button text='Adresse'  width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
+                <Button text='Contacts' width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
+                <Button text='Infos'    width='0px' grow='1' active='true'  kind='pane-navigator' {...this.link ()} />
+                <Button text='Missions' width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
+                <Button text='Params'   width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
+                <Button text='Docs'     width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
+              </Container>
+
               <Container kind='panes' {...this.link ()} >
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
@@ -298,6 +271,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='plus' text='Ajouter' spacing='large' {...this.link ()} />
                   </Container>
                 </Container>
+
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
                     <Label text='Dernières missions' grow='1' kind='title' {...this.link ()} />
@@ -323,6 +297,44 @@ export default class Polypheme extends React.Component {
                     <Label text='17:40'      kind='price'   width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
+
+                <Container kind='pane' {...this.link ()} >
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='Paramètres' grow='1' kind='title' {...this.link ()} />
+                    <Button glyph='ellipsis-v' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    <LabelTextField label-text='ID SC' label-width='100px' hint-text='Numéro d´identificateur' grow='1' spacing='large' {...this.link ()} />
+                    <Label text='' width='140px' spacing='large' {...this.link ()} />
+                    <Label text='' width='140px' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    <LabelTextField label-text='Références' label-width='100px' hint-text='Références' grow='1' spacing='large' {...this.link ()} />
+                    <Button glyph='toggle-on' text='Obligatoire' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
+                    <Label text='' width='140px' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    <LabelTextField label-text='Paiement' label-width='100px' hint-text='Mode de paiement' grow='1' spacing='large'  {...this.link ()} />
+                    <Button glyph='check-square' text='Facture BVR' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
+                    <Button glyph='square-o' text='Facture PDF' glyph-position='right' width='140px' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='' grow='1' {...this.link ()} />
+                    <Button glyph='toggle-off' text='Détaillé' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
+                    <Button glyph='toggle-on' text='Résumé' glyph-position='right' width='140px' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    <LabelTextField label-text='Rabais' label-width='100px' hint-text='Rabais accordé' grow='1' spacing='large'  {...this.link ()} />
+                    <Button glyph='check-square' text='Personnel' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
+                    <Button glyph='square-o' text='Cumulé' glyph-position='right' width='140px' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='' grow='1' {...this.link ()} />
+                    <Button glyph='toggle-on' text='TVA incluse' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
+                    <Label text='' width='140px' {...this.link ()} />
+                  </Container>
+                </Container>
+
               </Container>
             </Container>
           </Container>
