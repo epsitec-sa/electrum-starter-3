@@ -233,14 +233,17 @@ export default class Polypheme extends React.Component {
                     <Label text='Résultats' grow='1' kind='title' {...this.link ()} />
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <TextField grow='1' {...this.link ()} />
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='Jean Meyer' kind='justify-left' width='0px' grow='3' {...this.link ()} />
+                    <Label text='Lausanne'   kind='justify-left' width='0px' grow='1' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <TextField grow='1' {...this.link ()} />
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='Sandra Tarabori' kind='justify-left' width='0px' grow='3' {...this.link ()} />
+                    <Label text='Jouxtens'        kind='justify-left' width='0px' grow='1' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <TextField grow='1' {...this.link ()} />
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='Alfred Dumoulin' kind='justify-left' width='0px' grow='3' {...this.link ()} />
+                    <Label text='Morges'          kind='justify-left' width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
               </Container>
@@ -384,13 +387,13 @@ export default class Polypheme extends React.Component {
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='31.03.16'        kind='justify-left'  width='0px' grow='1' {...this.link ()} />
                     <Label text='Ricota SA'       kind='justify-left'  width='0px' grow='2' {...this.link ()} />
-                    <Label text='Neuchâtel'       kind='justify-left'  width='0px' grow='1' {...this.link ()} />
+                    <Label text='Lausanne'        kind='justify-left'  width='0px' grow='1' {...this.link ()} />
                     <Label text='58.50'           kind='justify-right' width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='01.04.16'        kind='justify-left'  width='0px' grow='1' {...this.link ()} />
                     <Label text='Mauser Frères'   kind='justify-left'  width='0px' grow='2' {...this.link ()} />
-                    <Label text='Neuchâtel'       kind='justify-left'  width='0px' grow='1' {...this.link ()} />
+                    <Label text='Ecublens'        kind='justify-left'  width='0px' grow='1' {...this.link ()} />
                     <Label text='95.00'           kind='justify-right' width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
