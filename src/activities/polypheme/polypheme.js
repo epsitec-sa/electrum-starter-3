@@ -309,6 +309,9 @@ export default class Polypheme extends React.Component {
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Box text='Lorem ipsum dolor sit amet, consectetur adipiscing elit' grow='0' {...this.link ()} />
                   </Container>
+                  <Container kind='row-pane' subkind='footer' {...this.link ()} >
+                    <Button kind='subaction' text='Afficher plus d´informations' width='0px' grow='1' {...this.link ()} />
+                  </Container>
                 </Container>
 
                 <Container kind='pane' {...this.link ()} >
@@ -344,6 +347,9 @@ export default class Polypheme extends React.Component {
                     <Label text='Crissier'   kind='justify-left'  width='0px' grow='2' {...this.link ()} />
                     <Label text='05.06.16'   kind='justify-left'  width='0px' grow='2' {...this.link ()} />
                     <Label text='17:45'      kind='justify-left'  width='0px' grow='1' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='footer' {...this.link ()} >
+                    <Button kind='subaction' text='Afficher plus de missions' width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
 
@@ -405,6 +411,9 @@ export default class Polypheme extends React.Component {
                     <Label text='Mauser Frères'   kind='justify-left'  width='0px' grow='2' {...this.link ()} />
                     <Label text='Ecublens'        kind='justify-left'  width='0px' grow='1' {...this.link ()} />
                     <Label text='95.00'           kind='justify-right' width='0px' grow='1' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='footer' {...this.link ()} >
+                    <Button kind='subaction' text='Afficher plus de documents' width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
 
