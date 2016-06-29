@@ -274,8 +274,8 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Box glyph='map-marker' text='Mon beau bouquet SA<br/>Place du Marché 12<br/>1002 Lausanne' width='0px' grow='4' {...this.link ()} />
-                    <Label text='13:05' kind='justify-right' width='0px' grow='1' {...this.link ()} />
+                    <Box glyph='map-marker' text='Mon beau bouquet SA<br/>Place du Marché 12<br/>1002 Lausanne' width='0px' grow='2' {...this.link ()} />
+                    <Box text='+41 21 650 20 20<br/>info@bouquet.ch' width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
 
@@ -285,11 +285,11 @@ export default class Polypheme extends React.Component {
                     <Button glyph='plus' text='Ajouter' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='Christophe Ducommun' kind='justify-left' width='0px' grow='1' {...this.link ()} />
+                    <Label text='Christophe Ducommun' kind='justify-left' width='0px' grow='2' {...this.link ()} />
                     <Label text='+41 21 650 22 87'    kind='justify-left' width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='Jeanne Sophian'      kind='justify-left' width='0px' grow='1' {...this.link ()} />
+                    <Label text='Jeanne Sophian'      kind='justify-left' width='0px' grow='2' {...this.link ()} />
                     <Label text='+41 78 347 20 40'    kind='justify-left' width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
@@ -299,6 +299,15 @@ export default class Polypheme extends React.Component {
                     <Label glyph='bookmark-o' text='Informations' grow='1' kind='title' {...this.link ()} />
                     <TextFieldCombo hint-text='Recherche' combo-glyph='Search' spacing='large' {...this.link ()} />
                     <Button glyph='plus' text='Ajouter' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Box text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' grow='0' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Box text='Lorem ipsum dolor sit amet' grow='0' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Box text='Lorem ipsum dolor sit amet, consectetur adipiscing elit' grow='0' {...this.link ()} />
                   </Container>
                 </Container>
 
