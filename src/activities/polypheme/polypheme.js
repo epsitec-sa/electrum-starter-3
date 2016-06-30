@@ -12,7 +12,8 @@ import {
   Box,
   Badge,
   Calendar,
-  Clock
+  Clock,
+  Menu
 } from 'electrum-arc';
 
 import act from './actuators.js';
@@ -423,7 +424,7 @@ export default class Polypheme extends React.Component {
           </Container>
 
           <Container kind='footer' {...this.link ()} >
-            <Button glyph='gears' text='Options' kind='footer' {...this.link ()} />
+            <Button glyph='gears' text='Options' kind='footer' menu-direction='top' {...this.link ('options')} />
             <Label text='Marc Sandoz | 09h56' grow='1' kind='footer' {...this.link ()} />
             <Button glyph='ellipsis-v' kind='footer' {...this.link ()} />
             <Button glyph='clock-o' text='Missions' glyph-position='right' kind='footer' badge-value='92' {...this.link ()} />

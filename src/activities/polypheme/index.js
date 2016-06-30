@@ -222,6 +222,19 @@ function initTime (state, name) {
   });
 }
 
+function initMenu (state, name) {
+  const menuModifier = state.select (name);
+
+  Activity.RegisterNotifiers (menuModifier,
+  (value, state) => {
+    state.set ('menu', 'show');
+  }, (value, state) => {
+    state.set ('menu', 'show');
+  }, (value, state) => {
+    state.set ('menu', 'hide');
+  });
+}
+
 const onInit = (state) => {
   const destDateCalendar = state.select ('dest-date');
   destDateCalendar.set ('date', new Date (2016, 3 - 1, 31));
@@ -236,6 +249,7 @@ const onInit = (state) => {
   initTime (state, 'exp-time');
   initDate (state, 'dest-date');
   initTime (state, 'dest-time');
+  initMenu (state, 'options');
 };
 
 export default Activity.Create ('polypheme', Polypheme, actuators, onInit);
