@@ -34,7 +34,7 @@ export default class Polypheme extends React.Component {
       {glyph: 'gear',      text: 'Préférences'},
       {glyph: 'cloud',     text: 'Données'},
       {glyph: 'desktop',   text: 'Affichage'},
-      {glyph: 'search',    text: 'Recherches'},
+      {glyph: 'search',    text: 'Recherches extralucides'},
     ];
   }
 
