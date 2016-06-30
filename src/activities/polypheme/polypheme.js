@@ -225,7 +225,7 @@ export default class Polypheme extends React.Component {
               <Container kind='panes' {...this.link ()} >
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='Search' hint-text='Chercher' grow='1' spacing='large' {...this.link ()} />
+                    <TextFieldCombo kind='search' hint-text='Chercher' combo-glyph='Search' spacing='large' {...this.link ()} />
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                 </Container>
