@@ -28,6 +28,16 @@ export default class Polypheme extends React.Component {
     };
   }
 
+  menuOptions () {
+    return [
+      {glyph: 'toggle-on', text: 'Options'},
+      {glyph: 'gear',      text: 'Préférences'},
+      {glyph: 'cloud',     text: 'Données'},
+      {glyph: 'desktop',   text: 'Affichage'},
+      {glyph: 'search',    text: 'Recherches'},
+    ];
+  }
+
   render () {
     const listTemplate = (state) => {
       const title = state.get ('title');
@@ -424,7 +434,7 @@ export default class Polypheme extends React.Component {
           </Container>
 
           <Container kind='footer' {...this.link ()} >
-            <Button glyph='gears' text='Options' kind='footer' menu-direction='top' {...this.link ('options')} />
+            <Button glyph='gears' text='Options' kind='footer' menu={this.menuOptions ()} menu-direction='top' {...this.link ('options')} />
             <Label text='Marc Sandoz | 09h56' grow='1' kind='footer' {...this.link ()} />
             <Button glyph='ellipsis-v' kind='footer' {...this.link ()} />
             <Button glyph='clock-o' text='Missions' glyph-position='right' kind='footer' badge-value='92' {...this.link ()} />
