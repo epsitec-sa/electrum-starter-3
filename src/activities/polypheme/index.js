@@ -154,20 +154,32 @@ function FormatTime (brut) {
 }
 
 function DateTooltip (brut) {
-  var f = FormatDate (brut);
+  var f = new FormatDate (brut);
   if (f.message) {
-    return f.message + '|' + f.result;
+    return [
+      'message-info',    null,
+      'message-warning', f.message + '|' + f.result,
+    ];
   } else {
-    return f.result;
+    return [
+      'message-info',    f.result,
+      'message-warning', null,
+    ];
   }
 }
 
 function TimeTooltip (brut) {
-  var f = FormatTime (brut);
+  var f = new FormatTime (brut);
   if (f.message) {
-    return f.message + '|' + f.result;
+    return [
+      'message-info',    null,
+      'message-warning', f.message + '|' + f.result,
+    ];
   } else {
-    return f.result;
+    return [
+      'message-info',    f.result,
+      'message-warning', null,
+    ];
   }
 }
 
@@ -176,21 +188,18 @@ function initDate (state, name) {
 
   Activity.RegisterNotifiers (dateModifier,
   (value, state) => {
-    const t = DateTooltip (value);
-    console.log (`CHANGE ${value} ${t}`);
-    // console.dir (state);
-    state.set ('tooltip', `${t}`);
+    const t = new DateTooltip (value);
+    state.set (t[0], t[1]);
+    state.set (t[2], t[3]);
   }, (value, state) => {
-    const t = DateTooltip (value);
-    console.log (`ONFOCUS ${value} ${t}`);
-    state.set ('tooltip', `${t}`);
+    const t = new DateTooltip (value);
+    state.set (t[0], t[1]);
+    state.set (t[2], t[3]);
     // console.dir (state);
   }, (value, state) => {
-    const t = DateTooltip (value);
-    console.log (`ONDEFOCUS ${value} ${t}`);
-    state.set ('tooltip', null);
-    // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
-    // console.dir (state);
+    const t = new DateTooltip (value);
+    state.set (t[0], null);
+    state.set (t[2], null);
   });
 }
 
@@ -199,15 +208,17 @@ function initTime (state, name) {
 
   Activity.RegisterNotifiers (timeModifier,
   (value, state) => {
-    const t = TimeTooltip (value);
-    state.set ('tooltip', `${t}`);
+    const t = new TimeTooltip (value);
+    state.set (t[0], t[1]);
+    state.set (t[2], t[3]);
   }, (value, state) => {
-    const t = TimeTooltip (value);
-    state.set ('tooltip', `${t}`);
+    const t = new TimeTooltip (value);
+    state.set (t[0], t[1]);
+    state.set (t[2], t[3]);
   }, (value, state) => {
-    const t = TimeTooltip (value);
-    state.set ('tooltip', null);
-    // state.set ('value', t.result);  // TODO: pourquoi ça ne marche pas ???
+    const t = new TimeTooltip (value);
+    state.set (t[0], null);
+    state.set (t[2], null);
   });
 }
 
