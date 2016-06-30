@@ -192,7 +192,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='large' {...this.link ()} >
-                    <Label text='Essai du composant Badge' grow='1' {...this.link ()} />
+                    <LabelTextField shape='rounded' label-glyph='tag' hint-text='Essai rounded shape' spacing='large' {...this.link ()} />
                     <Button glyph='plus' text='Ajouter' {...this.link ()} />
                     <Badge value='1' {...this.link ()} />
                     <Badge value='12' {...this.link ()} />
@@ -225,7 +225,7 @@ export default class Polypheme extends React.Component {
               <Container kind='panes' {...this.link ()} >
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo kind='search' hint-text='Chercher' combo-glyph='Search' spacing='large' {...this.link ()} />
+                    <TextFieldCombo shape='rounded' hint-text='Chercher' combo-glyph='Search' spacing='large' {...this.link ()} />
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                 </Container>
@@ -297,7 +297,7 @@ export default class Polypheme extends React.Component {
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
                     <Label glyph='bookmark-o' text='Informations' grow='1' kind='title' {...this.link ()} />
-                    <TextFieldCombo kind='search' hint-text='Chercher' combo-glyph='Search' spacing='large' {...this.link ()} />
+                    <TextFieldCombo shape='rounded' hint-text='Chercher' combo-glyph='Search' spacing='large' {...this.link ()} />
                     <Button glyph='plus' text='Ajouter' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
@@ -393,7 +393,7 @@ export default class Polypheme extends React.Component {
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
                     <Label glyph='paperclip' text='Documents' grow='1' kind='title' {...this.link ()} />
-                    <TextFieldCombo kind='search' hint-text='Chercher' combo-glyph='Search' {...this.link ()} />
+                    <TextFieldCombo shape='rounded' hint-text='Chercher' combo-glyph='Search' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='12.01.16'        kind='justify-left'  width='0px' grow='1' {...this.link ()} />
