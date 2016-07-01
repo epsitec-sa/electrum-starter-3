@@ -308,7 +308,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Box glyph='map-marker' text='Mon beau bouquet SA<br/>Place du Marché 12<br/>1002 Lausanne' width='0px' grow='2' {...this.link ()} />
+                    <Box glyph='map-marker' text='Mon beau bouquet SA\nPlace du Marché 12\n1002 Lausanne' width='0px' grow='2' {...this.link ()} />
                     <Box text='+41 21 650 20 20<br/>info@bouquet.ch' width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
