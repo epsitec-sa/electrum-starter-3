@@ -363,13 +363,13 @@ export default class Polypheme extends React.Component {
                     <Label text='17.05.16'   kind='justify-left'  width='0px' grow='2' {...this.link ()} />
                     <Label text='08:15'      kind='justify-left'  width='0px' grow='1' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' subkind='box' mark='primary' {...this.link ()} >
+                  <Container kind='row-pane' subkind='box' mark-color='primary' {...this.link ()} >
                     <Label text='Coop'       kind='justify-left'  width='0px' grow='4' {...this.link ()} />
                     <Label text='Prilly'     kind='justify-left'  width='0px' grow='2' {...this.link ()} />
                     <Label text='21.05.16'   kind='justify-left'  width='0px' grow='2' {...this.link ()} />
                     <Label text='17:55'      kind='justify-left'  width='0px' grow='1' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' subkind='box' mark='secondary' {...this.link ()} >
+                  <Container kind='row-pane' subkind='box' mark-color='secondary' {...this.link ()} >
                     <Label text='Migros'     kind='justify-left'  width='0px' grow='4' {...this.link ()} />
                     <Label text='Renens'     kind='justify-left'  width='0px' grow='2' {...this.link ()} />
                     <Label text='02.06.16'   kind='justify-left'  width='0px' grow='2' {...this.link ()} />
