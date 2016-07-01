@@ -30,11 +30,24 @@ export default class Polypheme extends React.Component {
 
   menuOptions () {
     return [
-      {glyph: 'toggle-on', text: 'Options'},
-      {glyph: 'gear',      text: 'Préférences'},
-      {glyph: 'cloud',     text: 'Données'},
-      {glyph: 'desktop',   text: 'Affichage'},
-      {glyph: 'search',    text: 'Recherches extralucides'},
+      () => {
+        return (<TextFieldCombo hint-text='Chercher' combo-glyph='Search' {...this.link ()} />);
+      },
+      () => {
+        return (<Button kind='menu-item' glyph='toggle-on' text='Options' {...this.link ()} />);
+      },
+      () => {
+        return (<Button kind='menu-item' glyph='gear' text='Préférences' {...this.link ()} />);
+      },
+      () => {
+        return (<Button kind='menu-item' glyph='cloud' text='Données' {...this.link ()} />);
+      },
+      () => {
+        return (<Button kind='menu-item' glyph='desktop' text='Affichage' {...this.link ()} />);
+      },
+      () => {
+        return (<Button kind='menu-item' glyph='search' text='Recherches extralucides' {...this.link ()} />);
+      },
     ];
   }
 
