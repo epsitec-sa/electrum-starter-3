@@ -9,7 +9,6 @@ import {
   LabelTextField,
   TextFieldCombo,
   Label,
-  Box,
   Badge,
   Calendar,
   Clock,
@@ -308,8 +307,8 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Box glyph='map-marker' text='Mon beau bouquet SA\nPlace du Marché 12\n1002 Lausanne' width='0px' grow='2' {...this.link ()} />
-                    <Box text='+41 21 650 20 20\ninfo@bouquet.ch' width='0px' grow='1' {...this.link ()} />
+                    <Label glyph='map-marker' text='Mon beau bouquet SA\nPlace du Marché 12\n1002 Lausanne' width='0px' grow='2' {...this.link ()} />
+                    <Label text='+41 21 650 20 20\ninfo@bouquet.ch' width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
 
@@ -335,13 +334,13 @@ export default class Polypheme extends React.Component {
                     <Button glyph='plus' text='Ajouter' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Box text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' grow='0' {...this.link ()} />
+                    <Label text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' grow='0' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Box text='Lorem ipsum dolor sit amet' grow='0' {...this.link ()} />
+                    <Label text='Lorem ipsum dolor sit amet' grow='0' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Box text='Lorem ipsum dolor sit amet, consectetur adipiscing elit' grow='0' {...this.link ()} />
+                    <Label text='Lorem ipsum dolor sit amet, consectetur adipiscing elit' grow='0' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='footer' {...this.link ()} >
                     <Button kind='subaction' text='Afficher plus d´informations' width='0px' grow='1' {...this.link ()} />
