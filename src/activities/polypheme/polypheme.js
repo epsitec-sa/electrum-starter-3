@@ -205,7 +205,7 @@ export default class Polypheme extends React.Component {
                     <Label text='Supplément poids' kind='justify-left'  width='0px' grow='4' {...this.link ()} />
                     <Label text='12.00'            kind='justify-right' width='0px' grow='1' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' subkind='info' spacing='compact' {...this.link ()} >
+                  <Container kind='row-pane' spacing='compact' subkind='wide-info' {...this.link ()} >
                     <Label text='Sous-total'       kind='justify-left'  width='0px' grow='4' {...this.link ()} />
                     <Label text='62.00'            kind='justify-right' width='0px' grow='1' {...this.link ()} />
                   </Container>
@@ -213,7 +213,7 @@ export default class Polypheme extends React.Component {
                     <Label text='Avance d´argent'  kind='justify-left'  width='0px' grow='4' {...this.link ()} />
                     <Label text='55.00'            kind='justify-right' width='0px' grow='1' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' subkind='info' spacing='glued' {...this.link ()} >
+                  <Container kind='row-pane' spacing='glued' subkind='wide-info' {...this.link ()} >
                     <Label text='Total'            kind='justify-left'  width='0px' grow='4' {...this.link ()} />
                     <Label text='117.00'           kind='justify-right' width='0px' grow='1' {...this.link ()} />
                   </Container>
