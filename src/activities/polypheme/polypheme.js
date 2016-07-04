@@ -310,6 +310,10 @@ export default class Polypheme extends React.Component {
                     <Label glyph='map-marker' text='Mon beau bouquet SA\nPlace du Marché 12\n1002 Lausanne' width='0px' grow='2' {...this.link ()} />
                     <Label text='+41 21 650 20 20\ninfo@bouquet.ch' width='0px' grow='1' {...this.link ()} />
                   </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label glyph='map-marker' text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne' width='0px' grow='2' {...this.link ()} />
+                    <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch' width='0px' grow='1' {...this.link ()} />
+                  </Container>
                 </Container>
 
                 <Container kind='pane' {...this.link ()} >
@@ -324,6 +328,10 @@ export default class Polypheme extends React.Component {
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='Jeanne Sophian'      kind='justify-left' width='0px' grow='2' {...this.link ()} />
                     <Label text='+41 78 347 20 40'    kind='justify-left' width='0px' grow='1' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' width='0px' grow='2' {...this.link ()} />
+                    <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
 
