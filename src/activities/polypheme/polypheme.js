@@ -12,7 +12,8 @@ import {
   Badge,
   Calendar,
   Clock,
-  Menu
+  Menu,
+  FlyingBalloon
 } from 'electrum-arc';
 
 import act from './actuators.js';
