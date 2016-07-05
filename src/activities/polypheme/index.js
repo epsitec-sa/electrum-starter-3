@@ -155,32 +155,18 @@ function FormatTime (brut) {
 
 function DateTooltip (brut) {
   var f = new FormatDate (brut);
-  if (f.message) {
-    return [
-      'message-info',    null,
-      'message-warning', f.message + '|' + f.result,
-    ];
-  } else {
-    return [
-      'message-info',    f.result,
-      'message-warning', null,
-    ];
-  }
+  return [
+    'message-warning', f.message,
+    'message-info',    f.result,
+  ];
 }
 
 function TimeTooltip (brut) {
   var f = new FormatTime (brut);
-  if (f.message) {
-    return [
-      'message-info',    null,
-      'message-warning', f.message + '|' + f.result,
-    ];
-  } else {
-    return [
-      'message-info',    f.result,
-      'message-warning', null,
-    ];
-  }
+  return [
+    'message-warning', f.message,
+    'message-info',    f.result,
+  ];
 }
 
 function initDate (state, name) {
