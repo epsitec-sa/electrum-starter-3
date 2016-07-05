@@ -308,16 +308,16 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label glyph='map-marker' text='Mon beau bouquet SA\nPlace du Marché 12\n1002 Lausanne' grow='67%' {...this.link ()} />
-                    <Label text='+41 21 650 20 20\ninfo@bouquet.ch' grow='33%' {...this.link ()} />
+                    <Label glyph='map-marker' text='Mon beau bouquet SA\nPlace du Marché 12\n1002 Lausanne' vpos='top' grow='67%' {...this.link ()} />
+                    <Label text='+41 21 650 20 20\ninfo@bouquet.ch' vpos='top' grow='33%' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label glyph='map-marker' text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne' wrap='no' grow='67%' {...this.link ()} />
-                    <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch' wrap='no' grow='33%' {...this.link ()} />
+                    <Label glyph='map-marker' text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne' wrap='no' vpos='top' grow='67%' {...this.link ()} />
+                    <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch' wrap='no' vpos='top' grow='33%' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label glyph='map-marker' text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne' grow='67%' {...this.link ()} />
-                    <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch' grow='33%' {...this.link ()} />
+                    <Label glyph='map-marker' text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne' vpos='top' grow='67%' {...this.link ()} />
+                    <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch' vpos='top' grow='33%' {...this.link ()} />
                   </Container>
                 </Container>
 
