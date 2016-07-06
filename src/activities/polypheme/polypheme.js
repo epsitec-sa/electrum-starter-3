@@ -297,7 +297,7 @@ export default class Polypheme extends React.Component {
                 <Button glyph='paperclip'  tooltip='Documents'          active='false' kind='pane-vnavigator' {...this.link ()} />
               </Container>
 
-              <Container kind='pane-header' height='100px' {...this.link ()} >
+              <Container kind='pane-header' {...this.link ()} >
                 <Label text='Mon beau bouquet SA' kind='pane-header' {...this.link ()} />
               </Container>
 
