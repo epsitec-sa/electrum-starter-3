@@ -234,12 +234,6 @@ export default class Polypheme extends React.Component {
                     <Badge value='1234' {...this.link ()} />
                     <Badge value='12345' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' spacing='large' {...this.link ()} >
-                    <Calendar onChange={(date) => console.log (date)} {...this.link ('test-calendar')} />
-                  </Container>
-                  <Container kind='row-pane' spacing='large' {...this.link ()} >
-                    <Clock onChange={(time) => console.log (time)} {...this.link ('test-clock')} />
-                  </Container>
                 </Container>
 
               </Container>
@@ -257,11 +251,8 @@ export default class Polypheme extends React.Component {
                 <Button text='Recherche' width='0px' grow='1' active='true'  kind='pane-navigator' {...this.link ()} />
               </Container>
               <Container kind='panes' {...this.link ()} >
-                <Container kind='pane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo shape='rounded' hint-text='Chercher' combo-glyph='Search' spacing='large' {...this.link ()} />
-                    <Button glyph='ellipsis-v' {...this.link ()} />
-                  </Container>
+                <Container kind='row-pane' spacing='large' {...this.link ()} >
+                  <Calendar onChange={(date) => console.log (date)} {...this.link ('test-calendar')} />
                 </Container>
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
