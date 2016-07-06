@@ -21,12 +21,12 @@ import 'babel-polyfill';
 
 const themes = [
   'default',
-  'dark',
   'compact-mono',
-  'compact-pink',
   'default-green',
+  'special-green',
+  'smooth-green',
+  'compact-pink',
   'default-pink',
-  'special-green'
 ];
 const store = Store.create ();
 store.root.set ('currentThemeIndex', 0);
