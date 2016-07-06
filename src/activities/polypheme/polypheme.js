@@ -246,30 +246,14 @@ export default class Polypheme extends React.Component {
               </Container>
             </Container>
 
-            <Container kind='view' height-type='short' width='400px' {...this.link ()} >
+            <Container kind='view' height-type='short' {...this.link ()} >
               <Container kind='pane-navigator' {...this.link ()} >
-                <Button text='Recherche' width='0px' grow='1' active='true'  kind='pane-navigator' {...this.link ()} />
+                <Button text='Choix d´une date' width='0px' grow='1' active='false'  kind='pane-navigator' {...this.link ()} />
               </Container>
               <Container kind='panes' {...this.link ()} >
-                <Container kind='row-pane' spacing='large' {...this.link ()} >
-                  <Calendar onChange={(date) => console.log (date)} {...this.link ('test-calendar')} />
-                </Container>
                 <Container kind='pane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Résultats' grow='1' kind='title' {...this.link ()} />
-                    <Button glyph='ellipsis-v' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='Jean Meyer' kind='justify-left' width='0px' grow='3' {...this.link ()} />
-                    <Label text='Lausanne'   kind='justify-left' width='0px' grow='1' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='Sandra Tarabori' kind='justify-left' width='0px' grow='3' {...this.link ()} />
-                    <Label text='Jouxtens'        kind='justify-left' width='0px' grow='1' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='Alfred Dumoulin' kind='justify-left' width='0px' grow='3' {...this.link ()} />
-                    <Label text='Morges'          kind='justify-left' width='0px' grow='1' {...this.link ()} />
+                  <Container kind='row-pane' spacing='large' {...this.link ()} >
+                    <Calendar onChange={(date) => console.log (date)} {...this.link ('test-calendar')} />
                   </Container>
                 </Container>
               </Container>
