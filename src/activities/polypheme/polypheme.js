@@ -132,15 +132,15 @@ export default class Polypheme extends React.Component {
             <Container kind='row-pane' subkind='info' {...this.link ()} >
               <Label glyph='building' text='Clients' kind='title' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Label text='Christophe Ducommun' kind='justify-left' grow='67%' {...this.link ()} />
               <Label text='Lausanne'            kind='justify-left' grow='33%' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Label text='Jeanne Sophian'      kind='justify-left' grow='67%' {...this.link ()} />
               <Label text='Crissier'            kind='justify-left' grow='33%' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Label text='Marie-Jeanne Meyer'  kind='justify-left' grow='67%' {...this.link ()} />
               <Label text='Neuchâtel'           kind='justify-left' grow='33%' {...this.link ()} />
             </Container>
@@ -149,15 +149,15 @@ export default class Polypheme extends React.Component {
             <Container kind='row-pane' subkind='info' {...this.link ()} >
               <Label glyph='user' text='Contacts' kind='title' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Label text='Christophe Ducommun' kind='justify-left' grow='67%' {...this.link ()} />
               <Label text='Lausanne'            kind='justify-left' grow='33%' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Label text='Jeanne Sophian'      kind='justify-left' grow='67%' {...this.link ()} />
               <Label text='Crissier'            kind='justify-left' grow='33%' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Label text='Marie-Jeanne Meyer'  kind='justify-left' grow='67%' {...this.link ()} />
               <Label text='Neuchâtel'           kind='justify-left' grow='33%' {...this.link ()} />
             </Container>
