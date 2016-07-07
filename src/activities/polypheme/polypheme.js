@@ -125,10 +125,30 @@ export default class Polypheme extends React.Component {
     return (
       <Container kind='view' height-type='short' width='400' {...this.link ()} >
         <Container kind='pane-navigator' {...this.link ()} >
-          <Button text='Choix d´un client' width='0px' grow='1' active='false'  kind='pane-navigator' {...this.link ()} />
+          <Button text='Chercher' width='0px' grow='1' active='false'  kind='pane-navigator' {...this.link ()} />
         </Container>
         <Container kind='panes' {...this.link ()} >
           <Container kind='pane' {...this.link ()} >
+            <Container kind='row-pane' subkind='info' {...this.link ()} >
+              <Label glyph='building' text='Clients' kind='title' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
+              <Label text='Christophe Ducommun' kind='justify-left' grow='67%' {...this.link ()} />
+              <Label text='Lausanne'            kind='justify-left' grow='33%' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
+              <Label text='Jeanne Sophian'      kind='justify-left' grow='67%' {...this.link ()} />
+              <Label text='Crissier'            kind='justify-left' grow='33%' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
+              <Label text='Marie-Jeanne Meyer'  kind='justify-left' grow='67%' {...this.link ()} />
+              <Label text='Neuchâtel'           kind='justify-left' grow='33%' {...this.link ()} />
+            </Container>
+          </Container>
+          <Container kind='pane' {...this.link ()} >
+            <Container kind='row-pane' subkind='info' {...this.link ()} >
+              <Label glyph='user' text='Contacts' kind='title' {...this.link ()} />
+            </Container>
             <Container kind='row-pane' subkind='box' {...this.link ()} >
               <Label text='Christophe Ducommun' kind='justify-left' grow='67%' {...this.link ()} />
               <Label text='Lausanne'            kind='justify-left' grow='33%' {...this.link ()} />
