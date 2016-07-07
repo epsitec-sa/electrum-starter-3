@@ -62,8 +62,8 @@ export default class Polypheme extends React.Component {
   }
 
   navigatorType () {
-    // return 'vnavigator';
-    return 'hnavigator';
+    return 'vnavigator';
+    // return 'hnavigator';
   }
 
   vnavigator () {
@@ -98,7 +98,13 @@ export default class Polypheme extends React.Component {
     );
   }
 
-  hinter () {
+  hinterType () {
+    // return 'date';
+    return 'list';
+    // return 'empty';
+  }
+
+  hinterDate () {
     return (
       <Container kind='view' height-type='short' {...this.link ()} >
         <Container kind='pane-navigator' {...this.link ()} >
@@ -113,6 +119,42 @@ export default class Polypheme extends React.Component {
         </Container>
       </Container>
     );
+  }
+
+  hinterList () {
+    return (
+      <Container kind='view' height-type='short' width='400' {...this.link ()} >
+        <Container kind='pane-navigator' {...this.link ()} >
+          <Button text='Choix d´un client' width='0px' grow='1' active='false'  kind='pane-navigator' {...this.link ()} />
+        </Container>
+        <Container kind='panes' {...this.link ()} >
+          <Container kind='pane' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
+              <Label text='Christophe Ducommun' kind='justify-left' grow='67%' {...this.link ()} />
+              <Label text='Lausanne'            kind='justify-left' grow='33%' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
+              <Label text='Jeanne Sophian'      kind='justify-left' grow='67%' {...this.link ()} />
+              <Label text='Crissier'            kind='justify-left' grow='33%' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
+              <Label text='Marie-Jeanne Meyer'  kind='justify-left' grow='67%' {...this.link ()} />
+              <Label text='Neuchâtel'           kind='justify-left' grow='33%' {...this.link ()} />
+            </Container>
+          </Container>
+        </Container>
+      </Container>
+    );
+  }
+
+  hinter () {
+    if (this.hinterType () === 'date') {
+      return this.hinterDate ();
+    } else if (this.hinterType () === 'list') {
+      return this.hinterList ();
+    } else {
+      return null;
+    }
   }
 
   render () {
