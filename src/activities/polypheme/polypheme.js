@@ -453,7 +453,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                  <Container kind='row-pane' subkind='box' reserve='2' {...this.link ()} >
                     <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' wrap='no' grow='67%' {...this.link ()} />
                     <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' wrap='no' grow='33%' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
@@ -472,7 +472,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                  <Container kind='row-pane' subkind='box' reserve='2' {...this.link ()} >
                     <Label text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' wrap='no' grow='100%' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
