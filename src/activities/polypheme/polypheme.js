@@ -438,18 +438,26 @@ export default class Polypheme extends React.Component {
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='Christophe Ducommun' kind='justify-left' grow='67%' {...this.link ()} />
                     <Label text='+41 21 650 22 87'    kind='justify-left' grow='33%' {...this.link ()} />
+                    <Button glyph='trash-o' spacing='overlap' {...this.link ()} />
+                    <Button glyph='pencil' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='Jeanne Sophian'      kind='justify-left' grow='67%' {...this.link ()} />
                     <Label text='+41 78 347 20 40'    kind='justify-left' grow='33%' {...this.link ()} />
+                    <Button glyph='trash-o' spacing='overlap' {...this.link ()} />
+                    <Button glyph='pencil' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' grow='67%' {...this.link ()} />
                     <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' grow='33%' {...this.link ()} />
+                    <Button glyph='trash-o' spacing='overlap' {...this.link ()} />
+                    <Button glyph='pencil' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' wrap='no' grow='67%' {...this.link ()} />
                     <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' wrap='no' grow='33%' {...this.link ()} />
+                    <Button glyph='trash-o' spacing='overlap' {...this.link ()} />
+                    <Button glyph='pencil' {...this.link ()} />
                   </Container>
                 </Container>
 
@@ -461,15 +469,23 @@ export default class Polypheme extends React.Component {
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' grow='100%' {...this.link ()} />
+                    <Button glyph='trash-o' spacing='overlap' {...this.link ()} />
+                    <Button glyph='pencil' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' wrap='no' grow='100%' {...this.link ()} />
+                    <Button glyph='trash-o' spacing='overlap' {...this.link ()} />
+                    <Button glyph='pencil' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='Lorem ipsum dolor sit amet' grow='100%' {...this.link ()} />
+                    <Button glyph='trash-o' spacing='overlap' {...this.link ()} />
+                    <Button glyph='pencil' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='Lorem ipsum dolor sit amet, consectetur adipiscing elit' grow='100%' {...this.link ()} />
+                    <Button glyph='trash-o' spacing='overlap' {...this.link ()} />
+                    <Button glyph='pencil' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='footer' {...this.link ()} >
                     <Button kind='subaction' text='Afficher plus d´informations' width='0px' grow='1' {...this.link ()} />
