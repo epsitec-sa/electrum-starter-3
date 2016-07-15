@@ -447,6 +447,10 @@ export default class Polypheme extends React.Component {
                     <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' grow='67%' {...this.link ()} />
                     <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' grow='33%' {...this.link ()} />
                   </Container>
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' wrap='no' grow='67%' {...this.link ()} />
+                    <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' wrap='no' grow='33%' {...this.link ()} />
+                  </Container>
                 </Container>
 
                 <Container kind='pane' {...this.link ()} >
