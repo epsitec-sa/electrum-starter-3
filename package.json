@@ -7,14 +7,15 @@
   "scripts": {
     "babel": "babel --quiet --out-dir lib src && babel --quiet --out-dir lib.test src.test",
     "clean": "rimraf ./lib && rimraf ./lib.test",
-    "compile": "npm run clean && npm run regen && npm run babel",
+    "compile": "npm run clean && require-self && npm run regen && npm run babel",
     "mocha": "cross-env BABEL_ENV=test mocha lib.test/**/*.js",
     "prepublish": "npm run compile",
-    "regen": "require-self && electrum-require-components --wrap ./src components .component.js all-components.js",
+    "regen": "electrum-require-components --wrap ./src components .component.js all-components.js",
     "start": "node webpack.devserver.js",
     "test": "npm run compile && npm run mocha",
     "watch": "webpack --display-error-details --watch --progress --colors -d",
-    "webpack": "webpack --display-error-details -d"
+    "webpack": "webpack --display-error-details -d",
+    "startcraft": "npm run clean && npm run regen && npm run babel"
   },
   "author": "Epsitec SA",
   "license": "MIT",
