@@ -134,20 +134,20 @@ export default class Polypheme extends React.Component {
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Bois Sec SA'         kind='justify-left' grow='67%' {...this.link ()} />
-                <Label text='Bussigny'            kind='justify-left' grow='33%' {...this.link ()} />
+                <Label text='Bois Sec SA'         kind='justify-left' grow='2' {...this.link ()} />
+                <Label text='Bussigny'            kind='justify-left' grow='1' {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Mecatronic SA'       kind='justify-left' grow='67%' {...this.link ()} />
-                <Label text='Prilly'              kind='justify-left' grow='33%' {...this.link ()} />
+                <Label text='Mecatronic SA'       kind='justify-left' grow='2' {...this.link ()} />
+                <Label text='Prilly'              kind='justify-left' grow='1' {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Alfred Chauvet'      kind='justify-left' grow='67%' {...this.link ()} />
-                <Label text='Lausanne'            kind='justify-left' grow='33%' {...this.link ()} />
+                <Label text='Alfred Chauvet'      kind='justify-left' grow='2' {...this.link ()} />
+                <Label text='Lausanne'            kind='justify-left' grow='1' {...this.link ()} />
               </Button>
             </Container>
           </Container>
@@ -157,44 +157,44 @@ export default class Polypheme extends React.Component {
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Christophe Ducommun' kind='justify-left' grow='67%' {...this.link ()} />
-                <Label text='Lausanne'            kind='justify-left' grow='33%' {...this.link ()} />
+                <Label text='Christophe Ducommun' kind='justify-left' grow='2' {...this.link ()} />
+                <Label text='Lausanne'            kind='justify-left' grow='1' {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Jeanne Sophian'      kind='justify-left' grow='67%' {...this.link ()} />
-                <Label text='Crissier'            kind='justify-left' grow='33%' {...this.link ()} />
+                <Label text='Jeanne Sophian'      kind='justify-left' grow='2' {...this.link ()} />
+                <Label text='Crissier'            kind='justify-left' grow='1' {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='André Kudelski'      kind='justify-left' grow='67%' {...this.link ()} />
-                <Label text='Cheseaux'            kind='justify-left' grow='33%' {...this.link ()} />
+                <Label text='André Kudelski'      kind='justify-left' grow='2' {...this.link ()} />
+                <Label text='Cheseaux'            kind='justify-left' grow='1' {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Marie-Jeanne Meyer'  kind='justify-left' grow='67%' {...this.link ()} />
-                <Label text='Neuchâtel'           kind='justify-left' grow='33%' {...this.link ()} />
+                <Label text='Marie-Jeanne Meyer'  kind='justify-left' grow='2' {...this.link ()} />
+                <Label text='Neuchâtel'           kind='justify-left' grow='1' {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux'  kind='justify-left' grow='67%' {...this.link ()} />
-                <Label text='Plan-les-Ouattes' kind='justify-left' grow='33%' {...this.link ()} />
+                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux'  kind='justify-left' grow='2' {...this.link ()} />
+                <Label text='Plan-les-Ouattes' kind='justify-left' grow='1' {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux' kind='justify-left' wrap='no' grow='67%' {...this.link ()} />
-                <Label text='Plan-les-Ouattes' kind='justify-left' wrap='no' grow='33%' {...this.link ()} />
+                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux' kind='justify-left' wrap='no' grow='2' {...this.link ()} />
+                <Label text='Plan-les-Ouattes' kind='justify-left' wrap='no' grow='1' {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Périnne Lemarchand'  kind='justify-left' grow='67%' {...this.link ()} />
-                <Label text='Pully'               kind='justify-left' grow='33%' {...this.link ()} />
+                <Label text='Périnne Lemarchand'  kind='justify-left' grow='2' {...this.link ()} />
+                <Label text='Pully'               kind='justify-left' grow='1' {...this.link ()} />
               </Button>
             </Container>
           </Container>
@@ -417,16 +417,16 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label glyph='map-marker' text='Mon beau bouquet SA\nPlace du Marché 12\n1002 Lausanne' vpos='top' grow='67%' {...this.link ()} />
-                    <Label text='+41 21 650 20 20\ninfo@bouquet.ch' vpos='top' grow='33%' {...this.link ()} />
+                    <Label glyph='map-marker' text='Mon beau bouquet SA\nPlace du Marché 12\n1002 Lausanne' vpos='top' grow='2' {...this.link ()} />
+                    <Label text='+41 21 650 20 20\ninfo@bouquet.ch' vpos='top' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label glyph='map-marker' text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne' wrap='no' vpos='top' grow='67%' {...this.link ()} />
-                    <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch' wrap='no' vpos='top' grow='33%' {...this.link ()} />
+                    <Label glyph='map-marker' text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne' wrap='no' vpos='top' grow='2' {...this.link ()} />
+                    <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch' wrap='no' vpos='top' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label glyph='map-marker' text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne' vpos='top' grow='67%' {...this.link ()} />
-                    <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch' vpos='top' grow='33%' {...this.link ()} />
+                    <Label glyph='map-marker' text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne' vpos='top' grow='2' {...this.link ()} />
+                    <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch' vpos='top' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
 
@@ -436,26 +436,26 @@ export default class Polypheme extends React.Component {
                     <Button glyph='plus' text='Ajouter' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='Christophe Ducommun' kind='justify-left' grow='67%' {...this.link ()} />
-                    <Label text='+41 21 650 22 87'    kind='justify-left' grow='33%' {...this.link ()} />
+                    <Label text='Christophe Ducommun' kind='justify-left' grow='2' {...this.link ()} />
+                    <Label text='+41 21 650 22 87'    kind='justify-left' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='Jeanne Sophian'      kind='justify-left' grow='67%' {...this.link ()} />
-                    <Label text='+41 78 347 20 40'    kind='justify-left' grow='33%' {...this.link ()} />
+                    <Label text='Jeanne Sophian'      kind='justify-left' grow='2' {...this.link ()} />
+                    <Label text='+41 78 347 20 40'    kind='justify-left' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' grow='67%' {...this.link ()} />
-                    <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' grow='33%' {...this.link ()} />
+                    <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' grow='2' {...this.link ()} />
+                    <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' subkind='box' reserve='2' {...this.link ()} >
-                    <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' wrap='no' grow='67%' {...this.link ()} />
-                    <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' wrap='no' grow='33%' {...this.link ()} />
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' wrap='no' grow='2' {...this.link ()} />
+                    <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' wrap='no' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
@@ -472,7 +472,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
-                  <Container kind='row-pane' subkind='box' reserve='2' {...this.link ()} >
+                  <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Label text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' wrap='no' grow='100%' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
