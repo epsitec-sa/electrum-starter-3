@@ -537,7 +537,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-text='ID SC' label-width='100px' hint-text='Numéro d´identificateur' grow='1' spacing='large' {...this.link ()} />
+                    <LabelTextField label-text='ID SC' label-width='100px' hint-text='Numéro d´identification' grow='1' spacing='large' {...this.link ()} />
                     <Label text='' width='140px' spacing='large' {...this.link ()} />
                     <Label text='' width='140px' {...this.link ()} />
                   </Container>
