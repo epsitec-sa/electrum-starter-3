@@ -436,24 +436,28 @@ export default class Polypheme extends React.Component {
                     <Button glyph='plus' text='Ajouter' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Button glyph='user' kind='round' spacing='large' {...this.link ()} />
                     <Label text='Christophe Ducommun' kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='+41 21 650 22 87'    kind='justify-left' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Button glyph='user' kind='round' spacing='large' {...this.link ()} />
                     <Label text='Jeanne Sophian'      kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='+41 78 347 20 40'    kind='justify-left' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Button glyph='user' kind='round' spacing='large' {...this.link ()} />
                     <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Button glyph='user' kind='round' spacing='large' {...this.link ()} />
                     <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long' kind='justify-left' wrap='no' grow='2' {...this.link ()} />
                     <Label text='+41 78 347 20 40 (domicile)' kind='justify-left' wrap='no' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
