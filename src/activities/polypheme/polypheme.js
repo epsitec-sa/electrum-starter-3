@@ -472,7 +472,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='plus' text='Ajouter' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Button glyph='bookmark-o' kind='frameless' spacing='large' {...this.link ()} />
+                    <Label glyph='bookmark-o' {...this.link ()} />
                     <Label text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
