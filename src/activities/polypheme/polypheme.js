@@ -497,30 +497,35 @@ export default class Polypheme extends React.Component {
                     <Label glyph='list' text='Dernières missions' grow='1' kind='title' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Button glyph='automobile' kind='round' spacing='large' {...this.link ()} />
                     <Label text='Ricota SA'  kind='justify-left' grow='5' {...this.link ()} />
                     <Label text='Lausanne'   kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='15.05.16'   kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='13:05'      kind='justify-left' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
+                    <Button glyph='train' kind='round' spacing='large' {...this.link ()} />
                     <Label text='Mecatronic' kind='justify-left' grow='5' {...this.link ()} />
                     <Label text='Genève'     kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='17.05.16'   kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='08:15'      kind='justify-left' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' mark-color='primary' {...this.link ()} >
+                    <Button glyph='bicycle' kind='round'spacing='large'  {...this.link ()} />
                     <Label text='Coop'       kind='justify-left' grow='5' {...this.link ()} />
                     <Label text='Prilly'     kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='21.05.16'   kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='17:55'      kind='justify-left' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' mark-color='secondary' {...this.link ()} >
+                    <Button glyph='bicycle' kind='round' spacing='large' {...this.link ()} />
                     <Label text='Migros'     kind='justify-left' grow='5' {...this.link ()} />
                     <Label text='Renens'     kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='02.06.16'   kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='10:30'      kind='justify-left' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' mark-color='#69ed22' {...this.link ()} >
+                    <Button glyph='truck' kind='round' spacing='large' {...this.link ()} />
                     <Label text='Torena SA'  kind='justify-left' grow='5' {...this.link ()} />
                     <Label text='Crissier'   kind='justify-left' grow='2' {...this.link ()} />
                     <Label text='05.06.16'   kind='justify-left' grow='2' {...this.link ()} />
