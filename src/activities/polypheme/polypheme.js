@@ -13,7 +13,8 @@ import {
   Calendar,
   Clock,
   Menu,
-  FlyingBalloon
+  FlyingBalloon,
+  Separator
 } from 'electrum-arc';
 
 import act from './actuators.js';
@@ -550,11 +551,13 @@ export default class Polypheme extends React.Component {
                     <Label text='' width='140px' spacing='large' {...this.link ()} />
                     <Label text='' width='140px' {...this.link ()} />
                   </Container>
+                  <Separator {...this.link ()} />
                   <Container kind='row-pane' {...this.link ()} >
                     <LabelTextField label-text='Références' label-width='100px' hint-text='Références' grow='1' spacing='large' {...this.link ()} />
                     <Button glyph='toggle-on' text='Obligatoire' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
                     <Label text='' width='140px' {...this.link ()} />
                   </Container>
+                  <Separator {...this.link ()} />
                   <Container kind='row-pane' {...this.link ()} >
                     <LabelTextField label-text='Paiement' label-width='100px' hint-text='Mode de paiement' grow='1' spacing='large'  {...this.link ()} />
                     <Button glyph='check-square' text='Facture BVR' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
@@ -565,6 +568,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='toggle-off' text='Détaillé' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
                     <Button glyph='toggle-on' text='Résumé' glyph-position='right' width='140px' {...this.link ()} />
                   </Container>
+                  <Separator {...this.link ()} />
                   <Container kind='row-pane' {...this.link ()} >
                     <LabelTextField label-text='Rabais' label-width='100px' hint-text='Rabais accordé' grow='1' spacing='large'  {...this.link ()} />
                     <Button glyph='check-square' text='Personnel' glyph-position='right' width='140px' spacing='large' {...this.link ()} />
