@@ -472,22 +472,22 @@ export default class Polypheme extends React.Component {
                     <Button glyph='plus' text='Ajouter' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label glyph='bookmark' glyph-color='#ff0000' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' grow='1' {...this.link ()} />
+                    <Label glyph='bookmark' glyph-color='#ff0000' glyph-size='140%' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label glyph='bookmark' glyph-color='#2e5588' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' wrap='no' grow='1' {...this.link ()} />
+                    <Label glyph='bookmark' glyph-color='#2e5588' glyph-size='140%' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' wrap='no' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label glyph='bookmark' glyph-color='#ffaf00' text='Lorem ipsum dolor sit amet' grow='1' {...this.link ()} />
+                    <Label glyph='bookmark' glyph-color='#ffaf00' glyph-size='140%' text='Lorem ipsum dolor sit amet' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label glyph='bookmark' glyph-color='#2e5588' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit' grow='1' {...this.link ()} />
+                    <Label glyph='bookmark' glyph-color='#2e5588' glyph-size='140%' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap' {...this.link ()} />
                     <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
                   </Container>
