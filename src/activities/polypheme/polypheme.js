@@ -374,6 +374,11 @@ export default class Polypheme extends React.Component {
                     <Badge value='1234' {...this.link ()} />
                     <Badge value='12345' {...this.link ()} />
                   </Container>
+                  <Container kind='row-pane' spacing='large' {...this.link ()} >
+                    <Container kind='flying-balloon' {...this.link ()} >
+                      <Button glyph='plus' text='Ajouter' {...this.link ()} />
+                    </Container>
+                  </Container>
                 </Container>
 
               </Container>
