@@ -388,6 +388,18 @@ export default class Polypheme extends React.Component {
                       <Button glyph='gears' text='Réglages' {...this.link ()} />
                     </Container>
                   </Container>
+                  <Container kind='row-pane' spacing='large' {...this.link ()} >
+                    <Container kind='flying-balloon' width='200px' {...this.link ()} >
+                      <Container kind='row-pane' {...this.link ()} >
+                        <Label text='Mecatronic' kind='flying-balloon' grow='2' {...this.link ()} />
+                        <Label text='17.05.16'   kind='flying-balloon' grow='1' {...this.link ()} />
+                      </Container>
+                      <Container kind='row-pane' {...this.link ()} >
+                        <Label text='Torena SA'  kind='flying-balloon' grow='2' {...this.link ()} />
+                        <Label text='18.05.16'   kind='flying-balloon' grow='1' {...this.link ()} />
+                      </Container>
+                    </Container>
+                  </Container>
                 </Container>
 
               </Container>
