@@ -500,16 +500,16 @@ export default class Polypheme extends React.Component {
                     </Container>
                   </Container>
                   <Container kind='row-pane' spacing='large' {...this.link ()} >
-                    <Container kind='flying-balloon' width='200px' {...this.link ()} >
+                    <Container kind='flying-balloon' width='150px' {...this.link ()} >
                       <Container kind='compact-row' {...this.link ()} >
                         <Label text='Mecatronic' kind='flying-balloon'
-                          justify='left' grow='2' {...this.link ()} />
+                          font-weight='bold' justify='left' grow='2' {...this.link ()} />
                         <Label text='17.05.16' kind='flying-balloon'
                           justify='right' grow='1' {...this.link ()} />
                       </Container>
                       <Container kind='compact-row' {...this.link ()} >
                         <Label text='Torena SA' kind='flying-balloon'
-                          justify='left' grow='2' {...this.link ()} />
+                          font-weight='bold' justify='left' grow='2' {...this.link ()} />
                         <Label text='18.05.16' kind='flying-balloon'
                           justify='right' grow='1' {...this.link ()} />
                       </Container>
