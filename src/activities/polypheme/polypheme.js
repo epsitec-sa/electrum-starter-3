@@ -142,25 +142,25 @@ export default class Polypheme extends React.Component {
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Bois Sec SA' kind='justify-left' grow='2'
+                <Label text='Bois Sec SA' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Bussigny' kind='justify-left' grow='1'
-                  {...this.link ()} />
-              </Button>
-            </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
-              <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Mecatronic SA' kind='justify-left' grow='2'
-                  {...this.link ()} />
-                <Label text='Prilly' kind='justify-left' grow='1'
+                <Label text='Bussigny' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Alfred Chauvet' kind='justify-left' grow='2'
+                <Label text='Mecatronic SA' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Lausanne' kind='justify-left' grow='1'
+                <Label text='Prilly' justify='left' grow='1'
+                  {...this.link ()} />
+              </Button>
+            </Container>
+            <Container kind='row-pane' subkind='list' {...this.link ()} >
+              <Button kind='container' width='100%' {...this.link ()}>
+                <Label text='Alfred Chauvet' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='Lausanne' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
@@ -171,57 +171,57 @@ export default class Polypheme extends React.Component {
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Christophe Ducommun' kind='justify-left' grow='2'
+                <Label text='Christophe Ducommun' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Lausanne' kind='justify-left' grow='1'
-                  {...this.link ()} />
-              </Button>
-            </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
-              <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Jeanne Sophian' kind='justify-left' grow='2'
-                  {...this.link ()} />
-                <Label text='Crissier' kind='justify-left' grow='1'
+                <Label text='Lausanne' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='André Kudelski' kind='justify-left' grow='2'
+                <Label text='Jeanne Sophian' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Cheseaux' kind='justify-left' grow='1'
-                  {...this.link ()} />
-              </Button>
-            </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
-              <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Marie-Jeanne Meyer'  kind='justify-left' grow='2'
-                  {...this.link ()} />
-                <Label text='Neuchâtel' kind='justify-left' grow='1'
+                <Label text='Crissier' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux'
-                  kind='justify-left' grow='2' {...this.link ()} />
-                <Label text='Plan-les-Ouattes' kind='justify-left' grow='1'
+                <Label text='André Kudelski' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='Cheseaux' justify='left' grow='1'
+                  {...this.link ()} />
+              </Button>
+            </Container>
+            <Container kind='row-pane' subkind='list' {...this.link ()} >
+              <Button kind='container' width='100%' {...this.link ()}>
+                <Label text='Marie-Jeanne Meyer'  justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='Neuchâtel' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Jean-Pierre-Etienne von Dutrèsprécieux'
-                  kind='justify-left' wrap='no' grow='2' {...this.link ()} />
-                <Label text='Plan-les-Ouattes' kind='justify-left'
+                  justify='left' grow='2' {...this.link ()} />
+                <Label text='Plan-les-Ouattes' justify='left' grow='1'
+                  {...this.link ()} />
+              </Button>
+            </Container>
+            <Container kind='row-pane' subkind='list' {...this.link ()} >
+              <Button kind='container' width='100%' {...this.link ()}>
+                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux'
+                  justify='left' wrap='no' grow='2' {...this.link ()} />
+                <Label text='Plan-les-Ouattes' justify='left'
                   wrap='no' grow='1' {...this.link ()} />
               </Button>
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Périnne Lemarchand' kind='justify-left' grow='2'
+                <Label text='Périnne Lemarchand' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Pully' kind='justify-left' grow='1'
+                <Label text='Pully' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
@@ -433,35 +433,35 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='compact' {...this.link ()} >
-                    <Label text='Standard A - C'   kind='justify-left'
+                    <Label text='Standard A - C'   justify='left'
                       width='0px' grow='4' {...this.link ()} />
-                    <Label text='50.00' kind='justify-right'
+                    <Label text='50.00' justify='right'
                       width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='compact' {...this.link ()} >
-                    <Label text='Supplément poids' kind='justify-left'
+                    <Label text='Supplément poids' justify='left'
                       width='0px' grow='4' {...this.link ()} />
-                    <Label text='12.00' kind='justify-right'
+                    <Label text='12.00' justify='right'
                       width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='compact' subkind='wide-info'
                     {...this.link ()} >
-                    <Label text='Sous-total' kind='justify-left'
+                    <Label text='Sous-total' justify='left'
                       width='0px' grow='4' {...this.link ()} />
-                    <Label text='62.00' kind='justify-right'
+                    <Label text='62.00' justify='right'
                       width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='compact' {...this.link ()} >
-                    <Label text='Avance d´argent'  kind='justify-left'
+                    <Label text='Avance d´argent'  justify='left'
                       width='0px' grow='4' {...this.link ()} />
-                    <Label text='55.00' kind='justify-right'
+                    <Label text='55.00' justify='right'
                       width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='glued' subkind='wide-info'
                     {...this.link ()} >
-                    <Label text='Total' kind='justify-left'
+                    <Label text='Total' justify='left'
                       width='0px' grow='4' {...this.link ()} />
-                    <Label text='117.00' kind='justify-right'
+                    <Label text='117.00' justify='right'
                       width='0px' grow='1' {...this.link ()} />
                   </Container>
                 </Container>
@@ -501,17 +501,17 @@ export default class Polypheme extends React.Component {
                   </Container>
                   <Container kind='row-pane' spacing='large' {...this.link ()} >
                     <Container kind='flying-balloon' width='200px' {...this.link ()} >
-                      <Container kind='row-pane' {...this.link ()} >
-                        <Label text='Mecatronic' kind='flying-balloon' grow='2'
-                          {...this.link ()} />
-                        <Label text='17.05.16' kind='flying-balloon' grow='1'
-                          {...this.link ()} />
+                      <Container kind='compact-row' {...this.link ()} >
+                        <Label text='Mecatronic' kind='flying-balloon'
+                          justify='left' grow='2' {...this.link ()} />
+                        <Label text='17.05.16' kind='flying-balloon'
+                          justify='right' grow='1' {...this.link ()} />
                       </Container>
-                      <Container kind='row-pane' {...this.link ()} >
-                        <Label text='Torena SA' kind='flying-balloon' grow='2'
-                          {...this.link ()} />
-                        <Label text='18.05.16' kind='flying-balloon' grow='1'
-                          {...this.link ()} />
+                      <Container kind='compact-row' {...this.link ()} >
+                        <Label text='Torena SA' kind='flying-balloon'
+                          justify='left' grow='2' {...this.link ()} />
+                        <Label text='18.05.16' kind='flying-balloon'
+                          justify='right' grow='1' {...this.link ()} />
                       </Container>
                     </Container>
                   </Container>
@@ -583,9 +583,9 @@ export default class Polypheme extends React.Component {
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Button glyph='user' kind='round' spacing='large'
                       {...this.link ()} />
-                    <Label text='Christophe Ducommun' kind='justify-left'
+                    <Label text='Christophe Ducommun' justify='left'
                       grow='2' {...this.link ()} />
-                    <Label text='+41 21 650 22 87' kind='justify-left'
+                    <Label text='+41 21 650 22 87' justify='left'
                       grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth' spacing='overlap'
                       {...this.link ()} />
@@ -593,9 +593,9 @@ export default class Polypheme extends React.Component {
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Button glyph='user' kind='round' spacing='large' {...this.link ()} />
-                    <Label text='Jeanne Sophian' kind='justify-left'
+                    <Label text='Jeanne Sophian' justify='left'
                       grow='2' {...this.link ()} />
-                    <Label text='+41 78 347 20 40' kind='justify-left'
+                    <Label text='+41 78 347 20 40' justify='left'
                       grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth'
                       spacing='overlap' {...this.link ()} />
@@ -605,8 +605,8 @@ export default class Polypheme extends React.Component {
                     <Button glyph='user' kind='round' spacing='large'
                       {...this.link ()} />
                     <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long'
-                      kind='justify-left' grow='2' {...this.link ()} />
-                    <Label text='+41 78 347 20 40 (domicile)' kind='justify-left'
+                      justify='left' grow='2' {...this.link ()} />
+                    <Label text='+41 78 347 20 40 (domicile)' justify='left'
                       grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth'
                       spacing='overlap' {...this.link ()} />
@@ -617,8 +617,8 @@ export default class Polypheme extends React.Component {
                     <Button glyph='user' kind='round' spacing='large'
                       {...this.link ()} />
                     <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long'
-                      kind='justify-left' wrap='no' grow='2' {...this.link ()} />
-                    <Label text='+41 78 347 20 40 (domicile)' kind='justify-left'
+                      justify='left' wrap='no' grow='2' {...this.link ()} />
+                    <Label text='+41 78 347 20 40 (domicile)' justify='left'
                       wrap='no' grow='1' {...this.link ()} />
                     <Button glyph='trash-o' shape='left-smooth'
                       spacing='overlap' {...this.link ()} />
@@ -684,64 +684,64 @@ export default class Polypheme extends React.Component {
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Button glyph='automobile' kind='round' spacing='large'
                       {...this.link ()} />
-                    <Label text='Ricota SA' kind='justify-left' grow='5'
+                    <Label text='Ricota SA' justify='left' grow='5'
                       {...this.link ()} />
-                    <Label text='Lausanne' kind='justify-left' grow='2'
+                    <Label text='Lausanne' justify='left' grow='2'
                       {...this.link ()} />
-                    <Label text='15.05.16' kind='justify-left' grow='2'
+                    <Label text='15.05.16' justify='left' grow='2'
                       {...this.link ()} />
-                    <Label text='13:05' kind='justify-left' grow='1'
+                    <Label text='13:05' justify='left' grow='1'
                       {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
                     <Button glyph='train' kind='round' spacing='large'
                       {...this.link ()} />
-                    <Label text='Mecatronic' kind='justify-left' grow='5'
+                    <Label text='Mecatronic' justify='left' grow='5'
                       {...this.link ()} />
-                    <Label text='Genève' kind='justify-left' grow='2'
+                    <Label text='Genève' justify='left' grow='2'
                       {...this.link ()} />
-                    <Label text='17.05.16' kind='justify-left' grow='2'
+                    <Label text='17.05.16' justify='left' grow='2'
                       {...this.link ()} />
-                    <Label text='08:15' kind='justify-left' grow='1'
+                    <Label text='08:15' justify='left' grow='1'
                       {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box'
                     mark-color='primary' {...this.link ()} >
                     <Button glyph='bicycle' kind='round'spacing='large'
                       {...this.link ()} />
-                    <Label text='Coop' kind='justify-left' grow='5'
+                    <Label text='Coop' justify='left' grow='5'
                       {...this.link ()} />
-                    <Label text='Prilly' kind='justify-left' grow='2'
+                    <Label text='Prilly' justify='left' grow='2'
                       {...this.link ()} />
-                    <Label text='21.05.16' kind='justify-left' grow='2'
+                    <Label text='21.05.16' justify='left' grow='2'
                       {...this.link ()} />
-                    <Label text='17:55' kind='justify-left' grow='1'
+                    <Label text='17:55' justify='left' grow='1'
                       {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box'
                     mark-color='secondary' {...this.link ()} >
                     <Button glyph='bicycle' kind='round' spacing='large'
                       {...this.link ()} />
-                    <Label text='Migros' kind='justify-left' grow='5'
+                    <Label text='Migros' justify='left' grow='5'
                       {...this.link ()} />
-                    <Label text='Renens' kind='justify-left' grow='2'
+                    <Label text='Renens' justify='left' grow='2'
                       {...this.link ()} />
-                    <Label text='02.06.16' kind='justify-left' grow='2'
+                    <Label text='02.06.16' justify='left' grow='2'
                       {...this.link ()} />
-                    <Label text='10:30' kind='justify-left' grow='1'
+                    <Label text='10:30' justify='left' grow='1'
                       {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box'
                     mark-color='#69ed22' {...this.link ()} >
                     <Button glyph='truck' kind='round' spacing='large'
                       {...this.link ()} />
-                    <Label text='Torena SA' kind='justify-left' grow='5'
+                    <Label text='Torena SA' justify='left' grow='5'
                       {...this.link ()} />
-                    <Label text='Crissier' kind='justify-left' grow='2'
+                    <Label text='Crissier' justify='left' grow='2'
                       {...this.link ()} />
-                    <Label text='05.06.16' kind='justify-left' grow='2'
+                    <Label text='05.06.16' justify='left' grow='2'
                       {...this.link ()} />
-                    <Label text='17:45' kind='justify-left' grow='1'
+                    <Label text='17:45' justify='left' grow='1'
                       {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='footer' {...this.link ()} >
@@ -821,33 +821,33 @@ export default class Polypheme extends React.Component {
                       combo-glyph='Search' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='12.01.16' kind='justify-left'
+                    <Label text='12.01.16' justify='left'
                       grow='2' {...this.link ()} />
-                    <Label text='La Belle Plante' kind='justify-left'
+                    <Label text='La Belle Plante' justify='left'
                       grow='4' {...this.link ()} />
-                    <Label text='Neuchâtel' kind='justify-left'
+                    <Label text='Neuchâtel' justify='left'
                       grow='2' {...this.link ()} />
-                    <Label text='129.80' kind='justify-right'
+                    <Label text='129.80' justify='right'
                       grow='2' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='31.03.16' kind='justify-left'
+                    <Label text='31.03.16' justify='left'
                       grow='2' {...this.link ()} />
-                    <Label text='Ricota SA' kind='justify-left'
+                    <Label text='Ricota SA' justify='left'
                       grow='4' {...this.link ()} />
-                    <Label text='Lausanne' kind='justify-left'
+                    <Label text='Lausanne' justify='left'
                       grow='2' {...this.link ()} />
-                    <Label text='58.50' kind='justify-right'
+                    <Label text='58.50' justify='right'
                       grow='2' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='box' {...this.link ()} >
-                    <Label text='01.04.16' kind='justify-left'
+                    <Label text='01.04.16' justify='left'
                       grow='2' {...this.link ()} />
-                    <Label text='Mauser Frères' kind='justify-left'
+                    <Label text='Mauser Frères' justify='left'
                       grow='4' {...this.link ()} />
-                    <Label text='Ecublens' kind='justify-left'
+                    <Label text='Ecublens' justify='left'
                       grow='2' {...this.link ()} />
-                    <Label text='95.00' kind='justify-right'
+                    <Label text='95.00' justify='right'
                       grow='2' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' subkind='footer' {...this.link ()} >
