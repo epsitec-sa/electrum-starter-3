@@ -130,7 +130,7 @@ export default class Polypheme extends React.Component {
 
   hinterList () {
     return (
-      <Container kind='view' height-type='short' width='400' {...this.link ()} >
+      <Container kind='view' height-type='short' width='400px' {...this.link ()} >
         <Container kind='pane-navigator' {...this.link ()} >
           <Button text='Chercher' width='0px' width='100%'
             active='false'  kind='pane-navigator' {...this.link ()} />
