@@ -99,7 +99,7 @@ export default class Polypheme extends React.Component {
 
             <Container kind='view' width='300px' {...this.link ()} >
               <Container kind='tickets' {...this.link ()} >
-                <Container kind='ticket' {...this.link ()} >
+                <Container kind='ticket' subkind='header' {...this.link ()} >
                   <Label text='Sandra' {...this.link ()} />
                   <Label text='203.50' {...this.link ()} />
                 </Container>
@@ -116,7 +116,7 @@ export default class Polypheme extends React.Component {
 
             <Container kind='view' width='300px' {...this.link ()} >
               <Container kind='tickets' {...this.link ()} >
-                <Container kind='ticket' {...this.link ()} >
+                <Container kind='ticket' subkind='header' {...this.link ()} >
                   <Label text='Jean-Paul' {...this.link ()} />
                   <Label text='54.00' {...this.link ()} />
                 </Container>
