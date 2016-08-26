@@ -91,12 +91,38 @@ export default class Polypheme extends React.Component {
           </Container>
 
           <Container kind='view-tab' {...this.link ()} >
-            <TabButton text='Nom du client | 10:42' active='true' {...this.link ()} />
-            <TabButton text='Nom du client | 10:30' active='false' {...this.link ()} />
-            <TabButton text='Nom de la mission | 09:56' active='false' {...this.link ()} />
+            <TabButton text='Missions' active='true' {...this.link ()} />
+            <TabButton text='Coursiers' active='false' {...this.link ()} />
           </Container>
 
           <Container kind='views' {...this.link ()} >
+
+            <Container kind='view' width='200px' {...this.link ()} >
+              <Container kind='panes' {...this.link ()} >
+                <Container kind='pane' {...this.link ()} >
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='Sandra' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='Coop St. Laurent' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='Migros Pont-Neuf' {...this.link ()} />
+                  </Container>
+                </Container>
+              </Container>
+            </Container>
+
+            <Container kind='view' width='200px' {...this.link ()} >
+              <Container kind='panes' {...this.link ()} >
+                <Container kind='pane' {...this.link ()} >
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label text='Jean-Paul' {...this.link ()} />
+                  </Container>
+                </Container>
+              </Container>
+            </Container>
+
           </Container>
 
           <Container kind='footer' {...this.link ()} >
