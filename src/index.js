@@ -14,7 +14,7 @@ import DesktopActivity from './activities/desktop/';
 import LoginActivity from './activities/login/';
 import SessionActivity from './activities/session/';
 import CatalogActivity from './activities/catalog/';
-import PolyphemeActivity from './activities/polypheme/';
+import PolyphemeActivity from './activities/polypheme-codispatch/';
 import ActivitiesManager from './activities-manager.js';
 
 import 'babel-polyfill';
