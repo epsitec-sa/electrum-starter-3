@@ -1,3 +1,4 @@
+// Mock for a typical co-dispatch screen.
 'use strict';
 
 import React from 'react';
