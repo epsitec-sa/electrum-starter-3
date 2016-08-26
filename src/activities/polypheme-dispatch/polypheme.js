@@ -97,28 +97,28 @@ export default class Polypheme extends React.Component {
 
           <Container kind='views' {...this.link ()} >
 
-            <Container kind='view' width='200px' {...this.link ()} >
-              <Container kind='panes' {...this.link ()} >
-                <Container kind='pane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Sandra' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Coop St. Laurent' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Migros Pont-Neuf' {...this.link ()} />
-                  </Container>
+            <Container kind='view' width='300px' {...this.link ()} >
+              <Container kind='tickets' {...this.link ()} >
+                <Container kind='ticket' {...this.link ()} >
+                  <Label text='Sandra' {...this.link ()} />
+                  <Label text='203.50' {...this.link ()} />
+                </Container>
+                <Container kind='ticket' {...this.link ()} >
+                  <Label text='Coop St. Laurent' {...this.link ()} />
+                  <Label text='11:20' {...this.link ()} />
+                </Container>
+                <Container kind='ticket' {...this.link ()} >
+                  <Label text='Migros Pont-Neuf' {...this.link ()} />
+                    <Label text='13:05' {...this.link ()} />
                 </Container>
               </Container>
             </Container>
 
-            <Container kind='view' width='200px' {...this.link ()} >
-              <Container kind='panes' {...this.link ()} >
-                <Container kind='pane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Jean-Paul' {...this.link ()} />
-                  </Container>
+            <Container kind='view' width='300px' {...this.link ()} >
+              <Container kind='tickets' {...this.link ()} >
+                <Container kind='ticket' {...this.link ()} >
+                  <Label text='Jean-Paul' {...this.link ()} />
+                  <Label text='54.00' {...this.link ()} />
                 </Container>
               </Container>
             </Container>
