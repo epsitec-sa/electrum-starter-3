@@ -101,8 +101,8 @@ export default class Polypheme extends React.Component {
             <Container kind='view' {...this.link ()} >
               <Container kind='tickets' {...this.link ()} >
                 <Ticket kind='header' width='300px' height='70px' {...this.link ()} >
-                  <Container kind='column' grow='1' {...this.link ()} >
-                    <Button glyph='user' kind='round' {...this.link ()} />
+                  <Container kind='column' grow='2' {...this.link ()} >
+                    <Button glyph='user' kind='identity' {...this.link ()} />
                   </Container>
                   <Container kind='column' grow='1' {...this.link ()} >
                     <Label glyph='bicycle' {...this.link ()} />
@@ -182,8 +182,8 @@ export default class Polypheme extends React.Component {
             <Container kind='view' {...this.link ()} >
               <Container kind='tickets' {...this.link ()} >
                 <Ticket kind='header' width='300px' height='70px' {...this.link ()} >
-                  <Container kind='column' grow='1' {...this.link ()} >
-                    <Button glyph='user' kind='round' {...this.link ()} />
+                  <Container kind='column' grow='2' {...this.link ()} >
+                    <Button glyph='user' kind='identity' {...this.link ()} />
                   </Container>
                   <Container kind='column' grow='1' {...this.link ()} >
                     <Label glyph='bicycle' {...this.link ()} />
@@ -224,8 +224,8 @@ export default class Polypheme extends React.Component {
             <Container kind='view' {...this.link ()} >
               <Container kind='tickets' {...this.link ()} >
                 <Ticket kind='header' width='300px' height='70px' {...this.link ()} >
-                  <Container kind='column' grow='1' {...this.link ()} >
-                    <Button glyph='user' kind='round' {...this.link ()} />
+                  <Container kind='column' grow='2' {...this.link ()} >
+                    <Button glyph='user-secret' kind='identity' {...this.link ()} />
                   </Container>
                   <Container kind='column' grow='1' {...this.link ()} >
                     <Label glyph='car' {...this.link ()} />
