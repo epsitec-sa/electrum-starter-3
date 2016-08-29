@@ -100,9 +100,17 @@ export default class Polypheme extends React.Component {
 
             <Container kind='view' {...this.link ()} >
               <Container kind='tickets' {...this.link ()} >
-                <Ticket kind='header' width='300px' height='100px' {...this.link ()} >
-                  <Label text='Sandra' {...this.link ()} />
-                  <Label text='203.50' {...this.link ()} />
+                <Ticket kind='header' width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Button glyph='user' kind='round' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label glyph='bicycle' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Sandra' font-weight='bold' text-color='#fff' {...this.link ()} />
+                    <Label text='203.50' font-weight='bold' text-color='#fff' {...this.link ()} />
+                  </Container>
                 </Ticket>
                 <Ticket width='300px' height='70px' {...this.link ()} >
                   <Container kind='column' grow='1' {...this.link ()} >
@@ -173,9 +181,17 @@ export default class Polypheme extends React.Component {
 
             <Container kind='view' {...this.link ()} >
               <Container kind='tickets' {...this.link ()} >
-                <Ticket kind='header' width='300px' height='100px' {...this.link ()} >
-                  <Label text='Jean-Paul' {...this.link ()} />
-                  <Label text='54.00' {...this.link ()} />
+                <Ticket kind='header' width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Button glyph='user' kind='round' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label glyph='bicycle' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Jean-Paul' font-weight='bold' text-color='#fff' {...this.link ()} />
+                    <Label text='68.00' font-weight='bold' text-color='#fff' {...this.link ()} />
+                  </Container>
                 </Ticket>
                 <Ticket width='300px' height='70px' {...this.link ()} >
                   <Container kind='column' grow='1' {...this.link ()} >
@@ -207,9 +223,17 @@ export default class Polypheme extends React.Component {
 
             <Container kind='view' {...this.link ()} >
               <Container kind='tickets' {...this.link ()} >
-                <Ticket kind='header' width='300px' height='100px' {...this.link ()} >
-                  <Label text='Frédérique' {...this.link ()} />
-                  <Label text='250.00' {...this.link ()} />
+                <Ticket kind='header' width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Button glyph='user' kind='round' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label glyph='car' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Frédérique' font-weight='bold' text-color='#fff' {...this.link ()} />
+                    <Label text='250.00' font-weight='bold' text-color='#fff' {...this.link ()} />
+                  </Container>
                 </Ticket>
                 <Ticket width='300px' height='70px' {...this.link ()} >
                   <Container kind='column' grow='1' {...this.link ()} >
