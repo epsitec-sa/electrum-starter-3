@@ -40,7 +40,7 @@ am.registerActivity ('poc', PocActivity);
 am.registerActivity ('catalog', CatalogActivity);
 am.registerActivity ('polypheme-dispatch', PolyphemeDispatchActivity);
 am.registerActivity ('polypheme-codispatch', PolyphemeCodispatchActivity);
-am.startMainActivity ('polypheme-dispatch', true);
+am.startMainActivity ('polypheme-codispatch', true);
 Electrum.reset ();
 Electrum.useBus (am);
 
