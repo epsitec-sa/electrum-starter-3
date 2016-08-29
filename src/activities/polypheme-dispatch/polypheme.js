@@ -104,13 +104,69 @@ export default class Polypheme extends React.Component {
                   <Label text='Sandra' {...this.link ()} />
                   <Label text='203.50' {...this.link ()} />
                 </Ticket>
-                <Ticket width='300px' height='100px' {...this.link ()} >
-                  <Label text='Coop St. Laurent' {...this.link ()} />
-                  <Label text='11:20' {...this.link ()} />
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='10:50' font-weight='bold' {...this.link ()} />
+                    <Label glyph='upload' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Coop St. Laurent' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='1x' width='150px' {...this.link ()} />
+                      <Label glyph='warning' {...this.link ()} />
+                    </Container>
+                  </Container>
                 </Ticket>
-                <Ticket width='300px' height='100px' {...this.link ()} >
-                  <Label text='Migros Pont-Neuf' {...this.link ()} />
-                    <Label text='13:05' {...this.link ()} />
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='11:00' font-weight='bold' {...this.link ()} />
+                    <Label glyph='upload' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Migros Pont-Neuf' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='3x' width='150px' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='11:35' font-weight='bold' {...this.link ()} />
+                    <Label glyph='download' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Mecatronic SA - Cheseaux' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='1x' width='150px' {...this.link ()} />
+                      <Label glyph='bookmark' glyph-color='#f00' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='11:45' font-weight='bold' {...this.link ()} />
+                    <Label glyph='download' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Jean-Paul Keiser - Renens' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='4x' width='150px' {...this.link ()} />
+                      <Label glyph='bookmark' glyph-color='#f00' {...this.link ()} />
+                      <Label glyph='bookmark' glyph-color='#ffd600' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='13:15' font-weight='bold' {...this.link ()} />
+                    <Label glyph='upload' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Gare CFF' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='7x' width='150px' {...this.link ()} />
+                    </Container>
+                  </Container>
                 </Ticket>
               </Container>
             </Container>
@@ -121,18 +177,165 @@ export default class Polypheme extends React.Component {
                   <Label text='Jean-Paul' {...this.link ()} />
                   <Label text='54.00' {...this.link ()} />
                 </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='10:10' font-weight='bold' {...this.link ()} />
+                    <Label glyph='upload' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Fidusim SA' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='1x' width='150px' {...this.link ()} />
+                      <Label glyph='bookmark' glyph-color='#f00' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='10:30' font-weight='bold' {...this.link ()} />
+                    <Label glyph='download' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Dominique Fasel - Crissier' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='2x' width='150px' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
               </Container>
             </Container>
 
             <Container kind='view' {...this.link ()} >
               <Container kind='tickets' {...this.link ()} >
-                <Ticket width='400px' height='150px' {...this.link ()} >
-                  <Label text='Plus grand' {...this.link ()} />
-                  <Label text='100.00' {...this.link ()} />
+                <Ticket kind='header' width='300px' height='100px' {...this.link ()} >
+                  <Label text='Frédérique' {...this.link ()} />
+                  <Label text='250.00' {...this.link ()} />
                 </Ticket>
-                <Ticket width='200px' height='80px' {...this.link ()} >
-                  <Label text='Plus petit' {...this.link ()} />
-                  <Label text='10.00' {...this.link ()} />
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='10:50' font-weight='bold' {...this.link ()} />
+                    <Label glyph='upload' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Coop St. Laurent' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='1x' width='150px' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='11:00' font-weight='bold' {...this.link ()} />
+                    <Label glyph='upload' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Migros Pont-Neuf' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='3x' width='150px' {...this.link ()} />
+                      <Label glyph='warning' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='11:35' font-weight='bold' {...this.link ()} />
+                    <Label glyph='download' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Mecatronic SA - Cheseaux' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='1x' width='150px' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='11:45' font-weight='bold' {...this.link ()} />
+                    <Label glyph='download' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Jean-Paul Keiser - Renens' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='4x' width='150px' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='13:15' font-weight='bold' {...this.link ()} />
+                    <Label glyph='upload' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Gare CFF' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='7x' width='150px' {...this.link ()} />
+                      <Label glyph='bookmark' glyph-color='#ffd600' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='14:20' font-weight='bold' {...this.link ()} />
+                    <Label glyph='upload' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Coop St. Laurent' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='1x' width='150px' {...this.link ()} />
+                      <Label glyph='warning' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='14:50' font-weight='bold' {...this.link ()} />
+                    <Label glyph='upload' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Migros Pont-Neuf' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='3x' width='150px' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='16:00' font-weight='bold' {...this.link ()} />
+                    <Label glyph='download' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Mecatronic SA - Cheseaux' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='1x' width='150px' {...this.link ()} />
+                      <Label glyph='bookmark' glyph-color='#f00' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='16:10' font-weight='bold' {...this.link ()} />
+                    <Label glyph='download' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Jean-Paul Keiser - Renens' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='4x' width='150px' {...this.link ()} />
+                      <Label glyph='bookmark' glyph-color='#f00' {...this.link ()} />
+                      <Label glyph='bookmark' glyph-color='#ffd600' {...this.link ()} />
+                    </Container>
+                  </Container>
+                </Ticket>
+                <Ticket width='300px' height='70px' {...this.link ()} >
+                  <Container kind='column' grow='1' {...this.link ()} >
+                    <Label text='16:45' font-weight='bold' {...this.link ()} />
+                    <Label glyph='upload' {...this.link ()} />
+                  </Container>
+                  <Container kind='column' grow='3' {...this.link ()} >
+                    <Label text='Gare CFF' {...this.link ()} />
+                    <Container kind='row' {...this.link ()} >
+                      <Label glyph='cube' text='7x' width='150px' {...this.link ()} />
+                    </Container>
+                  </Container>
                 </Ticket>
               </Container>
             </Container>
