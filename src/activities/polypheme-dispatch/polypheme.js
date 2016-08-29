@@ -124,6 +124,15 @@ export default class Polypheme extends React.Component {
               </Container>
             </Container>
 
+            <Container kind='view' {...this.link ()} >
+              <Container kind='tickets' {...this.link ()} >
+                <Ticket kind='header' width='400px' height='150px' {...this.link ()} >
+                  <Label text='Plus grand' {...this.link ()} />
+                  <Label text='100.00' {...this.link ()} />
+                </Ticket>
+              </Container>
+            </Container>
+
           </Container>
 
           <Container kind='footer' {...this.link ()} >
