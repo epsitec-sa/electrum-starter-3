@@ -105,7 +105,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='user' kind='identity' {...this.link ()} />
                   </Container>
                   <Container kind='column' grow='1' {...this.link ()} >
-                    <Label glyph='bicycle' {...this.link ()} />
+                    <Label glyph='bicycle' glyph-size='150%' {...this.link ()} />
                   </Container>
                   <Container kind='column' grow='3' {...this.link ()} >
                     <Label text='Sandra' font-weight='bold' text-color='#fff' {...this.link ()} />
@@ -186,7 +186,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='user' kind='identity' {...this.link ()} />
                   </Container>
                   <Container kind='column' grow='1' {...this.link ()} >
-                    <Label glyph='bicycle' {...this.link ()} />
+                    <Label glyph='bicycle' glyph-size='150%' {...this.link ()} />
                   </Container>
                   <Container kind='column' grow='3' {...this.link ()} >
                     <Label text='Jean-Paul' font-weight='bold' text-color='#fff' {...this.link ()} />
@@ -228,7 +228,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='user-secret' kind='identity' {...this.link ()} />
                   </Container>
                   <Container kind='column' grow='1' {...this.link ()} >
-                    <Label glyph='car' {...this.link ()} />
+                    <Label glyph='car' glyph-size='150%' {...this.link ()} />
                   </Container>
                   <Container kind='column' grow='3' {...this.link ()} >
                     <Label text='Frédérique' font-weight='bold' text-color='#fff' {...this.link ()} />
