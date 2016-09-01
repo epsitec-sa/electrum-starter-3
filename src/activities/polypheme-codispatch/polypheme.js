@@ -434,7 +434,7 @@ export default class Polypheme extends React.Component {
                     <Button glyph='ellipsis-v' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='compact' {...this.link ()} >
-                    <Label text='Standard A - C'   justify='left'
+                    <Label text='Standard A - C' justify='left'
                       width='0px' grow='4' {...this.link ()} />
                     <Label text='50.00' justify='right'
                       width='0px' grow='1' {...this.link ()} />
@@ -453,7 +453,7 @@ export default class Polypheme extends React.Component {
                       width='0px' grow='1' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' spacing='compact' {...this.link ()} >
-                    <Label text='Avance d´argent'  justify='left'
+                    <Label text='Avance d´argent' justify='left'
                       width='0px' grow='4' {...this.link ()} />
                     <Label text='55.00' justify='right'
                       width='0px' grow='1' {...this.link ()} />
