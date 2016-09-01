@@ -537,7 +537,7 @@ export default class Polypheme extends React.Component {
             <Container kind='view-wedge' {...this.link ()} >
             </Container>
 
-            <Container kind='view' width='600px' {...this.link ()} >
+            <Container kind='view-right' width='600px' {...this.link ()} >
               {this.vnavigator ()}
               <Container kind='pane-header' {...this.link ()} >
                 <Label text='Mon beau bouquet SA' kind='pane-header'
