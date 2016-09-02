@@ -42,8 +42,8 @@ am.registerActivity ('catalog', CatalogActivity);
 am.registerActivity ('polypheme-dispatch', PolyphemeDispatchActivity);
 am.registerActivity ('polypheme-codispatch', PolyphemeCodispatchActivity);
 am.registerActivity ('synchro', SynchroActivity);
-// am.startMainActivity ('polypheme-codispatch', true);
-am.startMainActivity ('synchro', true);
+am.startMainActivity ('polypheme-codispatch', true);
+// am.startMainActivity ('synchro', true);
 Electrum.reset ();
 Electrum.useBus (am);
 
