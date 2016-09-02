@@ -146,12 +146,7 @@ export default class Synchro extends React.Component {
           <Container kind='views' {...this.link ()} >
             <Container kind='view' width='700px' {...this.link ()} >
 
-              <Container kind='pane-navigator' {...this.link ()} >
-                <Button text='Dossiers partagés' width='0px' grow='1' active='true'  kind='pane-navigator' {...this.link ()} />
-                <Button text='Utilisateurs' width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
-              </Container>
-
-              <Container kind='panes' {...this.link ()} >
+              <Container kind='panes' subkind='top-margin' {...this.link ()} >
 
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
