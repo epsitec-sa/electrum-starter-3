@@ -16,6 +16,7 @@ import SessionActivity from './activities/session/';
 import CatalogActivity from './activities/catalog/';
 import PolyphemeDispatchActivity from './activities/polypheme-dispatch/';
 import PolyphemeCodispatchActivity from './activities/polypheme-codispatch/';
+import SynchroActivity from './activities/synchro/';
 import ActivitiesManager from './activities-manager.js';
 
 import 'babel-polyfill';
@@ -40,7 +41,9 @@ am.registerActivity ('poc', PocActivity);
 am.registerActivity ('catalog', CatalogActivity);
 am.registerActivity ('polypheme-dispatch', PolyphemeDispatchActivity);
 am.registerActivity ('polypheme-codispatch', PolyphemeCodispatchActivity);
-am.startMainActivity ('polypheme-codispatch', true);
+am.registerActivity ('synchro', SynchroActivity);
+// am.startMainActivity ('polypheme-codispatch', true);
+am.startMainActivity ('synchro', true);
 Electrum.reset ();
 Electrum.useBus (am);
 
