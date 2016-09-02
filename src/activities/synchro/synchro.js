@@ -206,8 +206,8 @@ export default class Synchro extends React.Component {
                 </Container>
 
                 <Container kind='actions' {...this.link ()} >
-                  <Button glyph='link' text='Attacher' width='0px' grow='1' kind='action' place='left' {...this.link ()} />
-                  <Button glyph='save' text='Enregistrer ticket' width='0px' grow='1' kind='action' place='right' {...this.link ()} />
+                  <Button glyph='link' text='Attacher' grow='1' kind='action' place='left' {...this.link ()} />
+                  <Button glyph='share-alt' text='Partager le mandat au moyen d´un ticket' grow='2' kind='action' place='right' {...this.link ()} />
                 </Container>
 
             </Container>
