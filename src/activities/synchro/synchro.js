@@ -31,8 +31,8 @@ export default class Synchro extends React.Component {
   }
 
   uiType () {
-    return 'synchro';
-    // return 'polypheme';
+    // return 'synchro';
+    return 'polypheme';
   }
 
   task () {
@@ -65,9 +65,9 @@ export default class Synchro extends React.Component {
         <Button action={act.NEXT ()} glyph='cloud' text='Crésus Synchro'
           kind='task-logo' {...this.link ()} />
         <Label text='Gestion des mandats' kind='task' {...this.link ()} />
-        <Button text='Mettre à jour' glyph='refresh' tooltip='Met à jour la liste des mandats' kind='task-tab' {...this.link ()} />
-        <Button text='Nouveau mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' {...this.link ()} />
-        <Button text='Utiliser un ticket' glyph='file' tooltip='Utilise un ticket pour se connecter à un autre mandat' kind='task-tab' {...this.link ()} />
+        <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
+        <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' {...this.link ()} />
+        <Button text='Se rattacher à un mandat' glyph='file' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
         <Label text='Vos mandats' kind='task' {...this.link ()} />
         <TabButton text='Mon beau bouquet' kind='task' active='true' {...this.link ()} />
         <TabButton text='Chorale Fa-si-la chanter' kind='task' active='false' {...this.link ()} />
@@ -81,9 +81,9 @@ export default class Synchro extends React.Component {
       <Container kind='task' width='250px' {...this.link ()} >
         <Button action={act.NEXT ()} glyph='cloud' text='Crésus Synchro'
           kind='task-logo' {...this.link ()} />
-        <Button text='Mettre à jour' glyph='refresh' tooltip='Met à jour la liste des mandats' kind='task-tab' {...this.link ()} />
-        <Button text='Nouveau mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' {...this.link ()} />
-        <Button text='Utiliser un ticket' glyph='file' tooltip='Utilise un ticket pour se connecter à un autre mandat' kind='task-tab' {...this.link ()} />
+        <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
+        <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' {...this.link ()} />
+        <Button text='Se rattacher à un mandat' glyph='file' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
       </Container>
     );
   }
