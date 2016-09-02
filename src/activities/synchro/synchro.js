@@ -37,8 +37,8 @@ export default class Synchro extends React.Component {
   }
 
   viewType () {
-    return 'mandat';
-    // return 'create';
+    // return 'mandat';
+    return 'create';
   }
 
   hasFooterWarning () {
@@ -217,7 +217,7 @@ export default class Synchro extends React.Component {
               <Label text='Utilisez un nom descriptif afin d´identifier clairement votre mandat' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-text='Nom du mandat' label-width='150px' grow='1'
+              <LabelTextField label-glyph='tag' hint-text='Nom du mandat' grow='1'
                 spacing='large'  {...this.link ()} />
               <Button text='Publier' {...this.link ()} />
             </Container>
