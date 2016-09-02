@@ -80,7 +80,7 @@ export default class Synchro extends React.Component {
         <Label text='Gestion des mandats' kind='task' {...this.link ()} />
         <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
         <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' active={active} {...this.link ()} />
-        <Button text='Se rattacher à un mandat' glyph='file' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
+        <Button text='Se rattacher à un mandat' glyph='link' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
         <Label text='Vos mandats' kind='task' {...this.link ()} />
         <TabButton text='Mon beau bouquet' kind='task' active='true' {...this.link ()} />
         <TabButton text='Chorale Fa-si-la chanter' kind='task' active='false' {...this.link ()} />
@@ -97,7 +97,7 @@ export default class Synchro extends React.Component {
           kind='task-logo' {...this.link ()} />
         <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
         <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' active={active} {...this.link ()} />
-        <Button text='Se rattacher à un mandat' glyph='file' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
+        <Button text='Se rattacher à un mandat' glyph='link' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
       </Container>
     );
   }
@@ -200,7 +200,7 @@ export default class Synchro extends React.Component {
         </Container>
 
         <Container kind='actions' {...this.link ()} >
-          <Button glyph='link' text='Attacher' grow='1' kind='action' place='left' {...this.link ()} />
+          <Button glyph='file' text='Attacher un fichier' grow='1' kind='action' place='left' {...this.link ()} />
           <Button glyph='share-alt' text='Partager le mandat au moyen d´un ticket' grow='1' kind='action' place='right' {...this.link ()} />
         </Container>
       </Container>
