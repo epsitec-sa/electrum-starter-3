@@ -30,15 +30,22 @@ export default class Synchro extends React.Component {
     };
   }
 
+  /******************************************************************************/
   uiType () {
     // return 'synchro';
     return 'polypheme';
+  }
+
+  viewType () {
+    // return 'mandat';
+    return 'create';
   }
 
   hasFooterWarning () {
     return 'no';
     // return 'yes';
   }
+  /******************************************************************************/
 
   task () {
     if (this.uiType () === 'synchro') {
@@ -65,13 +72,14 @@ export default class Synchro extends React.Component {
   }
 
   synchroTask () {
+    const active = (this.viewType () === 'create') ? 'true' : 'false';
     return (
       <Container kind='task' width='300px' {...this.link ()} >
         <Button action={act.NEXT ()} glyph='cloud' text='Crésus Synchro'
           kind='task-logo' {...this.link ()} />
         <Label text='Gestion des mandats' kind='task' {...this.link ()} />
         <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
-        <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' {...this.link ()} />
+        <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' active={active} {...this.link ()} />
         <Button text='Se rattacher à un mandat' glyph='file' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
         <Label text='Vos mandats' kind='task' {...this.link ()} />
         <TabButton text='Mon beau bouquet' kind='task' active='true' {...this.link ()} />
@@ -82,12 +90,13 @@ export default class Synchro extends React.Component {
   }
 
   polyphemeTask () {
+    const active = (this.viewType () === 'create') ? 'true' : 'false';
     return (
       <Container kind='task' width='300px' {...this.link ()} >
         <Button action={act.NEXT ()} glyph='cloud' text='Crésus Synchro'
           kind='task-logo' {...this.link ()} />
         <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
-        <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' {...this.link ()} />
+        <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' active={active} {...this.link ()} />
         <Button text='Se rattacher à un mandat' glyph='file' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
       </Container>
     );
@@ -131,11 +140,88 @@ export default class Synchro extends React.Component {
   }
 
   polyphemeViewTab () {
+    const active = (this.viewType () === 'mandat') ? 'true' : 'false';
     return (
       <Container kind='view-tab' {...this.link ()} >
-        <TabButton text='Mon beau bouquet' active='true' {...this.link ()} />
+        <TabButton text='Mon beau bouquet' active={active} {...this.link ()} />
         <TabButton text='Chorale Fa-si-la chanter' active='false' {...this.link ()} />
         <TabButton text='Club VTT' active='false' {...this.link ()} />
+      </Container>
+    );
+  }
+
+  view () {
+    if (this.viewType () === 'mandat') {
+      return this.viewMandat ();
+    } else {
+      return this.viewCreate ();
+    }
+  }
+
+  viewMandat () {
+    return (
+      <Container kind='view' width='700px' {...this.link ()} >
+        <Container kind='panes' subkind='top-margin' {...this.link ()} >
+
+          <Container kind='pane' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
+              <Label text='Dossiers partagés' grow='1' kind='title' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
+              <Label glyph='television' text='Machine CGU' grow='1' {...this.link ()} />
+              <Button glyph='caret-up' border='none' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
+              <Label glyph='folder' text='Mimi.cre' grow='1' {...this.link ()} />
+              <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
+              <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
+              <Label glyph='folder' text='MimiSal_2016.salx' grow='1' {...this.link ()} />
+              <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
+              <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+            </Container>
+          </Container>
+
+          <Container kind='pane' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
+              <Label text='Utilisateurs' grow='1' kind='title' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
+              <Label glyph='user' text='guidi@epsitec.ch' grow='1' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
+              <Label glyph='user' text='jean.dupond@bluewin.ch' grow='1' {...this.link ()} />
+            </Container>
+          </Container>
+
+        </Container>
+
+        <Container kind='actions' {...this.link ()} >
+          <Button glyph='link' text='Attacher' grow='1' kind='action' place='left' {...this.link ()} />
+          <Button glyph='share-alt' text='Partager le mandat au moyen d´un ticket' grow='2' kind='action' place='right' {...this.link ()} />
+        </Container>
+      </Container>
+    );
+  }
+
+  viewCreate () {
+    return (
+      <Container kind='view' width='700px' {...this.link ()} >
+        <Container kind='panes' subkind='top-margin' {...this.link ()} >
+
+          <Container kind='pane' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
+              <Label text='Utilisez un nom descriptif afin d´identifier clairement votre mandat' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
+              <LabelTextField label-text='Nom du mandat' label-width='150px' grow='1'
+                spacing='large'  {...this.link ()} />
+              <Button text='Publier' {...this.link ()} />
+            </Container>
+          </Container>
+
+        </Container>
       </Container>
     );
   }
@@ -159,50 +245,7 @@ export default class Synchro extends React.Component {
           {this.viewTab ()}
 
           <Container kind='views' {...this.link ()} >
-            <Container kind='view' width='700px' {...this.link ()} >
-
-              <Container kind='panes' subkind='top-margin' {...this.link ()} >
-
-                <Container kind='pane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Dossiers partagés' grow='1' kind='title' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label glyph='television' text='Machine CGU' grow='1' {...this.link ()} />
-                    <Button glyph='caret-up' border='none' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label glyph='folder' text='Mimi.cre' grow='1' {...this.link ()} />
-                    <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-                    <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label glyph='folder' text='MimiSal_2016.salx' grow='1' {...this.link ()} />
-                    <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-                    <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-                  </Container>
-                </Container>
-
-                <Container kind='pane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Utilisateurs' grow='1' kind='title' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label glyph='user' text='guidi@epsitec.ch' grow='1' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label glyph='user' text='jean.dupond@bluewin.ch' grow='1' {...this.link ()} />
-                  </Container>
-                </Container>
-
-                </Container>
-
-                <Container kind='actions' {...this.link ()} >
-                  <Button glyph='link' text='Attacher' grow='1' kind='action' place='left' {...this.link ()} />
-                  <Button glyph='share-alt' text='Partager le mandat au moyen d´un ticket' grow='2' kind='action' place='right' {...this.link ()} />
-                </Container>
-
-            </Container>
+            {this.view ()}
           </Container>
 
           <Container kind='footer' {...this.link ()} >
