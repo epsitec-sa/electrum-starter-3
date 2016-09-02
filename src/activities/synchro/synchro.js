@@ -78,7 +78,7 @@ export default class Synchro extends React.Component {
 
   polyphemeTask () {
     return (
-      <Container kind='task' width='250px' {...this.link ()} >
+      <Container kind='task' width='300px' {...this.link ()} >
         <Button action={act.NEXT ()} glyph='cloud' text='Crésus Synchro'
           kind='task-logo' {...this.link ()} />
         <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
@@ -147,8 +147,7 @@ export default class Synchro extends React.Component {
             <Container kind='view' width='700px' {...this.link ()} >
 
               <Container kind='pane-navigator' {...this.link ()} >
-                <Button text='Machine CGU' width='0px' grow='1' active='true'  kind='pane-navigator' {...this.link ()} />
-                <Button text='Machine Dupond' width='0px' grow='1' active='false'  kind='pane-navigator' {...this.link ()} />
+                <Button text='Dossiers partagés' width='0px' grow='1' active='true'  kind='pane-navigator' {...this.link ()} />
                 <Button text='Utilisateurs' width='0px' grow='1' active='false' kind='pane-navigator' {...this.link ()} />
               </Container>
 
@@ -156,7 +155,11 @@ export default class Synchro extends React.Component {
 
                 <Container kind='pane' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Machine CGU' grow='1' kind='title' {...this.link ()} />
+                    <Label text='Dossiers partagés' grow='1' kind='title' {...this.link ()} />
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    <Label glyph='television' text='Machine CGU' grow='1' {...this.link ()} />
+                    <Button glyph='caret-up' border='none' {...this.link ()} />
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <Label glyph='folder' text='Mimi.cre' grow='1' {...this.link ()} />
@@ -165,27 +168,6 @@ export default class Synchro extends React.Component {
                   </Container>
                   <Container kind='row-pane' {...this.link ()} >
                     <Label glyph='folder' text='MimiSal_2016.salx' grow='1' {...this.link ()} />
-                    <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-                    <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-                  </Container>
-                </Container>
-
-                <Container kind='pane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Machine Dupond' grow='1' kind='title' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label glyph='folder' text='Fidu.cre' grow='1' {...this.link ()} />
-                    <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-                    <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label glyph='folder' text='Fidu_2016.salx' grow='1' {...this.link ()} />
-                    <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-                    <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label glyph='folder' text='Fidu.fac' grow='1' {...this.link ()} />
                     <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
                     <Button glyph='ellipsis-v' border='none' {...this.link ()} />
                   </Container>
