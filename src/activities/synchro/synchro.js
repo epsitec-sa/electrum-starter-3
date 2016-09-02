@@ -37,8 +37,8 @@ export default class Synchro extends React.Component {
   }
 
   viewType () {
-    // return 'mandat';
-    return 'create';
+    return 'mandat';
+    // return 'create';
   }
 
   hasFooterWarning () {
