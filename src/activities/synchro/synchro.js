@@ -174,12 +174,14 @@ export default class Synchro extends React.Component {
             <Container kind='row-pane' {...this.link ()} >
               <Label glyph='folder' text='Mimi.cre' grow='1' {...this.link ()} />
               <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-              <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+              <Button glyph='chain-broken' tooltip='Détacher' border='none' {...this.link ()} />
+              <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
               <Label glyph='folder' text='MimiSal_2016.salx' grow='1' {...this.link ()} />
               <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-              <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+              <Button glyph='chain-broken' tooltip='Détacher' border='none' {...this.link ()} />
+              <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
             </Container>
           </Container>
 
