@@ -75,7 +75,7 @@ export default class Synchro extends React.Component {
     const active = (this.viewType () === 'create') ? 'true' : 'false';
     return (
       <Container kind='task' width='300px' {...this.link ()} >
-        <Button action={act.NEXT ()} glyph='cloud' text='Crésus Synchro'
+        <Button action={act.NEXT ()} glyph='cloud' text='Crésus SYNCHRO' text-transform='none'
           kind='task-logo' {...this.link ()} />
         <Label text='Gestion des mandats' kind='task' {...this.link ()} />
         <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
@@ -93,7 +93,7 @@ export default class Synchro extends React.Component {
     const active = (this.viewType () === 'create') ? 'true' : 'false';
     return (
       <Container kind='task' width='300px' {...this.link ()} >
-        <Button action={act.NEXT ()} glyph='cloud' text='Crésus Synchro'
+        <Button action={act.NEXT ()} glyph='cloud' text='Crésus SYNCHRO' text-transform='none'
           kind='task-logo' {...this.link ()} />
         <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
         <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' active={active} {...this.link ()} />
