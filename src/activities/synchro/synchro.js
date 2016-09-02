@@ -207,6 +207,8 @@ export default class Synchro extends React.Component {
 
           <Container kind='footer' {...this.link ()} >
             {this.footerWarning ()}
+            <Label text=' ' grow='1' kind='footer' {...this.link ()} />
+            <Button glyph='gears' text='Options' kind='footer' {...this.link ()} />
           </Container>
 
         </Container>
