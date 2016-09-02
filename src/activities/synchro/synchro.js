@@ -191,6 +191,7 @@ export default class Synchro extends React.Component {
           </Container>
 
           <Container kind='footer' {...this.link ()} >
+            <Button glyph='close' text='Nom d´utilisateur ou mot de passe incorrect' kind='warning' glyph-position='right' {...this.link ()} />
           </Container>
 
         </Container>
