@@ -35,6 +35,11 @@ export default class Synchro extends React.Component {
     return 'polypheme';
   }
 
+  hasFooterWarning () {
+    return 'no';
+    // return 'yes';
+  }
+
   task () {
     if (this.uiType () === 'synchro') {
       return this.synchroTask ();
@@ -97,6 +102,16 @@ export default class Synchro extends React.Component {
         </Container>
       </Container>
     );
+  }
+
+  footerWarning () {
+    if (this.hasFooterWarning () === 'yes') {
+      return (
+        <Button glyph='close' text='Nom d´utilisateur ou mot de passe incorrect' kind='warning' glyph-position='right' {...this.link ()} />
+      );
+    } else {
+      return null;
+    }
   }
 
   polyphemeMainTab () {
@@ -191,7 +206,7 @@ export default class Synchro extends React.Component {
           </Container>
 
           <Container kind='footer' {...this.link ()} >
-            <Button glyph='close' text='Nom d´utilisateur ou mot de passe incorrect' kind='warning' glyph-position='right' {...this.link ()} />
+            {this.footerWarning ()}
           </Container>
 
         </Container>
