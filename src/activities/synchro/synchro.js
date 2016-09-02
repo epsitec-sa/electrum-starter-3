@@ -91,6 +91,10 @@ export default class Synchro extends React.Component {
   synchroMainTab () {
     return (
       <Container kind='main-tab' {...this.link ()} >
+        <Container kind='main-tab-identity' {...this.link ()} >
+          <Button text='Jean Dupond' border='none' {...this.link ()} />
+          <Button glyph='ban' tooltip='Se déconnecter' border='none' {...this.link ()} />
+        </Container>
       </Container>
     );
   }
@@ -99,6 +103,10 @@ export default class Synchro extends React.Component {
     return (
       <Container kind='main-tab' {...this.link ()} >
         <Button text='Mandats' width='200px' active='true' kind='main-tab' {...this.link ()} />
+        <Container kind='main-tab-identity' {...this.link ()} >
+          <Button text='Jean Dupond' border='none' {...this.link ()} />
+          <Button glyph='ban' tooltip='Se déconnecter' border='none' {...this.link ()} />
+        </Container>
       </Container>
     );
   }
