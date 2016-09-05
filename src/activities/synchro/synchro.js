@@ -3,6 +3,7 @@
 import React from 'react';
 import {
   Container,
+  Dialog,
   Ticket,
   Button,
   TabButton,
@@ -44,6 +45,11 @@ export default class Synchro extends React.Component {
   hasFooterWarning () {
     return 'no';
     // return 'yes';
+  }
+
+  hasDialog () {
+    // return 'no';
+    return 'yes';
   }
   /******************************************************************************/
 
@@ -158,6 +164,17 @@ export default class Synchro extends React.Component {
     }
   }
 
+  dialog () {
+    if (this.hasDialog ()) {
+      return (
+        <Dialog  width='500px' height='400px' {...this.link ()} >
+        </Dialog>
+      );
+    } else {
+      return null;
+    }
+  }
+
   viewMandat () {
     return (
       <Container kind='view' width='700px' {...this.link ()} >
@@ -257,6 +274,8 @@ export default class Synchro extends React.Component {
           </Container>
 
         </Container>
+
+        {this.dialog ()}
 
       </Container>
     );
