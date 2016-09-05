@@ -82,9 +82,9 @@ export default class Synchro extends React.Component {
         <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' active={active} {...this.link ()} />
         <Button text='Se rattacher à un mandat' glyph='link' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
         <Label text='Vos mandats' kind='task' {...this.link ()} />
-        <TabButton text='Mon beau bouquet' kind='task' active='true' {...this.link ()} />
-        <TabButton text='Chorale Fa-si-la chanter' kind='task' active='false' {...this.link ()} />
-        <TabButton text='Club VTT' kind='task' active='false' {...this.link ()} />
+        <TabButton text='Mon beau bouquet' glyph='chain-broken' kind='task' active='true' {...this.link ()} />
+        <TabButton text='Chorale Fa-si-la chanter' glyph='chain-broken' kind='task' active='false' {...this.link ()} />
+        <TabButton text='Club VTT' glyph='chain-broken' kind='task' active='false' {...this.link ()} />
       </Container>
     );
   }
@@ -143,9 +143,9 @@ export default class Synchro extends React.Component {
     const active = (this.viewType () === 'mandat') ? 'true' : 'false';
     return (
       <Container kind='view-tab' {...this.link ()} >
-        <TabButton text='Mon beau bouquet' active={active} {...this.link ()} />
-        <TabButton text='Chorale Fa-si-la chanter' active='false' {...this.link ()} />
-        <TabButton text='Club VTT' active='false' {...this.link ()} />
+        <TabButton text='Mon beau bouquet' glyph='chain-broken' active={active} {...this.link ()} />
+        <TabButton text='Chorale Fa-si-la chanter' glyph='chain-broken' active='false' {...this.link ()} />
+        <TabButton text='Club VTT' glyph='chain-broken' active='false' {...this.link ()} />
       </Container>
     );
   }
@@ -174,13 +174,13 @@ export default class Synchro extends React.Component {
             <Container kind='row-pane' {...this.link ()} >
               <Label glyph='folder' text='Mimi.cre' grow='1' {...this.link ()} />
               <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-              <Button glyph='chain-broken' tooltip='Détacher' border='none' {...this.link ()} />
+              <Button glyph='mixcloud' tooltip='Détacher' border='none' {...this.link ()} />
               <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
               <Label glyph='folder' text='MimiSal_2016.salx' grow='1' {...this.link ()} />
               <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-              <Button glyph='chain-broken' tooltip='Détacher' border='none' {...this.link ()} />
+              <Button glyph='mixcloud' tooltip='Détacher' border='none' {...this.link ()} />
               <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
             </Container>
           </Container>
