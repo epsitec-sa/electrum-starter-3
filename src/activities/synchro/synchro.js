@@ -48,8 +48,8 @@ export default class Synchro extends React.Component {
   }
 
   hasDialog () {
-    // return 'no';
-    return 'yes';
+    return 'no';
+    // return 'yes';
   }
   /******************************************************************************/
 
@@ -213,13 +213,13 @@ export default class Synchro extends React.Component {
             <Container kind='row-pane' {...this.link ()} >
               <Label glyph='folder' text='Mimi.cre' grow='1' {...this.link ()} />
               <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-              <Button glyph='mixcloud' tooltip='Détacher' border='none' {...this.link ()} />
+              <Button glyph='cloud-upload' tooltip='Détacher' border='none' {...this.link ()} />
               <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
               <Label glyph='folder' text='MimiSal_2016.salx' grow='1' {...this.link ()} />
               <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-              <Button glyph='mixcloud' tooltip='Détacher' border='none' {...this.link ()} />
+              <Button glyph='cloud-upload' tooltip='Détacher' border='none' {...this.link ()} />
               <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
             </Container>
           </Container>
@@ -239,7 +239,7 @@ export default class Synchro extends React.Component {
         </Container>
 
         <Container kind='actions' {...this.link ()} >
-          <Button glyph='file' text='Attacher un fichier' grow='1' kind='action' place='left' {...this.link ()} />
+          <Button glyph='cloud-download' text='Attacher un fichier' grow='1' kind='action' place='left' {...this.link ()} />
           <Button glyph='share-alt' text='Partager le mandat au moyen d´un ticket' grow='1' kind='action' place='right' {...this.link ()} />
         </Container>
       </Container>
