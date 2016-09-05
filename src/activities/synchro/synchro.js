@@ -165,9 +165,31 @@ export default class Synchro extends React.Component {
   }
 
   dialog () {
-    if (this.hasDialog ()) {
+    if (this.hasDialog () === 'yes') {
       return (
-        <Dialog  width='500px' height='400px' {...this.link ()} >
+        <Dialog  width='500px' height='300px' {...this.link ()} >
+          <Container kind='view' width='500px' {...this.link ()} >
+            <Container kind='panes' subkind='top-margin' {...this.link ()} >
+
+              <Container kind='pane' {...this.link ()} >
+                <Container kind='row-pane' {...this.link ()} >
+                  <Label text='Se connecter' grow='1' kind='title' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='user' hint-text='Nom d´utilisateur' grow='1' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='lock' hint-text='Mot de passe' grow='1' {...this.link ()} />
+                </Container>
+              </Container>
+
+            </Container>
+
+            <Container kind='actions' {...this.link ()} >
+              <Button glyph='user' text='Se connecter' grow='1' kind='action' place='left' {...this.link ()} />
+              <Button glyph='close' text='Annuler' grow='1' kind='action' place='right' {...this.link ()} />
+            </Container>
+          </Container>
         </Dialog>
       );
     } else {
