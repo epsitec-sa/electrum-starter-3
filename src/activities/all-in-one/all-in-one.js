@@ -52,7 +52,7 @@ export default class Synchro extends React.Component {
   taskBar () {
     if (this.step () === 'login') {
       return (
-        <Button action={act.NEXT ()} text=' ' border='none' {...this.link ()} />
+        <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
       );
     } else if (this.step () === 'mandat') {
       return (
