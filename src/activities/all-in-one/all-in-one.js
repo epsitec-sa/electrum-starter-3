@@ -33,9 +33,9 @@ export default class Synchro extends React.Component {
 
   /******************************************************************************/
   step () {
-    // return 'login';
+    return 'login';
     // return 'mandat';
-    return 'work';
+    // return 'work';
   }
 
   hasFooterWarning () {
@@ -140,26 +140,20 @@ export default class Synchro extends React.Component {
 
   viewLogin () {
     return (
-      <Container kind='view' width='500px' {...this.link ()} >
-        <Container kind='panes' subkind='top-margin' {...this.link ()} >
-
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='Identifiez-vous' grow='1' kind='title' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='user' hint-text='Nom d´utilisateur' grow='1' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='lock' hint-text='Mot de passe' grow='1' {...this.link ()} />
-            </Container>
-          </Container>
-
+      <Container kind='login' {...this.link ()} >
+        <Container kind='row-pane' {...this.link ()} >
+          <Label text='Identifiez-vous' grow='1' kind='big-center' {...this.link ()} />
         </Container>
-
-        <Container kind='actions' {...this.link ()} >
-          <Button glyph='play' text='Se connecter' grow='1' kind='action' place='left' {...this.link ()} />
-          <Button glyph='stop' text='Se déconnecter' grow='1' kind='action' place='right' {...this.link ()} />
+        <Separator kind='space' height='30px' {...this.link ()} />
+        <Container kind='row-pane' {...this.link ()} >
+          <LabelTextField label-glyph='user' hint-text='Nom d´utilisateur' grow='1' {...this.link ()} />
+        </Container>
+        <Container kind='row-pane' {...this.link ()} >
+          <LabelTextField label-glyph='lock' hint-text='Mot de passe' grow='1' {...this.link ()} />
+        </Container>
+        <Separator kind='space' height='50px' {...this.link ()} />
+        <Container kind='row-pane' {...this.link ()} >
+          <Button text='Se connecter' grow='1' kind='action' place='single' {...this.link ()} />
         </Container>
       </Container>
     );
