@@ -144,7 +144,7 @@ export default class Synchro extends React.Component {
     return (
       <div>
         <Container kind='login-header' login-height='300px' {...this.link ()} >
-          <Label glyph='cube' kind='login-header' {...this.link ()} />
+          <Label glyph='institution' kind='login-header' {...this.link ()} />
         </Container>
         <Container kind='login' width='300px' height='300px' {...this.link ()} >
           <Container kind='row-pane' {...this.link ()} >
