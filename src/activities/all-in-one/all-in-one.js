@@ -51,10 +51,7 @@ export default class Synchro extends React.Component {
 
   taskBar () {
     if (this.step () === 'login') {
-      return (
-        <Container kind='task' {...this.link ()} >
-        </Container>
-      );
+      return null;
     } else if (this.step () === 'mandat') {
       return (
         <Container kind='task' {...this.link ()} >
@@ -78,13 +75,7 @@ export default class Synchro extends React.Component {
 
   mainTab () {
     if (this.step () === 'login') {
-      return (
-        <Container kind='main-tab' {...this.link ()} >
-          <Container kind='main-tab-login' {...this.link ()} >
-            <Button text='Se connecter' kind='main-tab-login' active='true' {...this.link ()} />
-          </Container>
-        </Container>
-      );
+      return null;
     } else if (this.step () === 'mandat') {
       return (
         <Container kind='main-tab' {...this.link ()} >
@@ -111,10 +102,7 @@ export default class Synchro extends React.Component {
 
   viewTab () {
     if (this.step () === 'login') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-        </Container>
-      );
+      return null;
     } else if (this.step () === 'mandat') {
       return (
         <Container kind='view-tab' {...this.link ()} >
@@ -179,32 +167,34 @@ export default class Synchro extends React.Component {
 
   viewMandat () {
     return (
-      <Container kind='view' width='700px' {...this.link ()} >
-        <Container kind='panes' subkind='top-margin' {...this.link ()} >
+      <Container kind='views' {...this.link ()} >
+        <Container kind='view' width='700px' {...this.link ()} >
+          <Container kind='panes' subkind='top-margin' {...this.link ()} >
 
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='tree' text='Mon beau bouquet' grow='1' {...this.link ()} />
+                <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='bicycle' text='Vélocité' grow='1' {...this.link ()} />
+                <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='truck' text='Cargo SA' grow='1' {...this.link ()} />
+                <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+              </Container>
             </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='tree' text='Mon beau bouquet' grow='1' {...this.link ()} />
-              <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='bicycle' text='Vélocité' grow='1' {...this.link ()} />
-              <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='truck' text='Cargo SA' grow='1' {...this.link ()} />
-              <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-            </Container>
+
           </Container>
 
-        </Container>
-
-        <Container kind='actions' {...this.link ()} >
-          <Button glyph='check' text='Ouvrir' grow='1' kind='action' place='left' {...this.link ()} />
-          <Button glyph='close' text='Annuler' grow='1' kind='action' place='right' {...this.link ()} />
+          <Container kind='actions' {...this.link ()} >
+            <Button glyph='check' text='Ouvrir' grow='1' kind='action' place='left' {...this.link ()} />
+            <Button glyph='close' text='Annuler' grow='1' kind='action' place='right' {...this.link ()} />
+          </Container>
         </Container>
       </Container>
     );
@@ -212,43 +202,45 @@ export default class Synchro extends React.Component {
 
   viewWork () {
     return (
-      <Container kind='view' width='700px' {...this.link ()} >
-        <Container kind='panes' subkind='top-margin' {...this.link ()} >
+      <Container kind='views' {...this.link ()} >
+        <Container kind='view' width='700px' {...this.link ()} >
+          <Container kind='panes' subkind='top-margin' {...this.link ()} >
 
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='Dossiers partagés' grow='1' kind='title' {...this.link ()} />
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='Dossiers partagés' grow='1' kind='title' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='television' text='Machine CGU' grow='1' {...this.link ()} />
+                <Button glyph='caret-up' border='none' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='folder' text='Mimi.cre' grow='1' {...this.link ()} />
+                <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
+                <Button glyph='cloud-upload' tooltip='Détacher' border='none' {...this.link ()} />
+                <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='folder' text='MimiSal_2016.salx' grow='1' {...this.link ()} />
+                <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
+                <Button glyph='cloud-upload' tooltip='Détacher' border='none' {...this.link ()} />
+                <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
+              </Container>
             </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='television' text='Machine CGU' grow='1' {...this.link ()} />
-              <Button glyph='caret-up' border='none' {...this.link ()} />
+
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='Utilisateurs' grow='1' kind='title' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='user' text='guidi@epsitec.ch' grow='1' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='user' text='jean.dupond@bluewin.ch' grow='1' {...this.link ()} />
+              </Container>
             </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='folder' text='Mimi.cre' grow='1' {...this.link ()} />
-              <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-              <Button glyph='cloud-upload' tooltip='Détacher' border='none' {...this.link ()} />
-              <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='folder' text='MimiSal_2016.salx' grow='1' {...this.link ()} />
-              <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-              <Button glyph='cloud-upload' tooltip='Détacher' border='none' {...this.link ()} />
-              <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
-            </Container>
+
           </Container>
-
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='Utilisateurs' grow='1' kind='title' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='user' text='guidi@epsitec.ch' grow='1' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='user' text='jean.dupond@bluewin.ch' grow='1' {...this.link ()} />
-            </Container>
-          </Container>
-
         </Container>
       </Container>
     );
@@ -256,23 +248,39 @@ export default class Synchro extends React.Component {
 
   viewCreate () {
     return (
-      <Container kind='view' width='700px' {...this.link ()} >
-        <Container kind='panes' subkind='top-margin' {...this.link ()} >
+      <Container kind='views' {...this.link ()} >
+        <Container kind='view' width='700px' {...this.link ()} >
+          <Container kind='panes' subkind='top-margin' {...this.link ()} >
 
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='Utilisez un nom descriptif afin d´identifier clairement votre mandat' {...this.link ()} />
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='Utilisez un nom descriptif afin d´identifier clairement votre mandat' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <LabelTextField label-glyph='tag' hint-text='Nom du mandat' grow='1'
+                  spacing='large'  {...this.link ()} />
+                <Button text='Publier' {...this.link ()} />
+              </Container>
             </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='tag' hint-text='Nom du mandat' grow='1'
-                spacing='large'  {...this.link ()} />
-              <Button text='Publier' {...this.link ()} />
-            </Container>
+
           </Container>
-
         </Container>
       </Container>
     );
+  }
+
+  footer () {
+    if (this.step () === 'login') {
+      return null;
+    } else {
+      return (
+        <Container kind='footer' {...this.link ()} >
+          {this.footerWarning ()}
+          <Label text=' ' grow='1' kind='footer' {...this.link ()} />
+          <Button glyph='gears' text='Options' kind='footer' {...this.link ()} />
+        </Container>
+      );
+    }
   }
 
   dialog () {
@@ -325,16 +333,8 @@ export default class Synchro extends React.Component {
 
           {this.mainTab ()}
           {this.viewTab ()}
-
-          <Container kind='views' {...this.link ()} >
-            {this.view ()}
-          </Container>
-
-          <Container kind='footer' {...this.link ()} >
-            {this.footerWarning ()}
-            <Label text=' ' grow='1' kind='footer' {...this.link ()} />
-            <Button glyph='gears' text='Options' kind='footer' {...this.link ()} />
-          </Container>
+          {this.view ()}
+          {this.footer ()}
 
         </Container>
 
