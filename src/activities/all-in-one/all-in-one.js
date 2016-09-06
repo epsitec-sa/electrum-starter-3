@@ -33,8 +33,8 @@ export default class Synchro extends React.Component {
 
   /******************************************************************************/
   step () {
-    return 'login';
-    // return 'mandat';
+    // return 'login';
+    return 'mandat';
     // return 'work';
   }
 
