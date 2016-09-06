@@ -142,22 +142,31 @@ export default class Synchro extends React.Component {
 
   viewLogin () {
     return (
-      <Container kind='login' {...this.link ()} >
-        <Container kind='row-pane' {...this.link ()} >
-          <Label text='Identifiez-vous' grow='1' kind='big-center' {...this.link ()} />
+      <div>
+        <Container kind='login-header' height='100px' {...this.link ()} >
+          <Label glyph='cube' kind='login-header' {...this.link ()} />
         </Container>
-        <Separator kind='space' height='30px' {...this.link ()} />
-        <Container kind='row-pane' {...this.link ()} >
-          <LabelTextField label-glyph='user' hint-text='Nom d´utilisateur' grow='1' {...this.link ()} />
+        <Container kind='login' width='300px' height='300px' {...this.link ()} >
+          <Container kind='row-pane' {...this.link ()} >
+            <Label text='Identifiez-vous' grow='1' kind='big-center' {...this.link ()} />
+          </Container>
+          <Separator kind='space' height='30px' {...this.link ()} />
+          <Container kind='row-pane' {...this.link ()} >
+            <LabelTextField label-glyph='user' hint-text='Nom d´utilisateur' grow='1' {...this.link ()} />
+          </Container>
+          <Container kind='row-pane' {...this.link ()} >
+            <LabelTextField label-glyph='lock' hint-text='Mot de passe' grow='1' {...this.link ()} />
+          </Container>
+          <Separator kind='space' height='50px' {...this.link ()} />
+          <Container kind='row-pane' {...this.link ()} >
+            <Button text='Se connecter' grow='1' kind='action' place='single' {...this.link ()} />
+          </Container>
         </Container>
-        <Container kind='row-pane' {...this.link ()} >
-          <LabelTextField label-glyph='lock' hint-text='Mot de passe' grow='1' {...this.link ()} />
+        <Container kind='login-footer' height='100px' {...this.link ()} >
+          <Separator width='300px' kind='login-footer' {...this.link ()} />
+          <Label text='Crésus — EPSITEC SA' kind='login-footer' {...this.link ()} />
         </Container>
-        <Separator kind='space' height='50px' {...this.link ()} />
-        <Container kind='row-pane' {...this.link ()} >
-          <Button text='Se connecter' grow='1' kind='action' place='single' {...this.link ()} />
-        </Container>
-      </Container>
+      </div>
     );
   }
 
