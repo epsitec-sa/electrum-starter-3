@@ -32,10 +32,14 @@ export default class Synchro extends React.Component {
   }
 
   /******************************************************************************/
-  step () {
-    // return 'login';
-    // return 'mandat';
-    return 'work';
+  uiType () {
+    // return 'synchro';
+    return 'polypheme';
+  }
+
+  viewType () {
+    return 'mandat';
+    // return 'create';
   }
 
   hasFooterWarning () {
@@ -49,85 +53,70 @@ export default class Synchro extends React.Component {
   }
   /******************************************************************************/
 
-  taskBar () {
-    if (this.step () === 'login') {
-      return (
-        <Container kind='task' {...this.link ()} >
-        </Container>
-      );
-    } else if (this.step () === 'mandat') {
-      return (
-        <Container kind='task' {...this.link ()} >
-          <Button action={act.NEXT ()} glyph='file' text='Mandats' text-transform='none'
-            kind='task-logo' active='true' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.step () === 'work') {
-      return (
-        <Container kind='task' {...this.link ()} >
-          <Button action={act.NEXT ()} glyph='tree' text='Bouquet' text-transform='none'
-            kind='task-logo' {...this.link ()} />
-          <Button glyph='refresh' text='Synchroniser' kind='task' {...this.link ()} />
-          <Button glyph='link' text='Se rattacher' kind='task' {...this.link ()} />
-          <Button glyph='cloud-download' text='Attacher' kind='task' {...this.link ()} />
-          <Button glyph='share-alt' text='Partager' kind='task' {...this.link ()} />
-        </Container>
-      );
+  task () {
+    if (this.uiType () === 'synchro') {
+      return this.synchroTask ();
+    } else {
+      return this.polyphemeTask ();
     }
   }
 
   mainTab () {
-    if (this.step () === 'login') {
-      return (
-        <Container kind='main-tab' {...this.link ()} >
-          <Container kind='main-tab-login' {...this.link ()} >
-            <Button text='Se connecter' kind='main-tab-login' active='true' {...this.link ()} />
-          </Container>
-        </Container>
-      );
-    } else if (this.step () === 'mandat') {
-      return (
-        <Container kind='main-tab' {...this.link ()} >
-          <Container kind='main-tab-login' {...this.link ()} >
-            <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
-          </Container>
-        </Container>
-      );
-    } else if (this.step () === 'work') {
-      return (
-        <Container kind='main-tab' {...this.link ()} >
-          <Button text='Synchro' width='200px' active='true' kind='main-tab' {...this.link ()} />
-          <Button text='Paiements' width='200px' active='false' kind='main-tab' {...this.link ()} />
-          <Container kind='main-tab-login' {...this.link ()} >
-            <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
-          </Container>
-        </Container>
-      );
+    if (this.uiType () === 'synchro') {
+      return this.synchroMainTab ();
+    } else {
+      return this.polyphemeMainTab ();
     }
   }
 
   viewTab () {
-    if (this.step () === 'login') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-        </Container>
-      );
-    } else if (this.step () === 'mandat') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Choix d´un mandat' glyph='none' active='true' {...this.link ()} />
-          <TabButton text='Création d´un mandat' glyph='none' active='false' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.step () === 'work') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Mon beau bouquet' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='true' {...this.link ()} />
-          <TabButton text='Chorale Fa-si-la chanter' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='false' {...this.link ()} />
-          <TabButton text='Club VTT' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='false' {...this.link ()} />
-        </Container>
-      );
+    if (this.uiType () === 'synchro') {
+      return this.synchroViewTab ();
+    } else {
+      return this.polyphemeViewTab ();
     }
+  }
+
+  synchroTask () {
+    const active = (this.viewType () === 'create') ? 'true' : 'false';
+    return (
+      <Container kind='task' width='300px' {...this.link ()} >
+        <Button action={act.NEXT ()} glyph='cloud' text='Crésus SYNCHRO' text-transform='none'
+          kind='task-logo' {...this.link ()} />
+        <Label text='Gestion des mandats' kind='task' {...this.link ()} />
+        <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
+        <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' active={active} {...this.link ()} />
+        <Button text='Se rattacher à un mandat' glyph='link' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
+        <Label text='Vos mandats' kind='task' {...this.link ()} />
+        <TabButton text='Mon beau bouquet' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' kind='task' active='true' {...this.link ()} />
+        <TabButton text='Chorale Fa-si-la chanter' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' kind='task' active='false' {...this.link ()} />
+        <TabButton text='Club VTT' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' kind='task' active='false' {...this.link ()} />
+      </Container>
+    );
+  }
+
+  polyphemeTask () {
+    const active = (this.viewType () === 'create') ? 'true' : 'false';
+    return (
+      <Container kind='task' width='300px' {...this.link ()} >
+        <Button action={act.NEXT ()} glyph='cloud' text='Crésus SYNCHRO' text-transform='none'
+          kind='task-logo' {...this.link ()} />
+        <Button text='Synchroniser' glyph='refresh' tooltip='Synchroniser tous les mandats' kind='task-tab' {...this.link ()} />
+        <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' active={active} {...this.link ()} />
+        <Button text='Se rattacher à un mandat' glyph='link' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
+      </Container>
+    );
+  }
+
+  synchroMainTab () {
+    return (
+      <Container kind='main-tab' {...this.link ()} >
+        <Container kind='main-tab-login' {...this.link ()} >
+          <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+          <Button glyph='ban' tooltip='Se déconnecter' kind='main-tab-login' {...this.link ()} />
+        </Container>
+      </Container>
+    );
   }
 
   footerWarning () {
@@ -140,77 +129,75 @@ export default class Synchro extends React.Component {
     }
   }
 
+  polyphemeMainTab () {
+    return (
+      <Container kind='main-tab' {...this.link ()} >
+        <Button text='Mandats' width='200px' active='true' kind='main-tab' {...this.link ()} />
+        <Container kind='main-tab-login' {...this.link ()} >
+          <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+          <Button glyph='ban' tooltip='Se déconnecter' kind='main-tab-login' {...this.link ()} />
+        </Container>
+      </Container>
+    );
+  }
+
+  synchroViewTab () {
+    return null;
+  }
+
+  polyphemeViewTab () {
+    const active = (this.viewType () === 'mandat') ? 'true' : 'false';
+    return (
+      <Container kind='view-tab' {...this.link ()} >
+        <TabButton text='Mon beau bouquet' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active={active} {...this.link ()} />
+        <TabButton text='Chorale Fa-si-la chanter' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='false' {...this.link ()} />
+        <TabButton text='Club VTT' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='false' {...this.link ()} />
+      </Container>
+    );
+  }
+
   view () {
-    if (this.step () === 'login') {
-      return this.viewLogin ();
-    } else if (this.step () === 'mandat') {
+    if (this.viewType () === 'mandat') {
       return this.viewMandat ();
-    } else if (this.step () === 'work') {
-      return this.viewWork ();
+    } else {
+      return this.viewCreate ();
     }
   }
 
-  viewLogin () {
-    return (
-      <Container kind='view' width='500px' {...this.link ()} >
-        <Container kind='panes' subkind='top-margin' {...this.link ()} >
+  dialog () {
+    if (this.hasDialog () === 'yes') {
+      return (
+        <Dialog  width='500px' height='300px' {...this.link ()} >
+          <Container kind='view' width='500px' {...this.link ()} >
+            <Container kind='panes' subkind='top-margin' {...this.link ()} >
 
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='Identifiez-vous' grow='1' kind='title' {...this.link ()} />
+              <Container kind='pane' {...this.link ()} >
+                <Container kind='row-pane' {...this.link ()} >
+                  <Label text='Se connecter' grow='1' kind='title' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='user' hint-text='Nom d´utilisateur' grow='1' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='lock' hint-text='Mot de passe' grow='1' {...this.link ()} />
+                </Container>
+              </Container>
+
             </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='user' hint-text='Nom d´utilisateur' grow='1' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='lock' hint-text='Mot de passe' grow='1' {...this.link ()} />
+
+            <Container kind='actions' {...this.link ()} >
+              <Button glyph='user' text='Se connecter' grow='1' kind='action' place='left' {...this.link ()} />
+              <Button glyph='close' text='Annuler' grow='1' kind='action' place='right' {...this.link ()} />
             </Container>
           </Container>
-
-        </Container>
-
-        <Container kind='actions' {...this.link ()} >
-          <Button glyph='play' text='Se connecter' grow='1' kind='action' place='left' {...this.link ()} />
-          <Button glyph='stop' text='Se déconnecter' grow='1' kind='action' place='right' {...this.link ()} />
-        </Container>
-      </Container>
-    );
+        </Dialog>
+      );
+    } else {
+      return null;
+    }
   }
 
   viewMandat () {
-    return (
-      <Container kind='view' width='700px' {...this.link ()} >
-        <Container kind='panes' subkind='top-margin' {...this.link ()} >
-
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='tree' text='Mon beau bouquet' grow='1' {...this.link ()} />
-              <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='bicycle' text='Vélocité' grow='1' {...this.link ()} />
-              <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='truck' text='Cargo SA' grow='1' {...this.link ()} />
-              <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-            </Container>
-          </Container>
-
-        </Container>
-
-        <Container kind='actions' {...this.link ()} >
-          <Button glyph='check' text='Ouvrir' grow='1' kind='action' place='left' {...this.link ()} />
-          <Button glyph='close' text='Annuler' grow='1' kind='action' place='right' {...this.link ()} />
-        </Container>
-      </Container>
-    );
-  }
-
-  viewWork () {
     return (
       <Container kind='view' width='700px' {...this.link ()} >
         <Container kind='panes' subkind='top-margin' {...this.link ()} >
@@ -280,39 +267,6 @@ export default class Synchro extends React.Component {
     );
   }
 
-  dialog () {
-    if (this.hasDialog () === 'yes') {
-      return (
-        <Dialog  width='500px' height='300px' {...this.link ()} >
-          <Container kind='view' width='500px' {...this.link ()} >
-            <Container kind='panes' subkind='top-margin' {...this.link ()} >
-
-              <Container kind='pane' {...this.link ()} >
-                <Container kind='row-pane' {...this.link ()} >
-                  <Label text='Se connecter' grow='1' kind='title' {...this.link ()} />
-                </Container>
-                <Container kind='row-pane' {...this.link ()} >
-                  <LabelTextField label-glyph='user' hint-text='Nom d´utilisateur' grow='1' {...this.link ()} />
-                </Container>
-                <Container kind='row-pane' {...this.link ()} >
-                  <LabelTextField label-glyph='lock' hint-text='Mot de passe' grow='1' {...this.link ()} />
-                </Container>
-              </Container>
-
-            </Container>
-
-            <Container kind='actions' {...this.link ()} >
-              <Button glyph='user' text='Se connecter' grow='1' kind='action' place='left' {...this.link ()} />
-              <Button glyph='close' text='Annuler' grow='1' kind='action' place='right' {...this.link ()} />
-            </Container>
-          </Container>
-        </Dialog>
-      );
-    } else {
-      return null;
-    }
-  }
-
   render () {
     const listTemplate = (state) => {
       const title = state.get ('title');
@@ -324,7 +278,7 @@ export default class Synchro extends React.Component {
     return (
       <Container kind='root' {...this.link ()} >
 
-        {this.taskBar ()}
+        {this.task ()}
 
         <Container kind='right' {...this.link ()} >
 

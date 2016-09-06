@@ -47,8 +47,8 @@ am.registerActivity ('all-in-one', AllInOneActivity);
 
 // am.startMainActivity ('polypheme-dispatch', true);
 // am.startMainActivity ('polypheme-codispatch', true);
-// am.startMainActivity ('synchro', true);
-am.startMainActivity ('all-in-one', true);
+am.startMainActivity ('synchro', true);
+// am.startMainActivity ('all-in-one', true);
 
 Electrum.reset ();
 Electrum.useBus (am);
