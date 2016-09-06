@@ -66,11 +66,11 @@ export default class Synchro extends React.Component {
       return (
         <Container kind='task' {...this.link ()} >
           <Button action={act.NEXT ()} glyph='tree' text='Bouquet' text-transform='none'
-            kind='task-logo' {...this.link ()} />
-          <Button glyph='refresh' text='Synchroniser' kind='task' {...this.link ()} />
-          <Button glyph='link' text='Se rattacher' kind='task' {...this.link ()} />
-          <Button glyph='cloud-download' text='Attacher' kind='task' {...this.link ()} />
-          <Button glyph='share-alt' text='Partager' kind='task' {...this.link ()} />
+            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
+          <Button glyph='refresh' text='Synchroniser' tooltip='Synchroniser tous les mandats' kind='task' {...this.link ()} />
+          <Button glyph='link' text='Se rattacher' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task' {...this.link ()} />
+          <Button glyph='cloud-download' text='Attacher' tooltip='Attacher un fichier' kind='task' {...this.link ()} />
+          <Button glyph='share-alt' text='Partager' tooltip='Partager le mandat au moyen d´un ticket' kind='task' {...this.link ()} />
         </Container>
       );
     }
@@ -98,6 +98,9 @@ export default class Synchro extends React.Component {
         <Container kind='main-tab' {...this.link ()} >
           <Button text='Synchro' width='200px' active='true' kind='main-tab' {...this.link ()} />
           <Button text='Paiements' width='200px' active='false' kind='main-tab' {...this.link ()} />
+          <Button text='Comptabilité' width='200px' active='false' kind='main-tab' {...this.link ()} />
+          <Button text='Facturations' width='200px' active='false' kind='main-tab' {...this.link ()} />
+          <Button text='Salaires' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
             <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
@@ -122,9 +125,6 @@ export default class Synchro extends React.Component {
     } else if (this.step () === 'work') {
       return (
         <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Mon beau bouquet' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='true' {...this.link ()} />
-          <TabButton text='Chorale Fa-si-la chanter' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='false' {...this.link ()} />
-          <TabButton text='Club VTT' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='false' {...this.link ()} />
         </Container>
       );
     }
@@ -249,11 +249,6 @@ export default class Synchro extends React.Component {
             </Container>
           </Container>
 
-        </Container>
-
-        <Container kind='actions' {...this.link ()} >
-          <Button glyph='cloud-download' text='Attacher un fichier' grow='1' kind='action' place='left' {...this.link ()} />
-          <Button glyph='share-alt' text='Partager le mandat au moyen d´un ticket' grow='1' kind='action' place='right' {...this.link ()} />
         </Container>
       </Container>
     );
