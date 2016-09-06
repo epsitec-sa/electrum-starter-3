@@ -33,8 +33,8 @@ export default class Synchro extends React.Component {
 
   /******************************************************************************/
   step () {
-    // return 'login';
-    return 'mandat';
+    return 'login';
+    // return 'mandat';
     // return 'work';
   }
 
@@ -51,7 +51,9 @@ export default class Synchro extends React.Component {
 
   taskBar () {
     if (this.step () === 'login') {
-      return null;
+      return (
+        <Button action={act.NEXT ()} text=' ' border='none' {...this.link ()} />
+      );
     } else if (this.step () === 'mandat') {
       return (
         <Container kind='task' {...this.link ()} >
