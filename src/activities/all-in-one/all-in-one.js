@@ -221,7 +221,7 @@ export default class Synchro extends React.Component {
               </Container>
             </Container>
 
-            <Container kind='actions' {...this.link ()} >
+            <Container kind='actions' subkind='no-shadow' {...this.link ()} >
               <Button glyph='check' text='Ouvrir' kind='action' width='200px' place='left' {...this.link ()} />
               <Button glyph='trash' text='Supprimer' kind='action' width='200px' {...this.link ()} />
               <Button glyph='close' text='Annuler' kind='action' width='200px' place='right' {...this.link ()} />
