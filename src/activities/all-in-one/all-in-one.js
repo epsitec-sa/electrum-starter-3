@@ -133,10 +133,10 @@ export default class Synchro extends React.Component {
   viewLogin () {
     return (
       <div>
-        <Container kind='login-header' login-height='300px' {...this.link ()} >
-          <Label glyph='institution' kind='login-header' {...this.link ()} />
+        <Container kind='floating-header' floating-height='300px' {...this.link ()} >
+          <Label glyph='institution' kind='floating-header' {...this.link ()} />
         </Container>
-        <Container kind='login' width='300px' height='300px' {...this.link ()} >
+        <Container kind='floating' width='300px' height='300px' {...this.link ()} >
           <Container kind='row-pane' {...this.link ()} >
             <Label text='Identifiez-vous' grow='1' kind='big-center' {...this.link ()} />
           </Container>
@@ -152,9 +152,9 @@ export default class Synchro extends React.Component {
             <Button text='Se connecter' grow='1' kind='action' place='single' {...this.link ()} />
           </Container>
         </Container>
-        <Container kind='login-footer' height='100px' {...this.link ()} >
-          <Separator width='300px' kind='login-footer' {...this.link ()} />
-          <Label text='Crésus — EPSITEC SA' kind='login-footer' {...this.link ()} />
+        <Container kind='floating-footer' height='100px' {...this.link ()} >
+          <Separator width='300px' kind='floating-footer' {...this.link ()} />
+          <Label text='Crésus — EPSITEC SA' kind='floating-footer' {...this.link ()} />
         </Container>
       </div>
     );
@@ -162,7 +162,7 @@ export default class Synchro extends React.Component {
 
   viewMandats () {
     return (
-      <Container kind='login' width='80vw' height='70vh' {...this.link ()} >
+      <Container kind='floating' width='80vw' height='70vh' {...this.link ()} >
         <Container kind='views' {...this.link ()} >
           <Container kind='full-view' {...this.link ()} >
             <Container kind='panes' subkind='top-margin' {...this.link ()} >
