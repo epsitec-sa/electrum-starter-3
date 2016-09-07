@@ -73,8 +73,9 @@ export default class Synchro extends React.Component {
         <Container kind='task' {...this.link ()} >
           <Button action={act.NEXT ()} glyph='bicycle' text='Vélocité' text-transform='none'
             tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
-          <Button glyph='columns' text='Boucler' tooltip='Synchroniser tous les mandats' kind='task' {...this.link ()} />
-          <Button glyph='search' text='Chercher' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task' {...this.link ()} />
+          <Button glyph='plus-circle' text='TVA' kind='task' {...this.link ()} />
+          <Button glyph='columns' text='Boucler' kind='task' {...this.link ()} />
+          <Button glyph='search' text='Chercher' kind='task' {...this.link ()} />
         </Container>
       );
     }
@@ -331,6 +332,7 @@ export default class Synchro extends React.Component {
                 <Label text='Libellé' font-weight='bold' grow='4' {...this.link ()} />
                 <Label text='Somme' font-weight='bold' justify='right' grow='1' {...this.link ()} />
               </Container>
+              <Separator {...this.link ()} />
               <Container kind='row-pane' {...this.link ()} >
                 <Label text='01.01.2016' grow='1' {...this.link ()} />
                 <Label text='1010' grow='1' {...this.link ()} />
@@ -371,6 +373,7 @@ export default class Synchro extends React.Component {
                 <Label text='Solde à nouveau' grow='4' {...this.link ()} />
                 <Label text='1´702.05' justify='right' grow='1' {...this.link ()} />
               </Container>
+              <Separator {...this.link ()} />
               <Container kind='row-pane' {...this.link ()} >
                 <Label text='14.01.2016' grow='1' {...this.link ()} />
                 <Label text='1000' grow='1' {...this.link ()} />
