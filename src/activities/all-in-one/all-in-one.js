@@ -33,8 +33,8 @@ export default class Synchro extends React.Component {
 
   /******************************************************************************/
   step () {
-    return 'login';
-    // return 'mandat';
+    // return 'login';
+    return 'mandats';
     // return 'work';
   }
 
@@ -54,13 +54,8 @@ export default class Synchro extends React.Component {
       return (
         <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
       );
-    } else if (this.step () === 'mandat') {
-      return (
-        <Container kind='task' {...this.link ()} >
-          <Button action={act.NEXT ()} glyph='file' text='Mandats' text-transform='none'
-            kind='task-logo' active='true' {...this.link ()} />
-        </Container>
-      );
+    } else if (this.step () === 'mandats') {
+      return null;
     } else if (this.step () === 'work') {
       return (
         <Container kind='task' {...this.link ()} >
@@ -78,7 +73,7 @@ export default class Synchro extends React.Component {
   mainTab () {
     if (this.step () === 'login') {
       return null;
-    } else if (this.step () === 'mandat') {
+    } else if (this.step () === 'mandats') {
       return (
         <Container kind='main-tab' {...this.link ()} >
           <Container kind='main-tab-login' {...this.link ()} >
@@ -105,13 +100,8 @@ export default class Synchro extends React.Component {
   viewTab () {
     if (this.step () === 'login') {
       return null;
-    } else if (this.step () === 'mandat') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Choix d´un mandat' glyph='none' active='true' {...this.link ()} />
-          <TabButton text='Création d´un mandat' glyph='none' active='false' {...this.link ()} />
-        </Container>
-      );
+    } else if (this.step () === 'mandats') {
+      return null;
     } else if (this.step () === 'work') {
       return (
         <Container kind='view-tab' {...this.link ()} >
@@ -133,8 +123,8 @@ export default class Synchro extends React.Component {
   view () {
     if (this.step () === 'login') {
       return this.viewLogin ();
-    } else if (this.step () === 'mandat') {
-      return this.viewMandat ();
+    } else if (this.step () === 'mandats') {
+      return this.viewMandats ();
     } else if (this.step () === 'work') {
       return this.viewWork ();
     }
@@ -170,35 +160,37 @@ export default class Synchro extends React.Component {
     );
   }
 
-  viewMandat () {
+  viewMandats () {
     return (
-      <Container kind='views' {...this.link ()} >
-        <Container kind='view' width='700px' {...this.link ()} >
-          <Container kind='panes' subkind='top-margin' {...this.link ()} >
+      <Container kind='login' width='80vw' height='70vh' {...this.link ()} >
+        <Container kind='views' {...this.link ()} >
+          <Container kind='view' width='700px' {...this.link ()} >
+            <Container kind='panes' subkind='top-margin' {...this.link ()} >
 
-            <Container kind='pane' {...this.link ()} >
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
+              <Container kind='pane' {...this.link ()} >
+                <Container kind='row-pane' {...this.link ()} >
+                  <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <Label glyph='tree' text='Mon beau bouquet' grow='1' {...this.link ()} />
+                  <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <Label glyph='bicycle' text='Vélocité' grow='1' {...this.link ()} />
+                  <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <Label glyph='truck' text='Cargo SA' grow='1' {...this.link ()} />
+                  <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+                </Container>
               </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label glyph='tree' text='Mon beau bouquet' grow='1' {...this.link ()} />
-                <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label glyph='bicycle' text='Vélocité' grow='1' {...this.link ()} />
-                <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label glyph='truck' text='Cargo SA' grow='1' {...this.link ()} />
-                <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-              </Container>
+
             </Container>
 
-          </Container>
-
-          <Container kind='actions' {...this.link ()} >
-            <Button glyph='check' text='Ouvrir' grow='1' kind='action' place='left' {...this.link ()} />
-            <Button glyph='close' text='Annuler' grow='1' kind='action' place='right' {...this.link ()} />
+            <Container kind='actions' {...this.link ()} >
+              <Button glyph='check' text='Ouvrir' grow='1' kind='action' place='left' {...this.link ()} />
+              <Button glyph='close' text='Annuler' grow='1' kind='action' place='right' {...this.link ()} />
+            </Container>
           </Container>
         </Container>
       </Container>
@@ -276,6 +268,8 @@ export default class Synchro extends React.Component {
 
   footer () {
     if (this.step () === 'login') {
+      return null;
+    } else if (this.step () === 'mandats') {
       return null;
     } else {
       return (
