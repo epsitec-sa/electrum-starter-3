@@ -34,9 +34,9 @@ export default class Synchro extends React.Component {
   /******************************************************************************/
   step () {
     // return 'login';
-    // return 'mandats';
+    return 'mandats';
     // return 'work';
-    return 'compta';
+    // return 'compta';
   }
 
   hasFooterWarning () {
