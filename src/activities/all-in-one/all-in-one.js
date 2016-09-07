@@ -186,7 +186,7 @@ export default class Synchro extends React.Component {
                     <Label text='Mon beau bouquet' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                <Button kind='box' width='200px' height='200px' active='true' {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='bicycle' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Vélocité' font-weight='bold' kind='center-to-box' {...this.link ()} />
@@ -222,9 +222,10 @@ export default class Synchro extends React.Component {
             </Container>
 
             <Container kind='actions' subkind='no-shadow' {...this.link ()} >
-              <Button glyph='check' text='Ouvrir' kind='action' width='200px' place='left' {...this.link ()} />
-              <Button glyph='trash' text='Supprimer' kind='action' width='200px' {...this.link ()} />
-              <Button glyph='close' text='Annuler' kind='action' width='200px' place='right' {...this.link ()} />
+              <Button glyph='check'  text='Ouvrir'    kind='action' width='160px' place='left' {...this.link ()} />
+              <Button glyph='pencil' text='Modifier'  kind='action' width='160px' {...this.link ()} />
+              <Button glyph='trash'  text='Supprimer' kind='action' width='160px' {...this.link ()} />
+              <Button glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
             </Container>
           </Container>
         </Container>
