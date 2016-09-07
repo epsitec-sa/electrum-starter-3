@@ -34,8 +34,9 @@ export default class Synchro extends React.Component {
   /******************************************************************************/
   step () {
     // return 'login';
-    return 'mandats';
+    // return 'mandats';
     // return 'work';
+    return 'compta';
   }
 
   hasFooterWarning () {
@@ -59,12 +60,21 @@ export default class Synchro extends React.Component {
     } else if (this.step () === 'work') {
       return (
         <Container kind='task' {...this.link ()} >
-          <Button action={act.NEXT ()} glyph='tree' text='Bouquet' text-transform='none'
+          <Button action={act.NEXT ()} glyph='bicycle' text='Vélocité' text-transform='none'
             tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
           <Button glyph='refresh' text='Synchroniser' tooltip='Synchroniser tous les mandats' kind='task' {...this.link ()} />
           <Button glyph='link' text='Se rattacher' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task' {...this.link ()} />
           <Button glyph='cloud-download' text='Attacher' tooltip='Attacher un fichier' kind='task' {...this.link ()} />
           <Button glyph='share-alt' text='Partager' tooltip='Partager le mandat au moyen d´un ticket' kind='task' {...this.link ()} />
+        </Container>
+      );
+    } else if (this.step () === 'compta') {
+      return (
+        <Container kind='task' {...this.link ()} >
+          <Button action={act.NEXT ()} glyph='bicycle' text='Vélocité' text-transform='none'
+            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
+          <Button glyph='columns' text='Boucler' tooltip='Synchroniser tous les mandats' kind='task' {...this.link ()} />
+          <Button glyph='search' text='Chercher' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task' {...this.link ()} />
         </Container>
       );
     }
@@ -95,6 +105,19 @@ export default class Synchro extends React.Component {
           </Container>
         </Container>
       );
+    } else if (this.step () === 'compta') {
+      return (
+        <Container kind='main-tab' {...this.link ()} >
+          <Button text='Synchro' width='200px' active='false' kind='main-tab' {...this.link ()} />
+          <Button text='Paiements' width='200px' active='false' kind='main-tab' {...this.link ()} />
+          <Button text='Comptabilité' width='200px' active='true' kind='main-tab' {...this.link ()} />
+          <Button text='Facturations' width='200px' active='false' kind='main-tab' {...this.link ()} />
+          <Button text='Salaires' width='200px' active='false' kind='main-tab' {...this.link ()} />
+          <Container kind='main-tab-login' {...this.link ()} >
+            <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+          </Container>
+        </Container>
+      );
     }
   }
 
@@ -106,6 +129,15 @@ export default class Synchro extends React.Component {
     } else if (this.step () === 'work') {
       return (
         <Container kind='view-tab' {...this.link ()} >
+        </Container>
+      );
+    } else if (this.step () === 'compta') {
+      return (
+        <Container kind='view-tab' {...this.link ()} >
+          <TabButton text='Ecritures' glyph='none' active='true' {...this.link ()} />
+          <TabButton text='Plan comptable' glyph='none' active='false' {...this.link ()} />
+          <TabButton text='Bilan' glyph='none' active='false' {...this.link ()} />
+          <TabButton text='PP' glyph='none' active='false' {...this.link ()} />
         </Container>
       );
     }
@@ -128,6 +160,8 @@ export default class Synchro extends React.Component {
       return this.viewMandats ();
     } else if (this.step () === 'work') {
       return this.viewWork ();
+    } else if (this.step () === 'compta') {
+      return this.viewCompta ();
     }
   }
 
@@ -279,6 +313,98 @@ export default class Synchro extends React.Component {
     );
   }
 
+  viewCompta () {
+    return (
+      <Container kind='views' {...this.link ()} >
+        <Container kind='view' width='1000px' {...this.link ()} >
+          <Container kind='panes' subkind='top-margin' {...this.link ()} >
+
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='Journal des écritures' grow='1' kind='title' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='Date' font-weight='bold' grow='1' {...this.link ()} />
+                <Label text='Débit' font-weight='bold' grow='1' {...this.link ()} />
+                <Label text='Crédit' font-weight='bold' grow='1' {...this.link ()} />
+                <Label text='Pièce' font-weight='bold' grow='1' {...this.link ()} />
+                <Label text='Libellé' font-weight='bold' grow='4' {...this.link ()} />
+                <Label text='Somme' font-weight='bold' justify='right' grow='1' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='01.01.2016' grow='1' {...this.link ()} />
+                <Label text='1010' grow='1' {...this.link ()} />
+                <Label text='9010' grow='1' {...this.link ()} />
+                <Label text='73' grow='1' {...this.link ()} />
+                <Label text='Solde à nouveau' grow='4' {...this.link ()} />
+                <Label text='12´004.00' justify='right' grow='1' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='01.01.2016' grow='1' {...this.link ()} />
+                <Label text='1100' grow='1' {...this.link ()} />
+                <Label text='9010' grow='1' {...this.link ()} />
+                <Label text='74' grow='1' {...this.link ()} />
+                <Label text='Solde à nouveau' grow='4' {...this.link ()} />
+                <Label text='5´600.00' justify='right' grow='1' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='01.01.2016' grow='1' {...this.link ()} />
+                <Label text='1120' grow='1' {...this.link ()} />
+                <Label text='9010' grow='1' {...this.link ()} />
+                <Label text='75' grow='1' {...this.link ()} />
+                <Label text='Solde à nouveau' grow='4' {...this.link ()} />
+                <Label text='20.10' justify='right' grow='1' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='01.01.2016' grow='1' {...this.link ()} />
+                <Label text='2000' grow='1' {...this.link ()} />
+                <Label text='9010' grow='1' {...this.link ()} />
+                <Label text='76' grow='1' {...this.link ()} />
+                <Label text='Solde à nouveau' grow='4' {...this.link ()} />
+                <Label text='792.40' justify='right' grow='1' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='01.01.2016' grow='1' {...this.link ()} />
+                <Label text='2100' grow='1' {...this.link ()} />
+                <Label text='9010' grow='1' {...this.link ()} />
+                <Label text='77' grow='1' {...this.link ()} />
+                <Label text='Solde à nouveau' grow='4' {...this.link ()} />
+                <Label text='1´702.05' justify='right' grow='1' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='14.01.2016' grow='1' {...this.link ()} />
+                <Label text='1000' grow='1' {...this.link ()} />
+                <Label text='1010' grow='1' {...this.link ()} />
+                <Label text='79' grow='1' {...this.link ()} />
+                <Label text='Virement janvier' grow='4' {...this.link ()} />
+                <Label text='100.00' justify='right' grow='1' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='28.01.2016' grow='1' {...this.link ()} />
+                <Label text='1100' grow='1' {...this.link ()} />
+                <Label text='2100' grow='1' {...this.link ()} />
+                <Label text='80' grow='1' {...this.link ()} />
+                <Label text='Loyer janvier locaux Blanpain' grow='4' {...this.link ()} />
+                <Label text='2´300.00' justify='right' grow='1' {...this.link ()} />
+              </Container>
+            </Container>
+
+          </Container>
+          <Container kind='actions' {...this.link ()} >
+            <Button glyph='arrow-up' text='Nouvelle écriture' width='0px' grow='1'
+              kind='action' place='left' {...this.link ()} />
+            <Button glyph='pencil' text='Modifier' width='0px' grow='1'
+              kind='action' place='middle' {...this.link ()} />
+            <Button glyph='trash' text='Supprimer' width='0px' grow='1'
+              kind='action' place='middle' {...this.link ()} />
+            <Button glyph='check' text='Valider' width='0px' grow='1'
+              kind='action' place='right' {...this.link ()} />
+          </Container>
+        </Container>
+      </Container>
+    );
+  }
+
   viewCreate () {
     return (
       <Container kind='views' {...this.link ()} >
@@ -307,6 +433,14 @@ export default class Synchro extends React.Component {
       return null;
     } else if (this.step () === 'mandats') {
       return null;
+    } else if (this.step () === 'compta') {
+      return (
+        <Container kind='footer' {...this.link ()} >
+          {this.footerWarning ()}
+          <Label text='7 écritures' grow='1' kind='footer' {...this.link ()} />
+          <Button glyph='gears' text='Options' kind='footer' {...this.link ()} />
+        </Container>
+      );
     } else {
       return (
         <Container kind='footer' {...this.link ()} >
