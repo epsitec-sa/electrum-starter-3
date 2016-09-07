@@ -76,6 +76,7 @@ export default class Synchro extends React.Component {
     } else if (this.step () === 'mandats') {
       return (
         <Container kind='main-tab' {...this.link ()} >
+          <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
             <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
