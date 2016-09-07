@@ -167,57 +167,55 @@ export default class Synchro extends React.Component {
           <Container kind='full-view' {...this.link ()} >
             <Container kind='panes' subkind='top-margin' {...this.link ()} >
 
-              <Container kind='pane' {...this.link ()} >
-                <Container kind='row-pane' {...this.link ()} >
-                  <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
-                </Container>
-                <Container kind='boxes' {...this.link ()} >
-                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
-                    <Container kind='box' {...this.link ()} >
-                      <Label text='Créer un mandat' font-weight='bold' kind='center-to-box' {...this.link ()} />
-                    </Container>
-                  </Button>
-                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
-                    <Container kind='box' {...this.link ()} >
-                      <Label glyph='tree' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
-                      <Label text='Bouquet' font-weight='bold' kind='center-to-box' {...this.link ()} />
-                      <Separator {...this.link ()} />
-                      <Label text='Mon beau bouquet' kind='center-to-box' {...this.link ()} />
-                    </Container>
-                  </Button>
-                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
-                    <Container kind='box' {...this.link ()} >
-                      <Label glyph='bicycle' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
-                      <Label text='Vélocité' font-weight='bold' kind='center-to-box' {...this.link ()} />
-                      <Separator {...this.link ()} />
-                      <Label text='Vélocité Lausanne' kind='center-to-box' {...this.link ()} />
-                    </Container>
-                  </Button>
-                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
-                    <Container kind='box' {...this.link ()} >
-                      <Label glyph='truck' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
-                      <Label text='Cargo' font-weight='bold' kind='center-to-box' {...this.link ()} />
-                      <Separator {...this.link ()} />
-                      <Label text='Cargo SA' kind='center-to-box' {...this.link ()} />
-                    </Container>
-                  </Button>
-                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
-                    <Container kind='box' {...this.link ()} >
-                      <Label glyph='cube' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
-                      <Label text='Pack' font-weight='bold' kind='center-to-box' {...this.link ()} />
-                      <Separator {...this.link ()} />
-                      <Label text='Pack-and-Fill SA' kind='center-to-box' {...this.link ()} />
-                    </Container>
-                  </Button>
-                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
-                    <Container kind='box' {...this.link ()} >
-                      <Label glyph='institution' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
-                      <Label text='Admin' font-weight='bold' kind='center-to-box' {...this.link ()} />
-                      <Separator {...this.link ()} />
-                      <Label text='Administration Renens' kind='center-to-box' {...this.link ()} />
-                    </Container>
-                  </Button>
-                </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
+              </Container>
+              <Container kind='boxes' {...this.link ()} >
+                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                  <Container kind='box' {...this.link ()} >
+                    <Label text='Créer un mandat' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                  </Container>
+                </Button>
+                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                  <Container kind='box' {...this.link ()} >
+                    <Label glyph='tree' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Bouquet' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Separator {...this.link ()} />
+                    <Label text='Mon beau bouquet' kind='center-to-box' {...this.link ()} />
+                  </Container>
+                </Button>
+                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                  <Container kind='box' {...this.link ()} >
+                    <Label glyph='bicycle' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Vélocité' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Separator {...this.link ()} />
+                    <Label text='Vélocité Lausanne' kind='center-to-box' {...this.link ()} />
+                  </Container>
+                </Button>
+                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                  <Container kind='box' {...this.link ()} >
+                    <Label glyph='truck' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Cargo' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Separator {...this.link ()} />
+                    <Label text='Cargo SA' kind='center-to-box' {...this.link ()} />
+                  </Container>
+                </Button>
+                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                  <Container kind='box' {...this.link ()} >
+                    <Label glyph='cube' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Pack' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Separator {...this.link ()} />
+                    <Label text='Pack-and-Fill SA' kind='center-to-box' {...this.link ()} />
+                  </Container>
+                </Button>
+                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                  <Container kind='box' {...this.link ()} >
+                    <Label glyph='institution' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Admin' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Separator {...this.link ()} />
+                    <Label text='Administration Renens' kind='center-to-box' {...this.link ()} />
+                  </Container>
+                </Button>
               </Container>
 
             </Container>
