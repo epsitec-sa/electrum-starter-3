@@ -172,8 +172,11 @@ export default class Synchro extends React.Component {
                   <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
                 </Container>
                 <Container kind='row-pane' {...this.link ()} >
-                  <Label glyph='tree' text='Mon beau bouquet' grow='1' {...this.link ()} />
-                  <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+                  <Container kind='column' width='200px' height='200px' {...this.link ()} >
+                    <Label glyph='tree' row='1' {...this.link ()} />
+                    <Label text='Bouquet' grow='1' {...this.link ()} />
+                    <Label text='Mon beau bouquet' grow='1' {...this.link ()} />
+                  </Container>
                 </Container>
                 <Container kind='row-pane' {...this.link ()} >
                   <Label glyph='bicycle' text='Vélocité' grow='1' {...this.link ()} />
@@ -188,8 +191,9 @@ export default class Synchro extends React.Component {
             </Container>
 
             <Container kind='actions' {...this.link ()} >
-              <Button glyph='check' text='Ouvrir' grow='1' kind='action' place='left' {...this.link ()} />
-              <Button glyph='close' text='Annuler' grow='1' kind='action' place='right' {...this.link ()} />
+              <Button glyph='check' text='Ouvrir' kind='action' width='200px' place='left' {...this.link ()} />
+              <Button glyph='trash' text='Supprimer' kind='action' width='200px' {...this.link ()} />
+              <Button glyph='close' text='Annuler' kind='action' width='200px' place='right' {...this.link ()} />
             </Container>
           </Container>
         </Container>
