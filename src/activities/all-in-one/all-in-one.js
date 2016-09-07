@@ -166,11 +166,12 @@ export default class Synchro extends React.Component {
       <Container kind='floating' width='80vw' height='70vh' {...this.link ()} >
         <Container kind='views' {...this.link ()} >
           <Container kind='full-view' {...this.link ()} >
-            <Container kind='panes' subkind='top-margin' {...this.link ()} >
 
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
-              </Container>
+            <Container kind='pane-navigator' {...this.link ()} >
+              <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
+            </Container>
+
+            <Container kind='panes' subkind='top-margin' {...this.link ()} >
               <Container kind='boxes' {...this.link ()} >
                 <Button kind='box' width='200px' height='200px' {...this.link ()} >
                   <Container kind='box' subkind='dashed' {...this.link ()} >
@@ -218,7 +219,6 @@ export default class Synchro extends React.Component {
                   </Container>
                 </Button>
               </Container>
-
             </Container>
 
             <Container kind='actions' {...this.link ()} >
