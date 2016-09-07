@@ -171,20 +171,47 @@ export default class Synchro extends React.Component {
                 <Container kind='row-pane' {...this.link ()} >
                   <Label text='Liste des mandats' grow='1' kind='title' {...this.link ()} />
                 </Container>
-                <Container kind='row-pane' {...this.link ()} >
-                  <Container kind='column' width='200px' height='200px' {...this.link ()} >
-                    <Label glyph='tree' row='1' {...this.link ()} />
-                    <Label text='Bouquet' grow='1' {...this.link ()} />
-                    <Label text='Mon beau bouquet' grow='1' {...this.link ()} />
-                  </Container>
-                </Container>
-                <Container kind='row-pane' {...this.link ()} >
-                  <Label glyph='bicycle' text='Vélocité' grow='1' {...this.link ()} />
-                  <Button glyph='ellipsis-v' border='none' {...this.link ()} />
-                </Container>
-                <Container kind='row-pane' {...this.link ()} >
-                  <Label glyph='truck' text='Cargo SA' grow='1' {...this.link ()} />
-                  <Button glyph='ellipsis-v' border='none' {...this.link ()} />
+                <Container kind='boxes' {...this.link ()} >
+                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                    <Container kind='box' {...this.link ()} >
+                      <Label text='Créer un nouveau mandat' text-size='150%' font-weight='bold' justify='center' grow='1' {...this.link ()} />
+                    </Container>
+                  </Button>
+                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                    <Container kind='box' {...this.link ()} >
+                      <Label glyph='tree' glyph-size='300%' justify='center' row='1' {...this.link ()} />
+                      <Label text='Bouquet' text-size='150%' font-weight='bold' justify='center' grow='1' {...this.link ()} />
+                      <Label text='Mon beau bouquet' grow='1' justify='center' {...this.link ()} />
+                    </Container>
+                  </Button>
+                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                    <Container kind='box' {...this.link ()} >
+                      <Label glyph='bicycle' glyph-size='300%' justify='center' row='1' {...this.link ()} />
+                      <Label text='Vélocité' text-size='150%' font-weight='bold' justify='center' grow='1' {...this.link ()} />
+                      <Label text='Vélocité Lausanne' grow='1' justify='center' {...this.link ()} />
+                    </Container>
+                  </Button>
+                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                    <Container kind='box' {...this.link ()} >
+                      <Label glyph='truck' glyph-size='300%' justify='center' row='1' {...this.link ()} />
+                      <Label text='Cargo' text-size='150%' font-weight='bold' justify='center' grow='1' {...this.link ()} />
+                      <Label text='Cargo SA' grow='1' justify='center' {...this.link ()} />
+                    </Container>
+                  </Button>
+                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                    <Container kind='box' {...this.link ()} >
+                      <Label glyph='truck' glyph-size='300%' justify='center' row='1' {...this.link ()} />
+                      <Label text='Cargo' text-size='150%' font-weight='bold' justify='center' grow='1' {...this.link ()} />
+                      <Label text='Cargo SA' grow='1' justify='center' {...this.link ()} />
+                    </Container>
+                  </Button>
+                  <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                    <Container kind='box' {...this.link ()} >
+                      <Label glyph='truck' glyph-size='300%' justify='center' row='1' {...this.link ()} />
+                      <Label text='Cargo' text-size='150%' font-weight='bold' justify='center' grow='1' {...this.link ()} />
+                      <Label text='Cargo SA' grow='1' justify='center' {...this.link ()} />
+                    </Container>
+                  </Button>
                 </Container>
               </Container>
 
