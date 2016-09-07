@@ -164,7 +164,7 @@ export default class Synchro extends React.Component {
     return (
       <Container kind='login' width='80vw' height='70vh' {...this.link ()} >
         <Container kind='views' {...this.link ()} >
-          <Container kind='view' width='700px' {...this.link ()} >
+          <Container kind='full-view' {...this.link ()} >
             <Container kind='panes' subkind='top-margin' {...this.link ()} >
 
               <Container kind='pane' {...this.link ()} >
