@@ -172,7 +172,7 @@ export default class Synchro extends React.Component {
               </Container>
               <Container kind='boxes' {...this.link ()} >
                 <Button kind='box' width='200px' height='200px' {...this.link ()} >
-                  <Container kind='box' {...this.link ()} >
+                  <Container kind='box' subkind='dashed' {...this.link ()} >
                     <Label text='Créer un mandat' font-weight='bold' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
