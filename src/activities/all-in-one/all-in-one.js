@@ -60,10 +60,10 @@ export default class Synchro extends React.Component {
       );
     } else if (this.getStep () === 'mandats') {
       return null;
-    } else if (this.getStep () === 'work') {
+    } else if (this.getStep () === 'synchro') {
       return (
         <Container kind='task' {...this.link ()} >
-          <Button action={act.NEXT ()} glyph='bicycle' text='Vélocité' text-transform='none'
+          <Button action={() => this.setStep ('mandats')} glyph='bicycle' text='Vélocité' text-transform='none'
             tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
           <Button glyph='refresh' text='Synchroniser' tooltip='Synchroniser tous les mandats' kind='task' {...this.link ()} />
           <Button glyph='link' text='Se rattacher' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task' {...this.link ()} />
@@ -74,7 +74,7 @@ export default class Synchro extends React.Component {
     } else if (this.getStep () === 'compta') {
       return (
         <Container kind='task' {...this.link ()} >
-          <Button action={act.NEXT ()} glyph='bicycle' text='Vélocité' text-transform='none'
+          <Button action={() => this.setStep ('mandats')} glyph='bicycle' text='Vélocité' text-transform='none'
             tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
           <Button glyph='plus-circle' text='TVA' kind='task' {...this.link ()} />
           <Button glyph='columns' text='Boucler' kind='task' {...this.link ()} />
@@ -96,29 +96,29 @@ export default class Synchro extends React.Component {
           </Container>
         </Container>
       );
-    } else if (this.getStep () === 'work') {
+    } else if (this.getStep () === 'synchro') {
       return (
         <Container kind='main-tab' {...this.link ()} >
           <Button text='Synchro' width='200px' active='true' kind='main-tab' {...this.link ()} />
           <Button text='Paiements' width='200px' active='false' kind='main-tab' {...this.link ()} />
-          <Button text='Comptabilité' width='200px' active='false' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('compta')} text='Comptabilité' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Button text='Facturations' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Button text='Salaires' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
-            <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+            <Button action={() => this.setStep ('login')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
         </Container>
       );
     } else if (this.getStep () === 'compta') {
       return (
         <Container kind='main-tab' {...this.link ()} >
-          <Button text='Synchro' width='200px' active='false' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('synchro')} text='Synchro' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Button text='Paiements' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Button text='Comptabilité' width='200px' active='true' kind='main-tab' {...this.link ()} />
           <Button text='Facturations' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Button text='Salaires' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
-            <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+            <Button action={() => this.setStep ('login')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
         </Container>
       );
@@ -130,7 +130,7 @@ export default class Synchro extends React.Component {
       return null;
     } else if (this.getStep () === 'mandats') {
       return null;
-    } else if (this.getStep () === 'work') {
+    } else if (this.getStep () === 'synchro') {
       return (
         <Container kind='view-tab' {...this.link ()} >
         </Container>
@@ -162,8 +162,8 @@ export default class Synchro extends React.Component {
       return this.viewLogin ();
     } else if (this.getStep () === 'mandats') {
       return this.viewMandats ();
-    } else if (this.getStep () === 'work') {
-      return this.viewWork ();
+    } else if (this.getStep () === 'synchro') {
+      return this.viewSynchro ();
     } else if (this.getStep () === 'compta') {
       return this.viewCompta ();
     }
@@ -216,7 +216,7 @@ export default class Synchro extends React.Component {
                     <Label text='Créer un mandat' font-weight='bold' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                <Button action={() => this.setStep ('synchro')} kind='box' width='200px' height='200px' {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='tree' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Bouquet' font-weight='bold' kind='center-to-box' {...this.link ()} />
@@ -224,7 +224,7 @@ export default class Synchro extends React.Component {
                     <Label text='Mon beau bouquet' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button kind='box' width='200px' height='200px' active='true' {...this.link ()} >
+                <Button action={() => this.setStep ('synchro')} kind='box' width='200px' height='200px' active='true' {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='bicycle' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Vélocité' font-weight='bold' kind='center-to-box' {...this.link ()} />
@@ -232,7 +232,7 @@ export default class Synchro extends React.Component {
                     <Label text='Vélocité Lausanne' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                <Button action={() => this.setStep ('synchro')} kind='box' width='200px' height='200px' {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='truck' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Cargo' font-weight='bold' kind='center-to-box' {...this.link ()} />
@@ -240,7 +240,7 @@ export default class Synchro extends React.Component {
                     <Label text='Cargo SA' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                <Button action={() => this.setStep ('synchro')} kind='box' width='200px' height='200px' {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='cube' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Pack' font-weight='bold' kind='center-to-box' {...this.link ()} />
@@ -248,7 +248,7 @@ export default class Synchro extends React.Component {
                     <Label text='Pack-and-Fill SA' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                <Button action={() => this.setStep ('synchro')} kind='box' width='200px' height='200px' {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='institution' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Admin' font-weight='bold' kind='center-to-box' {...this.link ()} />
@@ -260,10 +260,10 @@ export default class Synchro extends React.Component {
             </Container>
 
             <Container kind='actions' subkind='no-shadow' {...this.link ()} >
-              <Button glyph='check'  text='Ouvrir'    kind='action' width='160px' place='left' {...this.link ()} />
+              <Button action={() => this.setStep ('synchro')} glyph='check'  text='Ouvrir'    kind='action' width='160px' place='left' {...this.link ()} />
               <Button glyph='pencil' text='Modifier'  kind='action' width='160px' {...this.link ()} />
               <Button glyph='trash'  text='Supprimer' kind='action' width='160px' {...this.link ()} />
-              <Button glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
+              <Button action={() => this.setStep ('login')} glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
             </Container>
           </Container>
         </Container>
@@ -271,7 +271,7 @@ export default class Synchro extends React.Component {
     );
   }
 
-  viewWork () {
+  viewSynchro () {
     return (
       <Container kind='views' {...this.link ()} >
         <Container kind='view' width='700px' {...this.link ()} >
