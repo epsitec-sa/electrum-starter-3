@@ -27,16 +27,19 @@ export default class Synchro extends React.Component {
     super (props);
 
     this.state = {
-      open: false,
+      currentStep: 'login'
     };
   }
 
   /******************************************************************************/
-  step () {
-    // return 'login';
-    return 'mandats';
-    // return 'work';
-    // return 'compta';
+  getStep () {
+    return this.state.currentStep;
+  }
+
+  setStep (name) {
+    this.setState ( {
+      currentStep: name
+    });
   }
 
   hasFooterWarning () {
@@ -51,13 +54,13 @@ export default class Synchro extends React.Component {
   /******************************************************************************/
 
   taskBar () {
-    if (this.step () === 'login') {
+    if (this.getStep () === 'login') {
       return (
         <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
       );
-    } else if (this.step () === 'mandats') {
+    } else if (this.getStep () === 'mandats') {
       return null;
-    } else if (this.step () === 'work') {
+    } else if (this.getStep () === 'work') {
       return (
         <Container kind='task' {...this.link ()} >
           <Button action={act.NEXT ()} glyph='bicycle' text='Vélocité' text-transform='none'
@@ -68,7 +71,7 @@ export default class Synchro extends React.Component {
           <Button glyph='share-alt' text='Partager' tooltip='Partager le mandat au moyen d´un ticket' kind='task' {...this.link ()} />
         </Container>
       );
-    } else if (this.step () === 'compta') {
+    } else if (this.getStep () === 'compta') {
       return (
         <Container kind='task' {...this.link ()} >
           <Button action={act.NEXT ()} glyph='bicycle' text='Vélocité' text-transform='none'
@@ -82,18 +85,18 @@ export default class Synchro extends React.Component {
   }
 
   mainTab () {
-    if (this.step () === 'login') {
+    if (this.getStep () === 'login') {
       return null;
-    } else if (this.step () === 'mandats') {
+    } else if (this.getStep () === 'mandats') {
       return (
         <Container kind='main-tab' {...this.link ()} >
           <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
-            <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+            <Button action={() => this.setStep ('login')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
         </Container>
       );
-    } else if (this.step () === 'work') {
+    } else if (this.getStep () === 'work') {
       return (
         <Container kind='main-tab' {...this.link ()} >
           <Button text='Synchro' width='200px' active='true' kind='main-tab' {...this.link ()} />
@@ -106,7 +109,7 @@ export default class Synchro extends React.Component {
           </Container>
         </Container>
       );
-    } else if (this.step () === 'compta') {
+    } else if (this.getStep () === 'compta') {
       return (
         <Container kind='main-tab' {...this.link ()} >
           <Button text='Synchro' width='200px' active='false' kind='main-tab' {...this.link ()} />
@@ -123,16 +126,16 @@ export default class Synchro extends React.Component {
   }
 
   viewTab () {
-    if (this.step () === 'login') {
+    if (this.getStep () === 'login') {
       return null;
-    } else if (this.step () === 'mandats') {
+    } else if (this.getStep () === 'mandats') {
       return null;
-    } else if (this.step () === 'work') {
+    } else if (this.getStep () === 'work') {
       return (
         <Container kind='view-tab' {...this.link ()} >
         </Container>
       );
-    } else if (this.step () === 'compta') {
+    } else if (this.getStep () === 'compta') {
       return (
         <Container kind='view-tab' {...this.link ()} >
           <TabButton text='Ecritures' glyph='none' active='true' {...this.link ()} />
@@ -155,13 +158,13 @@ export default class Synchro extends React.Component {
   }
 
   view () {
-    if (this.step () === 'login') {
+    if (this.getStep () === 'login') {
       return this.viewLogin ();
-    } else if (this.step () === 'mandats') {
+    } else if (this.getStep () === 'mandats') {
       return this.viewMandats ();
-    } else if (this.step () === 'work') {
+    } else if (this.getStep () === 'work') {
       return this.viewWork ();
-    } else if (this.step () === 'compta') {
+    } else if (this.getStep () === 'compta') {
       return this.viewCompta ();
     }
   }
@@ -185,7 +188,7 @@ export default class Synchro extends React.Component {
           </Container>
           <Separator kind='space' height='50px' {...this.link ()} />
           <Container kind='row-pane' {...this.link ()} >
-            <Button text='Se connecter' grow='1' kind='action' place='single' {...this.link ()} />
+            <Button action={() => this.setStep ('mandats')} text='Se connecter' grow='1' kind='action' place='single' {...this.link ()} />
           </Container>
         </Container>
         <Container kind='floating-footer' height='100px' {...this.link ()} >
@@ -432,11 +435,11 @@ export default class Synchro extends React.Component {
   }
 
   footer () {
-    if (this.step () === 'login') {
+    if (this.getStep () === 'login') {
       return null;
-    } else if (this.step () === 'mandats') {
+    } else if (this.getStep () === 'mandats') {
       return null;
-    } else if (this.step () === 'compta') {
+    } else if (this.getStep () === 'compta') {
       return (
         <Container kind='footer' {...this.link ()} >
           {this.footerWarning ()}
