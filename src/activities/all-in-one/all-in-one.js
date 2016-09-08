@@ -307,7 +307,7 @@ export default class AllInOne extends React.Component {
             <LabelTextField label-glyph='user' hint-text='Nom d´utilisateur' grow='1' {...this.link ()} />
           </Container>
           <Container kind='row-pane' {...this.link ()} >
-            <LabelTextField label-glyph='lock' hint-text='Mot de passe' grow='1' {...this.link ()} />
+            <LabelTextField label-glyph='lock' hint-text='Mot de passe' type='password' grow='1' {...this.link ()} />
           </Container>
           <Separator kind='space' height='50px' {...this.link ()} />
           <Container kind='row-pane' {...this.link ()} >
