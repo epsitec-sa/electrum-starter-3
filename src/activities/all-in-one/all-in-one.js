@@ -27,7 +27,8 @@ export default class Synchro extends React.Component {
     super (props);
 
     this.state = {
-      currentStep: 'login'
+      currentStep: 'login',
+      currentMandat: null,
     };
   }
 
@@ -39,6 +40,20 @@ export default class Synchro extends React.Component {
   setStep (name) {
     this.setState ( {
       currentStep: name
+    });
+  }
+
+  activeMandat (name) {
+    return (this.getMandat () === name) ? 'true' : 'false';
+  }
+
+  getMandat () {
+    return this.state.currentMandat;
+  }
+
+  setMandat (name) {
+    this.setState ( {
+      currentMandat: name
     });
   }
 
@@ -216,7 +231,8 @@ export default class Synchro extends React.Component {
                     <Label text='Créer un mandat' font-weight='bold' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button action={() => this.setStep ('synchro')} kind='box' width='200px' height='200px' {...this.link ()} >
+                <Button action={() => this.setMandat ('bouquet')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('bouquet')} {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='tree' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Bouquet' font-weight='bold' kind='center-to-box' {...this.link ()} />
@@ -224,7 +240,8 @@ export default class Synchro extends React.Component {
                     <Label text='Mon beau bouquet' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button action={() => this.setStep ('synchro')} kind='box' width='200px' height='200px' active='true' {...this.link ()} >
+                <Button action={() => this.setMandat ('velocite')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('velocite')} {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='bicycle' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Vélocité' font-weight='bold' kind='center-to-box' {...this.link ()} />
@@ -232,7 +249,8 @@ export default class Synchro extends React.Component {
                     <Label text='Vélocité Lausanne' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button action={() => this.setStep ('synchro')} kind='box' width='200px' height='200px' {...this.link ()} >
+                <Button action={() => this.setMandat ('cargo')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('cargo')} {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='truck' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Cargo' font-weight='bold' kind='center-to-box' {...this.link ()} />
@@ -240,7 +258,8 @@ export default class Synchro extends React.Component {
                     <Label text='Cargo SA' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button action={() => this.setStep ('synchro')} kind='box' width='200px' height='200px' {...this.link ()} >
+                <Button action={() => this.setMandat ('pack')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('pack')} {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='cube' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Pack' font-weight='bold' kind='center-to-box' {...this.link ()} />
@@ -248,7 +267,8 @@ export default class Synchro extends React.Component {
                     <Label text='Pack-and-Fill SA' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button action={() => this.setStep ('synchro')} kind='box' width='200px' height='200px' {...this.link ()} >
+                <Button action={() => this.setMandat ('admin')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('admin')} {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
                     <Label glyph='institution' glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
                     <Label text='Admin' font-weight='bold' kind='center-to-box' {...this.link ()} />
