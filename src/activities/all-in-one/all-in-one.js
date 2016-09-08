@@ -52,6 +52,7 @@ export default class Synchro extends React.Component {
 
   glyphMandat (name) {
     const x = {
+      Nouveau:  'diamond',
       Bouquet:  'tree',
       Vélocité: 'bicycle',
       Cargo:    'truck',
@@ -87,7 +88,7 @@ export default class Synchro extends React.Component {
       return (
         <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
       );
-    } else if (this.getStep () === 'mandats') {
+    } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
     } else if (this.getStep () === 'synchro') {
       return (
@@ -130,7 +131,7 @@ export default class Synchro extends React.Component {
   mainTab () {
     if (this.getStep () === 'login') {
       return null;
-    } else if (this.getStep () === 'mandats') {
+    } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return (
         <Container kind='main-tab' {...this.link ()} >
           <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
@@ -171,7 +172,7 @@ export default class Synchro extends React.Component {
   viewTab () {
     if (this.getStep () === 'login') {
       return null;
-    } else if (this.getStep () === 'mandats') {
+    } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
     } else if (this.getStep () === 'synchro') {
       return (
@@ -214,6 +215,8 @@ export default class Synchro extends React.Component {
       return this.viewLogin ();
     } else if (this.getStep () === 'mandats') {
       return this.viewMandats ();
+    } else if (this.getStep () === 'mandat-create') {
+      return this.viewMandatCreate ();
     } else if (this.getStep () === 'synchro') {
       return this.viewSynchro ();
     } else if (this.getStep () === 'compta-journal') {
@@ -265,7 +268,7 @@ export default class Synchro extends React.Component {
 
             <Container kind='panes' subkind='top-margin' {...this.link ()} >
               <Container kind='boxes' {...this.link ()} >
-                <Button kind='box' width='200px' height='200px' {...this.link ()} >
+                <Button action={() => this.setStep ('mandat-create')} kind='box' width='200px' height='200px' {...this.link ()} >
                   <Container kind='box' subkind='dashed' {...this.link ()} >
                     <Label text='Créer un mandat' font-weight='bold' kind='center-to-box' {...this.link ()} />
                   </Container>
@@ -323,6 +326,46 @@ export default class Synchro extends React.Component {
               <Button glyph='pencil' text='Modifier'  kind='action' width='160px' {...this.link ()} />
               <Button glyph='trash'  text='Supprimer' kind='action' width='160px' {...this.link ()} />
               <Button action={() => this.setStep ('login')} glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
+            </Container>
+          </Container>
+        </Container>
+      </Container>
+    );
+  }
+
+  viewMandatCreate () {
+    return (
+      <Container kind='floating' width='80vw' height='70vh' {...this.link ()} >
+        <Container kind='views' {...this.link ()} >
+          <Container kind='full-view' {...this.link ()} >
+
+            <Container kind='pane-navigator' {...this.link ()} >
+              <Label text='Création d´un nouveau mandat' grow='1' kind='title' {...this.link ()} />
+            </Container>
+
+            <Container kind='panes' subkind='top-margin' {...this.link ()} >
+              <Container kind='pane' {...this.link ()} >
+                <Container kind='row-pane' {...this.link ()} >
+                  <Label text='Décrivez ici votre nouveau mandat' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='file-image-o' hint-text='Logo' grow='1' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='tag' hint-text='Nom court du mandat' grow='1' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='comment' hint-text='Nom long du mandat' grow='1' {...this.link ()} />
+                </Container>
+              </Container>
+            </Container>
+
+            <Container kind='actions' subkind='no-shadow' {...this.link ()} >
+              <Button action={() => {
+                  this.setMandat ('Nouveau');
+                  this.setStep ('synchro');
+                }} glyph='check'  text='Créer'     kind='action' width='160px' place='left' {...this.link ()} />
+              <Button action={() => this.setStep ('mandats')} glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
             </Container>
           </Container>
         </Container>
@@ -535,33 +578,10 @@ export default class Synchro extends React.Component {
     );
   }
 
-  viewCreate () {
-    return (
-      <Container kind='views' {...this.link ()} >
-        <Container kind='view' width='700px' {...this.link ()} >
-          <Container kind='panes' subkind='top-margin' {...this.link ()} >
-
-            <Container kind='pane' {...this.link ()} >
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Utilisez un nom descriptif afin d´identifier clairement votre mandat' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <LabelTextField label-glyph='tag' hint-text='Nom du mandat' grow='1'
-                  spacing='large'  {...this.link ()} />
-                <Button text='Publier' {...this.link ()} />
-              </Container>
-            </Container>
-
-          </Container>
-        </Container>
-      </Container>
-    );
-  }
-
   footer () {
     if (this.getStep () === 'login') {
       return null;
-    } else if (this.getStep () === 'mandats') {
+    } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
     } else if (this.getStep () === 'compta-journal') {
       return (
