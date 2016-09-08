@@ -131,12 +131,12 @@ export default class Synchro extends React.Component {
   mainTab () {
     if (this.getStep () === 'login') {
       return null;
-    } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
+    } else if (this.getStep () === 'logout' || this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return (
         <Container kind='main-tab' {...this.link ()} >
           <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
-            <Button action={() => this.setStep ('login')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+            <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
         </Container>
       );
@@ -149,7 +149,7 @@ export default class Synchro extends React.Component {
           <Button text='Facturations' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Button text='Salaires' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
-            <Button action={() => this.setStep ('login')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+            <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
         </Container>
       );
@@ -162,7 +162,7 @@ export default class Synchro extends React.Component {
           <Button text='Facturations' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Button text='Salaires' width='200px' active='false' kind='main-tab' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
-            <Button action={() => this.setStep ('login')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+            <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
         </Container>
       );
@@ -170,7 +170,7 @@ export default class Synchro extends React.Component {
   }
 
   viewTab () {
-    if (this.getStep () === 'login') {
+    if (this.getStep () === 'login' || this.getStep () === 'logout') {
       return null;
     } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
@@ -213,6 +213,8 @@ export default class Synchro extends React.Component {
   view () {
     if (this.getStep () === 'login') {
       return this.viewLogin ();
+    } else if (this.getStep () === 'logout') {
+      return this.viewLogout ();
     } else if (this.getStep () === 'mandats') {
       return this.viewMandats ();
     } else if (this.getStep () === 'mandat-create') {
@@ -246,6 +248,33 @@ export default class Synchro extends React.Component {
           <Separator kind='space' height='50px' {...this.link ()} />
           <Container kind='row-pane' {...this.link ()} >
             <Button action={() => this.setStep ('mandats')} text='Se connecter' grow='1' kind='action' place='single' {...this.link ()} />
+          </Container>
+        </Container>
+        <Container kind='floating-footer' height='100px' {...this.link ()} >
+          <Separator width='300px' kind='floating-footer' {...this.link ()} />
+          <Label text='Crésus — EPSITEC SA' kind='floating-footer' {...this.link ()} />
+        </Container>
+      </div>
+    );
+  }
+
+  viewLogout () {
+    return (
+      <div>
+        <Container kind='floating-header' floating-height='300px' {...this.link ()} >
+          <Label glyph='user-secret' kind='floating-header' {...this.link ()} />
+        </Container>
+        <Container kind='floating' width='300px' height='300px' {...this.link ()} >
+          <Container kind='row-pane' {...this.link ()} >
+            <Label text='Déconnectez-vous' grow='1' kind='big-center' {...this.link ()} />
+          </Container>
+          <Separator kind='space' height='30px' {...this.link ()} />
+          <Separator kind='space' height='50px' {...this.link ()} />
+          <Container kind='row-pane' {...this.link ()} >
+            <Button action={() => this.setStep ('login')} text='Se déconnecter' grow='1' kind='action' place='single' {...this.link ()} />
+          </Container>
+          <Container kind='row-pane' {...this.link ()} >
+            <Button action={() => this.setStep ('synchro')} text='Annuler' grow='1' kind='action' place='single' {...this.link ()} />
           </Container>
         </Container>
         <Container kind='floating-footer' height='100px' {...this.link ()} >
@@ -325,7 +354,7 @@ export default class Synchro extends React.Component {
               <Button action={() => this.setStep ('synchro')} glyph='check'  text='Ouvrir'    kind='action' width='160px' place='left' {...this.link ()} />
               <Button glyph='pencil' text='Modifier'  kind='action' width='160px' {...this.link ()} />
               <Button glyph='trash'  text='Supprimer' kind='action' width='160px' {...this.link ()} />
-              <Button action={() => this.setStep ('login')} glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
+              <Button action={() => this.setStep ('logout')} glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
             </Container>
           </Container>
         </Container>
@@ -579,7 +608,7 @@ export default class Synchro extends React.Component {
   }
 
   footer () {
-    if (this.getStep () === 'login') {
+    if (this.getStep () === 'login' || this.getStep () === 'logout') {
       return null;
     } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
