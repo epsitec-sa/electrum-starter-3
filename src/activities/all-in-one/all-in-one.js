@@ -92,7 +92,9 @@ export default class AllInOne extends React.Component {
       return (
         <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
       );
-    } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
+    } else if (this.getStep () === 'logout' ||
+               this.getStep () === 'mandats' ||
+               this.getStep () === 'mandat-create') {
       return null;
     } else if (this.getStep () === 'synchro') {
       return (
