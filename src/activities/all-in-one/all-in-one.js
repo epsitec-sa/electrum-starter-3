@@ -130,6 +130,27 @@ export default class AllInOne extends React.Component {
           <Button glyph='check' text='Vérifier' kind='task' {...this.link ()} />
         </Container>
       );
+    } else if (this.getStep () === 'fact') {
+      return (
+        <Container kind='task' {...this.link ()} >
+          <Button action={() => this.setStep ('mandats')}
+            glyph={this.glyphMandat (this.getMandat ())}
+            text={this.getMandat ()} text-transform='none'
+            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
+          <Button glyph='search' text='Chercher' kind='task' {...this.link ()} />
+          <Button glyph='print' text='Imprimer' kind='task' {...this.link ()} />
+        </Container>
+      );
+    } else if (this.getStep () === 'sal') {
+      return (
+        <Container kind='task' {...this.link ()} >
+          <Button action={() => this.setStep ('mandats')}
+            glyph={this.glyphMandat (this.getMandat ())}
+            text={this.getMandat ()} text-transform='none'
+            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
+          <Button glyph='euro' text='Faire' kind='task' {...this.link ()} />
+        </Container>
+      );
     } else {
       return (
         <Container kind='task' {...this.link ()} >
@@ -190,6 +211,13 @@ export default class AllInOne extends React.Component {
       return null;
     } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
+    } else if (this.getStep () === 'payments') {
+      return (
+        <Container kind='view-tab' {...this.link ()} >
+          <TabButton text='Paiements à envoyer' glyph='none' active='true' {...this.link ()} />
+          <TabButton text='Paiements reçus' glyph='none' active='false' {...this.link ()} />
+        </Container>
+      );
     } else if (this.getStep () === 'compta-journal') {
       return (
         <Container kind='view-tab' {...this.link ()} >
@@ -206,6 +234,24 @@ export default class AllInOne extends React.Component {
           <TabButton text='Plan comptable' glyph='none' active='true' {...this.link ()} />
           <TabButton text='Bilan' glyph='none' active='false' {...this.link ()} />
           <TabButton text='PP' glyph='none' active='false' {...this.link ()} />
+        </Container>
+      );
+    } else if (this.getStep () === 'fact') {
+      return (
+        <Container kind='view-tab' {...this.link ()} >
+          <TabButton text='Fournisseurs' glyph='none' active='false' {...this.link ()} />
+          <TabButton text='Commandes' glyph='none' active='false' {...this.link ()} />
+          <TabButton text='Articles' glyph='none' active='false' {...this.link ()} />
+          <TabButton text='Factures' glyph='none' active='true' {...this.link ()} />
+          <TabButton text='Clients' glyph='none' active='false' {...this.link ()} />
+        </Container>
+      );
+    } else if (this.getStep () === 'sal') {
+      return (
+        <Container kind='view-tab' {...this.link ()} >
+          <TabButton text='Résumé' glyph='none' active='true' {...this.link ()} />
+          <TabButton text='Entreprise' glyph='none' active='false' {...this.link ()} />
+          <TabButton text='Employés' glyph='none' active='false' {...this.link ()} />
         </Container>
       );
     } else {
