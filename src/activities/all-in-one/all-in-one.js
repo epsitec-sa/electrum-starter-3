@@ -67,7 +67,7 @@ export default class AllInOne extends React.Component {
   }
 
   getMandat () {
-    return this.state.currentMandat;
+    return this.state.currentMandat ? this.state.currentMandat : 'Nouveau';
   }
 
   setMandat (name) {
