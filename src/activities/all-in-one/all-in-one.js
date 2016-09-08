@@ -21,7 +21,7 @@ import {
 
 import act from './actuators.js';
 
-export default class Synchro extends React.Component {
+export default class AllInOne extends React.Component {
 
   constructor (props) {
     super (props);
@@ -33,6 +33,10 @@ export default class Synchro extends React.Component {
   }
 
   /******************************************************************************/
+  activeStep (name) {
+    return (this.getStep () === name) ? 'true' : 'false';
+  }
+
   getStep () {
     return this.state.currentStep;
   }
@@ -110,9 +114,9 @@ export default class Synchro extends React.Component {
             glyph={this.glyphMandat (this.getMandat ())}
             text={this.getMandat ()} text-transform='none'
             tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
+          <Button glyph='search' text='Chercher' kind='task' {...this.link ()} />
           <Button glyph='plus-circle' text='TVA' kind='task' {...this.link ()} />
           <Button glyph='columns' text='Boucler' kind='task' {...this.link ()} />
-          <Button glyph='search' text='Chercher' kind='task' {...this.link ()} />
         </Container>
       );
     } else if (this.getStep () === 'compta-plan') {
@@ -122,7 +126,17 @@ export default class Synchro extends React.Component {
             glyph={this.glyphMandat (this.getMandat ())}
             text={this.getMandat ()} text-transform='none'
             tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
+          <Button glyph='search' text='Chercher' kind='task' {...this.link ()} />
           <Button glyph='check' text='Vérifier' kind='task' {...this.link ()} />
+        </Container>
+      );
+    } else {
+      return (
+        <Container kind='task' {...this.link ()} >
+          <Button action={() => this.setStep ('mandats')}
+            glyph={this.glyphMandat (this.getMandat ())}
+            text={this.getMandat ()} text-transform='none'
+            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
         </Container>
       );
     }
@@ -140,27 +154,29 @@ export default class Synchro extends React.Component {
           </Container>
         </Container>
       );
-    } else if (this.getStep () === 'synchro') {
+    } else if (this.getStep () === 'synchro' ||
+               this.getStep () === 'payments' ||
+               this.getStep () === 'compta-journal' ||
+               this.getStep () === 'compta-plan' ||
+               this.getStep () === 'fact' ||
+               this.getStep () === 'sal') {
       return (
         <Container kind='main-tab' {...this.link ()} >
-          <Button text='Synchro' width='200px' active='true' kind='main-tab' {...this.link ()} />
-          <Button text='Paiements' width='200px' active='false' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('compta-journal')} text='Comptabilité' width='200px' active='false' kind='main-tab' {...this.link ()} />
-          <Button text='Facturations' width='200px' active='false' kind='main-tab' {...this.link ()} />
-          <Button text='Salaires' width='200px' active='false' kind='main-tab' {...this.link ()} />
-          <Container kind='main-tab-login' {...this.link ()} >
-            <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
-          </Container>
-        </Container>
-      );
-    } else if (this.getStep () === 'compta-journal' || this.getStep () === 'compta-plan') {
-      return (
-        <Container kind='main-tab' {...this.link ()} >
-          <Button action={() => this.setStep ('synchro')} text='Synchro' width='200px' active='false' kind='main-tab' {...this.link ()} />
-          <Button text='Paiements' width='200px' active='false' kind='main-tab' {...this.link ()} />
-          <Button text='Comptabilité' width='200px' active='true' kind='main-tab' {...this.link ()} />
-          <Button text='Facturations' width='200px' active='false' kind='main-tab' {...this.link ()} />
-          <Button text='Salaires' width='200px' active='false' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('synchro')}
+            active={this.activeStep ('synchro')}
+            text='Synchro' width='200px' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('payments')}
+            active={this.activeStep ('payments')}
+            text='Paiements' width='200px' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('compta-journal')}
+            active={(this.getStep () == 'compta-journal' || this.getStep () == 'compta-plan') ? 'true' : 'false'}
+            text='Comptabilité' width='200px' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('fact')}
+            active={this.activeStep ('fact')}
+            text='Facturations' width='200px' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('sal')}
+            active={this.activeStep ('sal')}
+            text='Salaires' width='200px' kind='main-tab' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
             <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
@@ -174,11 +190,6 @@ export default class Synchro extends React.Component {
       return null;
     } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'synchro') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-        </Container>
-      );
     } else if (this.getStep () === 'compta-journal') {
       return (
         <Container kind='view-tab' {...this.link ()} >
@@ -195,6 +206,11 @@ export default class Synchro extends React.Component {
           <TabButton text='Plan comptable' glyph='none' active='true' {...this.link ()} />
           <TabButton text='Bilan' glyph='none' active='false' {...this.link ()} />
           <TabButton text='PP' glyph='none' active='false' {...this.link ()} />
+        </Container>
+      );
+    } else {
+      return (
+        <Container kind='view-tab' {...this.link ()} >
         </Container>
       );
     }
@@ -225,6 +241,8 @@ export default class Synchro extends React.Component {
       return this.viewComptaJournal ();
     } else if (this.getStep () === 'compta-plan') {
       return this.viewComptaPlan ();
+    } else {
+      return this.viewComingSoon ();
     }
   }
 
@@ -601,6 +619,27 @@ export default class Synchro extends React.Component {
               kind='action' place='middle' {...this.link ()} />
             <Button glyph='check' text='Valider' width='0px' grow='1'
               kind='action' place='right' {...this.link ()} />
+          </Container>
+        </Container>
+      </Container>
+    );
+  }
+
+  viewComingSoon () {
+    return (
+      <Container kind='views' {...this.link ()} >
+        <Container kind='view' width='700px' {...this.link ()} >
+          <Container kind='panes' subkind='top-margin' {...this.link ()} >
+
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='Crésus' grow='1' kind='title' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='Disponible prochainement...' grow='1' {...this.link ()} />
+              </Container>
+            </Container>
+
           </Container>
         </Container>
       </Container>
