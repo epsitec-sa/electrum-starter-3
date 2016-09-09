@@ -289,6 +289,8 @@ export default class AllInOne extends React.Component {
       return this.viewComptaJournal ();
     } else if (this.getStep () === 'compta-plan') {
       return this.viewComptaPlan ();
+    } else if (this.getStep () === 'fact') {
+      return this.viewFact ();
     } else {
       return this.viewComingSoon ();
     }
@@ -660,6 +662,81 @@ export default class AllInOne extends React.Component {
           </Container>
           <Container kind='actions' {...this.link ()} >
             <Button glyph='arrow-up' text='Nouveau compte' width='0px' grow='1'
+              kind='action' place='left' {...this.link ()} />
+            <Button glyph='pencil' text='Modifier' width='0px' grow='1'
+              kind='action' place='middle' {...this.link ()} />
+            <Button glyph='trash' text='Supprimer' width='0px' grow='1'
+              kind='action' place='middle' {...this.link ()} />
+            <Button glyph='check' text='Valider' width='0px' grow='1'
+              kind='action' place='right' {...this.link ()} />
+          </Container>
+        </Container>
+      </Container>
+    );
+  }
+
+  viewFact () {
+    return (
+      <Container kind='views' {...this.link ()} >
+        <Container kind='view' width='1000px' {...this.link ()} >
+          <Container kind='panes' subkind='top-margin' {...this.link ()} >
+
+            <Container kind='boxes' {...this.link ()} >
+              <Ticket width='300px' height='90px' {...this.link ()} >
+                <Container kind='column' grow='1' {...this.link ()} >
+                  <Label text='125.30' font-weight='bold' {...this.link ()} />
+                  <Label glyph='warning' {...this.link ()} />
+                </Container>
+                <Container kind='column' grow='3' {...this.link ()} >
+                  <Label text='Jean Mayer' {...this.link ()} />
+                  <Label text='1010 Lausanne' {...this.link ()} />
+                </Container>
+              </Ticket>
+              <Ticket width='300px' height='90px' {...this.link ()} >
+                <Container kind='column' grow='1' {...this.link ()} >
+                  <Label text='2005.00' font-weight='bold' {...this.link ()} />
+                  <Label glyph='warning' {...this.link ()} />
+                </Container>
+                <Container kind='column' grow='3' {...this.link ()} >
+                  <Label text='Sandra Nicolet' {...this.link ()} />
+                  <Label text='1023 Crissier' {...this.link ()} />
+                </Container>
+              </Ticket>
+              <Ticket width='300px' height='90px' {...this.link ()} >
+                <Container kind='column' grow='1' {...this.link ()} >
+                  <Label text='175.00' font-weight='bold' {...this.link ()} />
+                  <Label glyph='close' {...this.link ()} />
+                </Container>
+                <Container kind='column' grow='3' {...this.link ()} >
+                  <Label text='Mecano SA' {...this.link ()} />
+                  <Label text='1002 Lausanne' {...this.link ()} />
+                </Container>
+              </Ticket>
+              <Ticket width='300px' height='90px' {...this.link ()} >
+                <Container kind='column' grow='1' {...this.link ()} >
+                  <Label text='300.75' font-weight='bold' {...this.link ()} />
+                  <Label glyph='check' {...this.link ()} />
+                </Container>
+                <Container kind='column' grow='3' {...this.link ()} >
+                  <Label text='Jean-Paul Herni' {...this.link ()} />
+                  <Label text='1005 Lausanne' {...this.link ()} />
+                </Container>
+              </Ticket>
+              <Ticket width='300px' height='90px' {...this.link ()} >
+                <Container kind='column' grow='1' {...this.link ()} >
+                  <Label text='37.90' font-weight='bold' {...this.link ()} />
+                  <Label glyph='warning' {...this.link ()} />
+                </Container>
+                <Container kind='column' grow='3' {...this.link ()} >
+                  <Label text='Factorum' {...this.link ()} />
+                  <Label text='1020 Renens' {...this.link ()} />
+                </Container>
+              </Ticket>
+            </Container>
+
+          </Container>
+          <Container kind='actions' {...this.link ()} >
+            <Button glyph='arrow-up' text='Nouvelle facture' width='0px' grow='1'
               kind='action' place='left' {...this.link ()} />
             <Button glyph='pencil' text='Modifier' width='0px' grow='1'
               kind='action' place='middle' {...this.link ()} />
