@@ -13,9 +13,10 @@
     "regen": "electrum-require-components --wrap ./src components .component.js all-components.js",
     "start": "node webpack.devserver.js",
     "test": "npm run compile && npm run mocha",
-    "watch": "webpack --display-error-details --watch --progress --colors -d",
+    "watch": "chokidar \"src/**/*.js\" -i \"src/all-components.js\" -c \"npm run rebuild\"",
     "webpack": "webpack --display-error-details -d",
-    "startcraft": "npm run clean && npm run regen && npm run babel"
+    "startcraft": "npm run clean && npm run regen && npm run babel",
+    "rebuild": "npm run regen && npm run babel"
   },
   "author": "Epsitec SA",
   "license": "MIT",
