@@ -18,6 +18,9 @@ import {
   FlyingBalloon,
   Separator
 } from 'electrum-arc';
+import {
+  Codispatch
+} from '../../all-components.js';
 
 import act from './actuators.js';
 
@@ -96,6 +99,15 @@ export default class AllInOne extends React.Component {
                this.getStep () === 'mandats' ||
                this.getStep () === 'mandat-create') {
       return null;
+    } else if (this.getStep () === 'codispatch') {
+      return (
+        <Container kind='task' {...this.link ()} >
+          <Button action={() => this.setStep ('mandats')}
+            glyph={this.glyphMandat (this.getMandat ())}
+            text={this.getMandat ()} text-transform='none'
+            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
+        </Container>
+      );
     } else if (this.getStep () === 'synchro') {
       return (
         <Container kind='task' {...this.link ()} >
@@ -177,7 +189,8 @@ export default class AllInOne extends React.Component {
           </Container>
         </Container>
       );
-    } else if (this.getStep () === 'synchro' ||
+    } else if (this.getStep () === 'codispatch' ||
+               this.getStep () === 'synchro' ||
                this.getStep () === 'payments' ||
                this.getStep () === 'compta-journal' ||
                this.getStep () === 'compta-plan' ||
@@ -185,6 +198,9 @@ export default class AllInOne extends React.Component {
                this.getStep () === 'sal') {
       return (
         <Container kind='main-tab' {...this.link ()} >
+          <Button action={() => this.setStep ('codispatch')}
+            active={this.activeStep ('codispatch')}
+            text='co-dispo' width='200px' kind='main-tab' {...this.link ()} />
           <Button action={() => this.setStep ('synchro')}
             active={this.activeStep ('synchro')}
             text='Synchro' width='200px' kind='main-tab' {...this.link ()} />
@@ -283,6 +299,8 @@ export default class AllInOne extends React.Component {
       return this.viewMandats ();
     } else if (this.getStep () === 'mandat-create') {
       return this.viewMandatCreate ();
+    } else if (this.getStep () === 'codispatch') {
+      return this.viewCodispatch ();
     } else if (this.getStep () === 'synchro') {
       return this.viewSynchro ();
     } else if (this.getStep () === 'compta-journal') {
@@ -342,7 +360,7 @@ export default class AllInOne extends React.Component {
             <Button action={() => this.setStep ('login')} text='Se déconnecter' grow='1' kind='action' place='single' {...this.link ()} />
           </Container>
           <Container kind='row-pane' {...this.link ()} >
-            <Button action={() => this.setStep ('synchro')} text='Annuler' grow='1' kind='action' place='single' {...this.link ()} />
+            <Button action={() => this.setStep ('codispatch')} text='Annuler' grow='1' kind='action' place='single' {...this.link ()} />
           </Container>
         </Container>
         <Container kind='floating-footer' height='100px' {...this.link ()} >
@@ -419,7 +437,7 @@ export default class AllInOne extends React.Component {
             </Container>
 
             <Container kind='actions' subkind='no-shadow' {...this.link ()} >
-              <Button action={() => this.setStep ('synchro')} glyph='check'  text='Ouvrir'    kind='action' width='160px' place='left' {...this.link ()} />
+              <Button action={() => this.setStep ('codispatch')} glyph='check'  text='Ouvrir'    kind='action' width='160px' place='left' {...this.link ()} />
               <Button glyph='pencil' text='Modifier'  kind='action' width='160px' {...this.link ()} />
               <Button glyph='trash'  text='Supprimer' kind='action' width='160px' {...this.link ()} />
               <Button action={() => this.setStep ('logout')} glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
@@ -460,13 +478,19 @@ export default class AllInOne extends React.Component {
             <Container kind='actions' subkind='no-shadow' {...this.link ()} >
               <Button action={() => {
                   this.setMandat ('Nouveau');
-                  this.setStep ('synchro');
+                  this.setStep ('codispatch');
                 }} glyph='check'  text='Créer'     kind='action' width='160px' place='left' {...this.link ()} />
               <Button action={() => this.setStep ('mandats')} glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
             </Container>
           </Container>
         </Container>
       </Container>
+    );
+  }
+
+  viewCodispatch () {
+    return (
+      <Codispatch {...this.link ()} />
     );
   }
 
