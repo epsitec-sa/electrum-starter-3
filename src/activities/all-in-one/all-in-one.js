@@ -19,6 +19,7 @@ import {
   Separator
 } from 'electrum-arc';
 import {
+  Dispatch,
   Codispatch
 } from '../../all-components.js';
 
@@ -99,6 +100,19 @@ export default class AllInOne extends React.Component {
                this.getStep () === 'mandats' ||
                this.getStep () === 'mandat-create') {
       return null;
+    } else if (this.getStep () === 'dispatch') {
+      return (
+        <Container kind='task' {...this.link ()} >
+          <Button action={() => this.setStep ('mandats')}
+            glyph={this.glyphMandat (this.getMandat ())}
+            text={this.getMandat ()} text-transform='none'
+            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
+          <Button glyph='clock-o' text='Missions'
+            kind='task' badge-value='54' {...this.link ()} />
+          <Button glyph='inbox' text='Panier'
+            kind='task' badge-value='2' {...this.link ()} />
+        </Container>
+      );
     } else if (this.getStep () === 'codispatch') {
       return (
         <Container kind='task' {...this.link ()} >
@@ -106,6 +120,10 @@ export default class AllInOne extends React.Component {
             glyph={this.glyphMandat (this.getMandat ())}
             text={this.getMandat ()} text-transform='none'
             tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
+          <Button glyph='plus-square' text='Activité'
+            kind='task' badge-value='27' {...this.link ()} />
+          <Button glyph='inbox' text='En cours'
+            kind='task' {...this.link ()} />
         </Container>
       );
     } else if (this.getStep () === 'synchro') {
@@ -189,33 +207,28 @@ export default class AllInOne extends React.Component {
           </Container>
         </Container>
       );
-    } else if (this.getStep () === 'codispatch' ||
-               this.getStep () === 'synchro' ||
-               this.getStep () === 'payments' ||
-               this.getStep () === 'compta-journal' ||
-               this.getStep () === 'compta-plan' ||
+    } else if (this.getStep () === 'dispatch' ||
+               this.getStep () === 'codispatch' ||
                this.getStep () === 'fact' ||
-               this.getStep () === 'sal') {
+               this.getStep () === 'customers' ||
+               this.getStep () === 'team') {
       return (
         <Container kind='main-tab' {...this.link ()} >
+          <Button action={() => this.setStep ('dispatch')}
+            active={this.activeStep ('dispatch')}
+            text='dispo' width='200px' kind='main-tab' {...this.link ()} />
           <Button action={() => this.setStep ('codispatch')}
             active={this.activeStep ('codispatch')}
             text='co-dispo' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('synchro')}
-            active={this.activeStep ('synchro')}
-            text='Synchro' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('payments')}
-            active={this.activeStep ('payments')}
-            text='Paiements' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('compta-journal')}
-            active={(this.getStep () == 'compta-journal' || this.getStep () == 'compta-plan') ? 'true' : 'false'}
-            text='Comptabilité' width='200px' kind='main-tab' {...this.link ()} />
           <Button action={() => this.setStep ('fact')}
             active={this.activeStep ('fact')}
-            text='Facturations' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('sal')}
-            active={this.activeStep ('sal')}
-            text='Salaires' width='200px' kind='main-tab' {...this.link ()} />
+            text='Facturation' width='200px' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('customers')}
+            active={this.activeStep ('customers')}
+            text='Clients' width='200px' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('team')}
+            active={this.activeStep ('team')}
+            text='Équipe' width='200px' kind='main-tab' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
             <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
@@ -229,29 +242,19 @@ export default class AllInOne extends React.Component {
       return null;
     } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'payments') {
+    } else if (this.getStep () === 'dispatch') {
       return (
         <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Paiements à envoyer' glyph='none' active='true' {...this.link ()} />
-          <TabButton text='Paiements reçus' glyph='none' active='false' {...this.link ()} />
+          <TabButton text='Missions' glyph='none' active='false' {...this.link ()} />
+          <TabButton text='Coursiers' glyph='none' active='true' {...this.link ()} />
         </Container>
       );
-    } else if (this.getStep () === 'compta-journal') {
+    } else if (this.getStep () === 'codispatch') {
       return (
         <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Ecritures' glyph='none' active='true' {...this.link ()} />
-          <TabButton action={() => this.setStep ('compta-plan')} text='Plan comptable' glyph='none' active='false' {...this.link ()} />
-          <TabButton text='Bilan' glyph='none' active='false' {...this.link ()} />
-          <TabButton text='PP' glyph='none' active='false' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.getStep () === 'compta-plan') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-          <TabButton action={() => this.setStep ('compta-journal')} text='Ecritures' glyph='none' active='false' {...this.link ()} />
-          <TabButton text='Plan comptable' glyph='none' active='true' {...this.link ()} />
-          <TabButton text='Bilan' glyph='none' active='false' {...this.link ()} />
-          <TabButton text='PP' glyph='none' active='false' {...this.link ()} />
+          <TabButton text='Nom du client | 10:42' active='true' {...this.link ()} />
+          <TabButton text='Nom du client | 10:30' active='false' {...this.link ()} />
+          <TabButton text='Nom de la mission | 09:56' active='false' {...this.link ()} />
         </Container>
       );
     } else if (this.getStep () === 'fact') {
@@ -262,14 +265,6 @@ export default class AllInOne extends React.Component {
           <TabButton text='Articles' glyph='none' active='false' {...this.link ()} />
           <TabButton text='Factures' glyph='none' active='true' {...this.link ()} />
           <TabButton text='Clients' glyph='none' active='false' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.getStep () === 'sal') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Résumé' glyph='none' active='true' {...this.link ()} />
-          <TabButton text='Entreprise' glyph='none' active='false' {...this.link ()} />
-          <TabButton text='Employés' glyph='none' active='false' {...this.link ()} />
         </Container>
       );
     } else {
@@ -299,16 +294,16 @@ export default class AllInOne extends React.Component {
       return this.viewMandats ();
     } else if (this.getStep () === 'mandat-create') {
       return this.viewMandatCreate ();
+    } else if (this.getStep () === 'dispatch') {
+      return this.viewDispatch ();
     } else if (this.getStep () === 'codispatch') {
       return this.viewCodispatch ();
-    } else if (this.getStep () === 'synchro') {
-      return this.viewSynchro ();
-    } else if (this.getStep () === 'compta-journal') {
-      return this.viewComptaJournal ();
-    } else if (this.getStep () === 'compta-plan') {
-      return this.viewComptaPlan ();
     } else if (this.getStep () === 'fact') {
       return this.viewFact ();
+    } else if (this.getStep () === 'customers') {
+      return this.viewCustomers ();
+    } else if (this.getStep () === 'team') {
+      return this.viewTeam ();
     } else {
       return this.viewComingSoon ();
     }
@@ -488,214 +483,15 @@ export default class AllInOne extends React.Component {
     );
   }
 
+  viewDispatch () {
+    return (
+      <Dispatch {...this.link ()} />
+    );
+  }
+
   viewCodispatch () {
     return (
       <Codispatch {...this.link ()} />
-    );
-  }
-
-  viewSynchro () {
-    return (
-      <Container kind='views' {...this.link ()} >
-        <Container kind='view' width='700px' {...this.link ()} >
-          <Container kind='panes' subkind='top-margin' {...this.link ()} >
-
-            <Container kind='pane' {...this.link ()} >
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Dossiers partagés' grow='1' kind='title' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label glyph='television' text='Machine CGU' grow='1' {...this.link ()} />
-                <Button glyph='caret-up' border='none' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label glyph='folder' text='Mimi.cre' grow='1' {...this.link ()} />
-                <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-                <Button glyph='cloud-upload' tooltip='Détacher' border='none' {...this.link ()} />
-                <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label glyph='folder' text='MimiSal_2016.salx' grow='1' {...this.link ()} />
-                <Label text='01.01.2016 - 31.12.2016' grow='1' {...this.link ()} />
-                <Button glyph='cloud-upload' tooltip='Détacher' border='none' {...this.link ()} />
-                <Button glyph='exchange' tooltip='Migrer' border='none' {...this.link ()} />
-              </Container>
-            </Container>
-
-            <Container kind='pane' {...this.link ()} >
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Utilisateurs' grow='1' kind='title' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label glyph='user' text='guidi@epsitec.ch' grow='1' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label glyph='user' text='jean.dupond@bluewin.ch' grow='1' {...this.link ()} />
-              </Container>
-            </Container>
-
-          </Container>
-        </Container>
-      </Container>
-    );
-  }
-
-  viewComptaJournal () {
-    return (
-      <Container kind='views' {...this.link ()} >
-        <Container kind='view' width='1000px' {...this.link ()} >
-          <Container kind='panes' subkind='top-margin' {...this.link ()} >
-
-            <Container kind='pane' {...this.link ()} >
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Journal des écritures' grow='1' kind='title' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Date' font-weight='bold' grow='1' {...this.link ()} />
-                <Label text='Débit' font-weight='bold' grow='1' {...this.link ()} />
-                <Label text='Crédit' font-weight='bold' grow='1' {...this.link ()} />
-                <Label text='Pièce' font-weight='bold' grow='1' {...this.link ()} />
-                <Label text='Libellé' font-weight='bold' grow='4' {...this.link ()} />
-                <Label text='Somme' font-weight='bold' justify='right' grow='1' {...this.link ()} />
-              </Container>
-              <Separator {...this.link ()} />
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='01.01.2016' grow='1' {...this.link ()} />
-                <Label text='1010' grow='1' {...this.link ()} />
-                <Label text='9010' grow='1' {...this.link ()} />
-                <Label text='73' grow='1' {...this.link ()} />
-                <Label text='Solde à nouveau' grow='4' {...this.link ()} />
-                <Label text='12´004.00' justify='right' grow='1' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='01.01.2016' grow='1' {...this.link ()} />
-                <Label text='1100' grow='1' {...this.link ()} />
-                <Label text='9010' grow='1' {...this.link ()} />
-                <Label text='74' grow='1' {...this.link ()} />
-                <Label text='Solde à nouveau' grow='4' {...this.link ()} />
-                <Label text='5´600.00' justify='right' grow='1' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='01.01.2016' grow='1' {...this.link ()} />
-                <Label text='1120' grow='1' {...this.link ()} />
-                <Label text='9010' grow='1' {...this.link ()} />
-                <Label text='75' grow='1' {...this.link ()} />
-                <Label text='Solde à nouveau' grow='4' {...this.link ()} />
-                <Label text='20.10' justify='right' grow='1' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='01.01.2016' grow='1' {...this.link ()} />
-                <Label text='2000' grow='1' {...this.link ()} />
-                <Label text='9010' grow='1' {...this.link ()} />
-                <Label text='76' grow='1' {...this.link ()} />
-                <Label text='Solde à nouveau' grow='4' {...this.link ()} />
-                <Label text='792.40' justify='right' grow='1' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='01.01.2016' grow='1' {...this.link ()} />
-                <Label text='2100' grow='1' {...this.link ()} />
-                <Label text='9010' grow='1' {...this.link ()} />
-                <Label text='77' grow='1' {...this.link ()} />
-                <Label text='Solde à nouveau' grow='4' {...this.link ()} />
-                <Label text='1´702.05' justify='right' grow='1' {...this.link ()} />
-              </Container>
-              <Separator {...this.link ()} />
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='14.01.2016' grow='1' {...this.link ()} />
-                <Label text='1000' grow='1' {...this.link ()} />
-                <Label text='1010' grow='1' {...this.link ()} />
-                <Label text='79' grow='1' {...this.link ()} />
-                <Label text='Virement janvier' grow='4' {...this.link ()} />
-                <Label text='100.00' justify='right' grow='1' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='28.01.2016' grow='1' {...this.link ()} />
-                <Label text='1100' grow='1' {...this.link ()} />
-                <Label text='2100' grow='1' {...this.link ()} />
-                <Label text='80' grow='1' {...this.link ()} />
-                <Label text='Loyer janvier locaux Blanpain' grow='4' {...this.link ()} />
-                <Label text='2´300.00' justify='right' grow='1' {...this.link ()} />
-              </Container>
-            </Container>
-
-          </Container>
-          <Container kind='actions' {...this.link ()} >
-            <Button glyph='arrow-up' text='Nouvelle écriture' width='0px' grow='1'
-              kind='action' place='left' {...this.link ()} />
-            <Button glyph='pencil' text='Modifier' width='0px' grow='1'
-              kind='action' place='middle' {...this.link ()} />
-            <Button glyph='trash' text='Supprimer' width='0px' grow='1'
-              kind='action' place='middle' {...this.link ()} />
-            <Button glyph='check' text='Valider' width='0px' grow='1'
-              kind='action' place='right' {...this.link ()} />
-          </Container>
-        </Container>
-      </Container>
-    );
-  }
-
-  viewComptaPlan () {
-    return (
-      <Container kind='views' {...this.link ()} >
-        <Container kind='view' width='1000px' {...this.link ()} >
-          <Container kind='panes' subkind='top-margin' {...this.link ()} >
-
-            <Container kind='pane' {...this.link ()} >
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Plan comptable' grow='1' kind='title' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Numéro' font-weight='bold' grow='1' {...this.link ()} />
-                <Label text='Titre' font-weight='bold' grow='4' {...this.link ()} />
-                <Label text='Catégorie' font-weight='bold' grow='1' {...this.link ()} />
-              </Container>
-              <Separator {...this.link ()} />
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='1000' grow='1' {...this.link ()} />
-                <Label text='Caisse' grow='4' {...this.link ()} />
-                <Label text='Actif' grow='1' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='1010' grow='1' {...this.link ()} />
-                <Label text='Banque BCV' grow='4' {...this.link ()} />
-                <Label text='Actif' grow='1' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='1020' grow='1' {...this.link ()} />
-                <Label text='Banque UBS' grow='4' {...this.link ()} />
-                <Label text='Actif' grow='1' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='1030' grow='1' {...this.link ()} />
-                <Label text='PostFinance' grow='4' {...this.link ()} />
-                <Label text='Actif' grow='1' {...this.link ()} />
-              </Container>
-              <Separator {...this.link ()} />
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='2000' grow='1' {...this.link ()} />
-                <Label text='Créanciers' grow='4' {...this.link ()} />
-                <Label text='Passif' grow='1' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='2100' grow='1' {...this.link ()} />
-                <Label text='Immobilisations' grow='4' {...this.link ()} />
-                <Label text='Passif' grow='1' {...this.link ()} />
-              </Container>
-            </Container>
-
-          </Container>
-          <Container kind='actions' {...this.link ()} >
-            <Button glyph='arrow-up' text='Nouveau compte' width='0px' grow='1'
-              kind='action' place='left' {...this.link ()} />
-            <Button glyph='pencil' text='Modifier' width='0px' grow='1'
-              kind='action' place='middle' {...this.link ()} />
-            <Button glyph='trash' text='Supprimer' width='0px' grow='1'
-              kind='action' place='middle' {...this.link ()} />
-            <Button glyph='check' text='Valider' width='0px' grow='1'
-              kind='action' place='right' {...this.link ()} />
-          </Container>
-        </Container>
-      </Container>
     );
   }
 
@@ -774,6 +570,14 @@ export default class AllInOne extends React.Component {
     );
   }
 
+  viewCustomers () {
+    return this.viewComingSoon ();
+  }
+
+  viewTeam () {
+    return this.viewComingSoon ();
+  }
+
   viewComingSoon () {
     return (
       <Container kind='views' {...this.link ()} >
@@ -800,22 +604,6 @@ export default class AllInOne extends React.Component {
       return null;
     } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'compta-journal') {
-      return (
-        <Container kind='footer' {...this.link ()} >
-          {this.footerWarning ()}
-          <Label text='7 écritures' grow='1' kind='footer' {...this.link ()} />
-          <Button glyph='gears' text='Options' kind='footer' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.getStep () === 'compta-plan') {
-      return (
-        <Container kind='footer' {...this.link ()} >
-          {this.footerWarning ()}
-          <Label text='152 comptes' grow='1' kind='footer' {...this.link ()} />
-          <Button glyph='gears' text='Options' kind='footer' {...this.link ()} />
-        </Container>
-      );
     } else {
       return (
         <Container kind='footer' {...this.link ()} >
