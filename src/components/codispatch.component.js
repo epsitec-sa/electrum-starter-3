@@ -27,6 +27,7 @@ export default class Codispatch extends React.Component {
   leftView () {
     return (
       <Container kind='view' width='700px' {...this.link ()} >
+        <div data-name='VIEWER CONTAINER BOX'>
         <Container kind='pane-navigator' {...this.link ()} >
           <Button text='Expéditeur' width='0px' grow='1'
             active='true'  kind='pane-navigator' {...this.link ()} />
@@ -272,6 +273,7 @@ export default class Codispatch extends React.Component {
           <Button glyph='check' text='Valider' width='0px' grow='1'
             kind='action' place='right' {...this.link ()} />
         </Container>
+        </div>
       </Container>
     );
   }
@@ -279,6 +281,7 @@ export default class Codispatch extends React.Component {
   hinterView () {
     return (
       <Container kind='view' height-type='short' width='400px' {...this.link ()} >
+        <div data-name='VIEWER CONTAINER BOX'>
         <Container kind='pane-navigator' {...this.link ()} >
           <Button text='Chercher' width='0px' width='100%'
             active='false'  kind='pane-navigator' {...this.link ()} />
@@ -375,6 +378,7 @@ export default class Codispatch extends React.Component {
             </Container>
           </Container>
         </Container>
+      </div>
       </Container>
     );
   }
@@ -431,6 +435,7 @@ export default class Codispatch extends React.Component {
   rightView () {
     return (
       <Container kind='view-right' width='600px' {...this.link ()} >
+        <div data-name='VIEWER CONTAINER BOX'>
         {this.vnavigator ()}
         <Container kind='pane-header' {...this.link ()} >
           <Label text='Mon beau bouquet SA' kind='pane-header'
@@ -751,6 +756,7 @@ export default class Codispatch extends React.Component {
           </Container>
 
         </Container>
+      </div>
       </Container>
     );
   }
