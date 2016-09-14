@@ -117,7 +117,7 @@ export default class Polypheme extends React.Component {
           <Button text='Choix d´une date' width='0px' grow='1'
             active='false'  kind='pane-navigator' {...this.link ()} />
         </Container>
-        <Container kind='panes' {...this.link ()} >
+        <Container kind='panes-short' {...this.link ()} >
           <Container kind='pane' {...this.link ()} >
             <Container kind='row-pane' spacing='large' {...this.link ()} >
               <Calendar onChange={(date) => console.log (date)}
@@ -136,7 +136,7 @@ export default class Polypheme extends React.Component {
           <Button text='Chercher' width='0px' width='100%'
             active='false'  kind='pane-navigator' {...this.link ()} />
         </Container>
-        <Container kind='panes' {...this.link ()} >
+        <Container kind='panes-short' {...this.link ()} >
           <Container kind='pane' {...this.link ()} >
             <Container kind='row-pane' subkind='info' {...this.link ()} >
               <Label glyph='building' text='Clients' kind='title' {...this.link ()} />
