@@ -112,7 +112,7 @@ export default class Polypheme extends React.Component {
 
   hinterDate () {
     return (
-      <Container kind='view' height-type='short' {...this.link ()} >
+      <Container kind='view-short' {...this.link ()} >
         <Container kind='pane-navigator' {...this.link ()} >
           <Button text='Choix d´une date' width='0px' grow='1'
             active='false'  kind='pane-navigator' {...this.link ()} />
@@ -131,12 +131,12 @@ export default class Polypheme extends React.Component {
 
   hinterList () {
     return (
-      <Container kind='view' height-type='short' width='400px' {...this.link ()} >
+      <Container kind='view-short' width='400px' {...this.link ()} >
         <Container kind='pane-navigator' {...this.link ()} >
           <Button text='Chercher' width='0px' width='100%'
             active='false'  kind='pane-navigator' {...this.link ()} />
         </Container>
-        <Container kind='panes' height-type='short' {...this.link ()} >
+        <Container kind='panes' {...this.link ()} >
           <Container kind='pane' {...this.link ()} >
             <Container kind='row-pane' subkind='info' {...this.link ()} >
               <Label glyph='building' text='Clients' kind='title' {...this.link ()} />

@@ -278,12 +278,12 @@ export default class Codispatch extends React.Component {
 
   hinterView () {
     return (
-      <Container kind='view' height-type='short' width='400px' {...this.link ()} >
+      <Container kind='view-short' width='400px' {...this.link ()} >
         <Container kind='pane-navigator' {...this.link ()} >
           <Button text='Chercher' width='0px' width='100%'
             active='false'  kind='pane-navigator' {...this.link ()} />
         </Container>
-        <Container kind='panes' height-type='short' {...this.link ()} >
+        <Container kind='panes' {...this.link ()} >
           <Container kind='pane' {...this.link ()} >
             <Container kind='row-pane' subkind='info' {...this.link ()} >
               <Label glyph='building' text='Clients' kind='title' {...this.link ()} />
