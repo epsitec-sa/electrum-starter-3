@@ -296,7 +296,7 @@ export default class Codispatch extends React.Component {
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
+            <Container kind='row-pane' subkind='list' selected='true' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Mecatronic SA' justify='left' grow='2'
                   {...this.link ()} />
@@ -485,7 +485,7 @@ export default class Codispatch extends React.Component {
                 {...this.link ()} />
               <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' selected='true' {...this.link ()} >
               <Button glyph='user' kind='round' spacing='large' {...this.link ()} />
               <Label text='Jeanne Sophian' justify='left'
                 grow='2' {...this.link ()} />
