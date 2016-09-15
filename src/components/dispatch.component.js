@@ -25,9 +25,13 @@ export default class Dispatch extends React.Component {
     super (props);
   }
 
+  runnerHeight = '70px';
+  ticketHeight = '90px';
+  ticketWidth  = '220px';
+
   getRunner (photo, transportation, name, total) {
     return (
-      <Ticket kind='header' width='250px' height='70px' {...this.link ()} >
+      <Ticket kind='header' width={this.ticketWidth} height={this.runnerHeight} {...this.link ()} >
         <Container kind='column' grow='2' {...this.link ()} >
           <Button glyph={photo} kind='identity' {...this.link ()} />
         </Container>
@@ -47,7 +51,7 @@ export default class Dispatch extends React.Component {
     const dropWeight = (type === 'drop') ? 'bold' : 'normal';
     const direction  = (type === 'pick') ? 'upload' : 'download';
     return (
-      <Ticket width='250px' height='90px' {...this.link ()} >
+      <Ticket width={this.ticketWidth} height={this.ticketHeight} {...this.link ()} >
         <Container kind='column' grow='1' {...this.link ()} >
           <Label text={pickTime} font-weight={pickWeight} {...this.link ()} />
           <Label text={dropTime} font-weight={dropWeight} {...this.link ()} />
