@@ -46,6 +46,33 @@ export default class Dispatch extends React.Component {
     );
   }
 
+  getGlyph (glyph) {
+    if (glyph.startsWith ('bookmark-')) {
+      const color = glyph.substring (9);
+      return (
+        <Label glyph='bookmark' glyph-color={color} spacing='compact' {...this.link ()} />
+      );
+    } else {
+      return (
+        <Label glyph={glyph} spacing='compact' {...this.link ()} />
+      );
+    }
+  }
+
+  getGlyphs (glyphs) {
+    if (glyphs === null) {
+      return null;
+    } else if (typeof (glyphs) === 'string') {
+      return this.getGlyph (glyphs);
+    } else {
+      let line = [];
+      glyphs.forEach (glyph => {
+        line.push (this.getGlyph (glyph));
+      });
+      return line;
+    }
+  }
+
   getRun (type, pickTime, pickDesc, dropTime, dropDesc, count, glyphs) {
     const pickWeight = (type === 'pick') ? 'bold' : 'normal';
     const dropWeight = (type === 'drop') ? 'bold' : 'normal';
@@ -63,9 +90,7 @@ export default class Dispatch extends React.Component {
           <Container kind='row' {...this.link ()} >
             <Label glyph='cube' spacing='compact' {...this.link ()} />
             <Label text={count + 'x'} grow='1' {...this.link ()} />
-            <Label glyph={glyphs} spacing='compact' {...this.link ()} />
-            <Label glyph='bookmark' glyph-color='#f00' spacing='compact' {...this.link ()} />
-            <Label glyph='bookmark' glyph-color='#ffd600' spacing='compact' {...this.link ()} />
+            {this.getGlyphs (glyphs)}
           </Container>
         </Container>
       </Ticket>
@@ -80,10 +105,10 @@ export default class Dispatch extends React.Component {
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Sandra', '203.50')}
             {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, 'warning')}
-            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
+            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, ['warning', 'bookmark-base'])}
             {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    3, 'warning')}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, 'warning')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, 'warning')}
+            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, null)}
+            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, ['bookmark-secondary', 'bookmark-primary'])}
           </Container>
         </Container>
 
@@ -91,20 +116,20 @@ export default class Dispatch extends React.Component {
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Jean-Paul', '68.00')}
             {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, 'warning')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, ['warning', 'bookmark-base', 'bookmark-secondary', 'bookmark-primary'])}
+            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
           </Container>
         </Container>
 
         <Container kind='view' {...this.link ()} >
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user-secret', 'car', 'Frédérique', '250.00')}
-            {this.getRun ('pick', '10:15', 'Coop St. Laurent', '10:55', 'Dupond J.',    1, 'warning')}
-            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, 'warning')}
-            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
+            {this.getRun ('pick', '10:15', 'Coop St. Laurent', '10:55', 'Dupond J.',    1, ['bookmark-primary'])}
+            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, null)}
+            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, ['warning', 'bookmark-secondary'])}
             {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    1, 'warning')}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, 'warning')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, 'warning')}
+            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, null)}
+            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, null)}
           </Container>
         </Container>
 
@@ -118,14 +143,14 @@ export default class Dispatch extends React.Component {
         <Container kind='view' {...this.link ()} >
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user', 'truck', 'Simone', '100.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
           </Container>
         </Container>
 
         <Container kind='view' {...this.link ()} >
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Jean-Louis', '400.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, ['bookmark-primary'])}
           </Container>
         </Container>
 
@@ -133,9 +158,9 @@ export default class Dispatch extends React.Component {
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Chantal', '95.20')}
             {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
-            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
-            {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    1, 'warning')}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, 'warning')}
+            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, null)}
+            {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    1, null)}
+            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, ['bookmark-base', 'bookmark-secondary'])}
           </Container>
         </Container>
 
@@ -149,21 +174,26 @@ export default class Dispatch extends React.Component {
         <Container kind='view' {...this.link ()} >
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user', 'rocket', 'Zoé', '0.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
           </Container>
         </Container>
 
         <Container kind='view' {...this.link ()} >
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Marc', '0.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            {this.getRun ('drop', '08:30', 'Icomm',            '09:15', 'Stouder AG',   4, ['bookmark-secondary'])}
+            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, null)}
+            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, null)}
+            {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    3, 'warning')}
+            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, ['bookmark-base', 'bookmark-primary'])}
+            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, ['warning', 'bookmark-base', 'bookmark-secondary'])}
           </Container>
         </Container>
 
         <Container kind='view' {...this.link ()} >
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Victor', '630.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
           </Container>
         </Container>
 
@@ -171,7 +201,7 @@ export default class Dispatch extends React.Component {
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user', 'car', 'Jacques', '0.00')}
             {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
-            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, 'warning')}
+            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, ['warning', 'bookmark-primary'])}
             {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
           </Container>
         </Container>
@@ -179,8 +209,8 @@ export default class Dispatch extends React.Component {
         <Container kind='view' {...this.link ()} >
           <Container kind='tickets' {...this.link ()} >
             {this.getRunner ('user', 'car', 'Samuel', '0.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, 'warning')}
+            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, ['bookmark-base', 'bookmark-secondary', 'bookmark-primary'])}
           </Container>
         </Container>
 
