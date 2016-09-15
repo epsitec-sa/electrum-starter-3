@@ -61,8 +61,11 @@ export default class Dispatch extends React.Component {
           <Label text={pickDesc} font-weight={pickWeight} {...this.link ()} />
           <Label text={dropDesc} font-weight={dropWeight} {...this.link ()} />
           <Container kind='row' {...this.link ()} >
-            <Label glyph='cube' text={count + 'x'} width='120px' {...this.link ()} />
-            <Label glyph={glyphs} {...this.link ()} />
+            <Label glyph='cube' spacing='compact' {...this.link ()} />
+            <Label text={count + 'x'} grow='1' {...this.link ()} />
+            <Label glyph={glyphs} spacing='compact' {...this.link ()} />
+            <Label glyph='bookmark' glyph-color='#f00' spacing='compact' {...this.link ()} />
+            <Label glyph='bookmark' glyph-color='#ffd600' spacing='compact' {...this.link ()} />
           </Container>
         </Container>
       </Ticket>
