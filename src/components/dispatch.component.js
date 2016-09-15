@@ -99,135 +99,143 @@ export default class Dispatch extends React.Component {
 
   render () {
     return (
-      <Container kind='views' {...this.link ()} >
+      <Container kind='tickets-root' {...this.link ()} >
+        <Container kind='tickets-runners' {...this.link ()} >
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Sandra', '203.50')}
-            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, 'warning')}
-            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, ['warning', 'bookmark-base'])}
-            {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    3, 'warning')}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, null)}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, ['bookmark-secondary', 'bookmark-primary'])}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, 'warning')}
+              {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, ['warning', 'bookmark-base'])}
+              {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    3, 'warning')}
+              {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, null)}
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, ['bookmark-secondary', 'bookmark-primary'])}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Jean-Paul', '68.00')}
-            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, ['warning', 'bookmark-base', 'bookmark-secondary', 'bookmark-primary'])}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
+              {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, ['warning', 'bookmark-base', 'bookmark-secondary', 'bookmark-primary'])}
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user-secret', 'car', 'Frédérique', '250.00')}
-            {this.getRun ('pick', '10:15', 'Coop St. Laurent', '10:55', 'Dupond J.',    1, ['bookmark-primary'])}
-            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, null)}
-            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, ['warning', 'bookmark-secondary'])}
-            {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    1, 'warning')}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, null)}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, null)}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('pick', '10:15', 'Coop St. Laurent', '10:55', 'Dupond J.',    1, ['bookmark-primary'])}
+              {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, null)}
+              {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, ['warning', 'bookmark-secondary'])}
+              {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    1, 'warning')}
+              {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, null)}
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, null)}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Marcel', '0.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'truck', 'Simone', '100.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Jean-Louis', '400.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, ['bookmark-primary'])}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, ['bookmark-primary'])}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Chantal', '95.20')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
-            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, null)}
-            {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    1, null)}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, ['bookmark-base', 'bookmark-secondary'])}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+              {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, null)}
+              {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    1, null)}
+              {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, ['bookmark-base', 'bookmark-secondary'])}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Béatrice', '20.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'rocket', 'Zoé', '0.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Marc', '0.00')}
-            {this.getRun ('drop', '08:30', 'Icomm',            '09:15', 'Stouder AG',   4, ['bookmark-secondary'])}
-            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, null)}
-            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, null)}
-            {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    3, 'warning')}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, ['bookmark-base', 'bookmark-primary'])}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, ['warning', 'bookmark-base', 'bookmark-secondary'])}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '08:30', 'Icomm',            '09:15', 'Stouder AG',   4, ['bookmark-secondary'])}
+              {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, null)}
+              {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, null)}
+              {this.getRun ('drop', '11:20', 'PolyAugrien',      '11:45', 'Burdet A.',    3, 'warning')}
+              {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   1, ['bookmark-base', 'bookmark-primary'])}
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   1, ['warning', 'bookmark-base', 'bookmark-secondary'])}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Victor', '630.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'car', 'Jacques', '0.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
-            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, ['warning', 'bookmark-primary'])}
-            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+              {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, ['warning', 'bookmark-primary'])}
+              {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'car', 'Samuel', '0.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, ['bookmark-base', 'bookmark-secondary', 'bookmark-primary'])}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+              {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, ['bookmark-base', 'bookmark-secondary', 'bookmark-primary'])}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Georges', '50.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            <Container kind='tickets' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            </Container>
           </Container>
-        </Container>
 
-        <Container kind='view' {...this.link ()} >
-          <Container kind='tickets' {...this.link ()} >
+          <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ('user', 'bicycle', 'Francine', '68.00')}
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            <Container kind='tickets-runs' {...this.link ()} >
+              {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, 'warning')}
+            </Container>
           </Container>
+
         </Container>
 
+        <Container kind='tickets-basket' height={this.ticketHeight} {...this.link ()} >
+          {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Stouder AG',   4, null)}
+          {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, ['bookmark-base', 'bookmark-secondary', 'bookmark-primary'])}
+          {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
+        </Container>
       </Container>
     );
   }
