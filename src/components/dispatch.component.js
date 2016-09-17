@@ -231,18 +231,22 @@ export default class Dispatch extends React.Component {
 
         </Container>
 
-        <Container kind='tickets-basket' height='180px' {...this.link ()} >
+        <Container kind='tickets-basket' height='300px' {...this.link ()} >
           <Container kind='tickets-glue' left='50px' top='50px' rotate='10deg' {...this.link ()} >
-            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Studer AG',    4, null)}
+            {this.getRun ('pick', '13:30', 'Icomm',            '14:15', 'Studer AG',    4, null)}
+            {this.getRun ('drop', '13:30', 'Icomm',            '14:15', 'Studer AG',    4, 'bookmark-base')}
           </Container>
           <Container kind='tickets-glue' left='300px' top='50px' rotate='-2deg' {...this.link ()} >
-            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, ['bookmark-base', 'bookmark-secondary', 'bookmark-primary'])}
+            {this.getRun ('pick', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, ['warning', 'bookmark-primary'])}
+            {this.getRun ('drop', '11:45', 'Me Mouquin G.',    '13:00', 'Schmidt W.',   2, ['bookmark-base', 'bookmark-secondary', 'bookmark-primary'])}
           </Container>
           <Container kind='tickets-glue' left='600px' top='20px' rotate='5deg' {...this.link ()} >
-            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
+            {this.getRun ('pick', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'warning')}
+            {this.getRun ('drop', '11:00', 'Migros Pont-Neuf', '11:15', 'Chancellerie', 1, 'bookmark-secondary')}
           </Container>
           <Container kind='tickets-glue' left='800px' top='60px' rotate='-10deg' {...this.link ()} >
-            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, ['warning', 'bookmark-primary'])}
+            {this.getRun ('pick', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, null)}
+            {this.getRun ('drop', '10:50', 'Coop St. Laurent', '11:20', 'Dupond J.',    2, ['warning', 'bookmark-primary'])}
           </Container>
         </Container>
       </Container>
