@@ -17,7 +17,7 @@ import {
   FlyingBalloon,
   Separator,
   Ticket,
-  PickDropTicket,
+  RunTicket,
   RunnerTicket
 } from 'electrum-arc';
 
@@ -39,7 +39,7 @@ export default class Dispatch extends React.Component {
 
   getRun (data) {
     return (
-      <PickDropTicket width={this.ticketWidth} height={this.ticketHeight} data={data} {...this.link ()} />
+      <RunTicket width={this.ticketWidth} height={this.ticketHeight} data={data} {...this.link ()} />
     );
   }
 
