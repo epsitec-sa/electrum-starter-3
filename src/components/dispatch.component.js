@@ -37,33 +37,6 @@ export default class Dispatch extends React.Component {
     );
   }
 
-  getGlyph (glyph) {
-    if (glyph.startsWith ('bookmark-')) {
-      const color = glyph.substring (9);
-      return (
-        <Label glyph='bookmark' glyph-color={color} spacing='compact' {...this.link ()} />
-      );
-    } else {
-      return (
-        <Label glyph={glyph} spacing='compact' {...this.link ()} />
-      );
-    }
-  }
-
-  getGlyphs (glyphs) {
-    if (glyphs === null) {
-      return null;
-    } else if (typeof (glyphs) === 'string') {
-      return this.getGlyph (glyphs);
-    } else {
-      let line = [];
-      glyphs.forEach (glyph => {
-        line.push (this.getGlyph (glyph));
-      });
-      return line;
-    }
-  }
-
   getRun (data) {
     return (
       <PickDropTicket width={this.ticketWidth} height={this.ticketHeight} data={data} {...this.link ()} />
