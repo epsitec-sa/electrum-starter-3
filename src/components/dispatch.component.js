@@ -16,7 +16,8 @@ import {
   Menu,
   FlyingBalloon,
   Separator,
-  Ticket
+  Ticket,
+  PickDropTicket
 } from 'electrum-arc';
 
 export default class Dispatch extends React.Component {
@@ -74,26 +75,8 @@ export default class Dispatch extends React.Component {
   }
 
   getRun (data) {
-    const pickWeight = (data.type === 'pick') ? 'bold' : 'normal';
-    const dropWeight = (data.type === 'drop') ? 'bold' : 'normal';
-    const direction  = (data.type === 'pick') ? 'upload' : 'download';
     return (
-      <Ticket width={this.ticketWidth} height={this.ticketHeight} {...this.link ()} >
-        <Container kind='column' grow='1' {...this.link ()} >
-          <Label text={data.pickTime} font-weight={pickWeight} {...this.link ()} />
-          <Label text={data.dropTime} font-weight={dropWeight} {...this.link ()} />
-          <Label glyph={direction} {...this.link ()} />
-        </Container>
-        <Container kind='column' grow='3' {...this.link ()} >
-          <Label text={data.pickDesc} font-weight={pickWeight} {...this.link ()} />
-          <Label text={data.dropDesc} font-weight={dropWeight} {...this.link ()} />
-          <Container kind='row' {...this.link ()} >
-            <Label glyph='cube' spacing='compact' {...this.link ()} />
-            <Label text={data.count + 'x'} grow='1' {...this.link ()} />
-            {this.getGlyphs (data.glyphs)}
-          </Container>
-        </Container>
-      </Ticket>
+      <PickDropTicket width={this.ticketWidth} height={this.ticketHeight} data={data} {...this.link ()} />
     );
   }
 
