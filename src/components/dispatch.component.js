@@ -17,7 +17,8 @@ import {
   FlyingBalloon,
   Separator,
   Ticket,
-  PickDropTicket
+  PickDropTicket,
+  RunnerTicket
 } from 'electrum-arc';
 
 export default class Dispatch extends React.Component {
@@ -32,18 +33,7 @@ export default class Dispatch extends React.Component {
 
   getRunner (data) {
     return (
-      <Ticket kind='header' width={this.ticketWidth} height={this.runnerHeight} {...this.link ()} >
-        <Container kind='column' grow='2' {...this.link ()} >
-          <Button glyph={data.photo} kind='identity' {...this.link ()} />
-        </Container>
-        <Container kind='column' grow='1' {...this.link ()} >
-          <Label glyph={data.transportation} glyph-size='150%' {...this.link ()} />
-        </Container>
-        <Container kind='column' grow='3' {...this.link ()} >
-          <Label text={data.name} font-weight='bold' text-color='#fff' {...this.link ()} />
-          <Label text={data.total} font-weight='bold' text-color='#fff' {...this.link ()} />
-        </Container>
-      </Ticket>
+      <RunnerTicket width={this.ticketWidth} height={this.runnerHeight} data={data} {...this.link ()} />
     );
   }
 
