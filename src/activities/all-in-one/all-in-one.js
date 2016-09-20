@@ -19,7 +19,7 @@ import {
   Separator
 } from 'electrum-arc';
 import {
-  Dispatch,
+  DispatchRunners,
   Codispatch
 } from '../../all-components.js';
 
@@ -100,7 +100,7 @@ export default class AllInOne extends React.Component {
                this.getStep () === 'mandats' ||
                this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'dispatch') {
+    } else if (this.getStep () === 'dispatch-runners') {
       return (
         <Container kind='task' {...this.link ()} >
           <Button action={() => this.setStep ('mandats')}
@@ -207,15 +207,15 @@ export default class AllInOne extends React.Component {
           </Container>
         </Container>
       );
-    } else if (this.getStep () === 'dispatch' ||
+    } else if (this.getStep () === 'dispatch-runners' ||
                this.getStep () === 'codispatch' ||
                this.getStep () === 'fact' ||
                this.getStep () === 'customers' ||
                this.getStep () === 'team') {
       return (
         <Container kind='main-tab' {...this.link ()} >
-          <Button action={() => this.setStep ('dispatch')}
-            active={this.activeStep ('dispatch')}
+          <Button action={() => this.setStep ('dispatch-runners')}
+            active={this.activeStep ('dispatch-runners')}
             text='dispo' width='200px' kind='main-tab' {...this.link ()} />
           <Button action={() => this.setStep ('codispatch')}
             active={this.activeStep ('codispatch')}
@@ -242,7 +242,7 @@ export default class AllInOne extends React.Component {
       return null;
     } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'dispatch') {
+    } else if (this.getStep () === 'dispatch-runners') {
       return (
         <Container kind='view-tab' {...this.link ()} >
           <TabButton text='Missions' glyph='none' active='false' {...this.link ()} />
@@ -294,8 +294,8 @@ export default class AllInOne extends React.Component {
       return this.viewMandats ();
     } else if (this.getStep () === 'mandat-create') {
       return this.viewMandatCreate ();
-    } else if (this.getStep () === 'dispatch') {
-      return this.viewDispatch ();
+    } else if (this.getStep () === 'dispatch-runners') {
+      return this.viewDispatchRunners ();
     } else if (this.getStep () === 'codispatch') {
       return this.viewCodispatch ();
     } else if (this.getStep () === 'fact') {
@@ -483,9 +483,9 @@ export default class AllInOne extends React.Component {
     );
   }
 
-  viewDispatch () {
+  viewDispatchRunners () {
     return (
-      <Dispatch {...this.link ()} />
+      <DispatchRunners {...this.link ()} />
     );
   }
 
