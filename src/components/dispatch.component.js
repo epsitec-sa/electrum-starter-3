@@ -252,6 +252,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'yellow',
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Chantal',
