@@ -50,6 +50,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
       				photo:          'user',
       				transportation: 'bicycle',
       				name:           'Sandra',
@@ -102,6 +103,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Jean-Paul',
@@ -136,6 +138,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           		photo:          'user-secret',
       				transportation: 'car',
       				name:           'Frédérique',
@@ -198,6 +201,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
       				photo:          'user',
       				transportation: 'bicycle',
       				name:           'Marcel',
@@ -216,6 +220,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
       				photo:          'user',
       				transportation: 'truck',
       				name:           'Simone',
@@ -234,6 +239,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           	  photo:          'user',
       				transportation: 'bicycle',
       				name:           'Jean-Louis',
@@ -297,6 +303,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Béatrice',
@@ -315,6 +322,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           		photo:          'user',
       				transportation: 'rocket',
       				name:           'Zoé',
@@ -333,6 +341,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Marc',
@@ -391,6 +400,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Victor',
@@ -409,6 +419,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           		photo:          'user',
       				transportation: 'car',
       				name:           'Jacques',
@@ -443,6 +454,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           		photo:          'user',
       				transportation: 'car',
       				name:           'Samuel',
@@ -469,6 +481,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Georges',
@@ -487,6 +500,7 @@ export default class Dispatch extends React.Component {
 
           <Container kind='tickets-runner' {...this.link ()} >
             {this.getRunner ({
+              color:          'blue',
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Francine',
