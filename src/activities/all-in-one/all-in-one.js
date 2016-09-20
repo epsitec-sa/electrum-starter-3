@@ -218,10 +218,7 @@ export default class AllInOne extends React.Component {
       return (
         <Container kind='main-tab' {...this.link ()} >
           <Button action={() => this.setStep ('dispatch-jobs')}
-            active={this.activeStep ('dispatch-jobs')}
-            text='dispo' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('dispatch-runners')}
-            active={this.activeStep ('dispatch-runners')}
+            active={(this.getStep () === 'dispatch-jobs' || this.getStep () === 'dispatch-runners') ? 'true' : 'false'}
             text='dispo' width='200px' kind='main-tab' {...this.link ()} />
           <Button action={() => this.setStep ('codispatch')}
             active={this.activeStep ('codispatch')}
@@ -248,11 +245,15 @@ export default class AllInOne extends React.Component {
       return null;
     } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'dispatch-jobs') {
+    } else if (this.getStep () === 'dispatch-jobs' || this.getStep () === 'dispatch-runners') {
       return (
         <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Missions' glyph='none' active='true' {...this.link ()} />
-          <TabButton text='Coursiers' glyph='none' active='false' {...this.link ()} />
+          <Button action={() => this.setStep ('dispatch-jobs')}
+            text='Missions' kind='view-tab'
+            active={this.activeStep ('dispatch-jobs')} {...this.link ()} />
+          <Button action={() => this.setStep ('dispatch-runners')}
+            text='Coursiers' kind='view-tab'
+            active={this.activeStep ('dispatch-runners')} {...this.link ()} />
         </Container>
       );
     } else if (this.getStep () === 'dispatch-runners') {
