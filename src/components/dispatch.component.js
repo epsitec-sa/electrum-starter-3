@@ -56,6 +56,7 @@ export default class Dispatch extends React.Component {
       				total:          '203.50'})}
             <Container kind='tickets-runs' {...this.link ()} >
               {this.getRun ({
+                color:    'blue',
                 type:     'pick',
                 pickTime: '10:50',
                 pickDesc: 'Coop St. Laurent',
@@ -64,6 +65,7 @@ export default class Dispatch extends React.Component {
                 count:    2,
                 glyphs:   'warning'})}
               {this.getRun ({
+                color:    'blue',
         				type:     'drop',
         				pickTime: '11:00',
         				pickDesc: 'Migros Pont-Neuf',
@@ -140,6 +142,7 @@ export default class Dispatch extends React.Component {
       				total:          '250.00'})}
             <Container kind='tickets-runs' {...this.link ()} >
               {this.getRun ({
+                color:    'blue',
         				type:     'pick',
         				pickTime: '10:15',
         				pickDesc: 'Coop St. Laurent',
@@ -148,6 +151,7 @@ export default class Dispatch extends React.Component {
         				count:    1,
         				glyphs:   ['bookmark-primary']})}
               {this.getRun ({
+                color:    'blue',
         				type:     'pick',
         				pickTime: '10:50',
         				pickDesc: 'Coop St. Laurent',
@@ -156,6 +160,7 @@ export default class Dispatch extends React.Component {
         				count:    2,
         				glyphs:   null})}
               {this.getRun ({
+                color:    'blue',
         				type:     'drop',
         				pickTime: '11:00',
         				pickDesc: 'Migros Pont-Neuf',
@@ -172,6 +177,7 @@ export default class Dispatch extends React.Component {
         				count:    1,
         				glyphs:   'warning'})}
               {this.getRun ({
+                color:    'green',
         				type:     'pick',
         				pickTime: '11:45',
         				pickDesc: 'Me Mouquin G.',
@@ -252,6 +258,7 @@ export default class Dispatch extends React.Component {
       				total:          '95.20'})}
             <Container kind='tickets-runs' {...this.link ()} >
               {this.getRun ({
+                color:    'yellow',
         				type:     'drop',
         				pickTime: '13:30',
         				pickDesc: 'Icomm',
@@ -260,6 +267,7 @@ export default class Dispatch extends React.Component {
         				count:    4,
         				glyphs:   'warning'})}
               {this.getRun ({
+                color:    'yellow',
         				type:     'drop',
         				pickTime: '11:00',
         				pickDesc: 'Migros Pont-Neuf',
@@ -517,6 +525,7 @@ export default class Dispatch extends React.Component {
           </Container>
           <Container kind='tickets-glue' left='300px' top='50px' rotate='-2deg' {...this.link ()} >
             {this.getRun ({
+              color:    'red',
       				type:     'pick',
       				pickTime: '11:45',
       				pickDesc: 'Me Mouquin G.',
