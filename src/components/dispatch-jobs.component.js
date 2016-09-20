@@ -33,7 +33,7 @@ export default class DispatchJobs extends React.Component {
               grow='1' spacing='large' combo-type='clock'
               flying-balloon-anchor='right' {...this.link ('exp-time')} />
             <TextFieldCombo shape='rounded' hint-text='Chercher'
-              combo-glyph='Search' spacing='large' {...this.link ()} />
+              grow='2' combo-glyph='Search' {...this.link ()} />
           </Container>
 
           <Container kind='panes' {...this.link ()} >
@@ -70,6 +70,7 @@ export default class DispatchJobs extends React.Component {
               </Container>
               <Container kind='row-pane' {...this.link ()} >
                 {this.getJob ({
+                  selected:    'true',
                   pickTime:    '11:15',
                   pickDesc:    'Icomm',
                   pickZone:    'Zone B',
@@ -131,8 +132,8 @@ export default class DispatchJobs extends React.Component {
               <Container kind='row-pane' {...this.link ()} >
                 {this.getJob ({
                   pickTime:    '15:00',
-                  pickDesc:    'Migros Plein-Palais',
-                  pickZone:    'Zone B',
+                  pickDesc:    'Migros Pont-Neuf',
+                  pickZone:    'Zone A',
                   pickGlyphs:  ['bookmark-secondary'],
                   dropTime:    '17:30',
                   dropDesc:    'Alfred D.',
