@@ -14,7 +14,7 @@ export default class DispatchJobs extends React.Component {
 
   getJob (data) {
     return (
-      <RunBox width={this.ticketWidth} height={this.ticketHeight} data={data} {...this.link ()} />
+      <RunBox data={data} {...this.link ()} />
     );
   }
 
@@ -33,7 +33,7 @@ export default class DispatchJobs extends React.Component {
                   dropTime:    '11:20',
                   dropDesc:    'Dupond J.',
                   dropZone:    'Zone C',
-                  dropGlyphs:  ['bookmark-base', 'bookmark-primary'],
+                  dropGlyphs:  ['usd', 'bookmark-base', 'bookmark-primary'],
                   count:       '2 pces',
                   weight:      '1.3 kg',
                   price:       '100.00',
