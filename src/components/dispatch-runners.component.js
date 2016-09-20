@@ -1,4 +1,3 @@
-// Co-dispatch view. 1234
 'use strict';
 
 import React from 'react';
@@ -21,7 +20,7 @@ import {
   RunnerTicket
 } from 'electrum-arc';
 
-export default class Dispatch extends React.Component {
+export default class DispatchRunners extends React.Component {
 
   constructor (props) {
     super (props);

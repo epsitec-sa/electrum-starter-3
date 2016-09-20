@@ -19,6 +19,7 @@ import {
   Separator
 } from 'electrum-arc';
 import {
+  DispatchJobs,
   DispatchRunners,
   Codispatch
 } from '../../all-components.js';
@@ -100,7 +101,8 @@ export default class AllInOne extends React.Component {
                this.getStep () === 'mandats' ||
                this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'dispatch-runners') {
+    } else if (this.getStep () === 'dispatch-jobs' ||
+               this.getStep () === 'dispatch-runners') {
       return (
         <Container kind='task' {...this.link ()} >
           <Button action={() => this.setStep ('mandats')}
@@ -207,13 +209,17 @@ export default class AllInOne extends React.Component {
           </Container>
         </Container>
       );
-    } else if (this.getStep () === 'dispatch-runners' ||
+    } else if (this.getStep () === 'dispatch-jobs' ||
+               this.getStep () === 'dispatch-runners' ||
                this.getStep () === 'codispatch' ||
                this.getStep () === 'fact' ||
                this.getStep () === 'customers' ||
                this.getStep () === 'team') {
       return (
         <Container kind='main-tab' {...this.link ()} >
+          <Button action={() => this.setStep ('dispatch-jobs')}
+            active={this.activeStep ('dispatch-jobs')}
+            text='dispo' width='200px' kind='main-tab' {...this.link ()} />
           <Button action={() => this.setStep ('dispatch-runners')}
             active={this.activeStep ('dispatch-runners')}
             text='dispo' width='200px' kind='main-tab' {...this.link ()} />
@@ -242,6 +248,13 @@ export default class AllInOne extends React.Component {
       return null;
     } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
+    } else if (this.getStep () === 'dispatch-jobs') {
+      return (
+        <Container kind='view-tab' {...this.link ()} >
+          <TabButton text='Missions' glyph='none' active='true' {...this.link ()} />
+          <TabButton text='Coursiers' glyph='none' active='false' {...this.link ()} />
+        </Container>
+      );
     } else if (this.getStep () === 'dispatch-runners') {
       return (
         <Container kind='view-tab' {...this.link ()} >
@@ -294,6 +307,8 @@ export default class AllInOne extends React.Component {
       return this.viewMandats ();
     } else if (this.getStep () === 'mandat-create') {
       return this.viewMandatCreate ();
+    } else if (this.getStep () === 'dispatch-jobs') {
+      return this.viewDispatchJobs ();
     } else if (this.getStep () === 'dispatch-runners') {
       return this.viewDispatchRunners ();
     } else if (this.getStep () === 'codispatch') {
@@ -480,6 +495,12 @@ export default class AllInOne extends React.Component {
           </Container>
         </Container>
       </Container>
+    );
+  }
+
+  viewDispatchJobs () {
+    return (
+      <DispatchJobs {...this.link ()} />
     );
   }
 
