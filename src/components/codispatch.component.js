@@ -431,325 +431,327 @@ export default class Codispatch extends React.Component {
   rightView () {
     return (
       <Container kind='view-right' width='600px' {...this.link ()} >
-        {this.vnavigator ()}
-        <Container kind='pane-header' {...this.link ()} >
-          <Label text='Mon beau bouquet SA' kind='pane-header'
-            {...this.link ()} />
-        </Container>
-        {this.hnavigator ()}
-
-        <Container kind='panes' {...this.link ()} >
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='building' text='Adresse principale'
-                grow='1' kind='title' {...this.link ()} />
-              <Button glyph='ellipsis-v' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Label glyph='map-marker'
-                text='Mon beau bouquet SA\nPlace du Marché 12\n1002 Lausanne'
-                vpos='top' grow='2' {...this.link ()} />
-              <Label text='+41 21 650 20 20\ninfo@bouquet.ch' vpos='top'
-                grow='1' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Label glyph='map-marker'
-                text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne'
-                wrap='no' vpos='top' grow='2' {...this.link ()} />
-              <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch'
-                wrap='no' vpos='top' grow='1' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Label glyph='map-marker'
-                text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne'
-                vpos='top' grow='2' {...this.link ()} />
-              <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch'
-                vpos='top' grow='1' {...this.link ()} />
-            </Container>
+        <Container kind='column-full' {...this.link ()} >
+          {this.vnavigator ()}
+          <Container kind='pane-header' {...this.link ()} >
+            <Label text='Mon beau bouquet SA' kind='pane-header'
+              {...this.link ()} />
           </Container>
+          {this.hnavigator ()}
 
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='user' text='Contacts' grow='1' kind='title'
-                {...this.link ()} />
-              <Button glyph='plus' text='Ajouter' {...this.link ()} />
+          <Container kind='panes' {...this.link ()} >
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='building' text='Adresse principale'
+                  grow='1' kind='title' {...this.link ()} />
+                <Button glyph='ellipsis-v' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Label glyph='map-marker'
+                  text='Mon beau bouquet SA\nPlace du Marché 12\n1002 Lausanne'
+                  vpos='top' grow='2' {...this.link ()} />
+                <Label text='+41 21 650 20 20\ninfo@bouquet.ch' vpos='top'
+                  grow='1' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Label glyph='map-marker'
+                  text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne'
+                  wrap='no' vpos='top' grow='2' {...this.link ()} />
+                <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch'
+                  wrap='no' vpos='top' grow='1' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Label glyph='map-marker'
+                  text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne'
+                  vpos='top' grow='2' {...this.link ()} />
+                <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch'
+                  vpos='top' grow='1' {...this.link ()} />
+              </Container>
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Button glyph='user' kind='round' spacing='large'
-                {...this.link ()} />
-              <Label text='Christophe Ducommun' justify='left'
-                grow='2' {...this.link ()} />
-              <Label text='+41 21 650 22 87' justify='left'
-                grow='1' {...this.link ()} />
-              <Button glyph='trash-o' shape='left-smooth' spacing='overlap'
-                {...this.link ()} />
-              <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
+
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='user' text='Contacts' grow='1' kind='title'
+                  {...this.link ()} />
+                <Button glyph='plus' text='Ajouter' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Button glyph='user' kind='round' spacing='large'
+                  {...this.link ()} />
+                <Label text='Christophe Ducommun' justify='left'
+                  grow='2' {...this.link ()} />
+                <Label text='+41 21 650 22 87' justify='left'
+                  grow='1' {...this.link ()} />
+                <Button glyph='trash-o' shape='left-smooth' spacing='overlap'
+                  {...this.link ()} />
+                <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' selected='true' {...this.link ()} >
+                <Button glyph='user' kind='round' spacing='large' {...this.link ()} />
+                <Label text='Jeanne Sophian' justify='left'
+                  grow='2' {...this.link ()} />
+                <Label text='+41 78 347 20 40' justify='left'
+                  grow='1' {...this.link ()} />
+                <Button glyph='trash-o' shape='left-smooth'
+                  spacing='overlap' {...this.link ()} />
+                <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Button glyph='user' kind='round' spacing='large'
+                  {...this.link ()} />
+                <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long'
+                  justify='left' grow='2' {...this.link ()} />
+                <Label text='+41 78 347 20 40 (domicile)' justify='left'
+                  grow='1' {...this.link ()} />
+                <Button glyph='trash-o' shape='left-smooth'
+                  spacing='overlap' {...this.link ()} />
+                <Button glyph='pencil' shape='right-smooth'
+                  {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Button glyph='user' kind='round' spacing='large'
+                  {...this.link ()} />
+                <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long'
+                  justify='left' wrap='no' grow='2' {...this.link ()} />
+                <Label text='+41 78 347 20 40 (domicile)' justify='left'
+                  wrap='no' grow='1' {...this.link ()} />
+                <Button glyph='trash-o' shape='left-smooth'
+                  spacing='overlap' {...this.link ()} />
+                <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
+              </Container>
             </Container>
-            <Container kind='row-pane' subkind='box' selected='true' {...this.link ()} >
-              <Button glyph='user' kind='round' spacing='large' {...this.link ()} />
-              <Label text='Jeanne Sophian' justify='left'
-                grow='2' {...this.link ()} />
-              <Label text='+41 78 347 20 40' justify='left'
-                grow='1' {...this.link ()} />
-              <Button glyph='trash-o' shape='left-smooth'
-                spacing='overlap' {...this.link ()} />
-              <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
+
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='bookmark-o' text='Informations'
+                  grow='1' kind='title' {...this.link ()} />
+                <TextFieldCombo shape='rounded' hint-text='Chercher'
+                  combo-glyph='Search' spacing='large' {...this.link ()} />
+                <Button glyph='plus' text='Ajouter' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Label glyph='bookmark' glyph-color='#ff0000' glyph-size='140%'
+                  text='Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam.'
+                  grow='1' {...this.link ()} />
+                <Button glyph='trash-o' shape='left-smooth'
+                  spacing='overlap' {...this.link ()} />
+                <Button glyph='pencil' shape='right-smooth'
+                  {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Label glyph='bookmark' glyph-color='#2e5588' glyph-size='140%'
+                  text='Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam.'
+                  wrap='no' grow='1' {...this.link ()} />
+                <Button glyph='trash-o' shape='left-smooth' spacing='overlap'
+                  {...this.link ()} />
+                <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Label glyph='bookmark' glyph-color='#ffaf00' glyph-size='140%'
+                  text='Lorem ipsum dolor sit amet' grow='1' {...this.link ()} />
+                <Button glyph='trash-o' shape='left-smooth'
+                  spacing='overlap' {...this.link ()} />
+                <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Label glyph='bookmark' glyph-color='#2e5588' glyph-size='140%'
+                  text='Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+                  grow='1' {...this.link ()} />
+                <Button glyph='trash-o' shape='left-smooth' spacing='overlap'
+                  {...this.link ()} />
+                <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='footer' {...this.link ()} >
+                <Button kind='subaction' text='Afficher plus d´informations'
+                  width='0px' grow='1' {...this.link ()} />
+              </Container>
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Button glyph='user' kind='round' spacing='large'
-                {...this.link ()} />
-              <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long'
-                justify='left' grow='2' {...this.link ()} />
-              <Label text='+41 78 347 20 40 (domicile)' justify='left'
-                grow='1' {...this.link ()} />
-              <Button glyph='trash-o' shape='left-smooth'
-                spacing='overlap' {...this.link ()} />
-              <Button glyph='pencil' shape='right-smooth'
-                {...this.link ()} />
+
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='list' text='Dernières missions'
+                  grow='1' kind='title' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Button glyph='automobile' kind='round' spacing='large'
+                  {...this.link ()} />
+                <Label text='Ricota SA' justify='left' grow='5'
+                  {...this.link ()} />
+                <Label text='Lausanne' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='15.05.16' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='13:05' justify='left' grow='1'
+                  {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Button glyph='train' kind='round' spacing='large'
+                  {...this.link ()} />
+                <Label text='Mecatronic' justify='left' grow='5'
+                  {...this.link ()} />
+                <Label text='Genève' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='17.05.16' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='08:15' justify='left' grow='1'
+                  {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box'
+                mark-color='primary' {...this.link ()} >
+                <Button glyph='bicycle' kind='round'spacing='large'
+                  {...this.link ()} />
+                <Label text='Coop' justify='left' grow='5'
+                  {...this.link ()} />
+                <Label text='Prilly' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='21.05.16' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='17:55' justify='left' grow='1'
+                  {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box'
+                mark-color='secondary' {...this.link ()} >
+                <Button glyph='bicycle' kind='round' spacing='large'
+                  {...this.link ()} />
+                <Label text='Migros' justify='left' grow='5'
+                  {...this.link ()} />
+                <Label text='Renens' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='02.06.16' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='10:30' justify='left' grow='1'
+                  {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box'
+                mark-color='#69ed22' {...this.link ()} >
+                <Button glyph='truck' kind='round' spacing='large'
+                  {...this.link ()} />
+                <Label text='Torena SA' justify='left' grow='5'
+                  {...this.link ()} />
+                <Label text='Crissier' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='05.06.16' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='17:45' justify='left' grow='1'
+                  {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='footer' {...this.link ()} >
+                <Button kind='subaction' text='Afficher plus de missions'
+                  width='0px' grow='1' {...this.link ()} />
+              </Container>
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Button glyph='user' kind='round' spacing='large'
-                {...this.link ()} />
-              <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long'
-                justify='left' wrap='no' grow='2' {...this.link ()} />
-              <Label text='+41 78 347 20 40 (domicile)' justify='left'
-                wrap='no' grow='1' {...this.link ()} />
-              <Button glyph='trash-o' shape='left-smooth'
-                spacing='overlap' {...this.link ()} />
-              <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
+
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='gears' text='Paramètres' grow='1'
+                  kind='title' {...this.link ()} />
+                <Button glyph='ellipsis-v' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <LabelTextField label-text='ID SC' label-width='100px'
+                  hint-text='Numéro d´identification' grow='1'
+                  spacing='large' {...this.link ()} />
+                <Label text='' width='140px' spacing='large'
+                  {...this.link ()} />
+                <Label text='' width='140px' {...this.link ()} />
+              </Container>
+              <Separator {...this.link ()} />
+              <Container kind='row-pane' {...this.link ()} >
+                <LabelTextField label-text='Références' label-width='100px'
+                  hint-text='Références' grow='1' spacing='large'
+                  {...this.link ()} />
+                <Button glyph='toggle-on' text='Obligatoire'
+                  glyph-position='right' width='140px'
+                  spacing='large' {...this.link ()} />
+                <Label text='' width='140px' {...this.link ()} />
+              </Container>
+              <Separator {...this.link ()} />
+              <Container kind='row-pane' {...this.link ()} >
+                <LabelTextField label-text='Paiement' label-width='100px'
+                  hint-text='Mode de paiement' grow='1' spacing='large'
+                  {...this.link ()} />
+                <Button glyph='check-square' text='Facture BVR'
+                  glyph-position='right' width='140px'
+                  spacing='large' {...this.link ()} />
+                <Button glyph='square-o' text='Facture PDF'
+                  glyph-position='right' width='140px' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='' grow='1' {...this.link ()} />
+                <Button glyph='toggle-off' text='Détaillé'
+                  glyph-position='right' width='140px'
+                  spacing='large' {...this.link ()} />
+                <Button glyph='toggle-on' text='Résumé'
+                  glyph-position='right' width='140px' {...this.link ()} />
+              </Container>
+              <Separator {...this.link ()} />
+              <Container kind='row-pane' {...this.link ()} >
+                <LabelTextField label-text='Rabais' label-width='100px'
+                  hint-text='Rabais accordé' grow='1' spacing='large'
+                  {...this.link ()} />
+                <Button glyph='check-square' text='Personnel'
+                  glyph-position='right' width='140px' spacing='large'
+                  {...this.link ()} />
+                <Button glyph='square-o' text='Cumulé' glyph-position='right'
+                  width='140px' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                <Label text='' grow='1' {...this.link ()} />
+                <Button glyph='toggle-on' text='TVA incluse'
+                  glyph-position='right' width='140px'
+                  spacing='large' {...this.link ()} />
+                <Label text='' width='140px' {...this.link ()} />
+              </Container>
             </Container>
+
+            <Container kind='pane' {...this.link ()} >
+              <Container kind='row-pane' {...this.link ()} >
+                <Label glyph='paperclip' text='Documents' grow='1'
+                  kind='title' {...this.link ()} />
+                <TextFieldCombo shape='rounded' hint-text='Chercher'
+                  combo-glyph='Search' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Label text='12.01.16' justify='left'
+                  grow='2' {...this.link ()} />
+                <Label text='La Belle Plante' justify='left'
+                  grow='4' {...this.link ()} />
+                <Label text='Neuchâtel' justify='left'
+                  grow='2' {...this.link ()} />
+                <Label text='129.80' justify='right'
+                  grow='2' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Label text='31.03.16' justify='left'
+                  grow='2' {...this.link ()} />
+                <Label text='Ricota SA' justify='left'
+                  grow='4' {...this.link ()} />
+                <Label text='Lausanne' justify='left'
+                  grow='2' {...this.link ()} />
+                <Label text='58.50' justify='right'
+                  grow='2' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='box' {...this.link ()} >
+                <Label text='01.04.16' justify='left'
+                  grow='2' {...this.link ()} />
+                <Label text='Mauser Frères' justify='left'
+                  grow='4' {...this.link ()} />
+                <Label text='Ecublens' justify='left'
+                  grow='2' {...this.link ()} />
+                <Label text='95.00' justify='right'
+                  grow='2' {...this.link ()} />
+              </Container>
+              <Container kind='row-pane' subkind='footer' {...this.link ()} >
+                <Button kind='subaction' text='Afficher plus de documents'
+                  width='0px' grow='1' {...this.link ()} />
+              </Container>
+            </Container>
+
           </Container>
-
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='bookmark-o' text='Informations'
-                grow='1' kind='title' {...this.link ()} />
-              <TextFieldCombo shape='rounded' hint-text='Chercher'
-                combo-glyph='Search' spacing='large' {...this.link ()} />
-              <Button glyph='plus' text='Ajouter' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Label glyph='bookmark' glyph-color='#ff0000' glyph-size='140%'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam.'
-                grow='1' {...this.link ()} />
-              <Button glyph='trash-o' shape='left-smooth'
-                spacing='overlap' {...this.link ()} />
-              <Button glyph='pencil' shape='right-smooth'
-                {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Label glyph='bookmark' glyph-color='#2e5588' glyph-size='140%'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam.'
-                wrap='no' grow='1' {...this.link ()} />
-              <Button glyph='trash-o' shape='left-smooth' spacing='overlap'
-                {...this.link ()} />
-              <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Label glyph='bookmark' glyph-color='#ffaf00' glyph-size='140%'
-                text='Lorem ipsum dolor sit amet' grow='1' {...this.link ()} />
-              <Button glyph='trash-o' shape='left-smooth'
-                spacing='overlap' {...this.link ()} />
-              <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Label glyph='bookmark' glyph-color='#2e5588' glyph-size='140%'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit'
-                grow='1' {...this.link ()} />
-              <Button glyph='trash-o' shape='left-smooth' spacing='overlap'
-                {...this.link ()} />
-              <Button glyph='pencil' shape='right-smooth' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='footer' {...this.link ()} >
-              <Button kind='subaction' text='Afficher plus d´informations'
-                width='0px' grow='1' {...this.link ()} />
-            </Container>
-          </Container>
-
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='list' text='Dernières missions'
-                grow='1' kind='title' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Button glyph='automobile' kind='round' spacing='large'
-                {...this.link ()} />
-              <Label text='Ricota SA' justify='left' grow='5'
-                {...this.link ()} />
-              <Label text='Lausanne' justify='left' grow='2'
-                {...this.link ()} />
-              <Label text='15.05.16' justify='left' grow='2'
-                {...this.link ()} />
-              <Label text='13:05' justify='left' grow='1'
-                {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Button glyph='train' kind='round' spacing='large'
-                {...this.link ()} />
-              <Label text='Mecatronic' justify='left' grow='5'
-                {...this.link ()} />
-              <Label text='Genève' justify='left' grow='2'
-                {...this.link ()} />
-              <Label text='17.05.16' justify='left' grow='2'
-                {...this.link ()} />
-              <Label text='08:15' justify='left' grow='1'
-                {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box'
-              mark-color='primary' {...this.link ()} >
-              <Button glyph='bicycle' kind='round'spacing='large'
-                {...this.link ()} />
-              <Label text='Coop' justify='left' grow='5'
-                {...this.link ()} />
-              <Label text='Prilly' justify='left' grow='2'
-                {...this.link ()} />
-              <Label text='21.05.16' justify='left' grow='2'
-                {...this.link ()} />
-              <Label text='17:55' justify='left' grow='1'
-                {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box'
-              mark-color='secondary' {...this.link ()} >
-              <Button glyph='bicycle' kind='round' spacing='large'
-                {...this.link ()} />
-              <Label text='Migros' justify='left' grow='5'
-                {...this.link ()} />
-              <Label text='Renens' justify='left' grow='2'
-                {...this.link ()} />
-              <Label text='02.06.16' justify='left' grow='2'
-                {...this.link ()} />
-              <Label text='10:30' justify='left' grow='1'
-                {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box'
-              mark-color='#69ed22' {...this.link ()} >
-              <Button glyph='truck' kind='round' spacing='large'
-                {...this.link ()} />
-              <Label text='Torena SA' justify='left' grow='5'
-                {...this.link ()} />
-              <Label text='Crissier' justify='left' grow='2'
-                {...this.link ()} />
-              <Label text='05.06.16' justify='left' grow='2'
-                {...this.link ()} />
-              <Label text='17:45' justify='left' grow='1'
-                {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='footer' {...this.link ()} >
-              <Button kind='subaction' text='Afficher plus de missions'
-                width='0px' grow='1' {...this.link ()} />
-            </Container>
-          </Container>
-
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='gears' text='Paramètres' grow='1'
-                kind='title' {...this.link ()} />
-              <Button glyph='ellipsis-v' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-text='ID SC' label-width='100px'
-                hint-text='Numéro d´identification' grow='1'
-                spacing='large' {...this.link ()} />
-              <Label text='' width='140px' spacing='large'
-                {...this.link ()} />
-              <Label text='' width='140px' {...this.link ()} />
-            </Container>
-            <Separator {...this.link ()} />
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-text='Références' label-width='100px'
-                hint-text='Références' grow='1' spacing='large'
-                {...this.link ()} />
-              <Button glyph='toggle-on' text='Obligatoire'
-                glyph-position='right' width='140px'
-                spacing='large' {...this.link ()} />
-              <Label text='' width='140px' {...this.link ()} />
-            </Container>
-            <Separator {...this.link ()} />
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-text='Paiement' label-width='100px'
-                hint-text='Mode de paiement' grow='1' spacing='large'
-                {...this.link ()} />
-              <Button glyph='check-square' text='Facture BVR'
-                glyph-position='right' width='140px'
-                spacing='large' {...this.link ()} />
-              <Button glyph='square-o' text='Facture PDF'
-                glyph-position='right' width='140px' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='' grow='1' {...this.link ()} />
-              <Button glyph='toggle-off' text='Détaillé'
-                glyph-position='right' width='140px'
-                spacing='large' {...this.link ()} />
-              <Button glyph='toggle-on' text='Résumé'
-                glyph-position='right' width='140px' {...this.link ()} />
-            </Container>
-            <Separator {...this.link ()} />
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-text='Rabais' label-width='100px'
-                hint-text='Rabais accordé' grow='1' spacing='large'
-                {...this.link ()} />
-              <Button glyph='check-square' text='Personnel'
-                glyph-position='right' width='140px' spacing='large'
-                {...this.link ()} />
-              <Button glyph='square-o' text='Cumulé' glyph-position='right'
-                width='140px' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='' grow='1' {...this.link ()} />
-              <Button glyph='toggle-on' text='TVA incluse'
-                glyph-position='right' width='140px'
-                spacing='large' {...this.link ()} />
-              <Label text='' width='140px' {...this.link ()} />
-            </Container>
-          </Container>
-
-          <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label glyph='paperclip' text='Documents' grow='1'
-                kind='title' {...this.link ()} />
-              <TextFieldCombo shape='rounded' hint-text='Chercher'
-                combo-glyph='Search' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Label text='12.01.16' justify='left'
-                grow='2' {...this.link ()} />
-              <Label text='La Belle Plante' justify='left'
-                grow='4' {...this.link ()} />
-              <Label text='Neuchâtel' justify='left'
-                grow='2' {...this.link ()} />
-              <Label text='129.80' justify='right'
-                grow='2' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Label text='31.03.16' justify='left'
-                grow='2' {...this.link ()} />
-              <Label text='Ricota SA' justify='left'
-                grow='4' {...this.link ()} />
-              <Label text='Lausanne' justify='left'
-                grow='2' {...this.link ()} />
-              <Label text='58.50' justify='right'
-                grow='2' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Label text='01.04.16' justify='left'
-                grow='2' {...this.link ()} />
-              <Label text='Mauser Frères' justify='left'
-                grow='4' {...this.link ()} />
-              <Label text='Ecublens' justify='left'
-                grow='2' {...this.link ()} />
-              <Label text='95.00' justify='right'
-                grow='2' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' subkind='footer' {...this.link ()} >
-              <Button kind='subaction' text='Afficher plus de documents'
-                width='0px' grow='1' {...this.link ()} />
-            </Container>
-          </Container>
-
         </Container>
       </Container>
     );
