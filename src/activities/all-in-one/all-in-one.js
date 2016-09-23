@@ -32,7 +32,8 @@ export default class AllInOne extends React.Component {
     super (props);
 
     this.state = {
-      currentStep: 'login',
+      // currentStep: 'login',
+      currentStep: 'codispatch',
       currentMandat: null,
     };
   }
