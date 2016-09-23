@@ -27,7 +27,7 @@ export default class Codispatch extends React.Component {
   leftView () {
     return (
       <Container kind='view' width='700px' {...this.link ()} >
-        <Container kind='pane-navigator' {...this.link ()} >
+        <Container kind='pane-navigator' navigation-for="sender" {...this.link ()} >
           <Button text='Expéditeur' width='0px' grow='1'
             active='true' kind='pane-navigator' to-anchor='exp' {...this.link ()} />
           <Button text='Prestation' width='0px' grow='1'
@@ -40,7 +40,7 @@ export default class Codispatch extends React.Component {
             active='false' kind='pane-navigator' to-anchor='bill' {...this.link ()} />
         </Container>
 
-        <Container kind='panes' {...this.link ()} >
+        <Container kind='panes' navigation-name="sender" {...this.link ()} >
           <Container kind='pane' anchor='exp' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Expéditeur' grow='1' kind='title' {...this.link ()} />
@@ -389,7 +389,7 @@ export default class Codispatch extends React.Component {
       return null;
     }
     return (
-      <Container kind='pane-vnavigator' {...this.link ()} >
+      <Container kind='pane-vnavigator' navigation-for="details" {...this.link ()} >
         <Button glyph='building' tooltip='Adresse principale'
           active='false' kind='pane-vnavigator' to-anchor='address' {...this.link ()} />
         <Button glyph='user' tooltip='Contacts'
@@ -439,7 +439,7 @@ export default class Codispatch extends React.Component {
           </Container>
           {this.hnavigator ()}
 
-          <Container kind='panes' {...this.link ()} >
+          <Container kind='panes' navigation-name="details" {...this.link ()} >
             <Container kind='pane' anchor='address' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 <Label glyph='building' text='Adresse principale'
