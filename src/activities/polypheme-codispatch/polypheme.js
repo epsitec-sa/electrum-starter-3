@@ -67,17 +67,17 @@ export default class Polypheme extends React.Component {
     return (
       <Container kind='pane-vnavigator' {...this.link ()} >
         <Button glyph='building' tooltip='Adresse principale'
-          active='false' kind='pane-vnavigator' {...this.link ()} />
+          kind='pane-vnavigator' {...this.link ()} />
         <Button glyph='user' tooltip='Contacts'
-          active='false' kind='pane-vnavigator' {...this.link ()} />
+          kind='pane-vnavigator' {...this.link ()} />
         <Button glyph='bookmark-o' tooltip='Infomations'
-          active='true'  kind='pane-vnavigator' {...this.link ()} />
+          kind='pane-vnavigator' {...this.link ()} />
         <Button glyph='list' tooltip='Dernières missions'
-          active='false' kind='pane-vnavigator' {...this.link ()} />
+          kind='pane-vnavigator' {...this.link ()} />
         <Button glyph='gears' tooltip='Paramètres'
-          active='false' kind='pane-vnavigator' {...this.link ()} />
+          kind='pane-vnavigator' {...this.link ()} />
         <Button glyph='paperclip' tooltip='Documents'
-          active='false' kind='pane-vnavigator' {...this.link ()} />
+          kind='pane-vnavigator' {...this.link ()} />
       </Container>
     );
   }
@@ -89,17 +89,17 @@ export default class Polypheme extends React.Component {
     return (
       <Container kind='pane-hnavigator' {...this.link ()} >
         <Button glyph='building' tooltip='Adresse principale'
-          active='false' kind='pane-hnavigator' {...this.link ()} />
+          kind='pane-hnavigator' {...this.link ()} />
         <Button glyph='user' tooltip='Contacts'
-          active='false' kind='pane-hnavigator' {...this.link ()} />
+          kind='pane-hnavigator' {...this.link ()} />
         <Button glyph='bookmark-o' tooltip='Infomations'
-          active='true'  kind='pane-hnavigator' {...this.link ()} />
+          kind='pane-hnavigator' {...this.link ()} />
         <Button glyph='list' tooltip='Dernières missions'
-          active='false' kind='pane-hnavigator' {...this.link ()} />
+          kind='pane-hnavigator' {...this.link ()} />
         <Button glyph='gears' tooltip='Paramètres'
-          active='false' kind='pane-hnavigator' {...this.link ()} />
+          kind='pane-hnavigator' {...this.link ()} />
         <Button glyph='paperclip' tooltip='Documents'
-          active='false' kind='pane-hnavigator' {...this.link ()} />
+          kind='pane-hnavigator' {...this.link ()} />
       </Container>
     );
   }

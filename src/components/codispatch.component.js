@@ -29,15 +29,15 @@ export default class Codispatch extends React.Component {
       <Container kind='view' width='700px' {...this.link ()} >
         <Container kind='pane-navigator' navigation-for="sender" {...this.link ()} >
           <Button text='Expéditeur' width='0px' grow='1'
-            active='true' kind='pane-navigator' to-anchor='exp' {...this.link ()} />
+            kind='pane-navigator' to-anchor='exp' {...this.link ()} />
           <Button text='Prestation' width='0px' grow='1'
-            active='false' kind='pane-navigator' to-anchor='perf' {...this.link ()} />
+            kind='pane-navigator' to-anchor='perf' {...this.link ()} />
           <Button text='Destinataire' width='0px' grow='1'
-            active='false' kind='pane-navigator' to-anchor='dest' {...this.link ()} />
+            kind='pane-navigator' to-anchor='dest' {...this.link ()} />
           <Button text='Colis' width='0px' grow='1'
-            active='false' kind='pane-navigator' to-anchor='parcel' {...this.link ()} />
+            kind='pane-navigator' to-anchor='parcel' {...this.link ()} />
           <Button text='Facture' width='0px' grow='1'
-            active='false' kind='pane-navigator' to-anchor='bill' {...this.link ()} />
+            kind='pane-navigator' to-anchor='bill' {...this.link ()} />
         </Container>
 
         <Container kind='panes' navigation-name="sender" {...this.link ()} >
@@ -391,17 +391,17 @@ export default class Codispatch extends React.Component {
     return (
       <Container kind='pane-vnavigator' navigation-for="details" {...this.link ()} >
         <Button glyph='building' tooltip='Adresse principale'
-          active='false' kind='pane-vnavigator' to-anchor='address' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='address' {...this.link ()} />
         <Button glyph='user' tooltip='Contacts'
-          active='false' kind='pane-vnavigator' to-anchor='contacts' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='contacts' {...this.link ()} />
         <Button glyph='bookmark-o' tooltip='Infomations'
-          active='true'  kind='pane-vnavigator' to-anchor='infos' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='infos' {...this.link ()} />
         <Button glyph='list' tooltip='Dernières missions'
-          active='false' kind='pane-vnavigator' to-anchor='missions' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='missions' {...this.link ()} />
         <Button glyph='gears' tooltip='Paramètres'
-          active='false' kind='pane-vnavigator' to-anchor='params' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='params' {...this.link ()} />
         <Button glyph='paperclip' tooltip='Documents'
-          active='false' kind='pane-vnavigator' to-anchor='docs' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='docs' {...this.link ()} />
       </Container>
     );
   }
@@ -411,19 +411,19 @@ export default class Codispatch extends React.Component {
       return null;
     }
     return (
-      <Container kind='pane-hnavigator' {...this.link ()} >
+      <Container kind='pane-hnavigator' navigation-for="details" {...this.link ()} >
         <Button glyph='building' tooltip='Adresse principale'
-          active='false' kind='pane-hnavigator' to-anchor='address' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='address' {...this.link ()} />
         <Button glyph='user' tooltip='Contacts'
-          active='false' kind='pane-hnavigator' to-anchor='contacts' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='contacts' {...this.link ()} />
         <Button glyph='bookmark-o' tooltip='Infomations'
-          active='true'  kind='pane-hnavigator' to-anchor='infos' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='infos' {...this.link ()} />
         <Button glyph='list' tooltip='Dernières missions'
-          active='false' kind='pane-hnavigator' to-anchor='missions' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='missions' {...this.link ()} />
         <Button glyph='gears' tooltip='Paramètres'
-          active='false' kind='pane-hnavigator' to-anchor='params' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='params' {...this.link ()} />
         <Button glyph='paperclip' tooltip='Documents'
-          active='false' kind='pane-hnavigator' to-anchor='docs' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='docs' {...this.link ()} />
       </Container>
     );
   }
