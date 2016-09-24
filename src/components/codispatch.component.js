@@ -29,21 +29,21 @@ export default class Codispatch extends React.Component {
       <Container kind='view' width='700px' {...this.link ()} >
         <Container kind='pane-navigator' navigation-for="sender" {...this.link ()} >
           <Button text='Expéditeur' width='0px' grow='1'
-            kind='pane-navigator' to-anchor='exp' {...this.link ()} />
+            kind='pane-navigator' to-anchor='sender-exp' {...this.link ()} />
           <Button text='Prestation' width='0px' grow='1'
-            kind='pane-navigator' to-anchor='perf' {...this.link ()} />
+            kind='pane-navigator' to-anchor='sender-perf' {...this.link ()} />
           <Button text='Destinataire' width='0px' grow='1'
-            kind='pane-navigator' to-anchor='dest' {...this.link ()} />
+            kind='pane-navigator' to-anchor='sender-dest' {...this.link ()} />
           <Button text='Colis' width='0px' grow='1'
-            kind='pane-navigator' to-anchor='parcel' {...this.link ()} />
+            kind='pane-navigator' to-anchor='sender-parcel' {...this.link ()} />
           <Button text='Facture' width='0px' grow='1'
-            kind='pane-navigator' to-anchor='bill' {...this.link ()} />
+            kind='pane-navigator' to-anchor='sender-bill' {...this.link ()} />
           <Button text='Divers' width='0px' grow='1'
-            kind='pane-navigator' to-anchor='misc' {...this.link ()} />
+            kind='pane-navigator' to-anchor='sender-misc' {...this.link ()} />
         </Container>
 
         <Container kind='panes' navigation-name="sender" {...this.link ()} >
-          <Container kind='pane' anchor='exp' {...this.link ()} >
+          <Container kind='pane' anchor='sender-exp' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Expéditeur' grow='1' kind='title' {...this.link ()} />
               <Button glyph='toggle-off' text='Nouveau' border='none'
@@ -74,7 +74,7 @@ export default class Codispatch extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='pane' anchor='perf' {...this.link ()} >
+          <Container kind='pane' anchor='sender-perf' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Prestation' grow='1' kind='title' {...this.link ()} />
               <Button glyph='ellipsis-v' {...this.link ()} />
@@ -97,7 +97,7 @@ export default class Codispatch extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='pane' anchor='dest' {...this.link ()} >
+          <Container kind='pane' anchor='sender-dest' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Destinataire' grow='1' kind='title'
                 {...this.link ()} />
@@ -129,7 +129,7 @@ export default class Codispatch extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='pane' anchor='parcel' {...this.link ()} >
+          <Container kind='pane' anchor='sender-parcel' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Colis' grow='1' kind='title' {...this.link ()} />
               <Button glyph='plus' text='Ajouter' spacing='large'
@@ -170,7 +170,7 @@ export default class Codispatch extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='pane' anchor='bill' {...this.link ()} >
+          <Container kind='pane' anchor='sender-bill' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Facture' grow='1' kind='title' {...this.link ()} />
               <Button glyph='plus' text='Ajouter' spacing='large'
@@ -211,7 +211,7 @@ export default class Codispatch extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='pane' anchor='misc' {...this.link ()} >
+          <Container kind='pane' anchor='sender-misc' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Divers' grow='1' kind='title' {...this.link ()} />
               <Button glyph='ellipsis-v' {...this.link ()} />
@@ -393,17 +393,17 @@ export default class Codispatch extends React.Component {
     return (
       <Container kind='pane-vnavigator' navigation-for="details" {...this.link ()} >
         <Button glyph='building' tooltip='Adresse principale'
-          kind='pane-vnavigator' to-anchor='address' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='details-address' {...this.link ()} />
         <Button glyph='user' tooltip='Contacts'
-          kind='pane-vnavigator' to-anchor='contacts' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='details-contacts' {...this.link ()} />
         <Button glyph='bookmark-o' tooltip='Infomations'
-          kind='pane-vnavigator' to-anchor='infos' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='details-infos' {...this.link ()} />
         <Button glyph='list' tooltip='Dernières missions'
-          kind='pane-vnavigator' to-anchor='missions' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='details-missions' {...this.link ()} />
         <Button glyph='gears' tooltip='Paramètres'
-          kind='pane-vnavigator' to-anchor='params' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='details-params' {...this.link ()} />
         <Button glyph='paperclip' tooltip='Documents'
-          kind='pane-vnavigator' to-anchor='docs' {...this.link ()} />
+          kind='pane-vnavigator' to-anchor='details-docs' {...this.link ()} />
       </Container>
     );
   }
@@ -415,17 +415,17 @@ export default class Codispatch extends React.Component {
     return (
       <Container kind='pane-hnavigator' navigation-for="details" {...this.link ()} >
         <Button glyph='building' tooltip='Adresse principale'
-          kind='pane-hnavigator' to-anchor='address' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='details-address' {...this.link ()} />
         <Button glyph='user' tooltip='Contacts'
-          kind='pane-hnavigator' to-anchor='contacts' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='details-contacts' {...this.link ()} />
         <Button glyph='bookmark-o' tooltip='Infomations'
-          kind='pane-hnavigator' to-anchor='infos' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='details-infos' {...this.link ()} />
         <Button glyph='list' tooltip='Dernières missions'
-          kind='pane-hnavigator' to-anchor='missions' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='details-missions' {...this.link ()} />
         <Button glyph='gears' tooltip='Paramètres'
-          kind='pane-hnavigator' to-anchor='params' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='details-params' {...this.link ()} />
         <Button glyph='paperclip' tooltip='Documents'
-          kind='pane-hnavigator' to-anchor='docs' {...this.link ()} />
+          kind='pane-hnavigator' to-anchor='details-docs' {...this.link ()} />
       </Container>
     );
   }
@@ -442,7 +442,7 @@ export default class Codispatch extends React.Component {
           {this.hnavigator ()}
 
           <Container kind='panes' navigation-name="details" {...this.link ()} >
-            <Container kind='pane' anchor='address' {...this.link ()} >
+            <Container kind='pane' anchor='details-address' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 <Label glyph='building' text='Adresse principale'
                   grow='1' kind='title' {...this.link ()} />
@@ -471,7 +471,7 @@ export default class Codispatch extends React.Component {
               </Container>
             </Container>
 
-            <Container kind='pane' anchor='contacts' {...this.link ()} >
+            <Container kind='pane' anchor='details-contacts' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 <Label glyph='user' text='Contacts' grow='1' kind='title'
                   {...this.link ()} />
@@ -523,7 +523,7 @@ export default class Codispatch extends React.Component {
               </Container>
             </Container>
 
-            <Container kind='pane' anchor='infos' {...this.link ()} >
+            <Container kind='pane' anchor='details-infos' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 <Label glyph='bookmark-o' text='Informations'
                   grow='1' kind='title' {...this.link ()} />
@@ -573,7 +573,7 @@ export default class Codispatch extends React.Component {
               </Container>
             </Container>
 
-            <Container kind='pane' anchor='missions' {...this.link ()} >
+            <Container kind='pane' anchor='details-missions' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 <Label glyph='list' text='Dernières missions'
                   grow='1' kind='title' {...this.link ()} />
@@ -647,7 +647,7 @@ export default class Codispatch extends React.Component {
               </Container>
             </Container>
 
-            <Container kind='pane' anchor='params' {...this.link ()} >
+            <Container kind='pane' anchor='details-params' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 <Label glyph='gears' text='Paramètres' grow='1'
                   kind='title' {...this.link ()} />
@@ -710,7 +710,7 @@ export default class Codispatch extends React.Component {
               </Container>
             </Container>
 
-            <Container kind='pane' anchor='docs' {...this.link ()} >
+            <Container kind='pane' anchor='details-docs' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 <Label glyph='paperclip' text='Documents' grow='1'
                   kind='title' {...this.link ()} />
