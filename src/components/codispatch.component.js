@@ -38,6 +38,8 @@ export default class Codispatch extends React.Component {
             kind='pane-navigator' to-anchor='parcel' {...this.link ()} />
           <Button text='Facture' width='0px' grow='1'
             kind='pane-navigator' to-anchor='bill' {...this.link ()} />
+          <Button text='Divers' width='0px' grow='1'
+            kind='pane-navigator' to-anchor='misc' {...this.link ()} />
         </Container>
 
         <Container kind='panes' navigation-name="sender" {...this.link ()} >
