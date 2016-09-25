@@ -13,7 +13,7 @@ export default class DispatchTrips extends React.Component {
     super (props);
   }
 
-  getJob (data) {
+  getTrip (data) {
     return (
       <TripBox data={data} {...this.link ()} />
     );
@@ -39,7 +39,7 @@ export default class DispatchTrips extends React.Component {
           <Container kind='panes' {...this.link ()} >
             <Container kind='pane' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
-                {this.getJob ({
+                {this.getTrip ({
                   pickTime:    '10:50',
                   pickDesc:    'Coop St. Laurent',
                   pickZone:    'Zone A',
@@ -54,7 +54,7 @@ export default class DispatchTrips extends React.Component {
                   priceGlyphs: 'warning'})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getJob ({
+                {this.getTrip ({
                   pickTime:    '11:00',
                   pickDesc:    'Migros Plein-Palais',
                   pickZone:    'Zone B',
@@ -69,7 +69,7 @@ export default class DispatchTrips extends React.Component {
                   priceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getJob ({
+                {this.getTrip ({
                   selected:    'true',
                   pickTime:    '11:15',
                   pickDesc:    'Icomm',
@@ -85,7 +85,7 @@ export default class DispatchTrips extends React.Component {
                   priceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getJob ({
+                {this.getTrip ({
                   pickTime:    '11:45',
                   pickDesc:    'Burder A.',
                   pickZone:    'Zone B',
@@ -100,7 +100,7 @@ export default class DispatchTrips extends React.Component {
                   priceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getJob ({
+                {this.getTrip ({
                   pickTime:    '14:00',
                   pickDesc:    'Coop St. Laurent',
                   pickZone:    'Zone A',
@@ -115,7 +115,7 @@ export default class DispatchTrips extends React.Component {
                   priceGlyphs: 'warning'})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getJob ({
+                {this.getTrip ({
                   pickTime:    '14:30',
                   pickDesc:    'Migros Plein-Palais',
                   pickZone:    'Zone B',
@@ -130,7 +130,7 @@ export default class DispatchTrips extends React.Component {
                   priceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getJob ({
+                {this.getTrip ({
                   pickTime:    '15:00',
                   pickDesc:    'Migros Pont-Neuf',
                   pickZone:    'Zone A',
