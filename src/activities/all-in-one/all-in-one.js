@@ -19,8 +19,8 @@ import {
   Separator
 } from 'electrum-arc';
 import {
-  DispatchJobs,
-  DispatchRunners,
+  DispatchTrips,
+  DispatchMessengers,
   Codispatch
 } from '../../all-components.js';
 
@@ -102,8 +102,8 @@ export default class AllInOne extends React.Component {
                this.getStep () === 'mandats' ||
                this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'dispatch-jobs' ||
-               this.getStep () === 'dispatch-runners') {
+    } else if (this.getStep () === 'dispatch-trips' ||
+               this.getStep () === 'dispatch-messengers') {
       return (
         <Container kind='task' {...this.link ()} >
           <Button action={() => this.setStep ('mandats')}
@@ -210,16 +210,16 @@ export default class AllInOne extends React.Component {
           </Container>
         </Container>
       );
-    } else if (this.getStep () === 'dispatch-jobs' ||
-               this.getStep () === 'dispatch-runners' ||
+    } else if (this.getStep () === 'dispatch-trips' ||
+               this.getStep () === 'dispatch-messengers' ||
                this.getStep () === 'codispatch' ||
                this.getStep () === 'fact' ||
                this.getStep () === 'customers' ||
                this.getStep () === 'team') {
       return (
         <Container kind='main-tab' {...this.link ()} >
-          <Button action={() => this.setStep ('dispatch-jobs')}
-            active={(this.getStep () === 'dispatch-jobs' || this.getStep () === 'dispatch-runners') ? 'true' : 'false'}
+          <Button action={() => this.setStep ('dispatch-trips')}
+            active={(this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') ? 'true' : 'false'}
             text='dispo' width='200px' kind='main-tab' {...this.link ()} />
           <Button action={() => this.setStep ('codispatch')}
             active={this.activeStep ('codispatch')}
@@ -246,18 +246,18 @@ export default class AllInOne extends React.Component {
       return null;
     } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'dispatch-jobs' || this.getStep () === 'dispatch-runners') {
+    } else if (this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') {
       return (
         <Container kind='view-tab' {...this.link ()} >
-          <Button action={() => this.setStep ('dispatch-jobs')}
+          <Button action={() => this.setStep ('dispatch-trips')}
             text='Missions' kind='view-tab'
-            active={this.activeStep ('dispatch-jobs')} {...this.link ()} />
-          <Button action={() => this.setStep ('dispatch-runners')}
+            active={this.activeStep ('dispatch-trips')} {...this.link ()} />
+          <Button action={() => this.setStep ('dispatch-messengers')}
             text='Coursiers' kind='view-tab'
-            active={this.activeStep ('dispatch-runners')} {...this.link ()} />
+            active={this.activeStep ('dispatch-messengers')} {...this.link ()} />
         </Container>
       );
-    } else if (this.getStep () === 'dispatch-runners') {
+    } else if (this.getStep () === 'dispatch-messengers') {
       return (
         <Container kind='view-tab' {...this.link ()} >
           <TabButton text='Missions' glyph='none' active='false' {...this.link ()} />
@@ -309,10 +309,10 @@ export default class AllInOne extends React.Component {
       return this.viewMandats ();
     } else if (this.getStep () === 'mandat-create') {
       return this.viewMandatCreate ();
-    } else if (this.getStep () === 'dispatch-jobs') {
-      return this.viewDispatchJobs ();
-    } else if (this.getStep () === 'dispatch-runners') {
-      return this.viewDispatchRunners ();
+    } else if (this.getStep () === 'dispatch-trips') {
+      return this.viewDispatchTrips ();
+    } else if (this.getStep () === 'dispatch-messengers') {
+      return this.viewDispatchMessengers ();
     } else if (this.getStep () === 'codispatch') {
       return this.viewCodispatch ();
     } else if (this.getStep () === 'fact') {
@@ -500,15 +500,15 @@ export default class AllInOne extends React.Component {
     );
   }
 
-  viewDispatchJobs () {
+  viewDispatchTrips () {
     return (
-      <DispatchJobs {...this.link ()} />
+      <DispatchTrips {...this.link ()} />
     );
   }
 
-  viewDispatchRunners () {
+  viewDispatchMessengers () {
     return (
-      <DispatchRunners {...this.link ()} />
+      <DispatchMessengers {...this.link ()} />
     );
   }
 

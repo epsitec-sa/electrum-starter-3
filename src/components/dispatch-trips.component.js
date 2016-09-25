@@ -3,11 +3,11 @@
 import React from 'react';
 import {
   Container,
-  RunBox,
+  TripBox,
   TextFieldCombo
 } from 'electrum-arc';
 
-export default class DispatchJobs extends React.Component {
+export default class DispatchTrips extends React.Component {
 
   constructor (props) {
     super (props);
@@ -15,7 +15,7 @@ export default class DispatchJobs extends React.Component {
 
   getJob (data) {
     return (
-      <RunBox data={data} {...this.link ()} />
+      <TripBox data={data} {...this.link ()} />
     );
   }
 
