@@ -24,11 +24,10 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
+    this.messengerHeight = '70px';
+    this.ticketHeight    = '90px';
+    this.ticketWidth     = '220px';
   }
-
-  messengerHeight = '70px';
-  ticketHeight    = '90px';
-  ticketWidth     = '220px';
 
   getMessenger (data) {
     return (
@@ -50,10 +49,10 @@ export default class DispatchMessengers extends React.Component {
           <Container kind='tickets-messenger' {...this.link ()} >
             {this.getMessenger ({
               color:          'blue',
-      				photo:          'user',
-      				transportation: 'bicycle',
-      				name:           'Sandra',
-      				total:          '203.50'})}
+              photo:          'user',
+              transportation: 'bicycle',
+              name:           'Sandra',
+              total:          '203.50'})}
             <Container kind='tickets-trips' {...this.link ()} >
               {this.getTrip ({
                 color:    'blue',
@@ -66,13 +65,13 @@ export default class DispatchMessengers extends React.Component {
                 glyphs:   'warning'})}
               {this.getTrip ({
                 color:    'blue',
-        				type:     'drop',
-        				pickTime: '11:00',
-        				pickDesc: 'Migros Pont-Neuf',
-        				dropTime: '11:15',
-        				dropDesc: 'Chancellerie',
-        				count:    1,
-        				glyphs:   ['warning', 'bookmark-base']})}
+                type:     'drop',
+                pickTime: '11:00',
+                pickDesc: 'Migros Pont-Neuf',
+                dropTime: '11:15',
+                dropDesc: 'Chancellerie',
+                count:    1,
+                glyphs:   ['warning', 'bookmark-base']})}
               {this.getTrip ({
         				type:     'drop',
         				pickTime: '11:20',
@@ -103,10 +102,10 @@ export default class DispatchMessengers extends React.Component {
           <Container kind='tickets-messenger' {...this.link ()} >
             {this.getMessenger ({
               color:          'blue',
-          		photo:          'user',
-      				transportation: 'bicycle',
-      				name:           'Jean-Paul',
-      				total:          '68.00'})}
+              photo:          'user',
+              transportation: 'bicycle',
+              name:           'Jean-Paul',
+              total:          '68.00'})}
             <Container kind='tickets-trips' {...this.link ()} >
               {this.getTrip ({
         				type:     'drop',
@@ -513,6 +512,15 @@ export default class DispatchMessengers extends React.Component {
         				dropDesc: 'Studer AG',
         				count:    4,
         				glyphs:   'warning'})}
+            </Container>
+          </Container>
+
+          <Container kind='tickets-messenger' {...this.link ()} >
+            {this.getMessenger ('xxx')}
+            <Container kind='tickets-trips' {...this.link ()} >
+              {this.getTrip ('xxx')}
+              {this.getTrip (null)}
+              {this.getTrip ()}
             </Container>
           </Container>
 
