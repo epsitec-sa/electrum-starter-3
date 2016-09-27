@@ -13,9 +13,9 @@ export default class DispatchTrips extends React.Component {
     super (props);
   }
 
-  getTrip (data) {
+  getTrip (selected, data) {
     return (
-      <TripBox data={data} {...this.link ()} />
+      <TripBox selected={selected} data={data} {...this.link ()} />
     );
   }
 
@@ -39,106 +39,119 @@ export default class DispatchTrips extends React.Component {
           <Container kind='panes' {...this.link ()} >
             <Container kind='pane' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip ({
-                  pickTime:    '10:50',
-                  pickDesc:    'Coop St. Laurent',
-                  pickZone:    'Zone A',
-                  pickGlyphs:  ['phone-square', 'bookmark-secondary'],
-                  dropTime:    '11:20',
-                  dropDesc:    'Dupond J.',
-                  dropZone:    'Zone C',
-                  dropGlyphs:  ['usd', 'bookmark-base', 'bookmark-primary'],
+                {this.getTrip (false, {
+                  pick: {
+                    time:    '10:50',
+                    desc:    'Coop St. Laurent',
+                    zone:    'Zone A',
+                    glyphs:  ['phone-square', 'bookmark-secondary']},
+                  drop: {
+                    time:    '11:20',
+                    desc:    'Dupond J.',
+                    zone:    'Zone C',
+                    glyphs:  ['usd', 'bookmark-base', 'bookmark-primary']},
                   count:       '2 pces',
                   weight:      '1.3 kg',
                   price:       '100.00',
                   priceGlyphs: 'warning'})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip ({
-                  pickTime:    '11:00',
-                  pickDesc:    'Migros Plein-Palais',
-                  pickZone:    'Zone B',
-                  pickGlyphs:  ['bookmark-base'],
-                  dropTime:    '11:35',
-                  dropDesc:    'Alfred D.',
-                  dropZone:    'Zone B',
-                  dropGlyphs:  ['bookmark-base', 'bookmark-primary'],
+                {this.getTrip (false, {
+                  pick: {
+                    time:    '11:00',
+                    desc:    'Migros Plein-Palais',
+                    zone:    'Zone B',
+                    glyphs:  ['bookmark-base']},
+                  drop: {
+                    time:    '11:35',
+                    desc:    'Alfred D.',
+                    zone:    'Zone B',
+                    glyphs:  ['bookmark-base', 'bookmark-primary']},
                   count:       '1 pce',
                   weight:      '0.2 kg',
                   price:       '30.00',
                   priceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip ({
-                  selected:    'true',
-                  pickTime:    '11:15',
-                  pickDesc:    'Icomm',
-                  pickZone:    'Zone B',
-                  pickGlyphs:  null,
-                  dropTime:    '12:00',
-                  dropDesc:    'Studer AG',
-                  dropZone:    'Zone A',
-                  dropGlyphs:  null,
+                {this.getTrip ('true', {
+                  pick: {
+                    time:    '11:15',
+                    desc:    'Icomm',
+                    zone:    'Zone B',
+                    glyphs:  null},
+                  drop: {
+                    time:    '12:00',
+                    desc:    'Studer AG',
+                    zone:    'Zone A',
+                    glyphs:  null},
                   count:       '2 pces',
                   weight:      '1.2 kg',
                   price:       '130.00',
                   priceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip ({
-                  pickTime:    '11:45',
-                  pickDesc:    'Burder A.',
-                  pickZone:    'Zone B',
-                  pickGlyphs:  null,
-                  dropTime:    '13:15',
-                  dropDesc:    'PolyAugrien',
-                  dropZone:    'Zone A',
-                  dropGlyphs:  null,
+                {this.getTrip (false, {
+                  pick: {
+                    time:    '11:45',
+                    desc:    'Burder A.',
+                    zone:    'Zone B',
+                    glyphs:  null},
+                  drop: {
+                    time:    '13:15',
+                    desc:    'PolyAugrien',
+                    zone:    'Zone A',
+                    glyphs:  null},
                   count:       '2 pces',
                   weight:      '1.2 kg',
                   price:       '130.00',
                   priceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip ({
-                  pickTime:    '14:00',
-                  pickDesc:    'Coop St. Laurent',
-                  pickZone:    'Zone A',
-                  pickGlyphs:  ['bookmark-secondary'],
-                  dropTime:    '14:50',
-                  dropDesc:    'Dupond J.',
-                  dropZone:    'Zone C',
-                  dropGlyphs:  ['phone-square', 'bookmark-primary'],
+                {this.getTrip (false, {
+                  pick: {
+                    time:    '14:00',
+                    desc:    'Coop St. Laurent',
+                    zone:    'Zone A',
+                    glyphs:  ['bookmark-secondary']},
+                  drop: {
+                    time:    '14:50',
+                    desc:    'Dupond J.',
+                    zone:    'Zone C',
+                    glyphs:  ['phone-square', 'bookmark-primary']},
                   count:       '2 pces',
                   weight:      '1.3 kg',
                   price:       '120.00',
                   priceGlyphs: 'warning'})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip ({
-                  pickTime:    '14:30',
-                  pickDesc:    'Migros Plein-Palais',
-                  pickZone:    'Zone B',
-                  pickGlyphs:  ['bookmark-primary'],
-                  dropTime:    '15:05',
-                  dropDesc:    'Alfred D.',
-                  dropZone:    'Zone B',
-                  dropGlyphs:  ['usd'],
+                {this.getTrip (false, {
+                  pick: {
+                    time:    '14:30',
+                    desc:    'Migros Plein-Palais',
+                    zone:    'Zone B',
+                    glyphs:  ['bookmark-primary']},
+                  drop: {
+                    time:    '15:05',
+                    desc:    'Alfred D.',
+                    zone:    'Zone B',
+                    glyphs:  ['usd']},
                   count:       '1 pce',
                   weight:      '1.0 kg',
                   price:       '75.00',
                   priceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip ({
-                  pickTime:    '15:00',
-                  pickDesc:    'Migros Pont-Neuf',
-                  pickZone:    'Zone A',
-                  pickGlyphs:  ['bookmark-secondary'],
-                  dropTime:    '17:30',
-                  dropDesc:    'Alfred D.',
-                  dropZone:    'Zone B',
-                  dropGlyphs:  ['usd', 'bookmark-base', 'bookmark-primary'],
+                {this.getTrip (false, {
+                  pick: {
+                    time:    '15:00',
+                    desc:    'Migros Pont-Neuf',
+                    zone:    'Zone A',
+                    glyphs:  ['bookmark-secondary']},
+                  drop: {
+                    time:    '17:30',
+                    desc:    'Alfred D.',
+                    zone:    'Zone B',
+                    glyphs:  ['usd', 'bookmark-base', 'bookmark-primary']},
                   count:       '5 pces',
                   weight:      '10.0 kg',
                   price:       '250.00',
