@@ -157,6 +157,9 @@ export default class DispatchTrips extends React.Component {
                   price:       '250.00',
                   priceGlyphs: null})}
               </Container>
+              <Container kind='row-pane' {...this.link ()} >
+                {this.getTrip (false, 'xxx')}
+              </Container>
             </Container>
           </Container>
         </Container>
