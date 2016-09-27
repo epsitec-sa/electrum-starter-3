@@ -29,9 +29,9 @@ export default class DispatchMessengers extends React.Component {
     this.ticketWidth     = '220px';
   }
 
-  getMessenger (data) {
+  getMessenger (color, data) {
     return (
-      <MessengerTicket width={this.ticketWidth} height={this.messengerHeight} data={data} {...this.link ()} />
+      <MessengerTicket width={this.ticketWidth} height={this.messengerHeight} color={color} data={data} {...this.link ()} />
     );
   }
 
@@ -47,8 +47,7 @@ export default class DispatchMessengers extends React.Component {
         <Container kind='tickets-messengers' {...this.link ()} >
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
               photo:          'user',
               transportation: 'bicycle',
               name:           'Sandra',
@@ -103,8 +102,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
               photo:          'user',
               transportation: 'bicycle',
               name:           'Jean-Paul',
@@ -141,8 +139,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
               photo:          'user-secret',
               transportation: 'car',
               name:           'Frédérique',
@@ -206,8 +203,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
       				photo:          'user',
       				transportation: 'bicycle',
       				name:           'Marcel',
@@ -226,8 +222,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
       				photo:          'user',
       				transportation: 'truck',
       				name:           'Simone',
@@ -246,8 +241,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
           	  photo:          'user',
       				transportation: 'bicycle',
       				name:           'Jean-Louis',
@@ -266,8 +260,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'yellow',
+            {this.getMessenger ('yellow', {
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Chantal',
@@ -313,8 +306,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Béatrice',
@@ -333,8 +325,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
           		photo:          'user',
       				transportation: 'rocket',
       				name:           'Zoé',
@@ -353,8 +344,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Marc',
@@ -418,8 +408,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Victor',
@@ -438,8 +427,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
           		photo:          'user',
       				transportation: 'car',
       				name:           'Jacques',
@@ -476,8 +464,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
           		photo:          'user',
       				transportation: 'car',
       				name:           'Samuel',
@@ -505,8 +492,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Georges',
@@ -525,8 +511,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ({
-              color:          'blue',
+            {this.getMessenger ('blue', {
           		photo:          'user',
       				transportation: 'bicycle',
       				name:           'Francine',
