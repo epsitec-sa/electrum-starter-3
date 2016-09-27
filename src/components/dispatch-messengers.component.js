@@ -530,10 +530,10 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('xxx')}
+            {this.getMessenger (null, null, 'xxx')}
             <Container kind='tickets-trips' {...this.link ()} >
-              {this.getTrip ('xxx')}
-              {this.getTrip (null)}
+              {this.getTrip (null, null, 'xxx')}
+              {this.getTrip (null, null, null)}
               {this.getTrip ()}
             </Container>
           </Container>
