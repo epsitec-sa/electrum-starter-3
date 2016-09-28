@@ -24,20 +24,17 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
-    this.messengerHeight = '70px';
-    this.ticketHeight    = '90px';
-    this.ticketWidth     = '220px';
   }
 
   getMessenger (color, data) {
     return (
-      <MessengerTicket width={this.ticketWidth} height={this.messengerHeight} color={color} data={data} {...this.link ()} />
+      <MessengerTicket color={color} data={data} {...this.link ()} />
     );
   }
 
   getTrip (color, type, data) {
     return (
-      <TripTicket width={this.ticketWidth} height={this.ticketHeight} color={color} type={type} data={data} {...this.link ()} />
+      <TripTicket color={color} type={type} data={data} {...this.link ()} />
     );
   }
 
