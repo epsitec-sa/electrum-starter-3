@@ -44,13 +44,13 @@ export default class DispatchMessengers extends React.Component {
         <Container kind='tickets-messengers' {...this.link ()} >
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
               Photo:          'user',
               Transportation: 'bicycle',
               Name:           'Sandra',
               Total:          '203.50'})}
             <Container kind='tickets-trips' {...this.link ()} >
-              {this.getTrip ('blue', 'pick', {
+              {this.getTrip ('selected', 'pick', {
                 Pick: {
                   Time: '10:50',
                   Desc: 'Coop St. Laurent'},
@@ -59,7 +59,7 @@ export default class DispatchMessengers extends React.Component {
                   Desc: 'Dupond J.'},
                 Count:    2,
                 Glyphs:   'warning'})}
-              {this.getTrip ('blue', 'drop', {
+              {this.getTrip ('selected', 'drop', {
                 Pick: {
                   Time: '11:00',
                   Desc: 'Migros Pont-Neuf'},
@@ -99,7 +99,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
               Photo:          'user',
               Transportation: 'bicycle',
               Name:           'Jean-Paul',
@@ -136,13 +136,13 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
               Photo:          'user-secret',
               Transportation: 'car',
               Name:           'Frédérique',
               Total:          '250.00'})}
             <Container kind='tickets-trips' {...this.link ()} >
-              {this.getTrip ('blue', 'pick', {
+              {this.getTrip ('selected', 'pick', {
                 Pick: {
                   Time: '10:15',
                   Desc: 'Coop St. Laurent'},
@@ -151,7 +151,7 @@ export default class DispatchMessengers extends React.Component {
                   Desc: 'Dupond J.'},
                 Count:    1,
                 Glyphs:   ['bookmark-primary']})}
-              {this.getTrip ('blue', 'pick', {
+              {this.getTrip ('selected', 'pick', {
 				        Pick: {
           				Time: '10:50',
           				Desc: 'Coop St. Laurent'},
@@ -160,7 +160,7 @@ export default class DispatchMessengers extends React.Component {
           				Desc: 'Dupond J.'},
         				Count:    2,
         				Glyphs:   null})}
-              {this.getTrip ('blue', 'drop', {
+              {this.getTrip ('selected', 'drop', {
 				        Pick: {
           				Time: '11:00',
           				Desc: 'Migros Pont-Neuf'},
@@ -200,7 +200,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
       				Photo:          'user',
       				Transportation: 'bicycle',
       				Name:           'Marcel',
@@ -219,7 +219,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
       				Photo:          'user',
       				Transportation: 'truck',
       				Name:           'Simone',
@@ -238,7 +238,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
           	  Photo:          'user',
       				Transportation: 'bicycle',
       				Name:           'Jean-Louis',
@@ -303,7 +303,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
           		Photo:          'user',
       				Transportation: 'bicycle',
       				Name:           'Béatrice',
@@ -322,7 +322,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
           		Photo:          'user',
       				Transportation: 'rocket',
       				Name:           'Zoé',
@@ -341,7 +341,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
           		Photo:          'user',
       				Transportation: 'bicycle',
       				Name:           'Marc',
@@ -405,7 +405,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
           		Photo:          'user',
       				Transportation: 'bicycle',
       				Name:           'Victor',
@@ -424,7 +424,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
           		Photo:          'user',
       				Transportation: 'car',
       				Name:           'Jacques',
@@ -461,7 +461,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
           		Photo:          'user',
       				Transportation: 'car',
       				Name:           'Samuel',
@@ -489,7 +489,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
           		Photo:          'user',
       				Transportation: 'bicycle',
       				Name:           'Georges',
@@ -508,7 +508,7 @@ export default class DispatchMessengers extends React.Component {
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('blue', {
+            {this.getMessenger (null, {
           		Photo:          'user',
       				Transportation: 'bicycle',
       				Name:           'Francine',
