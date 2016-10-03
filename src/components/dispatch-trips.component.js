@@ -41,7 +41,7 @@ export default class DispatchTrips extends React.Component {
               <Container kind='row-pane' {...this.link ()} >
                 {this.getTrip (false, {
                   Pick: {
-                    Time:    '10:50',
+                    Time:    '2016-03-31T10:51:00',
                     Description: 'Coop St. Laurent',
                     Zone:    'Zone A',
                     Glyphs:  [{Glyph: 'phone-square'}, {Glyph: 'bookmark-secondary'}]},
