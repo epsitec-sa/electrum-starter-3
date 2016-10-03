@@ -42,12 +42,12 @@ export default class DispatchTrips extends React.Component {
                 {this.getTrip (false, {
                   Pick: {
                     Time:    '10:50',
-                    Desc:    'Coop St. Laurent',
+                    Description: 'Coop St. Laurent',
                     Zone:    'Zone A',
                     Glyphs:  [{Glyph: 'phone-square'}, {Glyph: 'bookmark-secondary'}]},
                   Drop: {
                     Time:    '11:20',
-                    Desc:    'Dupond J.',
+                    Description: 'Dupond J.',
                     Zone:    'Zone C',
                     Glyphs:  [{Glyph: 'usd'}, {Glyph: 'bookmark-base'}, {Glyph: 'bookmark-primary'}]},
                   Count:       '2 pces',
@@ -59,12 +59,12 @@ export default class DispatchTrips extends React.Component {
                 {this.getTrip (false, {
                   Pick: {
                     Time:    '11:00',
-                    Desc:    'Migros Plein-Palais',
+                    Description: 'Migros Plein-Palais',
                     Zone:    'Zone B',
                     Glyphs:  [{Glyph: 'bookmark-base'}]},
                   Drop: {
                     Time:    '11:35',
-                    Desc:    'Alfred D.',
+                    Description: 'Alfred D.',
                     Zone:    'Zone B',
                     Glyphs:  [{Glyph: 'bookmark-base'}, {Glyph: 'bookmark-primary'}]},
                   Count:       '1 pce',
@@ -76,12 +76,12 @@ export default class DispatchTrips extends React.Component {
                 {this.getTrip ('true', {
                   Pick: {
                     Time:    '11:15',
-                    Desc:    'Icomm',
+                    Description: 'Icomm',
                     Zone:    'Zone B',
                     Glyphs:  null},
                   Drop: {
                     Time:    '12:00',
-                    Desc:    'Studer AG',
+                    Description: 'Studer AG',
                     Zone:    'Zone A',
                     Glyphs:  null},
                   Count:       '2 pces',
@@ -93,12 +93,12 @@ export default class DispatchTrips extends React.Component {
                 {this.getTrip (false, {
                   Pick: {
                     Time:    '11:45',
-                    Desc:    'Burder A.',
+                    Description: 'Burder A.',
                     Zone:    'Zone B',
                     Glyphs:  null},
                   Drop: {
                     Time:    '13:15',
-                    Desc:    'PolyAugrien',
+                    Description: 'PolyAugrien',
                     Zone:    'Zone A',
                     Glyphs:  null},
                   Count:       '2 pces',
@@ -110,12 +110,12 @@ export default class DispatchTrips extends React.Component {
                 {this.getTrip (false, {
                   Pick: {
                     Time:    '14:00',
-                    Desc:    'Coop St. Laurent',
+                    Description: 'Coop St. Laurent',
                     Zone:    'Zone A',
                     Glyphs:  [{Glyph: 'bookmark-secondary'}]},
                   Drop: {
                     Time:    '14:50',
-                    Desc:    'Dupond J.',
+                    Description: 'Dupond J.',
                     Zone:    'Zone C',
                     Glyphs:  [{Glyph: 'phone-square'}, {Glyph: 'bookmark-primary'}]},
                   Count:       '2 pces',
@@ -127,12 +127,12 @@ export default class DispatchTrips extends React.Component {
                 {this.getTrip (false, {
                   Pick: {
                     Time:    '14:30',
-                    Desc:    'Migros Plein-Palais',
+                    Description: 'Migros Plein-Palais',
                     Zone:    'Zone B',
                     Glyphs:  [{Glyph: 'bookmark-primary'}]},
                   Drop: {
                     Time:    '15:05',
-                    Desc:    'Alfred D.',
+                    Description: 'Alfred D.',
                     Zone:    'Zone B',
                     Glyphs:  [{Glyph: 'usd'}]},
                   Count:       '1 pce',
@@ -144,12 +144,12 @@ export default class DispatchTrips extends React.Component {
                 {this.getTrip (false, {
                   Pick: {
                     Time:    '15:00',
-                    Desc:    'Migros Pont-Neuf',
+                    Description: 'Migros Pont-Neuf',
                     Zone:    'Zone A',
                     Glyphs:  [{Glyph: 'bookmark-secondary'}]},
                   Drop: {
                     Time:    '17:30',
-                    Desc:    'Alfred D.',
+                    Description: 'Alfred D.',
                     Zone:    'Zone B',
                     Glyphs:  [{Glyph: 'usd'}, {Glyph: 'bookmark-base'}, {Glyph: 'bookmark-primary'}]},
                   Count:       '5 pces',
