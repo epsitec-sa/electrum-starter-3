@@ -44,16 +44,16 @@ export default class DispatchTrips extends React.Component {
                     Time:    '10:50',
                     Desc:    'Coop St. Laurent',
                     Zone:    'Zone A',
-                    Glyphs:  ['phone-square', 'bookmark-secondary']},
+                    Glyphs:  [{Glyph: 'phone-square'}, {Glyph: 'bookmark-secondary'}]},
                   Drop: {
                     Time:    '11:20',
                     Desc:    'Dupond J.',
                     Zone:    'Zone C',
-                    Glyphs:  ['usd', 'bookmark-base', 'bookmark-primary']},
+                    Glyphs:  [{Glyph: 'usd'}, {Glyph: 'bookmark-base'}, {Glyph: 'bookmark-primary'}]},
                   Count:       '2 pces',
                   Weight:      '1.3 kg',
                   Price:       '100.00',
-                  PriceGlyphs: 'warning'})}
+                  PriceGlyphs: [{Glyph: 'warning'}]})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
                 {this.getTrip (false, {
@@ -61,12 +61,12 @@ export default class DispatchTrips extends React.Component {
                     Time:    '11:00',
                     Desc:    'Migros Plein-Palais',
                     Zone:    'Zone B',
-                    Glyphs:  ['bookmark-base']},
+                    Glyphs:  [{Glyph: 'bookmark-base'}]},
                   Drop: {
                     Time:    '11:35',
                     Desc:    'Alfred D.',
                     Zone:    'Zone B',
-                    Glyphs:  ['bookmark-base', 'bookmark-primary']},
+                    Glyphs:  [{Glyph: 'bookmark-base'}, {Glyph: 'bookmark-primary'}]},
                   Count:       '1 pce',
                   Weight:      '0.2 kg',
                   Price:       '30.00',
@@ -112,16 +112,16 @@ export default class DispatchTrips extends React.Component {
                     Time:    '14:00',
                     Desc:    'Coop St. Laurent',
                     Zone:    'Zone A',
-                    Glyphs:  ['bookmark-secondary']},
+                    Glyphs:  [{Glyph: 'bookmark-secondary'}]},
                   Drop: {
                     Time:    '14:50',
                     Desc:    'Dupond J.',
                     Zone:    'Zone C',
-                    Glyphs:  ['phone-square', 'bookmark-primary']},
+                    Glyphs:  [{Glyph: 'phone-square'}, {Glyph: 'bookmark-primary'}]},
                   Count:       '2 pces',
                   Weight:      '1.3 kg',
                   Price:       '120.00',
-                  PriceGlyphs: 'warning'})}
+                  PriceGlyphs: [{Glyph: 'warning'}]})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
                 {this.getTrip (false, {
@@ -129,12 +129,12 @@ export default class DispatchTrips extends React.Component {
                     Time:    '14:30',
                     Desc:    'Migros Plein-Palais',
                     Zone:    'Zone B',
-                    Glyphs:  ['bookmark-primary']},
+                    Glyphs:  [{Glyph: 'bookmark-primary'}]},
                   Drop: {
                     Time:    '15:05',
                     Desc:    'Alfred D.',
                     Zone:    'Zone B',
-                    Glyphs:  ['usd']},
+                    Glyphs:  [{Glyph: 'usd'}]},
                   Count:       '1 pce',
                   Weight:      '1.0 kg',
                   Price:       '75.00',
@@ -146,12 +146,12 @@ export default class DispatchTrips extends React.Component {
                     Time:    '15:00',
                     Desc:    'Migros Pont-Neuf',
                     Zone:    'Zone A',
-                    Glyphs:  ['bookmark-secondary']},
+                    Glyphs:  [{Glyph: 'bookmark-secondary'}]},
                   Drop: {
                     Time:    '17:30',
                     Desc:    'Alfred D.',
                     Zone:    'Zone B',
-                    Glyphs:  ['usd', 'bookmark-base', 'bookmark-primary']},
+                    Glyphs:  [{Glyph: 'usd'}, {Glyph: 'bookmark-base'}, {Glyph: 'bookmark-primary'}]},
                   Count:       '5 pces',
                   Weight:      '10.0 kg',
                   Price:       '250.00',
