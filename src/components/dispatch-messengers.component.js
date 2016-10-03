@@ -53,7 +53,7 @@ export default class DispatchMessengers extends React.Component {
             <Container kind='tickets-trips' {...this.link ()} >
               {this.getTrip ('selected', 'pick', {
                 Pick: {
-                  Time: '10:50',
+                  Time: '2016-03-31T10:51:00',
                   Description: 'Coop St. Laurent'},
                 Drop:  {
                   Time: '11:20',
