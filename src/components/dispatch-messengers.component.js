@@ -33,8 +33,9 @@ export default class DispatchMessengers extends React.Component {
   }
 
   getTrip (color, type, data) {
+    const d = {Trip: data};
     return (
-      <TripTicket color={color} type={type} data={data} {...this.link ()} />
+      <TripTicket color={color} type={type} data={d} {...this.link ()} />
     );
   }
 
