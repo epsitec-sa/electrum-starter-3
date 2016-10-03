@@ -23,7 +23,8 @@
   "dependencies": {
     "electrum": "^4.10.0",
     "electrum-arc": "^4.4.0",
-    "electrum-command": "^2.2.0"
+    "electrum-command": "^2.2.0",
+    "rethinkdb": "^2.3.3"
   },
   "peerDependencies": {
     "react": "^15.0.2"
