@@ -15,7 +15,7 @@ export default class DispatchTrips extends React.Component {
 
   getTrip (selected, data) {
     return (
-      <TripBox selected={selected} data={data} {...this.link ()} />
+      <TripBox Selected={selected} data={data} {...this.link ()} />
     );
   }
 

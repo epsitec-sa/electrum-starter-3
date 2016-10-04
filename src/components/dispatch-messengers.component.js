@@ -28,14 +28,14 @@ export default class DispatchMessengers extends React.Component {
 
   getMessenger (color, data) {
     return (
-      <MessengerTicket color={color} data={data} {...this.link ()} />
+      <MessengerTicket Color={color} data={data} {...this.link ()} />
     );
   }
 
   getTrip (color, type, data) {
     const d = {Trip: data};
     return (
-      <TripTicket color={color} type={type} data={d} {...this.link ()} />
+      <TripTicket Color={color} Type={type} data={d} {...this.link ()} />
     );
   }
 
