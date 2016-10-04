@@ -59,7 +59,8 @@ export default class DispatchMessengers extends React.Component {
   }
 
   getTrip (color, type, data) {
-    data.Glyphs = this.getGlyphEntities (data.Glyphs);
+    data.Pick.Glyphs = this.getGlyphEntities (data.Pick.Glyphs);
+    data.Drop.Glyphs = this.getGlyphEntities (data.Drop.Glyphs);
     const d = {
       Color: color,
       Type:  type,
@@ -85,30 +86,30 @@ export default class DispatchMessengers extends React.Component {
               {this.getTrip ('selected', 'pick', {
                 Pick: {
                   Time: '2016-03-31T10:51:00',
-                  Description: 'Coop St. Laurent'},
+                  Description: 'Coop St. Laurent',
+                  Glyphs:   ['warning']},
                 Drop:  {
                   Time: '11:20',
                   Description: 'Dupond J.'},
-                Count:    '2x',
-                Glyphs:   ['warning']})}
+                Count:    '2x'})}
               {this.getTrip ('selected', 'drop', {
                 Pick: {
                   Time: '11:00',
                   Description: 'Migros Pont-Neuf'},
                 Drop: {
                   Time: '11:15',
-                  Description: 'Chancellerie'},
-                Count:    '1x',
-                Glyphs:   ['warning', 'bookmark-base']})}
+                  Description: 'Chancellerie',
+                  Glyphs:   ['warning', 'bookmark-base']},
+                Count:    '1x'})}
               {this.getTrip (null, 'drop', {
                 Pick: {
                   Time: '11:20',
                   Description: 'PolyAugrien'},
                 Drop: {
                   Time: '11:45',
-                  Description: 'Burdet A.'},
-                Count:    '3x',
-                Glyphs:   ['warning']})}
+                  Description: 'Burdet A.',
+                  Glyphs:   ['warning']},
+                Count:    '3x'})}
               {this.getTrip (null, 'pick', {
                 Pick: {
                   Time: '11:45',
@@ -116,17 +117,16 @@ export default class DispatchMessengers extends React.Component {
                 Drop: {
                   Time: '13:00',
                   Description: 'Schmidt W.'},
-                Count:    '1x',
-                Glyphs:   null})}
+                Count:    '1x'})}
               {this.getTrip (null, 'drop', {
                 Pick: {
                   Time: '13:30',
                   Description: 'Icomm'},
                 Drop: {
                   Time: '14:15',
-                  Description: 'Studer AG'},
-                Count:    '1x',
-                Glyphs:   ['bookmark-secondary', 'bookmark-primary']})}
+                  Description: 'Studer AG',
+                  Glyphs:   ['bookmark-secondary', 'bookmark-primary']},
+                Count:    '1x'})}
             </Container>
           </Container>
 
@@ -143,18 +143,18 @@ export default class DispatchMessengers extends React.Component {
                   Description: 'Migros Pont-Neuf'},
                 Drop: {
                   Time: '11:15',
-                  Description: 'Chancellerie'},
-                Count:    '1x',
-                Glyphs:   ['warning']})}
+                  Description: 'Chancellerie',
+                  Glyphs:   ['warning']},
+                Count:    '1x'})}
               {this.getTrip (null, 'pick', {
 				        Pick: {
           				Time: '11:45',
-          				Description: 'Me Mouquin G.'},
+          				Description: 'Me Mouquin G.',
+          				Glyphs:   ['warning', 'bookmark-base', 'bookmark-secondary', 'bookmark-primary']},
 				        Drop: {
           				Time: '13:00',
           				Description: 'Schmidt W.'},
-        				Count:    '1x',
-        				Glyphs:   ['warning', 'bookmark-base', 'bookmark-secondary', 'bookmark-primary']})}
+        				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
                 Pick: {
                   Time: '13:30',
@@ -162,8 +162,7 @@ export default class DispatchMessengers extends React.Component {
                 Drop: {
                   Time: '14:15',
                   Description: 'Studer AG'},
-                Count:    '4x',
-                Glyphs:   null})}
+                Count:    '4x'})}
             </Container>
           </Container>
 
@@ -177,12 +176,12 @@ export default class DispatchMessengers extends React.Component {
               {this.getTrip ('selected', 'pick', {
                 Pick: {
                   Time: '10:15',
-                  Description: 'Coop St. Laurent'},
+                  Description: 'Coop St. Laurent',
+                  Glyphs:   ['bookmark-primary']},
                 Drop: {
                   Time: '10:55',
                   Description: 'Dupond J.'},
-                Count:    '1x',
-                Glyphs:   ['bookmark-primary']})}
+                Count:    '1x'})}
               {this.getTrip ('selected', 'pick', {
 				        Pick: {
           				Time: '10:50',
@@ -190,26 +189,25 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '11:20',
           				Description: 'Dupond J.'},
-        				Count:    '2x',
-        				Glyphs:   null})}
+        				Count:    '2x'})}
               {this.getTrip ('selected', 'drop', {
 				        Pick: {
           				Time: '11:00',
           				Description: 'Migros Pont-Neuf'},
 				        Drop: {
           				Time: '11:15',
-          				Description: 'Chancellerie'},
-        				Count:    '1x',
-        				Glyphs:   ['warning', 'bookmark-secondary']})}
+          				Description: 'Chancellerie',
+          				Glyphs:   ['warning', 'bookmark-secondary']},
+        				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '11:20',
           				Description: 'PolyAugrien'},
 				        Drop: {
           				Time: '11:45',
-          				Description: 'Burdet A.'},
-        				Count:    '1x',
-        				Glyphs:   ['warning']})}
+          				Description: 'Burdet A.',
+          				Glyphs:   ['warning']},
+        				Count:    '1x'})}
               {this.getTrip ('green', 'pick', {
 				        Pick: {
           				Time: '11:45',
@@ -217,8 +215,7 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '13:00',
           				Description: 'Schmidt W.'},
-        				Count:    '2x',
-        				Glyphs:   null})}
+        				Count:    '2x'})}
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -226,8 +223,7 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '14:15',
           				Description: 'Studer AG'},
-        				Count:    '1x',
-        				Glyphs:   null})}
+        				Count:    '1x'})}
             </Container>
           </Container>
 
@@ -264,8 +260,7 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '14:15',
           				Description: 'Studer AG'},
-        				Count:    '1x',
-        				Glyphs:   null})}
+        				Count:    '1x'})}
             </Container>
           </Container>
 
@@ -282,9 +277,9 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Icomm'},
 				        Drop: {
           				Time: '14:15',
-          				Description: 'Studer AG'},
-        				Count:    '4x',
-        				Glyphs:   ['bookmark-primary']})}
+          				Description: 'Studer AG',
+          				Glyphs:   ['bookmark-primary']},
+        				Count:    '4x'})}
             </Container>
           </Container>
 
@@ -301,9 +296,9 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Icomm'},
 				        Drop: {
           				Time: '14:15',
-          				Description: 'Studer AG'},
-        				Count:    '1x',
-        				Glyphs:   ['warning']})}
+          				Description: 'Studer AG',
+          				Glyphs:   ['warning']},
+        				Count:    '1x'})}
               {this.getTrip ('yellow', 'drop', {
 				        Pick: {
           				Time: '11:00',
@@ -311,8 +306,7 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '11:15',
           				Description: 'Chancellerie'},
-        				Count:    '1x',
-        				Glyphs:   null})}
+        				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '11:20',
@@ -320,17 +314,16 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '11:45',
           				Description: 'Burdet A.'},
-        				Count:    '1x',
-        				Glyphs:   null})}
+        				Count:    '1x'})}
               {this.getTrip (null, 'pick', {
 				        Pick: {
           				Time: '11:45',
-          				Description: 'Me Mouquin G.'},
+          				Description: 'Me Mouquin G.',
+          				Glyphs:   ['bookmark-base', 'bookmark-secondary']},
 				        Drop: {
           				Time: '13:00',
           				Description: 'Schmidt W.'},
-        				Count:    '2x',
-        				Glyphs:   ['bookmark-base', 'bookmark-secondary']})}
+        				Count:    '2x'})}
             </Container>
           </Container>
 
@@ -347,9 +340,9 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Icomm'},
 				        Drop: {
           				Time: '14:15',
-          				Description: 'Studer AG'},
-        				Count:    '1x',
-        				Glyphs:   ['warning']})}
+          				Description: 'Studer AG',
+          				Glyphs:   ['warning']},
+        				Count:    '1x'})}
             </Container>
           </Container>
 
@@ -367,8 +360,7 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '14:15',
           				Description: 'Studer AG'},
-        				Count:    '2x',
-        				Glyphs:   null})}
+        				Count:    '2x'})}
             </Container>
           </Container>
 
@@ -385,9 +377,9 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Icomm'},
 				        Drop: {
           				Time: '09:15',
-          				Description: 'Studer AG'},
-        				Count:    '4x',
-        				Glyphs:   ['bookmark-secondary']})}
+          				Description: 'Studer AG',
+          				Glyphs:   ['bookmark-secondary']},
+        				Count:    '4x'})}
               {this.getTrip (null, 'pick', {
 				        Pick: {
           				Time: '10:50',
@@ -395,8 +387,7 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '11:20',
           				Description: 'Dupond J.'},
-        				Count:    '1x',
-        				Glyphs:   null})}
+        				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '11:00',
@@ -404,35 +395,34 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '11:15',
           				Description: 'Chancellerie'},
-        				Count:    '1x',
-        				Glyphs:   null})}
+        				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '11:20',
           				Description: 'PolyAugrien'},
 				        Drop: {
           				Time: '11:45',
-          				Description: 'Burdet A.'},
-        				Count:    '3x',
-        				Glyphs:   ['warning']})}
+          				Description: 'Burdet A.',
+          				Glyphs:   ['warning']},
+        				Count:    '3x'})}
               {this.getTrip (null, 'pick', {
 				        Pick: {
           				Time: '11:45',
-          				Description: 'Me Mouquin G.'},
+          				Description: 'Me Mouquin G.',
+          				Glyphs:   ['bookmark-base', 'bookmark-primary']},
 				        Drop: {
           				Time: '13:00',
           				Description: 'Schmidt W.'},
-        				Count:    '1x',
-        				Glyphs:   ['bookmark-base', 'bookmark-primary']})}
+        				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
           				Description: 'Icomm'},
 				        Drop: {
           				Time: '14:15',
-          				Description: 'Studer AG'},
-        				Count:    '1x',
-        				Glyphs:   ['warning', 'bookmark-base', 'bookmark-secondary']})}
+          				Description: 'Studer AG',
+          				Glyphs:   ['warning', 'bookmark-base', 'bookmark-secondary']},
+        				Count:    '1x'})}
             </Container>
           </Container>
 
@@ -450,8 +440,7 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '14:15',
           				Description: 'Studer AG'},
-        				Count:    '1x',
-        				Glyphs:   null})}
+        				Count:    '1x'})}
             </Container>
           </Container>
 
@@ -468,27 +457,27 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Icomm'},
 				        Drop: {
           				Time: '14:15',
-          				Description: 'Studer AG'},
-        				Count:    '2x',
-        				Glyphs:   ['warning']})}
+          				Description: 'Studer AG',
+          				Glyphs:   ['warning']},
+        				Count:    '2x'})}
               {this.getTrip (null, 'pick', {
 				        Pick: {
           				Time: '10:50',
-          				Description: 'Coop St. Laurent'},
+          				Description: 'Coop St. Laurent',
+          				Glyphs:   ['warning', 'bookmark-primary']},
 				        Drop: {
           				Time: '11:20',
           				Description: 'Dupond J.'},
-        				Count:    '1x',
-        				Glyphs:   ['warning', 'bookmark-primary']})}
+        				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '11:00',
           				Description: 'Migros Pont-Neuf'},
 				        Drop: {
           				Time: '11:15',
-          				Description: 'Chancellerie'},
-        				Count:    '1x',
-        				Glyphs:   ['warning']})}
+          				Description: 'Chancellerie',
+          				Glyphs:   ['warning']},
+        				Count:    '1x'})}
             </Container>
           </Container>
 
@@ -506,17 +495,16 @@ export default class DispatchMessengers extends React.Component {
 				        Drop: {
           				Time: '14:15',
           				Description: 'Studer AG'},
-        				Count:    '1x',
-        				Glyphs:   null})}
+        				Count:    '1x'})}
               {this.getTrip (null, 'pick', {
 				        Pick: {
           				Time: '11:45',
-          				Description: 'Me Mouquin G.'},
+          				Description: 'Me Mouquin G.',
+          				Glyphs:   ['bookmark-base', 'bookmark-secondary', 'bookmark-primary']},
 				        Drop: {
           				Time: '13:00',
           				Description: 'Schmidt W.'},
-        				Count:    '2x',
-        				Glyphs:   ['bookmark-base', 'bookmark-secondary', 'bookmark-primary']})}
+        				Count:    '2x'})}
             </Container>
           </Container>
 
@@ -533,9 +521,9 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Icomm'},
 				        Drop: {
           				Time: '14:15',
-          				Description: 'Studer AG'},
-        				Count:    '4x',
-        				Glyphs:   ['warning']})}
+          				Description: 'Studer AG',
+          				Glyphs:   ['warning']},
+        				Count:    '4x'})}
             </Container>
           </Container>
 
@@ -552,9 +540,9 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Icomm'},
 				        Drop: {
           				Time: '14:15',
-          				Description: 'Studer AG'},
-        				Count:    '1x',
-        				Glyphs:   ['warning']})}
+          				Description: 'Studer AG',
+          				Glyphs:   ['warning']},
+        				Count:    '1x'})}
             </Container>
           </Container>
 
@@ -569,57 +557,56 @@ export default class DispatchMessengers extends React.Component {
 				      Drop: {
         				Time: '14:15',
         				Description: 'Studer AG'},
-      				Count:    '2x',
-      				Glyphs:   null})}
+      				Count:    '2x'})}
             {this.getTrip (null, 'drop', {
 				      Pick: {
         				Time: '13:30',
         				Description: 'Icomm'},
 				      Drop: {
         				Time: '14:15',
-        				Description: 'Studer AG'},
-      				Count:    '1x',
-      				Glyphs:   ['bookmark-base']})}
+        				Description: 'Studer AG',
+        				Glyphs:   ['bookmark-base']},
+      				Count:    '1x'})}
           </Container>
           <Container kind='tickets-glue' left='300px' top='50px' rotate='-2deg' {...this.link ()} >
             {this.getTrip ('red', 'pick', {
 				      Pick: {
         				Time: '11:45',
-        				Description: 'Me Mouquin G.'},
+        				Description: 'Me Mouquin G.',
+        				Glyphs:   ['warning', 'bookmark-primary']},
 				      Drop: {
         				Time: '13:00',
         				Description: 'Schmidt W.'},
-      				Count:    '1x',
-      				Glyphs:   ['warning', 'bookmark-primary']})}
+      				Count:    '1x'})}
             {this.getTrip (null, 'drop', {
 				      Pick: {
         				Time: '11:45',
         				Description: 'Me Mouquin G.'},
 				      Drop: {
         				Time: '13:00',
-        				Description: 'Schmidt W.'},
-      				Count:    '2x',
-      				Glyphs:   ['bookmark-base', 'bookmark-secondary', 'bookmark-primary']})}
+        				Description: 'Schmidt W.',
+        				Glyphs:   ['bookmark-base', 'bookmark-secondary', 'bookmark-primary']},
+      				Count:    '2x'})}
           </Container>
           <Container kind='tickets-glue' left='600px' top='20px' rotate='5deg' {...this.link ()} >
             {this.getTrip (null, 'pick', {
 				      Pick: {
         				Time: '11:00',
-        				Description: 'Migros Pont-Neuf'},
+        				Description: 'Migros Pont-Neuf',
+        				Glyphs:   ['warning']},
 				      Drop: {
         				Time: '11:15',
         				Description: 'Chancellerie'},
-      				Count:    '1x',
-      				Glyphs:   ['warning']})}
+      				Count:    '1x'})}
             {this.getTrip (null, 'drop', {
 				      Pick: {
         				Time: '11:00',
         				Description: 'Migros Pont-Neuf'},
 				      Drop: {
         				Time: '11:15',
-        				Description: 'Chancellerie'},
-      				Count:    '1x',
-      				Glyphs:   ['bookmark-secondary']})}
+        				Description: 'Chancellerie',
+        				Glyphs:   ['bookmark-secondary']},
+      				Count:    '1x'})}
           </Container>
           <Container kind='tickets-glue' left='800px' top='60px' rotate='-10deg' {...this.link ()} >
             {this.getTrip (null, 'pick', {
@@ -629,17 +616,16 @@ export default class DispatchMessengers extends React.Component {
 				      Drop: {
         				Time: '11:20',
         				Description: 'Dupond J.'},
-      				Count:    '1x',
-      				Glyphs:   null})}
+      				Count:    '1x'})}
             {this.getTrip (null, 'drop', {
 				      Pick: {
         				Time: '10:50',
         				Description: 'Coop St. Laurent'},
 				      Drop: {
         				Time: '11:20',
-        				Description: 'Dupond J.'},
-      				Count:    '2x',
-      				Glyphs:   ['warning', 'bookmark-primary']})}
+        				Description: 'Dupond J.',
+        				Glyphs:   ['warning', 'bookmark-primary']},
+      				Count:    '2x'})}
           </Container>
         </Container>
       </Container>
