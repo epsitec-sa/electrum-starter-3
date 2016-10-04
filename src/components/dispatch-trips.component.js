@@ -41,8 +41,11 @@ export default class DispatchTrips extends React.Component {
     data.Pick.Glyphs = this.getGlyphEntities (data.Pick.Glyphs);
     data.Drop.Glyphs = this.getGlyphEntities (data.Drop.Glyphs);
     data.PriceGlyphs = this.getGlyphEntities (data.PriceGlyphs);
+    const d = {
+      Trip: data
+    };
     return (
-      <TripBox Selected={selected} data={data} {...this.link ()} />
+      <TripBox Selected={selected} data={d} {...this.link ()} />
     );
   }
 
