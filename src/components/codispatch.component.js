@@ -79,21 +79,28 @@ export default class Codispatch extends React.Component {
               <Label text='Prestation' grow='1' kind='title' {...this.link ()} />
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Button text='Standard (1h)' width='0px' grow='1'
-                spacing='large' {...this.link ()} />
-              <Button text='Urgent (30 min)' width='0px' grow='1'
-                spacing='large' {...this.link ()} />
-              <Button text='Dring Dring' width='0px' grow='1'
-                {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <Button text='Course régulière' width='0px' grow='1'
-                spacing='large' {...this.link ()} />
-              <Button text='Multi' width='0px' grow='1'
-                spacing='large' {...this.link ()} />
-              <Button text='Case postale' width='0px' grow='1'
-                {...this.link ()} />
+            <Container kind='row-pane' subkind='wrap' {...this.link ()} >
+              <Container kind='row-wrap' {...this.link ()} >
+                <Button text='Standard (1h)'    width='180px' {...this.link ()} />
+              </Container>
+              <Container kind='row-wrap' {...this.link ()} >
+                <Button text='Urgent (30 min)'  width='180px' {...this.link ()} />
+              </Container>
+              <Container kind='row-wrap' {...this.link ()} >
+                <Button text='Dring Dring'      width='180px' {...this.link ()} />
+              </Container>
+              <Container kind='row-wrap' {...this.link ()} >
+                <Button text='Course régulière' width='180px' {...this.link ()} />
+              </Container>
+              <Container kind='row-wrap' {...this.link ()} >
+                <Button text='Multi'            width='180px' {...this.link ()} />
+              </Container>
+              <Container kind='row-wrap' {...this.link ()} >
+                <Button text='Case postale'     width='180px' {...this.link ()} />
+              </Container>
+              <Container kind='row-wrap' {...this.link ()} >
+                <Button text='Dépôt'            width='180px' {...this.link ()} />
+              </Container>
             </Container>
           </Container>
 
