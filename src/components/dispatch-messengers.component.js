@@ -105,7 +105,8 @@ export default class DispatchMessengers extends React.Component {
                   Glyphs:   ['warning']},
                 Drop:  {
                   Time: '11:20',
-                  Description: 'Dupond J.'},
+                  Description: 'Dupond J.',
+                  Zone: {Name: 'Zone A'}},
                 Count:    '2x'})}
               {this.getTrip ('selected', 'drop', {
                 Pick: {
@@ -128,7 +129,8 @@ export default class DispatchMessengers extends React.Component {
               {this.getTrip (null, 'pick', {
                 Pick: {
                   Time: '11:45',
-                  Description: 'Me Mouquin G.'},
+                  Description: 'Me Mouquin G.',
+                  Zone: {Name: 'Zone B'}},
                 Drop: {
                   Time: '13:00',
                   Description: 'Schmidt W.'},
