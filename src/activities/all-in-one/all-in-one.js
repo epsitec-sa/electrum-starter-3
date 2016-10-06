@@ -215,7 +215,8 @@ export default class AllInOne extends React.Component {
                this.getStep () === 'codispatch' ||
                this.getStep () === 'fact' ||
                this.getStep () === 'customers' ||
-               this.getStep () === 'team') {
+               this.getStep () === 'team' ||
+               this.getStep () === 'empty') {
       return (
         <Container kind='main-tab' {...this.link ()} >
           <Button action={() => this.setStep ('dispatch-trips')}
@@ -233,6 +234,9 @@ export default class AllInOne extends React.Component {
           <Button action={() => this.setStep ('team')}
             active={this.activeStep ('team')}
             text='Équipe' width='200px' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('empty')}
+            active={this.activeStep ('empty')}
+            text='Rien' width='200px' kind='main-tab' {...this.link ()} />
           <Container kind='main-tab-login' {...this.link ()} >
             <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
           </Container>
@@ -321,6 +325,8 @@ export default class AllInOne extends React.Component {
       return this.viewCustomers ();
     } else if (this.getStep () === 'team') {
       return this.viewTeam ();
+    } else if (this.getStep () === 'empty') {
+      return null;
     } else {
       return this.viewComingSoon ();
     }
