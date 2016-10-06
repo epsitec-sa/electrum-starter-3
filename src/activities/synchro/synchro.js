@@ -6,7 +6,6 @@ import {
   Dialog,
   Ticket,
   Button,
-  TabButton,
   TextField,
   LabelTextField,
   TextFieldCombo,
@@ -88,9 +87,9 @@ export default class Synchro extends React.Component {
         <Button text='Créer un mandat' glyph='plus' tooltip='Crée un nouveau mandat' kind='task-tab' active={active} {...this.link ()} />
         <Button text='Se rattacher à un mandat' glyph='link' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-tab' {...this.link ()} />
         <Label text='Vos mandats' kind='task' {...this.link ()} />
-        <TabButton text='Mon beau bouquet' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' kind='task' active='true' {...this.link ()} />
-        <TabButton text='Chorale Fa-si-la chanter' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' kind='task' active='false' {...this.link ()} />
-        <TabButton text='Club VTT' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' kind='task' active='false' {...this.link ()} />
+        <Button text='Mon beau bouquet' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' kind='task' active='true' {...this.link ()} />
+        <Button text='Chorale Fa-si-la chanter' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' kind='task' active='false' {...this.link ()} />
+        <Button text='Club VTT' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' kind='task' active='false' {...this.link ()} />
       </Container>
     );
   }
@@ -149,9 +148,9 @@ export default class Synchro extends React.Component {
     const active = (this.viewType () === 'mandat') ? 'true' : 'false';
     return (
       <Container kind='view-tab' {...this.link ()} >
-        <TabButton text='Mon beau bouquet' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active={active} {...this.link ()} />
-        <TabButton text='Chorale Fa-si-la chanter' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='false' {...this.link ()} />
-        <TabButton text='Club VTT' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='false' {...this.link ()} />
+        <Button text='Mon beau bouquet' kind='view-tab' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active={active} {...this.link ()} />
+        <Button text='Chorale Fa-si-la chanter' kind='view-tab' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='false' {...this.link ()} />
+        <Button text='Club VTT' kind='view-tab' glyph='chain-broken' glyph-tooltip='Retirer la synchronisation du mandat' active='false' {...this.link ()} />
       </Container>
     );
   }

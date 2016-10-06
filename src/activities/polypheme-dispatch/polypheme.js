@@ -6,7 +6,6 @@ import {
   Container,
   Ticket,
   Button,
-  TabButton,
   TextField,
   LabelTextField,
   TextFieldCombo,
@@ -95,8 +94,8 @@ export default class Polypheme extends React.Component {
           </Container>
 
           <Container kind='view-tab' {...this.link ()} >
-            <TabButton text='Missions' active='true' {...this.link ()} />
-            <TabButton text='Coursiers' active='false' {...this.link ()} />
+            <Button text='Missions' kind='view-tab' active='true' {...this.link ()} />
+            <Button text='Coursiers' kind='view-tab' active='false' {...this.link ()} />
           </Container>
 
           <Container kind='views' {...this.link ()} >

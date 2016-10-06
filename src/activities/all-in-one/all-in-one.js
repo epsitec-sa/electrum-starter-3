@@ -6,7 +6,6 @@ import {
   Dialog,
   Ticket,
   Button,
-  TabButton,
   TextField,
   LabelTextField,
   TextFieldCombo,
@@ -264,26 +263,26 @@ export default class AllInOne extends React.Component {
     } else if (this.getStep () === 'dispatch-messengers') {
       return (
         <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Missions' glyph='none' active='false' {...this.link ()} />
-          <TabButton text='Coursiers' glyph='none' active='true' {...this.link ()} />
+          <Button text='Missions' kind='view-tab' active='false' {...this.link ()} />
+          <Button text='Coursiers' kind='view-tab' active='true' {...this.link ()} />
         </Container>
       );
     } else if (this.getStep () === 'codispatch') {
       return (
         <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Nom du client | 10:42' active='true' {...this.link ()} />
-          <TabButton text='Nom du client | 10:30' active='false' {...this.link ()} />
-          <TabButton text='Nom de la mission | 09:56' active='false' {...this.link ()} />
+          <Button text='Nom du client | 10:42' kind='view-tab' active='true' {...this.link ()} />
+          <Button text='Nom du client | 10:30' kind='view-tab' active='false' {...this.link ()} />
+          <Button text='Nom de la mission | 09:56' kind='view-tab' active='false' {...this.link ()} />
         </Container>
       );
     } else if (this.getStep () === 'fact') {
       return (
         <Container kind='view-tab' {...this.link ()} >
-          <TabButton text='Fournisseurs' glyph='none' active='false' {...this.link ()} />
-          <TabButton text='Commandes' glyph='none' active='false' {...this.link ()} />
-          <TabButton text='Articles' glyph='none' active='false' {...this.link ()} />
-          <TabButton text='Factures' glyph='none' active='true' {...this.link ()} />
-          <TabButton text='Clients' glyph='none' active='false' {...this.link ()} />
+          <Button text='Fournisseurs' kind='view-tab' active='false' {...this.link ()} />
+          <Button text='Commandes' kind='view-tab' active='false' {...this.link ()} />
+          <Button text='Articles' kind='view-tab' active='false' {...this.link ()} />
+          <Button text='Factures' kind='view-tab' active='true' {...this.link ()} />
+          <Button text='Clients' kind='view-tab' active='false' {...this.link ()} />
         </Container>
       );
     } else {

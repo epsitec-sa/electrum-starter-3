@@ -5,7 +5,6 @@ import React from 'react';
 import {
   Container,
   Button,
-  TabButton,
   TextField,
   LabelTextField,
   TextFieldCombo,
@@ -62,7 +61,7 @@ export default class Polypheme extends React.Component {
 
           <Container kind='views' {...this.link ()} >
           </Container>
-          
+
           <Container kind='footer' {...this.link ()} >
           </Container>
 
