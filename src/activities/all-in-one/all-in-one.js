@@ -271,8 +271,11 @@ export default class AllInOne extends React.Component {
       return (
         <Container kind='view-tab' {...this.link ()} >
           <Button text='Nom du client | 10:42' kind='view-tab' active='true' {...this.link ()} />
+          <Button glyph='close' kind='view-tab' active='true' {...this.link ()} />
           <Button text='Nom du client | 10:30' kind='view-tab' active='false' {...this.link ()} />
+          <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
           <Button text='Nom de la mission | 09:56' kind='view-tab' active='false' {...this.link ()} />
+          <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
         </Container>
       );
     } else if (this.getStep () === 'fact') {
