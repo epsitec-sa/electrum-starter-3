@@ -326,7 +326,7 @@ export default class AllInOne extends React.Component {
     } else if (this.getStep () === 'team') {
       return this.viewTeam ();
     } else if (this.getStep () === 'empty') {
-      return null;
+      return this.viewEmpty ();
     } else {
       return this.viewComingSoon ();
     }
@@ -625,6 +625,12 @@ export default class AllInOne extends React.Component {
           </Container>
         </Container>
       </Container>
+    );
+  }
+
+  viewEmpty () {
+    return (
+      <Container kind='views' {...this.link ()} />
     );
   }
 
