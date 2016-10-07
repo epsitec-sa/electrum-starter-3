@@ -138,29 +138,39 @@ export default class Codispatch extends React.Component {
           <Container kind='pane' anchor='sender-parcel' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Colis' grow='1' kind='title' {...this.link ()} />
-              <Button glyph='plus' text='Ajouter' spacing='large'
-                {...this.link ()} />
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <Button glyph='trash-o' spacing='large' {...this.link ()} />
               <TextFieldCombo value='Standard box' combo-glyph='cube'
                 hint-text='Type' grow='1' spacing='large' combo-type='box'
                 {...this.link ('box1-type')} />
               <LabelTextField label-glyph='balance-scale' value='3.6 kg'
                 hint-text='Poids' grow='1' spacing='large' {...this.link ()} />
               <LabelTextField label-glyph='arrows-h' value='50 x 75 x 20'
-                hint-text='Dimensions' grow='1' spacing='overlap'
+                hint-text='Dimensions' grow='1' spacing='large'
                 {...this.link ()} />
+              <Button glyph='trash-o' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <Button glyph='trash-o' spacing='large' {...this.link ()} />
+              <TextFieldCombo value='Standard box' combo-glyph='cube'
+                hint-text='Type' grow='1' spacing='large' combo-type='box'
+                {...this.link ('box1-type')} />
+              <LabelTextField label-glyph='balance-scale' value='0.4 kg'
+                hint-text='Poids' grow='1' spacing='large' {...this.link ()} />
+              <LabelTextField label-glyph='arrows-h' value='30 x 21 x 1'
+                hint-text='Dimensions' grow='1' spacing='large'
+                {...this.link ()} />
+              <Button glyph='trash-o' {...this.link ()} />
+            </Container>
+            <Separator {...this.link ()} />
+            <Container kind='row-pane' {...this.link ()} >
               <TextFieldCombo hint-text='Type' combo-glyph='cube' grow='1'
                 spacing='large' combo-type='box' {...this.link ('box2-type')} />
               <LabelTextField label-glyph='balance-scale' hint-text='Poids'
                 grow='1' spacing='large' {...this.link ()} />
               <LabelTextField label-glyph='arrows-h' hint-text='Dimensions'
-                grow='1' spacing='overlap' {...this.link ()} />
+                grow='1' spacing='large' {...this.link ()} />
+              <Button glyph='plus' {...this.link ()} />
             </Container>
             <Container kind='row-pane' subkind='info' {...this.link ()} >
               <Label text='Nb de colis 2' kind='info' width='0px'
@@ -179,41 +189,58 @@ export default class Codispatch extends React.Component {
           <Container kind='pane' anchor='sender-bill' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Facture' grow='1' kind='title' {...this.link ()} />
-              <Button glyph='plus' text='Ajouter' spacing='large'
-                {...this.link ()} />
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' spacing='compact' {...this.link ()} >
-              <Label text='Standard A - C' justify='left'
-                width='0px' grow='4' {...this.link ()} />
-              <Label text='50.00' justify='right'
-                width='0px' grow='1' {...this.link ()} />
+            <Container kind='row-pane' {...this.link ()} >
+              <TextFieldCombo value='Article' combo-glyph='ellipsis-h'
+                hint-text='Type' grow='1' spacing='large' combo-type='box'
+                {...this.link ()} />
+              <LabelTextField label-glyph='tag' value='Course standard'
+                hint-text='Description' grow='2' spacing='large' {...this.link ()} />
+              <LabelTextField label-glyph='usd' value='20.00'
+                hint-text='Prix unitaire' grow='1' spacing='large' {...this.link ()} />
+              <LabelTextField label-glyph='stack-overflow' value='1'
+                hint-text='Quantité' grow='1' spacing='large' {...this.link ()} />
+              <TextFieldCombo value='CHF' combo-glyph='question-circle'
+                hint-text='Unité' grow='1' spacing='large' combo-type='box'
+                {...this.link ()} />
+              <Button glyph='trash-o' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' spacing='compact' {...this.link ()} >
-              <Label text='Supplément poids' justify='left'
-                width='0px' grow='4' {...this.link ()} />
-              <Label text='12.00' justify='right'
-                width='0px' grow='1' {...this.link ()} />
+            <Container kind='row-pane' {...this.link ()} >
+              <TextFieldCombo value='Rabais' combo-glyph='ellipsis-h'
+                hint-text='Type' grow='1' spacing='large' combo-type='box'
+                {...this.link ()} />
+              <LabelTextField label-glyph='tag' value='Revendeur'
+                hint-text='Description' grow='2' spacing='large' {...this.link ()} />
+              <LabelTextField label-glyph='usd' value='2.00'
+                hint-text='Prix unitaire' grow='1' spacing='large' {...this.link ()} />
+              <LabelTextField label-glyph='stack-overflow' value='10'
+                hint-text='Quantité' grow='1' spacing='large' {...this.link ()} />
+              <TextFieldCombo value='%' combo-glyph='question-circle'
+                hint-text='Unité' grow='1' spacing='large' combo-type='box'
+                {...this.link ()} />
+              <Button glyph='trash-o' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' spacing='compact' subkind='wide-info'
-              {...this.link ()} >
-              <Label text='Sous-total' justify='left'
-                width='0px' grow='4' {...this.link ()} />
-              <Label text='62.00' justify='right'
-                width='0px' grow='1' {...this.link ()} />
+            <Container kind='row-pane' subkind='info' {...this.link ()} >
+              <Label text='Total' justify='left' width='0px'
+                grow='2' {...this.link ()} />
+              <Label text='18.00 CHF' justify='right' width='0px'
+                grow='1' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' spacing='compact' {...this.link ()} >
-              <Label text='Avance d´argent' justify='left'
-                width='0px' grow='4' {...this.link ()} />
-              <Label text='55.00' justify='right'
-                width='0px' grow='1' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' spacing='glued' subkind='wide-info'
-              {...this.link ()} >
-              <Label text='Total' justify='left'
-                width='0px' grow='4' {...this.link ()} />
-              <Label text='117.00' justify='right'
-                width='0px' grow='1' {...this.link ()} />
+            <Container kind='row-pane' {...this.link ()} >
+              <TextFieldCombo combo-glyph='ellipsis-h'
+                hint-text='Type' grow='1' spacing='large' combo-type='box'
+                {...this.link ()} />
+              <LabelTextField label-glyph='tag'
+                hint-text='Description' grow='2' spacing='large' {...this.link ()} />
+              <LabelTextField label-glyph='usd'
+                hint-text='Prix unitaire' grow='1' spacing='large' {...this.link ()} />
+              <LabelTextField label-glyph='stack-overflow' value='1'
+                hint-text='Quantité' grow='1' spacing='large' {...this.link ()} />
+              <TextFieldCombo combo-glyph='question-circle'
+                hint-text='Unité' grow='1' spacing='large' combo-type='box'
+                {...this.link ()} />
+              <Button glyph='plus' {...this.link ()} />
             </Container>
           </Container>
 
