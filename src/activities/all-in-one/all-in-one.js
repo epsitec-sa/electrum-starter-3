@@ -15,7 +15,8 @@ import {
   Clock,
   Menu,
   FlyingBalloon,
-  Separator
+  Separator,
+  Notification
 } from 'electrum-arc';
 import {
   DispatchTrips,
@@ -352,10 +353,26 @@ export default class AllInOne extends React.Component {
     }
   }
 
+  getNotification (glyph, message) {
+    const data = {
+      Glyph:   glyph,
+      Message: message,
+    };
+    return (
+      <Notification data={data} {...this.link ()} />
+    );
+  }
+
   viewNotifications () {
     if (this.getShowNotifications ()) {
       return (
-        <Container kind='view-right' width='300px' {...this.link ()} >
+        <Container kind='notifications' width='300px' {...this.link ()} >
+          {this.getNotification ('car', 'Lundi')}
+          {this.getNotification ('user', 'Mardi')}
+          {this.getNotification ('bicycle', 'Mercredi')}
+          {this.getNotification ('car', 'Jeudi')}
+          {this.getNotification ('warning', 'Vendredi')}
+          {this.getNotification ('rocket', 'Ceci este une petite phrase longue et complètement débile.')}
         </Container>
       );
     } else {
@@ -528,8 +545,8 @@ export default class AllInOne extends React.Component {
               <Button action={() => {
                   this.setMandat ('Nouveau');
                   this.setStep ('codispatch');
-                }} glyph='check'  text='Créer'     kind='action' width='160px' place='left' {...this.link ()} />
-              <Button action={() => this.setStep ('mandats')} glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
+                }} glyph='check'  text='Créer' kind='action' width='160px' place='left' {...this.link ()} />
+              <Button action={() => this.setStep ('mandats')} glyph='close'  text='Annuler' kind='action' width='160px' place='right' {...this.link ()} />
             </Container>
           </Container>
         </Container>
