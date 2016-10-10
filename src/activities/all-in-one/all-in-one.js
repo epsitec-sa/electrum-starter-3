@@ -548,13 +548,19 @@ export default class AllInOne extends React.Component {
 
   viewDispatchMessengers () {
     return (
-      <DispatchMessengers {...this.link ()} />
+      <Container kind='views' {...this.link ()} >
+        <DispatchMessengers {...this.link ()} />
+        {this.viewNotifications ()}
+      </Container>
     );
   }
 
   viewCodispatch () {
     return (
-      <Codispatch {...this.link ()} />
+      <Container kind='views' {...this.link ()} >
+        <Codispatch {...this.link ()} />
+        {this.viewNotifications ()}
+      </Container>
     );
   }
 
