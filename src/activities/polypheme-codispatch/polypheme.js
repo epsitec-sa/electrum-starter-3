@@ -137,7 +137,7 @@ export default class Polypheme extends React.Component {
         </Container>
         <Container kind='panes-short' {...this.link ()} >
           <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' subkind='info' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
               <Label glyph='building' text='Clients' kind='title' {...this.link ()} />
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >
@@ -166,7 +166,7 @@ export default class Polypheme extends React.Component {
             </Container>
           </Container>
           <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' subkind='info' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
               <Label glyph='user' text='Contacts' kind='title' {...this.link ()} />
             </Container>
             <Container kind='row-pane' subkind='list' {...this.link ()} >

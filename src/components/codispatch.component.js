@@ -221,7 +221,7 @@ export default class Codispatch extends React.Component {
                 {...this.link ()} />
               <Button glyph='trash-o' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='info' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
               <Label text='Total' justify='left' width='0px'
                 grow='2' {...this.link ()} />
               <Label text='18.00 CHF' justify='right' width='0px'
@@ -320,10 +320,10 @@ export default class Codispatch extends React.Component {
         </Container>
         <Container kind='panes-short' {...this.link ()} >
           <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' subkind='info' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
               <Label glyph='building' text='Clients' kind='title' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Bois Sec SA' justify='left' grow='2'
                   {...this.link ()} />
@@ -331,7 +331,7 @@ export default class Codispatch extends React.Component {
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='list' selected='true' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' selected='true' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Mecatronic SA' justify='left' grow='2'
                   {...this.link ()} />
@@ -339,7 +339,7 @@ export default class Codispatch extends React.Component {
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Alfred Chauvet' justify='left' grow='2'
                   {...this.link ()} />
@@ -349,10 +349,10 @@ export default class Codispatch extends React.Component {
             </Container>
           </Container>
           <Container kind='pane' {...this.link ()} >
-            <Container kind='row-pane' subkind='info' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
               <Label glyph='user' text='Contacts' kind='title' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Christophe Ducommun' justify='left' grow='2'
                   {...this.link ()} />
@@ -360,7 +360,7 @@ export default class Codispatch extends React.Component {
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Jeanne Sophian' justify='left' grow='2'
                   {...this.link ()} />
@@ -368,7 +368,7 @@ export default class Codispatch extends React.Component {
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='André Kudelski' justify='left' grow='2'
                   {...this.link ()} />
@@ -376,7 +376,7 @@ export default class Codispatch extends React.Component {
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Marie-Jeanne Meyer'  justify='left' grow='2'
                   {...this.link ()} />
@@ -384,7 +384,7 @@ export default class Codispatch extends React.Component {
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Jean-Pierre-Etienne von Dutrèsprécieux'
                   justify='left' grow='2' {...this.link ()} />
@@ -392,7 +392,7 @@ export default class Codispatch extends React.Component {
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Jean-Pierre-Etienne von Dutrèsprécieux'
                   justify='left' wrap='no' grow='2' {...this.link ()} />
@@ -400,7 +400,7 @@ export default class Codispatch extends React.Component {
                   wrap='no' grow='1' {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='list' {...this.link ()} >
+            <Container kind='row-pane' subkind='box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Périnne Lemarchand' justify='left' grow='2'
                   {...this.link ()} />
