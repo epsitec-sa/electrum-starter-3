@@ -323,27 +323,27 @@ export default class Codispatch extends React.Component {
             <Container kind='row-pane' {...this.link ()} >
               <Label glyph='building' text='Clients' kind='title' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='large-box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Bois Sec SA' justify='left' grow='2'
+                <Label text='Bois Sec SA' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Bussigny' justify='left' grow='1'
+                <Label text='Bussigny' kind='large-right' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='box' selected='true' {...this.link ()} >
+            <Container kind='row-pane' subkind='large-box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Mecatronic SA' justify='left' grow='2'
+                <Label text='Mecatronic SA' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Prilly' justify='left' grow='1'
+                <Label text='Prilly' kind='large-right' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='large-box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Alfred Chauvet' justify='left' grow='2'
+                <Label text='Alfred Chauvet' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Lausanne' justify='left' grow='1'
+                <Label text='Lausanne' kind='large-right' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
@@ -352,59 +352,59 @@ export default class Codispatch extends React.Component {
             <Container kind='row-pane' {...this.link ()} >
               <Label glyph='user' text='Contacts' kind='title' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='large-box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Christophe Ducommun' justify='left' grow='2'
+                <Label text='Christophe Ducommun' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Lausanne' justify='left' grow='1'
+                <Label text='Lausanne' kind='large-right' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='large-box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Jeanne Sophian' justify='left' grow='2'
+                <Label text='Jeanne Sophian' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
                 <Label text='Crissier' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='large-box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='André Kudelski' justify='left' grow='2'
+                <Label text='André Kudelski' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Cheseaux' justify='left' grow='1'
+                <Label text='Cheseaux' kind='large-right' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='large-box' selected='true' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Marie-Jeanne Meyer'  justify='left' grow='2'
+                <Label text='Marie-Jeanne Meyer' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Neuchâtel' justify='left' grow='1'
-                  {...this.link ()} />
-              </Button>
-            </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
-              <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux'
-                  justify='left' grow='2' {...this.link ()} />
-                <Label text='Plan-les-Ouattes' justify='left' grow='1'
+                <Label text='Neuchâtel' kind='large-right' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='large-box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux'
-                  justify='left' wrap='no' grow='2' {...this.link ()} />
-                <Label text='Plan-les-Ouattes' justify='left'
+                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux' kind='large-left' justify='left' grow='2'
+                  {...this.link ()} />
+                <Label text='Plan-les-Ouattes' kind='large-right' justify='left' grow='1'
+                  {...this.link ()} />
+              </Button>
+            </Container>
+            <Container kind='row-pane' subkind='large-box' {...this.link ()} >
+              <Button kind='container' width='100%' {...this.link ()}>
+                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux' kind='large-left' justify='left' wrap='no' grow='2'
+                  {...this.link ()} />
+                <Label text='Plan-les-Ouattes' kind='large-right' justify='left'
                   wrap='no' grow='1' {...this.link ()} />
               </Button>
             </Container>
-            <Container kind='row-pane' subkind='box' {...this.link ()} >
+            <Container kind='row-pane' subkind='large-box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Périnne Lemarchand' justify='left' grow='2'
+                <Label text='Périnne Lemarchand' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Pully' justify='left' grow='1'
+                <Label text='Pully' kind='large-right' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
