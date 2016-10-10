@@ -110,9 +110,9 @@ export default class Synchro extends React.Component {
   synchroMainTab () {
     return (
       <Container kind='main-tab' {...this.link ()} >
-        <Container kind='main-tab-login' {...this.link ()} >
-          <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
-          <Button glyph='ban' tooltip='Se déconnecter' kind='main-tab-login' {...this.link ()} />
+        <Container kind='main-tab-right' {...this.link ()} >
+          <Button text='Jean Dupond' kind='main-tab-right' {...this.link ()} />
+          <Button glyph='ban' tooltip='Se déconnecter' kind='main-tab-right' {...this.link ()} />
         </Container>
       </Container>
     );
@@ -132,9 +132,9 @@ export default class Synchro extends React.Component {
     return (
       <Container kind='main-tab' {...this.link ()} >
         <Button text='Mandats' width='200px' active='true' kind='main-tab' {...this.link ()} />
-        <Container kind='main-tab-login' {...this.link ()} >
-          <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
-          <Button glyph='ban' tooltip='Se déconnecter' kind='main-tab-login' {...this.link ()} />
+        <Container kind='main-tab-right' {...this.link ()} >
+          <Button text='Jean Dupond' kind='main-tab-right' {...this.link ()} />
+          <Button glyph='ban' tooltip='Se déconnecter' kind='main-tab-right' {...this.link ()} />
         </Container>
       </Container>
     );

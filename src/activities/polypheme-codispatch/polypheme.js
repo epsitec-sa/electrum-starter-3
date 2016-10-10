@@ -274,8 +274,8 @@ export default class Polypheme extends React.Component {
               kind='main-tab' {...this.link ()} />
             <Button text='Équipe' width='160px' active='false'
               kind='main-tab' {...this.link ()} />
-            <Container kind='main-tab-login' {...this.link ()} >
-              <Button text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+            <Container kind='main-tab-right' {...this.link ()} >
+              <Button text='Jean Dupond' kind='main-tab-right' {...this.link ()} />
             </Container>
           </Container>
 

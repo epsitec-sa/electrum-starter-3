@@ -204,8 +204,8 @@ export default class AllInOne extends React.Component {
       return (
         <Container kind='main-tab' {...this.link ()} >
           <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
-          <Container kind='main-tab-login' {...this.link ()} >
-            <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+          <Container kind='main-tab-right' {...this.link ()} >
+            <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-right' {...this.link ()} />
           </Container>
         </Container>
       );
@@ -236,8 +236,8 @@ export default class AllInOne extends React.Component {
           <Button action={() => this.setStep ('empty')}
             active={this.activeStep ('empty')}
             text='Rien' width='200px' kind='main-tab' {...this.link ()} />
-          <Container kind='main-tab-login' {...this.link ()} >
-            <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-login' {...this.link ()} />
+          <Container kind='main-tab-right' {...this.link ()} >
+            <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-right' {...this.link ()} />
           </Container>
         </Container>
       );
@@ -258,13 +258,10 @@ export default class AllInOne extends React.Component {
           <Button action={() => this.setStep ('dispatch-messengers')}
             text='Coursiers' kind='view-tab'
             active={this.activeStep ('dispatch-messengers')} {...this.link ()} />
-        </Container>
-      );
-    } else if (this.getStep () === 'dispatch-messengers') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-          <Button text='Missions' kind='view-tab' active='false' {...this.link ()} />
-          <Button text='Coursiers' kind='view-tab' active='true' {...this.link ()} />
+          <Container kind='view-tab-right' {...this.link ()} >
+            <Button text='Notifications' glyph='bell' glyph-position='right'
+              badge-value='6' kind='view-tab-right' {...this.link ()} />
+          </Container>
         </Container>
       );
     } else if (this.getStep () === 'codispatch') {
@@ -276,6 +273,10 @@ export default class AllInOne extends React.Component {
           <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
           <Button text='Nom de la mission | 09:56' kind='view-tab' active='false' {...this.link ()} />
           <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
+          <Container kind='view-tab-right' {...this.link ()} >
+            <Button text='Notifications' glyph='bell' glyph-position='right'
+              badge-value='17' kind='view-tab-right' {...this.link ()} />
+          </Container>
         </Container>
       );
     } else if (this.getStep () === 'fact') {
@@ -336,7 +337,7 @@ export default class AllInOne extends React.Component {
 
   viewLogin () {
     return (
-      <div>
+      <Container kind='div' {...this.link ()} >
         <Container kind='floating-header' floating-height='300px' {...this.link ()} >
           <Label glyph='user-secret' kind='floating-header' {...this.link ()} />
         </Container>
@@ -360,13 +361,13 @@ export default class AllInOne extends React.Component {
           <Separator width='300px' kind='floating-footer' {...this.link ()} />
           <Label text='Crésus — EPSITEC SA' kind='floating-footer' {...this.link ()} />
         </Container>
-      </div>
+      </Container>
     );
   }
 
   viewLogout () {
     return (
-      <div>
+      <Container kind='div' {...this.link ()} >
         <Container kind='floating-header' floating-height='300px' {...this.link ()} >
           <Label glyph='user-secret' kind='floating-header' {...this.link ()} />
         </Container>
@@ -387,7 +388,7 @@ export default class AllInOne extends React.Component {
           <Separator width='300px' kind='floating-footer' {...this.link ()} />
           <Label text='Crésus — EPSITEC SA' kind='floating-footer' {...this.link ()} />
         </Container>
-      </div>
+      </Container>
     );
   }
 
