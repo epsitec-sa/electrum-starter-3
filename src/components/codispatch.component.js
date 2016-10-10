@@ -364,7 +364,7 @@ export default class Codispatch extends React.Component {
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Jeanne Sophian' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Crissier' justify='left' grow='1'
+                <Label text='Crissier' kind='large-right' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
