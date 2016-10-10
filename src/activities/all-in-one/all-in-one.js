@@ -34,6 +34,7 @@ export default class AllInOne extends React.Component {
       // currentStep: 'login',
       currentStep: 'codispatch',
       currentMandat: null,
+      showNotifications: false,
     };
   }
 
@@ -52,6 +53,20 @@ export default class AllInOne extends React.Component {
     }
     this.setState ( {
       currentStep: name
+    });
+  }
+
+  swapShowNotifications () {
+    this.setShowNotifications (!this.getShowNotifications ());
+  }
+
+  getShowNotifications () {
+    return this.state.showNotifications;
+  }
+
+  setShowNotifications (show) {
+    this.setState ( {
+      showNotifications: show
     });
   }
 
@@ -259,7 +274,8 @@ export default class AllInOne extends React.Component {
             text='Coursiers' kind='view-tab'
             active={this.activeStep ('dispatch-messengers')} {...this.link ()} />
           <Container kind='view-tab-right' {...this.link ()} >
-            <Button text='Notifications' glyph='bell' glyph-position='right'
+            <Button action={() => this.swapShowNotifications ()}
+              text='Notifications' glyph='bell' glyph-position='right'
               badge-value='6' kind='view-tab-right' {...this.link ()} />
           </Container>
         </Container>
@@ -274,7 +290,8 @@ export default class AllInOne extends React.Component {
           <Button text='Nom de la mission | 09:56' kind='view-tab' active='false' {...this.link ()} />
           <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
           <Container kind='view-tab-right' {...this.link ()} >
-            <Button text='Notifications' glyph='bell' glyph-position='right'
+            <Button action={() => this.swapShowNotifications ()}
+              text='Notifications' glyph='bell' glyph-position='right'
               badge-value='17' kind='view-tab-right' {...this.link ()} />
           </Container>
         </Container>
@@ -332,6 +349,17 @@ export default class AllInOne extends React.Component {
       return this.viewEmpty ();
     } else {
       return this.viewComingSoon ();
+    }
+  }
+
+  viewNotifications () {
+    if (this.getShowNotifications ()) {
+      return (
+        <Container kind='view-right' width='300px' {...this.link ()} >
+        </Container>
+      );
+    } else {
+      return null;
     }
   }
 
@@ -511,7 +539,10 @@ export default class AllInOne extends React.Component {
 
   viewDispatchTrips () {
     return (
-      <DispatchTrips {...this.link ()} />
+      <Container kind='views' {...this.link ()} >
+        <DispatchTrips {...this.link ()} />
+        {this.viewNotifications ()}
+      </Container>
     );
   }
 
