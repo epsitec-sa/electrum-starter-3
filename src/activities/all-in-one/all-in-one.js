@@ -36,32 +36,37 @@ export default class AllInOne extends React.Component {
       {
         Glyph:   'bicycle',
         Color:   'base',
-        Message: 'Lundi',
-      },
-      {
-        Glyph:   'bicycle',
-        Color:   'success',
-        Message: 'Mardi',
-      },
-      {
-        Glyph:   'bicycle',
-        Color:   'secondary',
-        Message: 'Mercredi',
-      },
-      {
-        Glyph:   'bicycle',
-        Color:   'base',
-        Message: 'Jeudi',
-      },
-      {
-        Glyph:   'bicycle',
-        Color:   'base',
-        Message: 'Vendredi',
+        Message: 'Migros Pont-Neuf — Lausanne\\nDupond J. — Renens',
       },
       {
         Glyph:   'warning',
         Color:   'primary',
-        Message: 'Ceci este une petite phrase longue et complètement débile.',
+        Message: 'Frédérique est absent cet après-midi.',
+      },
+      {
+        Glyph:   'bicycle',
+        Color:   'success',
+        Message: 'Coop St- Laurent — Lausanne\\nNicoud S. — Lausanne',
+      },
+      {
+        Glyph:   'bicycle',
+        Color:   'secondary',
+        Message: 'Icomm — Crissier\\nSchmidt H. — Prilly',
+      },
+      {
+        Glyph:   'bicycle',
+        Color:   'base',
+        Message: 'Gare CFF — Lausanne\\nPolyaugrien — Lausanne',
+      },
+      {
+        Glyph:   'bicycle',
+        Color:   'base',
+        Message: 'Migros Pont-Neuf — Lausanne\\nAndré B. — Pully',
+      },
+      {
+        Glyph:   'warning',
+        Color:   'primary',
+        Message: 'La livraison n\'est pas possible en raison de travaux à Lausanne, rue du Midi, jusqu\'au 25.10.2016.',
       },
     ];
     this.state = {
@@ -130,6 +135,7 @@ export default class AllInOne extends React.Component {
     this.setState ( {
       notifications: data
     });
+    this.forceUpdate ();
   }
 
   activeMandat (name) {
