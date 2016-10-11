@@ -75,8 +75,8 @@ export default class AllInOne extends React.Component {
       },
     ];
     this.state = {
-      // currentStep: 'login',
-      currentStep: 'codispatch',
+      currentStep: 'login',
+      // currentStep: 'codispatch',
       currentMandat: null,
       showNotifications: false,
       notifications: notifications,
@@ -338,9 +338,6 @@ export default class AllInOne extends React.Component {
           <Button action={() => this.setStep ('team')}
             active={this.activeStep ('team')}
             text='Équipe' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('empty')}
-            active={this.activeStep ('empty')}
-            text='Rien' width='200px' kind='main-tab' {...this.link ()} />
           <Container kind='main-tab-right' {...this.link ()} >
             <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-right' {...this.link ()} />
           </Container>
