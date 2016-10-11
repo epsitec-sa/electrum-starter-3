@@ -757,7 +757,7 @@ export default class AllInOne extends React.Component {
 
             <Container kind='pane' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
-                <Label text='Crésus' grow='1' kind='title' {...this.link ()} />
+                <Label text='Polyphème' grow='1' kind='title' {...this.link ()} />
               </Container>
               <Container kind='row-pane' {...this.link ()} >
                 <Label text='Disponible prochainement...' grow='1' {...this.link ()} />
