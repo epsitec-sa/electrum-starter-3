@@ -62,11 +62,13 @@ export default class AllInOne extends React.Component {
         Glyph:   'bicycle',
         Color:   'base',
         Message: 'Migros Pont-Neuf — Lausanne\\nAndré B. — Pully',
+        Status:  'not-read',
       },
       {
         Glyph:   'warning',
         Color:   'primary',
         Message: 'La livraison n\'est pas possible en raison de travaux à Lausanne, rue du Midi, jusqu\'au 25.10.2016.',
+        Status:  'not-read',
       },
     ];
     this.state = {
