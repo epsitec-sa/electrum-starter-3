@@ -32,6 +32,9 @@ export default class AllInOne extends React.Component {
   constructor (props) {
     super (props);
 
+    this.notificationNumber = 1;
+    this.notificationGeneration = 0;
+
     const notifications = [
       {
         Glyph:   'bicycle',
@@ -77,9 +80,8 @@ export default class AllInOne extends React.Component {
       currentMandat: null,
       showNotifications: false,
       notifications: notifications,
+      notificationGeneration: this.notificationGeneration++,
     };
-
-    this.notificationNumber = 1;
   }
 
   /******************************************************************************/
@@ -107,16 +109,14 @@ export default class AllInOne extends React.Component {
       Message: 'Nouveau message numéro ' + this.notificationNumber++,
       Status:  'not-read',
     };
-    let nn = this.getNotifications ();
-    nn.push (n);
-    this.setNotifications (nn);
+    this.getNotifications ().push (n);
+    this.nextGenerationNotification ();
     this.setShowNotifications (true);
   }
 
   subNotification () {
-    let nn = this.getNotifications ();
-    nn.pop ();
-    this.setNotifications (nn);
+    this.getNotifications ().pop ();
+    this.nextGenerationNotification ();
   }
 
   getNotReadNotificationsCount () {
@@ -129,16 +129,6 @@ export default class AllInOne extends React.Component {
     return count;
   }
 
-  readAllNotifications () {
-    var array = [];
-    const nn = this.getNotifications ();
-    nn.forEach (n => {
-      n.Status = 'read';
-      array.push (n);
-    });
-    this.setNotifications (array);
-  }
-
   swapShowNotifications () {
     this.setShowNotifications (!this.getShowNotifications ());
   }
@@ -148,23 +138,25 @@ export default class AllInOne extends React.Component {
   }
 
   setShowNotifications (show) {
-    this.setState ( {
-      showNotifications: show
+    this.getNotifications ().forEach (n => {
+      if (!show) {
+        n.Status = 'read';
+      }
     });
-    if (!show) {
-      this.readAllNotifications ();
-    }
+    this.setState ( {
+      showNotifications: show,
+    });
+    this.nextGenerationNotification ();
   }
 
   getNotifications () {
     return this.state.notifications;
   }
 
-  setNotifications (data) {
+  nextGenerationNotification () {
     this.setState ( {
-      notifications: data
+      notificationGeneration: this.notificationGeneration++
     });
-    this.forceUpdate ();
   }
 
   activeMandat (name) {
@@ -362,7 +354,7 @@ export default class AllInOne extends React.Component {
         <Button action={() => this.addNotification ()}
           glyph='plus' kind='view-tab-right' {...this.link ()} />
         <Button action={() => this.subNotification ()}
-          glyph='minus' kind='view-tab-right' {...this.link ()} />
+          glyph='minus' kind='view-tab-right' spacing='large' {...this.link ()} />
         <Button action={() => this.swapShowNotifications ()}
           text='Notifications' glyph='bell' glyph-position='right'
           badge-value={this.getNotReadNotificationsCount ()} kind='view-tab-right' {...this.link ()} />
@@ -457,8 +449,11 @@ export default class AllInOne extends React.Component {
 
   viewNotifications () {
     return (
-      <Notifications data={this.getNotifications ()}
-        show={this.getShowNotifications ()} {...this.link ()} />
+      <Notifications
+        data={this.getNotifications ()}
+        show={this.getShowNotifications ()}
+        generation={this.notificationGeneration}
+        {...this.link ()} />
     );
   }
 
