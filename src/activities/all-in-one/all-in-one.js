@@ -16,6 +16,7 @@ import {
   Menu,
   FlyingBalloon,
   Separator,
+  Notifications,
   Notification
 } from 'electrum-arc';
 import {
@@ -353,28 +354,10 @@ export default class AllInOne extends React.Component {
     }
   }
 
-  getNotification (glyph, color, message) {
-    const data = {
-      Glyph:   glyph,
-      Color:   color,
-      Message: message,
-    };
-    return (
-      <Notification data={data} {...this.link ()} />
-    );
-  }
-
   viewNotifications () {
     if (this.getShowNotifications ()) {
       return (
-        <Container kind='notifications' width='300px' {...this.link ()} >
-          {this.getNotification ('car', 'primary', 'Lundi')}
-          {this.getNotification ('user', 'secondary', 'Mardi')}
-          {this.getNotification ('bicycle', 'primary', 'Mercredi')}
-          {this.getNotification ('car', 'base', 'Jeudi')}
-          {this.getNotification ('warning', 'primary', 'Vendredi')}
-          {this.getNotification ('rocket', 'primary', 'Ceci este une petite phrase longue et complètement débile.')}
-        </Container>
+        <Notifications {...this.link ()} />
       );
     } else {
       return null;
