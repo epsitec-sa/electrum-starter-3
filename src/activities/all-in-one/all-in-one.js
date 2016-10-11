@@ -110,6 +110,7 @@ export default class AllInOne extends React.Component {
     let nn = this.getNotifications ();
     nn.push (n);
     this.setNotifications (nn);
+    this.setShowNotifications (true);
   }
 
   subNotification () {
@@ -118,9 +119,19 @@ export default class AllInOne extends React.Component {
     this.setNotifications (nn);
   }
 
+  getNotReadNotificationsCount () {
+    let count = 0;
+    this.getNotifications ().forEach (n => {
+      if (n.Status === 'not-read') {
+        count++;
+      }
+    });
+    return count;
+  }
+
   readAllNotifications () {
     var array = [];
-    const nn = this.getNotifications ().slice (0);
+    const nn = this.getNotifications ();
     nn.forEach (n => {
       n.Status = 'read';
       array.push (n);
@@ -354,7 +365,7 @@ export default class AllInOne extends React.Component {
           glyph='minus' kind='view-tab-right' {...this.link ()} />
         <Button action={() => this.swapShowNotifications ()}
           text='Notifications' glyph='bell' glyph-position='right'
-          badge-value={this.getNotifications ().length} kind='view-tab-right' {...this.link ()} />
+          badge-value={this.getNotReadNotificationsCount ()} kind='view-tab-right' {...this.link ()} />
       </Container>
     );
   }
