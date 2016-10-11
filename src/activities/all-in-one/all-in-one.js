@@ -76,6 +76,8 @@ export default class AllInOne extends React.Component {
       showNotifications: false,
       notifications: notifications,
     };
+
+    this.notificationNumber = 1;
   }
 
   /******************************************************************************/
@@ -100,7 +102,7 @@ export default class AllInOne extends React.Component {
     let n = {
       Glyph:   'rocket',
       Color:   'base',
-      Message: 'Nouveau message...',
+      Message: 'Nouveau message numéro ' + this.notificationNumber++,
     };
     let nn = this.getNotifications ();
     nn.push (n);
