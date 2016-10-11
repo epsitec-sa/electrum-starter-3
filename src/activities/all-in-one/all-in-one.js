@@ -47,7 +47,7 @@ export default class AllInOne extends React.Component {
         Message: 'Frédérique est absent cet après-midi.',
       },
       {
-        Glyph:   'bicycle',
+        Glyph:   'car',
         Color:   'success',
         Message: 'Coop St- Laurent — Lausanne\\nNicoud S. — Lausanne',
       },
@@ -70,7 +70,8 @@ export default class AllInOne extends React.Component {
       {
         Glyph:   'warning',
         Color:   'primary',
-        Message: 'La livraison n\'est pas possible en raison de travaux à Lausanne, rue du Midi, jusqu\'au 25.10.2016.',
+        Message: 'La livraison n\'est pas possible en raison de travaux à Lausanne, rue du Midi, du 12.10.2016 au 25.10.2016.\\n' +
+                 'Il faut accéder par la rue du Centre puis faire les derniers mètres à pied.',
         Status:  'not-read',
       },
     ];
