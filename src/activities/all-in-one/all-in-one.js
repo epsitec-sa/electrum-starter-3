@@ -105,6 +105,7 @@ export default class AllInOne extends React.Component {
       Glyph:   'rocket',
       Color:   'base',
       Message: 'Nouveau message numéro ' + this.notificationNumber++,
+      Status:  'not-read',
     };
     let nn = this.getNotifications ();
     nn.push (n);
@@ -115,6 +116,16 @@ export default class AllInOne extends React.Component {
     let nn = this.getNotifications ();
     nn.pop ();
     this.setNotifications (nn);
+  }
+
+  readAllNotifications () {
+    var array = [];
+    const nn = this.getNotifications ().slice (0);
+    nn.forEach (n => {
+      n.Status = 'read';
+      array.push (n);
+    });
+    this.setNotifications (array);
   }
 
   swapShowNotifications () {
@@ -129,6 +140,9 @@ export default class AllInOne extends React.Component {
     this.setState ( {
       showNotifications: show
     });
+    if (!show) {
+      this.readAllNotifications ();
+    }
   }
 
   getNotifications () {
