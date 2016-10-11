@@ -165,12 +165,13 @@ export default class AllInOne extends React.Component {
 
   glyphMandat (name) {
     const x = {
-      Nouveau:  'diamond',
-      Bouquet:  'tree',
-      Vélocité: 'bicycle',
-      Cargo:    'truck',
-      Pack:     'cube',
-      Admin:    'institution',
+      Nouveau:   'diamond',
+      Genève:    'tree',
+      Lausanne:  'bicycle',
+      Yverdon:   'truck',
+      Neuchâtel: 'rocket',
+      Berne:     'cube',
+      Zurich:    'institution',
     };
     return x[name];
   }
@@ -528,52 +529,61 @@ export default class AllInOne extends React.Component {
               <Container kind='boxes' {...this.link ()} >
                 <Button action={() => this.setStep ('mandat-create')} kind='box' width='200px' height='200px' {...this.link ()} >
                   <Container kind='box' subkind='dashed' {...this.link ()} >
-                    <Label text='Créer un mandat' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Label text='Ajouter un mandat' font-weight='bold' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button action={() => this.setMandat ('Bouquet')} kind='box' width='200px' height='200px'
-                  active={this.activeMandat ('Bouquet')} {...this.link ()} >
+                <Button action={() => this.setMandat ('Genève')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('Genève')} {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
-                    <Label glyph={this.glyphMandat ('Bouquet')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
-                    <Label text='Bouquet' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Label glyph={this.glyphMandat ('Genève')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Genève' font-weight='bold' kind='center-to-box' {...this.link ()} />
                     <Separator {...this.link ()} />
-                    <Label text='Mon beau bouquet' kind='center-to-box' {...this.link ()} />
+                    <Label text='Vélocité Genève' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button action={() => this.setMandat ('Vélocité')} kind='box' width='200px' height='200px'
-                  active={this.activeMandat ('Vélocité')} {...this.link ()} >
+                <Button action={() => this.setMandat ('Lausanne')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('Lausanne')} {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
-                    <Label glyph={this.glyphMandat ('Vélocité')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
-                    <Label text='Vélocité' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Label glyph={this.glyphMandat ('Lausanne')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Lausanne' font-weight='bold' kind='center-to-box' {...this.link ()} />
                     <Separator {...this.link ()} />
                     <Label text='Vélocité Lausanne' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button action={() => this.setMandat ('Cargo')} kind='box' width='200px' height='200px'
-                  active={this.activeMandat ('Cargo')} {...this.link ()} >
+                <Button action={() => this.setMandat ('Yverdon')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('Yverdon')} {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
-                    <Label glyph={this.glyphMandat ('Cargo')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
-                    <Label text='Cargo' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Label glyph={this.glyphMandat ('Yverdon')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Yverdon' font-weight='bold' kind='center-to-box' {...this.link ()} />
                     <Separator {...this.link ()} />
-                    <Label text='Cargo SA' kind='center-to-box' {...this.link ()} />
+                    <Label text='Vélocité Yverdon' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button action={() => this.setMandat ('Pack')} kind='box' width='200px' height='200px'
-                  active={this.activeMandat ('Pack')} {...this.link ()} >
+                <Button action={() => this.setMandat ('Neuchâtel')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('Neuchâtel')} {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
-                    <Label glyph={this.glyphMandat ('Pack')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
-                    <Label text='Pack' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Label glyph={this.glyphMandat ('Neuchâtel')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Neuchâtel' font-weight='bold' kind='center-to-box' {...this.link ()} />
                     <Separator {...this.link ()} />
-                    <Label text='Pack-and-Fill SA' kind='center-to-box' {...this.link ()} />
+                    <Label text='Vélocité Neuchâtel' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
-                <Button action={() => this.setMandat ('Admin')} kind='box' width='200px' height='200px'
-                  active={this.activeMandat ('Admin')} {...this.link ()} >
+                <Button action={() => this.setMandat ('Berne')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('Berne')} {...this.link ()} >
                   <Container kind='box' {...this.link ()} >
-                    <Label glyph={this.glyphMandat ('Admin')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
-                    <Label text='Admin' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Label glyph={this.glyphMandat ('Berne')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Berne' font-weight='bold' kind='center-to-box' {...this.link ()} />
                     <Separator {...this.link ()} />
-                    <Label text='Administration Renens' kind='center-to-box' {...this.link ()} />
+                    <Label text='Eco-Berne' kind='center-to-box' {...this.link ()} />
+                  </Container>
+                </Button>
+                <Button action={() => this.setMandat ('Zurich')} kind='box' width='200px' height='200px'
+                  active={this.activeMandat ('Zurich')} {...this.link ()} >
+                  <Container kind='box' {...this.link ()} >
+                    <Label glyph={this.glyphMandat ('Zurich')} glyph-size='300%' kind='center-to-box' row='1' {...this.link ()} />
+                    <Label text='Zurich' font-weight='bold' kind='center-to-box' {...this.link ()} />
+                    <Separator {...this.link ()} />
+                    <Label text='Zurich Transport AG' kind='center-to-box' {...this.link ()} />
                   </Container>
                 </Button>
               </Container>
@@ -582,7 +592,7 @@ export default class AllInOne extends React.Component {
             <Container kind='actions' subkind='no-shadow' {...this.link ()} >
               <Button action={() => this.setStep ('codispatch')} glyph='check'  text='Ouvrir'    kind='action' width='160px' place='left' {...this.link ()} />
               <Button glyph='pencil' text='Modifier'  kind='action' width='160px' {...this.link ()} />
-              <Button glyph='trash'  text='Supprimer' kind='action' width='160px' {...this.link ()} />
+              <Button glyph='trash'  text='Cacher' kind='action' width='160px' {...this.link ()} />
               <Button action={() => this.setStep ('logout')} glyph='close'  text='Annuler'   kind='action' width='160px' place='right' {...this.link ()} />
             </Container>
           </Container>
