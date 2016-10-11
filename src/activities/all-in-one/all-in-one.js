@@ -32,11 +32,44 @@ export default class AllInOne extends React.Component {
   constructor (props) {
     super (props);
 
+    const notifications = [
+      {
+        Glyph:   'bicycle',
+        Color:   'base',
+        Message: 'Lundi',
+      },
+      {
+        Glyph:   'bicycle',
+        Color:   'success',
+        Message: 'Mardi',
+      },
+      {
+        Glyph:   'bicycle',
+        Color:   'secondary',
+        Message: 'Mercredi',
+      },
+      {
+        Glyph:   'bicycle',
+        Color:   'base',
+        Message: 'Jeudi',
+      },
+      {
+        Glyph:   'bicycle',
+        Color:   'base',
+        Message: 'Vendredi',
+      },
+      {
+        Glyph:   'warning',
+        Color:   'primary',
+        Message: 'Ceci este une petite phrase longue et complètement débile.',
+      },
+    ];
     this.state = {
       // currentStep: 'login',
       currentStep: 'codispatch',
       currentMandat: null,
       showNotifications: false,
+      notifications: notifications,
     };
   }
 
@@ -58,6 +91,23 @@ export default class AllInOne extends React.Component {
     });
   }
 
+  addNotification () {
+    let n = {
+      Glyph:   'rocket',
+      Color:   'base',
+      Message: 'Nouveau message...',
+    };
+    let nn = this.getNotifications ();
+    nn.push (n);
+    this.setNotifications (nn);
+  }
+
+  subNotification () {
+    let nn = this.getNotifications ();
+    nn.pop ();
+    this.setNotifications (nn);
+  }
+
   swapShowNotifications () {
     this.setShowNotifications (!this.getShowNotifications ());
   }
@@ -69,6 +119,16 @@ export default class AllInOne extends React.Component {
   setShowNotifications (show) {
     this.setState ( {
       showNotifications: show
+    });
+  }
+
+  getNotifications () {
+    return this.state.notifications;
+  }
+
+  setNotifications (data) {
+    this.setState ( {
+      notifications: data
     });
   }
 
@@ -261,6 +321,20 @@ export default class AllInOne extends React.Component {
     }
   }
 
+  viewTabNotifications() {
+    return (
+      <Container kind='view-tab-right' {...this.link ()} >
+        <Button action={() => this.addNotification ()}
+          glyph='plus' kind='view-tab-right' {...this.link ()} />
+        <Button action={() => this.subNotification ()}
+          glyph='minus' kind='view-tab-right' {...this.link ()} />
+        <Button action={() => this.swapShowNotifications ()}
+          text='Notifications' glyph='bell' glyph-position='right'
+          badge-value={this.getNotifications ().length} kind='view-tab-right' {...this.link ()} />
+      </Container>
+    );
+  }
+
   viewTab () {
     if (this.getStep () === 'login' || this.getStep () === 'logout') {
       return null;
@@ -275,11 +349,7 @@ export default class AllInOne extends React.Component {
           <Button action={() => this.setStep ('dispatch-messengers')}
             text='Coursiers' kind='view-tab'
             active={this.activeStep ('dispatch-messengers')} {...this.link ()} />
-          <Container kind='view-tab-right' {...this.link ()} >
-            <Button action={() => this.swapShowNotifications ()}
-              text='Notifications' glyph='bell' glyph-position='right'
-              badge-value='6' kind='view-tab-right' {...this.link ()} />
-          </Container>
+          {this.viewTabNotifications ()}
         </Container>
       );
     } else if (this.getStep () === 'codispatch') {
@@ -291,11 +361,7 @@ export default class AllInOne extends React.Component {
           <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
           <Button text='Nom de la mission | 09:56' kind='view-tab' active='false' {...this.link ()} />
           <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
-          <Container kind='view-tab-right' {...this.link ()} >
-            <Button action={() => this.swapShowNotifications ()}
-              text='Notifications' glyph='bell' glyph-position='right'
-              badge-value='17' kind='view-tab-right' {...this.link ()} />
-          </Container>
+          {this.viewTabNotifications ()}
         </Container>
       );
     } else if (this.getStep () === 'fact') {
@@ -357,7 +423,7 @@ export default class AllInOne extends React.Component {
   viewNotifications () {
     if (this.getShowNotifications ()) {
       return (
-        <Notifications {...this.link ()} />
+        <Notifications data={this.getNotifications ()} {...this.link ()} />
       );
     } else {
       return null;
