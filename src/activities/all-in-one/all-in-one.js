@@ -445,13 +445,10 @@ export default class AllInOne extends React.Component {
   }
 
   viewNotifications () {
-    if (this.getShowNotifications ()) {
-      return (
-        <Notifications data={this.getNotifications ()} {...this.link ()} />
-      );
-    } else {
-      return null;
-    }
+    return (
+      <Notifications data={this.getNotifications ()}
+        show={this.getShowNotifications ()} {...this.link ()} />
+    );
   }
 
   viewLogin () {
