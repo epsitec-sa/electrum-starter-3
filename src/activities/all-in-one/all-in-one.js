@@ -37,38 +37,38 @@ export default class AllInOne extends React.Component {
 
     const notifications = [
       {
-        Glyph:   'bicycle',
+        Glyph:   {Glyph: 'bicycle'},
         Color:   'base',
         Message: 'Migros Pont-Neuf — Lausanne\\nDupond J. — Renens',
       },
       {
-        Glyph:   'warning',
+        Glyph:   {Glyph: 'warning'},
         Color:   'primary',
         Message: 'Frédérique est absent cet après-midi.',
       },
       {
-        Glyph:   'car',
+        Glyph:   {Glyph: 'car'},
         Color:   'success',
         Message: 'Coop St- Laurent — Lausanne\\nNicoud S. — Lausanne',
       },
       {
-        Glyph:   'bicycle',
+        Glyph:   {Glyph: 'bicycle'},
         Color:   'secondary',
         Message: 'Icomm — Crissier\\nSchmidt H. — Prilly',
       },
       {
-        Glyph:   'bicycle',
+        Glyph:   {Glyph: 'bicycle'},
         Color:   'base',
         Message: 'Gare CFF — Lausanne\\nPolyaugrien — Lausanne',
       },
       {
-        Glyph:   'bicycle',
+        Glyph:   {Glyph: 'bicycle'},
         Color:   'base',
         Message: 'Migros Pont-Neuf — Lausanne\\nAndré B. — Pully',
         Status:  'not-read',
       },
       {
-        Glyph:   'warning',
+        Glyph:   {Glyph: 'warning'},
         Color:   'primary',
         Message: 'La livraison n\'est pas possible en raison de travaux à Lausanne, rue du Midi, du 12.10.2016 au 25.10.2016.\\n' +
                  'Il faut accéder par la rue du Centre puis faire les derniers mètres à pied.',
@@ -105,7 +105,7 @@ export default class AllInOne extends React.Component {
 
   addNotification () {
     let n = {
-      Glyph:   'rocket',
+      Glyph:   {Glyph: 'rocket'},
       Color:   'base',
       Message: 'Nouveau message numéro ' + this.notificationNumber++,
       Status:  'not-read',
