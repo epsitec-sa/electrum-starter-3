@@ -198,102 +198,15 @@ export default class AllInOne extends React.Component {
   }
   /******************************************************************************/
 
-  taskBar () {
-    if (this.getStep () === 'login') {
-      return (
-        <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
-      );
-    } else if (this.getStep () === 'logout' ||
-               this.getStep () === 'mandats' ||
-               this.getStep () === 'mandat-create') {
+  mandatZone () {
+    if (this.getStep () === 'login' ||
+        this.getStep () === 'logout' ||
+        this.getStep () === 'mandats' ||
+        this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'dispatch-trips' ||
-               this.getStep () === 'dispatch-messengers') {
-      return (
-        <Container kind='task' {...this.link ()} >
-          <Button action={() => this.setStep ('mandats')}
-            glyph={this.glyphMandat (this.getMandat ())}
-            text={this.getMandat ()} text-transform='none'
-            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
-          <Button glyph='clock-o' text='Missions'
-            kind='task' badge-value='54' {...this.link ()} />
-          <Button glyph='inbox' text='Panier'
-            kind='task' badge-value='2' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.getStep () === 'codispatch') {
-      return (
-        <Container kind='task' {...this.link ()} >
-          <Button action={() => this.setStep ('mandats')}
-            glyph={this.glyphMandat (this.getMandat ())}
-            text={this.getMandat ()} text-transform='none'
-            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
-          <Button glyph='plus-square' text='Activité'
-            kind='task' badge-value='27' {...this.link ()} />
-          <Button glyph='inbox' text='En cours'
-            kind='task' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.getStep () === 'synchro') {
-      return (
-        <Container kind='task' {...this.link ()} >
-          <Button action={() => this.setStep ('mandats')}
-            glyph={this.glyphMandat (this.getMandat ())}
-            text={this.getMandat ()} text-transform='none'
-            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
-          <Button glyph='refresh' text='Synchroniser' tooltip='Synchroniser tous les mandats' kind='task' {...this.link ()} />
-          <Button glyph='link' text='Se rattacher' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task' {...this.link ()} />
-          <Button glyph='cloud-download' text='Attacher' tooltip='Attacher un fichier' kind='task' {...this.link ()} />
-          <Button glyph='share-alt' text='Partager' tooltip='Partager le mandat au moyen d´un ticket' kind='task' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.getStep () === 'compta-journal') {
-      return (
-        <Container kind='task' {...this.link ()} >
-          <Button action={() => this.setStep ('mandats')}
-            glyph={this.glyphMandat (this.getMandat ())}
-            text={this.getMandat ()} text-transform='none'
-            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
-          <Button glyph='search' text='Chercher' kind='task' {...this.link ()} />
-          <Button glyph='plus-circle' text='TVA' kind='task' {...this.link ()} />
-          <Button glyph='columns' text='Boucler' kind='task' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.getStep () === 'compta-plan') {
-      return (
-        <Container kind='task' {...this.link ()} >
-          <Button action={() => this.setStep ('mandats')}
-            glyph={this.glyphMandat (this.getMandat ())}
-            text={this.getMandat ()} text-transform='none'
-            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
-          <Button glyph='search' text='Chercher' kind='task' {...this.link ()} />
-          <Button glyph='check' text='Vérifier' kind='task' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.getStep () === 'fact') {
-      return (
-        <Container kind='task' {...this.link ()} >
-          <Button action={() => this.setStep ('mandats')}
-            glyph={this.glyphMandat (this.getMandat ())}
-            text={this.getMandat ()} text-transform='none'
-            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
-          <Button glyph='search' text='Chercher' kind='task' {...this.link ()} />
-          <Button glyph='print' text='Imprimer' kind='task' {...this.link ()} />
-        </Container>
-      );
-    } else if (this.getStep () === 'sal') {
-      return (
-        <Container kind='task' {...this.link ()} >
-          <Button action={() => this.setStep ('mandats')}
-            glyph={this.glyphMandat (this.getMandat ())}
-            text={this.getMandat ()} text-transform='none'
-            tooltip='Changer de mandat' kind='task-logo' {...this.link ()} />
-          <Button glyph='euro' text='Faire' kind='task' {...this.link ()} />
-        </Container>
-      );
     } else {
       return (
-        <Container kind='task' {...this.link ()} >
+        <Container kind='task-bar' {...this.link ()} >
           <Button action={() => this.setStep ('mandats')}
             glyph={this.glyphMandat (this.getMandat ())}
             text={this.getMandat ()} text-transform='none'
@@ -303,16 +216,81 @@ export default class AllInOne extends React.Component {
     }
   }
 
-  mainTab () {
-    if (this.getStep () === 'login') {
+  taskBar () {
+    if (this.getStep () === 'login' || this.getStep () === 'logout' || this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
       return null;
-    } else if (this.getStep () === 'logout' || this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
+    } else if (this.getStep () === 'dispatch-trips' ||
+               this.getStep () === 'dispatch-messengers') {
+      return (
+        <Container kind='task-bar' {...this.link ()} >
+          <Button glyph='clock-o' text='Missions'
+            kind='task-bar' badge-value='54' {...this.link ()} />
+          <Button glyph='inbox' text='Panier'
+            kind='task-bar' badge-value='2' {...this.link ()} />
+        </Container>
+      );
+    } else if (this.getStep () === 'codispatch') {
+      return (
+        <Container kind='task-bar' {...this.link ()} >
+          <Button glyph='plus-square' text='Activité'
+            kind='task-bar' badge-value='27' {...this.link ()} />
+          <Button glyph='inbox' text='En cours'
+            kind='task-bar' {...this.link ()} />
+        </Container>
+      );
+    } else if (this.getStep () === 'synchro') {
+      return (
+        <Container kind='task-bar' {...this.link ()} >
+          <Button glyph='refresh' text='Synchroniser' tooltip='Synchroniser tous les mandats' kind='task-bar' {...this.link ()} />
+          <Button glyph='link' text='Se rattacher' tooltip='Utilise un ticket (fichier .crsync) pour vous rattacher à un mandat' kind='task-bar' {...this.link ()} />
+          <Button glyph='cloud-download' text='Attacher' tooltip='Attacher un fichier' kind='task-bar' {...this.link ()} />
+          <Button glyph='share-alt' text='Partager' tooltip='Partager le mandat au moyen d´un ticket' kind='task-bar' {...this.link ()} />
+        </Container>
+      );
+    } else if (this.getStep () === 'compta-journal') {
+      return (
+        <Container kind='task-bar' {...this.link ()} >
+          <Button glyph='search' text='Chercher' kind='task-bar' {...this.link ()} />
+          <Button glyph='plus-circle' text='TVA' kind='task-bar' {...this.link ()} />
+          <Button glyph='columns' text='Boucler' kind='task-bar' {...this.link ()} />
+        </Container>
+      );
+    } else if (this.getStep () === 'compta-plan') {
+      return (
+        <Container kind='task-bar' {...this.link ()} >
+          <Button glyph='search' text='Chercher' kind='task-bar' {...this.link ()} />
+          <Button glyph='check' text='Vérifier' kind='task-bar' {...this.link ()} />
+        </Container>
+      );
+    } else if (this.getStep () === 'fact') {
+      return (
+        <Container kind='task-bar' {...this.link ()} >
+          <Button glyph='search' text='Chercher' kind='task-bar' {...this.link ()} />
+          <Button glyph='print' text='Imprimer' kind='task-bar' {...this.link ()} />
+        </Container>
+      );
+    } else if (this.getStep () === 'sal') {
+      return (
+        <Container kind='task-bar' {...this.link ()} >
+          <Button glyph='euro' text='Faire' kind='task-bar' {...this.link ()} />
+        </Container>
+      );
+    } else {
+      return (
+        <Container kind='task-bar' {...this.link ()} >
+        </Container>
+      );
+    }
+  }
+
+  mainTab () {
+    if (this.getStep () === 'login' ||
+        this.getStep () === 'logout') {
+      return null;
+    } else if (this.getStep () === 'mandats' ||
+               this.getStep () === 'mandat-create') {
       return (
         <Container kind='main-tab' {...this.link ()} >
-          <Button action={act.NEXT ()} text=' ' border='none' z-index= '1' {...this.link ()} />
-          <Container kind='main-tab-right' {...this.link ()} >
-            <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-right' {...this.link ()} />
-          </Container>
         </Container>
       );
     } else if (this.getStep () === 'dispatch-trips' ||
@@ -339,33 +317,35 @@ export default class AllInOne extends React.Component {
           <Button action={() => this.setStep ('team')}
             active={this.activeStep ('team')}
             text='Équipe' width='200px' kind='main-tab' {...this.link ()} />
-          <Container kind='main-tab-right' {...this.link ()} >
-            <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-right' {...this.link ()} />
-          </Container>
         </Container>
       );
     }
   }
 
-  viewTabNotifications() {
-    return (
-      <Container kind='view-tab-right' {...this.link ()} >
-        <Button action={() => this.addNotification ()}
-          glyph='plus' kind='view-tab-right' {...this.link ()} />
-        <Button action={() => this.subNotification ()}
-          glyph='minus' kind='view-tab-right' spacing='large' {...this.link ()} />
-        <Button action={() => this.swapShowNotifications ()}
-          text='Notifications' glyph='bell' glyph-position='right'
-          badge-value={this.getNotReadNotificationsCount ()} kind='view-tab-right' {...this.link ()} />
-      </Container>
-    );
+  loginZone () {
+    if (this.getStep () === 'login' ||
+        this.getStep () === 'logout') {
+      return null;
+    } else {
+      return (
+        <Container kind='main-tab-right' {...this.link ()} >
+          <Button action={act.NEXT ()} glyph='tv' kind='main-tab-right' {...this.link ()} />
+          <Button action={() => this.setStep ('logout')} text='Jean Dupond' kind='main-tab-right' {...this.link ()} />
+        </Container>
+      );
+    }
   }
 
   viewTab () {
-    if (this.getStep () === 'login' || this.getStep () === 'logout') {
+    if (this.getStep () === 'login' ||
+        this.getStep () === 'logout') {
       return null;
-    } else if (this.getStep () === 'mandats' || this.getStep () === 'mandat-create') {
-      return null;
+    } else if (this.getStep () === 'mandats' ||
+               this.getStep () === 'mandat-create') {
+      return (
+        <Container kind='view-tab' {...this.link ()} >
+        </Container>
+      );
     } else if (this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') {
       return (
         <Container kind='view-tab' {...this.link ()} >
@@ -375,7 +355,6 @@ export default class AllInOne extends React.Component {
           <Button action={() => this.setStep ('dispatch-messengers')}
             text='Coursiers' kind='view-tab'
             active={this.activeStep ('dispatch-messengers')} {...this.link ()} />
-          {this.viewTabNotifications ()}
         </Container>
       );
     } else if (this.getStep () === 'codispatch') {
@@ -387,7 +366,6 @@ export default class AllInOne extends React.Component {
           <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
           <Button text='Nom de la mission | 09:56' kind='view-tab' active='false' {...this.link ()} />
           <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
-          {this.viewTabNotifications ()}
         </Container>
       );
     } else if (this.getStep () === 'fact') {
@@ -403,6 +381,25 @@ export default class AllInOne extends React.Component {
     } else {
       return (
         <Container kind='view-tab' {...this.link ()} >
+        </Container>
+      );
+    }
+  }
+
+  notificationsZone() {
+    if (this.getStep () === 'login' ||
+        this.getStep () === 'logout') {
+      return null;
+    } else {
+      return (
+        <Container kind='view-tab-right' {...this.link ()} >
+          <Button action={() => this.addNotification ()}
+            glyph='plus' kind='view-tab-right' {...this.link ()} />
+          <Button action={() => this.subNotification ()}
+            glyph='minus' kind='view-tab-right' spacing='large' {...this.link ()} />
+          <Button action={() => this.swapShowNotifications ()}
+            text='Notifications' glyph='bell' glyph-position='right'
+            badge-value={this.getNotReadNotificationsCount ()} kind='view-tab-right' {...this.link ()} />
         </Container>
       );
     }
@@ -836,12 +833,21 @@ export default class AllInOne extends React.Component {
     return (
       <Container kind='root' {...this.link ()} >
 
-        {this.taskBar ()}
+        <Container kind='left-bar' {...this.link ()} >
+          {this.mandatZone ()}
+          {this.taskBar ()}
+        </Container>
 
         <Container kind='right' {...this.link ()} >
 
-          {this.mainTab ()}
-          {this.viewTab ()}
+          <Container kind='top-bar' {...this.link ()} >
+            {this.mainTab ()}
+            {this.loginZone ()}
+          </Container>
+          <Container kind='second-bar' {...this.link ()} >
+            {this.viewTab ()}
+            {this.notificationsZone ()}
+          </Container>
           {this.view ()}
           {this.footer ()}
 
