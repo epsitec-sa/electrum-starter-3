@@ -443,16 +443,6 @@ export default class AllInOne extends React.Component {
     }
   }
 
-  viewNotifications () {
-    return (
-      <Notifications
-        data={this.getNotifications ()}
-        show={this.getShowNotifications ()}
-        generation={this.notificationGeneration}
-        {...this.link ()} />
-    );
-  }
-
   viewLogin () {
     return (
       <Container kind='div' {...this.link ()} >
@@ -640,7 +630,6 @@ export default class AllInOne extends React.Component {
     return (
       <Container kind='views' {...this.link ()} >
         <DispatchTrips {...this.link ()} />
-        {this.viewNotifications ()}
       </Container>
     );
   }
@@ -649,7 +638,6 @@ export default class AllInOne extends React.Component {
     return (
       <Container kind='views' {...this.link ()} >
         <DispatchMessengers {...this.link ()} />
-        {this.viewNotifications ()}
       </Container>
     );
   }
@@ -658,7 +646,6 @@ export default class AllInOne extends React.Component {
     return (
       <Container kind='views' {...this.link ()} >
         <Codispatch {...this.link ()} />
-        {this.viewNotifications ()}
       </Container>
     );
   }
@@ -767,6 +754,16 @@ export default class AllInOne extends React.Component {
     );
   }
 
+  viewNotifications () {
+    return (
+      <Notifications
+        data={this.getNotifications ()}
+        show={this.getShowNotifications ()}
+        generation={this.notificationGeneration}
+        {...this.link ()} />
+    );
+  }
+
   viewEmpty () {
     return (
       <Container kind='views' {...this.link ()} />
@@ -839,7 +836,6 @@ export default class AllInOne extends React.Component {
         </Container>
 
         <Container kind='right' {...this.link ()} >
-
           <Container kind='top-bar' {...this.link ()} >
             {this.mainTab ()}
             {this.loginZone ()}
@@ -850,7 +846,7 @@ export default class AllInOne extends React.Component {
           </Container>
           {this.view ()}
           {this.footer ()}
-
+          {this.viewNotifications ()}
         </Container>
 
         {this.dialog ()}
