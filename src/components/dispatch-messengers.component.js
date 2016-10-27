@@ -192,7 +192,7 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'car',
               Name:           'Frédérique',
               Total:          '250.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip ('selected', 'pick', {
                 Pick: {
                   Time: '10:15',
@@ -253,7 +253,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Marcel',
       				Total:          '0.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -272,7 +272,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'truck',
       				Name:           'Simone',
       				Total:          '100.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -290,7 +290,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Jean-Louis',
       				Total:          '400.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -309,7 +309,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Chantal',
       				Total:          '95.20'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip ('yellow', 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -353,7 +353,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Béatrice',
       				Total:          '20.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -372,7 +372,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'rocket',
       				Name:           'Zoé',
       				Total:          '0.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -390,7 +390,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Marc',
       				Total:          '0.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '08:30',
@@ -452,7 +452,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Victor',
       				Total:          '630.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -470,7 +470,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'car',
       				Name:           'Jacques',
       				Total:          '0.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -507,7 +507,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'car',
       				Name:           'Samuel',
       				Total:          '0.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -553,7 +553,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Francine',
       				Total:          '68.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
