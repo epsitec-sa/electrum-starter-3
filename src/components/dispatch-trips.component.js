@@ -70,7 +70,7 @@ export default class DispatchTrips extends React.Component {
           </Container>
 
           <Container kind='panes' {...this.link ()} >
-            <Container kind='pane' {...this.link ()} >
+            <Container kind='pane' drag-and-drop='true' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 {this.getTrip (false, {
                   Pick: {

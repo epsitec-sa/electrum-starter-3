@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+
 import {
   Container,
   Button,
@@ -16,7 +17,8 @@ import {
   Separator,
   Ticket,
   TripTicket,
-  MessengerTicket
+  MessengerTicket,
+  Splitter
 } from 'electrum-arc';
 
 export default class DispatchMessengers extends React.Component {
@@ -85,6 +87,8 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
+
+
   render () {
     return (
       <Container kind='tickets-root' {...this.link ()} >
@@ -96,7 +100,7 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'bicycle',
               Name:           'Sandra',
               Total:          '203.50'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip ('selected', 'pick', {
                 Pick: {
                   Time: '2016-03-31T10:51:00',
@@ -152,7 +156,7 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'bicycle',
               Name:           'Jean-Paul',
               Total:          '68.00'})}
-            <Container kind='tickets-trips' {...this.link ()} >
+            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
               {this.getTrip (null, 'drop', {
                 Pick: {
                   Time: '11:00',
@@ -564,7 +568,7 @@ export default class DispatchMessengers extends React.Component {
 
         </Container>
 
-        <Container kind='tickets-basket' height='300px' {...this.link ()} >
+        <Container kind='tickets-basket' drag-and-drop='true' height='300px' {...this.link ()} >
           <Container kind='tickets-glue' left='50px' top='50px' rotate='10deg' {...this.link ()} >
             {this.getTrip (null, 'pick', {
 				      Pick: {
