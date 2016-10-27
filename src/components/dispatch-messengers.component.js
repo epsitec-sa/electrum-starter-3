@@ -83,7 +83,7 @@ export default class DispatchMessengers extends React.Component {
       Trip:  data
     };
     return (
-      <TripTicket data={d} {...this.link ()} />
+      <TripTicket data={d} drag-and-drop='child' {...this.link ()} />
     );
   }
 
@@ -91,7 +91,7 @@ export default class DispatchMessengers extends React.Component {
 
   render () {
     return (
-      <Container kind='tickets-root' {...this.link ()} >
+      <Container kind='tickets-root' drag-and-drop='root' {...this.link ()} >
         <Container kind='tickets-messengers' {...this.link ()} >
 
           <Container kind='tickets-messenger' {...this.link ()} >
