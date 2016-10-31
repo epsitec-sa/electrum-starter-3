@@ -18,7 +18,8 @@ import {
   Ticket,
   TripTicket,
   MessengerTicket,
-  Splitter
+  Splitter,
+  DragController
 } from 'electrum-arc';
 
 export default class DispatchMessengers extends React.Component {
@@ -92,15 +93,16 @@ export default class DispatchMessengers extends React.Component {
   render () {
     return (
       <Container kind='tickets-root' drag-and-drop='root' {...this.link ()} >
-        <Container kind='tickets-messengers' {...this.link ()} >
-
-          <Container kind='tickets-messenger' {...this.link ()} >
+        <DragController name='tickets' {...this.link ()} />
+        <DragController name='messengers' {...this.link ()} />
+        <Container kind='tickets-messengers' drag-controller='messengers' drag-handle='tm' {...this.link ()} >
+          <Container kind='tickets-messenger' drag-handle='tm' {...this.link ()} >
             {this.getMessenger (null, {
               Photo:          'user',
               Transportation: 'bicycle',
               Name:           'Sandra',
               Total:          '203.50'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip ('selected', 'pick', {
                 Pick: {
                   Time: '2016-03-31T10:51:00',
@@ -150,13 +152,13 @@ export default class DispatchMessengers extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='tickets-messenger' {...this.link ()} >
+          <Container kind='tickets-messenger' drag-handle='tm' {...this.link ()} >
             {this.getMessenger (null, {
               Photo:          'user',
               Transportation: 'bicycle',
               Name:           'Jean-Paul',
               Total:          '68.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
                 Pick: {
                   Time: '11:00',
@@ -192,7 +194,7 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'car',
               Name:           'Frédérique',
               Total:          '250.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip ('selected', 'pick', {
                 Pick: {
                   Time: '10:15',
@@ -253,7 +255,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Marcel',
       				Total:          '0.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -272,7 +274,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'truck',
       				Name:           'Simone',
       				Total:          '100.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -290,7 +292,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Jean-Louis',
       				Total:          '400.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -309,7 +311,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Chantal',
       				Total:          '95.20'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip ('yellow', 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -353,7 +355,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Béatrice',
       				Total:          '20.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -372,7 +374,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'rocket',
       				Name:           'Zoé',
       				Total:          '0.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -390,7 +392,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Marc',
       				Total:          '0.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '08:30',
@@ -452,7 +454,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Victor',
       				Total:          '630.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -470,7 +472,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'car',
       				Name:           'Jacques',
       				Total:          '0.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -507,7 +509,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'car',
       				Name:           'Samuel',
       				Total:          '0.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -534,7 +536,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Georges',
       				Total:          '50.00'})}
-            <Container kind='tickets' {...this.link ()} >
+            <Container kind='tickets'  drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -553,7 +555,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Francine',
       				Total:          '68.00'})}
-            <Container kind='tickets-trips' drag-and-drop='true' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
@@ -568,8 +570,8 @@ export default class DispatchMessengers extends React.Component {
 
         </Container>
 
-        <Container kind='tickets-basket' drag-and-drop='true' height='300px' {...this.link ()} >
-          <Container kind='tickets-glue' left='50px' top='50px' rotate='10deg' {...this.link ()} >
+        <Container kind='tickets-basket'  height='300px' {...this.link ()} >
+          <Container kind='tickets-glue' left='50px' top='50px' rotate='10deg' drag-controller='tickets' {...this.link ()} >
             {this.getTrip (null, 'pick', {
 				      Pick: {
         				Time: '13:30',
@@ -588,7 +590,7 @@ export default class DispatchMessengers extends React.Component {
         				Glyphs:   ['bookmark-base']},
       				Count:    '1x'})}
           </Container>
-          <Container kind='tickets-glue' left='300px' top='50px' rotate='-2deg' {...this.link ()} >
+          <Container kind='tickets-glue' left='300px' top='50px' rotate='-2deg' drag-controller='tickets' {...this.link ()} >
             {this.getTrip ('red', 'pick', {
 				      Pick: {
         				Time: '11:45',
@@ -608,7 +610,7 @@ export default class DispatchMessengers extends React.Component {
         				Glyphs:   ['bookmark-base', 'bookmark-secondary', 'bookmark-primary']},
       				Count:    '2x'})}
           </Container>
-          <Container kind='tickets-glue' left='600px' top='20px' rotate='5deg' {...this.link ()} >
+          <Container kind='tickets-glue' left='600px' top='20px' rotate='5deg' drag-controller='tickets' {...this.link ()} >
             {this.getTrip (null, 'pick', {
 				      Pick: {
         				Time: '11:00',
@@ -628,7 +630,7 @@ export default class DispatchMessengers extends React.Component {
         				Glyphs:   ['bookmark-secondary']},
       				Count:    '1x'})}
           </Container>
-          <Container kind='tickets-glue' left='800px' top='60px' rotate='-10deg' {...this.link ()} >
+          <Container kind='tickets-glue' left='800px' top='60px' rotate='-10deg' drag-controller='tickets' {...this.link ()} >
             {this.getTrip (null, 'pick', {
 				      Pick: {
         				Time: '10:50',
