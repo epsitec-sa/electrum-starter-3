@@ -81,10 +81,12 @@ export default class DispatchMessengers extends React.Component {
     const d = {
       Color: color,
       Type:  type,
-      Trip:  data
+      Trip:  data,
+      NotDraggable: color === 'selected' ? 'true' : 'false'
     };
+
     return (
-      <TripTicket data={d} drag-and-drop='child' {...this.link ()} />
+      <TripTicket data={d} {...this.link ()} />
     );
   }
 
@@ -92,11 +94,11 @@ export default class DispatchMessengers extends React.Component {
 
   render () {
     return (
-      <Container kind='tickets-root' drag-and-drop='root' {...this.link ()} >
-        <DragController name='tickets' {...this.link ()} />
-        <DragController name='messengers' {...this.link ()} />
-        <Container kind='tickets-messengers' drag-controller='messengers' drag-handle='tm' {...this.link ()} >
-          <Container kind='tickets-messenger' drag-handle='tm' {...this.link ()} >
+      <Container kind='tickets-root' {...this.link ()} >
+        <DragController name='tickets' drag-handle='TripTicket' {...this.link ()} />
+        <DragController name='messengers' direction='horizontal' drag-handle='MessengerTicket' {...this.link ()} />
+        <Container kind='tickets-messengers' drag-controller='messengers'  {...this.link ()} >
+          <Container kind='tickets-messenger'  {...this.link ()} >
             {this.getMessenger (null, {
               Photo:          'user',
               Transportation: 'bicycle',
@@ -152,7 +154,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='tickets-messenger' drag-handle='tm' {...this.link ()} >
+          <Container kind='tickets-messenger' {...this.link ()} >
             {this.getMessenger (null, {
               Photo:          'user',
               Transportation: 'bicycle',
@@ -188,7 +190,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='tickets-messenger' {...this.link ()} >
+          <Container kind='tickets-messenger'  {...this.link ()} >
             {this.getMessenger (null, {
               Photo:          'user-secret',
               Transportation: 'car',
