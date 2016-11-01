@@ -4,7 +4,8 @@ import React from 'react';
 import {
   Container,
   TripBox,
-  TextFieldCombo
+  TextFieldCombo,
+  DragController
 } from 'electrum-arc';
 
 export default class DispatchTrips extends React.Component {
@@ -45,7 +46,8 @@ export default class DispatchTrips extends React.Component {
     data.Drop.Glyphs = this.getGlyphEntities (data.Drop.Glyphs);
     data.PriceGlyphs = this.getGlyphEntities (data.PriceGlyphs);
     const d = {
-      Trip: data
+      Trip:   data,
+      NoDrag: 'false'
     };
     return (
       <TripBox Selected={selected} data={d} {...this.link ()} />
@@ -70,7 +72,8 @@ export default class DispatchTrips extends React.Component {
           </Container>
 
           <Container kind='panes' {...this.link ()} >
-            <Container kind='pane' drag-and-drop='true' {...this.link ()} >
+            <DragController name='trips' drag-handle='TripBox' {...this.link ()} />
+            <Container kind='pane' drag-controller='trips' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 {this.getTrip (false, {
                   Pick: {
