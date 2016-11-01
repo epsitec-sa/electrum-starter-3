@@ -79,10 +79,10 @@ export default class DispatchMessengers extends React.Component {
     data.Pick.Glyphs = this.getGlyphEntities (data.Pick.Glyphs);
     data.Drop.Glyphs = this.getGlyphEntities (data.Drop.Glyphs);
     const d = {
-      Color: color,
-      Type:  type,
-      Trip:  data,
-      NotDraggable: color === 'selected' ? 'true' : 'false'
+      Color:  color,
+      Type:   type,
+      Trip:   data,
+      NoDrag: color === 'selected' ? 'true' : 'false'
     };
 
     return (
@@ -538,7 +538,7 @@ export default class DispatchMessengers extends React.Component {
       				Transportation: 'bicycle',
       				Name:           'Georges',
       				Total:          '50.00'})}
-            <Container kind='tickets'  drag-controller='tickets' {...this.link ()} >
+            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
 				        Pick: {
           				Time: '13:30',
