@@ -572,8 +572,10 @@ export default class DispatchMessengers extends React.Component {
 
         </Container>
 
-        <Container kind='tickets-basket'  height='300px' {...this.link ()} >
-          <Container kind='tickets-glue' left='50px' top='50px' rotate='10deg' drag-controller='tickets' {...this.link ()} >
+        <Container kind='tickets-basket'  height='260px' {...this.link ()} >
+          <Container kind='tickets-glue' left='30px' top='50px' rotate='10deg'
+            min-width='220px' min-height='82px'
+            drag-controller='tickets' {...this.link ()} >
             {this.getTrip (null, 'pick', {
 				      Pick: {
         				Time: '13:30',
@@ -592,7 +594,9 @@ export default class DispatchMessengers extends React.Component {
         				Glyphs:   ['bookmark-base']},
       				Count:    '1x'})}
           </Container>
-          <Container kind='tickets-glue' left='300px' top='50px' rotate='-2deg' drag-controller='tickets' {...this.link ()} >
+          <Container kind='tickets-glue' left='280px' top='50px' rotate='-2deg'
+            min-width='220px' min-height='82px'
+            drag-controller='tickets' {...this.link ()} >
             {this.getTrip ('red', 'pick', {
 				      Pick: {
         				Time: '11:45',
@@ -612,7 +616,9 @@ export default class DispatchMessengers extends React.Component {
         				Glyphs:   ['bookmark-base', 'bookmark-secondary', 'bookmark-primary']},
       				Count:    '2x'})}
           </Container>
-          <Container kind='tickets-glue' left='600px' top='20px' rotate='5deg' drag-controller='tickets' {...this.link ()} >
+          <Container kind='tickets-glue' left='530px' top='20px' rotate='5deg'
+            min-width='220px' min-height='82px'
+            drag-controller='tickets' {...this.link ()} >
             {this.getTrip (null, 'pick', {
 				      Pick: {
         				Time: '11:00',
@@ -632,7 +638,9 @@ export default class DispatchMessengers extends React.Component {
         				Glyphs:   ['bookmark-secondary']},
       				Count:    '1x'})}
           </Container>
-          <Container kind='tickets-glue' left='800px' top='60px' rotate='-10deg' drag-controller='tickets' {...this.link ()} >
+          <Container kind='tickets-glue' left='750px' top='60px' rotate='-10deg'
+            min-width='220px' min-height='82px'
+            drag-controller='tickets' {...this.link ()} >
             {this.getTrip (null, 'pick', {
 				      Pick: {
         				Time: '10:50',
@@ -650,6 +658,22 @@ export default class DispatchMessengers extends React.Component {
         				Description: 'Dupond J.',
         				Glyphs:   ['warning', 'bookmark-primary']},
       				Count:    '2x'})}
+          </Container>
+          <Container kind='tickets-glue' left='990px' top='50px' rotate='5deg'
+            min-width='220px' min-height='82px'
+            drag-controller='tickets' {...this.link ()} >
+          </Container>
+          <Container kind='tickets-glue' left='1210px' top='70px' rotate='-4deg'
+            min-width='220px' min-height='82px'
+            drag-controller='tickets' {...this.link ()} >
+          </Container>
+          <Container kind='tickets-glue' left='1450px' top='30px' rotate='0deg'
+            min-width='220px' min-height='82px'
+            drag-controller='tickets' {...this.link ()} >
+          </Container>
+          <Container kind='tickets-glue' left='1690px' top='30px' rotate='10deg'
+            min-width='220px' min-height='82px'
+            drag-controller='tickets' {...this.link ()} >
           </Container>
         </Container>
       </Container>
