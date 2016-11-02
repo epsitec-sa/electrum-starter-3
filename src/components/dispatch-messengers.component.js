@@ -622,7 +622,7 @@ export default class DispatchMessengers extends React.Component {
           <Container kind='tickets-glue' left='280px' top='50px' rotate='-2deg'
             min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
-            {this.getTrips ({
+            {this.getTrip (null, 'pick', {
 				      Pick: {
         				Time: '11:45',
         				Description: 'Me Mouquin G.',
@@ -631,6 +631,15 @@ export default class DispatchMessengers extends React.Component {
         				Time: '13:00',
         				Description: 'Schmidt W.'},
       				Count:    '1x'})}
+              {this.getTrip (null, 'drop', {
+  				      Pick: {
+          				Time: '11:45',
+          				Description: 'Me Mouquin G.',
+          				Glyphs:   ['warning', 'bookmark-primary']},
+  				      Drop: {
+          				Time: '13:00',
+          				Description: 'Schmidt W.'},
+        				Count:    '1x'})}
           </Container>
           <Container kind='tickets-glue' left='530px' top='20px' rotate='5deg'
             min-width='220px' min-height='164px'
