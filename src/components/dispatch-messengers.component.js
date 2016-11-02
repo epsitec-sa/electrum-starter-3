@@ -17,6 +17,7 @@ import {
   Separator,
   Ticket,
   TripTicket,
+  TripTickets,
   MessengerTicket,
   Splitter,
   DragController
@@ -90,7 +91,30 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
+  getTrips (data) {
+    data.Pick.Glyphs = this.getGlyphEntities (data.Pick.Glyphs);
+    data.Drop.Glyphs = this.getGlyphEntities (data.Drop.Glyphs);
+    const dp = {
+      Color:  null,
+      Type:   'pick',
+      Trip:   data,
+      NoDrag: 'false'
+    };
+    const dd = {
+      Color:  null,
+      Type:   'drop',
+      Trip:   data,
+      NoDrag: 'false'
+    };
+    const d = {
+      Pick: dp,
+      Drop: dd,
+    };
 
+    return (
+      <TripTickets data={d} {...this.link ()} />
+    );
+  }
 
   render () {
     return (
@@ -98,13 +122,23 @@ export default class DispatchMessengers extends React.Component {
         <DragController name='tickets' drag-handle='TripTicket' {...this.link ()} />
         <DragController name='messengers' direction='horizontal' drag-handle='MessengerTicket' {...this.link ()} />
         <Container kind='tickets-messengers' drag-controller='messengers' {...this.link ()} >
-          <Container kind='tickets-messenger'  {...this.link ()} >
+          <Container kind='tickets-messenger' {...this.link ()} >
             {this.getMessenger (null, {
               Photo:          'user',
               Transportation: 'bicycle',
               Name:           'Sandra',
               Total:          '203.50'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              {this.getTrips ({
+                Pick: {
+                  Time: '13:30',
+                  Description: 'Icomm',
+                  Glyphs:   ['warning']},
+                Drop: {
+                  Time: '14:15',
+                  Description: 'Studer AG',
+                  Glyphs:   ['bookmark-secondary', 'bookmark-primary']},
+                Count:    '1x'})}
               {this.getTrip ('selected', 'pick', {
                 Pick: {
                   Time: '2016-03-31T10:51:00',
@@ -170,7 +204,7 @@ export default class DispatchMessengers extends React.Component {
                   Description: 'Chancellerie',
                   Glyphs:   ['warning']},
                 Count:    '1x'})}
-              {this.getTrip (null, 'pick', {
+              {this.getTrip ('red', 'pick', {
 				        Pick: {
           				Time: '11:45',
           				Description: 'Me Mouquin G.',
@@ -190,7 +224,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='tickets-messenger'  {...this.link ()} >
+          <Container kind='tickets-messenger' {...this.link ()} >
             {this.getMessenger (null, {
               Photo:          'user-secret',
               Transportation: 'car',
@@ -574,9 +608,9 @@ export default class DispatchMessengers extends React.Component {
 
         <Container kind='tickets-basket'  height='260px' {...this.link ()} >
           <Container kind='tickets-glue' left='30px' top='50px' rotate='10deg'
-            min-width='220px' min-height='82px'
+            min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
-            {this.getTrip (null, 'pick', {
+            {this.getTrips ({
 				      Pick: {
         				Time: '13:30',
         				Description: 'Icomm'},
@@ -584,20 +618,11 @@ export default class DispatchMessengers extends React.Component {
         				Time: '14:15',
         				Description: 'Studer AG'},
       				Count:    '2x'})}
-            {this.getTrip (null, 'drop', {
-				      Pick: {
-        				Time: '13:30',
-        				Description: 'Icomm'},
-				      Drop: {
-        				Time: '14:15',
-        				Description: 'Studer AG',
-        				Glyphs:   ['bookmark-base']},
-      				Count:    '1x'})}
           </Container>
           <Container kind='tickets-glue' left='280px' top='50px' rotate='-2deg'
-            min-width='220px' min-height='82px'
+            min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
-            {this.getTrip ('red', 'pick', {
+            {this.getTrips ({
 				      Pick: {
         				Time: '11:45',
         				Description: 'Me Mouquin G.',
@@ -606,20 +631,11 @@ export default class DispatchMessengers extends React.Component {
         				Time: '13:00',
         				Description: 'Schmidt W.'},
       				Count:    '1x'})}
-            {this.getTrip (null, 'drop', {
-				      Pick: {
-        				Time: '11:45',
-        				Description: 'Me Mouquin G.'},
-				      Drop: {
-        				Time: '13:00',
-        				Description: 'Schmidt W.',
-        				Glyphs:   ['bookmark-base', 'bookmark-secondary', 'bookmark-primary']},
-      				Count:    '2x'})}
           </Container>
           <Container kind='tickets-glue' left='530px' top='20px' rotate='5deg'
-            min-width='220px' min-height='82px'
+            min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
-            {this.getTrip (null, 'pick', {
+            {this.getTrips ({
 				      Pick: {
         				Time: '11:00',
         				Description: 'Migros Pont-Neuf',
@@ -628,20 +644,11 @@ export default class DispatchMessengers extends React.Component {
         				Time: '11:15',
         				Description: 'Chancellerie'},
       				Count:    '1x'})}
-            {this.getTrip (null, 'drop', {
-				      Pick: {
-        				Time: '11:00',
-        				Description: 'Migros Pont-Neuf'},
-				      Drop: {
-        				Time: '11:15',
-        				Description: 'Chancellerie',
-        				Glyphs:   ['bookmark-secondary']},
-      				Count:    '1x'})}
           </Container>
           <Container kind='tickets-glue' left='750px' top='60px' rotate='-10deg'
-            min-width='220px' min-height='82px'
+            min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
-            {this.getTrip (null, 'pick', {
+            {this.getTrips ({
 				      Pick: {
         				Time: '10:50',
         				Description: 'Coop St. Laurent'},
@@ -649,30 +656,21 @@ export default class DispatchMessengers extends React.Component {
         				Time: '11:20',
         				Description: 'Dupond J.'},
       				Count:    '1x'})}
-            {this.getTrip (null, 'drop', {
-				      Pick: {
-        				Time: '10:50',
-        				Description: 'Coop St. Laurent'},
-				      Drop: {
-        				Time: '11:20',
-        				Description: 'Dupond J.',
-        				Glyphs:   ['warning', 'bookmark-primary']},
-      				Count:    '2x'})}
           </Container>
           <Container kind='tickets-glue' left='990px' top='50px' rotate='5deg'
-            min-width='220px' min-height='82px'
+            min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
           </Container>
           <Container kind='tickets-glue' left='1210px' top='70px' rotate='-4deg'
-            min-width='220px' min-height='82px'
+            min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
           </Container>
           <Container kind='tickets-glue' left='1450px' top='30px' rotate='0deg'
-            min-width='220px' min-height='82px'
+            min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
           </Container>
           <Container kind='tickets-glue' left='1690px' top='30px' rotate='10deg'
-            min-width='220px' min-height='82px'
+            min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
           </Container>
         </Container>
