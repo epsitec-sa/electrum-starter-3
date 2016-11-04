@@ -19,7 +19,6 @@ import {
   TripTicket,
   TripTickets,
   MessengerTicket,
-  Splitter,
   DragController
 } from 'electrum-arc';
 
