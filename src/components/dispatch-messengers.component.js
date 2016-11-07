@@ -94,12 +94,14 @@ export default class DispatchMessengers extends React.Component {
     data.Pick.Glyphs = this.getGlyphEntities (data.Pick.Glyphs);
     data.Drop.Glyphs = this.getGlyphEntities (data.Drop.Glyphs);
     const dp = {
+      TripId: 'titi',
       Color:  null,
       Type:   'pick',
       Trip:   data,
       NoDrag: 'false'
     };
     const dd = {
+      TripId: 'titi',
       Color:  null,
       Type:   'drop',
       Trip:   data,
@@ -157,7 +159,18 @@ export default class DispatchMessengers extends React.Component {
                   Description: 'Chancellerie',
                   Glyphs:   ['warning', 'bookmark-base']},
                 Count:    '1x'})}
+              {this.getTrip (null, 'pick', {
+                TripId: 'toto',
+                Pick: {
+                  Time: '11:20',
+                  Description: 'PolyAugrien'},
+                Drop: {
+                  Time: '11:45',
+                  Description: 'Burdet A.',
+                  Glyphs:   ['warning']},
+                Count:    '3x'})}
               {this.getTrip (null, 'drop', {
+                TripId: 'toto',
                 Pick: {
                   Time: '11:20',
                   Description: 'PolyAugrien'},
