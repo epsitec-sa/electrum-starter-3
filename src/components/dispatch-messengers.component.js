@@ -78,6 +78,9 @@ export default class DispatchMessengers extends React.Component {
   getTrip (color, type, data) {
     data.Pick.Glyphs = this.getGlyphEntities (data.Pick.Glyphs);
     data.Drop.Glyphs = this.getGlyphEntities (data.Drop.Glyphs);
+    if (!data.TicketId) {
+      throw new Error (`Undefined Ticket.data.TicketId`);
+    }
     const d = {
       Color:  color,
       Type:   type,
@@ -110,6 +113,14 @@ export default class DispatchMessengers extends React.Component {
       Pick: dp,
       Drop: dd,
     };
+    d.Pick.Trip.TicketId = d.Pick.Trip.TripId + '-pick';
+    d.Drop.Trip.TicketId = d.Drop.Trip.TripId + '-drop';
+    if (!d.Pick.Trip.TicketId) {
+      throw new Error (`Undefined Ticket.d.Pick.Trip.TicketId`);
+    }
+    if (!d.Drop.Trip.TicketId) {
+      throw new Error (`Undefined Ticket.d.Drop.Trip.TicketId`);
+    }
 
     return (
       <TripTickets data={d} {...this.link ()} />
@@ -140,6 +151,7 @@ export default class DispatchMessengers extends React.Component {
                   Glyphs:   ['bookmark-secondary', 'bookmark-primary']},
                 Count:    '1x'})}
               {this.getTrip ('selected', 'pick', {
+                TicketId: '1',
                 TripId: 't1',
                 Pick: {
                   Time: '2016-03-31T10:51:00',
@@ -151,6 +163,7 @@ export default class DispatchMessengers extends React.Component {
                   Zone: {Name: 'Zone A'}},
                 Count:    '2x'})}
               {this.getTrip ('selected', 'drop', {
+                TicketId: '2',
                 TripId: 't2',
                 Pick: {
                   Time: '11:00',
@@ -161,6 +174,7 @@ export default class DispatchMessengers extends React.Component {
                   Glyphs:   ['warning', 'bookmark-base']},
                 Count:    '1x'})}
               {this.getTrip (null, 'pick', {
+                TicketId: '3',
                 TripId: 't3',
                 Pick: {
                   Time: '11:20',
@@ -171,6 +185,7 @@ export default class DispatchMessengers extends React.Component {
                   Glyphs:   ['warning']},
                 Count:    '3x'})}
               {this.getTrip (null, 'drop', {
+                TicketId: '4',
                 TripId: 't3',
                 Pick: {
                   Time: '11:20',
@@ -181,6 +196,7 @@ export default class DispatchMessengers extends React.Component {
                   Glyphs:   ['warning']},
                 Count:    '3x'})}
               {this.getTrip (null, 'pick', {
+                TicketId: '5',
                 TripId: 't6',
                 Pick: {
                   Time: '11:45',
@@ -191,6 +207,7 @@ export default class DispatchMessengers extends React.Component {
                   Description: 'Dubosson F.'},
                 Count:    '1x'})}
               {this.getTrip (null, 'pick', {
+                TicketId: '6',
                 TripId: 't7',
                 Pick: {
                   Time: '11:00',
@@ -211,6 +228,7 @@ export default class DispatchMessengers extends React.Component {
               Total:          '68.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'pick', {
+                TicketId: '7',
                 TripId: 't11',
                 Pick: {
                   Time: '13:30',
@@ -220,6 +238,7 @@ export default class DispatchMessengers extends React.Component {
                   Description: 'Studer AG'},
                 Count:    '4x'})}
               {this.getTrip (null, 'drop', {
+                TicketId: '8',
                 TripId: 't7',
                 Pick: {
                   Time: '11:00',
@@ -230,6 +249,7 @@ export default class DispatchMessengers extends React.Component {
                   Glyphs:   ['warning']},
                 Count:    '1x'})}
               {this.getTrip ('red', 'pick', {
+                TicketId: '9',
                 TripId: 't5',
                 Pick: {
                   Time: '11:45',
@@ -240,6 +260,7 @@ export default class DispatchMessengers extends React.Component {
                   Description: 'Schmidt W.'},
                 Count:    '1x'})}
               {this.getTrip (null, 'drop', {
+                TicketId: '10',
                 TripId: 't11',
                 Pick: {
                   Time: '13:30',
@@ -259,6 +280,7 @@ export default class DispatchMessengers extends React.Component {
               Total:          '250.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip ('selected', 'pick', {
+                TicketId: '11',
                 TripId: 't1',
                 Pick: {
                   Time: '10:15',
@@ -269,6 +291,7 @@ export default class DispatchMessengers extends React.Component {
                   Description: 'Dupond J.'},
                 Count:    '1x'})}
               {this.getTrip ('selected', 'pick', {
+                TicketId: '12',
                 TripId: 't2',
                 Pick: {
                   Time: '11:00',
@@ -279,6 +302,7 @@ export default class DispatchMessengers extends React.Component {
                   Glyphs:   ['warning', 'bookmark-base']},
                 Count:    '1x'})}
               {this.getTrip ('selected', 'drop', {
+                TicketId: '13',
                 TripId: 't8',
                 Pick: {
                   Time: '11:00',
@@ -289,6 +313,7 @@ export default class DispatchMessengers extends React.Component {
                   Glyphs:   ['warning', 'bookmark-secondary']},
                 Count:    '1x'})}
               {this.getTrip (null, 'drop', {
+                TicketId: '14',
                 TripId: 't6',
                 Pick: {
                   Time: '11:45',
@@ -299,6 +324,7 @@ export default class DispatchMessengers extends React.Component {
                   Description: 'Dubosson F.'},
                 Count:    '1x'})}
               {this.getTrip ('green', 'pick', {
+                TicketId: '15',
                 TripId: 't5',
                 Pick: {
                   Time: '11:45',
@@ -308,13 +334,14 @@ export default class DispatchMessengers extends React.Component {
                   Description: 'Schmidt W.'},
                 Count:    '2x'})}
               {this.getTrip (null, 'drop', {
-				        Pick: {
-          				Time: '13:30',
-          				Description: 'Icomm'},
-				        Drop: {
-          				Time: '14:15',
-          				Description: 'Studer AG'},
-        				Count:    '1x'})}
+                TicketId: '16',
+                Pick: {
+                  Time: '13:30',
+                  Description: 'Icomm'},
+                Drop: {
+                  Time: '14:15',
+                  Description: 'Studer AG'},
+                Count:    '1x'})}
             </Container>
           </Container>
 
@@ -326,6 +353,7 @@ export default class DispatchMessengers extends React.Component {
       				Total:          '0.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'pick', {
+                TicketId: '17',
                 TripId: 't8',
                 Pick: {
                   Time: '11:00',
@@ -336,6 +364,7 @@ export default class DispatchMessengers extends React.Component {
                   Glyphs:   ['warning', 'bookmark-secondary']},
                 Count:    '1x'})}
               {this.getTrip (null, 'drop', {
+                TicketId: '18',
                 TripId: 't14',
                 Pick: {
                   Time: '13:30',
@@ -356,6 +385,7 @@ export default class DispatchMessengers extends React.Component {
       				Total:          '100.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'pick', {
+                TicketId: '19',
                 TripId: 't14',
                 Pick: {
                   Time: '13:30',
@@ -375,14 +405,15 @@ export default class DispatchMessengers extends React.Component {
             Total:          '400.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
-				        Pick: {
-          				Time: '13:30',
-          				Description: 'Icomm'},
-				        Drop: {
-          				Time: '14:15',
-          				Description: 'Studer AG',
-          				Glyphs:   ['bookmark-primary']},
-        				Count:    '4x'})}
+                TicketId: '20',
+                Pick: {
+                  Time: '13:30',
+                  Description: 'Icomm'},
+                Drop: {
+                  Time: '14:15',
+                  Description: 'Studer AG',
+                  Glyphs:   ['bookmark-primary']},
+                Count:    '4x'})}
             </Container>
           </Container>
 
@@ -390,79 +421,85 @@ export default class DispatchMessengers extends React.Component {
             {this.getMessenger ('yellow', {
           		Photo:          'user',
             Transportation: 'bicycle',
-      				Name:           'Chantal',
-      				Total:          '95.20'})}
+            Name:           'Chantal',
+            Total:          '95.20'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip ('yellow', 'drop', {
-				        Pick: {
-          				Time: '13:30',
-          				Description: 'Icomm'},
-				        Drop: {
-          				Time: '14:15',
-          				Description: 'Studer AG',
-          				Glyphs:   ['warning']},
-        				Count:    '1x'})}
+                TicketId: '21',
+                Pick: {
+                  Time: '13:30',
+                  Description: 'Icomm'},
+                Drop: {
+                  Time: '14:15',
+                  Description: 'Studer AG',
+                  Glyphs:   ['warning']},
+                Count:    '1x'})}
               {this.getTrip ('yellow', 'drop', {
-				        Pick: {
-          				Time: '11:00',
-          				Description: 'Migros Pont-Neuf'},
-				        Drop: {
-          				Time: '11:15',
-          				Description: 'Chancellerie'},
-        				Count:    '1x'})}
+                TicketId: '22',
+                Pick: {
+                  Time: '11:00',
+                  Description: 'Migros Pont-Neuf'},
+                Drop: {
+                  Time: '11:15',
+                  Description: 'Chancellerie'},
+                Count:    '1x'})}
               {this.getTrip (null, 'drop', {
-				        Pick: {
-          				Time: '11:20',
-          				Description: 'PolyAugrien'},
-				        Drop: {
-          				Time: '11:45',
-          				Description: 'Burdet A.'},
-        				Count:    '1x'})}
+                TicketId: '23',
+                Pick: {
+                  Time: '11:20',
+                  Description: 'PolyAugrien'},
+                Drop: {
+                  Time: '11:45',
+                  Description: 'Burdet A.'},
+                Count:    '1x'})}
               {this.getTrip (null, 'pick', {
-				        Pick: {
-          				Time: '11:45',
-          				Description: 'Me Mouquin G.',
-          				Glyphs:   ['bookmark-base', 'bookmark-secondary']},
-				        Drop: {
-          				Time: '13:00',
-          				Description: 'Schmidt W.'},
-        				Count:    '2x'})}
+                TicketId: '24',
+                Pick: {
+                  Time: '11:45',
+                  Description: 'Me Mouquin G.',
+                  Glyphs:   ['bookmark-base', 'bookmark-secondary']},
+                Drop: {
+                  Time: '13:00',
+                  Description: 'Schmidt W.'},
+                Count:    '2x'})}
             </Container>
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
             {this.getMessenger (null, {
           		Photo:          'user',
-      				Transportation: 'bicycle',
-      				Name:           'Béatrice',
-      				Total:          '20.00'})}
+            Transportation: 'bicycle',
+            Name:           'Béatrice',
+            Total:          '20.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
-				        Pick: {
-          				Time: '13:30',
-          				Description: 'Icomm'},
-				        Drop: {
-          				Time: '14:15',
-          				Description: 'Studer AG',
-          				Glyphs:   ['warning']},
-        				Count:    '1x'})}
+                TicketId: '25',
+                Pick: {
+                  Time: '13:30',
+                  Description: 'Icomm'},
+                Drop: {
+                  Time: '14:15',
+                  Description: 'Studer AG',
+                  Glyphs:   ['warning']},
+                Count:    '1x'})}
             </Container>
           </Container>
 
           <Container kind='tickets-messenger' {...this.link ()} >
             {this.getMessenger (null, {
           		Photo:          'user',
-      				Transportation: 'rocket',
-      				Name:           'Zoé',
-      				Total:          '0.00'})}
+            Transportation: 'rocket',
+            Name:           'Zoé',
+            Total:          '0.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
-				        Pick: {
-          				Time: '13:30',
-          				Description: 'Icomm'},
-				        Drop: {
-          				Time: '14:15',
-          				Description: 'Studer AG'},
+                TicketId: '26',
+                Pick: {
+                  Time: '13:30',
+                  Description: 'Icomm'},
+                Drop: {
+                  Time: '14:15',
+                  Description: 'Studer AG'},
         				Count:    '2x'})}
             </Container>
           </Container>
@@ -475,6 +512,7 @@ export default class DispatchMessengers extends React.Component {
       				Total:          '0.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
+                TicketId: '27',
 				        Pick: {
           				Time: '08:30',
           				Description: 'Icomm'},
@@ -484,6 +522,7 @@ export default class DispatchMessengers extends React.Component {
           				Glyphs:   ['bookmark-secondary']},
         				Count:    '4x'})}
               {this.getTrip (null, 'pick', {
+                TicketId: '28',
 				        Pick: {
           				Time: '10:50',
           				Description: 'Coop St. Laurent'},
@@ -492,6 +531,7 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Dupond J.'},
         				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
+                TicketId: '29',
 				        Pick: {
           				Time: '11:00',
           				Description: 'Migros Pont-Neuf'},
@@ -500,6 +540,7 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Chancellerie'},
         				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
+                TicketId: '30',
 				        Pick: {
           				Time: '11:20',
           				Description: 'PolyAugrien'},
@@ -509,6 +550,7 @@ export default class DispatchMessengers extends React.Component {
           				Glyphs:   ['warning']},
         				Count:    '3x'})}
               {this.getTrip (null, 'pick', {
+                TicketId: '31',
 				        Pick: {
           				Time: '11:45',
           				Description: 'Me Mouquin G.',
@@ -518,6 +560,7 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Schmidt W.'},
         				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
+                TicketId: '32',
 				        Pick: {
           				Time: '13:30',
           				Description: 'Icomm'},
@@ -537,6 +580,7 @@ export default class DispatchMessengers extends React.Component {
       				Total:          '630.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
+                TicketId: '33',
 				        Pick: {
           				Time: '13:30',
           				Description: 'Icomm'},
@@ -555,6 +599,7 @@ export default class DispatchMessengers extends React.Component {
       				Total:          '0.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
+                TicketId: '34',
 				        Pick: {
           				Time: '13:30',
           				Description: 'Icomm'},
@@ -564,6 +609,7 @@ export default class DispatchMessengers extends React.Component {
           				Glyphs:   ['warning']},
         				Count:    '2x'})}
               {this.getTrip (null, 'pick', {
+                TicketId: '35',
 				        Pick: {
           				Time: '10:50',
           				Description: 'Coop St. Laurent',
@@ -573,6 +619,7 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Dupond J.'},
         				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
+                TicketId: '36',
 				        Pick: {
           				Time: '11:00',
           				Description: 'Migros Pont-Neuf'},
@@ -592,6 +639,7 @@ export default class DispatchMessengers extends React.Component {
       				Total:          '0.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
+                TicketId: '37',
 				        Pick: {
           				Time: '13:30',
           				Description: 'Icomm'},
@@ -600,6 +648,7 @@ export default class DispatchMessengers extends React.Component {
           				Description: 'Studer AG'},
         				Count:    '1x'})}
               {this.getTrip (null, 'pick', {
+                TicketId: '38',
 				        Pick: {
           				Time: '11:45',
           				Description: 'Me Mouquin G.',
@@ -619,6 +668,7 @@ export default class DispatchMessengers extends React.Component {
       				Total:          '50.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
+                TicketId: '39',
 				        Pick: {
           				Time: '13:30',
           				Description: 'Icomm'},
@@ -638,6 +688,7 @@ export default class DispatchMessengers extends React.Component {
       				Total:          '68.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
               {this.getTrip (null, 'drop', {
+                TicketId: '40',
 				        Pick: {
           				Time: '13:30',
           				Description: 'Icomm'},
@@ -656,6 +707,7 @@ export default class DispatchMessengers extends React.Component {
             min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
             {this.getTrips ('trips10', {
+              TicketId: '41',
 				      Pick: {
         				Time: '13:30',
         				Description: 'Icomm'},
@@ -668,6 +720,7 @@ export default class DispatchMessengers extends React.Component {
             min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
             {this.getTrip (null, 'pick', {
+              TicketId: '42',
               TripId: 't109',
 				      Pick: {
         				Time: '11:45',
@@ -678,6 +731,7 @@ export default class DispatchMessengers extends React.Component {
         				Description: 'Schmidt W.'},
       				Count:    '1x'})}
               {this.getTrip (null, 'drop', {
+                TicketId: '43',
                 TripId: 't109',
   				      Pick: {
           				Time: '11:45',
