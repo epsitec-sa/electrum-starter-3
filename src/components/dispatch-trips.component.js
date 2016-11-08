@@ -41,7 +41,7 @@ export default class DispatchTrips extends React.Component {
     }
   }
 
-  getTrip (selected, data) {
+  getTripBox (selected, data) {
     data.Pick.Glyphs = this.getGlyphEntities (data.Pick.Glyphs);
     data.Drop.Glyphs = this.getGlyphEntities (data.Drop.Glyphs);
     data.PriceGlyphs = this.getGlyphEntities (data.PriceGlyphs);
@@ -75,7 +75,7 @@ export default class DispatchTrips extends React.Component {
             <DragController name='trips' {...this.link ()} />
             <Container kind='pane' drag-controller='trips' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip (false, {
+                {this.getTripBox (false, {
                   Pick: {
                     Time:    '2016-03-31T10:51:00',
                     Description: 'Coop St. Laurent',
@@ -91,7 +91,7 @@ export default class DispatchTrips extends React.Component {
                   PriceGlyphs: ['warning']})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip (false, {
+                {this.getTripBox (false, {
                   Pick: {
                     Time:    '11:00',
                     Description: 'Migros Plein-Palais',
@@ -108,7 +108,7 @@ export default class DispatchTrips extends React.Component {
                   PriceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip ('true', {
+                {this.getTripBox ('true', {
                   Pick: {
                     Time:    '11:15',
                     Description: 'Icomm',
@@ -125,7 +125,7 @@ export default class DispatchTrips extends React.Component {
                   PriceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip (false, {
+                {this.getTripBox (false, {
                   Pick: {
                     Time:    '11:45',
                     Description: 'Burder A.',
@@ -141,7 +141,7 @@ export default class DispatchTrips extends React.Component {
                   PriceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip (false, {
+                {this.getTripBox (false, {
                   Pick: {
                     Time:    '14:00',
                     Description: 'Coop St. Laurent',
@@ -158,7 +158,7 @@ export default class DispatchTrips extends React.Component {
                   PriceGlyphs: ['warning']})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip (false, {
+                {this.getTripBox (false, {
                   Pick: {
                     Time:    '14:30',
                     Description: 'Migros Plein-Palais',
@@ -175,7 +175,7 @@ export default class DispatchTrips extends React.Component {
                   PriceGlyphs: null})}
               </Container>
               <Container kind='row-pane' {...this.link ()} >
-                {this.getTrip (false, {
+                {this.getTripBox (false, {
                   Pick: {
                     Time:    '15:00',
                     Description: 'Migros Pont-Neuf',

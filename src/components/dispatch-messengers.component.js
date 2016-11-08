@@ -19,6 +19,7 @@ import {
   TripTicket,
   TripTickets,
   MessengerTicket,
+  TripBox,
   DragController,
   Splitter
 } from 'electrum-arc';
@@ -66,6 +67,19 @@ export default class DispatchMessengers extends React.Component {
     } else {
       return null;
     }
+  }
+
+  getTripBox (selected, data) {
+    data.Pick.Glyphs = this.getGlyphEntities (data.Pick.Glyphs);
+    data.Drop.Glyphs = this.getGlyphEntities (data.Drop.Glyphs);
+    data.PriceGlyphs = this.getGlyphEntities (data.PriceGlyphs);
+    const d = {
+      Trip:   data,
+      NoDrag: 'false'
+    };
+    return (
+      <TripBox Selected={selected} data={d} {...this.link ()} />
+    );
   }
 
   getMessenger (color, data) {
@@ -633,7 +647,144 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
           </Container>
-          <Container kind='tickets-basket' {...this.link ()} >
+          <Splitter kind='vertical' default-size='20%' {...this.link ()} >
+            <Container kind='view' width='700px' {...this.link ()} >
+              <Container kind='pane-top' {...this.link ()} >
+                <TextFieldCombo hint-text='Date' combo-glyph='calendar'
+                  grow='1' spacing='large' combo-type='calendar'
+                  combo-direction='right' flying-balloon-anchor='bottom'
+                  {...this.link ('exp-date')} />
+                <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
+                  grow='1' spacing='large' combo-type='clock'
+                  flying-balloon-anchor='right' {...this.link ('exp-time')} />
+                <TextFieldCombo shape='rounded' hint-text='Chercher'
+                  grow='2' combo-glyph='Search' {...this.link ()} />
+              </Container>
+
+              <Container kind='panes' {...this.link ()} >
+                <DragController name='trips' {...this.link ()} />
+                <Container kind='pane' drag-controller='trips' {...this.link ()} >
+                  <Container kind='row-pane' {...this.link ()} >
+                    {this.getTripBox (false, {
+                      Pick: {
+                        Time:    '2016-03-31T10:51:00',
+                        Description: 'Coop St. Laurent',
+                        Zone:    {Name: 'Zone A'},
+                        Glyphs:  ['phone-square', 'bookmark-secondary']},
+                      Drop: {
+                        Time:    '11:20',
+                        Description: 'Dupond J.',
+                        Glyphs:  ['usd', 'bookmark-base', 'bookmark-primary']},
+                      Count:       '2 pces',
+                      Weight:      '1.3 kg',
+                      Price:       '100.00',
+                      PriceGlyphs: ['warning']})}
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    {this.getTripBox (false, {
+                      Pick: {
+                        Time:    '11:00',
+                        Description: 'Migros Plein-Palais',
+                        Zone:    {Name: 'Zone B'},
+                        Glyphs:  ['bookmark-base']},
+                      Drop: {
+                        Time:    '11:35',
+                        Description: 'Alfred D.',
+                        Zone:    {Name: 'Zone B'},
+                        Glyphs:  ['bookmark-base', 'bookmark-primary']},
+                      Count:       '1 pce',
+                      Weight:      '0.2 kg',
+                      Price:       '30.00',
+                      PriceGlyphs: null})}
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    {this.getTripBox ('true', {
+                      Pick: {
+                        Time:    '11:15',
+                        Description: 'Icomm',
+                        Zone:    {Name: 'Zone B'},
+                        Glyphs:  null},
+                      Drop: {
+                        Time:    '12:00',
+                        Description: 'Studer AG',
+                        Zone:    {Name: 'Zone A'},
+                        Glyphs:  ['bookmark-base', 'bookmark-primary']},
+                      Count:       '2 pces',
+                      Weight:      '1.2 kg',
+                      Price:       '130.00',
+                      PriceGlyphs: null})}
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    {this.getTripBox (false, {
+                      Pick: {
+                        Time:    '11:45',
+                        Description: 'Burder A.',
+                        Zone:    {Name: 'Zone B'},
+                        Glyphs:  ['bookmark-primary']},
+                      Drop: {
+                        Time:    '13:15',
+                        Description: 'PolyAugrien',
+                        Glyphs:  ['phone-square']},
+                      Count:       '2 pces',
+                      Weight:      '1.2 kg',
+                      Price:       '130.00',
+                      PriceGlyphs: null})}
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    {this.getTripBox (false, {
+                      Pick: {
+                        Time:    '14:00',
+                        Description: 'Coop St. Laurent',
+                        Zone:    {Name: 'Zone A'},
+                        Glyphs:  ['bookmark-secondary']},
+                      Drop: {
+                        Time:    '14:50',
+                        Description: 'Dupond J.',
+                        Zone:    {Name: 'Zone C'},
+                        Glyphs:  ['phone-square', 'bookmark-primary']},
+                      Count:       '2 pces',
+                      Weight:      '1.3 kg',
+                      Price:       '120.00',
+                      PriceGlyphs: ['warning']})}
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    {this.getTripBox (false, {
+                      Pick: {
+                        Time:    '14:30',
+                        Description: 'Migros Plein-Palais',
+                        Zone:    {Name: 'Zone B'},
+                        Glyphs:  ['bookmark-primary']},
+                      Drop: {
+                        Time:    '15:05',
+                        Description: 'Alfred D.',
+                        Zone:    {Name: 'Zone B'},
+                        Glyphs:  ['usd']},
+                      Count:       '1 pce',
+                      Weight:      '1.0 kg',
+                      Price:       '75.00',
+                      PriceGlyphs: null})}
+                  </Container>
+                  <Container kind='row-pane' {...this.link ()} >
+                    {this.getTripBox (false, {
+                      Pick: {
+                        Time:    '15:00',
+                        Description: 'Migros Pont-Neuf',
+                        Zone:    {Name: 'Zone A'},
+                        Glyphs:  ['bookmark-secondary']},
+                      Drop: {
+                        Time:    '17:30',
+                        Description: 'Alfred D.',
+                        Zone:    {Name: 'Zone B'},
+                        Glyphs:  ['usd', 'bookmark-base', 'bookmark-primary']},
+                      Count:       '5 pces',
+                      Weight:      '10.0 kg',
+                      Price:       '250.00',
+                      PriceGlyphs: null})}
+                  </Container>
+                </Container>
+              </Container>
+            </Container>
+            <Container kind='tickets-basket' {...this.link ()} >
             <Container kind='tickets-glue' left='30px' top='50px' rotate='10deg'
               min-width='220px' min-height='164px'
               drag-controller='tickets' {...this.link ()} >
@@ -712,6 +863,7 @@ export default class DispatchMessengers extends React.Component {
               drag-controller='tickets' {...this.link ()} >
             </Container>
           </Container>
+          </Splitter>
         </Splitter>
       </Container>
     );
