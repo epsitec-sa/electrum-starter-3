@@ -618,7 +618,7 @@ export default class DispatchMessengers extends React.Component {
       				Name:           'Francine',
       				Total:          '68.00'})}
             <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('40', null, null, 'drop', {
+              {this.getTrip ('40', 'null', null, 'drop', {
 				        Pick: {
           				Time: '13:30',
           				Description: 'Icomm'},
@@ -648,7 +648,7 @@ export default class DispatchMessengers extends React.Component {
           <Container kind='tickets-glue' left='280px' top='50px' rotate='-2deg'
             min-width='220px' min-height='164px'
             drag-controller='tickets' {...this.link ()} >
-            {this.getTrip ('42', null, null, 'pick', {
+            {this.getTrip ('42', 'tt11', null, 'pick', {
               TripId: 't109',
 				      Pick: {
         				Time: '11:45',
@@ -658,7 +658,7 @@ export default class DispatchMessengers extends React.Component {
         				Time: '13:00',
         				Description: 'Schmidt W.'},
       				Count:    '1x'})}
-              {this.getTrip ('43', null, null, 'drop', {
+              {this.getTrip ('43', 'tt11', null, 'drop', {
                 TripId: 't109',
   				      Pick: {
           				Time: '11:45',
