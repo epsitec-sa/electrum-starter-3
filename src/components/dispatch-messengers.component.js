@@ -633,8 +633,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
           </Container>
-
-          <Container kind='tickets-basket'  height='260px' {...this.link ()} >
+          <Container kind='tickets-basket' {...this.link ()} >
             <Container kind='tickets-glue' left='30px' top='50px' rotate='10deg'
               min-width='220px' min-height='164px'
               drag-controller='tickets' {...this.link ()} >
