@@ -660,10 +660,8 @@ export default class DispatchMessengers extends React.Component {
                 <TextFieldCombo shape='rounded' hint-text='Chercher'
                   grow='2' combo-glyph='Search' {...this.link ()} />
               </Container>
-
               <Container kind='panes' {...this.link ()} >
-                <DragController name='trips' {...this.link ()} />
-                <Container kind='pane' drag-controller='trips' {...this.link ()} >
+                <Container kind='column' drag-controller='tickets' {...this.link ()} >
                   <Container kind='row-pane' {...this.link ()} >
                     {this.getTripBox (false, {
                       Pick: {
@@ -785,32 +783,22 @@ export default class DispatchMessengers extends React.Component {
               </Container>
             </Container>
             <Container kind='tickets-basket' {...this.link ()} >
-            <Container kind='tickets-glue' left='30px' top='50px' rotate='10deg'
-              min-width='220px' min-height='164px'
-              drag-controller='tickets' {...this.link ()} >
-              {this.getTrips ('trips10', {
-  				      Pick: {
-          				Time: '13:30',
-          				Description: 'Icomm'},
-  				      Drop: {
-          				Time: '14:15',
-          				Description: 'Studer AG'},
-        				Count:    '2x'})}
-            </Container>
-            <Container kind='tickets-glue' left='280px' top='50px' rotate='-2deg'
-              min-width='220px' min-height='164px'
-              drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('42', 'tt11', null, 'pick', {
-                TripId: 't109',
-  				      Pick: {
-          				Time: '11:45',
-          				Description: 'Me Mouquin G.',
-          				Glyphs:   ['warning', 'bookmark-primary']},
-  				      Drop: {
-          				Time: '13:00',
-          				Description: 'Schmidt W.'},
-        				Count:    '1x'})}
-                {this.getTrip ('43', 'tt11', null, 'drop', {
+              <Container kind='tickets-glue' left='30px' top='50px' rotate='10deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+                {this.getTrips ('trips10', {
+    				      Pick: {
+            				Time: '13:30',
+            				Description: 'Icomm'},
+    				      Drop: {
+            				Time: '14:15',
+            				Description: 'Studer AG'},
+          				Count:    '2x'})}
+              </Container>
+              <Container kind='tickets-glue' left='280px' top='50px' rotate='-2deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('42', 'tt11', null, 'pick', {
                   TripId: 't109',
     				      Pick: {
             				Time: '11:45',
@@ -820,49 +808,59 @@ export default class DispatchMessengers extends React.Component {
             				Time: '13:00',
             				Description: 'Schmidt W.'},
           				Count:    '1x'})}
+                  {this.getTrip ('43', 'tt11', null, 'drop', {
+                    TripId: 't109',
+      				      Pick: {
+              				Time: '11:45',
+              				Description: 'Me Mouquin G.',
+              				Glyphs:   ['warning', 'bookmark-primary']},
+      				      Drop: {
+              				Time: '13:00',
+              				Description: 'Schmidt W.'},
+            				Count:    '1x'})}
+              </Container>
+              <Container kind='tickets-glue' left='530px' top='20px' rotate='5deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+                {this.getTrips ('trips11', {
+    				      Pick: {
+            				Time: '11:00',
+            				Description: 'Migros Pont-Neuf',
+            				Glyphs:   ['warning']},
+    				      Drop: {
+            				Time: '11:15',
+            				Description: 'Chancellerie'},
+          				Count:    '1x'})}
+              </Container>
+              <Container kind='tickets-glue' left='750px' top='60px' rotate='-10deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+                {this.getTrips ('trips12', {
+    				      Pick: {
+            				Time: '10:50',
+            				Description: 'Coop St. Laurent'},
+    				      Drop: {
+            				Time: '11:20',
+            				Description: 'Dupond J.'},
+          				Count:    '1x'})}
+              </Container>
+              <Container kind='tickets-glue' left='990px' top='50px' rotate='5deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
+              <Container kind='tickets-glue' left='1210px' top='70px' rotate='-4deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
+              <Container kind='tickets-glue' left='1450px' top='30px' rotate='0deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
+              <Container kind='tickets-glue' left='1690px' top='30px' rotate='10deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
             </Container>
-            <Container kind='tickets-glue' left='530px' top='20px' rotate='5deg'
-              min-width='220px' min-height='164px'
-              drag-controller='tickets' {...this.link ()} >
-              {this.getTrips ('trips11', {
-  				      Pick: {
-          				Time: '11:00',
-          				Description: 'Migros Pont-Neuf',
-          				Glyphs:   ['warning']},
-  				      Drop: {
-          				Time: '11:15',
-          				Description: 'Chancellerie'},
-        				Count:    '1x'})}
-            </Container>
-            <Container kind='tickets-glue' left='750px' top='60px' rotate='-10deg'
-              min-width='220px' min-height='164px'
-              drag-controller='tickets' {...this.link ()} >
-              {this.getTrips ('trips12', {
-  				      Pick: {
-          				Time: '10:50',
-          				Description: 'Coop St. Laurent'},
-  				      Drop: {
-          				Time: '11:20',
-          				Description: 'Dupond J.'},
-        				Count:    '1x'})}
-            </Container>
-            <Container kind='tickets-glue' left='990px' top='50px' rotate='5deg'
-              min-width='220px' min-height='164px'
-              drag-controller='tickets' {...this.link ()} >
-            </Container>
-            <Container kind='tickets-glue' left='1210px' top='70px' rotate='-4deg'
-              min-width='220px' min-height='164px'
-              drag-controller='tickets' {...this.link ()} >
-            </Container>
-            <Container kind='tickets-glue' left='1450px' top='30px' rotate='0deg'
-              min-width='220px' min-height='164px'
-              drag-controller='tickets' {...this.link ()} >
-            </Container>
-            <Container kind='tickets-glue' left='1690px' top='30px' rotate='10deg'
-              min-width='220px' min-height='164px'
-              drag-controller='tickets' {...this.link ()} >
-            </Container>
-          </Container>
           </Splitter>
         </Splitter>
       </Container>

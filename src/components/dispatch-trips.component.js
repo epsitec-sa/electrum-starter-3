@@ -73,7 +73,7 @@ export default class DispatchTrips extends React.Component {
 
           <Container kind='panes' {...this.link ()} >
             <DragController name='trips' {...this.link ()} />
-            <Container kind='pane' drag-controller='trips' {...this.link ()} >
+            <Container kind='column' drag-controller='trips' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 {this.getTripBox (false, {
                   Pick: {
