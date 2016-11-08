@@ -860,6 +860,38 @@ export default class DispatchMessengers extends React.Component {
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
               </Container>
+              <Container kind='tickets-glue' left='20px' top='260px' rotate='-5deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
+              <Container kind='tickets-glue' left='260px' top='250px' rotate='10deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
+              <Container kind='tickets-glue' left='520px' top='250px' rotate='2deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
+              <Container kind='tickets-glue' left='750px' top='300px' rotate='5deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
+              <Container kind='tickets-glue' left='980px' top='250px' rotate='-10deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
+              <Container kind='tickets-glue' left='1200px' top='280px' rotate='3deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
+              <Container kind='tickets-glue' left='1420px' top='250px' rotate='-4deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
+              <Container kind='tickets-glue' left='1670px' top='250px' rotate='5deg'
+                min-width='220px' min-height='164px'
+                drag-controller='tickets' {...this.link ()} >
+              </Container>
             </Container>
           </Splitter>
         </Splitter>
