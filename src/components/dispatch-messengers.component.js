@@ -70,6 +70,7 @@ export default class DispatchMessengers extends React.Component {
   getMessenger (color, data) {
     data.Photo          = this.getGlyphEntitySolo (data.Photo);
     data.Transportation = this.getGlyphEntitySolo (data.Transportation);
+    data.TicketId       = 'messenger';
     return (
       <MessengerTicket Color={color} data={data} {...this.link ()} />
     );
@@ -109,12 +110,12 @@ export default class DispatchMessengers extends React.Component {
       Trip:   data,
       NoDrag: 'false'
     };
+    dp.Trip.TicketId = tripId + '-pick';
+    dd.Trip.TicketId = tripId + '-drop';
     const d = {
       Pick: dp,
       Drop: dd,
     };
-    d.Pick.Trip.TicketId = d.Pick.Trip.TripId + '-pick';
-    d.Drop.Trip.TicketId = d.Drop.Trip.TripId + '-drop';
     if (!d.Pick.Trip.TicketId) {
       throw new Error (`Undefined Ticket.d.Pick.Trip.TicketId`);
     }
@@ -520,34 +521,34 @@ export default class DispatchMessengers extends React.Component {
                   Time: '09:15',
                   Description: 'Studer AG',
                   Glyphs:   ['bookmark-secondary']},
-        				Count:    '4x'})}
+                Count:    '4x'})}
               {this.getTrip (null, 'pick', {
                 TicketId: '28',
-				        Pick: {
-          				Time: '10:50',
-          				Description: 'Coop St. Laurent'},
-				        Drop: {
-          				Time: '11:20',
-          				Description: 'Dupond J.'},
-        				Count:    '1x'})}
+                Pick: {
+                  Time: '10:50',
+                  Description: 'Coop St. Laurent'},
+                Drop: {
+                  Time: '11:20',
+                  Description: 'Dupond J.'},
+                Count:    '1x'})}
               {this.getTrip (null, 'drop', {
                 TicketId: '29',
-				        Pick: {
-          				Time: '11:00',
-          				Description: 'Migros Pont-Neuf'},
-				        Drop: {
-          				Time: '11:15',
-          				Description: 'Chancellerie'},
-        				Count:    '1x'})}
+                Pick: {
+                  Time: '11:00',
+                  Description: 'Migros Pont-Neuf'},
+                Drop: {
+                  Time: '11:15',
+                  Description: 'Chancellerie'},
+                Count:    '1x'})}
               {this.getTrip (null, 'drop', {
                 TicketId: '30',
-				        Pick: {
-          				Time: '11:20',
-          				Description: 'PolyAugrien'},
-				        Drop: {
-          				Time: '11:45',
-          				Description: 'Burdet A.',
-          				Glyphs:   ['warning']},
+                Pick: {
+                  Time: '11:20',
+                  Description: 'PolyAugrien'},
+                Drop: {
+                  Time: '11:45',
+                  Description: 'Burdet A.',
+                  Glyphs:   ['warning']},
         				Count:    '3x'})}
               {this.getTrip (null, 'pick', {
                 TicketId: '31',
