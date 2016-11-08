@@ -19,7 +19,8 @@ import {
   TripTicket,
   TripTickets,
   MessengerTicket,
-  DragController
+  DragController,
+  Splitter
 } from 'electrum-arc';
 
 export default class DispatchMessengers extends React.Component {
@@ -120,545 +121,536 @@ export default class DispatchMessengers extends React.Component {
       <Container kind='tickets-root' {...this.link ()} >
         <DragController name='tickets' drag-handle='TripTicket' {...this.link ()} />
         <DragController name='messengers' direction='horizontal' drag-handle='MessengerTicket' {...this.link ()} />
-        <Container kind='tickets-messengers' drag-controller='messengers' {...this.link ()} >
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
+        <Splitter kind='horizontal' {...this.link ()} >
+          <Container kind='tickets-messengers' drag-controller='messengers' {...this.link ()} >
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+                Photo:          'user',
+                Transportation: 'bicycle',
+                Name:           'Sandra',
+                Total:          '203.50'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrips ('trips1', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm',
+                    Glyphs:   ['warning']},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG',
+                    Glyphs:   ['bookmark-secondary', 'bookmark-primary']},
+                  Count:    '1x'})}
+                {this.getTrip ('1', 't1', 'selected', 'pick', {
+                  Pick: {
+                    Time: '2016-03-31T10:51:00',
+                    Description: 'Coop St. Laurent',
+                    Glyphs:   ['warning']},
+                  Drop:  {
+                    Time: '11:20',
+                    Description: 'Dupond J.',
+                    Zone: {Name: 'Zone A'}},
+                  Count:    '2x'})}
+                {this.getTrip ('2', 't2', 'selected', 'drop', {
+                  Pick: {
+                    Time: '11:00',
+                    Description: 'Migros Pont-Neuf'},
+                  Drop: {
+                    Time: '11:15',
+                    Description: 'Burdet H.',
+                    Glyphs:   ['warning', 'bookmark-base']},
+                  Count:    '1x'})}
+                {this.getTrip ('3', 't3', null, 'pick', {
+                  Pick: {
+                    Time: '11:20',
+                    Description: 'PolyAugrien'},
+                  Drop: {
+                    Time: '11:45',
+                    Description: 'Burdet A.',
+                    Glyphs:   ['warning']},
+                  Count:    '3x'})}
+                {this.getTrip ('4', 't3', null, 'drop', {
+                  Pick: {
+                    Time: '11:20',
+                    Description: 'PolyAugrien'},
+                  Drop: {
+                    Time: '11:45',
+                    Description: 'Burdet A.',
+                    Glyphs:   ['warning']},
+                  Count:    '3x'})}
+                {this.getTrip ('5', 't6', null, 'pick', {
+                  Pick: {
+                    Time: '11:45',
+                    Description: 'Mecano SA',
+                    Zone: {Name: 'Zone B'}},
+                  Drop: {
+                    Time: '13:00',
+                    Description: 'Dubosson F.'},
+                  Count:    '1x'})}
+                {this.getTrip ('6', 't7', null, 'pick', {
+                  Pick: {
+                    Time: '11:00',
+                    Description: 'Migros Pont-Neuf'},
+                  Drop: {
+                    Time: '11:15',
+                    Description: 'Chancellerie',
+                    Glyphs:   ['warning']},
+                  Count:    '1x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+                Photo:          'user',
+                Transportation: 'bicycle',
+                Name:           'Jean-Paul',
+                Total:          '68.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('7', 't11', null, 'pick', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG'},
+                  Count:    '4x'})}
+                {this.getTrip ('8', 't7', null, 'drop', {
+                  Pick: {
+                    Time: '11:00',
+                    Description: 'Migros Pont-Neuf'},
+                  Drop: {
+                    Time: '11:15',
+                    Description: 'Chancellerie',
+                    Glyphs:   ['warning']},
+                  Count:    '1x'})}
+                {this.getTrip ('9', 't5', 'red', 'pick', {
+                  Pick: {
+                    Time: '11:45',
+                    Description: 'Me Mouquin G.',
+                    Glyphs:   ['warning', 'bookmark-base', 'bookmark-secondary', 'bookmark-primary']},
+                  Drop: {
+                    Time: '13:00',
+                    Description: 'Schmidt W.'},
+                  Count:    '1x'})}
+                {this.getTrip ('10', 't11', null, 'drop', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG'},
+                  Count:    '4x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+                Photo:          'user-secret',
+                Transportation: 'car',
+                Name:           'Frédérique',
+                Total:          '250.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('11', 't1', 'selected', 'pick', {
+                  Pick: {
+                    Time: '10:15',
+                    Description: 'Coop St. Laurent',
+                    Glyphs:   ['bookmark-primary']},
+                  Drop: {
+                    Time: '10:55',
+                    Description: 'Dupond J.'},
+                  Count:    '1x'})}
+                {this.getTrip ('12', 't2', 'selected', 'pick', {
+                  Pick: {
+                    Time: '11:00',
+                    Description: 'Migros Pont-Neuf'},
+                  Drop: {
+                    Time: '11:15',
+                    Description: 'Burdet H.',
+                    Glyphs:   ['warning', 'bookmark-base']},
+                  Count:    '1x'})}
+                {this.getTrip ('13', 't8', 'selected', 'drop', {
+                  Pick: {
+                    Time: '11:00',
+                    Description: 'Migros Pont-Neuf'},
+                  Drop: {
+                    Time: '11:15',
+                    Description: 'Chancellerie',
+                    Glyphs:   ['warning', 'bookmark-secondary']},
+                  Count:    '1x'})}
+                {this.getTrip ('14', 't6', null, 'drop', {
+                  Pick: {
+                    Time: '11:45',
+                    Description: 'Mecano SA',
+                    Zone: {Name: 'Zone B'}},
+                  Drop: {
+                    Time: '13:00',
+                    Description: 'Dubosson F.'},
+                  Count:    '1x'})}
+                {this.getTrip ('15', 't5', 'green', 'pick', {
+                  Pick: {
+                    Time: '11:45',
+                    Description: 'Me Mouquin G.'},
+                  Drop: {
+                    Time: '13:00',
+                    Description: 'Schmidt W.'},
+                  Count:    '2x'})}
+                {this.getTrip ('16', null, null, 'drop', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG'},
+                  Count:    '1x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+        				Photo:          'user',
+        				Transportation: 'bicycle',
+        				Name:           'Marcel',
+        				Total:          '0.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('17', 't8', null, 'pick', {
+                  Pick: {
+                    Time: '11:00',
+                    Description: 'Migros Pont-Neuf'},
+                  Drop: {
+                    Time: '11:15',
+                    Description: 'Chancellerie',
+                    Glyphs:   ['warning', 'bookmark-secondary']},
+                  Count:    '1x'})}
+                {this.getTrip ('18', 't14', null, 'drop', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG'},
+                  Count:    '4x',
+                  Glyphs:   ['warning']})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+        				Photo:          'user',
+        				Transportation: 'truck',
+        				Name:           'Simone',
+        				Total:          '100.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('19', 't14', null, 'pick', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG'},
+                  Count:    '1x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
               Photo:          'user',
               Transportation: 'bicycle',
-              Name:           'Sandra',
-              Total:          '203.50'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrips ('trips1', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm',
-                  Glyphs:   ['warning']},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG',
-                  Glyphs:   ['bookmark-secondary', 'bookmark-primary']},
-                Count:    '1x'})}
-              {this.getTrip ('1', 't1', 'selected', 'pick', {
-                Pick: {
-                  Time: '2016-03-31T10:51:00',
-                  Description: 'Coop St. Laurent',
-                  Glyphs:   ['warning']},
-                Drop:  {
-                  Time: '11:20',
-                  Description: 'Dupond J.',
-                  Zone: {Name: 'Zone A'}},
-                Count:    '2x'})}
-              {this.getTrip ('2', 't2', 'selected', 'drop', {
-                Pick: {
-                  Time: '11:00',
-                  Description: 'Migros Pont-Neuf'},
-                Drop: {
-                  Time: '11:15',
-                  Description: 'Burdet H.',
-                  Glyphs:   ['warning', 'bookmark-base']},
-                Count:    '1x'})}
-              {this.getTrip ('3', 't3', null, 'pick', {
-                Pick: {
-                  Time: '11:20',
-                  Description: 'PolyAugrien'},
-                Drop: {
-                  Time: '11:45',
-                  Description: 'Burdet A.',
-                  Glyphs:   ['warning']},
-                Count:    '3x'})}
-              {this.getTrip ('4', 't3', null, 'drop', {
-                Pick: {
-                  Time: '11:20',
-                  Description: 'PolyAugrien'},
-                Drop: {
-                  Time: '11:45',
-                  Description: 'Burdet A.',
-                  Glyphs:   ['warning']},
-                Count:    '3x'})}
-              {this.getTrip ('5', 't6', null, 'pick', {
-                Pick: {
-                  Time: '11:45',
-                  Description: 'Mecano SA',
-                  Zone: {Name: 'Zone B'}},
-                Drop: {
-                  Time: '13:00',
-                  Description: 'Dubosson F.'},
-                Count:    '1x'})}
-              {this.getTrip ('6', 't7', null, 'pick', {
-                Pick: {
-                  Time: '11:00',
-                  Description: 'Migros Pont-Neuf'},
-                Drop: {
-                  Time: '11:15',
-                  Description: 'Chancellerie',
-                  Glyphs:   ['warning']},
-                Count:    '1x'})}
+              Name:           'Jean-Louis',
+              Total:          '400.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('20', null, null, 'drop', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG',
+                    Glyphs:   ['bookmark-primary']},
+                  Count:    '4x'})}
+              </Container>
             </Container>
-          </Container>
 
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-              Photo:          'user',
-              Transportation: 'bicycle',
-              Name:           'Jean-Paul',
-              Total:          '68.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('7', 't11', null, 'pick', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG'},
-                Count:    '4x'})}
-              {this.getTrip ('8', 't7', null, 'drop', {
-                Pick: {
-                  Time: '11:00',
-                  Description: 'Migros Pont-Neuf'},
-                Drop: {
-                  Time: '11:15',
-                  Description: 'Chancellerie',
-                  Glyphs:   ['warning']},
-                Count:    '1x'})}
-              {this.getTrip ('9', 't5', 'red', 'pick', {
-                Pick: {
-                  Time: '11:45',
-                  Description: 'Me Mouquin G.',
-                  Glyphs:   ['warning', 'bookmark-base', 'bookmark-secondary', 'bookmark-primary']},
-                Drop: {
-                  Time: '13:00',
-                  Description: 'Schmidt W.'},
-                Count:    '1x'})}
-              {this.getTrip ('10', 't11', null, 'drop', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG'},
-                Count:    '4x'})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-              Photo:          'user-secret',
-              Transportation: 'car',
-              Name:           'Frédérique',
-              Total:          '250.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('11', 't1', 'selected', 'pick', {
-                Pick: {
-                  Time: '10:15',
-                  Description: 'Coop St. Laurent',
-                  Glyphs:   ['bookmark-primary']},
-                Drop: {
-                  Time: '10:55',
-                  Description: 'Dupond J.'},
-                Count:    '1x'})}
-              {this.getTrip ('12', 't2', 'selected', 'pick', {
-                Pick: {
-                  Time: '11:00',
-                  Description: 'Migros Pont-Neuf'},
-                Drop: {
-                  Time: '11:15',
-                  Description: 'Burdet H.',
-                  Glyphs:   ['warning', 'bookmark-base']},
-                Count:    '1x'})}
-              {this.getTrip ('13', 't8', 'selected', 'drop', {
-                Pick: {
-                  Time: '11:00',
-                  Description: 'Migros Pont-Neuf'},
-                Drop: {
-                  Time: '11:15',
-                  Description: 'Chancellerie',
-                  Glyphs:   ['warning', 'bookmark-secondary']},
-                Count:    '1x'})}
-              {this.getTrip ('14', 't6', null, 'drop', {
-                Pick: {
-                  Time: '11:45',
-                  Description: 'Mecano SA',
-                  Zone: {Name: 'Zone B'}},
-                Drop: {
-                  Time: '13:00',
-                  Description: 'Dubosson F.'},
-                Count:    '1x'})}
-              {this.getTrip ('15', 't5', 'green', 'pick', {
-                Pick: {
-                  Time: '11:45',
-                  Description: 'Me Mouquin G.'},
-                Drop: {
-                  Time: '13:00',
-                  Description: 'Schmidt W.'},
-                Count:    '2x'})}
-              {this.getTrip ('16', null, null, 'drop', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG'},
-                Count:    '1x'})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-      				Photo:          'user',
-      				Transportation: 'bicycle',
-      				Name:           'Marcel',
-      				Total:          '0.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('17', 't8', null, 'pick', {
-                Pick: {
-                  Time: '11:00',
-                  Description: 'Migros Pont-Neuf'},
-                Drop: {
-                  Time: '11:15',
-                  Description: 'Chancellerie',
-                  Glyphs:   ['warning', 'bookmark-secondary']},
-                Count:    '1x'})}
-              {this.getTrip ('18', 't14', null, 'drop', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG'},
-                Count:    '4x',
-                Glyphs:   ['warning']})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-      				Photo:          'user',
-      				Transportation: 'truck',
-      				Name:           'Simone',
-      				Total:          '100.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('19', 't14', null, 'pick', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG'},
-                Count:    '1x'})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger ('yellow', {
             Photo:          'user',
             Transportation: 'bicycle',
-            Name:           'Jean-Louis',
-            Total:          '400.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('20', null, null, 'drop', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG',
-                  Glyphs:   ['bookmark-primary']},
-                Count:    '4x'})}
+            Name:           'Chantal',
+            Total:          '95.20'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('21', null, 'yellow', 'drop', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG',
+                    Glyphs:   ['warning']},
+                  Count:    '1x'})}
+                {this.getTrip ('22', null, 'yellow', 'drop', {
+                  Pick: {
+                    Time: '11:00',
+                    Description: 'Migros Pont-Neuf'},
+                  Drop: {
+                    Time: '11:15',
+                    Description: 'Chancellerie'},
+                  Count:    '1x'})}
+                {this.getTrip ('23', null, null, 'drop', {
+                  Pick: {
+                    Time: '11:20',
+                    Description: 'PolyAugrien'},
+                  Drop: {
+                    Time: '11:45',
+                    Description: 'Burdet A.'},
+                  Count:    '1x'})}
+                {this.getTrip ('24', null, null, 'pick', {
+                  Pick: {
+                    Time: '11:45',
+                    Description: 'Me Mouquin G.',
+                    Glyphs:   ['bookmark-base', 'bookmark-secondary']},
+                  Drop: {
+                    Time: '13:00',
+                    Description: 'Schmidt W.'},
+                  Count:    '2x'})}
+              </Container>
             </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+            		Photo:          'user',
+              Transportation: 'bicycle',
+              Name:           'Béatrice',
+              Total:          '20.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('25', null, null, 'drop', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG',
+                    Glyphs:   ['warning']},
+                  Count:    '1x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+            		Photo:          'user',
+              Transportation: 'rocket',
+              Name:           'Zoé',
+              Total:          '0.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('26', null, null, 'drop', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG'},
+                  Count:    '2x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+            		Photo:          'user',
+              Transportation: 'bicycle',
+              Name:           'Marc',
+              Total:          '0.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('27', null, null, 'drop', {
+                  Pick: {
+                    Time: '08:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '09:15',
+                    Description: 'Studer AG',
+                    Glyphs:   ['bookmark-secondary']},
+                  Count:    '4x'})}
+                {this.getTrip ('28', null, null, 'pick', {
+                  Pick: {
+                    Time: '10:50',
+                    Description: 'Coop St. Laurent'},
+                  Drop: {
+                    Time: '11:20',
+                    Description: 'Dupond J.'},
+                  Count:    '1x'})}
+                {this.getTrip ('29', null, null, 'drop', {
+                  Pick: {
+                    Time: '11:00',
+                    Description: 'Migros Pont-Neuf'},
+                  Drop: {
+                    Time: '11:15',
+                    Description: 'Chancellerie'},
+                  Count:    '1x'})}
+                {this.getTrip ('30', null, null, 'drop', {
+                  Pick: {
+                    Time: '11:20',
+                    Description: 'PolyAugrien'},
+                  Drop: {
+                    Time: '11:45',
+                    Description: 'Burdet A.',
+                    Glyphs:   ['warning']},
+                  Count:    '3x'})}
+                {this.getTrip ('31', null, null, 'pick', {
+                  Pick: {
+                    Time: '11:45',
+                    Description: 'Me Mouquin G.',
+                    Glyphs:   ['bookmark-base', 'bookmark-primary']},
+                  Drop: {
+                    Time: '13:00',
+                    Description: 'Schmidt W.'},
+                  Count:    '1x'})}
+                {this.getTrip ('32', null, null, 'drop', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG',
+                    Glyphs:   ['warning', 'bookmark-base', 'bookmark-secondary']},
+                  Count:    '1x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+            		Photo:          'user',
+              Transportation: 'bicycle',
+              Name:           'Victor',
+              Total:          '630.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('33', null, null, 'drop', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG'},
+                  Count:    '1x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+            		Photo:          'user',
+              Transportation: 'car',
+              Name:           'Jacques',
+              Total:          '0.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('34', null, null, 'drop', {
+                  Pick: {
+                    Time: '13:30',
+                    Description: 'Icomm'},
+                  Drop: {
+                    Time: '14:15',
+                    Description: 'Studer AG',
+                    Glyphs:   ['warning']},
+                  Count:    '2x'})}
+                {this.getTrip ('35', null, null, 'pick', {
+                  Pick: {
+                    Time: '10:50',
+                    Description: 'Coop St. Laurent',
+                    Glyphs:   ['warning', 'bookmark-primary']},
+                  Drop: {
+                    Time: '11:20',
+                    Description: 'Dupond J.'},
+                  Count:    '1x'})}
+                {this.getTrip ('36', null, null, 'drop', {
+                  Pick: {
+                    Time: '11:00',
+                    Description: 'Migros Pont-Neuf'},
+                  Drop: {
+                    Time: '11:15',
+                    Description: 'Chancellerie',
+                    Glyphs:   ['warning']},
+                  Count:    '1x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+            		Photo:          'user',
+              Transportation: 'car',
+              Name:           'Samuel',
+              Total:          '0.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('37', null, null, 'drop', {
+  				        Pick: {
+            				Time: '13:30',
+            				Description: 'Icomm'},
+  				        Drop: {
+            				Time: '14:15',
+            				Description: 'Studer AG'},
+          				Count:    '1x'})}
+                {this.getTrip ('38', null, null, 'pick', {
+  				        Pick: {
+            				Time: '11:45',
+            				Description: 'Me Mouquin G.',
+            				Glyphs:   ['bookmark-base', 'bookmark-secondary', 'bookmark-primary']},
+  				        Drop: {
+            				Time: '13:00',
+            				Description: 'Schmidt W.'},
+          				Count:    '2x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+            		Photo:          'user',
+        				Transportation: 'bicycle',
+        				Name:           'Georges',
+        				Total:          '50.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('39', null, null, 'drop', {
+  				        Pick: {
+            				Time: '13:30',
+            				Description: 'Icomm'},
+  				        Drop: {
+            				Time: '14:15',
+            				Description: 'Studer AG',
+            				Glyphs:   ['warning']},
+          				Count:    '4x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
+            		Photo:          'user',
+        				Transportation: 'bicycle',
+        				Name:           'Francine',
+        				Total:          '68.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip ('40', 'null', null, 'drop', {
+  				        Pick: {
+            				Time: '13:30',
+            				Description: 'Icomm'},
+  				        Drop: {
+            				Time: '14:15',
+            				Description: 'Studer AG',
+            				Glyphs:   ['warning']},
+          				Count:    '1x'})}
+              </Container>
+            </Container>
+
           </Container>
 
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger ('yellow', {
-          Photo:          'user',
-          Transportation: 'bicycle',
-          Name:           'Chantal',
-          Total:          '95.20'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('21', null, 'yellow', 'drop', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG',
-                  Glyphs:   ['warning']},
-                Count:    '1x'})}
-              {this.getTrip ('22', null, 'yellow', 'drop', {
-                Pick: {
-                  Time: '11:00',
-                  Description: 'Migros Pont-Neuf'},
-                Drop: {
-                  Time: '11:15',
-                  Description: 'Chancellerie'},
-                Count:    '1x'})}
-              {this.getTrip ('23', null, null, 'drop', {
-                Pick: {
-                  Time: '11:20',
-                  Description: 'PolyAugrien'},
-                Drop: {
-                  Time: '11:45',
-                  Description: 'Burdet A.'},
-                Count:    '1x'})}
-              {this.getTrip ('24', null, null, 'pick', {
-                Pick: {
-                  Time: '11:45',
-                  Description: 'Me Mouquin G.',
-                  Glyphs:   ['bookmark-base', 'bookmark-secondary']},
-                Drop: {
-                  Time: '13:00',
-                  Description: 'Schmidt W.'},
-                Count:    '2x'})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-          		Photo:          'user',
-            Transportation: 'bicycle',
-            Name:           'Béatrice',
-            Total:          '20.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('25', null, null, 'drop', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG',
-                  Glyphs:   ['warning']},
-                Count:    '1x'})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-          		Photo:          'user',
-            Transportation: 'rocket',
-            Name:           'Zoé',
-            Total:          '0.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('26', null, null, 'drop', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG'},
-                Count:    '2x'})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-          		Photo:          'user',
-            Transportation: 'bicycle',
-            Name:           'Marc',
-            Total:          '0.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('27', null, null, 'drop', {
-                Pick: {
-                  Time: '08:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '09:15',
-                  Description: 'Studer AG',
-                  Glyphs:   ['bookmark-secondary']},
-                Count:    '4x'})}
-              {this.getTrip ('28', null, null, 'pick', {
-                Pick: {
-                  Time: '10:50',
-                  Description: 'Coop St. Laurent'},
-                Drop: {
-                  Time: '11:20',
-                  Description: 'Dupond J.'},
-                Count:    '1x'})}
-              {this.getTrip ('29', null, null, 'drop', {
-                Pick: {
-                  Time: '11:00',
-                  Description: 'Migros Pont-Neuf'},
-                Drop: {
-                  Time: '11:15',
-                  Description: 'Chancellerie'},
-                Count:    '1x'})}
-              {this.getTrip ('30', null, null, 'drop', {
-                Pick: {
-                  Time: '11:20',
-                  Description: 'PolyAugrien'},
-                Drop: {
-                  Time: '11:45',
-                  Description: 'Burdet A.',
-                  Glyphs:   ['warning']},
-                Count:    '3x'})}
-              {this.getTrip ('31', null, null, 'pick', {
-                Pick: {
-                  Time: '11:45',
-                  Description: 'Me Mouquin G.',
-                  Glyphs:   ['bookmark-base', 'bookmark-primary']},
-                Drop: {
-                  Time: '13:00',
-                  Description: 'Schmidt W.'},
-                Count:    '1x'})}
-              {this.getTrip ('32', null, null, 'drop', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG',
-                  Glyphs:   ['warning', 'bookmark-base', 'bookmark-secondary']},
-                Count:    '1x'})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-          		Photo:          'user',
-            Transportation: 'bicycle',
-            Name:           'Victor',
-            Total:          '630.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('33', null, null, 'drop', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG'},
-                Count:    '1x'})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-          		Photo:          'user',
-            Transportation: 'car',
-            Name:           'Jacques',
-            Total:          '0.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('34', null, null, 'drop', {
-                Pick: {
-                  Time: '13:30',
-                  Description: 'Icomm'},
-                Drop: {
-                  Time: '14:15',
-                  Description: 'Studer AG',
-                  Glyphs:   ['warning']},
-                Count:    '2x'})}
-              {this.getTrip ('35', null, null, 'pick', {
-                Pick: {
-                  Time: '10:50',
-                  Description: 'Coop St. Laurent',
-                  Glyphs:   ['warning', 'bookmark-primary']},
-                Drop: {
-                  Time: '11:20',
-                  Description: 'Dupond J.'},
-                Count:    '1x'})}
-              {this.getTrip ('36', null, null, 'drop', {
-                Pick: {
-                  Time: '11:00',
-                  Description: 'Migros Pont-Neuf'},
-                Drop: {
-                  Time: '11:15',
-                  Description: 'Chancellerie',
-                  Glyphs:   ['warning']},
-                Count:    '1x'})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-          		Photo:          'user',
-            Transportation: 'car',
-            Name:           'Samuel',
-            Total:          '0.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('37', null, null, 'drop', {
-				        Pick: {
+          <Container kind='tickets-basket'  height='260px' {...this.link ()} >
+            <Container kind='tickets-glue' left='30px' top='50px' rotate='10deg'
+              min-width='220px' min-height='164px'
+              drag-controller='tickets' {...this.link ()} >
+              {this.getTrips ('trips10', {
+  				      Pick: {
           				Time: '13:30',
           				Description: 'Icomm'},
-				        Drop: {
+  				      Drop: {
           				Time: '14:15',
           				Description: 'Studer AG'},
-        				Count:    '1x'})}
-              {this.getTrip ('38', null, null, 'pick', {
-				        Pick: {
-          				Time: '11:45',
-          				Description: 'Me Mouquin G.',
-          				Glyphs:   ['bookmark-base', 'bookmark-secondary', 'bookmark-primary']},
-				        Drop: {
-          				Time: '13:00',
-          				Description: 'Schmidt W.'},
         				Count:    '2x'})}
             </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-          		Photo:          'user',
-      				Transportation: 'bicycle',
-      				Name:           'Georges',
-      				Total:          '50.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('39', null, null, 'drop', {
-				        Pick: {
-          				Time: '13:30',
-          				Description: 'Icomm'},
-				        Drop: {
-          				Time: '14:15',
-          				Description: 'Studer AG',
-          				Glyphs:   ['warning']},
-        				Count:    '4x'})}
-            </Container>
-          </Container>
-
-          <Container kind='tickets-messenger' {...this.link ()} >
-            {this.getMessenger (null, {
-          		Photo:          'user',
-      				Transportation: 'bicycle',
-      				Name:           'Francine',
-      				Total:          '68.00'})}
-            <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-              {this.getTrip ('40', 'null', null, 'drop', {
-				        Pick: {
-          				Time: '13:30',
-          				Description: 'Icomm'},
-				        Drop: {
-          				Time: '14:15',
-          				Description: 'Studer AG',
-          				Glyphs:   ['warning']},
-        				Count:    '1x'})}
-            </Container>
-          </Container>
-
-        </Container>
-
-        <Container kind='tickets-basket'  height='260px' {...this.link ()} >
-          <Container kind='tickets-glue' left='30px' top='50px' rotate='10deg'
-            min-width='220px' min-height='164px'
-            drag-controller='tickets' {...this.link ()} >
-            {this.getTrips ('trips10', {
-				      Pick: {
-        				Time: '13:30',
-        				Description: 'Icomm'},
-				      Drop: {
-        				Time: '14:15',
-        				Description: 'Studer AG'},
-      				Count:    '2x'})}
-          </Container>
-          <Container kind='tickets-glue' left='280px' top='50px' rotate='-2deg'
-            min-width='220px' min-height='164px'
-            drag-controller='tickets' {...this.link ()} >
-            {this.getTrip ('42', 'tt11', null, 'pick', {
-              TripId: 't109',
-				      Pick: {
-        				Time: '11:45',
-        				Description: 'Me Mouquin G.',
-        				Glyphs:   ['warning', 'bookmark-primary']},
-				      Drop: {
-        				Time: '13:00',
-        				Description: 'Schmidt W.'},
-      				Count:    '1x'})}
-              {this.getTrip ('43', 'tt11', null, 'drop', {
+            <Container kind='tickets-glue' left='280px' top='50px' rotate='-2deg'
+              min-width='220px' min-height='164px'
+              drag-controller='tickets' {...this.link ()} >
+              {this.getTrip ('42', 'tt11', null, 'pick', {
                 TripId: 't109',
   				      Pick: {
           				Time: '11:45',
@@ -668,49 +660,60 @@ export default class DispatchMessengers extends React.Component {
           				Time: '13:00',
           				Description: 'Schmidt W.'},
         				Count:    '1x'})}
+                {this.getTrip ('43', 'tt11', null, 'drop', {
+                  TripId: 't109',
+    				      Pick: {
+            				Time: '11:45',
+            				Description: 'Me Mouquin G.',
+            				Glyphs:   ['warning', 'bookmark-primary']},
+    				      Drop: {
+            				Time: '13:00',
+            				Description: 'Schmidt W.'},
+          				Count:    '1x'})}
+            </Container>
+            <Container kind='tickets-glue' left='530px' top='20px' rotate='5deg'
+              min-width='220px' min-height='164px'
+              drag-controller='tickets' {...this.link ()} >
+              {this.getTrips ('trips11', {
+  				      Pick: {
+          				Time: '11:00',
+          				Description: 'Migros Pont-Neuf',
+          				Glyphs:   ['warning']},
+  				      Drop: {
+          				Time: '11:15',
+          				Description: 'Chancellerie'},
+        				Count:    '1x'})}
+            </Container>
+            <Container kind='tickets-glue' left='750px' top='60px' rotate='-10deg'
+              min-width='220px' min-height='164px'
+              drag-controller='tickets' {...this.link ()} >
+              {this.getTrips ('trips12', {
+  				      Pick: {
+          				Time: '10:50',
+          				Description: 'Coop St. Laurent'},
+  				      Drop: {
+          				Time: '11:20',
+          				Description: 'Dupond J.'},
+        				Count:    '1x'})}
+            </Container>
+            <Container kind='tickets-glue' left='990px' top='50px' rotate='5deg'
+              min-width='220px' min-height='164px'
+              drag-controller='tickets' {...this.link ()} >
+            </Container>
+            <Container kind='tickets-glue' left='1210px' top='70px' rotate='-4deg'
+              min-width='220px' min-height='164px'
+              drag-controller='tickets' {...this.link ()} >
+            </Container>
+            <Container kind='tickets-glue' left='1450px' top='30px' rotate='0deg'
+              min-width='220px' min-height='164px'
+              drag-controller='tickets' {...this.link ()} >
+            </Container>
+            <Container kind='tickets-glue' left='1690px' top='30px' rotate='10deg'
+              min-width='220px' min-height='164px'
+              drag-controller='tickets' {...this.link ()} >
+            </Container>
           </Container>
-          <Container kind='tickets-glue' left='530px' top='20px' rotate='5deg'
-            min-width='220px' min-height='164px'
-            drag-controller='tickets' {...this.link ()} >
-            {this.getTrips ('trips11', {
-				      Pick: {
-        				Time: '11:00',
-        				Description: 'Migros Pont-Neuf',
-        				Glyphs:   ['warning']},
-				      Drop: {
-        				Time: '11:15',
-        				Description: 'Chancellerie'},
-      				Count:    '1x'})}
-          </Container>
-          <Container kind='tickets-glue' left='750px' top='60px' rotate='-10deg'
-            min-width='220px' min-height='164px'
-            drag-controller='tickets' {...this.link ()} >
-            {this.getTrips ('trips12', {
-				      Pick: {
-        				Time: '10:50',
-        				Description: 'Coop St. Laurent'},
-				      Drop: {
-        				Time: '11:20',
-        				Description: 'Dupond J.'},
-      				Count:    '1x'})}
-          </Container>
-          <Container kind='tickets-glue' left='990px' top='50px' rotate='5deg'
-            min-width='220px' min-height='164px'
-            drag-controller='tickets' {...this.link ()} >
-          </Container>
-          <Container kind='tickets-glue' left='1210px' top='70px' rotate='-4deg'
-            min-width='220px' min-height='164px'
-            drag-controller='tickets' {...this.link ()} >
-          </Container>
-          <Container kind='tickets-glue' left='1450px' top='30px' rotate='0deg'
-            min-width='220px' min-height='164px'
-            drag-controller='tickets' {...this.link ()} >
-          </Container>
-          <Container kind='tickets-glue' left='1690px' top='30px' rotate='10deg'
-            min-width='220px' min-height='164px'
-            drag-controller='tickets' {...this.link ()} >
-          </Container>
-        </Container>
+        </Splitter>
       </Container>
     );
   }
