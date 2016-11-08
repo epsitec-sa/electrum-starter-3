@@ -121,7 +121,7 @@ export default class DispatchMessengers extends React.Component {
       <Container kind='tickets-root' {...this.link ()} >
         <DragController name='tickets' drag-handle='TripTicket' {...this.link ()} />
         <DragController name='messengers' direction='horizontal' drag-handle='MessengerTicket' {...this.link ()} />
-        <Splitter kind='horizontal' {...this.link ()} >
+        <Splitter kind='horizontal' default-size='60%' {...this.link ()} >
           <Container kind='tickets-messengers' drag-controller='messengers' {...this.link ()} >
             <Container kind='tickets-messenger' {...this.link ()} >
               {this.getMessenger (null, {
