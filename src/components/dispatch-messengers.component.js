@@ -664,7 +664,7 @@ export default class DispatchMessengers extends React.Component {
 
           </Container>
           <Splitter kind='vertical' default-size='750px' {...this.link ()} >
-            <Container kind='view' grow='1' {...this.link ()} >
+            <Container kind='view-stretch' {...this.link ()} >
               <Container kind='pane-top' {...this.link ()} >
                 <TextFieldCombo hint-text='Date' combo-glyph='calendar'
                   grow='1' spacing='large' combo-type='calendar'
