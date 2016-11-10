@@ -804,9 +804,7 @@ export default class DispatchMessengers extends React.Component {
               </Container>
             </Container>
             <Container kind='tickets-basket' {...this.link ()} >
-              <TicketsGlue left='30px' top='50px' rotate='10deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
+              <TicketsGlue left='30px' top='50px' rotate='10deg' {...this.link ()} >
                 {this.getTrips ('trips10', {
     				      Pick: {
             				Time: '13:30',
@@ -816,9 +814,7 @@ export default class DispatchMessengers extends React.Component {
             				Description: 'Studer AG'},
           				Count:    '2x'})}
               </TicketsGlue>
-              <TicketsGlue left='280px' top='50px' rotate='-2deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
+              <TicketsGlue left='280px' top='50px' rotate='-2deg' {...this.link ()} >
                 {this.getTrip ('42', 'tt11', null, 'pick', {
                   TripId: 't109',
     				      Pick: {
@@ -840,9 +836,7 @@ export default class DispatchMessengers extends React.Component {
               				Description: 'Schmidt W.'},
             				Count:    '1x'})}
               </TicketsGlue>
-              <TicketsGlue left='530px' top='20px' rotate='5deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
+              <TicketsGlue left='530px' top='20px' rotate='5deg' {...this.link ()} >
                 {this.getTrips ('trips11', {
     				      Pick: {
             				Time: '11:00',
@@ -853,9 +847,7 @@ export default class DispatchMessengers extends React.Component {
             				Description: 'Chancellerie'},
           				Count:    '1x'})}
               </TicketsGlue>
-              <TicketsGlue left='750px' top='60px' rotate='-10deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
+              <TicketsGlue left='750px' top='60px' rotate='-10deg' {...this.link ()} >
                 {this.getTrips ('trips12', {
     				      Pick: {
             				Time: '10:50',
@@ -865,54 +857,18 @@ export default class DispatchMessengers extends React.Component {
             				Description: 'Dupond J.'},
           				Count:    '1x'})}
               </TicketsGlue>
-              <TicketsGlue left='990px' top='50px' rotate='5deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='1210px' top='70px' rotate='-4deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='1450px' top='30px' rotate='0deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='1690px' top='30px' rotate='10deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='20px' top='260px' rotate='-5deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='260px' top='250px' rotate='10deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='520px' top='250px' rotate='2deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='750px' top='300px' rotate='5deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='980px' top='250px' rotate='-10deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='1200px' top='280px' rotate='3deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='1420px' top='250px' rotate='-4deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
-              <TicketsGlue left='1670px' top='250px' rotate='5deg'
-                min-width='220px' min-height='164px'
-                drag-controller='tickets' {...this.link ()} >
-              </TicketsGlue>
+              <TicketsGlue left='990px' top='50px' rotate='5deg' {...this.link ()} />
+              <TicketsGlue left='1210px' top='70px' rotate='-4deg' {...this.link ()} />
+              <TicketsGlue left='1450px' top='30px' rotate='0deg' {...this.link ()} />
+              <TicketsGlue left='1690px' top='30px' rotate='10deg' {...this.link ()} />
+              <TicketsGlue left='20px' top='260px' rotate='-5deg' {...this.link ()} />
+              <TicketsGlue left='260px' top='250px' rotate='10deg' {...this.link ()} />
+              <TicketsGlue left='520px' top='250px' rotate='2deg' {...this.link ()} />
+              <TicketsGlue left='750px' top='300px' rotate='5deg' {...this.link ()} />
+              <TicketsGlue left='980px' top='250px' rotate='-10deg' {...this.link ()} />
+              <TicketsGlue left='1200px' top='280px' rotate='3deg' {...this.link ()} />
+              <TicketsGlue left='1420px' top='250px' rotate='-4deg' {...this.link ()} />
+              <TicketsGlue left='1670px' top='250px' rotate='5deg' {...this.link ()} />
             </Container>
           </Splitter>
         </Splitter>
