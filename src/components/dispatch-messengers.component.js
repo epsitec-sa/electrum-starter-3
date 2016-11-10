@@ -18,6 +18,7 @@ import {
   Ticket,
   TripTicket,
   TripTickets,
+  TicketsGlue,
   MessengerTicket,
   TripBox,
   DragController,
@@ -803,7 +804,7 @@ export default class DispatchMessengers extends React.Component {
               </Container>
             </Container>
             <Container kind='tickets-basket' {...this.link ()} >
-              <Container kind='tickets-glue' left='30px' top='50px' rotate='10deg'
+              <TicketsGlue left='30px' top='50px' rotate='10deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
                 {this.getTrips ('trips10', {
@@ -814,8 +815,8 @@ export default class DispatchMessengers extends React.Component {
             				Time: '14:15',
             				Description: 'Studer AG'},
           				Count:    '2x'})}
-              </Container>
-              <Container kind='tickets-glue' left='280px' top='50px' rotate='-2deg'
+              </TicketsGlue>
+              <TicketsGlue left='280px' top='50px' rotate='-2deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
                 {this.getTrip ('42', 'tt11', null, 'pick', {
@@ -838,8 +839,8 @@ export default class DispatchMessengers extends React.Component {
               				Time: '13:00',
               				Description: 'Schmidt W.'},
             				Count:    '1x'})}
-              </Container>
-              <Container kind='tickets-glue' left='530px' top='20px' rotate='5deg'
+              </TicketsGlue>
+              <TicketsGlue left='530px' top='20px' rotate='5deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
                 {this.getTrips ('trips11', {
@@ -851,8 +852,8 @@ export default class DispatchMessengers extends React.Component {
             				Time: '11:15',
             				Description: 'Chancellerie'},
           				Count:    '1x'})}
-              </Container>
-              <Container kind='tickets-glue' left='750px' top='60px' rotate='-10deg'
+              </TicketsGlue>
+              <TicketsGlue left='750px' top='60px' rotate='-10deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
                 {this.getTrips ('trips12', {
@@ -863,55 +864,55 @@ export default class DispatchMessengers extends React.Component {
             				Time: '11:20',
             				Description: 'Dupond J.'},
           				Count:    '1x'})}
-              </Container>
-              <Container kind='tickets-glue' left='990px' top='50px' rotate='5deg'
+              </TicketsGlue>
+              <TicketsGlue left='990px' top='50px' rotate='5deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='1210px' top='70px' rotate='-4deg'
+              </TicketsGlue>
+              <TicketsGlue left='1210px' top='70px' rotate='-4deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='1450px' top='30px' rotate='0deg'
+              </TicketsGlue>
+              <TicketsGlue left='1450px' top='30px' rotate='0deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='1690px' top='30px' rotate='10deg'
+              </TicketsGlue>
+              <TicketsGlue left='1690px' top='30px' rotate='10deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='20px' top='260px' rotate='-5deg'
+              </TicketsGlue>
+              <TicketsGlue left='20px' top='260px' rotate='-5deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='260px' top='250px' rotate='10deg'
+              </TicketsGlue>
+              <TicketsGlue left='260px' top='250px' rotate='10deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='520px' top='250px' rotate='2deg'
+              </TicketsGlue>
+              <TicketsGlue left='520px' top='250px' rotate='2deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='750px' top='300px' rotate='5deg'
+              </TicketsGlue>
+              <TicketsGlue left='750px' top='300px' rotate='5deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='980px' top='250px' rotate='-10deg'
+              </TicketsGlue>
+              <TicketsGlue left='980px' top='250px' rotate='-10deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='1200px' top='280px' rotate='3deg'
+              </TicketsGlue>
+              <TicketsGlue left='1200px' top='280px' rotate='3deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='1420px' top='250px' rotate='-4deg'
+              </TicketsGlue>
+              <TicketsGlue left='1420px' top='250px' rotate='-4deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
-              <Container kind='tickets-glue' left='1670px' top='250px' rotate='5deg'
+              </TicketsGlue>
+              <TicketsGlue left='1670px' top='250px' rotate='5deg'
                 min-width='220px' min-height='164px'
                 drag-controller='tickets' {...this.link ()} >
-              </Container>
+              </TicketsGlue>
             </Container>
           </Splitter>
         </Splitter>
