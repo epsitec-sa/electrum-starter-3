@@ -139,6 +139,43 @@ export default class DispatchMessengers extends React.Component {
           <Container kind='tickets-messengers' drag-controller='messengers' {...this.link ()} >
             <Container kind='tickets-messenger' {...this.link ()} >
               {this.getMessenger (null, {
+              Photo:          'user',
+              Transportation: 'bicycle',
+              Name:           'Jean-Louis',
+              Total:          '400.00'})}
+              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrips ('trips222a', {
+                  Pick: {
+                    Time: '13:40',
+                    Description: 'Tagada & Cie'},
+                  Drop: {
+                    Time: '16:00',
+                    Description: 'Micro AG'},
+                  Count:    '3x'})}
+                {this.getTrips ('trips222b', {
+                  Pick: {
+                    Time: '14:15',
+                    Description: 'Mercier J.',
+                    Glyphs:   ['bookmark-base']},
+                  Drop: {
+                    Time: '17:15',
+                    Description: 'Flagada & Co',
+                    Glyphs:   ['warning']},
+                  Count:    '1x'})}
+                {this.getTrips ('trips222c', {
+                  Pick: {
+                    Time: '16:00',
+                    Description: 'Radio Flamme'},
+                  Drop: {
+                    Time: '17:00',
+                    Description: 'Koala P.',
+                    Glyphs:   ['bookmark-secondary', 'bookmark-primary']},
+                  Count:    '1x'})}
+              </Container>
+            </Container>
+
+            <Container kind='tickets-messenger' {...this.link ()} >
+              {this.getMessenger (null, {
                 Photo:          'user',
                 Transportation: 'bicycle',
                 Name:           'Sandra',
@@ -421,25 +458,6 @@ export default class DispatchMessengers extends React.Component {
                     Time: '14:15',
                     Description: 'Studer AG'},
                   Count:    '1x'})}
-              </Container>
-            </Container>
-
-            <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
-              Photo:          'user',
-              Transportation: 'bicycle',
-              Name:           'Jean-Louis',
-              Total:          '400.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-                {this.getTrip ('20', null, null, 'drop', {
-                  Pick: {
-                    Time: '13:30',
-                    Description: 'Icomm'},
-                  Drop: {
-                    Time: '14:15',
-                    Description: 'Studer AG',
-                    Glyphs:   ['bookmark-primary']},
-                  Count:    '4x'})}
               </Container>
             </Container>
 
