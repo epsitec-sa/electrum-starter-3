@@ -160,9 +160,9 @@ export default class DispatchMessengers extends React.Component {
                 Name:           'Frédérique',
                 Total:          '250.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-                {this.getTrip (null, 'pick', 's2')}
-                {this.getTrip (null, 'pick', 't')}
-                {this.getTrip (null, 'drop', 't')}
+                {this.getTrip ('selected', 'pick', 's2')}
+                {this.getTrip ('selected', 'pick', 't')}
+                {this.getTrip ('selected', 'drop', 't')}
                 {this.getTrip (null, 'drop', 's2')}
               </Container>
             </Container>
@@ -283,12 +283,12 @@ export default class DispatchMessengers extends React.Component {
               </Container>
               <Container kind='panes' {...this.link ()} >
                 <Container kind='column' drag-controller='tickets' {...this.link ()} >
-                  {this.getTripBox (false, 'a')}
-                  {this.getTripBox (true, 'b')}
-                  {this.getTripBox (false, 'c')}
-                  {this.getTripBox (false, 'd')}
-                  {this.getTripBox (false, 'e')}
-                  {this.getTripBox (false, 'f')}
+                  {this.getTripBox ('false', 'a')}
+                  {this.getTripBox ('true', 'b')}
+                  {this.getTripBox ('false', 'c')}
+                  {this.getTripBox ('false', 'd')}
+                  {this.getTripBox ('false', 'e')}
+                  {this.getTripBox ('false', 'f')}
                 </Container>
               </Container>
             </Container>

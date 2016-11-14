@@ -49,12 +49,12 @@ export default class DispatchTrips extends React.Component {
           <Container kind='panes' {...this.link ()} >
             <DragController name='tickets' {...this.link ()} />
             <Container kind='column' drag-controller='tickets' {...this.link ()} >
-              {this.getTripBox (false, 'a')}
-              {this.getTripBox (true, 'b')}
-              {this.getTripBox (false, 'c')}
-              {this.getTripBox (false, 'd')}
-              {this.getTripBox (false, 'e')}
-              {this.getTripBox (false, 'f')}
+              {this.getTripBox ('false', 'a')}
+              {this.getTripBox ('true', 'b')}
+              {this.getTripBox ('false', 'c')}
+              {this.getTripBox ('false', 'd')}
+              {this.getTripBox ('false', 'e')}
+              {this.getTripBox ('false', 'f')}
             </Container>
           </Container>
         </Container>
