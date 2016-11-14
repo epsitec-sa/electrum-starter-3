@@ -121,8 +121,6 @@ export default class DispatchMessengers extends React.Component {
                 {this.getTrip (null, 'pick', 'n')}
                 {this.getTrip (null, 'drop', 'n')}
                 {this.getTrip (null, 'pick', 'o')}
-                {this.getTrip (null, 'pick', 'p')}
-                {this.getTrip (null, 'drop', 'p')}
                 {this.getTrip (null, 'drop', 'o')}
               </Container>
             </Container>
@@ -134,10 +132,12 @@ export default class DispatchMessengers extends React.Component {
                 Name:           'Jean-Paul',
                 Total:          '68.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-                {this.getTrip (null, 'pick', 'q')}
-                {this.getTrip (null, 'drop', 'r')}
-                {this.getTrip (null, 'drop', 'q')}
                 {this.getTrip (null, 'pick', 'r')}
+                {this.getTrip (null, 'pick', 'p')}
+                {this.getTrip (null, 'drop', 'r')}
+                {this.getTrip (null, 'pick', 'q')}
+                {this.getTrip (null, 'drop', 'q')}
+                {this.getTrip (null, 'drop', 'p')}
               </Container>
             </Container>
 
