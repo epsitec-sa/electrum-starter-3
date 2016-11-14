@@ -1,6 +1,9 @@
 'use strict';
 
 import React from 'react';
+import Data from './data-trips.js';
+
+const {getTrips} = Data;
 
 import {
   Container,
@@ -29,6 +32,9 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
+    this.trips = getTrips ();
+    console.log ('>>>>>>>>>>>');
+    console.dir (this.trips);
   }
 
   getGlyphEntitySolo(glyph) {
