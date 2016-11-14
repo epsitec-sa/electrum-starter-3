@@ -322,7 +322,7 @@ function getTrips () {
       Price: '25.00',
       Glyphs: getGlyphEntities (['warning']),
     },
-    s: {
+    s1: {
       Pick:
       {
         Time: '16:35',
@@ -331,8 +331,24 @@ function getTrips () {
       Drop:
       {
         Time: '17:25',
-        Description: 'Mecano SA',
+        Description: 'Gare Lausanne',
         Glyphs: getGlyphEntities (['bookmark-base']),
+      },
+      Count: '3x',
+      Weight: '4.7 kg',
+      Price: '75.00',
+    },
+    s2: {
+      Pick:
+      {
+        Time: '17:25',
+        Description: 'Gare Lausanne',
+        Glyphs: getGlyphEntities (['bookmark-base']),
+      },
+      Drop:
+      {
+        Time: '17:45',
+        Description: 'Mecano SA',
       },
       Count: '3x',
       Weight: '4.7 kg',

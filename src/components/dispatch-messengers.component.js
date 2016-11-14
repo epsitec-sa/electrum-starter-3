@@ -66,7 +66,9 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  getTrip (ticketId, tripId, color, type, name) {
+  getTrip (color, type, name) {
+    const ticketId = name + '.' + type;
+    const tripId = name;
     const data = this.trips[name];
     const d = {
       Color:  color,
@@ -80,7 +82,8 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  getTrips (tripId, name) {
+  getTrips (name) {
+    const tripId = name;
     const data = this.trips[name];
     return (
       <TripTickets data={data} trip-id={tripId} {...this.link ()} />
@@ -101,9 +104,9 @@ export default class DispatchMessengers extends React.Component {
               Name:           'Jean-Louis',
               Total:          '400.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-                {this.getTrips ('trips222a', 'k')}
-                {this.getTrips ('trips222b', 'l')}
-                {this.getTrips ('trips222c', 'm')}
+                {this.getTrips ('k')}
+                {this.getTrips ('l')}
+                {this.getTrips ('m')}
               </Container>
             </Container>
 
@@ -114,13 +117,13 @@ export default class DispatchMessengers extends React.Component {
                 Name:           'Sandra',
                 Total:          '203.50'})}
               <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-                {this.getTrips ('trips1', 'a')}
-                {this.getTrip ('1', 't1', null, 'pick', 'n')}
-                {this.getTrip ('2', 't1', null, 'drop', 'n')}
-                {this.getTrip ('3', 't2', null, 'pick', 'o')}
-                {this.getTrip ('5', 't3', null, 'pick', 'p')}
-                {this.getTrip ('6', 't3', null, 'drop', 'p')}
-                {this.getTrip ('4', 't2', null, 'drop', 'o')}
+                {this.getTrips ('a')}
+                {this.getTrip (null, 'pick', 'n')}
+                {this.getTrip (null, 'drop', 'n')}
+                {this.getTrip (null, 'pick', 'o')}
+                {this.getTrip (null, 'pick', 'p')}
+                {this.getTrip (null, 'drop', 'p')}
+                {this.getTrip (null, 'drop', 'o')}
               </Container>
             </Container>
 
@@ -131,10 +134,10 @@ export default class DispatchMessengers extends React.Component {
                 Name:           'Jean-Paul',
                 Total:          '68.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-                {this.getTrip ('7', 't4', null, 'pick', 'q')}
-                {this.getTrip ('8', 't5', null, 'drop', 'r')}
-                {this.getTrip ('7', 't4', null, 'drop', 'q')}
-                {this.getTrip ('8', 't5', null, 'pick', 'r')}
+                {this.getTrip (null, 'pick', 'q')}
+                {this.getTrip (null, 'drop', 'r')}
+                {this.getTrip (null, 'drop', 'q')}
+                {this.getTrip (null, 'pick', 'r')}
               </Container>
             </Container>
 
@@ -145,6 +148,8 @@ export default class DispatchMessengers extends React.Component {
             Name:           'Chantal',
             Total:          '95.20'})}
               <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+                {this.getTrip (null, 'pick', 's1')}
+                {this.getTrip (null, 'drop', 's1')}
               </Container>
             </Container>
 
@@ -155,10 +160,10 @@ export default class DispatchMessengers extends React.Component {
                 Name:           'Frédérique',
                 Total:          '250.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
-                {this.getTrip ('9', 't6', null, 'pick', 's')}
-                {this.getTrip ('10', 't7', null, 'pick', 't')}
-                {this.getTrip ('10', 't7', null, 'drop', 't')}
-                {this.getTrip ('9', 't6', null, 'drop', 's')}
+                {this.getTrip (null, 'pick', 's2')}
+                {this.getTrip (null, 'pick', 't')}
+                {this.getTrip (null, 'drop', 't')}
+                {this.getTrip (null, 'drop', 's2')}
               </Container>
             </Container>
 
@@ -289,17 +294,17 @@ export default class DispatchMessengers extends React.Component {
             </Container>
             <Container kind='tickets-basket' {...this.link ()} >
               <TicketsGlue left='30px' top='50px' rotate='10deg' title='Après-midi' {...this.link ()} >
-                {this.getTrips ('trips10', 'g')}
+                {this.getTrips ('g')}
               </TicketsGlue>
               <TicketsGlue left='280px' top='50px' rotate='-2deg' title='Julien' {...this.link ()} >
-                {this.getTrip ('42', 'tt11', null, 'pick', 'h')}
-                {this.getTrip ('43', 'tt11', null, 'drop', 'h')}
+                {this.getTrip (null, 'pick', 'h')}
+                {this.getTrip (null, 'drop', 'h')}
               </TicketsGlue>
               <TicketsGlue left='530px' top='40px' rotate='5deg' title='#3' {...this.link ()} >
-                {this.getTrips ('trips11', 'i')}
+                {this.getTrips ('i')}
               </TicketsGlue>
               <TicketsGlue left='770px' top='60px' rotate='-10deg' title='Mardi' {...this.link ()} >
-                {this.getTrips ('trips12', 'j')}
+                {this.getTrips ('j')}
               </TicketsGlue>
               <TicketsGlue left='990px' top='50px' rotate='5deg' title='#5' {...this.link ()} />
               <TicketsGlue left='1230px' top='70px' rotate='-4deg' title='Urgent' {...this.link ()} />
