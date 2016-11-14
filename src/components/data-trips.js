@@ -40,7 +40,7 @@ function getTrips () {
       {
         Time: '11:15',
         Description: 'Fiduciaire Kdo',
-        Details: '',
+        Details: 'Fiduciaire Kdo\nMadame Valentia Markez\nEn Budron 5b\n1052 Le Mont-sur-Lausanne',
       },
       Count: '1x',
       Weight: '0.2 kg',
@@ -51,13 +51,13 @@ function getTrips () {
       {
         Time: '10.45',
         Description: 'Migros Pont-Neuf',
-        Details: '',
+        Details: 'Migros SA\nRue du Pont Neuf 26\n1009 Prilly',
       },
       Drop:
       {
         Time: '13:30',
         Description: 'Mercier P.',
-        Details: '',
+        Details: 'Peter Mercier',
         Glyphs: getGlyphEntities (['warning']),
       },
       Count: '2x',
@@ -75,7 +75,7 @@ function getTrips () {
       {
         Time: '14:00',
         Description: 'Dupond J.',
-        Details: '',
+        Details: 'Juliette Dupond',
         Glyphs: getGlyphEntities (['bookmark-base']),
       },
       Count: '1x',
@@ -87,14 +87,14 @@ function getTrips () {
       {
         Time: '11:15',
         Description: 'Tagada AG',
-        Details: '',
+        Details: 'Tagada AG\nRue de Sans Unique 18\n1000 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary']),
       },
       Drop:
       {
         Time: '16:00',
         Description: 'Micro SA',
-        Details: '',
+        Details: 'Micro SA\nAv. Dufour 4\n1010 Renens',
       },
       Count: '3x',
       Weight: '1.3 kg',
@@ -106,13 +106,13 @@ function getTrips () {
       {
         Time: '11:20',
         Description: 'Migros Pont-Neuf',
-        Details: '',
+        Details: 'Migros SA\nRue du Pont Neuf 26\n1009 Prilly',
       },
       Drop:
       {
         Time: '13:00',
         Description: 'Durand W.',
-        Details: '',
+        Details: 'Walter Durand\n1008 Prilly',
       },
       Count: '1x',
       Weight: '2.5 kg',
@@ -124,13 +124,13 @@ function getTrips () {
       {
         Time: '11:40',
         Description: 'Me Blatide & Associés',
-        Details: '',
+        Details: 'Me Blatide & Associés\nEtude de Notaires\nRue Centrale 72\n1004 Lausanne',
       },
       Drop:
       {
         Time: '15:00',
         Description: 'Fiduciaire du Léman',
-        Details: '',
+        Details: 'Fiduciaire du Léman\nAv. des Bains 12\n1002 Lausanne',
       },
       Count: '2x',
       Weight: '1.9 kg',
@@ -148,7 +148,7 @@ function getTrips () {
       {
         Time: '13:30',
         Description: 'Arnaud K.',
-        Details: '',
+        Details: 'Kaspar Arnaud\n1032 Crissier',
         Glyphs: getGlyphEntities (['bookmark-secondary']),
       },
       Count: '1x',
@@ -161,13 +161,13 @@ function getTrips () {
       {
         Time: '13:30',
         Description: 'Fiduciaire du Léman',
-        Details: '',
+        Details: 'Fiduciaire du Léman\nAv. des Bains 12\n1002 Lausanne',
       },
       Drop:
       {
         Time: '14:15',
         Description: 'Me Blatide',
-        Details: '',
+        Details: 'Me Blatide\nEn Buchillon 50\n1020 Echandens',
       },
       Count: '1x',
       Weight: '0.3 kg',
@@ -178,13 +178,13 @@ function getTrips () {
       {
         Time: '13:30',
         Description: 'Jolibourg SA',
-        Details: '',
+        Details: 'Jolibourg SA\nMonsieur Jules Krapulot\nPlace du Château 61\n1004 Lausanne',
       },
       Drop:
       {
         Time: '14:25',
         Description: 'Aux belles fleurs du Rivage',
-        Details: '',
+        Details: 'Aux belles fleurs du Rivage\nQuai Perdonnet 33\n1001 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-base', 'bookmark-primary']),
       },
       Count: '5x',
@@ -196,14 +196,14 @@ function getTrips () {
       {
         Time: '13:40',
         Description: 'Kalindo SA',
-        Details: '',
+        Details: 'Kalindo SA\n1400 Yverdon-les-Bains',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary']),
       },
       Drop:
       {
         Time: '16:05',
         Description: 'Verra G.',
-        Details: '',
+        Details: 'Germaine Verra\nAv. Fauchère 2\n1092 Le Mont-sur-Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-base', 'bookmark-primary']),
       },
       Count: '1x',
