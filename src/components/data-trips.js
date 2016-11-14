@@ -34,11 +34,13 @@ function getTrips () {
       {
         Time: '10.05',
         Description: 'Mecano SA',
+        Details: 'Mecano SA\nAv. des Alpes 5\n1023 Crissier',
       },
       Drop:
       {
         Time: '11:15',
         Description: 'Fiduciaire Kdo',
+        Details: '',
       },
       Count: '1x',
       Weight: '0.2 kg',
@@ -49,11 +51,13 @@ function getTrips () {
       {
         Time: '10.45',
         Description: 'Migros Pont-Neuf',
+        Details: '',
       },
       Drop:
       {
         Time: '13:30',
         Description: 'Mercier P.',
+        Details: '',
         Glyphs: getGlyphEntities (['warning']),
       },
       Count: '2x',
@@ -65,11 +69,13 @@ function getTrips () {
       {
         Time: '11:00',
         Description: 'Coop St. Laurent',
+        Details: 'Coop\nPlace St. Laurent 12\n1004 Lausanne',
       },
       Drop:
       {
         Time: '14:00',
         Description: 'Dupond J.',
+        Details: '',
         Glyphs: getGlyphEntities (['bookmark-base']),
       },
       Count: '1x',
@@ -81,12 +87,14 @@ function getTrips () {
       {
         Time: '11:15',
         Description: 'Tagada AG',
+        Details: '',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary']),
       },
       Drop:
       {
         Time: '16:00',
         Description: 'Micro SA',
+        Details: '',
       },
       Count: '3x',
       Weight: '1.3 kg',
@@ -98,11 +106,13 @@ function getTrips () {
       {
         Time: '11:20',
         Description: 'Migros Pont-Neuf',
+        Details: '',
       },
       Drop:
       {
         Time: '13:00',
         Description: 'Durand W.',
+        Details: '',
       },
       Count: '1x',
       Weight: '2.5 kg',
@@ -114,11 +124,13 @@ function getTrips () {
       {
         Time: '11:40',
         Description: 'Me Blatide & Associés',
+        Details: '',
       },
       Drop:
       {
         Time: '15:00',
         Description: 'Fiduciaire du Léman',
+        Details: '',
       },
       Count: '2x',
       Weight: '1.9 kg',
@@ -129,12 +141,14 @@ function getTrips () {
       {
         Time: '11:45',
         Description: 'Coop St. Laurent',
+        Details: 'Coop\nPlace St. Laurent 12\n1004 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-primary']),
       },
       Drop:
       {
         Time: '13:30',
         Description: 'Arnaud K.',
+        Details: '',
         Glyphs: getGlyphEntities (['bookmark-secondary']),
       },
       Count: '1x',
@@ -147,11 +161,13 @@ function getTrips () {
       {
         Time: '13:30',
         Description: 'Fiduciaire du Léman',
+        Details: '',
       },
       Drop:
       {
         Time: '14:15',
         Description: 'Me Blatide',
+        Details: '',
       },
       Count: '1x',
       Weight: '0.3 kg',
@@ -162,11 +178,13 @@ function getTrips () {
       {
         Time: '13:30',
         Description: 'Jolibourg SA',
+        Details: '',
       },
       Drop:
       {
         Time: '14:25',
         Description: 'Aux belles fleurs du Rivage',
+        Details: '',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-base', 'bookmark-primary']),
       },
       Count: '5x',
@@ -178,13 +196,14 @@ function getTrips () {
       {
         Time: '13:40',
         Description: 'Kalindo SA',
+        Details: '',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary']),
-        PriceGlyphs: getGlyphEntities (['warning']),
       },
       Drop:
       {
         Time: '16:05',
         Description: 'Verra G.',
+        Details: '',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-base', 'bookmark-primary']),
       },
       Count: '1x',
@@ -196,12 +215,14 @@ function getTrips () {
       {
         Time: '13:55',
         Description: 'Migros La Sallaz',
+        Details: 'Migros\nLa Sallaz 12b\n1018 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary']),
       },
       Drop:
       {
         Time: '14:20',
         Description: 'Henry P.',
+        Details: 'Paul Henry\nClosalet 12b\n1004 Lausanne',
       },
       Count: '2x',
       Weight: '4.3 kg',
@@ -213,11 +234,13 @@ function getTrips () {
       {
         Time: '14:15',
         Description: 'Migros La Sallaz',
+        Details: 'Migros\nLa Sallaz 12b\n1018 Lausanne',
       },
       Drop:
       {
         Time: '15:00',
         Description: 'Schmidt A.',
+        Details: 'André Schmidt\nMartinet 14\n1002 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary', 'warning']),
       },
       Count: '1x',
@@ -229,12 +252,14 @@ function getTrips () {
       {
         Time: '15:00',
         Description: 'Aux belles fleurs',
+        Details: 'Aux belles fleurs\nPlace de la Pallud\n1004 Lausanne',
         Glyphs: getGlyphEntities (['warning']),
       },
       Drop:
       {
         Time: '16:10',
         Description: 'Ducommun S.',
+        Details: 'Sandra Ducommun\nLes Faverges 2\n1003 Lausanne',
       },
       Count: '4x',
       Weight: '1.8 kg',
@@ -245,11 +270,13 @@ function getTrips () {
       {
         Time: '15:45',
         Description: 'Fiduciaire Blamond',
+        Details: 'Fiduciaire Blamond\nPlace Pépinet 24\n1001 Lausanne',
       },
       Drop:
       {
         Time: '16:00',
         Description: 'Consulat Belge',
+        Details: 'Consulat Belge\nAv. des Bains 102\n1000 Lausanne',
       },
       Count: '1x',
       Weight: '0.3 kg',
@@ -260,11 +287,13 @@ function getTrips () {
       {
         Time: '16:10',
         Description: 'Vermont & Frères',
+        Details: 'Vermont & Frères\nRue Centrale3\n1004 Lausanne',
       },
       Drop:
       {
         Time: '17:00',
-        Description: 'Mecano sA',
+        Description: 'Mecano SA',
+        Details: 'Mecano SA\nAv. des Alpes 5\n1023 Crissier',
         Glyphs: getGlyphEntities (['bookmark-primary']),
       },
       Count: '2x',
@@ -277,11 +306,13 @@ function getTrips () {
       {
         Time: '16:15',
         Description: 'Blibli SA',
+        Details: 'Blibli SA\nAv. Victor Ruffy\n1008 Prilly',
       },
       Drop:
       {
         Time: '17:15',
         Description: 'Librairie Frankin',
+        Details: 'Librairie Frankin\nPlace du Marché\n1008 Jouxtens',
         Glyphs: getGlyphEntities (['bookmark-base']),
       },
       Count: '1x',
@@ -294,11 +325,13 @@ function getTrips () {
       {
         Time: '16:25',
         Description: 'Blibli SA',
+        Details: 'Blibli SA\nAv. Victor Ruffy\n1008 Prilly',
       },
       Drop:
       {
         Time: '17:00',
         Description: 'Librairie Mercier',
+        Details: 'Librairie Mercier\nAv. César Roux\n1004 Lausanne',
       },
       Count: '2x',
       Weight: '5.2 kg',
@@ -310,12 +343,14 @@ function getTrips () {
       {
         Time: '16:30',
         Description: 'Coop St. Laurent',
+        Details: 'Coop\nPlace St. Laurent 12\n1004 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-primary', 'bookmark-base']),
       },
       Drop:
       {
         Time: '17:15',
         Description: 'Coppet F.',
+        Details: 'Françoise Coppet\nCh. de Buissons 45\n1009 Echandens',
       },
       Count: '1x',
       Weight: '2.0 kg',
@@ -327,11 +362,13 @@ function getTrips () {
       {
         Time: '16:35',
         Description: 'Me Georges-André',
+        Details: 'Etude Me Georges-André\nAv. du Château 31a\n1008 Jouxtens',
       },
       Drop:
       {
         Time: '17:25',
         Description: 'Gare Lausanne',
+        Details: 'Gare CFF\nBox Quai 8\nAv. de la Gare 1\n1003 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-base']),
       },
       Count: '3x',
@@ -343,12 +380,14 @@ function getTrips () {
       {
         Time: '17:25',
         Description: 'Gare Lausanne',
+        Details: 'Gare CFF\nBox Quai 8\nAv. de la Gare 1\n1003 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-base']),
       },
       Drop:
       {
         Time: '17:45',
         Description: 'Mecano SA',
+        Details: 'Mecano SA\nAv. des Alpes 5\n1023 Crissier',
       },
       Count: '3x',
       Weight: '4.7 kg',
@@ -360,12 +399,14 @@ function getTrips () {
       {
         Time: '16:35',
         Description: 'Librairie Bédé',
+        Details: 'Librairie Bédé\nMarc Audiard\nFlon 132\n1002 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-base', 'bookmark-primary', 'bookmark-secondary']),
       },
       Drop:
       {
         Time: '17:10',
         Description: 'Blibli SA',
+        Details: 'Blibli SA\nAv. Victor Ruffy\n1008 Prilly',
         Glyphs: getGlyphEntities (['warning']),
       },
       Count: '1x',
