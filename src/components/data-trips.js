@@ -229,7 +229,7 @@ function getTrips () {
       Price: '110.00',
       PriceGlyphs: getGlyphEntities (['warning']),
     },
-    l: {
+    l1: {
       Pick:
       {
         Time: '14:15',
@@ -238,10 +238,28 @@ function getTrips () {
       },
       Drop:
       {
-        Time: '15:00',
+        Time: '14:35',
+        Description: 'Gare Lausanne',
+        Details: 'Gare CFF\nBox Quai 8\nAv. de la Gare 1\n1003 Lausanne',
+        Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary', 'warning']),
+      },
+      Count: '1x',
+      Weight: '1.8 kg',
+      Price: '70.00',
+    },
+    l2: {
+      Pick:
+      {
+        Time: '14:35',
+        Description: 'Gare Lausanne',
+        Details: 'Gare CFF\nBox Quai 8\nAv. de la Gare 1\n1003 Lausanne',
+        Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary', 'warning']),
+      },
+      Drop:
+      {
+        Time: '17:00',
         Description: 'Schmidt A.',
         Details: 'André Schmidt\nMartinet 14\n1002 Lausanne',
-        Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary', 'warning']),
       },
       Count: '1x',
       Weight: '1.8 kg',
