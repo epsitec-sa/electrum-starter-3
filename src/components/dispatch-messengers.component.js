@@ -128,8 +128,8 @@ export default class DispatchMessengers extends React.Component {
                 Total:          '203.50'})}
               <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
                 {this.getTrip (null, 'pick', 'n')}
-                {this.getTrip (null, 'drop', 'n')}
                 {this.getTrip (null, 'pick', 'o')}
+                {this.getTrip (null, 'drop', 'n')}
                 {this.getTrip (null, 'drop', 'o')}
               </Container>
             </Container>
