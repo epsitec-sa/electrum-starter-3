@@ -68,7 +68,7 @@ export default class DispatchMessengers extends React.Component {
       NoDrag: 'false'
     };
     return (
-      <Trip kind='trip-box' Selected={selected} data={d} {...this.link ()} />
+      <Trip kind='trip-box' data={d} Selected={selected} {...this.link ()} />
     );
   }
 
@@ -104,10 +104,10 @@ export default class DispatchMessengers extends React.Component {
           <Container kind='tickets-messengers' drag-controller='messengers' {...this.link ()} >
             <Container kind='tickets-messenger' {...this.link ()} >
               {this.getMessenger (null, {
-              Photo:          'user',
-              Transportation: 'bicycle',
-              Name:           'Jean-Louis',
-              Total:          '400.00'})}
+                Photo:          'user',
+                Transportation: 'bicycle',
+                Name:           'Jean-Louis',
+                Total:          '400.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
                 {this.getTrip (null, 'pick', 'k')}
                 {this.getTrip (null, 'drop', 'k')}
@@ -152,10 +152,10 @@ export default class DispatchMessengers extends React.Component {
 
             <Container kind='tickets-messenger' {...this.link ()} >
               {this.getMessenger (null, {
-            Photo:          'user',
-            Transportation: 'bicycle',
-            Name:           'Chantal',
-            Total:          '95.20'})}
+                Photo:          'user',
+                Transportation: 'bicycle',
+                Name:           'Chantal',
+                Total:          '95.20'})}
               <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
                 {this.getTrip (null, 'pick', 's1')}
                 {this.getTrip (null, 'drop', 's1')}
