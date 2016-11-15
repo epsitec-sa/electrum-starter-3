@@ -242,6 +242,7 @@ function getTrips () {
         Description: 'Gare Lausanne',
         Details: 'Gare CFF\\nBox Quai 8\\nAv. de la Gare 1\\n1003 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary', 'warning']),
+        Type: 'transit',
       },
       Count: '1x',
       Weight: '1.8 kg',
@@ -254,6 +255,7 @@ function getTrips () {
         Description: 'Gare Lausanne',
         Details: 'Gare CFF\\nBox Quai 8\\nAv. de la Gare 1\\n1003 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary', 'warning']),
+        Type: 'transit',
       },
       Drop:
       {
@@ -388,6 +390,7 @@ function getTrips () {
         Description: 'Gare Lausanne',
         Details: 'Gare CFF\\nBox Quai 8\\nAv. de la Gare 1\\n1003 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-base']),
+        Type: 'transit',
       },
       Count: '3x',
       Weight: '4.7 kg',
@@ -400,6 +403,7 @@ function getTrips () {
         Description: 'Gare Lausanne',
         Details: 'Gare CFF\\nBox Quai 8\\nAv. de la Gare 1\\n1003 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-base']),
+        Type: 'transit',
       },
       Drop:
       {
