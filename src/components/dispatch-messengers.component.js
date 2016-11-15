@@ -295,7 +295,7 @@ export default class DispatchMessengers extends React.Component {
               <Container kind='panes' {...this.link ()} >
                 <Container kind='column' drag-controller='tickets' {...this.link ()} >
                   {this.getTripBox ('false', 'a')}
-                  {this.getTripBox ('true', 'b')}
+                  {this.getTripBox ('false', 'b')}
                   {this.getTripBox ('false', 'c')}
                   {this.getTripBox ('false', 'd')}
                   {this.getTripBox ('false', 'e')}
