@@ -55,8 +55,16 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  getTripBox (selected, name) {
-    const data = this.trips[name];
+  getTripName(tripId) {
+    if (tripId.length === 2) {
+      return tripId.substring (0, 1);
+    } else {
+      return tripId;
+    }
+  }
+
+  getTripBox (selected, tripId) {
+    const data = this.trips[tripId];
     const d = {
       Trip:   data,
       NoDrag: 'false'
@@ -66,10 +74,10 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  getTrip (color, type, name) {
-    const ticketId = name + '.' + type;
-    const tripId = name;
-    const data = this.trips[name];
+  getTrip (color, type, tripId) {
+    const ticketId = tripId + '.' + type;  // by example: 'd1.drop'
+    const data = this.trips[tripId];
+    tripId = this.getTripName (tripId);  // by example: 'd'
     const d = {
       Color:  color,
       Type:   type,
@@ -82,9 +90,8 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  getTrips (name) {
-    const tripId = name;
-    const data = this.trips[name];
+  getTrips (tripId) {
+    const data = this.trips[tripId];
     return (
       <TripTickets data={data} trip-id={tripId} {...this.link ()} />
     );
