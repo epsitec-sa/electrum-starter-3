@@ -19,11 +19,9 @@ import {
   FlyingBalloon,
   Separator,
   Ticket,
-  TripTicket,
-  TripTickets,
+  Trip,
   TicketsGlue,
   MessengerTicket,
-  TripBox,
   DragController,
   Splitter
 } from 'electrum-arc';
@@ -70,7 +68,7 @@ export default class DispatchMessengers extends React.Component {
       NoDrag: 'false'
     };
     return (
-      <TripBox Selected={selected} data={d} {...this.link ()} />
+      <Trip kind='trip-box' Selected={selected} data={d} {...this.link ()} />
     );
   }
 
@@ -86,14 +84,14 @@ export default class DispatchMessengers extends React.Component {
     };
 
     return (
-      <TripTicket data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
+      <Trip kind='trip-ticket' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
     );
   }
 
   getTrips (tripId) {
     const data = this.trips[tripId];
     return (
-      <TripTickets data={data} trip-id={tripId} {...this.link ()} />
+      <Trip kind='trip-tickets' data={data} trip-id={tripId} {...this.link ()} />
     );
   }
 
