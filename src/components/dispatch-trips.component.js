@@ -3,7 +3,7 @@
 import React from 'react';
 import {
   Container,
-  TripBox,
+  Trip,
   TextFieldCombo,
   DragController
 } from 'electrum-arc';
@@ -18,14 +18,14 @@ export default class DispatchTrips extends React.Component {
     this.trips = getTrips ();
   }
 
-  getTripBox (selected, name) {
-    const data = this.trips[name];
+  getTripBox (selected, tripId) {
+    const data = this.trips[tripId];
     const d = {
       Trip:   data,
       NoDrag: 'false'
     };
     return (
-      <TripBox Selected={selected} data={d} {...this.link ()} />
+      <Trip kind='trip-box' Selected={selected} data={d} trip-id={tripId} {...this.link ()} />
     );
   }
 
@@ -50,7 +50,7 @@ export default class DispatchTrips extends React.Component {
             <DragController name='tickets' {...this.link ()} />
             <Container kind='column' drag-controller='tickets' {...this.link ()} >
               {this.getTripBox ('false', 'a')}
-              {this.getTripBox ('true', 'b')}
+              {this.getTripBox ('false', 'b')}
               {this.getTripBox ('false', 'c')}
               {this.getTripBox ('false', 'd')}
               {this.getTripBox ('false', 'e')}

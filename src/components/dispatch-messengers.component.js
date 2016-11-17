@@ -62,13 +62,14 @@ export default class DispatchMessengers extends React.Component {
   }
 
   getTripBox (selected, tripId) {
+    const ticketId = tripId + '.both';
     const data = this.trips[tripId];
     const d = {
       Trip:   data,
       NoDrag: 'false'
     };
     return (
-      <Trip kind='trip-box' data={d} Selected={selected} {...this.link ()} />
+      <Trip kind='trip-box' Selected={selected} data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
     );
   }
 
@@ -89,9 +90,10 @@ export default class DispatchMessengers extends React.Component {
   }
 
   getTrips (tripId) {
+    const ticketId = tripId + '.both';
     const data = this.trips[tripId];
     return (
-      <Trip kind='trip-tickets' data={data} trip-id={tripId} {...this.link ()} />
+      <Trip kind='trip-tickets' data={data} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
     );
   }
 
