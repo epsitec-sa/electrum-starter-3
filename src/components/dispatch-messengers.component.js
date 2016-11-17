@@ -114,7 +114,7 @@ export default class DispatchMessengers extends React.Component {
                 Name:           'Jean-Louis',
                 Total:          '400.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
                 {this.getTrip (null, 'pick', 'k')}
                 {this.getTrip (null, 'drop', 'k')}
                 {this.getTrip (null, 'pick', 'l1')}
@@ -131,7 +131,7 @@ export default class DispatchMessengers extends React.Component {
                 Name:           'Sandra',
                 Total:          '203.50'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
                 {this.getTrip (null, 'pick', 'n')}
                 {this.getTrip (null, 'pick', 'o')}
                 {this.getTrip (null, 'drop', 'n')}
@@ -146,7 +146,7 @@ export default class DispatchMessengers extends React.Component {
                 Name:           'Jean-Paul',
                 Total:          '68.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
                 {this.getTrip (null, 'pick', 'l2')}
                 {this.getTrip (null, 'pick', 'r')}
                 {this.getTrip (null, 'pick', 'p')}
@@ -165,7 +165,7 @@ export default class DispatchMessengers extends React.Component {
                 Name:           'Chantal',
                 Total:          '95.20'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
                 {this.getTrip (null, 'pick', 's1')}
                 {this.getTrip (null, 'drop', 's1')}
               </Container>
@@ -178,7 +178,7 @@ export default class DispatchMessengers extends React.Component {
                 Name:           'Frédérique',
                 Total:          '250.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
                 {this.getTrip ('selected', 'pick', 's2')}
                 {this.getTrip ('selected', 'pick', 't')}
                 {this.getTrip ('selected', 'drop', 't')}
@@ -193,7 +193,7 @@ export default class DispatchMessengers extends React.Component {
         				Name:           'Marcel',
         				Total:          '0.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
               </Container>
             </Container>
 
@@ -204,7 +204,7 @@ export default class DispatchMessengers extends React.Component {
         				Name:           'Simone',
         				Total:          '100.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
               </Container>
             </Container>
 
@@ -215,7 +215,7 @@ export default class DispatchMessengers extends React.Component {
               Name:           'Béatrice',
               Total:          '20.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
               </Container>
             </Container>
 
@@ -226,7 +226,7 @@ export default class DispatchMessengers extends React.Component {
               Name:           'Zoé',
               Total:          '0.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
               </Container>
             </Container>
 
@@ -237,7 +237,7 @@ export default class DispatchMessengers extends React.Component {
               Name:           'Marc',
               Total:          '0.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
               </Container>
             </Container>
 
@@ -248,7 +248,7 @@ export default class DispatchMessengers extends React.Component {
               Name:           'Victor',
               Total:          '630.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
               </Container>
             </Container>
 
@@ -259,7 +259,7 @@ export default class DispatchMessengers extends React.Component {
               Name:           'Jacques',
               Total:          '0.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
               </Container>
             </Container>
 
@@ -270,7 +270,7 @@ export default class DispatchMessengers extends React.Component {
               Name:           'Samuel',
               Total:          '0.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
               </Container>
             </Container>
 
@@ -281,7 +281,7 @@ export default class DispatchMessengers extends React.Component {
               Name:           'Georges',
               Total:          '50.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
               </Container>
             </Container>
 
@@ -292,7 +292,7 @@ export default class DispatchMessengers extends React.Component {
               Name:           'Francine',
               Total:          '68.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-                {...this.link ()} >
+                max-width='300px' {...this.link ()} >
               </Container>
             </Container>
 
