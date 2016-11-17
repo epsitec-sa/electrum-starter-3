@@ -113,7 +113,8 @@ export default class DispatchMessengers extends React.Component {
                 Transportation: 'bicycle',
                 Name:           'Jean-Louis',
                 Total:          '400.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
                 {this.getTrip (null, 'pick', 'k')}
                 {this.getTrip (null, 'drop', 'k')}
                 {this.getTrip (null, 'pick', 'l1')}
@@ -129,7 +130,8 @@ export default class DispatchMessengers extends React.Component {
                 Transportation: 'bicycle',
                 Name:           'Sandra',
                 Total:          '203.50'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
                 {this.getTrip (null, 'pick', 'n')}
                 {this.getTrip (null, 'pick', 'o')}
                 {this.getTrip (null, 'drop', 'n')}
@@ -143,7 +145,8 @@ export default class DispatchMessengers extends React.Component {
                 Transportation: 'bicycle',
                 Name:           'Jean-Paul',
                 Total:          '68.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
                 {this.getTrip (null, 'pick', 'l2')}
                 {this.getTrip (null, 'pick', 'r')}
                 {this.getTrip (null, 'pick', 'p')}
@@ -161,7 +164,8 @@ export default class DispatchMessengers extends React.Component {
                 Transportation: 'bicycle',
                 Name:           'Chantal',
                 Total:          '95.20'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
                 {this.getTrip (null, 'pick', 's1')}
                 {this.getTrip (null, 'drop', 's1')}
               </Container>
@@ -173,7 +177,8 @@ export default class DispatchMessengers extends React.Component {
                 Transportation: 'car',
                 Name:           'Frédérique',
                 Total:          '250.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
                 {this.getTrip ('selected', 'pick', 's2')}
                 {this.getTrip ('selected', 'pick', 't')}
                 {this.getTrip ('selected', 'drop', 't')}
@@ -187,7 +192,8 @@ export default class DispatchMessengers extends React.Component {
         				Transportation: 'bicycle',
         				Name:           'Marcel',
         				Total:          '0.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
               </Container>
             </Container>
 
@@ -197,7 +203,8 @@ export default class DispatchMessengers extends React.Component {
         				Transportation: 'truck',
         				Name:           'Simone',
         				Total:          '100.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
               </Container>
             </Container>
 
@@ -207,7 +214,8 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'bicycle',
               Name:           'Béatrice',
               Total:          '20.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
               </Container>
             </Container>
 
@@ -217,7 +225,8 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'rocket',
               Name:           'Zoé',
               Total:          '0.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
               </Container>
             </Container>
 
@@ -227,7 +236,8 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'bicycle',
               Name:           'Marc',
               Total:          '0.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
               </Container>
             </Container>
 
@@ -237,7 +247,8 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'bicycle',
               Name:           'Victor',
               Total:          '630.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
               </Container>
             </Container>
 
@@ -247,7 +258,8 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'car',
               Name:           'Jacques',
               Total:          '0.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
               </Container>
             </Container>
 
@@ -257,7 +269,8 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'car',
               Name:           'Samuel',
               Total:          '0.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
               </Container>
             </Container>
 
@@ -267,7 +280,8 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'bicycle',
               Name:           'Georges',
               Total:          '50.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
               </Container>
             </Container>
 
@@ -277,7 +291,8 @@ export default class DispatchMessengers extends React.Component {
               Transportation: 'bicycle',
               Name:           'Francine',
               Total:          '68.00'})}
-              <Container kind='tickets-trips' drag-controller='tickets' {...this.link ()} >
+              <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+                {...this.link ()} >
               </Container>
             </Container>
 
@@ -296,7 +311,8 @@ export default class DispatchMessengers extends React.Component {
                   grow='2' combo-glyph='Search' {...this.link ()} />
               </Container>
               <Container kind='panes' {...this.link ()} >
-                <Container kind='column' drag-controller='tickets' {...this.link ()} >
+                <Container kind='column' drag-controller='tickets' drag-source='trip-box'
+                  {...this.link ()} >
                   {this.getTripBox ('false', 'a')}
                   {this.getTripBox ('false', 'b')}
                   {this.getTripBox ('false', 'c')}
@@ -307,31 +323,47 @@ export default class DispatchMessengers extends React.Component {
               </Container>
             </Container>
             <Container kind='tickets-basket' {...this.link ()} >
-              <TicketsGlue left='30px' top='50px' rotate='10deg' title='Après-midi' {...this.link ()} >
+              <TicketsGlue left='30px' top='50px' rotate='10deg' title='Après-midi'
+                drag-source='trip-tickets' {...this.link ()} >
                 {this.getTrips ('g')}
               </TicketsGlue>
-              <TicketsGlue left='310px' top='50px' rotate='-2deg' title='Julien' {...this.link ()} >
+              <TicketsGlue left='310px' top='50px' rotate='-2deg' title='Julien'
+                drag-source='trip-tickets' {...this.link ()} >
                 {this.getTrip (null, 'pick', 'h')}
                 {this.getTrip (null, 'drop', 'h')}
               </TicketsGlue>
-              <TicketsGlue left='590px' top='40px' rotate='5deg' title='#3' {...this.link ()} >
+              <TicketsGlue left='590px' top='40px' rotate='5deg' title='#3'
+                drag-source='trip-tickets' {...this.link ()} >
                 {this.getTrips ('i')}
               </TicketsGlue>
-              <TicketsGlue left='860px' top='60px' rotate='-10deg' title='Mardi' {...this.link ()} >
+              <TicketsGlue left='860px' top='60px' rotate='-10deg' title='Mardi'
+                drag-source='trip-tickets' {...this.link ()} >
                 {this.getTrips ('j')}
               </TicketsGlue>
-              <TicketsGlue left='1120px' top='50px' rotate='5deg' title='#5' {...this.link ()} />
-              <TicketsGlue left='1380px' top='70px' rotate='-4deg' title='Urgent' {...this.link ()} />
-              <TicketsGlue left='1650px' top='50px' rotate='0deg' title='#7' {...this.link ()} />
-              <TicketsGlue left='1920px' top='50px' rotate='10deg' title='#8' {...this.link ()} />
-              <TicketsGlue left='20px' top='300px' rotate='-5deg' title='TODO' {...this.link ()} />
-              <TicketsGlue left='290px' top='290px' rotate='10deg' title='#10' {...this.link ()} />
-              <TicketsGlue left='580px' top='290px' rotate='2deg' title='#11' {...this.link ()} />
-              <TicketsGlue left='840px' top='340px' rotate='5deg' title='#12' {...this.link ()} />
-              <TicketsGlue left='1100px' top='290px' rotate='-8deg' title='En réserve' {...this.link ()} />
-              <TicketsGlue left='1350px' top='320px' rotate='3deg' title='#14' {...this.link ()} />
-              <TicketsGlue left='1600px' top='290px' rotate='-4deg' title='#15' {...this.link ()} />
-              <TicketsGlue left='1880px' top='290px' rotate='5deg' title='#16' {...this.link ()} />
+              <TicketsGlue left='1120px' top='50px' rotate='5deg' title='#5'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='1380px' top='70px' rotate='-4deg' title='Urgent'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='1650px' top='50px' rotate='0deg' title='#7'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='1920px' top='50px' rotate='10deg' title='#8'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='20px' top='300px' rotate='-5deg' title='TODO'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='290px' top='290px' rotate='10deg' title='#10'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='580px' top='290px' rotate='2deg' title='#11'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='840px' top='340px' rotate='5deg' title='#12'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='1100px' top='290px' rotate='-8deg' title='En réserve'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='1350px' top='320px' rotate='3deg' title='#14'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='1600px' top='290px' rotate='-4deg' title='#15'
+                drag-source='trip-tickets' {...this.link ()} />
+              <TicketsGlue left='1880px' top='290px' rotate='5deg' title='#16'
+                drag-source='trip-tickets' {...this.link ()} />
             </Container>
           </Splitter>
         </Splitter>
