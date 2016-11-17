@@ -4,11 +4,11 @@ function getDescription (glyph) {
   if (glyph === 'bookmark-base') {
     return 'Livraison selon les indications standards de la dispo';
   } else if (glyph === 'bookmark-primary') {
-    return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\nmagna aliqua. Ut enim ad minim veniam, quis nostrud\nexercitation ullamco laboris nisi ut aliquip ex ea\ncommodo consequat.';
+    return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\\nsed do eiusmod tempor incididunt ut labore et dolore\\nmagna aliqua. Ut enim ad minim veniam, quis nostrud\\nexercitation ullamco laboris nisi ut aliquip ex ea\\ncommodo consequat.';
   } else if (glyph === 'bookmark-secondary') {
     return 'Téléphoner au client avant le passage.';
   } else if (glyph === 'warning') {
-    return 'Attention:\nPaiement content exigé !';
+    return 'Attention:\\nPaiement content exigé !';
   } else {
     return 'Blabla';
   }
