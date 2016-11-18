@@ -396,7 +396,7 @@ function getTrips () {
       {
         Time: '16:35',
         Description: 'Me Georges-André',
-        Details: 'Etude Me Georges-André\\nAv. du Château 31a\\n1008 Jouxtens',
+        Details: 'Etude Me Georges-André & Fils & Co & Cie\\nAv. du Château 31a\\n1008 Jouxtens',
       },
       Drop:
       {
