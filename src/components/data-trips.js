@@ -59,6 +59,7 @@ function getTrips () {
       Count: '1x',
       Weight: '0.2 kg',
       Price: '30.00',
+      Product: 'Standard',
     },
     b: {
       Pick:
@@ -77,6 +78,7 @@ function getTrips () {
       Count: '2x',
       Weight: '3.6 kg',
       Price: '45.00',
+      Product: 'Dring-dring',
     },
     c: {
       Pick:
@@ -95,6 +97,7 @@ function getTrips () {
       Count: '1x',
       Weight: '0.7 kg',
       Price: '30.00',
+      Product: 'Dring-dring',
     },
     d: {
       Pick:
@@ -114,6 +117,7 @@ function getTrips () {
       Weight: '1.3 kg',
       Price: '100.00',
       PriceGlyphs: getGlyphEntities (['warning']),
+      Product: 'Standard',
     },
     e: {
       Pick:
@@ -132,6 +136,7 @@ function getTrips () {
       Weight: '2.5 kg',
       Price: '80.00',
       PriceGlyphs: getGlyphEntities (['bookmark-primary']),
+      Product: 'Dring-dring',
     },
     f: {
       Pick:
@@ -149,6 +154,7 @@ function getTrips () {
       Count: '2x',
       Weight: '1.9 kg',
       Price: '100.00',
+      Product: 'Standard',
     },
     g: {
       Pick:
@@ -169,6 +175,7 @@ function getTrips () {
       Weight: '2.5 kg',
       Price: '100.00',
       PriceGlyphs: getGlyphEntities (['warning']),
+      Product: 'Dring-dring',
     },
     h: {
       Pick:
@@ -186,6 +193,7 @@ function getTrips () {
       Count: '1x',
       Weight: '0.3 kg',
       Price: '50.00',
+      Product: 'Standard',
     },
     i: {
       Pick:
@@ -204,6 +212,7 @@ function getTrips () {
       Count: '5x',
       Weight: '16.3 kg',
       Price: '182.00',
+      Product: 'Urgent',
     },
     j: {
       Pick:
@@ -223,6 +232,7 @@ function getTrips () {
       Count: '1x',
       Weight: '1.1 kg',
       Price: '24.00',
+      Product: 'Standard',
     },
     k: {
       Pick:
@@ -242,6 +252,7 @@ function getTrips () {
       Weight: '4.3 kg',
       Price: '110.00',
       PriceGlyphs: getGlyphEntities (['warning']),
+      Product: 'Dring-dring',
     },
     l1: {
       Pick:
@@ -261,6 +272,7 @@ function getTrips () {
       Count: '1x',
       Weight: '1.8 kg',
       Price: '70.00',
+      Product: 'Dring-dring',
     },
     l2: {
       Pick:
@@ -280,6 +292,7 @@ function getTrips () {
       Count: '1x',
       Weight: '1.8 kg',
       Price: '70.00',
+      Product: 'Dring-dring',
     },
     m: {
       Pick:
@@ -298,6 +311,7 @@ function getTrips () {
       Count: '4x',
       Weight: '1.8 kg',
       Price: '100.00',
+      Product: 'Standard',
     },
     n: {
       Pick:
@@ -315,6 +329,7 @@ function getTrips () {
       Count: '1x',
       Weight: '0.3 kg',
       Price: '30.00',
+      Product: 'Standard',
     },
     o: {
       Pick:
@@ -334,6 +349,7 @@ function getTrips () {
       Weight: '1.5 kg',
       Price: '70.00',
       PriceGlyphs: getGlyphEntities (['warning']),
+      Product: 'Urgent',
     },
     p: {
       Pick:
@@ -353,6 +369,7 @@ function getTrips () {
       Weight: '2.9 kg',
       Price: '125.00',
       Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary']),
+      Product: 'Standard',
     },
     q: {
       Pick:
@@ -371,6 +388,7 @@ function getTrips () {
       Weight: '5.2 kg',
       Price: '125.00',
       Glyphs: getGlyphEntities (['bookmark-base']),
+      Product: 'Urgent',
     },
     r: {
       Pick:
@@ -390,6 +408,7 @@ function getTrips () {
       Weight: '2.0 kg',
       Price: '25.00',
       Glyphs: getGlyphEntities (['warning']),
+      Product: 'Dring-dring',
     },
     s1: {
       Pick:
@@ -409,6 +428,7 @@ function getTrips () {
       Count: '3x',
       Weight: '4.7 kg',
       Price: '75.00',
+      Product: 'Standard',
     },
     s2: {
       Pick:
@@ -429,6 +449,7 @@ function getTrips () {
       Weight: '4.7 kg',
       Price: '75.00',
       Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary']),
+      Product: 'Standard',
     },
     t: {
       Pick:
@@ -448,6 +469,7 @@ function getTrips () {
       Count: '1x',
       Weight: '3.9 kg',
       Price: '120.00',
+      Product: 'Standard',
     },
   };
 }
