@@ -69,7 +69,7 @@ export default class DispatchMessengers extends React.Component {
       NoDrag: 'false'
     };
     return (
-      <Trip kind='trip-box' Selected={selected} data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
+      <Trip kind='trip-box' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
     );
   }
 
@@ -93,7 +93,7 @@ export default class DispatchMessengers extends React.Component {
       Color:  color,
       Type:   type,
       Trip:   data,
-      NoDrag: color === 'selected' ? 'true' : 'false',
+      NoDrag: 'false',
     };
     return (
       <Trip kind='trip-ticket' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
@@ -179,9 +179,9 @@ export default class DispatchMessengers extends React.Component {
                 Total:          '250.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
                 max-width='300px' {...this.link ()} >
-                {this.getTrip ('selected', 'pick', 's2')}
-                {this.getTrip ('selected', 'pick', 't')}
-                {this.getTrip ('selected', 'drop', 't')}
+                {this.getTrip (null, 'pick', 's2')}
+                {this.getTrip (null, 'pick', 't')}
+                {this.getTrip (null, 'drop', 't')}
                 {this.getTrip (null, 'drop', 's2')}
               </Container>
             </Container>
