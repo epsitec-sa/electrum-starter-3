@@ -9,6 +9,8 @@ function getDescription (glyph) {
     return 'Téléphoner au client avant le passage.';
   } else if (glyph === 'warning') {
     return 'Attention:\\nPaiement content exigé !';
+  } else if (glyph === 'euro') {
+    return 'Attention:\\nPaiement en Euro exigé !';
   } else {
     return 'Blabla';
   }
@@ -116,7 +118,7 @@ function getTrips () {
       Count: '3x',
       Weight: '1.3 kg',
       Price: '100.00',
-      PriceGlyphs: getGlyphEntities (['warning']),
+      Glyphs: getGlyphEntities (['euro']),
       Product: 'Standard',
     },
     e: {
@@ -135,7 +137,7 @@ function getTrips () {
       Count: '1x',
       Weight: '2.5 kg',
       Price: '80.00',
-      PriceGlyphs: getGlyphEntities (['bookmark-primary']),
+      Glyphs: getGlyphEntities (['bookmark-primary']),
       Product: 'Dring-dring',
     },
     f: {
@@ -174,7 +176,7 @@ function getTrips () {
       Count: '1x',
       Weight: '2.5 kg',
       Price: '100.00',
-      PriceGlyphs: getGlyphEntities (['warning']),
+      Glyphs: getGlyphEntities (['euro']),
       Product: 'Dring-dring',
     },
     h: {
@@ -251,7 +253,7 @@ function getTrips () {
       Count: '2x',
       Weight: '4.3 kg',
       Price: '110.00',
-      PriceGlyphs: getGlyphEntities (['warning']),
+      Glyphs: getGlyphEntities (['euro']),
       Product: 'Dring-dring',
     },
     l1: {
@@ -348,7 +350,7 @@ function getTrips () {
       Count: '2x',
       Weight: '1.5 kg',
       Price: '70.00',
-      PriceGlyphs: getGlyphEntities (['warning']),
+      Glyphs: getGlyphEntities (['euro']),
       Product: 'Urgent',
     },
     p: {
@@ -368,7 +370,7 @@ function getTrips () {
       Count: '1x',
       Weight: '2.9 kg',
       Price: '125.00',
-      Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary']),
+      Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary', 'euro']),
       Product: 'Standard',
     },
     q: {
@@ -407,7 +409,7 @@ function getTrips () {
       Count: '1x',
       Weight: '2.0 kg',
       Price: '25.00',
-      Glyphs: getGlyphEntities (['warning']),
+      Glyphs: getGlyphEntities (['euro']),
       Product: 'Dring-dring',
     },
     s1: {
