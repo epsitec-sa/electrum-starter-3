@@ -323,46 +323,30 @@ export default class DispatchMessengers extends React.Component {
               </Container>
             </Container>
             <Container kind='tickets-basket' {...this.link ()} >
-              <TicketsGlue left='30px' top='50px' rotate='10deg' title='Après-midi'
+              <TicketsGlue left='30px' top='50px' rotate='5deg' title='Après-midi'
                 drag-source='trip-tickets' {...this.link ()} >
                 {this.getTrips ('g')}
               </TicketsGlue>
-              <TicketsGlue left='310px' top='50px' rotate='-2deg' title='Julien'
+              <TicketsGlue left='310px' top='50px' rotate='-1deg' title='Julien'
                 drag-source='trip-tickets' {...this.link ()} >
                 {this.getTrip (null, 'pick', 'h')}
                 {this.getTrip (null, 'drop', 'h')}
               </TicketsGlue>
-              <TicketsGlue left='590px' top='40px' rotate='5deg' title='#3'
+              <TicketsGlue left='590px' top='40px' rotate='2deg' title='#3'
                 drag-source='trip-tickets' {...this.link ()} >
                 {this.getTrips ('i')}
               </TicketsGlue>
-              <TicketsGlue left='860px' top='60px' rotate='-10deg' title='Mardi'
+              <TicketsGlue left='860px' top='60px' rotate='-5deg' title='Mardi'
                 drag-source='trip-tickets' {...this.link ()} >
                 {this.getTrips ('j')}
               </TicketsGlue>
-              <TicketsGlue left='1120px' top='50px' rotate='5deg' title='#5'
+              <TicketsGlue left='1120px' top='50px' rotate='2deg' title='#5'
                 drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='1380px' top='70px' rotate='-4deg' title='Urgent'
+              <TicketsGlue left='1380px' top='70px' rotate='-2deg' title='Urgent'
                 drag-source='trip-tickets' {...this.link ()} />
               <TicketsGlue left='1650px' top='50px' rotate='0deg' title='#7'
                 drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='1920px' top='50px' rotate='10deg' title='#8'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='20px' top='300px' rotate='-5deg' title='TODO'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='290px' top='290px' rotate='10deg' title='#10'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='580px' top='290px' rotate='2deg' title='#11'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='840px' top='340px' rotate='5deg' title='#12'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='1100px' top='290px' rotate='-8deg' title='En réserve'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='1350px' top='320px' rotate='3deg' title='#14'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='1600px' top='290px' rotate='-4deg' title='#15'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='1880px' top='290px' rotate='5deg' title='#16'
+              <TicketsGlue left='1920px' top='50px' rotate='5deg' title='#8'
                 drag-source='trip-tickets' {...this.link ()} />
             </Container>
           </Splitter>
