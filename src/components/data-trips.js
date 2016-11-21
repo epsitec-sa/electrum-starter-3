@@ -4,7 +4,7 @@ function getDescription (glyph) {
   if (glyph === 'bookmark-base') {
     return 'Livraison selon les indications standards de la dispo';
   } else if (glyph === 'bookmark-primary') {
-    return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\nmagna aliqua. Ut enim ad minim veniam, quis nostrud\nexercitation ullamco laboris nisi ut aliquip ex ea\ncommodo consequat.';
+    return 'En raison de travaux à la rue Centrale, tout le trafic passant par cette rue doit impérativement être dévié par la rue du Midi.';
   } else if (glyph === 'bookmark-secondary') {
     return 'Téléphoner au client avant le passage.';
   } else if (glyph === 'warning') {
