@@ -19,13 +19,14 @@ export default class DispatchTrips extends React.Component {
   }
 
   getTripBox (selected, tripId) {
+    const ticketId = tripId + '.both';  // by example: 'd1.both'
     const data = this.trips[tripId];
     const d = {
       Trip:   data,
       NoDrag: 'false'
     };
     return (
-      <Trip kind='trip-box' Selected={selected} data={d} trip-id={tripId} {...this.link ()} />
+      <Trip kind='trip-box' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
     );
   }
 
