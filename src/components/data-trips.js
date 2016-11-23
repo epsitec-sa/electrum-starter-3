@@ -62,6 +62,7 @@ function getTrips () {
       Weight: '0.2 kg',
       Price: '30.00',
       Product: 'Standard',
+      Urgency: '100',
     },
     b: {
       Pick:
@@ -81,6 +82,7 @@ function getTrips () {
       Weight: '3.6 kg',
       Price: '45.00',
       Product: 'Dring-dring',
+      Urgency: '80',
     },
     c: {
       Pick:
@@ -100,6 +102,7 @@ function getTrips () {
       Weight: '0.7 kg',
       Price: '30.00',
       Product: 'Dring-dring',
+      Urgency: '60',
     },
     d: {
       Pick:
@@ -120,6 +123,7 @@ function getTrips () {
       Price: '100.00',
       Glyphs: getGlyphEntities (['euro']),
       Product: 'Standard',
+      Urgency: '40',
     },
     e: {
       Pick:
@@ -139,6 +143,7 @@ function getTrips () {
       Price: '80.00',
       Glyphs: getGlyphEntities (['bookmark-primary']),
       Product: 'Dring-dring',
+      Urgency: '10',
     },
     f: {
       Pick:
@@ -215,6 +220,7 @@ function getTrips () {
       Weight: '16.3 kg',
       Price: '182.00',
       Product: 'Urgent',
+      Urgency: '50',
     },
     j: {
       Pick:
@@ -352,6 +358,7 @@ function getTrips () {
       Price: '70.00',
       Glyphs: getGlyphEntities (['euro']),
       Product: 'Urgent',
+      Urgency: '50',
     },
     p: {
       Pick:
@@ -391,6 +398,7 @@ function getTrips () {
       Price: '125.00',
       Glyphs: getGlyphEntities (['bookmark-base']),
       Product: 'Urgent',
+      Urgency: '50',
     },
     r: {
       Pick:

@@ -26,7 +26,8 @@ export default class DispatchTrips extends React.Component {
       NoDrag: 'false'
     };
     return (
-      <Trip kind='trip-box' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
+      <Trip kind='trip-box' data={d} ticket-id={ticketId} trip-id={tripId}
+        urgency={data.Urgency} {...this.link ()} />
     );
   }
 
