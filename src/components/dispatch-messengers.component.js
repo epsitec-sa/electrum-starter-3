@@ -45,7 +45,7 @@ export default class DispatchMessengers extends React.Component {
     }
   }
 
-  getMessenger (color, data) {
+  renderMessenger (color, data) {
     data.Photo          = this.getGlyphEntitySolo (data.Photo);
     data.Transportation = this.getGlyphEntitySolo (data.Transportation);
     return (
@@ -61,7 +61,7 @@ export default class DispatchMessengers extends React.Component {
     }
   }
 
-  getTripBox (selected, tripId) {
+  renderTripBox (selected, tripId) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
     const data = this.trips[tripId];
     const d = {
@@ -74,7 +74,7 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  getTrips (tripId) {
+  renderTrips (tripId) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
     const data = this.trips[tripId];
     const d = {
@@ -86,7 +86,7 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  getTrip (color, type, tripId) {
+  renderTrip (color, type, tripId) {
     const ticketId = tripId + '.' + type;  // by example: 'd1.drop'
     const data = this.trips[tripId];
     tripId = this.getTripName (tripId);  // by example: 'd'
@@ -109,86 +109,86 @@ export default class DispatchMessengers extends React.Component {
         <Splitter kind='horizontal' default-size='60%' {...this.link ()} >
           <Container kind='tickets-messengers' drag-controller='messengers' {...this.link ()} >
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
                 Photo:          'user',
                 Transportation: 'bicycle',
                 Name:           'Jean-Louis',
                 Total:          '400.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
                 max-width='300px' {...this.link ()} >
-                {this.getTrip (null, 'pick', 'k')}
-                {this.getTrip (null, 'drop', 'k')}
-                {this.getTrip (null, 'pick', 'l1')}
-                {this.getTrip (null, 'drop', 'l1')}
-                {this.getTrip (null, 'pick', 'm')}
-                {this.getTrip (null, 'drop', 'm')}
+                {this.renderTrip (null, 'pick', 'k')}
+                {this.renderTrip (null, 'drop', 'k')}
+                {this.renderTrip (null, 'pick', 'l1')}
+                {this.renderTrip (null, 'drop', 'l1')}
+                {this.renderTrip (null, 'pick', 'm')}
+                {this.renderTrip (null, 'drop', 'm')}
               </Container>
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
                 Photo:          'user',
                 Transportation: 'bicycle',
                 Name:           'Sandra',
                 Total:          '203.50'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
                 max-width='300px' {...this.link ()} >
-                {this.getTrip (null, 'pick', 'n')}
-                {this.getTrip (null, 'pick', 'o')}
-                {this.getTrip (null, 'drop', 'n')}
-                {this.getTrip (null, 'drop', 'o')}
+                {this.renderTrip (null, 'pick', 'n')}
+                {this.renderTrip (null, 'pick', 'o')}
+                {this.renderTrip (null, 'drop', 'n')}
+                {this.renderTrip (null, 'drop', 'o')}
               </Container>
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
                 Photo:          'user',
                 Transportation: 'bicycle',
                 Name:           'Jean-Paul',
                 Total:          '68.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
                 max-width='300px' {...this.link ()} >
-                {this.getTrip (null, 'pick', 'l2')}
-                {this.getTrip (null, 'pick', 'r')}
-                {this.getTrip (null, 'pick', 'p')}
-                {this.getTrip (null, 'drop', 'r')}
-                {this.getTrip (null, 'pick', 'q')}
-                {this.getTrip (null, 'drop', 'q')}
-                {this.getTrip (null, 'drop', 'l2')}
-                {this.getTrip (null, 'drop', 'p')}
+                {this.renderTrip (null, 'pick', 'l2')}
+                {this.renderTrip (null, 'pick', 'r')}
+                {this.renderTrip (null, 'pick', 'p')}
+                {this.renderTrip (null, 'drop', 'r')}
+                {this.renderTrip (null, 'pick', 'q')}
+                {this.renderTrip (null, 'drop', 'q')}
+                {this.renderTrip (null, 'drop', 'l2')}
+                {this.renderTrip (null, 'drop', 'p')}
               </Container>
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
                 Photo:          'user',
                 Transportation: 'bicycle',
                 Name:           'Chantal',
                 Total:          '95.20'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
                 max-width='300px' {...this.link ()} >
-                {this.getTrip (null, 'pick', 's1')}
-                {this.getTrip (null, 'drop', 's1')}
+                {this.renderTrip (null, 'pick', 's1')}
+                {this.renderTrip (null, 'drop', 's1')}
               </Container>
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
                 Photo:          'user-secret',
                 Transportation: 'car',
                 Name:           'Frédérique',
                 Total:          '250.00'})}
               <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
                 max-width='300px' {...this.link ()} >
-                {this.getTrip (null, 'pick', 's2')}
-                {this.getTrip (null, 'pick', 't')}
-                {this.getTrip (null, 'drop', 't')}
-                {this.getTrip (null, 'drop', 's2')}
+                {this.renderTrip (null, 'pick', 's2')}
+                {this.renderTrip (null, 'pick', 't')}
+                {this.renderTrip (null, 'drop', 't')}
+                {this.renderTrip (null, 'drop', 's2')}
               </Container>
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
         				Photo:          'user',
         				Transportation: 'bicycle',
         				Name:           'Marcel',
@@ -199,7 +199,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
         				Photo:          'user',
         				Transportation: 'truck',
         				Name:           'Simone',
@@ -210,7 +210,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
             		Photo:          'user',
               Transportation: 'bicycle',
               Name:           'Béatrice',
@@ -221,7 +221,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
             		Photo:          'user',
               Transportation: 'rocket',
               Name:           'Zoé',
@@ -232,7 +232,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
             		Photo:          'user',
               Transportation: 'bicycle',
               Name:           'Marc',
@@ -243,7 +243,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
             		Photo:          'user',
               Transportation: 'bicycle',
               Name:           'Victor',
@@ -254,7 +254,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
             		Photo:          'user',
               Transportation: 'car',
               Name:           'Jacques',
@@ -265,7 +265,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
             		Photo:          'user',
               Transportation: 'car',
               Name:           'Samuel',
@@ -276,7 +276,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
             		Photo:          'user',
               Transportation: 'bicycle',
               Name:           'Georges',
@@ -287,7 +287,7 @@ export default class DispatchMessengers extends React.Component {
             </Container>
 
             <Container kind='tickets-messenger' {...this.link ()} >
-              {this.getMessenger (null, {
+              {this.renderMessenger (null, {
             		Photo:          'user',
               Transportation: 'bicycle',
               Name:           'Francine',
@@ -314,32 +314,32 @@ export default class DispatchMessengers extends React.Component {
               <Container kind='panes' {...this.link ()} >
                 <Container kind='column' drag-controller='tickets' drag-source='trip-box'
                   {...this.link ()} >
-                  {this.getTripBox ('false', 'a')}
-                  {this.getTripBox ('false', 'b')}
-                  {this.getTripBox ('false', 'c')}
-                  {this.getTripBox ('false', 'd')}
-                  {this.getTripBox ('false', 'e')}
-                  {this.getTripBox ('false', 'f')}
+                  {this.renderTripBox ('false', 'a')}
+                  {this.renderTripBox ('false', 'b')}
+                  {this.renderTripBox ('false', 'c')}
+                  {this.renderTripBox ('false', 'd')}
+                  {this.renderTripBox ('false', 'e')}
+                  {this.renderTripBox ('false', 'f')}
                 </Container>
               </Container>
             </Container>
             <Container kind='tickets-basket' {...this.link ()} >
               <TicketsGlue left='30px' top='50px' rotate='5deg' title='Après-midi'
                 drag-source='trip-tickets' {...this.link ()} >
-                {this.getTrips ('g')}
+                {this.renderTrips ('g')}
               </TicketsGlue>
               <TicketsGlue left='310px' top='50px' rotate='-1deg' title='Julien'
                 drag-source='trip-tickets' {...this.link ()} >
-                {this.getTrip (null, 'pick', 'h')}
-                {this.getTrip (null, 'drop', 'h')}
+                {this.renderTrip (null, 'pick', 'h')}
+                {this.renderTrip (null, 'drop', 'h')}
               </TicketsGlue>
               <TicketsGlue left='590px' top='40px' rotate='2deg' title='#3'
                 drag-source='trip-tickets' {...this.link ()} >
-                {this.getTrips ('i')}
+                {this.renderTrips ('i')}
               </TicketsGlue>
               <TicketsGlue left='860px' top='60px' rotate='-5deg' title='Mardi'
                 drag-source='trip-tickets' {...this.link ()} >
-                {this.getTrips ('j')}
+                {this.renderTrips ('j')}
               </TicketsGlue>
               <TicketsGlue left='1120px' top='50px' rotate='2deg' title='#5'
                 drag-source='trip-tickets' {...this.link ()} />

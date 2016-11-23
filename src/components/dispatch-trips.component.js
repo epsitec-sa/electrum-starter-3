@@ -18,7 +18,7 @@ export default class DispatchTrips extends React.Component {
     this.trips = getTrips ();
   }
 
-  getTripBox (selected, tripId) {
+  renderTripBox (selected, tripId) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
     const data = this.trips[tripId];
     const d = {
@@ -51,12 +51,12 @@ export default class DispatchTrips extends React.Component {
           <Container kind='panes' {...this.link ()} >
             <DragController name='tickets' {...this.link ()} />
             <Container kind='column' drag-controller='tickets' {...this.link ()} >
-              {this.getTripBox ('false', 'a')}
-              {this.getTripBox ('false', 'b')}
-              {this.getTripBox ('false', 'c')}
-              {this.getTripBox ('false', 'd')}
-              {this.getTripBox ('false', 'e')}
-              {this.getTripBox ('false', 'f')}
+              {this.renderTripBox ('false', 'a')}
+              {this.renderTripBox ('false', 'b')}
+              {this.renderTripBox ('false', 'c')}
+              {this.renderTripBox ('false', 'd')}
+              {this.renderTripBox ('false', 'e')}
+              {this.renderTripBox ('false', 'f')}
             </Container>
           </Container>
         </Container>
