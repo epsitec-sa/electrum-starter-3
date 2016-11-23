@@ -34,7 +34,7 @@ export default class DispatchTrips extends React.Component {
   render () {
     return (
       <Container kind='views' {...this.link ()} >
-        <Container kind='view' width='700px' {...this.link ()} >
+        <Container kind='view' width='800px' {...this.link ()} >
 
           <Container kind='pane-top' {...this.link ()} >
             <TextFieldCombo hint-text='Date' combo-glyph='calendar'
