@@ -3,11 +3,12 @@
 import AllInOne from './all-in-one.js';
 import actuators from './actuators.js';
 import Activity from '../activity.js';
-import Data from '../../components/data-trips.js';
-const {initializeData} = Data;
+import DataMessengers from '../../components/data-messengers.js';
+import DataTrips from '../../components/data-trips.js';
 
 const onInit = (state) => {
-  initializeData ();
+  DataMessengers.initializeData ();
+  DataTrips.initializeData ();
 };
 
 export default Activity.Create ('all-in-one', AllInOne, actuators, onInit);
