@@ -481,24 +481,6 @@ function getTrips () {
       Price: '120.00',
       Product: 'Standard',
     },
-    xx: {
-      Pick:
-      {
-        Time: '12:00',
-        Description: 'Transit',
-        Details: 'Zone de transit à définir',
-      },
-      Drop:
-      {
-        Time: '12:00',
-        Description: 'Transit',
-        Details: 'Zone de transit à définir',
-      },
-      Count: '1x',
-      Weight: '0.0 kg',
-      Price: '0.00',
-      Product: 'Standard',
-    },
   };
 }
 
