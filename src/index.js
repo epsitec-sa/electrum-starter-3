@@ -14,8 +14,6 @@ import DesktopActivity from './activities/desktop/';
 import LoginActivity from './activities/login/';
 import SessionActivity from './activities/session/';
 import CatalogActivity from './activities/catalog/';
-import PolyphemeDispatchActivity from './activities/polypheme-dispatch/';
-import PolyphemeCodispatchActivity from './activities/polypheme-codispatch/';
 import SynchroActivity from './activities/synchro/';
 import AllInOneActivity from './activities/all-in-one/';
 import ActivitiesManager from './activities-manager.js';
@@ -40,13 +38,9 @@ am.registerActivity ('desktop', DesktopActivity);
 am.registerActivity ('forms', FormsActivity);
 am.registerActivity ('poc', PocActivity);
 am.registerActivity ('catalog', CatalogActivity);
-am.registerActivity ('polypheme-dispatch', PolyphemeDispatchActivity);
-am.registerActivity ('polypheme-codispatch', PolyphemeCodispatchActivity);
 am.registerActivity ('synchro', SynchroActivity);
 am.registerActivity ('all-in-one', AllInOneActivity);
 
-// am.startMainActivity ('polypheme-dispatch', true);
-// am.startMainActivity ('polypheme-codispatch', true);
 // am.startMainActivity ('synchro', true);
 am.startMainActivity ('all-in-one', true);
 
