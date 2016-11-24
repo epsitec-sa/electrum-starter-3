@@ -33,6 +33,7 @@ export default class DispatchMessengers extends React.Component {
       dataMessengersContent: window.document.dataMessengersContent,
       dataTripBoxContent:    window.document.dataTripBoxContent,
       dataGlueContent:       window.document.dataGlueContent,
+      regen:                 0,
     };
     window.document.dispatchMessengers = this;
   }
