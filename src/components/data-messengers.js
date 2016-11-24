@@ -15,146 +15,100 @@ function getGlyphEntitySolo (glyph) {
 function getMessengers () {
   return {
     jl: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('bicycle'),
-        Name:           'Jean-Louis',
-        Total:          '400.00',
-      },
-      ticketIds: ['k.pick', 'k.drop', 'l1.pick', 'l1.drop', 'm.pick', 'm.drop'],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('bicycle'),
+      Name:           'Jean-Louis',
+      Total:          '400.00',
     },
     san: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('bicycle'),
-        Name:           'Sandra',
-        Total:          '203.50',
-      },
-      ticketIds: ['n.pick', 'o.pick', 'n.drop', 'o.drop'],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('bicycle'),
+      Name:           'Sandra',
+      Total:          '203.50',
     },
     jp: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('bicycle'),
-        Name:           'Jean-Paul',
-        Total:          '68.00',
-      },
-      ticketIds: ['l2.pick', 'r.pick', 'p.pick', 'r.drop', 'q.pick', 'q.drop', 'l2.drop', 'p.drop'],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('bicycle'),
+      Name:           'Jean-Paul',
+      Total:          '68.00',
     },
     cha: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('bicycle'),
-        Name:           'Chantal',
-        Total:          '95.20',
-      },
-      ticketIds: ['s1.pick', 's1.drop'],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('bicycle'),
+      Name:           'Chantal',
+      Total:          '95.20',
     },
     fre: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user-secret'),
-        Transportation: getGlyphEntitySolo ('car'),
-        Name:           'Frédérique',
-        Total:          '250.00',
-      },
-      ticketIds: ['s2.pick', 't.pick', 't.drop', 's2.drop'],
+      Photo:          getGlyphEntitySolo ('user-secret'),
+      Transportation: getGlyphEntitySolo ('car'),
+      Name:           'Frédérique',
+      Total:          '250.00',
     },
     mar: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('bicycle'),
-        Name:           'Marcel',
-        Total:          '0.00',
-      },
-      ticketIds: [],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('bicycle'),
+      Name:           'Marcel',
+      Total:          '0.00',
     },
     sim: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('truck'),
-        Name:           'Simone',
-        Total:          '100.00',
-      },
-      ticketIds: [],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('truck'),
+      Name:           'Simone',
+      Total:          '100.00',
     },
     bea: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('bicycle'),
-        Name:           'Béatrice',
-        Total:          '20.00',
-      },
-      ticketIds: [],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('bicycle'),
+      Name:           'Béatrice',
+      Total:          '20.00',
     },
     zoe: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('rocket'),
-        Name:           'Zoé',
-        Total:          '0.00',
-      },
-      ticketIds: [],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('rocket'),
+      Name:           'Zoé',
+      Total:          '0.00',
     },
     ber: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('bicycle'),
-        Name:           'Bernard',
-        Total:          '0.00',
-      },
-      ticketIds: [],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('bicycle'),
+      Name:           'Bernard',
+      Total:          '0.00',
     },
     vic: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('bicycle'),
-        Name:           'Victor',
-        Total:          '630.00',
-      },
-      ticketIds: [],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('bicycle'),
+      Name:           'Victor',
+      Total:          '630.00',
     },
     jac: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('car'),
-        Name:           'Jacques',
-        Total:          '0.00',
-      },
-      ticketIds: [],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('car'),
+      Name:           'Jacques',
+      Total:          '0.00',
     },
     sam: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('car'),
-        Name:           'Samuel',
-        Total:          '0.00',
-      },
-      ticketIds: [],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('car'),
+      Name:           'Samuel',
+      Total:          '0.00',
     },
     geo: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('bicycle'),
-        Name:           'Georges',
-        Total:          '50.00',
-      },
-      ticketIds: [],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('bicycle'),
+      Name:           'Georges',
+      Total:          '50.00',
     },
     jaq: {
-      messenger: {
-        Photo:          getGlyphEntitySolo ('user'),
-        Transportation: getGlyphEntitySolo ('bicycle'),
-        Name:           'Jaqueline',
-        Total:          '68.00',
-      },
-      ticketIds: [],
+      Photo:          getGlyphEntitySolo ('user'),
+      Transportation: getGlyphEntitySolo ('bicycle'),
+      Name:           'Jaqueline',
+      Total:          '68.00',
     },
   };
 }
 
 function initializeData () {
-  const messengers = getMessengers ();
-  window.document.dataMessengers = messengers;
+  window.document.dataMessengers = getMessengers ();
 }
 
 /******************************************************************************/

@@ -27,45 +27,17 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
-    this.messengers = window.document.dataMessengers;
-    this.trips      = window.document.dataTrips;
+    this.messengers        = window.document.dataMessengers;
+    this.trips             = window.document.dataTrips;
+    this.messengersContent = window.document.dataMessengersContent;
+    this.tripBoxContent    = window.document.dataTripBoxContent;
+    this.glueContent       = window.document.dataGlueContent;
   }
 
   renderMessenger (shortName, messenger) {
     return (
       <MessengerTicket Color={null} data={messenger} ticket-id={shortName} {...this.link ()} />
     );
-  }
-
-  renderTrips2 (ticketIds) {
-    const result = [];
-    for (var ticketId of ticketIds) {
-      const type = ticketId.substring (ticketId.length - 4, ticketId.length);  // by exemple 'pick'
-      const tripId = ticketId.substring (0, ticketId.length - 5);  // by example 'd1'
-      result.push (this.renderTrip (null, type, tripId));
-    }
-    return result;
-  }
-
-  renderMessengerAndTickets (shortName, data) {
-    console.log ('abc');
-    return (
-      <Container kind='tickets-messenger' {...this.link ()} >
-        {this.renderMessenger (shortName, data.messenger)}
-        <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
-          max-width='300px' {...this.link ()} >
-          {this.renderTrips2 (data.ticketIds)}
-        </Container>
-      </Container>
-    );
-  }
-
-  renderMessengersAndTickets () {
-    const result = [];
-    for (var [shortName, data] of Object.entries (this.messengers)) {
-      result.push (this.renderMessengerAndTickets (shortName, data));
-    }
-    return result;
   }
 
   getTripName (tripId) {
@@ -87,6 +59,14 @@ export default class DispatchMessengers extends React.Component {
       <Trip kind='trip-box' data={d} ticket-id={ticketId} trip-id={tripId}
         urgency={data.Urgency} {...this.link ()} />
     );
+  }
+
+  renderTripBoxes () {
+    const result = [];
+    for (var tripId of this.tripBoxContent) {
+      result.push (this.renderTripBox ('false', tripId));
+    }
+    return result;
   }
 
   renderTrips (tripId) {
@@ -116,6 +96,40 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
+  renderTripsForMessenger (shortName) {
+    const result = [];
+    const content = this.messengersContent[shortName];
+    if (content) {
+      for (var ticketId of content) {
+        const type = ticketId.substring (ticketId.length - 4, ticketId.length);  // by exemple 'pick'
+        const tripId = ticketId.substring (0, ticketId.length - 5);  // by example 'd1'
+        result.push (this.renderTrip (null, type, tripId));
+      }
+    }
+    return result;
+  }
+
+  renderMessengerAndTickets (shortName, messenger) {
+    console.log ('abc');
+    return (
+      <Container kind='tickets-messenger' {...this.link ()} >
+        {this.renderMessenger (shortName, messenger)}
+        <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+          max-width='300px' {...this.link ()} >
+          {this.renderTripsForMessenger (shortName)}
+        </Container>
+      </Container>
+    );
+  }
+
+  renderMessengersAndTickets () {
+    const result = [];
+    for (var [shortName, messenger] of Object.entries (this.messengers)) {
+      result.push (this.renderMessengerAndTickets (shortName, messenger));
+    }
+    return result;
+  }
+
   render () {
     return (
       <Container kind='tickets-root' {...this.link ()} >
@@ -141,12 +155,7 @@ export default class DispatchMessengers extends React.Component {
               <Container kind='panes' {...this.link ()} >
                 <Container kind='column' drag-controller='tickets' drag-source='trip-box'
                   {...this.link ()} >
-                  {this.renderTripBox ('false', 'a')}
-                  {this.renderTripBox ('false', 'b')}
-                  {this.renderTripBox ('false', 'c')}
-                  {this.renderTripBox ('false', 'd')}
-                  {this.renderTripBox ('false', 'e')}
-                  {this.renderTripBox ('false', 'f')}
+                  {this.renderTripBoxes ()}
                 </Container>
               </Container>
             </Container>

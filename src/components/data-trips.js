@@ -485,8 +485,7 @@ function getTrips () {
 }
 
 function initializeData () {
-  const trips = getTrips ();
-  window.document.dataTrips = trips;
+  window.document.dataTrips = getTrips ();
 }
 
 /******************************************************************************/
