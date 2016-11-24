@@ -484,8 +484,13 @@ function getTrips () {
   };
 }
 
+function initializeData () {
+  const trips = getTrips ();
+  window.document.dataTrips = trips;
+}
+
 /******************************************************************************/
 
 module.exports = {
-  getTrips,
+  initializeData,
 };

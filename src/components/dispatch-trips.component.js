@@ -8,14 +8,11 @@ import {
   DragController
 } from 'electrum-arc';
 
-import Data from './data-trips.js';
-const {getTrips} = Data;
-
 export default class DispatchTrips extends React.Component {
 
   constructor (props) {
     super (props);
-    this.trips = getTrips ();
+    this.trips = window.document.dataTrips;
   }
 
   renderTripBox (selected, tripId) {

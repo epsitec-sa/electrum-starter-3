@@ -2,9 +2,6 @@
 
 import React from 'react';
 
-import Data from './data-trips.js';
-const {getTrips} = Data;
-
 import {
   Container,
   Button,
@@ -30,7 +27,7 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
-    this.trips = getTrips ();
+    this.trips = window.document.dataTrips;
   }
 
   getGlyphEntitySolo(glyph) {
