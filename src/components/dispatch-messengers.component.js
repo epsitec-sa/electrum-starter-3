@@ -105,7 +105,7 @@ export default class DispatchMessengers extends React.Component {
     }
   }
 
-  renderTrip (color, type, tripId) {
+  renderTrip (color, type, tripId, shortName) {
     const ticketId = tripId + '.' + type;  // by example: 'd1.drop'
     const data = this.state.dataTrips[tripId];
     tripId = this.getTripName (tripId);  // by example: 'd'
@@ -116,7 +116,7 @@ export default class DispatchMessengers extends React.Component {
       NoDrag: 'false',
     };
     return (
-      <Trip kind='trip-ticket' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
+      <Trip kind='trip-ticket' data={d} ticket-id={ticketId} trip-id={tripId} messenger={shortName} {...this.link ()} />
     );
   }
 
@@ -127,7 +127,7 @@ export default class DispatchMessengers extends React.Component {
       for (var ticketId of content) {
         const type = ticketId.substring (ticketId.length - 4, ticketId.length);  // by exemple 'pick'
         const tripId = ticketId.substring (0, ticketId.length - 5);  // by example 'd1'
-        result.push (this.renderTrip (null, type, tripId));
+        result.push (this.renderTrip (null, type, tripId, shortName));
       }
     }
     return result;
@@ -137,7 +137,7 @@ export default class DispatchMessengers extends React.Component {
     return (
       <Container kind='tickets-messenger' {...this.link ()} >
         {this.renderMessenger (shortName, messenger)}
-        <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket'
+        <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket' messenger={shortName}
           max-width='300px' {...this.link ()} >
           {this.renderTripsForMessenger (shortName)}
         </Container>
