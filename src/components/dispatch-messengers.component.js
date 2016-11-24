@@ -27,6 +27,14 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
+    this.state = {
+      dataMessengers:        window.document.dataMessengers,
+      dataTrips:             window.document.dataTrips,
+      dataMessengersContent: window.document.dataMessengersContent,
+      dataTripBoxContent:    window.document.dataTripBoxContent,
+      dataGlueContent:       window.document.dataGlueContent,
+    };
+    window.document.dispatchMessengers = this;
   }
 
   renderMessenger (shortName, messenger) {
@@ -45,7 +53,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderTripBox (selected, tripId) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
-    const data = window.document.dataTrips[tripId];
+    const data = this.state.dataTrips[tripId];
     const d = {
       Trip:   data,
       NoDrag: 'false'
@@ -58,7 +66,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderTripBoxes () {
     const result = [];
-    for (var tripId of window.document.dataTripBoxContent) {
+    for (var tripId of this.state.dataTripBoxContent) {
       result.push (this.renderTripBox ('false', tripId));
     }
     return result;
@@ -75,7 +83,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderGlues () {
     const result = [];
-    for (var glue of window.document.dataGlueContent) {
+    for (var glue of this.state.dataGlueContent) {
       result.push (this.renderGlue (glue));
     }
     return result;
@@ -84,7 +92,7 @@ export default class DispatchMessengers extends React.Component {
   renderTrips (tripId) {
     if (tripId) {
       const ticketId = tripId + '.both';  // by example: 'd1.both'
-      const data = window.document.dataTrips[tripId];
+      const data = this.state.dataTrips[tripId];
       const d = {
         Trip:   data,
         NoDrag: 'false'
@@ -99,7 +107,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderTrip (color, type, tripId) {
     const ticketId = tripId + '.' + type;  // by example: 'd1.drop'
-    const data = window.document.dataTrips[tripId];
+    const data = this.state.dataTrips[tripId];
     tripId = this.getTripName (tripId);  // by example: 'd'
     const d = {
       Color:  color,
@@ -114,7 +122,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderTripsForMessenger (shortName) {
     const result = [];
-    const content = window.document.dataMessengersContent[shortName];
+    const content = this.state.dataMessengersContent[shortName];
     if (content) {
       for (var ticketId of content) {
         const type = ticketId.substring (ticketId.length - 4, ticketId.length);  // by exemple 'pick'
@@ -126,7 +134,6 @@ export default class DispatchMessengers extends React.Component {
   }
 
   renderMessengerAndTickets (shortName, messenger) {
-    console.log ('abc');
     return (
       <Container kind='tickets-messenger' {...this.link ()} >
         {this.renderMessenger (shortName, messenger)}
@@ -140,7 +147,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderMessengersAndTickets () {
     const result = [];
-    for (var [shortName, messenger] of Object.entries (window.document.dataMessengers)) {
+    for (var [shortName, messenger] of Object.entries (this.state.dataMessengers)) {
       result.push (this.renderMessengerAndTickets (shortName, messenger));
     }
     return result;
@@ -169,8 +176,7 @@ export default class DispatchMessengers extends React.Component {
                   grow='2' combo-glyph='Search' {...this.link ()} />
               </Container>
               <Container kind='panes' {...this.link ()} >
-                <Container kind='column' drag-controller='tickets' drag-source='trip-box'
-                  {...this.link ()} >
+                <Container kind='column' drag-controller='tickets' drag-source='trip-box' {...this.link ()} >
                   {this.renderTripBoxes ()}
                 </Container>
               </Container>
