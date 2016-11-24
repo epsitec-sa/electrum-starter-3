@@ -69,16 +69,37 @@ export default class DispatchMessengers extends React.Component {
     return result;
   }
 
-  renderTrips (tripId) {
-    const ticketId = tripId + '.both';  // by example: 'd1.both'
-    const data = this.trips[tripId];
-    const d = {
-      Trip:   data,
-      NoDrag: 'false'
-    };
+  renderGlue (glue) {
     return (
-      <Trip kind='trip-tickets' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
+      <TicketsGlue left={glue.left} top={glue.top} rotate={glue.rotate} title={glue.title}
+        drag-source='trip-tickets' {...this.link ()} >
+        {this.renderTrips (glue.tripId)}
+      </TicketsGlue>
     );
+  }
+
+  renderGlues () {
+    const result = [];
+    for (var glue of this.glueContent) {
+      result.push (this.renderGlue (glue));
+    }
+    return result;
+  }
+
+  renderTrips (tripId) {
+    if (tripId) {
+      const ticketId = tripId + '.both';  // by example: 'd1.both'
+      const data = this.trips[tripId];
+      const d = {
+        Trip:   data,
+        NoDrag: 'false'
+      };
+      return (
+        <Trip kind='trip-tickets' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
+      );
+    } else {
+      return null;
+    }
   }
 
   renderTrip (color, type, tripId) {
@@ -160,31 +181,7 @@ export default class DispatchMessengers extends React.Component {
               </Container>
             </Container>
             <Container kind='tickets-basket' {...this.link ()} >
-              <TicketsGlue left='30px' top='50px' rotate='5deg' title='Après-midi'
-                drag-source='trip-tickets' {...this.link ()} >
-                {this.renderTrips ('g')}
-              </TicketsGlue>
-              <TicketsGlue left='310px' top='50px' rotate='-1deg' title='Julien'
-                drag-source='trip-tickets' {...this.link ()} >
-                {this.renderTrip (null, 'pick', 'h')}
-                {this.renderTrip (null, 'drop', 'h')}
-              </TicketsGlue>
-              <TicketsGlue left='590px' top='40px' rotate='2deg' title='#3'
-                drag-source='trip-tickets' {...this.link ()} >
-                {this.renderTrips ('i')}
-              </TicketsGlue>
-              <TicketsGlue left='860px' top='60px' rotate='-5deg' title='Mardi'
-                drag-source='trip-tickets' {...this.link ()} >
-                {this.renderTrips ('j')}
-              </TicketsGlue>
-              <TicketsGlue left='1120px' top='50px' rotate='2deg' title='#5'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='1380px' top='70px' rotate='-2deg' title='Urgent'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='1650px' top='50px' rotate='0deg' title='#7'
-                drag-source='trip-tickets' {...this.link ()} />
-              <TicketsGlue left='1920px' top='50px' rotate='5deg' title='#8'
-                drag-source='trip-tickets' {...this.link ()} />
+              {this.renderGlues ()}
             </Container>
           </Splitter>
         </Splitter>
