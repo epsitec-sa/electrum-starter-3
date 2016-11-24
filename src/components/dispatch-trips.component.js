@@ -12,13 +12,11 @@ export default class DispatchTrips extends React.Component {
 
   constructor (props) {
     super (props);
-    this.trips          = window.document.dataTrips;
-    this.tripBoxContent = window.document.dataTripBoxContent;
   }
 
   renderTripBox (selected, tripId) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
-    const data = this.trips[tripId];
+    const data = window.document.dataTrips[tripId];
     const d = {
       Trip:   data,
       NoDrag: 'false'
@@ -31,7 +29,7 @@ export default class DispatchTrips extends React.Component {
 
   renderTripBoxes () {
     const result = [];
-    for (var tripId of this.tripBoxContent) {
+    for (var tripId of window.document.dataTripBoxContent) {
       result.push (this.renderTripBox ('false', tripId));
     }
     return result;
