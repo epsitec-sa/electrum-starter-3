@@ -1,8 +1,13 @@
 'use strict';
+
 import Electrum from 'electrum';
 import React from 'react';
 import {Theme} from 'electrum-theme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import getData from './components/data-contents.js';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import reducer from './reducer.js';
 
 import * as Colors from 'material-ui/styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
@@ -28,6 +33,9 @@ const theme = {
     pickerHeaderColor: Colors.cyan500,
   }
 };
+
+const reduxStore = createStore (reducer, getData (), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+reduxStore.subscribe (() => console.dir (reduxStore.getState ()));
 
 class _Root extends React.Component {
   componentWillMount () {
@@ -60,7 +68,9 @@ class _Root extends React.Component {
     console.log (state);
     return (
       <main data-main-activity={mainActivityPath}>
-        <View state={state.select (mainActivityPath)} theme={Theme.create (currentTheme)}  />
+        <Provider store={reduxStore}>
+          <View state={state.select (mainActivityPath)} theme={Theme.create (currentTheme)}  />
+        </Provider>
       </main>
     );
   }

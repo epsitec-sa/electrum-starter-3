@@ -1,5 +1,8 @@
 'use strict';
 
+import getMessengerData from './data-messengers.js';
+import getTripData from './data-trips.js';
+
 function getMessengersContent () {
   return {
     jl:  ['k.pick', 'k.drop', 'l1.pick', 'l1.drop', 'm.pick', 'm.drop'],
@@ -71,14 +74,12 @@ function getGlueContent () {
   ];
 }
 
-function initializeData () {
-  window.document.dataMessengersContent = getMessengersContent ();
-  window.document.dataTripBoxContent    = getTripBoxContent ();
-  window.document.dataGlueContent       = getGlueContent ();
+export default function getData () {
+  return {
+    trips:             getTripData (),
+    messengers:        getMessengerData (),
+    messengersContent: getMessengersContent (),
+    tripBoxContent:    getTripBoxContent (),
+    glueContent:       getGlueContent (),
+  };
 }
-
-/******************************************************************************/
-
-module.exports = {
-  initializeData,
-};

@@ -14,26 +14,26 @@ export default class DispatchTrips extends React.Component {
     super (props);
   }
 
-  renderTripBox (selected, tripId) {
-    const ticketId = tripId + '.both';  // by example: 'd1.both'
-    const data = window.document.dataTrips[tripId];
-    const d = {
-      Trip:   data,
-      NoDrag: 'false'
-    };
-    return (
-      <Trip kind='trip-box' data={d} ticket-id={ticketId} trip-id={tripId}
-        urgency={data.Urgency} {...this.link ()} />
-    );
-  }
+  // renderTripBox (selected, tripId) {
+  //   const ticketId = tripId + '.both';  // by example: 'd1.both'
+  //   const data = window.document.dataTrips[tripId];
+  //   const d = {
+  //     Trip:   data,
+  //     NoDrag: 'false'
+  //   };
+  //   return (
+  //     <Trip kind='trip-box' data={d} ticket-id={ticketId} trip-id={tripId}
+  //       urgency={data.Urgency} {...this.link ()} />
+  //   );
+  // }
 
-  renderTripBoxes () {
-    const result = [];
-    for (var tripId of window.document.dataTripBoxContent) {
-      result.push (this.renderTripBox ('false', tripId));
-    }
-    return result;
-  }
+  // renderTripBoxes () {
+  //   const result = [];
+  //   for (var tripId of window.document.dataTripBoxContent) {
+  //     result.push (this.renderTripBox ('false', tripId));
+  //   }
+  //   return result;
+  // }
 
   render () {
     return (
@@ -55,7 +55,7 @@ export default class DispatchTrips extends React.Component {
           <Container kind='panes' {...this.link ()} >
             <DragController name='tickets' {...this.link ()} />
             <Container kind='column' drag-controller='tickets' {...this.link ()} >
-              {this.renderTripBoxes ()}
+              {/* this.renderTripBoxes () */}
             </Container>
           </Container>
         </Container>
