@@ -8,7 +8,7 @@ function getDescription (glyph) {
   } else if (glyph === 'bookmark-secondary') {
     return 'Téléphoner au client avant le passage.';
   } else if (glyph === 'warning') {
-    return 'Attention:\\nPaiement content exigé !';
+    return 'Attention:\\nPaiement comptant exigé !';
   } else if (glyph === 'euro') {
     return 'Attention:\\nPaiement en Euro exigé !';
   } else {
