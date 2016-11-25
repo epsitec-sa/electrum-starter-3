@@ -225,7 +225,7 @@ export default class AllInOne extends React.Component {
         <Container kind='task-bar' {...this.link ()} >
           <Button glyph='clock-o' text='Missions'
             kind='task-bar' badge-value='54' {...this.link ()} />
-          <Button glyph='inbox' text='Panier'
+          <Button glyph='inbox' text='Desk'
             kind='task-bar' badge-value='2' {...this.link ()} />
         </Container>
       );
