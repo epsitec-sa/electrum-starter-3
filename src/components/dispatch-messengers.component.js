@@ -74,11 +74,32 @@ export default class DispatchMessengers extends React.Component {
     return result;
   }
 
+  renderTrips (tripId) {
+    console.log (tripId);
+    const ticketId = tripId + '.both';  // by example: 'd1.both'
+    const data = this.data.trips[tripId];
+    const d = {
+      Trip:   data,
+      NoDrag: 'false'
+    };
+    return (
+      <Trip kind='trip-tickets' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
+    );
+  }
+
+  renderGlueTrips (tripIds) {
+    const result = [];
+    for (var tripId of tripIds) {
+      result.push (this.renderTrips (tripId));
+    }
+    return result;
+  }
+
   renderGlue (glue) {
     return (
       <TicketsGlue left={glue.left} top={glue.top} rotate={glue.rotate} title={glue.title}
         drag-source='desk' {...this.link ()} >
-        {this.renderTrips (glue.tripId)}
+        {this.renderGlueTrips (glue.tripIds)}
       </TicketsGlue>
     );
   }
@@ -89,22 +110,6 @@ export default class DispatchMessengers extends React.Component {
       result.push (this.renderGlue (glue));
     }
     return result;
-  }
-
-  renderTrips (tripId) {
-    if (tripId) {
-      const ticketId = tripId + '.both';  // by example: 'd1.both'
-      const data = this.data.trips[tripId];
-      const d = {
-        Trip:   data,
-        NoDrag: 'false'
-      };
-      return (
-        <Trip kind='trip-tickets' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
-      );
-    } else {
-      return null;
-    }
   }
 
   renderTrip (color, type, tripId, shortName) {
