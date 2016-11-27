@@ -15,7 +15,7 @@ export default class DispatchTrips extends React.Component {
     this.data = window.document.data;
   }
 
-  renderTripBox (selected, tripId) {
+  renderMission (selected, tripId) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
     const data = this.data.trips[tripId];
     const d = {
@@ -28,10 +28,10 @@ export default class DispatchTrips extends React.Component {
     );
   }
 
-  renderTripBoxes () {
+  renderMissions () {
     const result = [];
     for (var tripId of this.data.missions) {
-      result.push (this.renderTripBox ('false', tripId));
+      result.push (this.renderMission ('false', tripId));
     }
     return result;
   }
@@ -56,7 +56,7 @@ export default class DispatchTrips extends React.Component {
           <Container kind='panes' {...this.link ()} >
             <DragController name='tickets' {...this.link ()} />
             <Container kind='column' drag-controller='tickets' {...this.link ()} >
-              {this.renderTripBoxes ()}
+              {this.renderMissions ()}
             </Container>
           </Container>
         </Container>

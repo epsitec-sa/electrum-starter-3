@@ -53,7 +53,7 @@ export default class DispatchMessengers extends React.Component {
     }
   }
 
-  renderTripBox (selected, tripId) {
+  renderMission (selected, tripId) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
     const data = this.data.trips[tripId];
     const d = {
@@ -66,10 +66,10 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  renderTripBoxes () {
+  renderMissions () {
     const result = [];
     for (var tripId of this.data.missions) {
-      result.push (this.renderTripBox ('false', tripId));
+      result.push (this.renderMission ('false', tripId));
     }
     return result;
   }
@@ -77,13 +77,13 @@ export default class DispatchMessengers extends React.Component {
   renderGlue (glue) {
     return (
       <TicketsGlue left={glue.left} top={glue.top} rotate={glue.rotate} title={glue.title}
-        drag-source='trip-tickets' {...this.link ()} >
+        drag-source='desk' {...this.link ()} >
         {this.renderTrips (glue.tripId)}
       </TicketsGlue>
     );
   }
 
-  renderGlues () {
+  renderDesk () {
     const result = [];
     for (var glue of this.data.desk) {
       result.push (this.renderGlue (glue));
@@ -139,7 +139,7 @@ export default class DispatchMessengers extends React.Component {
     return (
       <Container kind='tickets-messenger' {...this.link ()} >
         {this.renderMessenger (shortName, messenger)}
-        <Container kind='tickets-trips' drag-controller='tickets' drag-source='trip-ticket' messenger={shortName}
+        <Container kind='tickets-trips' drag-controller='tickets' drag-source='dispatch' messenger={shortName}
           max-width='300px' {...this.link ()} >
           {this.renderTripsForMessenger (shortName)}
         </Container>
@@ -147,7 +147,7 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  renderMessengersAndTickets () {
+  renderDispatch () {
     const result = [];
     for (var [shortName, messenger] of Object.entries (this.data.messengers)) {
       result.push (this.renderMessengerAndTickets (shortName, messenger));
@@ -162,9 +162,9 @@ export default class DispatchMessengers extends React.Component {
         <DragController name='tickets' drag-handle='TripTicket' {...this.link ()} />
         <Splitter kind='horizontal' default-size='60%' {...this.link ()} >
           <Container kind='tickets-messengers' drag-controller='messengers' {...this.link ()} >
-            {this.renderMessengersAndTickets ()}
+            {this.renderDispatch ()}
           </Container>
-          <Splitter kind='vertical' default-size='0px' min-size='0px' {...this.link ()} >
+          <Splitter kind='vertical' default-size='750px' min-size='0px' {...this.link ()} >
             <Container kind='view-stretch' {...this.link ()} >
               <Container kind='pane-top' {...this.link ()} >
                 <TextFieldCombo hint-text='Date' combo-glyph='calendar'
@@ -178,13 +178,13 @@ export default class DispatchMessengers extends React.Component {
                   grow='2' combo-glyph='Search' {...this.link ()} />
               </Container>
               <Container kind='panes' {...this.link ()} >
-                <Container kind='column' drag-controller='tickets' drag-source='trip-box' {...this.link ()} >
-                  {this.renderTripBoxes ()}
+                <Container kind='column' drag-controller='tickets' drag-source='missions' {...this.link ()} >
+                  {this.renderMissions ()}
                 </Container>
               </Container>
             </Container>
-            <Container kind='tickets-basket' {...this.link ()} >
-              {this.renderGlues ()}
+            <Container kind='tickets-desk' {...this.link ()} >
+              {this.renderDesk ()}
             </Container>
           </Splitter>
         </Splitter>
