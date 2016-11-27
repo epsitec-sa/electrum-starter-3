@@ -34,12 +34,8 @@ function deleteMission (state, tripId) {
   return state;
 }
 
-function addDesk (state, tripId) {
-  for (var glue of state) {
-    if (glue.tripIds.length === 0) {
-      glue.tripIds.push (tripId);
-    }
-  }
+function addDesk (state, deskIndex, tripIndex, tripId) {
+  state[deskIndex].tripIds.splice (tripIndex, 0, tripId);
   return state;
 }
 
@@ -74,7 +70,7 @@ export default function Polypheme (state = {}, action = {}) {
       state.missions = deleteMission (state.missions, action.tripId);
       break;
     case 'ADD_DESK':
-      state.desk = addDesk (state.desk, action.tripId);
+      state.desk = addDesk (state.desk, action.deskIndex, action.tripIndex, action.tripId);
       break;
     case 'DELETE_DESK':
       state.desk = deleteDesk (state.desk, action.tripId);

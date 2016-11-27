@@ -100,10 +100,10 @@ export default class DispatchMessengers extends React.Component {
     return result;
   }
 
-  renderGlue (glue) {
+  renderGlue (glue, index) {
     return (
       <TicketsGlue left={glue.left} top={glue.top} rotate={glue.rotate} title={glue.title}
-        drag-source='desk' {...this.link ()} >
+        drag-source='desk' index={index} {...this.link ()} >
         {this.renderGlueTrips (glue.tripIds)}
       </TicketsGlue>
     );
@@ -111,8 +111,9 @@ export default class DispatchMessengers extends React.Component {
 
   renderDesk () {
     const result = [];
+    let index = 0;
     for (var glue of this.data.desk) {
-      result.push (this.renderGlue (glue));
+      result.push (this.renderGlue (glue, index++));
     }
     return result;
   }
