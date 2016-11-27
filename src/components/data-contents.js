@@ -5,7 +5,7 @@ import getTripData from './data-trips.js';
 
 function getDispatch () {
   return {
-    jl:  ['k.pick', 'k.drop', 'l1.pick', 'l1.drop', 'm.pick', 'm.drop'],
+    jl:  ['k.pick', 'k.drop', 'l1.drop', 'l1.pick', 'm.pick', 'm.drop'],
     san: ['n.pick', 'o.pick', 'n.drop', 'o.drop'],
     jp:  ['l2.pick', 'r.pick', 'p.pick', 'r.drop', 'q.pick', 'q.drop', 'l2.drop', 'p.drop'],
     cha: ['s1.pick', 's1.drop'],

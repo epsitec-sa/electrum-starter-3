@@ -31,7 +31,8 @@ export default class DispatchMessengers extends React.Component {
     this.data = window.document.data;
   }
 
-  renderMessenger (shortName, messenger) {
+  renderMessenger (shortName, messenger, index) {
+    messenger.index = index;
     return (
       <MessengerTicket Color={null} data={messenger} ticket-id={shortName} {...this.link ()} />
     );
@@ -45,12 +46,15 @@ export default class DispatchMessengers extends React.Component {
     }
   }
 
-  renderMission (selected, tripId) {
+  renderMission (selected, tripId, index) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
     const data = this.data.trips[tripId];
     const d = {
-      Trip:   data,
-      NoDrag: 'false'
+      Trip:     data,
+      NoDrag:   'false',
+      ticketId: ticketId,
+      tripId:   tripId,
+      index:    index,
     };
     return (
       <Trip kind='trip-box' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
@@ -59,18 +63,22 @@ export default class DispatchMessengers extends React.Component {
 
   renderMissions () {
     const result = [];
+    let index = 0;
     for (var tripId of this.data.missions) {
-      result.push (this.renderMission ('false', tripId));
+      result.push (this.renderMission ('false', tripId, index++));
     }
     return result;
   }
 
-  renderTrips (tripId) {
+  renderTrips (tripId, index) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
     const data = this.data.trips[tripId];
     const d = {
-      Trip:   data,
-      NoDrag: 'false'
+      Trip:     data,
+      NoDrag:   'false',
+      ticketId: ticketId,
+      tripId:   tripId,
+      index:    index,
     };
     return (
       <Trip kind='trip-tickets' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
@@ -79,13 +87,14 @@ export default class DispatchMessengers extends React.Component {
 
   renderGlueTrips (tripIds) {
     const result = [];
+    let index = 0;
     for (var tripId of tripIds) {
       if (tripId.endsWith ('.pick') || tripId.endsWith ('.drop')) {
         const type = tripId.substring (tripId.length - 4, tripId.length);  // by example 'drop'
         tripId = tripId.substring (0, tripId.length - 5);  // by example 'e'
-        result.push (this.renderTrip (null, type, tripId, null));
+        result.push (this.renderTrip (null, type, tripId, null, false, index++));
       } else {
-        result.push (this.renderTrips (tripId));
+        result.push (this.renderTrips (tripId, index++));
       }
     }
     return result;
@@ -108,38 +117,68 @@ export default class DispatchMessengers extends React.Component {
     return result;
   }
 
-  renderTrip (color, type, tripId, shortName) {
+  renderTrip (color, type, tripId, shortName, warning, index) {
     const ticketId = tripId + '.' + type;  // by example: 'd1.drop'
     const data = this.data.trips[tripId];
     tripId = this.getTripName (tripId);  // by example: 'd'
     const d = {
-      Color:  color,
-      Type:   type,
-      Trip:   data,
-      NoDrag: 'false',
+      Color:    color,
+      Type:     type,
+      Trip:     data,
+      NoDrag:   'false',
+      ticketId: ticketId,
+      tripId:   tripId,
+      index:    index,
+      warning:  warning,
     };
     return (
       <Trip kind='trip-ticket' data={d} ticket-id={ticketId} trip-id={tripId} messenger={shortName} {...this.link ()} />
     );
   }
 
+  getIndex (shortName, ticketId) {
+    const content = this.data.dispatch[shortName];
+    let index = 0;
+    for (var x of content) {
+      if (x === ticketId) {
+        return index;
+      }
+      index++;
+    }
+    return -1;
+  }
+
+  getWarning (shortName, tripId, type, index) {
+    if (type === 'pick') {
+      const i = this.getIndex (shortName, tripId + '.drop');
+      return index > i;  // true if pick is under drop
+    } else if (type === 'drop') {
+      const i = this.getIndex (shortName, tripId + '.pick');
+      return index < i;  // true if drop is over pick
+    } else {
+      return false;
+    }
+  }
+
   renderTripsForMessenger (shortName) {
     const result = [];
     const content = this.data.dispatch[shortName];
     if (content) {
+      let index = 0;
       for (var ticketId of content) {
         const type = ticketId.substring (ticketId.length - 4, ticketId.length);  // by exemple 'pick'
         const tripId = ticketId.substring (0, ticketId.length - 5);  // by example 'd1'
-        result.push (this.renderTrip (null, type, tripId, shortName));
+        const warning = this.getWarning (shortName, tripId, type, index);
+        result.push (this.renderTrip (null, type, tripId, shortName, warning, index++));
       }
     }
     return result;
   }
 
-  renderMessengerAndTickets (shortName, messenger) {
+  renderMessengerAndTickets (shortName, messenger, index) {
     return (
       <Container kind='tickets-messenger' {...this.link ()} >
-        {this.renderMessenger (shortName, messenger)}
+        {this.renderMessenger (shortName, messenger, index)}
         <Container kind='tickets-trips' drag-controller='tickets' drag-source='dispatch' messenger={shortName}
           max-width='300px' {...this.link ()} >
           {this.renderTripsForMessenger (shortName)}
@@ -150,8 +189,9 @@ export default class DispatchMessengers extends React.Component {
 
   renderDispatch () {
     const result = [];
+    let index = 0;
     for (var [shortName, messenger] of Object.entries (this.data.messengers)) {
-      result.push (this.renderMessengerAndTickets (shortName, messenger));
+      result.push (this.renderMessengerAndTickets (shortName, messenger, index++));
     }
     return result;
   }
