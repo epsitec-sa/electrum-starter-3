@@ -43,7 +43,7 @@ function getGlyphEntities (glyphs) {
   }
 }
 
-function getTrips () {
+export default function getData () {
   return {
     a: {
       Pick:
@@ -483,13 +483,3 @@ function getTrips () {
     },
   };
 }
-
-function initializeData () {
-  window.document.dataTrips = getTrips ();
-}
-
-/******************************************************************************/
-
-module.exports = {
-  initializeData,
-};

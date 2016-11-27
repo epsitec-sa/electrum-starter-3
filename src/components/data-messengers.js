@@ -12,7 +12,7 @@ function getGlyphEntitySolo (glyph) {
   }
 }
 
-function getMessengers () {
+export default function getData () {
   return {
     jl: {
       Photo:          getGlyphEntitySolo ('user'),
@@ -106,13 +106,3 @@ function getMessengers () {
     },
   };
 }
-
-function initializeData () {
-  window.document.dataMessengers = getMessengers ();
-}
-
-/******************************************************************************/
-
-module.exports = {
-  initializeData,
-};

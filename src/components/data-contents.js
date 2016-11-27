@@ -1,6 +1,9 @@
 'use strict';
 
-function getMessengersContent () {
+import getMessengerData from './data-messengers.js';
+import getTripData from './data-trips.js';
+
+function getDispatch () {
   return {
     jl:  ['k.pick', 'k.drop', 'l1.pick', 'l1.drop', 'm.pick', 'm.drop'],
     san: ['n.pick', 'o.pick', 'n.drop', 'o.drop'],
@@ -10,11 +13,11 @@ function getMessengersContent () {
   };
 }
 
-function getTripBoxContent () {
+function getMissions () {
   return ['a', 'b', 'c', 'd', 'e', 'f'];
 }
 
-function getGlueContent () {
+function getDesk () {
   return [
     {
       left:   '30px',
@@ -71,14 +74,12 @@ function getGlueContent () {
   ];
 }
 
-function initializeData () {
-  window.document.dataMessengersContent = getMessengersContent ();
-  window.document.dataTripBoxContent    = getTripBoxContent ();
-  window.document.dataGlueContent       = getGlueContent ();
+export default function getData () {
+  return {
+    trips:      getTripData (),
+    messengers: getMessengerData (),
+    dispatch:   getDispatch (),
+    missions:   getMissions (),
+    desk:       getDesk (),
+  };
 }
-
-/******************************************************************************/
-
-module.exports = {
-  initializeData,
-};

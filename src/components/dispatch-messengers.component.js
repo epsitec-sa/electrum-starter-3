@@ -27,15 +27,16 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
-    this.state = {
-      dataMessengers:        window.document.dataMessengers,
-      dataTrips:             window.document.dataTrips,
-      dataMessengersContent: window.document.dataMessengersContent,
-      dataTripBoxContent:    window.document.dataTripBoxContent,
-      dataGlueContent:       window.document.dataGlueContent,
-      regen:                 0,
-    };
-    window.document.dispatchMessengers = this;
+    // this.state = {
+    //   dataMessengers:        window.document.dataMessengers,
+    //   dataTrips:             window.document.dataTrips,
+    //   dataMessengersContent: window.document.dataMessengersContent,
+    //   dataTripBoxContent:    window.document.dataTripBoxContent,
+    //   dataGlueContent:       window.document.dataGlueContent,
+    //   regen:                 0,
+    // };
+    // window.document.dispatchMessengers = this;
+    this.data = window.document.data;
   }
 
   renderMessenger (shortName, messenger) {
@@ -54,7 +55,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderTripBox (selected, tripId) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
-    const data = this.state.dataTrips[tripId];
+    const data = this.data.trips[tripId];
     const d = {
       Trip:   data,
       NoDrag: 'false'
@@ -67,7 +68,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderTripBoxes () {
     const result = [];
-    for (var tripId of this.state.dataTripBoxContent) {
+    for (var tripId of this.data.missions) {
       result.push (this.renderTripBox ('false', tripId));
     }
     return result;
@@ -84,7 +85,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderGlues () {
     const result = [];
-    for (var glue of this.state.dataGlueContent) {
+    for (var glue of this.data.desk) {
       result.push (this.renderGlue (glue));
     }
     return result;
@@ -93,7 +94,7 @@ export default class DispatchMessengers extends React.Component {
   renderTrips (tripId) {
     if (tripId) {
       const ticketId = tripId + '.both';  // by example: 'd1.both'
-      const data = this.state.dataTrips[tripId];
+      const data = this.data.trips[tripId];
       const d = {
         Trip:   data,
         NoDrag: 'false'
@@ -108,7 +109,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderTrip (color, type, tripId, shortName) {
     const ticketId = tripId + '.' + type;  // by example: 'd1.drop'
-    const data = this.state.dataTrips[tripId];
+    const data = this.data.trips[tripId];
     tripId = this.getTripName (tripId);  // by example: 'd'
     const d = {
       Color:  color,
@@ -123,7 +124,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderTripsForMessenger (shortName) {
     const result = [];
-    const content = this.state.dataMessengersContent[shortName];
+    const content = this.data.dispatch[shortName];
     if (content) {
       for (var ticketId of content) {
         const type = ticketId.substring (ticketId.length - 4, ticketId.length);  // by exemple 'pick'
@@ -148,7 +149,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderMessengersAndTickets () {
     const result = [];
-    for (var [shortName, messenger] of Object.entries (this.state.dataMessengers)) {
+    for (var [shortName, messenger] of Object.entries (this.data.messengers)) {
       result.push (this.renderMessengerAndTickets (shortName, messenger));
     }
     return result;

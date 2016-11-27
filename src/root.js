@@ -1,8 +1,10 @@
 'use strict';
+
 import Electrum from 'electrum';
 import React from 'react';
 import {Theme} from 'electrum-theme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import getData from './components/data-contents.js';
 
 import * as Colors from 'material-ui/styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
@@ -30,6 +32,12 @@ const theme = {
 };
 
 class _Root extends React.Component {
+
+  constructor (props) {
+    super (props);
+    window.document.data = getData ();
+  }
+
   componentWillMount () {
     Electrum.bus.attach (this);
   }
