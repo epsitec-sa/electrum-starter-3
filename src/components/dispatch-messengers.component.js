@@ -27,16 +27,11 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
-    // this.state = {
-    //   dataMessengers:        window.document.dataMessengers,
-    //   dataTrips:             window.document.dataTrips,
-    //   dataMessengersContent: window.document.dataMessengersContent,
-    //   dataTripBoxContent:    window.document.dataTripBoxContent,
-    //   dataGlueContent:       window.document.dataGlueContent,
-    //   regen:                 0,
-    // };
-    // window.document.dispatchMessengers = this;
+    window.document.dispatch = this;
+    window.document.dispatchRegen = this.regen;
     this.data = window.document.data;
+    this.regen = 0;
+    this.lastRegen = 0;
   }
 
   renderMessenger (shortName, messenger) {
@@ -165,9 +160,16 @@ export default class DispatchMessengers extends React.Component {
     return result;
   }
 
+  mouseMove () {
+    if (this.lastRegen !== this.regen) {
+      this.lastRegen = this.regen;
+      this.forceUpdate ();
+    }
+  }
+
   render () {
     return (
-      <Container kind='tickets-root' {...this.link ()} >
+      <Container onMouseMove={() => this.mouseMove ()} kind='tickets-root' {...this.link ()} >
         <DragController name='messengers' drag-handle='MessengerTicket' direction='horizontal' {...this.link ()} />
         <DragController name='tickets' drag-handle='TripTicket' {...this.link ()} />
         <Splitter kind='horizontal' default-size='60%' {...this.link ()} >
