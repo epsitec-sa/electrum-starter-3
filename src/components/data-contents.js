@@ -38,14 +38,14 @@ function getDesk () {
       top:     '40px',
       rotate:  '2deg',
       title:   '#3',
-      tripIds: ['i', 'j'],
+      tripIds: ['i.pick', 'i.drop'],
     },
     {
       left:    '860px',
       top:     '60px',
       rotate:  '-5deg',
       title:   'Mardi',
-      tripIds: [],
+      tripIds: ['j'],
     },
     {
       left:    '1120px',

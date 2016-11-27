@@ -75,7 +75,6 @@ export default class DispatchMessengers extends React.Component {
   }
 
   renderTrips (tripId) {
-    console.log (tripId);
     const ticketId = tripId + '.both';  // by example: 'd1.both'
     const data = this.data.trips[tripId];
     const d = {
@@ -90,7 +89,13 @@ export default class DispatchMessengers extends React.Component {
   renderGlueTrips (tripIds) {
     const result = [];
     for (var tripId of tripIds) {
-      result.push (this.renderTrips (tripId));
+      if (tripId.endsWith ('.pick') || tripId.endsWith ('.drop')) {
+        const type = tripId.substring (tripId.length - 4, tripId.length);  // by example 'drop'
+        tripId = tripId.substring (0, tripId.length - 5);  // by example 'e'
+        result.push (this.renderTrip (null, type, tripId, null));
+      } else {
+        result.push (this.renderTrips (tripId));
+      }
     }
     return result;
   }
