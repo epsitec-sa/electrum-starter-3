@@ -41,15 +41,15 @@ function deleteMission (state, tripId) {
 }
 
 function addDesk (state, deskIndex, tripIndex, tripId) {
-  state[deskIndex].tripIds.splice (tripIndex, 0, tripId);
+  state[deskIndex].TripIds.splice (tripIndex, 0, tripId);
   return state;
 }
 
 function deleteDesk (state, tripId) {
   for (var glue of state) {
-    const i = glue.tripIds.indexOf (tripId);
+    const i = glue.TripIds.indexOf (tripId);
     if (i > -1) {
-      glue.tripIds.splice (i, 1);
+      glue.TripIds.splice (i, 1);
     }
   }
   return state;

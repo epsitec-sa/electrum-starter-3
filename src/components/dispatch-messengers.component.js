@@ -103,9 +103,9 @@ export default class DispatchMessengers extends React.Component {
 
   renderGlue (glue, index) {
     return (
-      <TicketsGlue left={glue.left} top={glue.top} rotate={glue.rotate} title={glue.title}
+      <TicketsGlue left={glue.Left} top={glue.Top} rotate={glue.Rotate} title={glue.Title}
         drag-source='desk' index={index} {...this.link ()} >
-        {this.renderGlueTrips (glue.tripIds)}
+        {this.renderGlueTrips (glue.TripIds)}
       </TicketsGlue>
     );
   }
