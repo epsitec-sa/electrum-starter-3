@@ -154,10 +154,10 @@ export default class DispatchMessengers extends React.Component {
   getWarning (shortName, tripId, type, index) {
     if (type === 'pick') {
       const i = this.getIndex (shortName, tripId + '.drop');
-      return index > i;  // true if pick is under drop
+      return i !== -1 && index > i;  // true if pick is under drop
     } else if (type === 'drop') {
       const i = this.getIndex (shortName, tripId + '.pick');
-      return index < i;  // true if drop is over pick
+      return i !== -1 && index < i;  // true if drop is over pick
     } else {
       return false;
     }
