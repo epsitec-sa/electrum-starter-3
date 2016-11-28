@@ -10,6 +10,12 @@ function deleteTrip (state, tripId) {
   return state;
 }
 
+function replaceDispatch (state, messenger, index, ticketId) {
+  const x = state[messenger];
+  x[index] = ticketId;
+  return state;
+}
+
 function addDispatch (state, messenger, index, ticketId) {
   const x = state[messenger];
   x.splice (index, 0, ticketId);
@@ -56,6 +62,9 @@ export default function Polypheme (state = {}, action = {}) {
       break;
     case 'DELETE_TRIP':
       state.trips = deleteTrip (state.trips, action.tripId);
+      break;
+    case 'REPLACE_DISPATCH':
+      state.dispatch = replaceDispatch (state.dispatch, action.messenger, action.index, action.ticketId);
       break;
     case 'ADD_DISPATCH':
       state.dispatch = addDispatch (state.dispatch, action.messenger, action.index, action.ticketId);
