@@ -57,7 +57,7 @@ export default class DispatchMessengers extends React.Component {
       index:    index,
     };
     return (
-      <Trip kind='trip-box' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
+      <Trip kind='trip-box' data={d} {...this.link ()} />
     );
   }
 
@@ -81,7 +81,7 @@ export default class DispatchMessengers extends React.Component {
       index:    index,
     };
     return (
-      <Trip kind='trip-tickets' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
+      <Trip kind='trip-tickets' data={d} {...this.link ()} />
     );
   }
 
@@ -133,7 +133,7 @@ export default class DispatchMessengers extends React.Component {
       warning:  warning,
     };
     return (
-      <Trip kind='trip-ticket' data={d} ticket-id={ticketId} trip-id={tripId} messenger={shortName} {...this.link ()} />
+      <Trip kind='trip-ticket' data={d} {...this.link ()} />
     );
   }
 
