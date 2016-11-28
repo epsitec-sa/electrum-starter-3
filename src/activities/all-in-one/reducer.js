@@ -29,8 +29,8 @@ function deleteDispatch (state, messenger, ticketId) {
   return state;
 }
 
-function addMission (state, tripId) {
-  state.push (tripId);
+function addMission (state, index, tripId) {
+  state.splice (index, 0, tripId);
   return state;
 }
 
@@ -73,7 +73,7 @@ export default function Polypheme (state = {}, action = {}) {
       state.dispatch = deleteDispatch (state.dispatch, action.messenger, action.ticketId);
       break;
     case 'ADD_MISSION':
-      state.missions = addMission (state.missions, action.tripId);
+      state.missions = addMission (state.missions, action.index, action.tripId);
       break;
     case 'DELETE_MISSION':
       state.missions = deleteMission (state.missions, action.tripId);
