@@ -32,9 +32,10 @@ export default class DispatchMessengers extends React.Component {
   }
 
   renderMessenger (shortName, messenger, index) {
-    messenger.index = index;
+    messenger.ticketId = shortName;
+    messenger.index    = index;
     return (
-      <MessengerTicket Color={null} data={messenger} ticket-id={shortName} {...this.link ()} />
+      <MessengerTicket data={messenger} {...this.link ()} />
     );
   }
 
