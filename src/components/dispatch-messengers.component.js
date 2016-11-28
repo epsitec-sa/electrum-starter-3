@@ -123,14 +123,15 @@ export default class DispatchMessengers extends React.Component {
     const data = this.data.trips[tripId];
     tripId = this.getTripName (tripId);  // by example: 'd'
     const d = {
-      Color:    color,
-      Type:     type,
-      Trip:     data,
-      NoDrag:   'false',
-      ticketId: ticketId,
-      tripId:   tripId,
-      index:    index,
-      warning:  warning,
+      Color:      color,
+      Type:       type,
+      Trip:       data,
+      NoDrag:     'false',
+      ticketId:   ticketId,
+      tripId:     tripId,
+      messenger:  shortName,
+      index:      index,
+      warning:    warning,
     };
     return (
       <Trip kind='trip-ticket' data={d} {...this.link ()} />
