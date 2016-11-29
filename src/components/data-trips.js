@@ -263,6 +263,7 @@ export default function getData () {
       Product: 'Dring-dring',
     },
     l1: {
+      Link: 'l',
       Pick:
       {
         Time: '14:15',
@@ -283,6 +284,7 @@ export default function getData () {
       Product: 'Dring-dring',
     },
     l2: {
+      Link: 'l',
       Pick:
       {
         Time: '14:35',
@@ -421,6 +423,7 @@ export default function getData () {
       Product: 'Dring-dring',
     },
     s1: {
+      Link: 's',
       Pick:
       {
         Time: '16:35',
@@ -441,6 +444,7 @@ export default function getData () {
       Product: 'Standard',
     },
     s2: {
+      Link: 's',
       Pick:
       {
         Time: '17:25',

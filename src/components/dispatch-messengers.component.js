@@ -39,14 +39,6 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  getTripName (tripId) {
-    if (tripId.length === 2) {
-      return tripId.substring (0, 1);
-    } else {
-      return tripId;
-    }
-  }
-
   renderMission (selected, tripId, index) {
     const ticketId = tripId + '.both';  // by example: 'd1.both'
     const data = this.data.trips[tripId];
@@ -120,9 +112,8 @@ export default class DispatchMessengers extends React.Component {
   }
 
   renderTrip (color, type, tripId, shortName, warning, index) {
-    const ticketId = tripId + '.' + type;  // by example: 'd1.drop'
+    const ticketId = tripId + '.' + type;  // by example: 'd.drop'
     const data = this.data.trips[tripId];
-    tripId = this.getTripName (tripId);  // by example: 'd'
     const d = {
       Color:      color,
       Type:       type,

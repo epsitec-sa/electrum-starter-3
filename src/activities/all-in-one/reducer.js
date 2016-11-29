@@ -25,7 +25,9 @@ function addDispatch (state, messenger, index, ticketId) {
 function deleteDispatch (state, messenger, ticketId) {
   const x = state[messenger];
   const i = x.indexOf (ticketId);
-  x.splice (i, 1);
+  if (i !== -1) {
+    x.splice (i, 1);
+  }
   return state;
 }
 
@@ -36,7 +38,14 @@ function addMission (state, index, tripId) {
 
 function deleteMission (state, tripId) {
   const i = state.indexOf (tripId);
-  state.splice (i, 1);
+  if (i !== -1) {
+    state.splice (i, 1);
+  }
+  return state;
+}
+
+function replaceDesk (state, deskIndex, tripIndex, tripOrTicketId) {
+  state[deskIndex].TripIds[tripIndex] = tripOrTicketId;
   return state;
 }
 
@@ -46,10 +55,10 @@ function addDesk (state, deskIndex, tripIndex, tripOrTicketId) {
 }
 
 function deleteDesk (state, tripOrTicketId) {
-  for (var glue of state) {
-    const i = glue.TripIds.indexOf (tripOrTicketId);
-    if (i > -1) {
-      glue.TripIds.splice (i, 1);
+  for (var tray of state) {
+    const i = tray.TripIds.indexOf (tripOrTicketId);
+    if (i !== -1) {
+      tray.TripIds.splice (i, 1);
     }
   }
   return state;
@@ -77,6 +86,9 @@ export default function Polypheme (state = {}, action = {}) {
       break;
     case 'DELETE_MISSION':
       state.missions = deleteMission (state.missions, action.tripId);
+      break;
+    case 'REPLACE_DESK':
+      state.desk = replaceDesk (state.desk, action.deskIndex, action.tripIndex, action.tripOrTicketId);
       break;
     case 'ADD_DESK':
       state.desk = addDesk (state.desk, action.deskIndex, action.tripIndex, action.tripOrTicketId);
