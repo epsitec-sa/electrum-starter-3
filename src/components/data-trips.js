@@ -48,13 +48,13 @@ export default function getData () {
     a: {
       Pick:
       {
-        Time: '10.05',
+        PlanedTime: '2016-11-30T10.05:03.9052723+01:00',
         ShortDescription: 'Mecano SA',
         LongDescription: 'Mecano SA\\nAv. des Alpes 5\\n1023 Crissier',
       },
       Drop:
       {
-        Time: '11:15',
+        PlanedTime: '2016-11-30T11:15:03.9052723+01:00',
         ShortDescription: 'Fiduciaire Kdo',
         LongDescription: 'Fiduciaire Kdo\\nMadame Valentia Markez\\nEn Budron 5b\\n1052 Le Mont-sur-Lausanne',
       },
@@ -67,13 +67,13 @@ export default function getData () {
     b: {
       Pick:
       {
-        Time: '10.45',
+        PlanedTime: '2016-11-30T10.45:03.9052723+01:00',
         ShortDescription: 'Migros Pont-Neuf',
         LongDescription: 'Migros SA\\nRue du Pont Neuf 26\\n1009 Prilly',
       },
       Drop:
       {
-        Time: '13:30',
+        PlanedTime: '2016-11-30T13:30:03.9052723+01:00',
         ShortDescription: 'Mercier P.',
         LongDescription: 'Peter Mercier',
         Glyphs: getGlyphEntities (['warning']),
@@ -87,13 +87,13 @@ export default function getData () {
     c: {
       Pick:
       {
-        Time: '11:00',
+        PlanedTime: '2016-11-30T11:00:03.9052723+01:00',
         ShortDescription: 'Coop St. Laurent',
         LongDescription: 'Coop\\nPlace St. Laurent 12\\n1004 Lausanne',
       },
       Drop:
       {
-        Time: '14:00',
+        PlanedTime: '2016-11-30T14:00:03.9052723+01:00',
         ShortDescription: 'Dupond J.',
         LongDescription: 'Juliette Dupond',
         Glyphs: getGlyphEntities (['bookmark-base']),
@@ -107,14 +107,14 @@ export default function getData () {
     d: {
       Pick:
       {
-        Time: '11:15',
+        PlanedTime: '2016-11-30T11:15:03.9052723+01:00',
         ShortDescription: 'Tagada AG',
         LongDescription: 'Tagada AG\\nRue de Sans Unique 18\\n1000 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary']),
       },
       Drop:
       {
-        Time: '16:00',
+        PlanedTime: '2016-11-30T16:00:03.9052723+01:00',
         ShortDescription: 'Micro SA',
         LongDescription: 'Micro SA\\nAv. Dufour 4\\n1010 Renens',
       },
@@ -128,13 +128,13 @@ export default function getData () {
     e: {
       Pick:
       {
-        Time: '11:20',
+        PlanedTime: '2016-11-30T11:20:03.9052723+01:00',
         ShortDescription: 'Migros Pont-Neuf',
         LongDescription: 'Migros SA\\nRue du Pont Neuf 26\\n1009 Prilly',
       },
       Drop:
       {
-        Time: '13:00',
+        PlanedTime: '2016-11-30T13:00:03.9052723+01:00',
         ShortDescription: 'Durand W.',
         LongDescription: 'Walter Durand\\n1008 Prilly',
       },
@@ -148,13 +148,13 @@ export default function getData () {
     f: {
       Pick:
       {
-        Time: '11:40',
+        PlanedTime: '2016-11-30T11:40:03.9052723+01:00',
         ShortDescription: 'Me Blatide & Associés',
         LongDescription: 'Me Blatide & Associés\\nEtude de Notaires\\nRue Centrale 72\\n1004 Lausanne',
       },
       Drop:
       {
-        Time: '15:00',
+        PlanedTime: '2016-11-30T15:00:03.9052723+01:00',
         ShortDescription: 'Fiduciaire du Léman',
         LongDescription: 'Fiduciaire du Léman\\nAv. des Bains 12\\n1002 Lausanne',
       },
@@ -166,14 +166,14 @@ export default function getData () {
     g: {
       Pick:
       {
-        Time: '11:45',
+        PlanedTime: '2016-11-30T11:45:03.9052723+01:00',
         ShortDescription: 'Coop St. Laurent',
         LongDescription: 'Coop\\nPlace St. Laurent 12\\n1004 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-primary']),
       },
       Drop:
       {
-        Time: '13:30',
+        PlanedTime: '2016-11-30T13:30:03.9052723+01:00',
         ShortDescription: 'Arnaud K.',
         LongDescription: 'Kaspar Arnaud\\n1032 Crissier',
         Glyphs: getGlyphEntities (['bookmark-secondary']),
@@ -187,13 +187,13 @@ export default function getData () {
     h: {
       Pick:
       {
-        Time: '13:30',
+        PlanedTime: '2016-11-30T13:30:03.9052723+01:00',
         ShortDescription: 'Fiduciaire du Léman',
         LongDescription: 'Fiduciaire du Léman\\nAv. des Bains 12\\n1002 Lausanne',
       },
       Drop:
       {
-        Time: '14:15',
+        PlanedTime: '2016-11-30T14:15:03.9052723+01:00',
         ShortDescription: 'Me Blatide',
         LongDescription: 'Me Blatide\\nEn Buchillon 50\\n1020 Echandens',
       },
@@ -205,13 +205,13 @@ export default function getData () {
     i: {
       Pick:
       {
-        Time: '13:30',
+        PlanedTime: '2016-11-30T13:30:03.9052723+01:00',
         ShortDescription: 'Jolibourg SA',
         LongDescription: 'Jolibourg SA\\nMonsieur Jules Krapulot\\nPlace du Château 61\\n1004 Lausanne',
       },
       Drop:
       {
-        Time: '14:25',
+        PlanedTime: '2016-11-30T14:25:03.9052723+01:00',
         ShortDescription: 'Aux belles fleurs du Rivage',
         LongDescription: 'Aux belles fleurs du Rivage\\nQuai Perdonnet 33\\n1001 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-base', 'bookmark-primary']),
@@ -225,14 +225,14 @@ export default function getData () {
     j: {
       Pick:
       {
-        Time: '13:40',
+        PlanedTime: '2016-11-30T13:40:03.9052723+01:00',
         ShortDescription: 'Kalindo SA',
         LongDescription: 'Kalindo SA\\n1400 Yverdon-les-Bains',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary']),
       },
       Drop:
       {
-        Time: '16:05',
+        PlanedTime: '2016-11-30T16:05:03.9052723+01:00',
         ShortDescription: 'Verra G.',
         LongDescription: 'Germaine Verra\\nAv. Fauchère 2\\n1092 Le Mont-sur-Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-base', 'bookmark-primary']),
@@ -245,14 +245,14 @@ export default function getData () {
     k: {
       Pick:
       {
-        Time: '13:55',
+        PlanedTime: '2016-11-30T13:55:03.9052723+01:00',
         ShortDescription: 'Migros La Sallaz',
         LongDescription: 'Migros\\nLa Sallaz 12b\\n1018 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary']),
       },
       Drop:
       {
-        Time: '14:20',
+        PlanedTime: '2016-11-30T14:20:03.9052723+01:00',
         ShortDescription: 'Henry P.',
         LongDescription: 'Paul Henry\\nClosalet 12b\\n1004 Lausanne',
       },
@@ -266,13 +266,13 @@ export default function getData () {
       Link: 'l',
       Pick:
       {
-        Time: '14:15',
+        PlanedTime: '2016-11-30T14:15:03.9052723+01:00',
         ShortDescription: 'Migros La Sallaz',
         LongDescription: 'Migros\\nLa Sallaz 12b\\n1018 Lausanne',
       },
       Drop:
       {
-        Time: '14:35',
+        PlanedTime: '2016-11-30T14:35:03.9052723+01:00',
         ShortDescription: 'Gare Lausanne',
         LongDescription: 'Gare CFF\\nBox Quai 8\\nAv. de la Gare 1\\n1003 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary', 'warning']),
@@ -287,7 +287,7 @@ export default function getData () {
       Link: 'l',
       Pick:
       {
-        Time: '14:35',
+        PlanedTime: '2016-11-30T14:35:03.9052723+01:00',
         ShortDescription: 'Gare Lausanne',
         LongDescription: 'Gare CFF\\nBox Quai 8\\nAv. de la Gare 1\\n1003 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-secondary', 'bookmark-primary', 'warning']),
@@ -295,7 +295,7 @@ export default function getData () {
       },
       Drop:
       {
-        Time: '17:00',
+        PlanedTime: '2016-11-30T17:00:03.9052723+01:00',
         ShortDescription: 'Schmidt A.',
         LongDescription: 'André Schmidt\\nMartinet 14\\n1002 Lausanne',
       },
@@ -307,14 +307,14 @@ export default function getData () {
     m: {
       Pick:
       {
-        Time: '15:00',
+        PlanedTime: '2016-11-30T15:00:03.9052723+01:00',
         ShortDescription: 'Aux belles fleurs',
         LongDescription: 'Aux belles fleurs\\nPlace de la Pallud\\n1004 Lausanne',
         Glyphs: getGlyphEntities (['warning']),
       },
       Drop:
       {
-        Time: '16:10',
+        PlanedTime: '2016-11-30T16:10:03.9052723+01:00',
         ShortDescription: 'Ducommun S.',
         LongDescription: 'Sandra Ducommun\\nLes Faverges 2\\n1003 Lausanne',
       },
@@ -326,13 +326,13 @@ export default function getData () {
     n: {
       Pick:
       {
-        Time: '15:45',
+        PlanedTime: '2016-11-30T15:45:03.9052723+01:00',
         ShortDescription: 'Fiduciaire Blamond',
         LongDescription: 'Fiduciaire Blamond\\n1001 Lausanne',
       },
       Drop:
       {
-        Time: '16:00',
+        PlanedTime: '2016-11-30T16:00:03.9052723+01:00',
         ShortDescription: 'Consulat Belge',
         LongDescription: 'Consulat Belge\\nJohn van Dieperink\\nAv. des Bains 102\\n1000 Lausanne\\nCode #30672',
       },
@@ -344,13 +344,13 @@ export default function getData () {
     o: {
       Pick:
       {
-        Time: '16:10',
+        PlanedTime: '2016-11-30T16:10:03.9052723+01:00',
         ShortDescription: 'Vermont & Frères',
         LongDescription: 'Vermont & Frères\\nRue Centrale3\\n1004 Lausanne',
       },
       Drop:
       {
-        Time: '17:00',
+        PlanedTime: '2016-11-30T17:00:03.9052723+01:00',
         ShortDescription: 'Mecano SA',
         LongDescription: 'Mecano SA\\nAv. des Alpes 5\\n1023 Crissier',
         Glyphs: getGlyphEntities (['bookmark-primary']),
@@ -365,13 +365,13 @@ export default function getData () {
     p: {
       Pick:
       {
-        Time: '16:15',
+        PlanedTime: '2016-11-30T16:15:03.9052723+01:00',
         ShortDescription: 'Blibli SA',
         LongDescription: 'Blibli SA\\nAv. Victor Ruffy\\n1008 Prilly',
       },
       Drop:
       {
-        Time: '17:15',
+        PlanedTime: '2016-11-30T17:15:03.9052723+01:00',
         ShortDescription: 'Librairie Frankin',
         LongDescription: 'Librairie Frankin\\nPlace du Marché\\n1008 Jouxtens',
         Glyphs: getGlyphEntities (['bookmark-base']),
@@ -385,13 +385,13 @@ export default function getData () {
     q: {
       Pick:
       {
-        Time: '16:25',
+        PlanedTime: '2016-11-30T16:25:03.9052723+01:00',
         ShortDescription: 'Blibli SA',
         LongDescription: 'Blibli SA\\nAv. Victor Ruffy\\n1008 Prilly',
       },
       Drop:
       {
-        Time: '17:00',
+        PlanedTime: '2016-11-30T17:00:03.9052723+01:00',
         ShortDescription: 'Librairie Mercier',
         LongDescription: 'Librairie Mercier\\nAv. César Roux\\n1004 Lausanne',
       },
@@ -405,14 +405,14 @@ export default function getData () {
     r: {
       Pick:
       {
-        Time: '16:30',
+        PlanedTime: '2016-11-30T16:30:03.9052723+01:00',
         ShortDescription: 'Coop St. Laurent',
         LongDescription: 'Coop\\nPlace St. Laurent 12\\n1004 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-primary', 'bookmark-base']),
       },
       Drop:
       {
-        Time: '17:15',
+        PlanedTime: '2016-11-30T17:15:03.9052723+01:00',
         ShortDescription: 'Coppet F.',
         LongDescription: 'Françoise Coppet\\nCh. de Buissons 45\\n1009 Echandens',
       },
@@ -426,13 +426,13 @@ export default function getData () {
       Link: 's',
       Pick:
       {
-        Time: '16:35',
+        PlanedTime: '2016-11-30T16:35:03.9052723+01:00',
         ShortDescription: 'Me Georges-André',
         LongDescription: 'Etude Me Georges-André & Fils & Co & Cie\\nAv. du Château 31a\\n1008 Jouxtens',
       },
       Drop:
       {
-        Time: '17:25',
+        PlanedTime: '2016-11-30T17:25:03.9052723+01:00',
         ShortDescription: 'Gare Lausanne',
         LongDescription: 'Gare CFF\\nBox Quai 8\\nAv. de la Gare 1\\n1003 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-base']),
@@ -447,7 +447,7 @@ export default function getData () {
       Link: 's',
       Pick:
       {
-        Time: '17:25',
+        PlanedTime: '2016-11-30T17:25:03.9052723+01:00',
         ShortDescription: 'Gare Lausanne',
         LongDescription: 'Gare CFF\\nBox Quai 8\\nAv. de la Gare 1\\n1003 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-base']),
@@ -455,7 +455,7 @@ export default function getData () {
       },
       Drop:
       {
-        Time: '17:45',
+        PlanedTime: '2016-11-30T17:45:03.9052723+01:00',
         ShortDescription: 'Mecano SA',
         LongDescription: 'Mecano SA\\nAv. des Alpes 5\\n1023 Crissier',
       },
@@ -468,14 +468,14 @@ export default function getData () {
     t: {
       Pick:
       {
-        Time: '16:35',
+        PlanedTime: '2016-11-30T16:35:03.9052723+01:00',
         ShortDescription: 'Librairie Bédé',
         LongDescription: 'Librairie Bédé\\nMarc Audiard\\nFlon 132\\n1002 Lausanne',
         Glyphs: getGlyphEntities (['bookmark-base', 'bookmark-primary', 'bookmark-secondary']),
       },
       Drop:
       {
-        Time: '17:10',
+        PlanedTime: '2016-11-30T17:10:03.9052723+01:00',
         ShortDescription: 'Blibli SA',
         LongDescription: 'Blibli SA\\nAv. Victor Ruffy\\n1008 Prilly',
         Glyphs: getGlyphEntities (['warning']),
