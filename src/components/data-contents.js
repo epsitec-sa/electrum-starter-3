@@ -2,6 +2,7 @@
 
 import getMessengerData from './data-messengers.js';
 import getTripData from './data-trips.js';
+import getDataDispath from '../activities/all-in-one/data-dispatch.js';
 
 function getDispatch () {
   return {
@@ -85,5 +86,6 @@ export default function getData () {
     dispatch:   getDispatch (),
     missions:   getMissions (),
     desk:       getDesk (),
+    new:        getDataDispath (),
   };
 }
