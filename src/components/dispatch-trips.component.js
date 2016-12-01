@@ -12,29 +12,19 @@ export default class DispatchTrips extends React.Component {
 
   constructor (props) {
     super (props);
-    this.data = window.document.data;
+    this.data = window.document.data.new.TicketsToDispatch;
   }
 
-  renderMission (selected, tripId, index) {
-    const ticketId = tripId + '.both';  // by example: 'd1.both'
-    const data = this.data.trips[tripId];
-    const d = {
-      Trip:     data,
-      NoDrag:   'false',
-      ticketId: ticketId,
-      tripId:   tripId,
-      index:    index,
-    };
+  renderTicket (ticket) {
     return (
-      <Trip kind='trip-box' data={d} ticket-id={ticketId} trip-id={tripId} {...this.link ()} />
+      <Trip kind='trip-box' data={ticket} {...this.link ()} />
     );
   }
 
-  renderMissions () {
+  renderTickets (tickets) {
     const result = [];
-    let index = 0;
-    for (var tripId of this.data.missions) {
-      result.push (this.renderMission ('false', tripId, index++));
+    for (var ticket of tickets) {
+      result.push (this.renderTicket (ticket));
     }
     return result;
   }
@@ -59,7 +49,7 @@ export default class DispatchTrips extends React.Component {
           <Container kind='panes' {...this.link ()} >
             <DragController name='tickets' {...this.link ()} />
             <Container kind='column' drag-controller='tickets' {...this.link ()} >
-              {this.renderMissions ()}
+              {this.renderTickets (this.data.Tickets)}
             </Container>
           </Container>
         </Container>
