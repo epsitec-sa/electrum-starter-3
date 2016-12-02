@@ -71,30 +71,6 @@ export default class DispatchMessengers extends React.Component {
     return result;
   }
 
-  // getIndex (shortName, ticketId) {
-  //   const content = this.data.dispatch[shortName];
-  //   let index = 0;
-  //   for (var x of content) {
-  //     if (x === ticketId) {
-  //       return index;
-  //     }
-  //     index++;
-  //   }
-  //   return -1;
-  // }
-
-  // getWarning (shortName, tripId, type, index) {
-  //   if (type === 'pick') {
-  //     const i = this.getIndex (shortName, tripId + '.drop');
-  //     return i !== -1 && index > i;  // true if pick is under drop
-  //   } else if (type === 'drop') {
-  //     const i = this.getIndex (shortName, tripId + '.pick');
-  //     return i !== -1 && index < i;  // true if drop is over pick
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
   renderTickets (tickets, kind) {
     const result = [];
     for (var ticket of tickets) {

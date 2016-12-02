@@ -33,10 +33,6 @@ function deleteTicket (tickets, ticket) {
   });
 }
 
-function getTicket (tickets, order) {
-  return tickets[order];
-}
-
 function getTicketOrder (tickets, id) {
   var order = 0;
   for (var ticket of tickets) {
@@ -61,6 +57,29 @@ function getToOrder (tickets, target, sibling, fromOrder) {
   return toOrder;
 }
 
+function getTicketsFromMissionId (tickets, missionId) {
+  const result = [];
+  for (var ticket of tickets) {
+    if (ticket.Trip.MissionId === missionId) {
+      result.push (ticket);
+    }
+  }
+  return result;
+}
+
+function checkOrders (state, messengerId) {
+  const tickets = getTicketsForMessenger (state, messengerId);
+  for (var ticket of tickets) {
+    const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
+    if (same.length === 2 && same[0].Type === 'drop' && same[1].Type === 'pick') {
+      same[0].Warning = 'reverse-pick-drop';
+      same[1].Warning = 'reverse-pick-drop';
+    } else {
+      ticket.Warning = '';
+    }
+  }
+}
+
 function changeDispatchToDispatch (state, element, target, source, sibling) {
   const fromId          = element.dataset.id;
   const fromMessengerId = element.dataset.ownerId;
@@ -69,18 +88,21 @@ function changeDispatchToDispatch (state, element, target, source, sibling) {
     const tickets = getTicketsForMessenger (state, fromMessengerId);
     const fromOrder = getTicketOrder (tickets, fromId);
     const toOrder = getToOrder (tickets, target, sibling, fromOrder);
-    const ticket = getTicket (tickets, fromOrder);
+    const ticket = tickets[fromOrder];
     deleteTicket (tickets, ticket);
     addTicket (tickets, toOrder, ticket);
+    checkOrders (state, fromMessengerId);
   } else {  // from a messenger to another ?
     const fromTickets = getTicketsForMessenger (state, fromMessengerId);
     const toTickets = getTicketsForMessenger (state, toMessengerId);
     const fromOrder = getTicketOrder (fromTickets, fromId);
     const toOrder = getToOrder (toTickets, target, sibling);
-    const ticket = getTicket (fromTickets, fromOrder);
+    const ticket = fromTickets[fromOrder];
     deleteTicket (fromTickets, ticket);
     ticket.OwnerId = toMessengerId;
     addTicket (toTickets, toOrder, ticket);
+    checkOrders (state, fromMessengerId);
+    checkOrders (state, toMessengerId);
   }
 }
 
