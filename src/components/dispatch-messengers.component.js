@@ -37,59 +37,37 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  renderTrips (tripId, index) {
-    const ticketId = tripId + '.both';  // by example: 'd1.both'
-    const data = this.data.trips[tripId];
-    const d = {
-      Trip:     data,
-      NoDrag:   'false',
-      ticketId: ticketId,
-      tripId:   tripId,
-      index:    index,
-    };
+  renderTrip (ticket) {
     return (
-      <Trip kind='trip-tickets' data={d} {...this.link ()} />
+      <Trip kind='trip-tickets' data={ticket} {...this.link ()} />
     );
   }
 
-  renderGlueTrips (tripIds) {
+  renderTrayTickets (tickets) {
     const result = [];
-    let index = 0;
-    for (var tripId of tripIds) {
-      if (tripId.endsWith ('.pick') || tripId.endsWith ('.drop')) {
-        const type = tripId.substring (tripId.length - 4, tripId.length);  // by example 'drop'
-        tripId = tripId.substring (0, tripId.length - 5);  // by example 'e'
-        result.push (this.renderTrip (null, type, tripId, null, false, index++));
-      } else {
-        result.push (this.renderTrips (tripId, index++));
-      }
+    for (var ticket of tickets) {
+      result.push (this.renderTrip (ticket));
     }
     return result;
   }
 
-  renderGlue (glue, index) {
+  renderTray (tray) {
+    const x = tray.Position.split (',')[0];
+    const y = tray.Position.split (',')[1];
     return (
-      <TicketsGlue left={glue.Left} top={glue.Top} rotate={glue.Rotate} title={glue.Title}
-        drag-source='desk' index={index} {...this.link ()} >
-        {this.renderGlueTrips (glue.TripIds)}
+      <TicketsGlue left={x} top={y} rotate={tray.Rotation} title={tray.Name}
+        drag-source='desk' {...this.link ()} >
+        {this.renderTrayTickets (tray.Tickets)}
       </TicketsGlue>
     );
   }
 
-  renderDesk () {
-    return null;  // ???
+  renderDesk (ticketsTrays) {
     const result = [];
-    let index = 0;
-    for (var glue of this.data.desk) {
-      result.push (this.renderGlue (glue, index++));
+    for (var tray of ticketsTrays) {
+      result.push (this.renderTray (tray));
     }
     return result;
-  }
-
-  renderTrip (ticket) {
-    return (
-      <Trip kind='trip-box' data={ticket} {...this.link ()} />
-    );
   }
 
   getIndex (shortName, ticketId) {
@@ -185,7 +163,7 @@ export default class DispatchMessengers extends React.Component {
               </Container>
             </Container>
             <Container kind='tickets-desk' {...this.link ()} >
-              {this.renderDesk ()}
+              {this.renderDesk (this.data.TicketsTrays)}
             </Container>
           </Splitter>
         </Splitter>
