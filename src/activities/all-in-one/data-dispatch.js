@@ -175,6 +175,25 @@ const data =
       ],
       Transport: 'bicycle',
       id: 'f2ab3015-9607-4505-b62c-a907f349a9c8'
+    },
+    {
+      Messenger: {
+        Name: 'Sandra',
+        Photo: {
+          Description: '',
+          Glyph: 'user',
+          Name: '',
+          Path: '',
+          id: ''
+        },
+        id: 'c78bb24b-6465-44dd-9c74-524726a0aac7'
+      },
+      Name: 'Sandra — 01.12.2016',
+      Revenue: '145 CHF',
+      Tickets: [
+      ],
+      Transport: 'car',
+      id: 'f2ab3015-9607-4505-b62c-a907f349a9c9'
     }
   ],
   Name: 'New board',
@@ -419,10 +438,17 @@ const data =
         Position: '310px,50px',
         Rotation: '-1deg',
         Tickets: [
-
         ],
         id: 'f0e46424-00cd-4c2f-a56c-53a671300fe1'
-      }
+      },
+      {
+        Name: 'T3',
+        Position: '590px,50px',
+        Rotation: '2deg',
+        Tickets: [
+        ],
+        id: 'f0e46424-00cd-4c2f-a56c-53a671300fe2'
+      },
   ],
   id: 'c8671498-5a41-4261-9537-1131736681bf'
 };
