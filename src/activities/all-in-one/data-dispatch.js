@@ -37,7 +37,7 @@ const data =
               Status: 'init',
               TripId: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa',
               Type: 'drop',
-              ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
+              Zone: 'Zone A',
               id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
             },
             MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6670',
@@ -80,7 +80,7 @@ const data =
               Status: 'init',
               TripId: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa',
               Type: 'pick',
-              ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
+              Zone: 'Zone B',
               id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
             },
             Price: '32 CHF',
@@ -132,7 +132,7 @@ const data =
               Status: 'init',
               TripId: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa',
               Type: 'drop',
-              ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
+              Zone: 'Zone A',
               id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
             },
             MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6670',
@@ -165,7 +165,7 @@ const data =
               Status: 'init',
               TripId: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa',
               Type: 'pick',
-              ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
+              Zone: 'Zone C',
               id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
             },
             Price: '32 CHF',
@@ -235,7 +235,7 @@ const data =
               Status: 'init',
               TripId: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa',
               Type: 'drop',
-              ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
+              Zone: 'Zone A',
               id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
             },
             MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6672',
@@ -283,7 +283,7 @@ const data =
               Status: 'init',
               TripId: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa',
               Type: 'pick',
-              ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
+              Zone: 'Zone A',
               id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
             },
             Price: '32 CHF',
@@ -314,7 +314,7 @@ const data =
               Status: 'init',
               TripId: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa',
               Type: 'drop',
-              ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
+              Zone: 'Zone B',
               id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
             },
             MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6673',
@@ -341,7 +341,7 @@ const data =
               Status: 'init',
               TripId: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa',
               Type: 'pick',
-              ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
+              Zone: 'Zone B',
               id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
             },
             Price: '17 CHF',
@@ -382,7 +382,7 @@ const data =
                 Status: 'init',
                 TripId: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa',
                 Type: 'drop',
-                ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
+                Zone: 'Zone A',
                 id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
               },
               MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6675',
@@ -432,7 +432,7 @@ const data =
                 Status: 'init',
                 TripId: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa',
                 Type: 'pick',
-                ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
+                Zone: 'Zone C',
                 id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
               },
               Price: '17 CHF',
