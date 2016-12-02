@@ -38,7 +38,7 @@ const data =
               ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
               id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
             },
-            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6678',
+            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6670',
             Notes: [],
             PackageCount: '1 colis',
             Packages: [
@@ -130,7 +130,7 @@ const data =
               ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
               id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
             },
-            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6678',
+            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6670',
             Notes: [],
             PackageCount: '1 colis',
             Packages: [
@@ -211,7 +211,7 @@ const data =
               ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
               id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
             },
-            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6676',
+            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6672',
             Notes: [],
             PackageCount: '1 colis',
             Packages: [
@@ -265,7 +265,7 @@ const data =
             Weight: '1.2 kg',
             id: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa'
           },
-          Type: 'both',
+          Type: 'pair',
           id: 'e9a247ff-1ec2-45e9-b7d5-f5923727902d'
         },
        {
@@ -287,7 +287,7 @@ const data =
               ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
               id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
             },
-            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6677',
+            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6673',
             Notes: [],
             PackageCount: '1 colis',
             Packages: [
@@ -320,7 +320,7 @@ const data =
             Weight: '1 kg',
             id: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa'
           },
-          Type: 'both',
+          Type: 'pair',
           id: 'c767e7a2-187b-4092-99c0-57749f79655d'
         }
     ],
@@ -352,7 +352,7 @@ const data =
                 ZoneId: 'c713cbe1-e4cf-465a-8cf5-487cbb9852b0',
                 id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
               },
-              MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6678',
+              MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6675',
               Notes: [],
               PackageCount: '1 colis',
               Packages: [
@@ -408,7 +408,7 @@ const data =
               Weight: '0.6 kg',
               id: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa'
             },
-            Type: 'pick',
+            Type: 'pair',
             id: 'e9a247ff-1ec2-45e9-b7d5-f5923727902e'
           },
         ],

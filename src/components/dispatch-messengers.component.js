@@ -37,16 +37,17 @@ export default class DispatchMessengers extends React.Component {
     );
   }
 
-  renderTrip (ticket) {
+  renderTicket (ticket, kind) {
     return (
-      <Trip kind='trip-tickets' data={ticket} {...this.link ()} />
+      <Trip kind={kind} data={ticket} {...this.link ()} />
     );
   }
 
   renderTrayTickets (tickets) {
     const result = [];
     for (var ticket of tickets) {
-      result.push (this.renderTrip (ticket));
+      const kind = (ticket.Type === 'pair') ? 'trip-tickets' : 'trip-ticket';
+      result.push (this.renderTicket (ticket, kind));
     }
     return result;
   }
@@ -94,22 +95,10 @@ export default class DispatchMessengers extends React.Component {
     }
   }
 
-  renderTicket (ticket) {
-    if (ticket.Type === 'both') {
-      return (
-        <Trip kind='trip-box' data={ticket} {...this.link ()} />
-      );
-    } else if (ticket.Type === 'pick' || ticket.Type === 'drop') {
-      return (
-        <Trip kind='trip-ticket' data={ticket} {...this.link ()} />
-      );
-    }
-  }
-
-  renderTickets (tickets) {
+  renderTickets (tickets, kind) {
     const result = [];
     for (var ticket of tickets) {
-      result.push (this.renderTicket (ticket));
+      result.push (this.renderTicket (ticket, kind));
     }
     return result;
   }
@@ -120,7 +109,7 @@ export default class DispatchMessengers extends React.Component {
         {this.renderMessenger (messengerBook)}
         <Container kind='tickets-trips' drag-controller='tickets' drag-source='dispatch'
           max-width='300px' {...this.link ()} >
-          {this.renderTickets (messengerBook.Tickets)}
+          {this.renderTickets (messengerBook.Tickets, 'trip-ticket')}
         </Container>
       </Container>
     );
@@ -158,7 +147,7 @@ export default class DispatchMessengers extends React.Component {
               </Container>
               <Container kind='panes' {...this.link ()} >
                 <Container kind='column' drag-controller='tickets' drag-source='missions' {...this.link ()} >
-                  {this.renderTickets (this.data.TicketsToDispatch.Tickets)}
+                  {this.renderTickets (this.data.TicketsToDispatch.Tickets, 'trip-box')}
                 </Container>
               </Container>
             </Container>
