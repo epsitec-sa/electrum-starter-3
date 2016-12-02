@@ -20,8 +20,7 @@ const data =
       Tickets: [
         {
           Extended: 'false',
-          Order: 0,
-          OwnerId: 'id-paul',
+          OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
           Status: 'pre-dispatched',
           Trip: {
@@ -95,8 +94,7 @@ const data =
         },
         {
           Extended: 'false',
-          Order: 1,
-          OwnerId: 'id-paul',
+          OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
           Status: 'pre-dispatched',
           Trip: {
@@ -208,7 +206,6 @@ const data =
     Tickets: [
        {
           Extended: 'false',
-          Order: 0,
           OwnerId: 'id-to-dispatch',
           Selected: 'false',
           Status: 'backlog',
@@ -298,7 +295,6 @@ const data =
         },
        {
           Extended: 'false',
-          Order: 1,
           OwnerId: 'id-to-dispatch',
           Selected: 'false',
           Status: 'backlog',
@@ -365,7 +361,6 @@ const data =
         Tickets: [
           {
             Extended: 'false',
-            Order: 0,
             OwnerId: 'id-tray-0',
             Selected: 'false',
             Status: 'tray',
