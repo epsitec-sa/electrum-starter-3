@@ -13,7 +13,7 @@ const data =
           Path: '',
           id: ''
         },
-        id: 'c78bb24b-6465-44dd-9c74-524726a0aac7'
+        id: 'id-paul'
       },
       Name: 'Paul — 01.12.2016',
       Revenue: '250 CHF',
@@ -21,7 +21,7 @@ const data =
         {
           Extended: 'false',
           Order: 0,
-          OwnerId: 'messenger-Paul',
+          OwnerId: 'id-paul',
           Selected: 'false',
           Status: 'pre-dispatched',
           Trip: {
@@ -40,7 +40,7 @@ const data =
               Zone: 'Zone A',
               id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
             },
-            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6670',
+            MissionId: 'id-ticket-paul-link-0',
             Notes: [],
             PackageCount: '1 colis',
             Packages: [
@@ -91,12 +91,12 @@ const data =
           },
           Type: 'pick',
           Warning: '',
-          id: 'e9a247ff-1ec2-45e9-b7d5-f5923727902d'
+          id: 'id-ticket-paul-0'
         },
         {
           Extended: 'false',
           Order: 1,
-          OwnerId: 'messenger-Paul',
+          OwnerId: 'id-paul',
           Selected: 'false',
           Status: 'pre-dispatched',
           Trip: {
@@ -135,7 +135,7 @@ const data =
               Zone: 'Zone A',
               id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
             },
-            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6670',
+            MissionId: 'id-ticket-paul-link-0',
             Notes: [],
             PackageCount: '1 colis',
             Packages: [
@@ -176,11 +176,11 @@ const data =
           },
           Type: 'drop',
           Warning: '',
-          id: 'e9a247ff-1ec2-45e9-b7d5-f5923727902d'
+          id: 'id-ticket-paul-1'
         },
       ],
       Transport: 'bicycle',
-      id: 'f2ab3015-9607-4505-b62c-a907f349a9c8'
+      id: 'id-tickets-to-paul'
     },
     {
       Messenger: {
@@ -192,14 +192,14 @@ const data =
           Path: '',
           id: ''
         },
-        id: 'c78bb24b-6465-44dd-9c74-524726a0aac7'
+        id: 'id-sandra'
       },
       Name: 'Sandra — 01.12.2016',
       Revenue: '145 CHF',
       Tickets: [
       ],
       Transport: 'car',
-      id: 'f2ab3015-9607-4505-b62c-a907f349a9c9'
+      id: 'id-tickets-to-sandra'
     }
   ],
   Name: 'New board',
@@ -209,7 +209,7 @@ const data =
        {
           Extended: 'false',
           Order: 0,
-          OwnerId: 'to-dispatch-zone',
+          OwnerId: 'id-to-dispatch',
           Selected: 'false',
           Status: 'backlog',
           Trip: {
@@ -294,12 +294,12 @@ const data =
           },
           Type: 'pair',
           Warning: '',
-          id: 'e9a247ff-1ec2-45e9-b7d5-f5923727902d'
+          id: 'id-ticket-to-dispatch-0'
         },
        {
           Extended: 'false',
           Order: 1,
-          OwnerId: 'to-dispatch-zone',
+          OwnerId: 'id-to-dispatch',
           Selected: 'false',
           Status: 'backlog',
           Trip: {
@@ -352,10 +352,10 @@ const data =
           },
           Type: 'pair',
           Warning: '',
-          id: 'c767e7a2-187b-4092-99c0-57749f79655d'
+          id: 'id-ticket-to-dispatch-1'
         }
     ],
-    id: 'fdf0bf2d-3810-4aca-9b17-3fd77be0e479'
+    id: 'id-to-dispatch'
   },
   TicketsTrays: [
      {
@@ -366,7 +366,7 @@ const data =
           {
             Extended: 'false',
             Order: 0,
-            OwnerId: 'messenger-Paul',
+            OwnerId: 'id-tray-0',
             Selected: 'false',
             Status: 'tray',
             Trip: {
@@ -443,10 +443,10 @@ const data =
             },
             Type: 'pair',
             Warning: '',
-            id: 'e9a247ff-1ec2-45e9-b7d5-f5923727902e'
+            id: 'id-tray-0-ticket-0'
           },
         ],
-        id: 'fa487d69-8fef-46db-9d4d-e6991e54968g'
+        id: 'id-tray-0'
       },
      {
         Name: 'T2',
@@ -454,7 +454,7 @@ const data =
         Rotation: '-1deg',
         Tickets: [
         ],
-        id: 'f0e46424-00cd-4c2f-a56c-53a671300fe1'
+        id: 'id-tray-1'
       },
       {
         Name: 'T3',
@@ -462,10 +462,10 @@ const data =
         Rotation: '2deg',
         Tickets: [
         ],
-        id: 'f0e46424-00cd-4c2f-a56c-53a671300fe2'
+        id: 'id-tray-2'
       },
   ],
-  id: 'c8671498-5a41-4261-9537-1131736681bf'
+  id: 'id-trays'
 };
 
 export default function getData () {
