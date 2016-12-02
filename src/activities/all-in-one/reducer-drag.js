@@ -62,14 +62,26 @@ function getToOrder (tickets, target, sibling, fromOrder) {
 }
 
 function changeDispatchToDispatch (state, element, target, source, sibling) {
-  const fromId      = element.dataset.id;
-  const messengerId = element.dataset.ownerId;
-  const tickets = getTicketsForMessenger (state, messengerId);
-  const fromOrder = getTicketOrder (tickets, fromId);
-  const toOrder = getToOrder (tickets, target, sibling, fromOrder);
-  const ticket = getTicket (tickets, fromOrder);
-  deleteTicket (tickets, ticket);
-  addTicket (tickets, toOrder, ticket);
+  const fromId          = element.dataset.id;
+  const fromMessengerId = element.dataset.ownerId;
+  const toMessengerId   = target.dataset.id;
+  if (fromMessengerId === toMessengerId) {  // inside same messenger ?
+    const tickets = getTicketsForMessenger (state, fromMessengerId);
+    const fromOrder = getTicketOrder (tickets, fromId);
+    const toOrder = getToOrder (tickets, target, sibling, fromOrder);
+    const ticket = getTicket (tickets, fromOrder);
+    deleteTicket (tickets, ticket);
+    addTicket (tickets, toOrder, ticket);
+  } else {  // from a messenger to another ?
+    const fromTickets = getTicketsForMessenger (state, fromMessengerId);
+    const toTickets = getTicketsForMessenger (state, toMessengerId);
+    const fromOrder = getTicketOrder (fromTickets, fromId);
+    const toOrder = getToOrder (toTickets, target, sibling);
+    const ticket = getTicket (fromTickets, fromOrder);
+    deleteTicket (fromTickets, ticket);
+    ticket.OwnerId = toMessengerId;
+    addTicket (toTickets, toOrder, ticket);
+  }
 }
 
 function changeToDispatch (state, element, target, source, sibling) {
