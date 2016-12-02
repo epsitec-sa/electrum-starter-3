@@ -19,8 +19,10 @@ const data =
       Revenue: '250 CHF',
       Tickets: [
         {
+          Extended: 'false',
           Order: 0,
-          Owner: 'messenger-Paul',
+          OwnerId: 'messenger-Paul',
+          Selected: 'false',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -88,11 +90,14 @@ const data =
             id: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa'
           },
           Type: 'pick',
+          Warning: '',
           id: 'e9a247ff-1ec2-45e9-b7d5-f5923727902d'
         },
         {
+          Extended: 'false',
           Order: 1,
-          Owner: 'messenger-Paul',
+          OwnerId: 'messenger-Paul',
+          Selected: 'false',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -170,6 +175,7 @@ const data =
             id: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa'
           },
           Type: 'drop',
+          Warning: '',
           id: 'e9a247ff-1ec2-45e9-b7d5-f5923727902d'
         },
       ],
@@ -201,9 +207,11 @@ const data =
   TicketsToDispatch: {
     Tickets: [
        {
+          Extended: 'false',
           Order: 0,
-          Owner: 'to-dispatch-zone',
-          Status: 'to-dispatch',
+          OwnerId: 'to-dispatch-zone',
+          Selected: 'false',
+          Status: 'backlog',
           Trip: {
             Description: '',
             Drop: {
@@ -285,12 +293,15 @@ const data =
             id: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa'
           },
           Type: 'pair',
+          Warning: '',
           id: 'e9a247ff-1ec2-45e9-b7d5-f5923727902d'
         },
        {
+          Extended: 'false',
           Order: 1,
-          Owner: 'to-dispatch-zone',
-          Status: 'to-dispatch',
+          OwnerId: 'to-dispatch-zone',
+          Selected: 'false',
+          Status: 'backlog',
           Trip: {
             Description: '',
             Drop: {
@@ -340,6 +351,7 @@ const data =
             id: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa'
           },
           Type: 'pair',
+          Warning: '',
           id: 'c767e7a2-187b-4092-99c0-57749f79655d'
         }
     ],
@@ -352,9 +364,11 @@ const data =
         Rotation: '5deg',
         Tickets: [
           {
+            Extended: 'false',
             Order: 0,
-            Owner: 'messenger-Paul',
-            Status: 'pre-dispatched',
+            OwnerId: 'messenger-Paul',
+            Selected: 'false',
+            Status: 'tray',
             Trip: {
               Description: '',
               Drop: {
@@ -428,6 +442,7 @@ const data =
               id: 'dc1bc9f2-6882-4d6b-955a-37774b1b9aaa'
             },
             Type: 'pair',
+            Warning: '',
             id: 'e9a247ff-1ec2-45e9-b7d5-f5923727902e'
           },
         ],
