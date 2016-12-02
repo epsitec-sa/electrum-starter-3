@@ -2,28 +2,32 @@
 
 import reducerTickets from './reducer-tickets.js';
 
-function addTicket (index, ticket) {
-  reducerTickets (window.document.data.new.MessengersBooks[0].Tickets, {
+function getTicketsForMessenger (state) {
+  return state.MessengersBooks[0].Tickets;
+}
+
+function addTicket (state, index, ticket) {
+  reducerTickets (getTicketsForMessenger (state), {
     type:   'ADD_TICKET',
     index:  index,
     ticket: ticket,
   });
 }
 
-function deleteTicket (ticket) {
-  reducerTickets (window.document.data.new.MessengersBooks[0].Tickets, {
+function deleteTicket (state, ticket) {
+  reducerTickets (getTicketsForMessenger (state), {
     type:   'DELETE_TICKET',
     ticket: ticket,
   });
 }
 
-function getTicket (order) {
-  const tickets = window.document.data.new.MessengersBooks[0].Tickets;
+function getTicket (state, order) {
+  const tickets = getTicketsForMessenger (state);
   return tickets[order];
 }
 
-function getTicketOrder (id) {
-  const tickets = window.document.data.new.MessengersBooks[0].Tickets;
+function getTicketOrder (state, id) {
+  const tickets = getTicketsForMessenger (state);
   var order = 0;
   for (var ticket of tickets) {
     if (ticket.id === id) {
@@ -34,12 +38,12 @@ function getTicketOrder (id) {
   return -1;
 }
 
-function getToOrder (target, sibling, fromOrder) {
+function getToOrder (state, target, sibling, fromOrder) {
   let toOrder = -1;
   if (sibling === null) {
     toOrder = target.children.length - 1;  // if no sibling, use last element
   } else {
-    toOrder = getTicketOrder (sibling.dataset.id);
+    toOrder = getTicketOrder (state, sibling.dataset.id);
     if (fromOrder && toOrder > fromOrder) {
       toOrder--;  // if target under source, count as if the source was not there
     }
@@ -49,11 +53,11 @@ function getToOrder (target, sibling, fromOrder) {
 
 function changeDispatchToDispatch (state, element, target, source, sibling) {
   const fromId = element.dataset.id;
-  const fromOrder = getTicketOrder (fromId);
-  const toOrder = getToOrder (target, sibling, fromOrder);
-  const ticket = getTicket (fromOrder);
-  deleteTicket (ticket);
-  addTicket (toOrder, ticket);
+  const fromOrder = getTicketOrder (state, fromId);
+  const toOrder = getToOrder (state, target, sibling, fromOrder);
+  const ticket = getTicket (state, fromOrder);
+  deleteTicket (state, ticket);
+  addTicket (state, toOrder, ticket);
 }
 
 function changeToDispatch (state, element, target, source, sibling) {
