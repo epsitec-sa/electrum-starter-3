@@ -67,31 +67,24 @@ function getTicketsFromMissionId (tickets, missionId) {
   return result;
 }
 
-function getInvertedType (type) {
-  if (type.startsWith ('pick')) {
-    return 'drop' + type.substring (4, type.length);
-  } else if (type.startsWith ('drop')) {
-    return 'pick' + type.substring (4, type.length);
-  } else {
-    throw new Error (`Invalid type ${type}`);
-  }
-}
-
 function getNewId (currentId) {
   return currentId + '-bis';
 }
 
+// Return new ticket for transit. If it's a pick, create a drop zone for transit, and reverse.
 function getNewTransit (ticket) {
   const n = Object.assign ({}, ticket);
   if (n.Type.startsWith ('pick')) {
     n.Type = 'drop-transit';
     n.Trip.Drop.LongDescription = null;
+    n.Trip.Drop.Notes = [];
     n.Trip.Drop.PlanedTime = ticket.Trip.Pick.PlanedTime;
     n.Trip.Drop.ShortDescription = 'Transit à définir';
     n.Trip.Drop.Zone = null;
   } else if (n.Type.startsWith ('drop')) {
     n.Type = 'pick-transit';
     n.Trip.Pick.LongDescription = null;
+    n.Trip.Pick.Notes = [];
     n.Trip.Pick.PlanedTime = ticket.Trip.Drop.PlanedTime;
     n.Trip.Pick.ShortDescription = 'Transit à définir';
     n.Trip.Pick.Zone = null;
@@ -103,6 +96,7 @@ function getNewTransit (ticket) {
   return n;
 }
 
+// Create a transit if a ticket is alone for a messenger.
 function createTransit (state, messengerId) {
   const tickets = getTicketsForMessenger (state, messengerId);
   for (var ticket of tickets) {
@@ -125,11 +119,14 @@ function createTransits (state) {
   }
 }
 
+// Delete if there are unnecessary transits for a messenger.
+// By example, if a transit is alone, it's unnecessary.
+// If there are 3 tickets, including 2 unnecessary, delete the 2 unnecessary tickets.
 function deleteTransit (state, messengerId) {
   const tickets = getTicketsForMessenger (state, messengerId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
-    if (same.length > 0 && same.length % 2 === 1) {
+    if (same.length > 0 && same.length % 2 === 1) {  // odd number of tickets ?
       for (let i = 0; i < same.length; i++) {
         if (same[i].Type.endsWith ('-transit')) {
           deleteTicket (tickets, same[i]);
@@ -145,16 +142,23 @@ function deleteTransits (state) {
   }
 }
 
-function checkOrders (state, messengerId) {
+// Check if un pick is under a drop, and set the field 'warning'.
+function checkOrder (state, messengerId) {
   const tickets = getTicketsForMessenger (state, messengerId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
-    if (same.length === 2 && same[0].Type === 'drop' && same[1].Type === 'pick') {
+    if (same.length === 2 && same[0].Type.startsWith ('drop') && same[1].Type.startsWith ('pick')) {
       same[0].Warning = 'reverse-pick-drop';
       same[1].Warning = 'reverse-pick-drop';
     } else {
       ticket.Warning = '';
     }
+  }
+}
+
+function checkOrders (state) {
+  for (var messengersBook of state.MessengersBooks) {
+    checkOrder (state, messengersBook.id);
   }
 }
 
@@ -169,7 +173,6 @@ function changeDispatchToDispatch (state, element, target, source, sibling) {
     const ticket = tickets[fromOrder];
     deleteTicket (tickets, ticket);
     addTicket (tickets, toOrder, ticket);
-    checkOrders (state, fromMessengerId);
   } else {  // from a messenger to another ?
     const fromTickets = getTicketsForMessenger (state, fromMessengerId);
     const toTickets = getTicketsForMessenger (state, toMessengerId);
@@ -179,11 +182,10 @@ function changeDispatchToDispatch (state, element, target, source, sibling) {
     deleteTicket (fromTickets, ticket);
     ticket.OwnerId = toMessengerId;
     addTicket (toTickets, toOrder, ticket);
-    checkOrders (state, fromMessengerId);
-    checkOrders (state, toMessengerId);
   }
   deleteTransits (state);
   createTransits (state);
+  checkOrders (state);
 }
 
 function changeToDispatch (state, element, target, source, sibling) {
