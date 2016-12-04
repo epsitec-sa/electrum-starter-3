@@ -188,12 +188,23 @@ function changeDispatchToDispatch (state, element, target, source, sibling) {
   checkOrders (state);
 }
 
+function changeMissionsToDispatch (state, element, target, source, sibling) {
+  const fromId          = element.dataset.id;
+  const toMessengerId   = target.dataset.id;
+  const i = getTicketOrder (state.TicketsToDispatch.Tickets, fromId);
+  const ticket = state.TicketsToDispatch.Tickets[i];
+  deleteTicket (state.TicketsToDispatch.Tickets, ticket);
+  const toTickets = getTicketsForMessenger (state, toMessengerId);
+  const toOrder = getToOrder (toTickets, target, sibling);
+  addTicket (toTickets, toOrder, ticket);
+}
+
 function changeToDispatch (state, element, target, source, sibling) {
   const sourceType = source.dataset.dragSource;
   if (sourceType === 'dispatch') {
     changeDispatchToDispatch (state, element, target, source, sibling);
   } else if (sourceType === 'missions') {
-    // changeMissionsToDispatch (state, element, target, source, sibling);
+    changeMissionsToDispatch (state, element, target, source, sibling);
   } else if (sourceType === 'desk') {
     // changeDeskToDispatch (state, element, target, source, sibling);
   }
