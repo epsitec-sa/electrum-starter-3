@@ -67,6 +67,59 @@ function getTicketsFromMissionId (tickets, missionId) {
   return result;
 }
 
+function getInvertedType (type) {
+  if (type.startsWith ('pick')) {
+    return 'drop' + type.substring (4, type.length);
+  } else if (type.startsWith ('drop')) {
+    return 'pick' + type.substring (4, type.length);
+  } else {
+    throw new Error (`Invalid type ${type}`);
+  }
+}
+
+function getNewId (currentId) {
+  return currentId + '-bis';
+}
+
+function getNewTransit (ticket) {
+  const n = Object.assign ({}, ticket);
+  if (n.Type === 'pick') {
+    n.Type = 'drop-transit';
+    n.Trip.Drop.LongDescription = 'Zone de transit à définir...';
+    n.Trip.Drop.ShortDescription = 'Transit';
+    n.Trip.Drop.PlanedTime = ticket.Trip.Pick.PlanedTime;
+  } else if (n.Type === 'drop') {
+    n.Type = 'pick-transit';
+    n.Trip.Pick.LongDescription = 'Zone de transit à définir...';
+    n.Trip.Pick.ShortDescription = 'Transit';
+    n.Trip.Pick.PlanedTime = ticket.Trip.Drop.PlanedTime;
+  }
+  n.id = getNewId (n.id);
+  return n;
+}
+
+function createTransit (state, messengerId) {
+  const tickets = getTicketsForMessenger (state, messengerId);
+  for (var ticket of tickets) {
+    const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
+    if (same.length === 1) {
+      const newTicket = getNewTransit (ticket);
+      const index = tickets.indexOf (ticket);
+      if (newTicket.Type.startsWith ('pick')) {
+        addTicket (tickets, index, newTicket);
+      } else {
+        addTicket (tickets, index + 1, newTicket);
+      }
+    }
+  }
+}
+
+function createTransits (state) {
+  for (var messengersBook of state.MessengersBooks) {
+    createTransit (state, messengersBook.id);
+  }
+}
+
 function checkOrders (state, messengerId) {
   const tickets = getTicketsForMessenger (state, messengerId);
   for (var ticket of tickets) {
@@ -104,6 +157,7 @@ function changeDispatchToDispatch (state, element, target, source, sibling) {
     checkOrders (state, fromMessengerId);
     checkOrders (state, toMessengerId);
   }
+  createTransits (state);
 }
 
 function changeToDispatch (state, element, target, source, sibling) {
