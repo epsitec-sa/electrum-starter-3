@@ -196,7 +196,15 @@ function changeMissionsToDispatch (state, element, target, source, sibling) {
   deleteTicket (state.TicketsToDispatch.Tickets, ticket);
   const toTickets = getTicketsForMessenger (state, toMessengerId);
   const toOrder = getToOrder (toTickets, target, sibling);
-  addTicket (toTickets, toOrder, ticket);
+  ticket.OwnerId = toMessengerId;
+  const pick = Object.assign ({}, ticket);
+  const drop = Object.assign ({}, ticket);
+  pick.Type = 'pick';
+  drop.Type = 'drop';
+  pick.id += '-a';
+  drop.id += '-b';
+  addTicket (toTickets, toOrder, drop);  // first drop, for have pick/drop in this order
+  addTicket (toTickets, toOrder, pick);
 }
 
 function changeToDispatch (state, element, target, source, sibling) {
