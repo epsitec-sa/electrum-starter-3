@@ -223,7 +223,7 @@ const data =
         Name: 'Jean-Pierre',
         Photo: {
           Description: '',
-          Glyph: 'user',
+          Glyph: 'user-secret',
           Name: '',
           Path: '',
           id: ''

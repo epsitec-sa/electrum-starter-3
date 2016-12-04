@@ -83,18 +83,23 @@ function getNewId (currentId) {
 
 function getNewTransit (ticket) {
   const n = Object.assign ({}, ticket);
-  if (n.Type === 'pick') {
+  if (n.Type.startsWith ('pick')) {
     n.Type = 'drop-transit';
-    n.Trip.Drop.LongDescription = 'Zone de transit à définir...';
-    n.Trip.Drop.ShortDescription = 'Transit';
+    n.Trip.Drop.LongDescription = null;
     n.Trip.Drop.PlanedTime = ticket.Trip.Pick.PlanedTime;
-  } else if (n.Type === 'drop') {
+    n.Trip.Drop.ShortDescription = 'Transit à définir';
+    n.Trip.Drop.Zone = null;
+  } else if (n.Type.startsWith ('drop')) {
     n.Type = 'pick-transit';
-    n.Trip.Pick.LongDescription = 'Zone de transit à définir...';
-    n.Trip.Pick.ShortDescription = 'Transit';
+    n.Trip.Pick.LongDescription = null;
     n.Trip.Pick.PlanedTime = ticket.Trip.Drop.PlanedTime;
+    n.Trip.Pick.ShortDescription = 'Transit à définir';
+    n.Trip.Pick.Zone = null;
   }
   n.id = getNewId (n.id);
+  n.Trip.id = getNewId (n.Trip.id);
+  n.Trip.Pick.id = getNewId (n.Trip.Pick.id);
+  n.Trip.Drop.id = getNewId (n.Trip.Drop.id);
   return n;
 }
 
@@ -117,6 +122,26 @@ function createTransit (state, messengerId) {
 function createTransits (state) {
   for (var messengersBook of state.MessengersBooks) {
     createTransit (state, messengersBook.id);
+  }
+}
+
+function deleteTransit (state, messengerId) {
+  const tickets = getTicketsForMessenger (state, messengerId);
+  for (var ticket of tickets) {
+    const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
+    if (same.length > 0 && same.length % 2 === 1) {
+      for (let i = 0; i < same.length; i++) {
+        if (same[i].Type.endsWith ('-transit')) {
+          deleteTicket (tickets, same[i]);
+        }
+      }
+    }
+  }
+}
+
+function deleteTransits (state) {
+  for (var messengersBook of state.MessengersBooks) {
+    deleteTransit (state, messengersBook.id);
   }
 }
 
@@ -157,6 +182,7 @@ function changeDispatchToDispatch (state, element, target, source, sibling) {
     checkOrders (state, fromMessengerId);
     checkOrders (state, toMessengerId);
   }
+  deleteTransits (state);
   createTransits (state);
 }
 
