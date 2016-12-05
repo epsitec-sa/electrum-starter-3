@@ -67,6 +67,8 @@ function getTicketsFromMissionId (tickets, missionId) {
   return result;
 }
 
+// Return a new random guid.
+// See http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
 function getNewId () {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace (/[xy]/g, function (c) {
       var r = Math.random () * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
@@ -74,6 +76,7 @@ function getNewId () {
     });
 }
 
+// Return a deep copy of ticket, with new ids.
 function clone (ticket) {
   const n = JSON.parse (JSON.stringify (ticket));
   n.id = getNewId ();
@@ -202,10 +205,12 @@ function changeMissionsToDispatch (state, element, target, source, sibling) {
   const toTickets     = getTicketsForMessenger (state, toMessengerId);
   const toOrder       = getToOrder (toTickets, target, sibling);
 
+  // Delete the original ticket in shared collection TicketsToDispatch.
   const i = getTicketOrder (state.TicketsToDispatch.Tickets, fromId);
   const ticket = state.TicketsToDispatch.Tickets[i];
   deleteTicket (state.TicketsToDispatch.Tickets, ticket);
 
+  // Split the original ticket (with Type = pair) in 2 tickets (with Types = pick/drop).
   ticket.OwnerId = toMessengerId;
   const pick = clone (ticket);
   const drop = clone (ticket);
