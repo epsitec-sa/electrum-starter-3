@@ -69,6 +69,26 @@ function getTicketsFromMissionId (tickets, missionId) {
   return result;
 }
 
+// Search all tickets into MessengersBooks and TicketsTrays.
+function getTicketOwners (state, missionId) {
+  const result = [];
+  for (var messengerBook of state.MessengersBooks) {
+    for (var ticket1 of messengerBook.Tickets) {
+      if (ticket1.Trip.MissionId === missionId) {
+        result.push (messengerBook.id);
+      }
+    }
+  }
+  for (var tray of state.TicketsTrays) {
+    for (var ticket2 of tray.Tickets) {
+      if (ticket2.Trip.MissionId === missionId) {
+        result.push (tray.id);
+      }
+    }
+  }
+  return result;
+}
+
 // Return a new random guid.
 // See http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
 function getNewId () {
@@ -86,6 +106,18 @@ function clone (ticket) {
   n.Trip.Pick.id = getNewId ();
   n.Trip.Drop.id = getNewId ();
   return n;
+}
+
+// Search all tickets into MessengersBooks and TicketsTrays.
+function isTicketIntoTray (state, missionId) {
+  for (var tray of state.TicketsTrays) {
+    for (var ticket2 of tray.Tickets) {
+      if (ticket2.Trip.MissionId === missionId) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 // Return new ticket for transit. If it's a pick, create a drop zone for transit, and reverse.
@@ -114,7 +146,7 @@ function createTransit (state, messengerId) {
   const tickets = getTicketsForMessenger (state, messengerId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
-    if (same.length === 1) {
+    if (same.length === 1 && !isTicketIntoTray (state, ticket.Trip.MissionId)) {
       const newTicket = getNewTransit (ticket);
       const index = tickets.indexOf (ticket);
       if (newTicket.Type.startsWith ('pick')) {
@@ -170,6 +202,7 @@ function checkOrder (state, messengerId) {
 }
 
 // If 2 tickets into tray are pick following by drop, merge it.
+// If it's drop following by pick, merge also.
 function mergeTray (state, trayId) {
   const tickets = getTicketsForTray (state, trayId);
   for (var ticket of tickets) {
@@ -180,9 +213,9 @@ function mergeTray (state, trayId) {
       const index = tickets.indexOf (same[0]);
       deleteTicket (tickets, same[0]);
       deleteTicket (tickets, same[1]);
-      const n = clone (same[0]);
-      n.Type = 'pair';
-      addTicket (tickets, index, n);
+      const merged = clone (same[0]);
+      merged.Type = 'pair';
+      addTicket (tickets, index, merged);
     }
   }
 }
