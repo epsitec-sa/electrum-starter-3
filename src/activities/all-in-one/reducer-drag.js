@@ -225,6 +225,26 @@ function changeMissionsToDispatch (state, element, target, source, sibling) {
 }
 
 function changeDeskToDispatch (state, element, target, source, sibling) {
+  const fromId        = element.dataset.id;
+  const fromTrayId    = source.dataset.id;
+  const fromTickets   = getTicketsForTray (state, fromTrayId);
+  const toMessengerId = target.dataset.id;
+  const toTickets     = getTicketsForMessenger (state, toMessengerId);
+  const toOrder       = getToOrder (toTickets, target, sibling);
+
+  // Delete the original ticket in shared collection TicketsToDispatch.
+  const i = getTicketOrder (fromTickets, fromId);
+  const ticket = fromTickets[i];
+  deleteTicket (fromTickets, ticket);
+
+  // Split the original ticket (with Type = pair) in 2 tickets (with Types = pick/drop).
+  ticket.OwnerId = toMessengerId;
+  const pick = clone (ticket);
+  const drop = clone (ticket);
+  pick.Type = 'pick';
+  drop.Type = 'drop';
+  addTicket (toTickets, toOrder, drop);  // first drop, for have pick/drop in this order
+  addTicket (toTickets, toOrder, pick);
 }
 
 function changeDispatchToMissions (state, element, target, source, sibling) {
