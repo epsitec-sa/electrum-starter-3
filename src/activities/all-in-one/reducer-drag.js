@@ -193,13 +193,15 @@ function changeDispatchToDispatch (state, element, target, source, sibling) {
 }
 
 function changeMissionsToDispatch (state, element, target, source, sibling) {
-  const fromId          = element.dataset.id;
-  const toMessengerId   = target.dataset.id;
+  const fromId        = element.dataset.id;
+  const toMessengerId = target.dataset.id;
+  const toTickets    = getTicketsForMessenger (state, toMessengerId);
+  const toOrder      = getToOrder (toTickets, target, sibling);
+
   const i = getTicketOrder (state.TicketsToDispatch.Tickets, fromId);
   const ticket = state.TicketsToDispatch.Tickets[i];
   deleteTicket (state.TicketsToDispatch.Tickets, ticket);
-  const toTickets = getTicketsForMessenger (state, toMessengerId);
-  const toOrder = getToOrder (toTickets, target, sibling);
+
   ticket.OwnerId = toMessengerId;
   const pick = clone (ticket);
   const drop = clone (ticket);
