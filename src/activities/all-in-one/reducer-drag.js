@@ -67,12 +67,20 @@ function getTicketsFromMissionId (tickets, missionId) {
   return result;
 }
 
-function getNewId (currentId) {
-  return currentId + '-bis';
+function getNewId () {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace (/[xy]/g, function (c) {
+      var r = Math.random () * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString (16);
+    });
 }
 
 function clone (ticket) {
-  return JSON.parse (JSON.stringify (ticket));
+  const n = JSON.parse (JSON.stringify (ticket));
+  n.id = getNewId ();
+  n.Trip.id = getNewId ();
+  n.Trip.Pick.id = getNewId ();
+  n.Trip.Drop.id = getNewId ();
+  return n;
 }
 
 // Return new ticket for transit. If it's a pick, create a drop zone for transit, and reverse.
@@ -93,10 +101,6 @@ function getNewTransit (ticket) {
     n.Trip.Pick.ShortDescription = 'Transit à définir';
     n.Trip.Pick.Zone = null;
   }
-  n.id = getNewId (n.id);
-  n.Trip.id = getNewId (n.Trip.id);
-  n.Trip.Pick.id = getNewId (n.Trip.Pick.id);
-  n.Trip.Drop.id = getNewId (n.Trip.Drop.id);
   return n;
 }
 
@@ -171,18 +175,18 @@ function changeDispatchToDispatch (state, element, target, source, sibling) {
   const fromMessengerId = element.dataset.ownerId;
   const toMessengerId   = target.dataset.id;
   if (fromMessengerId === toMessengerId) {  // inside same messenger ?
-    const tickets = getTicketsForMessenger (state, fromMessengerId);
+    const tickets   = getTicketsForMessenger (state, fromMessengerId);
     const fromOrder = getTicketOrder (tickets, fromId);
-    const toOrder = getToOrder (tickets, target, sibling, fromOrder);
-    const ticket = tickets[fromOrder];
+    const toOrder   = getToOrder (tickets, target, sibling, fromOrder);
+    const ticket    = tickets[fromOrder];
     deleteTicket (tickets, ticket);
     addTicket (tickets, toOrder, ticket);
   } else {  // from a messenger to another ?
     const fromTickets = getTicketsForMessenger (state, fromMessengerId);
-    const toTickets = getTicketsForMessenger (state, toMessengerId);
-    const fromOrder = getTicketOrder (fromTickets, fromId);
-    const toOrder = getToOrder (toTickets, target, sibling);
-    const ticket = fromTickets[fromOrder];
+    const toTickets   = getTicketsForMessenger (state, toMessengerId);
+    const fromOrder   = getTicketOrder (fromTickets, fromId);
+    const toOrder     = getToOrder (toTickets, target, sibling);
+    const ticket      = fromTickets[fromOrder];
     deleteTicket (fromTickets, ticket);
     ticket.OwnerId = toMessengerId;
     addTicket (toTickets, toOrder, ticket);
@@ -195,8 +199,8 @@ function changeDispatchToDispatch (state, element, target, source, sibling) {
 function changeMissionsToDispatch (state, element, target, source, sibling) {
   const fromId        = element.dataset.id;
   const toMessengerId = target.dataset.id;
-  const toTickets    = getTicketsForMessenger (state, toMessengerId);
-  const toOrder      = getToOrder (toTickets, target, sibling);
+  const toTickets     = getTicketsForMessenger (state, toMessengerId);
+  const toOrder       = getToOrder (toTickets, target, sibling);
 
   const i = getTicketOrder (state.TicketsToDispatch.Tickets, fromId);
   const ticket = state.TicketsToDispatch.Tickets[i];
@@ -207,8 +211,6 @@ function changeMissionsToDispatch (state, element, target, source, sibling) {
   const drop = clone (ticket);
   pick.Type = 'pick';
   drop.Type = 'drop';
-  pick.id += '-a';
-  drop.id += '-b';
   addTicket (toTickets, toOrder, drop);  // first drop, for have pick/drop in this order
   addTicket (toTickets, toOrder, pick);
 }
