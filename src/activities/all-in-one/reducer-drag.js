@@ -169,6 +169,30 @@ function checkOrder (state, messengerId) {
   }
 }
 
+// If 2 tickets into tray are pick following by drop, merge it.
+function mergeTray (state, trayId) {
+  const tickets = getTicketsForTray (state, trayId);
+  for (var ticket of tickets) {
+    const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
+    if (same.length === 2 && (
+        (same[0].Type.startsWith ('pick') && same[1].Type.startsWith ('drop')) ||
+        (same[0].Type.startsWith ('drop') && same[1].Type.startsWith ('pick')))) {
+      const index = tickets.indexOf (same[0]);
+      deleteTicket (tickets, same[0]);
+      deleteTicket (tickets, same[1]);
+      const n = clone (same[0]);
+      n.Type = 'pair';
+      addTicket (tickets, index, n);
+    }
+  }
+}
+
+function mergeTrays (state) {
+  for (var tray of state.TicketsTrays) {
+    mergeTray (state, tray.id);
+  }
+}
+
 function checkOrders (state) {
   for (var messengersBook of state.MessengersBooks) {
     checkOrder (state, messengersBook.id);
@@ -238,7 +262,7 @@ function changeDeskToDispatch (state, element, target, source, sibling) {
   deleteTicket (fromTickets, ticket);
 
   if (ticket.Type === 'pair') {
-    // Split the original ticket (with Type = pair) in 2 tickets (with Types = pick/drop).
+    // Split the original ticket (with Type = pair) in 2 tickets (with Types = pick/drop) into messenger.
     ticket.OwnerId = toMessengerId;
     const pick = clone (ticket);
     const drop = clone (ticket);
@@ -247,6 +271,7 @@ function changeDeskToDispatch (state, element, target, source, sibling) {
     addTicket (toTickets, toOrder, drop);  // first drop, for have pick/drop in this order
     addTicket (toTickets, toOrder, pick);
   } else {
+    // Simply move the original ticket (pick or drop) into messenger.
     ticket.OwnerId = toMessengerId;
     addTicket (toTickets, toOrder, ticket);
     deleteTransits (state);
@@ -280,6 +305,7 @@ function changeDispatchToDesk (state, element, target, source, sibling) {
   const toOrder   = getToOrder (toTickets, target, sibling);
   addTicket (toTickets, toOrder, ticket);
 
+  mergeTray (state, toTrayId);
   deleteTransits (state);
   createTransits (state);
   checkOrders (state);
@@ -315,6 +341,8 @@ function changeDeskToDesk (state, element, target, source, sibling) {
   const toTickets = getTicketsForTray (state, toTrayId);
   const toOrder   = getToOrder (toTickets, target, sibling);
   addTicket (toTickets, toOrder, ticket);
+
+  mergeTray (state, toTrayId);
 }
 
 // ------------------------------------------------------------------------------------------
@@ -352,9 +380,36 @@ function changeToDesk (state, element, target, source, sibling) {
   }
 }
 
+function getTicket (state, element, source) {
+  const sourceType  = source.dataset.dragSource;
+  const fromId      = element.dataset.id;
+  const fromOwnerId = element.dataset.ownerId;
+  if (sourceType === 'dispatch') {
+    const tickets   = getTicketsForMessenger (state, fromOwnerId);
+    const fromOrder = getTicketOrder (tickets, fromId);
+    const ticket    = tickets[fromOrder];
+    return ticket;
+  } else if (sourceType === 'missions') {
+    const i = getTicketOrder (state.TicketsToDispatch.Tickets, fromId);
+    const ticket = state.TicketsToDispatch.Tickets[i];
+    return ticket;
+  } else if (sourceType === 'desk') {
+    const fromTrayId  = source.dataset.id;
+    const fromTickets = getTicketsForTray (state, fromTrayId);
+    const i = getTicketOrder (fromTickets, fromId);
+    const ticket = fromTickets[i];
+    return ticket;
+  }
+}
+
 // ------------------------------------------------------------------------------------------
 
-function drag (state, element, target, source, sibling) {
+function drag (state, element, source) {
+  getTicket (state, element, source).Hidden = true;
+}
+
+function drop (state, element, target, source, sibling) {
+  getTicket (state, element, source).Hidden = false;
   const targetType = target.dataset.dragSource;
   if (targetType === 'dispatch') {
     changeToDispatch (state, element, target, source, sibling);
@@ -368,7 +423,10 @@ function drag (state, element, target, source, sibling) {
 export default function Drag (state = {}, action = {}) {
   switch (action.type) {
     case 'DRAG':
-      state.dispatch = drag (state, action.element, action.target, action.source, action.sibling);
+      state.dispatch = drag (state, action.element, action.source);
+      break;
+    case 'DROP':
+      state.dispatch = drop (state, action.element, action.target, action.source, action.sibling);
       break;
   }
   return state;
