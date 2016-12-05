@@ -2,29 +2,22 @@
 
 import reducerTickets from './reducer-tickets.js';
 
-function getMessengerOrder (state, messengerId) {
-  var order = 0;
+function getTicketsForMessenger (state, messengerId) {
   for (var messengersBook of state.MessengersBooks) {
     if (messengersBook.id === messengerId) {
-      return order;
+      return messengersBook.Tickets;
     }
-    order++;
   }
-  return -1;
+  throw new Error (`Messenger ${messengerId} does not exist`);
 }
 
-function getTicketsForMessenger (state, messengerId) {
-  const i = getMessengerOrder (state, messengerId);
-  return state.MessengersBooks[i].Tickets;
-}
-
-function getTicketsForTray (state, toTrayId) {
+function getTicketsForTray (state, trayId) {
   for (var tray of state.TicketsTrays) {
-    if (tray.id === toTrayId) {
+    if (tray.id === trayId) {
       return tray.Tickets;
     }
   }
-  throw new Error (`Tray ${toTrayId} does not exist`);
+  throw new Error (`Tray ${trayId} does not exist`);
 }
 
 function addTicket (tickets, index, ticket) {
