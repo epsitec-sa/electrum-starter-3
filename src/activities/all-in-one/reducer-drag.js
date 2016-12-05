@@ -71,9 +71,13 @@ function getNewId (currentId) {
   return currentId + '-bis';
 }
 
+function clone (ticket) {
+  return JSON.parse (JSON.stringify (ticket));
+}
+
 // Return new ticket for transit. If it's a pick, create a drop zone for transit, and reverse.
 function getNewTransit (ticket) {
-  const n = Object.assign ({}, ticket);
+  const n = clone (ticket);
   if (n.Type.startsWith ('pick')) {
     n.Type = 'drop-transit';
     n.Trip.Drop.LongDescription = null;
@@ -197,8 +201,8 @@ function changeMissionsToDispatch (state, element, target, source, sibling) {
   const toTickets = getTicketsForMessenger (state, toMessengerId);
   const toOrder = getToOrder (toTickets, target, sibling);
   ticket.OwnerId = toMessengerId;
-  const pick = Object.assign ({}, ticket);
-  const drop = Object.assign ({}, ticket);
+  const pick = clone (ticket);
+  const drop = clone (ticket);
   pick.Type = 'pick';
   drop.Type = 'drop';
   pick.id += '-a';
