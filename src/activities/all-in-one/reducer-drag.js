@@ -329,19 +329,21 @@ function changeDispatchToDesk (state, element, target, source, sibling) {
   const fromOrder       = getTicketOrder (fromTickets, fromId);
   const ticket          = fromTickets[fromOrder];
 
-  // Delete the ticket in source messenger.
-  deleteTicket (fromTickets, ticket);
+  if (!ticket.Type.endsWith ('-transit')) {
+    // Delete the ticket in source messenger.
+    deleteTicket (fromTickets, ticket);
 
-  // Put the ticket in destination tray.
-  const toTrayId  = target.dataset.id;
-  const toTickets = getTicketsForTray (state, toTrayId);
-  const toOrder   = getToOrder (toTickets, target, sibling);
-  addTicket (toTickets, toOrder, ticket);
+    // Put the ticket in destination tray.
+    const toTrayId  = target.dataset.id;
+    const toTickets = getTicketsForTray (state, toTrayId);
+    const toOrder   = getToOrder (toTickets, target, sibling);
+    addTicket (toTickets, toOrder, ticket);
 
-  mergeTray (state, toTrayId);
-  deleteTransits (state);
-  createTransits (state);
-  checkOrders (state);
+    mergeTray (state, toTrayId);
+    deleteTransits (state);
+    createTransits (state);
+    checkOrders (state);
+  }
 }
 
 function changeMissionsToDesk (state, element, target, source, sibling) {
