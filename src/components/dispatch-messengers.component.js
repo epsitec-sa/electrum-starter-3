@@ -17,7 +17,7 @@ import {
   Separator,
   Ticket,
   Trip,
-  TicketsGlue,
+  TicketsTray,
   MessengerTicket,
   DragController,
   Splitter
@@ -56,10 +56,10 @@ export default class DispatchMessengers extends React.Component {
     const x = tray.Position.split (',')[0];
     const y = tray.Position.split (',')[1];
     return (
-      <TicketsGlue left={x} top={y} rotate={tray.Rotation} title={tray.Name}
-        drag-source='desk' {...this.link ()} >
+      <TicketsTray left={x} top={y} rotate={tray.Rotation} title={tray.Name}
+        drag-source='desk' data={tray} {...this.link ()} >
         {this.renderTrayTickets (tray.Tickets)}
-      </TicketsGlue>
+      </TicketsTray>
     );
   }
 

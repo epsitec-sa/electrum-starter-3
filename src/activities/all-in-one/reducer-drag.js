@@ -18,6 +18,15 @@ function getTicketsForMessenger (state, messengerId) {
   return state.MessengersBooks[i].Tickets;
 }
 
+function getTicketsForTray (state, toTrayId) {
+  for (var tray of state.TicketsTrays) {
+    if (tray.id === toTrayId) {
+      return tray.Tickets;
+    }
+  }
+  throw new Error (`Tray ${toTrayId} does not exist`);
+}
+
 function addTicket (tickets, index, ticket) {
   reducerTickets (tickets, {
     type:   'ADD_TICKET',
@@ -173,6 +182,8 @@ function checkOrders (state) {
   }
 }
 
+// ------------------------------------------------------------------------------------------
+
 function changeDispatchToDispatch (state, element, target, source, sibling) {
   const fromId          = element.dataset.id;
   const fromMessengerId = element.dataset.ownerId;
@@ -220,6 +231,42 @@ function changeMissionsToDispatch (state, element, target, source, sibling) {
   addTicket (toTickets, toOrder, pick);
 }
 
+function changeDeskToDispatch (state, element, target, source, sibling) {
+}
+
+function changeDispatchToMissions (state, element, target, source, sibling) {
+}
+
+function changeMissionsToMissions (state, element, target, source, sibling) {
+  // Operation prohibited !
+}
+
+function changeDeskToMissions (state, element, target, source, sibling) {
+}
+
+function changeDispatchToDesk (state, element, target, source, sibling) {
+}
+
+function changeMissionsToDesk (state, element, target, source, sibling) {
+  const fromId    = element.dataset.id;
+  const toTrayId  = target.dataset.id;
+  const toTickets = getTicketsForTray (state, toTrayId);
+  const toOrder   = getToOrder (toTickets, target, sibling);
+
+  // Delete the original ticket in shared collection TicketsToDispatch.
+  const i = getTicketOrder (state.TicketsToDispatch.Tickets, fromId);
+  const ticket = state.TicketsToDispatch.Tickets[i];
+  deleteTicket (state.TicketsToDispatch.Tickets, ticket);
+
+  // Put the ticket to tray.
+  addTicket (toTickets, toOrder, ticket);
+}
+
+function changeDeskToDesk (state, element, target, source, sibling) {
+}
+
+// ------------------------------------------------------------------------------------------
+
 function changeToDispatch (state, element, target, source, sibling) {
   const sourceType = source.dataset.dragSource;
   if (sourceType === 'dispatch') {
@@ -227,18 +274,42 @@ function changeToDispatch (state, element, target, source, sibling) {
   } else if (sourceType === 'missions') {
     changeMissionsToDispatch (state, element, target, source, sibling);
   } else if (sourceType === 'desk') {
-    // changeDeskToDispatch (state, element, target, source, sibling);
+    changeDeskToDispatch (state, element, target, source, sibling);
   }
 }
+
+function changeToMissions (state, element, target, source, sibling) {
+  const sourceType = source.dataset.dragSource;
+  if (sourceType === 'dispatch') {
+    changeDispatchToMissions (state, element, target, source, sibling);
+  } else if (sourceType === 'missions') {
+    changeMissionsToMissions (state, element, target, source, sibling);
+  } else if (sourceType === 'desk') {
+    changeDeskToMissions (state, element, target, source, sibling);
+  }
+}
+
+function changeToDesk (state, element, target, source, sibling) {
+  const sourceType = source.dataset.dragSource;
+  if (sourceType === 'dispatch') {
+    changeDispatchToDesk (state, element, target, source, sibling);
+  } else if (sourceType === 'missions') {
+    changeMissionsToDesk (state, element, target, source, sibling);
+  } else if (sourceType === 'desk') {
+    changeDeskToDesk (state, element, target, source, sibling);
+  }
+}
+
+// ------------------------------------------------------------------------------------------
 
 function drag (state, element, target, source, sibling) {
   const targetType = target.dataset.dragSource;
   if (targetType === 'dispatch') {
     changeToDispatch (state, element, target, source, sibling);
   } else if (targetType === 'missions') {
-    // changeToMissions (element, target, source, sibling);
+    changeToMissions (state, element, target, source, sibling);
   } else if (targetType === 'desk') {
-    // changeToDesk (element, target, source, sibling);
+    changeToDesk (state, element, target, source, sibling);
   }
 }
 
