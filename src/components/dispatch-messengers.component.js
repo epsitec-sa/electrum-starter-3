@@ -27,7 +27,7 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
-    // window.document.dispatch = this;
+    window.document.dispatch = this;
     this.data = window.document.data.new;
   }
 
