@@ -434,6 +434,17 @@ function changeDeskToDesk (state, element, target, source, sibling) {
 
 // ------------------------------------------------------------------------------------------
 
+function changeToMessengers (state, element, target, source, sibling) {
+  const fromId     = element.dataset.id;
+  const messengers = state.MessengersBooks;
+  const fromOrder  = getTicketOrder (messengers, fromId);
+  const messenger  = messengers[fromOrder];
+  deleteTicket (messengers, messenger);
+
+  const toOrder = getToOrder (messengers, target, sibling);
+  addTicket (messengers, toOrder, messenger);
+}
+
 function changeToDispatch (state, element, target, source, sibling) {
   const sourceType = source.dataset.dragSource;
   if (sourceType === 'dispatch') {
@@ -505,7 +516,9 @@ function drop (state, element, target, source, sibling) {
   }
 
   const targetType = target.dataset.dragSource;
-  if (targetType === 'dispatch') {
+  if (targetType === 'messengers') {
+    changeToMessengers (state, element, target, source, sibling);
+  } else if (targetType === 'dispatch') {
     changeToDispatch (state, element, target, source, sibling);
   } else if (targetType === 'missions') {
     changeToMissions (state, element, target, source, sibling);

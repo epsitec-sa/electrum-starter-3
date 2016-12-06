@@ -84,7 +84,7 @@ export default class DispatchMessengers extends React.Component {
 
   renderMessengerBook (messengerBook, index) {
     return (
-      <Container key={index} kind='tickets-messenger' {...this.link ()} >
+      <Container key={index} kind='tickets-messenger' id={messengerBook.id} {...this.link ()} >
         {this.renderMessenger (messengerBook)}
         <Container kind='tickets-trips' drag-controller='tickets' drag-source='dispatch'
           id={messengerBook.id} max-width='300px' {...this.link ()} >
@@ -109,7 +109,7 @@ export default class DispatchMessengers extends React.Component {
         <DragController name='messengers' drag-handle='MessengerTicket' direction='horizontal' {...this.link ()} />
         <DragController name='tickets' drag-handle='TripTicket' {...this.link ()} />
         <Splitter kind='horizontal' default-size='60%' {...this.link ()} >
-          <Container kind='tickets-messengers' drag-controller='messengers' {...this.link ()} >
+          <Container kind='tickets-messengers' drag-controller='messengers' drag-source='messengers' {...this.link ()} >
             {this.renderMessengersBooks (this.data.MessengersBooks)}
           </Container>
           <Splitter kind='vertical' default-size='750px' min-size='0px' {...this.link ()} >
