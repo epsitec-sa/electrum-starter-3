@@ -4,7 +4,7 @@ import Electrum from 'electrum';
 import React from 'react';
 import {Theme} from 'electrum-theme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import getData from './components/data-contents.js';
+import getData from './activities/all-in-one/data-dispatch.js';
 import reducerDrag from './activities/all-in-one/reducer-drag.js';
 
 import * as Colors from 'material-ui/styles/colors';

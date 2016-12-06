@@ -12,7 +12,7 @@ export default class DispatchTrips extends React.Component {
 
   constructor (props) {
     super (props);
-    this.data = window.document.data.new.TicketsToDispatch;
+    this.data = window.document.data.TicketsToDispatch;
   }
 
   renderTicket (ticket, index) {
