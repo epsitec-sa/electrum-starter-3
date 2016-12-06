@@ -232,6 +232,32 @@ function checkOrders (state) {
   }
 }
 
+// Delete all residual tickets into MessengersBooks and TicketsTrays.
+function deleteMission (state, missionId) {
+  for (var messengerBook of state.MessengersBooks) {
+    const array1 = [];
+    for (var ticket1 of messengerBook.Tickets) {
+      if (ticket1.Trip.MissionId === missionId) {
+        array1.push (ticket1);
+      }
+    }
+    for (ticket1 of array1) {
+      deleteTicket (messengerBook.Tickets, ticket1);
+    }
+  }
+  for (var tray of state.TicketsTrays) {
+    const array2 = [];
+    for (var ticket2 of tray.Tickets) {
+      if (ticket2.Trip.MissionId === missionId) {
+        array2.push (ticket2);
+      }
+    }
+    for (ticket2 of array2) {
+      deleteTicket (tray.Tickets, ticket2);
+    }
+  }
+}
+
 // ------------------------------------------------------------------------------------------
 
 function changeDispatchToDispatch (state, element, target, source, sibling) {
@@ -313,6 +339,19 @@ function changeDeskToDispatch (state, element, target, source, sibling) {
 }
 
 function changeDispatchToMissions (state, element, target, source, sibling) {
+  const fromId          = element.dataset.id;
+  const fromMessengerId = element.dataset.ownerId;
+  const fromTickets     = getTicketsForMessenger (state, fromMessengerId);
+  const fromOrder       = getTicketOrder (fromTickets, fromId);
+  const ticket          = fromTickets[fromOrder];
+  deleteMission (state, ticket.Trip.MissionId);
+
+  // Put the mission to shared collection TicketsToDispatch.
+  const toTickets = state.TicketsToDispatch.Tickets;
+  const toOrder   = getToOrder (toTickets, target, sibling);
+  const n = clone (ticket);
+  n.Type = 'pair';
+  addTicket (toTickets, toOrder, n);
 }
 
 function changeMissionsToMissions (state, element, target, source, sibling) {
@@ -320,6 +359,19 @@ function changeMissionsToMissions (state, element, target, source, sibling) {
 }
 
 function changeDeskToMissions (state, element, target, source, sibling) {
+  const fromId      = element.dataset.id;
+  const fromTrayId  = source.dataset.id;
+  const fromTickets = getTicketsForTray (state, fromTrayId);
+  const fromOrder   = getTicketOrder (fromTickets, fromId);
+  const ticket      = fromTickets[fromOrder];
+  deleteMission (state, ticket.Trip.MissionId);
+
+  // Put the mission to shared collection TicketsToDispatch.
+  const toTickets = state.TicketsToDispatch.Tickets;
+  const toOrder   = getToOrder (toTickets, target, sibling);
+  const n = clone (ticket);
+  n.Type = 'pair';
+  addTicket (toTickets, toOrder, n);
 }
 
 function changeDispatchToDesk (state, element, target, source, sibling) {
