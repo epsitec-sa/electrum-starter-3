@@ -492,11 +492,18 @@ function getTicket (state, element, source) {
 // ------------------------------------------------------------------------------------------
 
 function drag (state, element, source) {
-  getTicket (state, element, source).Hidden = true;
+  const ticket = getTicket (state, element, source);
+  if (ticket) {
+    ticket.Hidden = true;
+  }
 }
 
 function drop (state, element, target, source, sibling) {
-  getTicket (state, element, source).Hidden = false;
+  const ticket = getTicket (state, element, source);
+  if (ticket) {
+    ticket.Hidden = false;
+  }
+
   const targetType = target.dataset.dragSource;
   if (targetType === 'dispatch') {
     changeToDispatch (state, element, target, source, sibling);
