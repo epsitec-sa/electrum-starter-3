@@ -109,24 +109,24 @@ export default class DispatchMessengers extends React.Component {
   }
 
   onSplitterMessengersChanged (size) {
-    this.data.MessengersSize = size;
+    this.data.SplitterMessengersHeight = size;
   }
 
   onSplitterTicketsToDispatchChanged (size) {
-    this.data.TicketsToDispatchSize = size;
+    this.data.SplitterTicketsToDispatchWidth = size;
   }
 
-  splitterMessengersSize () {
-    if (this.data.MessengersSize) {
-      return this.data.MessengersSize;
+  splitterMessengersHeight () {
+    if (this.data.SplitterMessengersHeight) {
+      return this.data.SplitterMessengersHeight;
     } else {
       return '60%';  // default value
     }
   }
 
-  splitterTicketsToDispatchSize () {
-    if (this.data.TicketsToDispatchSize) {
-      return this.data.TicketsToDispatchSize;
+  splitterTicketsToDispatchWidth () {
+    if (this.data.SplitterTicketsToDispatchWidth) {
+      return this.data.SplitterTicketsToDispatchWidth;
     } else {
       return '750px';  // default value
     }
@@ -137,12 +137,12 @@ export default class DispatchMessengers extends React.Component {
       <Container kind='tickets-root' {...this.link ()} >
         <DragController name='messengers' drag-handle='MessengerTicket' direction='horizontal' {...this.link ()} />
         <DragController name='tickets' drag-handle='TripTicket' {...this.link ()} />
-        <Splitter kind='horizontal' default-size={this.splitterMessengersSize ()}
+        <Splitter kind='horizontal' default-size={this.splitterMessengersHeight ()}
           onSizeChanged={size => this.onSplitterMessengersChanged (size)} {...this.link ()} >
           <Container kind='tickets-messengers' drag-controller='messengers' drag-source='messengers' {...this.link ()} >
             {this.renderMessengersBooks (this.data.MessengersBooks)}
           </Container>
-          <Splitter kind='vertical' default-size={this.splitterTicketsToDispatchSize ()} min-size='0px'
+          <Splitter kind='vertical' default-size={this.splitterTicketsToDispatchWidth ()} min-size='0px'
             onSizeChanged={size => this.onSplitterTicketsToDispatchChanged (size)} {...this.link ()} >
             <Container kind='view-stretch' {...this.link ()} >
               <Container kind='pane-top' {...this.link ()} >
