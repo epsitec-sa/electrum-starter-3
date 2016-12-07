@@ -108,16 +108,42 @@ export default class DispatchMessengers extends React.Component {
     return result;
   }
 
+  onSplitterMessengersChanged (size) {
+    this.data.MessengersSize = size;
+  }
+
+  onSplitterTicketsToDispatchChanged (size) {
+    this.data.TicketsToDispatchSize = size;
+  }
+
+  splitterMessengersSize () {
+    if (this.data.MessengersSize) {
+      return this.data.MessengersSize;
+    } else {
+      return '60%';  // default value
+    }
+  }
+
+  splitterTicketsToDispatchSize () {
+    if (this.data.TicketsToDispatchSize) {
+      return this.data.TicketsToDispatchSize;
+    } else {
+      return '750px';  // default value
+    }
+  }
+
   render () {
     return (
       <Container kind='tickets-root' {...this.link ()} >
         <DragController name='messengers' drag-handle='MessengerTicket' direction='horizontal' {...this.link ()} />
         <DragController name='tickets' drag-handle='TripTicket' {...this.link ()} />
-        <Splitter kind='horizontal' default-size='60%' {...this.link ()} >
+        <Splitter kind='horizontal' default-size={this.splitterMessengersSize ()}
+          onSizeChanged={size => this.onSplitterMessengersChanged (size)} {...this.link ()} >
           <Container kind='tickets-messengers' drag-controller='messengers' drag-source='messengers' {...this.link ()} >
             {this.renderMessengersBooks (this.data.MessengersBooks)}
           </Container>
-          <Splitter kind='vertical' default-size='750px' min-size='0px' {...this.link ()} >
+          <Splitter kind='vertical' default-size={this.splitterTicketsToDispatchSize ()} min-size='0px'
+            onSizeChanged={size => this.onSplitterTicketsToDispatchChanged (size)} {...this.link ()} >
             <Container kind='view-stretch' {...this.link ()} >
               <Container kind='pane-top' {...this.link ()} >
                 <TextFieldCombo hint-text='Date' combo-glyph='calendar'
