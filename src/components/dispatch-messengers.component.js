@@ -92,7 +92,7 @@ export default class DispatchMessengers extends React.Component {
       <Container key={index} kind='tickets-messenger' id={messengerBook.id} {...this.link ()} >
         {this.renderMessenger (messengerBook)}
         <Container kind='tickets-trips' drag-controller='tickets' drag-source='dispatch'
-          id={messengerBook.id} max-width='300px' {...this.link ()} >
+          id={messengerBook.id} max-width={this.props.theme.shapes.tripTicketWidth} {...this.link ()} >
           {this.renderTickets (messengerBook.Tickets, 'trip-ticket')}
         </Container>
       </Container>
