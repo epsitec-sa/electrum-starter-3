@@ -31,9 +31,14 @@ export default class DispatchMessengers extends React.Component {
     this.data = window.document.data;
   }
 
+  mouseOut () {
+    console.log ('*** mouseOut ***');
+    this.forceUpdate ();
+  }
+
   renderMessenger (messengerBook) {
     return (
-      <MessengerTicket data={messengerBook} {...this.link ()} />
+      <MessengerTicket data={messengerBook} onMouseOut={() => this.mouseOut ()} {...this.link ()} />
     );
   }
 
