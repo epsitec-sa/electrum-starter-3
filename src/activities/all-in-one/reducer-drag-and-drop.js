@@ -482,21 +482,24 @@ function getTicket (state, element, source) {
   const sourceType  = source.dataset.dragSource;
   const fromId      = element.dataset.id;
   const fromOwnerId = element.dataset.ownerId;
-  if (sourceType === 'dispatch') {
+  if (sourceType === 'messengers') {
+    return null;  // ???
+    const messengers = state.MessengersBooks;
+    const fromOrder  = getTicketOrder (messengers, fromId);
+    return messengers[fromOrder];
+  } else if (sourceType === 'dispatch') {
     const tickets   = getTicketsForMessenger (state, fromOwnerId);
     const fromOrder = getTicketOrder (tickets, fromId);
-    const ticket    = tickets[fromOrder];
-    return ticket;
+    return tickets[fromOrder];
   } else if (sourceType === 'missions') {
-    const i = getTicketOrder (state.TicketsToDispatch.Tickets, fromId);
-    const ticket = state.TicketsToDispatch.Tickets[i];
-    return ticket;
+    const tickets   = state.TicketsToDispatch.Tickets;
+    const fromOrder = getTicketOrder (tickets, fromId);
+    return tickets[fromOrder];
   } else if (sourceType === 'desk') {
-    const fromTrayId  = source.dataset.id;
-    const fromTickets = getTicketsForTray (state, fromTrayId);
-    const i = getTicketOrder (fromTickets, fromId);
-    const ticket = fromTickets[i];
-    return ticket;
+    const fromTrayId = source.dataset.id;
+    const tickets    = getTicketsForTray (state, fromTrayId);
+    const fromOrder  = getTicketOrder (tickets, fromId);
+    return tickets[fromOrder];
   }
 }
 
@@ -514,7 +517,6 @@ function drop (state, element, target, source, sibling) {
   if (ticket) {
     ticket.Hidden = false;
   }
-
   const targetType = target.dataset.dragSource;
   if (targetType === 'messengers') {
     changeToMessengers (state, element, target, source, sibling);
