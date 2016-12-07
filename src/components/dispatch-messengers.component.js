@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import {Unit} from 'electrum-theme';
 
 import {
   Container,
@@ -88,11 +89,12 @@ export default class DispatchMessengers extends React.Component {
   }
 
   renderMessengerBook (messengerBook, index) {
+    const maxWidth = Unit.add (this.props.theme.shapes.tripTicketWidth, '20px');
     return (
       <Container key={index} kind='tickets-messenger' id={messengerBook.id} {...this.link ()} >
         {this.renderMessenger (messengerBook)}
         <Container kind='tickets-trips' drag-controller='tickets' drag-source='dispatch'
-          id={messengerBook.id} max-width={this.props.theme.shapes.tripTicketWidth} {...this.link ()} >
+          id={messengerBook.id} max-width={maxWidth} {...this.link ()} >
           {this.renderTickets (messengerBook.Tickets, 'trip-ticket')}
         </Container>
       </Container>
