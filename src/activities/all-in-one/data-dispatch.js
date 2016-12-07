@@ -429,6 +429,8 @@ const data =
     },
   ],
   Name: 'New board',
+  SplitterMessengersHeight: '50%',
+  SplitterTicketsToDispatchWidth: '700px',
   Status: 'open',
   TicketsToDispatch: {
     Tickets: [
