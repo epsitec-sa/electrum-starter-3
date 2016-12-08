@@ -2,6 +2,35 @@
 
 import reducerTickets from './reducer-tickets.js';
 
+function getOwner (state, ownerId) {
+  for (var messengerBook of state.MessengersBooks) {
+    if (messengerBook.id === ownerId) {
+      return {
+        type:    'dispatch',
+        id:      messengerBook.id,
+        tickets: messengerBook.Tickets,
+      };
+    }
+  }
+  for (var tray of state.TicketsTrays) {
+    if (tray.id === ownerId) {
+      return {
+        type:    'desk',
+        id:      tray.id,
+        tickets: tray.Tickets,
+      };
+    }
+  }
+  if (state.TicketsToDispatch.id === ownerId) {
+    return {
+      type:    'missions',
+      id:      state.TicketsToDispatch.id,
+      tickets: state.TicketsToDispatch.Tickets,
+    };
+  }
+  throw new Error (`Owner not found for ${ownerId}`);
+}
+
 function getTicketsForMessenger (state, messengerId) {
   for (var messengersBook of state.MessengersBooks) {
     if (messengersBook.id === messengerId) {
@@ -505,48 +534,59 @@ function getTicket (state, element, source) {
 
 // ------------------------------------------------------------------------------------------
 
-function drag (state, element, source) {
-  const ticket = getTicket (state, element, source);
-  if (ticket) {
-    ticket.Hidden = true;
+function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
+  let fromOrder = getTicketOrder (fromOwner.tickets, fromId);
+  let toOrder   = getTicketOrder (toOwner.tickets, toId);
+  if (fromOwner.id === toOwner.id && toOrder > fromOrder) {
+    toOrder--;
+  }
+  if (toPosition === 'after') {
+    toOrder++;
+  }
+  const ticket = fromOwner.tickets[fromOrder];
+  deleteTicket (fromOwner.tickets, ticket);
+  addTicket (toOwner.tickets, toOrder, ticket);
+}
+
+function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
+  console.log ('!!! dada-reducer !!!');
+  const fromOwner = getOwner (state, fromOwnerId);
+  const toOwner   = getOwner (state, toOwnerId);
+  changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition);
+  if (toOwner.type === 'dispatch') {
+    deleteTransits (state);
+    createTransits (state);
+    checkOrders (state);
   }
 }
 
-function drop (state, element, target, source, sibling) {
-  const ticket = getTicket (state, element, source);
-  if (ticket) {
-    ticket.Hidden = false;
-  }
-  const targetType = target.dataset.dragSource;
-  if (targetType === 'messengers') {
-    changeToMessengers (state, element, target, source, sibling);
-  } else if (targetType === 'dispatch') {
-    changeToDispatch (state, element, target, source, sibling);
-  } else if (targetType === 'missions') {
-    changeToMissions (state, element, target, source, sibling);
-  } else if (targetType === 'desk') {
-    changeToDesk (state, element, target, source, sibling);
+function usefull (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
+  const fromOwner = getOwner (state, fromOwnerId);
+  const toOwner   = getOwner (state, toOwnerId);
+  if (fromOwner.id === toOwner.id) {
+    let fromOrder = getTicketOrder (fromOwner.tickets, fromId);
+    let toOrder   = getTicketOrder (toOwner.tickets, toId);
+    if (fromOrder === toOrder) {
+      state.usefull = false;
+    } else if (fromOrder === toOrder + 1 && toPosition === 'after') {
+      state.usefull = false;
+    } else if (fromOrder === toOrder - 1 && toPosition === 'before') {
+      state.usefull = false;
+    } else {
+      state.usefull = true;
+    }
+  } else {
+    state.usefull = true;
   }
 }
 
-function debug (state) {
-  const tickets = state.MessengersBooks[0].Tickets;
-  const ticket = tickets[1];
-  deleteTicket (tickets, ticket);
-  addTicket (tickets, 0, ticket);
-  checkOrders (state);
-}
-
-export default function Drag (state = {}, action = {}) {
+export default function Reducer (state = {}, action = {}) {
   switch (action.type) {
-    case 'DRAG':
-      state.dispatch = drag (state, action.element, action.source);
-      break;
     case 'DROP':
-      state.dispatch = drop (state, action.element, action.target, action.source, action.sibling);
+      state.dispatch = drop (state, action.fromId, action.fromOwnerId, action.toId, action.toOwnerId, action.toPosition);
       break;
-    case 'DEBUG':
-      state.dispatch = debug (state);
+    case 'USEFULL':
+      state.dispatch = usefull (state, action.fromId, action.fromOwnerId, action.toId, action.toOwnerId, action.toPosition);
       break;
   }
   return state;
