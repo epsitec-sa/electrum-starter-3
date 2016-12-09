@@ -545,6 +545,7 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
   }
   const ticket = fromOwner.tickets[fromOrder];
   deleteTicket (fromOwner.tickets, ticket);
+  ticket.OwnerId = toOwner.id;
   addTicket (toOwner.tickets, toOrder, ticket);
 }
 
