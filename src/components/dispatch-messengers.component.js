@@ -20,7 +20,6 @@ import {
   Trip,
   TicketsTray,
   MessengerTicket,
-  DragController,
   Splitter
 } from 'electrum-arc';
 
@@ -140,8 +139,6 @@ export default class DispatchMessengers extends React.Component {
   render () {
     return (
       <Container kind='tickets-root' {...this.link ()} >
-        <DragController name='messengers' drag-handle='MessengerTicket' direction='horizontal' {...this.link ()} />
-        <DragController name='tickets' drag-handle='TripTicket' {...this.link ()} />
         <Splitter kind='horizontal' default-size={this.splitterMessengersHeight ()}
           onSizeChanged={size => this.onSplitterMessengersChanged (size)} {...this.link ()} >
           <Container kind='tickets-messengers' drag-controller='messengers' drag-source='messengers' {...this.link ()} >
