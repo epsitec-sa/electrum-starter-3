@@ -19,7 +19,8 @@ const data =
       Revenue: '250 CHF',
       Tickets: [
         {
-          Extended: 'false',
+          Extended: 'true',
+          Hatch: 'true',
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
           Status: 'pre-dispatched',

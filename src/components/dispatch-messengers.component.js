@@ -33,10 +33,6 @@ export default class DispatchMessengers extends React.Component {
 
   mouseOut () {
     console.log ('*** mouseOut ***');
-    // window.document.reducerDragAndDrop (window.document.data, {
-    //   type:    'DEBUG',
-    // });
-    // this.forceUpdate ();
   }
 
   renderMessenger (messengerBook) {

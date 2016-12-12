@@ -581,6 +581,24 @@ function usefull (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
   }
 }
 
+function swapSelected (state, id, ownerId) {
+  const owner = getOwner (state, ownerId);
+  let order = getTicketOrder (owner.tickets, id);
+  owner.tickets[order].Selected = (owner.tickets[order].Selected === 'true') ? 'false' : 'true';
+}
+
+function swapExtended (state, id, ownerId) {
+  const owner = getOwner (state, ownerId);
+  let order = getTicketOrder (owner.tickets, id);
+  owner.tickets[order].Extended = (owner.tickets[order].Extended === 'true') ? 'false' : 'true';
+}
+
+function swapHatch (state, id, ownerId) {
+  const owner = getOwner (state, ownerId);
+  let order = getTicketOrder (owner.tickets, id);
+  owner.tickets[order].Hatch = (owner.tickets[order].Hatch === 'true') ? 'false' : 'true';
+}
+
 export default function Reducer (state = {}, action = {}) {
   switch (action.type) {
     case 'DROP':
@@ -588,6 +606,15 @@ export default function Reducer (state = {}, action = {}) {
       break;
     case 'USEFULL':
       state.dispatch = usefull (state, action.fromId, action.fromOwnerId, action.toId, action.toOwnerId, action.toPosition);
+      break;
+    case 'SWAP_SELECTED':
+      state.dispatch = swapSelected (state, action.id, action.ownerId);
+      break;
+    case 'SWAP_EXTENDED':
+      state.dispatch = swapExtended (state, action.id, action.ownerId);
+      break;
+    case 'SWAP_HATCH':
+      state.dispatch = swapHatch (state, action.id, action.ownerId);
       break;
   }
   return state;
