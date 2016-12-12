@@ -2,7 +2,7 @@
 
 const data =
 {
-  MessengersBooks: [
+  Roadbooks: [
     {
       Messenger: {
         Name: 'Paul',
@@ -19,7 +19,7 @@ const data =
       Revenue: '250 CHF',
       Tickets: [
         {
-          Extended: 'true',
+          Extended: 'false',
           Hatch: 'true',
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
@@ -747,9 +747,9 @@ const data =
   ],
   Name: 'New board',
   SplitterMessengersHeight: '50%',
-  SplitterTicketsToDispatchWidth: '700px',
+  SplitterBacklogWidth: '700px',
   Status: 'open',
-  TicketsToDispatch: {
+  Backlog: {
     Tickets: [
        {
           Extended: 'false',

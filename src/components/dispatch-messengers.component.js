@@ -35,9 +35,9 @@ export default class DispatchMessengers extends React.Component {
     console.log ('*** mouseOut ***');
   }
 
-  renderMessenger (messengerBook) {
+  renderMessenger (roadbook) {
     return (
-      <MessengerTicket data={messengerBook} onMouseOut={() => this.mouseOut ()} {...this.link ()} />
+      <MessengerTicket data={roadbook} onMouseOut={() => this.mouseOut ()} {...this.link ()} />
     );
   }
 
@@ -86,24 +86,24 @@ export default class DispatchMessengers extends React.Component {
     return result;
   }
 
-  renderMessengerBook (messengerBook, index) {
+  renderRoadbook (roadbook, index) {
     const maxWidth = Unit.add (this.props.theme.shapes.tripTicketWidth, '20px');
     return (
-      <Container key={index} kind='tickets-messenger' id={messengerBook.id} {...this.link ()} >
-        {this.renderMessenger (messengerBook)}
+      <Container key={index} kind='tickets-messenger' id={roadbook.id} {...this.link ()} >
+        {this.renderMessenger (roadbook)}
         <Container kind='tickets-trips' drag-controller='tickets' drag-source='dispatch'
-          id={messengerBook.id} max-width={maxWidth} {...this.link ()} >
-          {this.renderTickets (messengerBook.Tickets, 'trip-ticket')}
+          id={roadbook.id} max-width={maxWidth} {...this.link ()} >
+          {this.renderTickets (roadbook.Tickets, 'trip-ticket')}
         </Container>
       </Container>
     );
   }
 
-  renderMessengersBooks (messengersBooks) {
+  renderRoadbooks (roadbooks) {
     const result = [];
     let index = 0;
-    for (var messengerBook of messengersBooks) {
-      result.push (this.renderMessengerBook (messengerBook, index++));
+    for (var roadbook of roadbooks) {
+      result.push (this.renderRoadbook (roadbook, index++));
     }
     return result;
   }
@@ -112,8 +112,8 @@ export default class DispatchMessengers extends React.Component {
     this.data.SplitterMessengersHeight = size;
   }
 
-  onSplitterTicketsToDispatchChanged (size) {
-    this.data.SplitterTicketsToDispatchWidth = size;
+  onSplitterBacklogChanged (size) {
+    this.data.SplitterBacklogWidth = size;
   }
 
   splitterMessengersHeight () {
@@ -124,9 +124,9 @@ export default class DispatchMessengers extends React.Component {
     }
   }
 
-  splitterTicketsToDispatchWidth () {
-    if (this.data.SplitterTicketsToDispatchWidth) {
-      return this.data.SplitterTicketsToDispatchWidth;
+  splitterBacklogWidth () {
+    if (this.data.SplitterBacklogWidth) {
+      return this.data.SplitterBacklogWidth;
     } else {
       return '750px';  // default value
     }
@@ -138,10 +138,10 @@ export default class DispatchMessengers extends React.Component {
         <Splitter kind='horizontal' default-size={this.splitterMessengersHeight ()}
           onSizeChanged={size => this.onSplitterMessengersChanged (size)} {...this.link ()} >
           <Container kind='tickets-messengers' drag-controller='messengers' drag-source='messengers' {...this.link ()} >
-            {this.renderMessengersBooks (this.data.MessengersBooks)}
+            {this.renderRoadbooks (this.data.Roadbooks)}
           </Container>
-          <Splitter kind='vertical' default-size={this.splitterTicketsToDispatchWidth ()} min-size='0px'
-            onSizeChanged={size => this.onSplitterTicketsToDispatchChanged (size)} {...this.link ()} >
+          <Splitter kind='vertical' default-size={this.splitterBacklogWidth ()} min-size='0px'
+            onSizeChanged={size => this.onSplitterBacklogChanged (size)} {...this.link ()} >
             <Container kind='view-stretch' {...this.link ()} >
               <Container kind='pane-top' {...this.link ()} >
                 <TextFieldCombo hint-text='Date' combo-glyph='calendar'
@@ -156,7 +156,7 @@ export default class DispatchMessengers extends React.Component {
               </Container>
               <Container kind='panes' {...this.link ()} >
                 <Container kind='column' drag-controller='tickets' drag-source='missions' {...this.link ()} >
-                  {this.renderTickets (this.data.TicketsToDispatch.Tickets, 'trip-box')}
+                  {this.renderTickets (this.data.Backlog.Tickets, 'trip-box')}
                 </Container>
               </Container>
             </Container>
