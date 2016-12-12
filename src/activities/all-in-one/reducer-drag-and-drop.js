@@ -32,9 +32,9 @@ function getOwner (state, ownerId) {
 }
 
 function getTicketsForMessenger (state, messengerId) {
-  for (var messengersBook of state.Roadbooks) {
-    if (messengersBook.id === messengerId) {
-      return messengersBook.Tickets;
+  for (var readbook of state.Roadbooks) {
+    if (readbook.id === messengerId) {
+      return readbook.Tickets;
     }
   }
   throw new Error (`Messenger ${messengerId} does not exist`);
@@ -167,6 +167,7 @@ function getNewTransit (ticket) {
     n.Trip.Pick.ShortDescription = 'Transit à définir';
     n.Trip.Pick.Zone = null;
   }
+  n.Flash = 'true';
   return n;
 }
 
@@ -188,8 +189,8 @@ function createTransit (state, messengerId) {
 }
 
 function createTransits (state) {
-  for (var messengersBook of state.Roadbooks) {
-    createTransit (state, messengersBook.id);
+  for (var readbook of state.Roadbooks) {
+    createTransit (state, readbook.id);
   }
 }
 
@@ -211,8 +212,8 @@ function deleteTransit (state, messengerId) {
 }
 
 function deleteTransits (state) {
-  for (var messengersBook of state.Roadbooks) {
-    deleteTransit (state, messengersBook.id);
+  for (var readbook of state.Roadbooks) {
+    deleteTransit (state, readbook.id);
   }
 }
 
@@ -256,8 +257,8 @@ function mergeTrays (state) {
 }
 
 function checkOrders (state) {
-  for (var messengersBook of state.Roadbooks) {
-    checkOrder (state, messengersBook.id);
+  for (var readbook of state.Roadbooks) {
+    checkOrder (state, readbook.id);
   }
 }
 
@@ -534,7 +535,16 @@ function getTicket (state, element, source) {
 
 // ------------------------------------------------------------------------------------------
 
+function clearFlash (state) {
+  for (var readbook of state.Roadbooks) {
+    for (var ticket of readbook.Tickets) {
+      ticket.Flash = 'false';
+    }
+  }
+}
+
 function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
+  clearFlash (state);
   let fromOrder = getTicketOrder (fromOwner.tickets, fromId);
   let toOrder   = getTicketOrder (toOwner.tickets, toId);
   if (fromOwner.id === toOwner.id && toOrder > fromOrder) {
@@ -546,6 +556,7 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
   const ticket = fromOwner.tickets[fromOrder];
   deleteTicket (fromOwner.tickets, ticket);
   ticket.OwnerId = toOwner.id;
+  ticket.Flash = 'true';
   addTicket (toOwner.tickets, toOrder, ticket);
 }
 
