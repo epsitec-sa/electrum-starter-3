@@ -535,16 +535,26 @@ function getTicket (state, element, source) {
 
 // ------------------------------------------------------------------------------------------
 
-function clearFlash (state) {
+function setFlash (state, id) {
   for (var readbook of state.Roadbooks) {
-    for (var ticket of readbook.Tickets) {
-      ticket.Flash = 'false';
+    for (let i = 0; i < readbook.Tickets.length; i++) {
+      const ticket = readbook.Tickets[i];
+      if (ticket.id === id) {
+        if (ticket.Flash === 'false') {
+          ticket.Flash = 'true';
+          readbook.Tickets[i] = clone (ticket);
+        }
+      } else {
+        if (ticket.Flash === 'true') {
+          ticket.Flash = 'false';
+          readbook.Tickets[i] = clone (ticket);
+        }
+      }
     }
   }
 }
 
 function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
-  clearFlash (state);
   let fromOrder = getTicketOrder (fromOwner.tickets, fromId);
   let toOrder   = getTicketOrder (toOwner.tickets, toId);
   if (fromOwner.id === toOwner.id && toOrder > fromOrder) {
@@ -558,6 +568,7 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
   ticket.OwnerId = toOwner.id;
   ticket.Flash = 'true';
   addTicket (toOwner.tickets, toOrder, ticket);
+  setFlash (state, ticket.id);
 }
 
 // ------------------------------------------------------------------------------------------
@@ -610,6 +621,7 @@ function swapSelected (state, id, ownerId) {
   const owner = getOwner (state, ownerId);
   let order = getTicketOrder (owner.tickets, id);
   owner.tickets[order].Selected = (owner.tickets[order].Selected === 'true') ? 'false' : 'true';
+  setFlash (state, 'none');
   return state;
 }
 
@@ -617,6 +629,7 @@ function swapExtended (state, id, ownerId) {
   const owner = getOwner (state, ownerId);
   let order = getTicketOrder (owner.tickets, id);
   owner.tickets[order].Extended = (owner.tickets[order].Extended === 'true') ? 'false' : 'true';
+  setFlash (state, 'none');
   return state;
 }
 
@@ -624,6 +637,7 @@ function swapHatch (state, id, ownerId) {
   const owner = getOwner (state, ownerId);
   let order = getTicketOrder (owner.tickets, id);
   owner.tickets[order].Hatch = (owner.tickets[order].Hatch === 'true') ? 'false' : 'true';
+  setFlash (state, 'none');
   return state;
 }
 
