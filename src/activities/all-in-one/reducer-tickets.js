@@ -21,13 +21,13 @@ function deleteTicket (state, ticket) {
 export default function Polypheme (state = {}, action = {}) {
   switch (action.type) {
     case 'REPLACE_TICKET':
-      state.dispatch = replaceTicket (state, action.index, action.ticket);
+      state = replaceTicket (state, action.index, action.ticket);
       break;
     case 'ADD_TICKET':
-      state.dispatch = addTicket (state, action.index, action.ticket);
+      state = addTicket (state, action.index, action.ticket);
       break;
     case 'DELETE_TICKET':
-      state.dispatch = deleteTicket (state, action.ticket);
+      state = deleteTicket (state, action.ticket);
       break;
   }
   return state;

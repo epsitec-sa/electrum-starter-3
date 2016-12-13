@@ -560,6 +560,8 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
   addTicket (toOwner.tickets, toOrder, ticket);
 }
 
+// ------------------------------------------------------------------------------------------
+
 function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
   console.log ('Reducer.drop');
   const fromOwner = getOwner (state, fromOwnerId);
@@ -570,6 +572,7 @@ function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
     createTransits (state);
     checkOrders (state);
   }
+  return state;
 }
 
 function usefull (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
@@ -590,42 +593,59 @@ function usefull (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
   } else {
     state.usefull = true;
   }
+  return state;
+}
+
+function cloneAll (state) {
+  for (var readbook of state.Roadbooks) {
+    for (let i = 0; i < readbook.Tickets.length; i++) {
+      const ticket = readbook.Tickets[i];
+      readbook.Tickets[i] = clone (ticket);
+    }
+  }
+  return state;
 }
 
 function swapSelected (state, id, ownerId) {
   const owner = getOwner (state, ownerId);
   let order = getTicketOrder (owner.tickets, id);
   owner.tickets[order].Selected = (owner.tickets[order].Selected === 'true') ? 'false' : 'true';
+  return state;
 }
 
 function swapExtended (state, id, ownerId) {
   const owner = getOwner (state, ownerId);
   let order = getTicketOrder (owner.tickets, id);
   owner.tickets[order].Extended = (owner.tickets[order].Extended === 'true') ? 'false' : 'true';
+  return state;
 }
 
 function swapHatch (state, id, ownerId) {
   const owner = getOwner (state, ownerId);
   let order = getTicketOrder (owner.tickets, id);
   owner.tickets[order].Hatch = (owner.tickets[order].Hatch === 'true') ? 'false' : 'true';
+  return state;
 }
 
 export default function Reducer (state = {}, action = {}) {
   switch (action.type) {
     case 'DROP':
-      state.dispatch = drop (state, action.fromId, action.fromOwnerId, action.toId, action.toOwnerId, action.toPosition);
+      state = drop (state, action.fromId, action.fromOwnerId, action.toId, action.toOwnerId, action.toPosition);
       break;
     case 'USEFULL':
-      state.dispatch = usefull (state, action.fromId, action.fromOwnerId, action.toId, action.toOwnerId, action.toPosition);
+      state = usefull (state, action.fromId, action.fromOwnerId, action.toId, action.toOwnerId, action.toPosition);
+      break;
+    case 'CLONE':
+      state = cloneAll (state);
       break;
     case 'SWAP_SELECTED':
-      state.dispatch = swapSelected (state, action.id, action.ownerId);
+      state = swapSelected (state, action.id, action.ownerId);
       break;
     case 'SWAP_EXTENDED':
-      state.dispatch = swapExtended (state, action.id, action.ownerId);
+      state = swapExtended (state, action.id, action.ownerId);
       break;
     case 'SWAP_HATCH':
-      state.dispatch = swapHatch (state, action.id, action.ownerId);
+      state = swapHatch (state, action.id, action.ownerId);
       break;
   }
   return state;

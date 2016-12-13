@@ -38,6 +38,7 @@ class _Root extends React.Component {
     super (props);
     window.document.data = getData ();
     window.document.reducerDragAndDrop = reducerDragAndDrop;
+    window.document.mock = true;
   }
 
   componentWillMount () {
