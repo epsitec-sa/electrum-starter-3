@@ -50,7 +50,7 @@ function getTicketsForTray (state, trayId) {
 }
 
 function addTicket (tickets, index, ticket) {
-  reducerTickets (tickets, {
+  tickets = reducerTickets (tickets, {
     type:   'ADD_TICKET',
     index:  index,
     ticket: ticket,
@@ -58,7 +58,7 @@ function addTicket (tickets, index, ticket) {
 }
 
 function deleteTicket (tickets, ticket) {
-  reducerTickets (tickets, {
+  tickets = reducerTickets (tickets, {
     type:   'DELETE_TICKET',
     ticket: ticket,
   });
@@ -540,7 +540,7 @@ function setFlash (state, id) {
     for (let i = 0; i < readbook.Tickets.length; i++) {
       const ticket = readbook.Tickets[i];
       if (ticket.id === id) {
-        if (ticket.Flash === 'false') {
+        if (ticket.Flash !== 'true') {
           ticket.Flash = 'true';
           readbook.Tickets[i] = clone (ticket);
         }
@@ -566,7 +566,6 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
   const ticket = fromOwner.tickets[fromOrder];
   deleteTicket (fromOwner.tickets, ticket);
   ticket.OwnerId = toOwner.id;
-  ticket.Flash = 'true';
   addTicket (toOwner.tickets, toOrder, ticket);
   setFlash (state, ticket.id);
 }
