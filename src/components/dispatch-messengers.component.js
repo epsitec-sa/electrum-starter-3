@@ -20,7 +20,9 @@ import {
   Trip,
   TicketsTray,
   MessengerTicket,
-  Splitter
+  Splitter,
+  DragCab,
+  Roadbook
 } from 'electrum-arc';
 
 export default class DispatchMessengers extends React.Component {
@@ -89,13 +91,16 @@ export default class DispatchMessengers extends React.Component {
   renderRoadbook (roadbook, index) {
     const maxWidth = Unit.add (this.props.theme.shapes.tripTicketWidth, '20px');
     return (
-      <Container key={index} kind='tickets-messenger' id={roadbook.id} {...this.link ()} >
-        {this.renderMessenger (roadbook)}
-        <Container kind='tickets-trips' drag-controller='tickets' drag-source='dispatch'
-          id={roadbook.id} max-width={maxWidth} {...this.link ()} >
-          {this.renderTickets (roadbook.Tickets, 'trip-ticket')}
-        </Container>
-      </Container>
+      <DragCab key={index} drag-handle='messengers' direction='horizontal'
+        id={roadbook.id} owner-id='messengers' {...this.link ()}>
+        <Roadbook key={index} {...this.link ()} >
+          {this.renderMessenger (roadbook)}
+          <Container kind='tickets-trips' drag-controller='tickets' drag-source='dispatch'
+            id={roadbook.id} max-width={maxWidth} {...this.link ()} >
+            {this.renderTickets (roadbook.Tickets, 'trip-ticket')}
+          </Container>
+        </Roadbook>
+      </DragCab>
     );
   }
 

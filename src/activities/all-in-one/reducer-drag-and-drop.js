@@ -3,6 +3,13 @@
 import reducerTickets from './reducer-tickets.js';
 
 function getOwner (state, ownerId) {
+  if (ownerId === 'messengers') {
+    return {
+      type:    'messengers',
+      id:      state.id,
+      tickets: state.Roadbooks,
+    };
+  }
   for (var roadbook of state.Roadbooks) {
     if (roadbook.id === ownerId) {
       return {
