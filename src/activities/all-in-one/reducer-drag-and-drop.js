@@ -13,7 +13,7 @@ function getOwner (state, ownerId) {
   for (var roadbook of state.Roadbooks) {
     if (roadbook.id === ownerId) {
       return {
-        type:    'dispatch',
+        type:    'roadbooks',
         id:      roadbook.id,
         tickets: roadbook.Tickets,
       };
@@ -30,7 +30,7 @@ function getOwner (state, ownerId) {
   }
   if (state.Backlog.id === ownerId) {
     return {
-      type:    'missions',
+      type:    'backlog',
       id:      state.Backlog.id,
       tickets: state.Backlog.Tickets,
     };
@@ -471,82 +471,11 @@ function changeDeskToDesk (state, element, target, source, sibling) {
 
 // ------------------------------------------------------------------------------------------
 
-function changeToMessengers (state, element, target, source, sibling) {
-  const fromId     = element.dataset.id;
-  const messengers = state.Roadbooks;
-  const fromOrder  = getTicketOrder (messengers, fromId);
-  const messenger  = messengers[fromOrder];
-  deleteTicket (messengers, messenger);
-
-  const toOrder = getToOrder (messengers, target, sibling);
-  addTicket (messengers, toOrder, messenger);
-}
-
-function changeToDispatch (state, element, target, source, sibling) {
-  const sourceType = source.dataset.dragSource;
-  if (sourceType === 'dispatch') {
-    changeDispatchToDispatch (state, element, target, source, sibling);
-  } else if (sourceType === 'missions') {
-    changeMissionsToDispatch (state, element, target, source, sibling);
-  } else if (sourceType === 'desk') {
-    changeDeskToDispatch (state, element, target, source, sibling);
-  }
-}
-
-function changeToMissions (state, element, target, source, sibling) {
-  const sourceType = source.dataset.dragSource;
-  if (sourceType === 'dispatch') {
-    changeDispatchToMissions (state, element, target, source, sibling);
-  } else if (sourceType === 'missions') {
-    changeMissionsToMissions (state, element, target, source, sibling);
-  } else if (sourceType === 'desk') {
-    changeDeskToMissions (state, element, target, source, sibling);
-  }
-}
-
-function changeToDesk (state, element, target, source, sibling) {
-  const sourceType = source.dataset.dragSource;
-  if (sourceType === 'dispatch') {
-    changeDispatchToDesk (state, element, target, source, sibling);
-  } else if (sourceType === 'missions') {
-    changeMissionsToDesk (state, element, target, source, sibling);
-  } else if (sourceType === 'desk') {
-    changeDeskToDesk (state, element, target, source, sibling);
-  }
-}
-
-function getTicket (state, element, source) {
-  const sourceType  = source.dataset.dragSource;
-  const fromId      = element.dataset.id;
-  const fromOwnerId = element.dataset.ownerId;
-  if (sourceType === 'messengers') {
-    return null;  // ???
-    const messengers = state.Roadbooks;
-    const fromOrder  = getTicketOrder (messengers, fromId);
-    return messengers[fromOrder];
-  } else if (sourceType === 'dispatch') {
-    const tickets   = getTicketsForMessenger (state, fromOwnerId);
-    const fromOrder = getTicketOrder (tickets, fromId);
-    return tickets[fromOrder];
-  } else if (sourceType === 'missions') {
-    const tickets   = state.Backlog.Tickets;
-    const fromOrder = getTicketOrder (tickets, fromId);
-    return tickets[fromOrder];
-  } else if (sourceType === 'desk') {
-    const fromTrayId = source.dataset.id;
-    const tickets    = getTicketsForTray (state, fromTrayId);
-    const fromOrder  = getTicketOrder (tickets, fromId);
-    return tickets[fromOrder];
-  }
-}
-
-// ------------------------------------------------------------------------------------------
-
-function setFlash (state, id) {
+function setFlash (state, ids) {
   for (var readbook of state.Roadbooks) {
     for (let i = 0; i < readbook.Tickets.length; i++) {
       const ticket = readbook.Tickets[i];
-      if (ticket.id === id) {
+      if (ids.indexOf (ticket.id) !== -1) {
         if (ticket.Flash !== 'true') {
           ticket.Flash = 'true';
           readbook.Tickets[i] = clone (ticket);
@@ -573,8 +502,18 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
   const ticket = fromOwner.tickets[fromOrder];
   deleteTicket (fromOwner.tickets, ticket);
   ticket.OwnerId = toOwner.id;
-  addTicket (toOwner.tickets, toOrder, ticket);
-  setFlash (state, ticket.id);
+  if (toOwner.type === 'roadbooks' && ticket.Type === 'pair') {
+    const pick = clone (ticket);
+    const drop = clone (ticket);
+    pick.Type = 'pick';
+    drop.Type = 'drop';
+    addTicket (toOwner.tickets, toOrder, drop);  // first drop, for have pick/drop in this order
+    addTicket (toOwner.tickets, toOrder, pick);
+    setFlash (state, [pick.id, drop.id]);
+  } else {
+    addTicket (toOwner.tickets, toOrder, ticket);
+    setFlash (state, [ticket.id]);
+  }
 }
 
 // ------------------------------------------------------------------------------------------
@@ -584,7 +523,7 @@ function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
   const fromOwner = getOwner (state, fromOwnerId);
   const toOwner   = getOwner (state, toOwnerId);
   changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition);
-  if (toOwner.type === 'dispatch') {
+  if (toOwner.type === 'roadbooks') {
     deleteTransits (state);
     createTransits (state);
     checkOrders (state);
@@ -627,7 +566,7 @@ function swapSelected (state, id, ownerId) {
   const owner = getOwner (state, ownerId);
   let order = getTicketOrder (owner.tickets, id);
   owner.tickets[order].Selected = (owner.tickets[order].Selected === 'true') ? 'false' : 'true';
-  setFlash (state, 'none');
+  setFlash (state, []);
   return state;
 }
 
@@ -635,7 +574,7 @@ function swapExtended (state, id, ownerId) {
   const owner = getOwner (state, ownerId);
   let order = getTicketOrder (owner.tickets, id);
   owner.tickets[order].Extended = (owner.tickets[order].Extended === 'true') ? 'false' : 'true';
-  setFlash (state, 'none');
+  setFlash (state, []);
   return state;
 }
 
@@ -647,9 +586,11 @@ function swapStatus (state, id, ownerId) {
   } else {
     owner.tickets[order].Status = 'dispatched';
   }
-  setFlash (state, 'none');
+  setFlash (state, []);
   return state;
 }
+
+// ------------------------------------------------------------------------------------------
 
 export default function Reducer (state = {}, action = {}) {
   switch (action.type) {

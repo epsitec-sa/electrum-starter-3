@@ -98,7 +98,7 @@ export default class DispatchMessengers extends React.Component {
         id={roadbook.id} owner-id='messengers' {...this.link ()}>
         <Roadbook key={index} {...this.link ()} >
           {this.renderMessenger (roadbook)}
-          <Container kind='tickets-trips' drag-controller='tickets' drag-source='dispatch'
+          <Container kind='tickets-trips' drag-controller='tickets' drag-source='roadbooks'
             id={roadbook.id} max-width={maxWidth} {...this.link ()} >
             {this.renderTickets (roadbook.Tickets, 'trip-ticket')}
           </Container>
@@ -163,7 +163,7 @@ export default class DispatchMessengers extends React.Component {
                   grow='2' combo-glyph='Search' {...this.link ()} />
               </Container>
               <Container kind='panes' {...this.link ()} >
-                <Container kind='column' drag-controller='tickets' drag-source='missions' {...this.link ()} >
+                <Container kind='column' drag-controller='tickets' drag-source='backlog' {...this.link ()} >
                   {this.renderTickets (this.data.Backlog.Tickets, 'trip-box')}
                 </Container>
               </Container>
