@@ -745,7 +745,7 @@ const data =
     },
   ],
   Name: 'New board',
-  SplitterMessengersHeight: '50%',
+  SplitterRoadbooksHeight: '50%',
   SplitterBacklogWidth: '700px',
   Status: 'open',
   Backlog: {

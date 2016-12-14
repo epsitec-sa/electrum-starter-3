@@ -116,17 +116,17 @@ export default class DispatchMessengers extends React.Component {
     return result;
   }
 
-  onSplitterMessengersChanged (size) {
-    this.data.SplitterMessengersHeight = size;
+  onSplitterRoadbooksChanged (size) {
+    this.data.SplitterRoadbooksHeight = size;
   }
 
   onSplitterBacklogChanged (size) {
     this.data.SplitterBacklogWidth = size;
   }
 
-  splitterMessengersHeight () {
-    if (this.data.SplitterMessengersHeight) {
-      return this.data.SplitterMessengersHeight;
+  splitterRoadbooksHeight () {
+    if (this.data.SplitterRoadbooksHeight) {
+      return this.data.SplitterRoadbooksHeight;
     } else {
       return '60%';  // default value
     }
@@ -143,8 +143,8 @@ export default class DispatchMessengers extends React.Component {
   render () {
     return (
       <Container kind='tickets-root' {...this.link ()} >
-        <Splitter kind='horizontal' default-size={this.splitterMessengersHeight ()}
-          onSizeChanged={size => this.onSplitterMessengersChanged (size)} {...this.link ()} >
+        <Splitter kind='horizontal' default-size={this.splitterRoadbooksHeight ()}
+          onSizeChanged={size => this.onSplitterRoadbooksChanged (size)} {...this.link ()} >
           <Container kind='tickets-messengers' drag-controller='messengers' drag-source='messengers' {...this.link ()} >
             {this.renderRoadbooks (this.data.Roadbooks)}
           </Container>
