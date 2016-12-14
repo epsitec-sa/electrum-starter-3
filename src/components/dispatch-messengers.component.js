@@ -60,7 +60,7 @@ export default class DispatchMessengers extends React.Component {
   }
 
   renderTray (tray, index) {
-    const x = tray.Position.split (',')[0];
+    const x = tray.Position.split (',')[0];  // split '1650px,50px' by example
     const y = tray.Position.split (',')[1];
     return (
       <TicketsTray key={index} left={x} top={y} rotate={tray.Rotation} title={tray.Name}
