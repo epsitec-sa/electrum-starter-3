@@ -92,6 +92,9 @@ export default class DispatchMessengers extends React.Component {
     const maxWidth = Unit.add (this.props.theme.shapes.tripTicketWidth, '20px');
     return (
       <DragCab key={index} drag-handle='messengers' direction='horizontal'
+        color={this.props.theme.palette.roadbookDragAndDropHover}
+        thickness={this.props.theme.shapes.dragAndDropThickness}
+        radius='0px'
         id={roadbook.id} owner-id='messengers' {...this.link ()}>
         <Roadbook key={index} {...this.link ()} >
           {this.renderMessenger (roadbook)}
