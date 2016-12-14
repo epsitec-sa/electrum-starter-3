@@ -20,10 +20,9 @@ const data =
       Tickets: [
         {
           Extended: 'false',
-          Hatch: 'true',
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
-          Status: 'pre-dispatched',
+          Status: 'dispatched',
           Trip: {
             Description: '',
             Drop: {

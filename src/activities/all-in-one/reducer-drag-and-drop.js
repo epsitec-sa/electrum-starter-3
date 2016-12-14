@@ -639,10 +639,14 @@ function swapExtended (state, id, ownerId) {
   return state;
 }
 
-function swapHatch (state, id, ownerId) {
+function swapStatus (state, id, ownerId) {
   const owner = getOwner (state, ownerId);
   let order = getTicketOrder (owner.tickets, id);
-  owner.tickets[order].Hatch = (owner.tickets[order].Hatch === 'true') ? 'false' : 'true';
+  if (owner.tickets[order].Status === 'dispatched') {
+    owner.tickets[order].Status = 'pre-dispatched';
+  } else {
+    owner.tickets[order].Status = 'dispatched';
+  }
   setFlash (state, 'none');
   return state;
 }
@@ -664,8 +668,8 @@ export default function Reducer (state = {}, action = {}) {
     case 'SWAP_EXTENDED':
       state = swapExtended (state, action.id, action.ownerId);
       break;
-    case 'SWAP_HATCH':
-      state = swapHatch (state, action.id, action.ownerId);
+    case 'SWAP_STATUS':
+      state = swapStatus (state, action.id, action.ownerId);
       break;
   }
   return state;
