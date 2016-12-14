@@ -95,7 +95,6 @@ export default class DispatchMessengers extends React.Component {
         color={this.props.theme.palette.roadbookDragAndDropHover}
         thickness={this.props.theme.shapes.dragAndDropThickness}
         radius='0px'
-        mode='corner-top-left'
         id={roadbook.id} owner-id='messengers' {...this.link ()}>
         <Roadbook key={index} {...this.link ()} >
           {this.renderMessenger (roadbook)}
