@@ -82,44 +82,11 @@ function getTicketOrder (tickets, id) {
   return -1;
 }
 
-function getToOrder (tickets, target, sibling, fromOrder) {
-  let toOrder = -1;
-  if (sibling === null) {
-    toOrder = target.children.length - 1;  // if no sibling, use last element
-  } else {
-    toOrder = getTicketOrder (tickets, sibling.dataset.id);
-    if (fromOrder && toOrder > fromOrder) {
-      toOrder--;  // if target under source, count as if the source was not there
-    }
-  }
-  return toOrder;
-}
-
 function getTicketsFromMissionId (tickets, missionId) {
   const result = [];
   for (var ticket of tickets) {
     if (ticket.Trip.MissionId === missionId) {
       result.push (ticket);
-    }
-  }
-  return result;
-}
-
-// Search all tickets into Roadbooks and TicketsTrays.
-function getTicketOwners (state, missionId) {
-  const result = [];
-  for (var roadbook of state.Roadbooks) {
-    for (var ticket1 of roadbook.Tickets) {
-      if (ticket1.Trip.MissionId === missionId) {
-        result.push (roadbook.id);
-      }
-    }
-  }
-  for (var tray of state.TicketsTrays) {
-    for (var ticket2 of tray.Tickets) {
-      if (ticket2.Trip.MissionId === missionId) {
-        result.push (tray.id);
-      }
     }
   }
   return result;
@@ -238,6 +205,12 @@ function checkOrder (state, messengerId) {
   }
 }
 
+function checkOrders (state) {
+  for (var readbook of state.Roadbooks) {
+    checkOrder (state, readbook.id);
+  }
+}
+
 // If 2 tickets into tray are pick following by drop, merge it.
 // If it's drop following by pick, merge also.
 function mergeTray (state, trayId) {
@@ -260,12 +233,6 @@ function mergeTray (state, trayId) {
 function mergeTrays (state) {
   for (var tray of state.TicketsTrays) {
     mergeTray (state, tray.id);
-  }
-}
-
-function checkOrders (state) {
-  for (var readbook of state.Roadbooks) {
-    checkOrder (state, readbook.id);
   }
 }
 
@@ -293,180 +260,6 @@ function deleteMission (state, missionId) {
       deleteTicket (tray.Tickets, ticket2);
     }
   }
-}
-
-// ------------------------------------------------------------------------------------------
-
-function changeDispatchToDispatch (state, element, target, source, sibling) {
-  const fromId          = element.dataset.id;
-  const fromMessengerId = element.dataset.ownerId;
-  const toMessengerId   = target.dataset.id;
-  if (fromMessengerId === toMessengerId) {  // inside same messenger ?
-    const tickets   = getTicketsForMessenger (state, fromMessengerId);
-    const fromOrder = getTicketOrder (tickets, fromId);
-    const toOrder   = getToOrder (tickets, target, sibling, fromOrder);
-    const ticket    = tickets[fromOrder];
-    deleteTicket (tickets, ticket);
-    addTicket (tickets, toOrder, ticket);
-  } else {  // from a messenger to another ?
-    const fromTickets = getTicketsForMessenger (state, fromMessengerId);
-    const toTickets   = getTicketsForMessenger (state, toMessengerId);
-    const fromOrder   = getTicketOrder (fromTickets, fromId);
-    const toOrder     = getToOrder (toTickets, target, sibling);
-    const ticket      = fromTickets[fromOrder];
-    deleteTicket (fromTickets, ticket);
-    ticket.OwnerId = toMessengerId;
-    addTicket (toTickets, toOrder, ticket);
-  }
-  deleteTransits (state);
-  createTransits (state);
-  checkOrders (state);
-}
-
-function changeMissionsToDispatch (state, element, target, source, sibling) {
-  const fromId        = element.dataset.id;
-  const toMessengerId = target.dataset.id;
-  const toTickets     = getTicketsForMessenger (state, toMessengerId);
-  const toOrder       = getToOrder (toTickets, target, sibling);
-
-  // Delete the original ticket in shared collection Backlog.
-  const i = getTicketOrder (state.Backlog.Tickets, fromId);
-  const ticket = state.Backlog.Tickets[i];
-  deleteTicket (state.Backlog.Tickets, ticket);
-
-  // Split the original ticket (with Type = pair) in 2 tickets (with Types = pick/drop).
-  ticket.OwnerId = toMessengerId;
-  const pick = clone (ticket);
-  const drop = clone (ticket);
-  pick.Type = 'pick';
-  drop.Type = 'drop';
-  addTicket (toTickets, toOrder, drop);  // first drop, for have pick/drop in this order
-  addTicket (toTickets, toOrder, pick);
-}
-
-function changeDeskToDispatch (state, element, target, source, sibling) {
-  const fromId        = element.dataset.id;
-  const fromTrayId    = source.dataset.id;
-  const fromTickets   = getTicketsForTray (state, fromTrayId);
-  const toMessengerId = target.dataset.id;
-  const toTickets     = getTicketsForMessenger (state, toMessengerId);
-  const toOrder       = getToOrder (toTickets, target, sibling);
-
-  // Delete the original ticket in tray.
-  const i = getTicketOrder (fromTickets, fromId);
-  const ticket = fromTickets[i];
-  deleteTicket (fromTickets, ticket);
-
-  if (ticket.Type === 'pair') {
-    // Split the original ticket (with Type = pair) in 2 tickets (with Types = pick/drop) into messenger.
-    ticket.OwnerId = toMessengerId;
-    const pick = clone (ticket);
-    const drop = clone (ticket);
-    pick.Type = 'pick';
-    drop.Type = 'drop';
-    addTicket (toTickets, toOrder, drop);  // first drop, for have pick/drop in this order
-    addTicket (toTickets, toOrder, pick);
-  } else {
-    // Simply move the original ticket (pick or drop) into messenger.
-    ticket.OwnerId = toMessengerId;
-    addTicket (toTickets, toOrder, ticket);
-    deleteTransits (state);
-    createTransits (state);
-  }
-}
-
-function changeDispatchToMissions (state, element, target, source, sibling) {
-  const fromId          = element.dataset.id;
-  const fromMessengerId = element.dataset.ownerId;
-  const fromTickets     = getTicketsForMessenger (state, fromMessengerId);
-  const fromOrder       = getTicketOrder (fromTickets, fromId);
-  const ticket          = fromTickets[fromOrder];
-  deleteMission (state, ticket.Trip.MissionId);
-
-  // Put the mission to shared collection Backlog.
-  const toTickets = state.Backlog.Tickets;
-  const toOrder   = getToOrder (toTickets, target, sibling);
-  const n = clone (ticket);
-  n.Type = 'pair';
-  addTicket (toTickets, toOrder, n);
-}
-
-function changeMissionsToMissions (state, element, target, source, sibling) {
-  // Operation prohibited !
-}
-
-function changeDeskToMissions (state, element, target, source, sibling) {
-  const fromId      = element.dataset.id;
-  const fromTrayId  = source.dataset.id;
-  const fromTickets = getTicketsForTray (state, fromTrayId);
-  const fromOrder   = getTicketOrder (fromTickets, fromId);
-  const ticket      = fromTickets[fromOrder];
-  deleteMission (state, ticket.Trip.MissionId);
-
-  // Put the mission to shared collection Backlog.
-  const toTickets = state.Backlog.Tickets;
-  const toOrder   = getToOrder (toTickets, target, sibling);
-  const n = clone (ticket);
-  n.Type = 'pair';
-  addTicket (toTickets, toOrder, n);
-}
-
-function changeDispatchToDesk (state, element, target, source, sibling) {
-  const fromId          = element.dataset.id;
-  const fromMessengerId = element.dataset.ownerId;
-  const fromTickets     = getTicketsForMessenger (state, fromMessengerId);
-  const fromOrder       = getTicketOrder (fromTickets, fromId);
-  const ticket          = fromTickets[fromOrder];
-
-  if (!ticket.Type.endsWith ('-transit')) {
-    // Delete the ticket in source messenger.
-    deleteTicket (fromTickets, ticket);
-
-    // Put the ticket in destination tray.
-    const toTrayId  = target.dataset.id;
-    const toTickets = getTicketsForTray (state, toTrayId);
-    const toOrder   = getToOrder (toTickets, target, sibling);
-    addTicket (toTickets, toOrder, ticket);
-
-    mergeTray (state, toTrayId);
-    deleteTransits (state);
-    createTransits (state);
-    checkOrders (state);
-  }
-}
-
-function changeMissionsToDesk (state, element, target, source, sibling) {
-  const fromId    = element.dataset.id;
-  const toTrayId  = target.dataset.id;
-  const toTickets = getTicketsForTray (state, toTrayId);
-  const toOrder   = getToOrder (toTickets, target, sibling);
-
-  // Delete the original ticket in shared collection Backlog.
-  const i = getTicketOrder (state.Backlog.Tickets, fromId);
-  const ticket = state.Backlog.Tickets[i];
-  deleteTicket (state.Backlog.Tickets, ticket);
-
-  // Put the ticket to tray.
-  addTicket (toTickets, toOrder, ticket);
-}
-
-function changeDeskToDesk (state, element, target, source, sibling) {
-  const fromId     = element.dataset.id;
-  const fromTrayId = source.dataset.id;
-
-  // Delete the ticket in source tray.
-  const fromTickets = getTicketsForTray (state, fromTrayId);
-  const i = getTicketOrder (fromTickets, fromId);
-  const ticket = fromTickets[i];
-  deleteTicket (fromTickets, ticket);
-
-  // Put the ticket in destination tray.
-  const toTrayId  = target.dataset.id;
-  const toTickets = getTicketsForTray (state, toTrayId);
-  const toOrder   = getToOrder (toTickets, target, sibling);
-  addTicket (toTickets, toOrder, ticket);
-
-  mergeTray (state, toTrayId);
 }
 
 // ------------------------------------------------------------------------------------------
@@ -499,8 +292,14 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
   if (toPosition === 'after') {
     toOrder++;
   }
+
   const ticket = fromOwner.tickets[fromOrder];
-  deleteTicket (fromOwner.tickets, ticket);
+  if (toOwner.type === 'backlog' && ticket.Type !== 'pair') {
+    deleteMission (state, ticket.Trip.MissionId);
+  } else {
+    deleteTicket (fromOwner.tickets, ticket);
+  }
+
   ticket.OwnerId = toOwner.id;
   if (toOwner.type === 'roadbooks' && ticket.Type === 'pair') {
     const pick = clone (ticket);
@@ -510,6 +309,10 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
     addTicket (toOwner.tickets, toOrder, drop);  // first drop, for have pick/drop in this order
     addTicket (toOwner.tickets, toOrder, pick);
     setFlash (state, [pick.id, drop.id]);
+  } else if (toOwner.type === 'backlog' && ticket.Type !== 'pair') {
+    ticket.Type = 'pair';
+    addTicket (toOwner.tickets, toOrder, ticket);
+    setFlash (state, [ticket.id]);
   } else {
     addTicket (toOwner.tickets, toOrder, ticket);
     setFlash (state, [ticket.id]);
@@ -527,6 +330,8 @@ function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
     deleteTransits (state);
     createTransits (state);
     checkOrders (state);
+  } else if (toOwner.type === 'desk') {
+    mergeTrays (state);
   }
   return state;
 }
