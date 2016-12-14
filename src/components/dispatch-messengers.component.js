@@ -64,7 +64,7 @@ export default class DispatchMessengers extends React.Component {
     const y = tray.Position.split (',')[1];
     return (
       <TicketsTray key={index} left={x} top={y} rotate={tray.Rotation} title={tray.Name}
-        drag-source='desk' data={tray} {...this.link ()} >
+        data={tray} {...this.link ()} >
         {this.renderTrayTickets (tray.Tickets)}
       </TicketsTray>
     );
