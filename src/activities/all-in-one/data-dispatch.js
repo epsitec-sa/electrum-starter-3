@@ -1089,8 +1089,7 @@ const data =
   TicketsTrays: [
      {
         Name: 'Après-midi',
-        Position: '30px,50px',
-        Rotation: '5deg',
+        Position: '30px,30px',
         Tickets: [
           {
             Extended: 'false',
@@ -1178,56 +1177,49 @@ const data =
       },
      {
         Name: 'Urgent',
-        Position: '310px,50px',
-        Rotation: '-1deg',
+        Position: '310px,30px',
         Tickets: [
         ],
         id: 'id-tray-1'
       },
       {
         Name: 'T3',
-        Position: '590px,50px',
-        Rotation: '2deg',
+        Position: '590px,30px',
         Tickets: [
         ],
         id: 'id-tray-2'
       },
       {
         Name: 'T4',
-        Position: '860px,60px',
-        Rotation: '-5deg',
+        Position: '870px,30px',
         Tickets: [
         ],
         id: 'id-tray-3'
       },
       {
         Name: 'T5',
-        Position: '1120px,50px',
-        Rotation: '2deg',
+        Position: '1150px,30px',
         Tickets: [
         ],
         id: 'id-tray-4'
       },
       {
         Name: 'T6',
-        Position: '1380px,70px',
-        Rotation: '-2deg',
+        Position: '1430px,30px',
         Tickets: [
         ],
         id: 'id-tray-5'
       },
       {
         Name: 'T7',
-        Position: '1650px,50px',
-        Rotation: '0deg',
+        Position: '1710px,30px',
         Tickets: [
         ],
         id: 'id-tray-6'
       },
       {
         Name: 'T8',
-        Position: '1920px,50px',
-        Rotation: '5deg',
+        Position: '1990px,30px',
         Tickets: [
         ],
         id: 'id-tray-7'
