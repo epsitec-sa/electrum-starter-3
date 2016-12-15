@@ -296,8 +296,13 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
     toOrder++;
   }
 
-  // Delete the source.
   const ticket = fromOwner.tickets[fromOrder];
+  if ((toOwner.type === 'backlog' || toOwner.type === 'desk') && ticket.Type.endsWith ('-transit')) {
+    // Transit ticket does not move into backlog or desk.
+    return;
+  }
+
+  // Delete the source.
   if (toOwner.type === 'backlog' && ticket.Type !== 'pair') {
     deleteMission (state, ticket.Trip.MissionId);
   } else {
