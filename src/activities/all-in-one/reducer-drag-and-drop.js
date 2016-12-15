@@ -350,16 +350,16 @@ function isUseful (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
     let fromOrder = getTicketOrder (fromOwner.tickets, fromId);
     let toOrder   = getTicketOrder (toOwner.tickets, toId);
     if (fromOrder === toOrder) {
-      state.useful = false;
+      state.isUseful = false;
     } else if (fromOrder === toOrder + 1 && toPosition === 'after') {
-      state.useful = false;
+      state.isUseful = false;
     } else if (fromOrder === toOrder - 1 && toPosition === 'before') {
-      state.useful = false;
+      state.isUseful = false;
     } else {
-      state.useful = true;
+      state.isUseful = true;
     }
   } else {
-    state.useful = true;
+    state.isUseful = true;
   }
   return state;
 }
