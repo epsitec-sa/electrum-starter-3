@@ -247,6 +247,7 @@ function mergeTray (state, warnings, trayId) {
       deleteTicket (tickets, same[1]);
       const merged = clone (same[0]);
       merged.Type = 'pair';
+      merged.Flash = 'true';
       addTicket (tickets, index, merged);
     }
   }
