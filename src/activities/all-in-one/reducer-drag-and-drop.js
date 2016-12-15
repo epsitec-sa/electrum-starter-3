@@ -219,12 +219,20 @@ function checkAlone (state, warnings, roadbookId) {
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
     if (same.length === 1) {
-      const text = ticket.Type.startsWith ('pick') ? 'Il manque le drop' : 'Il manque le pick';
+      let text;
+      if (ticket.Type.startsWith ('pick')) {
+        text = 'Il manque le drop';
+      } else if (ticket.Type.startsWith ('drop')) {
+        text = 'Il manque le pick';
+      } else {
+        text = `Incorrect type = ${ticket.Type}`;
+      }
       warnings.push ({id: ticket.id, text: text});
     }
   }
 }
 
+// Add a warning to all tickets into Roadbooks we are alone.
 function checkAlones (state, warnings) {
   for (var readbook of state.Roadbooks) {
     checkAlone (state, warnings, readbook.id);
