@@ -197,8 +197,8 @@ function checkOrder (state, roadbookId) {
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
     if (same.length === 2 && same[0].Type.startsWith ('drop') && same[1].Type.startsWith ('pick')) {
-      same[0].Warning = 'reverse-pick-drop';
-      same[1].Warning = 'reverse-pick-drop';
+      same[0].Warning = 'Drop avant pick';
+      same[1].Warning = 'Pick après drop';
     } else {
       ticket.Warning = '';
     }
