@@ -8,7 +8,7 @@ import {
   TicketsTray
 } from 'electrum-arc';
 
-export default class Desk extends React.Component {
+export default class DispatchDesk extends React.Component {
 
   constructor (props) {
     super (props);

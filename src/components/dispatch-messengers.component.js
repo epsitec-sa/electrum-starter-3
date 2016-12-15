@@ -7,24 +7,16 @@ import {
   Container,
   Button,
   TextField,
-  LabelTextField,
   TextFieldCombo,
   Label,
-  Badge,
-  Calendar,
-  Clock,
-  Menu,
-  FlyingBalloon,
-  Separator,
-  Ticket,
   Trip,
   TicketsTray,
   MessengerTicket,
   Splitter,
   DragCab,
   Roadbook,
-  Backlog,
-  Desk
+  DispatchBacklog,
+  DispatchDesk
 } from 'electrum-arc';
 
 export default class DispatchMessengers extends React.Component {
@@ -140,6 +132,29 @@ export default class DispatchMessengers extends React.Component {
 
   // <Backlog {...this.link ()} />
   // <Desk {...this.link ()} />
+
+  //  <Container kind='view-stretch' {...this.link ()} >
+  //    <Container kind='pane-top' {...this.link ()} >
+  //      <TextFieldCombo hint-text='Date' combo-glyph='calendar'
+  //        grow='1' spacing='large' combo-type='calendar'
+  //        combo-direction='right' flying-balloon-anchor='bottom'
+  //        {...this.link ('exp-date')} />
+  //      <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
+  //        grow='1' spacing='large' combo-type='clock'
+  //        flying-balloon-anchor='right' {...this.link ('exp-time')} />
+  //      <TextFieldCombo shape='rounded' hint-text='Chercher'
+  //        grow='2' combo-glyph='Search' {...this.link ()} />
+  //    </Container>
+  //    <Container kind='panes' {...this.link ()} >
+  //      <Container kind='column' drag-controller='tickets' drag-source='backlog'
+  //        view-parent-id='view-backlog' {...this.link ()} >
+  //        {this.renderTickets (this.data.Backlog.Tickets, 'trip-box')}
+  //      </Container>
+  //    </Container>
+  //  </Container>
+  //  <Container kind='tickets-desk' {...this.link ()} >
+  //    {this.renderDesk (this.data.TicketsTrays)}
+  //  </Container>
 
   render () {
     return (

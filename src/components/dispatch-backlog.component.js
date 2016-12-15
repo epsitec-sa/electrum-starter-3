@@ -8,7 +8,7 @@ import {
   Trip
 } from 'electrum-arc';
 
-export default class Backlog extends React.Component {
+export default class DispatchBacklog extends React.Component {
 
   constructor (props) {
     super (props);
