@@ -23,8 +23,22 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
-    window.document.dispatchMessenger = this;
     this.data = window.document.data;
+  }
+
+  componentDidMount () {
+    if (window.document.mock) {
+      window.document.toUpdate.push (this);
+    }
+  }
+
+  componentWillUnmount () {
+    if (window.document.mock) {
+      const index = window.document.toUpdate.indexOf (this);
+      if (index !== -1) {
+        window.document.toUpdate.splice (index, 1);
+      }
+    }
   }
 
   renderMessenger (roadbook) {
