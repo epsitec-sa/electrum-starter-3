@@ -59,13 +59,15 @@ export default class DispatchMessengers extends React.Component {
   render () {
     return (
       <Container kind='tickets-root' {...this.link ()} >
-        <Splitter kind='horizontal' default-size={this.splitterRoadbooksHeight ()}
+        <Splitter kind='horizontal' first-view-id='view-roadbook'
+          default-size={this.splitterRoadbooksHeight ()}
           onSizeChanged={size => this.onSplitterRoadbooksChanged (size)}
-          first-view-id='view-roadbook' {...this.link ()} >
+          {...this.link ()} >
           <DispatchRoadbooks {...this.link ()} />
-          <Splitter kind='vertical' default-size={this.splitterBacklogWidth ()} min-size='0px'
+          <Splitter kind='vertical' first-view-id='view-backlog' last-view-id='view-desk'
+            default-size={this.splitterBacklogWidth ()} min-size='0px'
             onSizeChanged={size => this.onSplitterBacklogChanged (size)}
-            first-view-id='view-backlog' last-view-id='view-desk' {...this.link ()} >
+            {...this.link ()} >
             <DispatchBacklog {...this.link ()} />
             <DispatchDesk {...this.link ()} />
           </Splitter>
