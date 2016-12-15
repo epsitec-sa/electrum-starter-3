@@ -144,12 +144,14 @@ export default class DispatchMessengers extends React.Component {
     return (
       <Container kind='tickets-root' {...this.link ()} >
         <Splitter kind='horizontal' default-size={this.splitterRoadbooksHeight ()}
-          onSizeChanged={size => this.onSplitterRoadbooksChanged (size)} {...this.link ()} >
+          onSizeChanged={size => this.onSplitterRoadbooksChanged (size)}
+          first-view-id='view-roadbook' {...this.link ()} >
           <Container kind='tickets-messengers' drag-controller='messengers' drag-source='messengers' {...this.link ()} >
             {this.renderRoadbooks (this.data.Roadbooks)}
           </Container>
           <Splitter kind='vertical' default-size={this.splitterBacklogWidth ()} min-size='0px'
-            onSizeChanged={size => this.onSplitterBacklogChanged (size)} {...this.link ()} >
+            onSizeChanged={size => this.onSplitterBacklogChanged (size)}
+            first-view-id='view-backlog' last-view-id='view-desk' {...this.link ()} >
             <Container kind='view-stretch' {...this.link ()} >
               <Container kind='pane-top' {...this.link ()} >
                 <TextFieldCombo hint-text='Date' combo-glyph='calendar'
@@ -163,7 +165,8 @@ export default class DispatchMessengers extends React.Component {
                   grow='2' combo-glyph='Search' {...this.link ()} />
               </Container>
               <Container kind='panes' {...this.link ()} >
-                <Container kind='column' drag-controller='tickets' drag-source='backlog' {...this.link ()} >
+                <Container kind='column' drag-controller='tickets' drag-source='backlog'
+                  view-parent-id='view-backlog' {...this.link ()} >
                   {this.renderTickets (this.data.Backlog.Tickets, 'trip-box')}
                 </Container>
               </Container>
