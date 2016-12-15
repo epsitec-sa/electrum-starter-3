@@ -131,14 +131,14 @@ function getNewTransit (ticket) {
     n.Trip.Drop.LongDescription = null;
     n.Trip.Drop.Notes = [];
     n.Trip.Drop.PlanedTime = ticket.Trip.Pick.PlanedTime;
-    n.Trip.Drop.ShortDescription = 'Transit à définir';
+    n.Trip.Drop.ShortDescription = 'Inconnu';
     n.Trip.Drop.Zone = null;
   } else if (n.Type.startsWith ('drop')) {
     n.Type = 'pick-transit';
     n.Trip.Pick.LongDescription = null;
     n.Trip.Pick.Notes = [];
     n.Trip.Pick.PlanedTime = ticket.Trip.Drop.PlanedTime;
-    n.Trip.Pick.ShortDescription = 'Transit à définir';
+    n.Trip.Pick.ShortDescription = 'Inconnu';
     n.Trip.Pick.Zone = null;
   }
   n.Flash = 'true';
@@ -146,7 +146,7 @@ function getNewTransit (ticket) {
 }
 
 // Create a transit if a ticket is alone for a roadbook.
-function createTransit (state, roadbookId) {
+function createTransit (state, warnings, roadbookId) {
   const tickets = getRoadbookTickets (state, roadbookId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
@@ -158,20 +158,21 @@ function createTransit (state, roadbookId) {
       } else {
         addTicket (tickets, index + 1, newTicket);
       }
+      warnings.push ({id: newTicket.id, text: 'Transit à définir'});
     }
   }
 }
 
-function createTransits (state) {
+function createTransits (state, warnings) {
   for (var readbook of state.Roadbooks) {
-    createTransit (state, readbook.id);
+    createTransit (state, warnings, readbook.id);
   }
 }
 
 // Delete if there are unnecessary transits for a roadbook.
 // By example, if a transit is alone, it's unnecessary.
 // If there are 3 tickets, including 2 unnecessary, delete the 2 unnecessary tickets.
-function deleteTransit (state, roadbookId) {
+function deleteTransit (state, warnings, roadbookId) {
   const tickets = getRoadbookTickets (state, roadbookId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
@@ -185,35 +186,50 @@ function deleteTransit (state, roadbookId) {
   }
 }
 
-function deleteTransits (state) {
+function deleteTransits (state, warnings) {
   for (var readbook of state.Roadbooks) {
-    deleteTransit (state, readbook.id);
+    deleteTransit (state, warnings, readbook.id);
   }
 }
 
 // Check if un pick is under a drop, and set the field 'warning'.
-function checkOrder (state, roadbookId) {
+function checkOrder (state, warnings, roadbookId) {
   const tickets = getRoadbookTickets (state, roadbookId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
     if (same.length === 2 && same[0].Type.startsWith ('drop') && same[1].Type.startsWith ('pick')) {
-      same[0].Warning = 'Drop avant pick';
-      same[1].Warning = 'Pick après drop';
-    } else {
-      ticket.Warning = '';
+      warnings.push ({id: same[0].id, text: 'Drop avant pick'});
+      warnings.push ({id: same[1].id, text: 'Pick après drop'});
     }
   }
 }
 
-function checkOrders (state) {
+function checkOrders (state, warnings) {
   for (var readbook of state.Roadbooks) {
-    checkOrder (state, readbook.id);
+    checkOrder (state, warnings, readbook.id);
+  }
+}
+
+function checkAlone (state, warnings, roadbookId) {
+  const tickets = getRoadbookTickets (state, roadbookId);
+  for (var ticket of tickets) {
+    const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
+    if (same.length === 1) {
+      const text = ticket.Type.startsWith ('pick') ? 'Il manque le drop' : 'Il manque le pick';
+      warnings.push ({id: ticket.id, text: text});
+    }
+  }
+}
+
+function checkAlones (state, warnings) {
+  for (var readbook of state.Roadbooks) {
+    checkAlone (state, warnings, readbook.id);
   }
 }
 
 // If 2 tickets into tray are pick following by drop, merge it.
 // If it's drop following by pick, merge also.
-function mergeTray (state, trayId) {
+function mergeTray (state, warnings, trayId) {
   const tickets = getTrayTickets (state, trayId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
@@ -230,9 +246,37 @@ function mergeTray (state, trayId) {
   }
 }
 
-function mergeTrays (state) {
+function mergeTrays (state, warnings) {
   for (var tray of state.TicketsTrays) {
-    mergeTray (state, tray.id);
+    mergeTray (state, warnings, tray.id);
+  }
+}
+
+function getWarning (warnings, id) {
+  for (var warning of warnings) {
+    if (warning.id === id) {
+      return warning.text;
+    }
+  }
+  return null;
+}
+
+function setWarning (state, warnings, roadbookId) {
+  const tickets = getRoadbookTickets (state, roadbookId);
+  for (var ticket of tickets) {
+    ticket.Warning = getWarning (warnings, ticket.id);
+  }
+}
+
+function setWarnings (state, warnings) {
+  for (var readbook of state.Roadbooks) {
+    setWarning (state, warnings, readbook.id);
+  }
+  for (var tray of state.TicketsTrays) {
+    const tickets = getTrayTickets (state, tray.id);
+    for (var ticket of tickets) {
+      ticket.Warning = null;
+    }
   }
 }
 
@@ -286,7 +330,7 @@ function setFlash (state, ids) {
   }
 }
 
-function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
+function changeGeneric (state, warnings, fromId, fromOwner, toId, toOwner, toPosition) {
   let fromOrder = getTicketOrder (fromOwner.tickets, fromId);
   let toOrder   = getTicketOrder (toOwner.tickets, toId);
   if (fromOwner.id === toOwner.id && toOrder > fromOrder) {
@@ -336,14 +380,17 @@ function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
   console.log ('Reducer.drop');
   const fromOwner = getOwner (state, fromOwnerId);
   const toOwner   = getOwner (state, toOwnerId);
-  changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition);
+  const warnings = [];
+  changeGeneric (state, warnings, fromId, fromOwner, toId, toOwner, toPosition);
   if (toOwner.type === 'roadbooks') {
-    deleteTransits (state);
-    createTransits (state);
-    checkOrders (state);
+    deleteTransits (state, warnings);
+    createTransits (state, warnings);
+    checkOrders (state, warnings);
   } else if (toOwner.type === 'desk') {
-    mergeTrays (state);
+    mergeTrays (state, warnings);
   }
+  checkAlones (state, warnings);
+  setWarnings (state, warnings);
   return state;
 }
 
