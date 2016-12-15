@@ -192,6 +192,8 @@ function deleteTransits (state, warnings) {
   }
 }
 
+// ------------------------------------------------------------------------------------------
+
 // Check if un pick is under a drop, and set the field 'warning'.
 function checkOrder (state, warnings, roadbookId) {
   const tickets = getRoadbookTickets (state, roadbookId);
@@ -210,6 +212,8 @@ function checkOrders (state, warnings) {
   }
 }
 
+// ------------------------------------------------------------------------------------------
+
 function checkAlone (state, warnings, roadbookId) {
   const tickets = getRoadbookTickets (state, roadbookId);
   for (var ticket of tickets) {
@@ -226,6 +230,8 @@ function checkAlones (state, warnings) {
     checkAlone (state, warnings, readbook.id);
   }
 }
+
+// ------------------------------------------------------------------------------------------
 
 // If 2 tickets into tray are pick following by drop, merge it.
 // If it's drop following by pick, merge also.
@@ -252,7 +258,9 @@ function mergeTrays (state, warnings) {
   }
 }
 
-function getWarning (warnings, id) {
+// ------------------------------------------------------------------------------------------
+
+function getTextWarning (warnings, id) {
   for (var warning of warnings) {
     if (warning.id === id) {
       return warning.text;
@@ -261,24 +269,59 @@ function getWarning (warnings, id) {
   return null;
 }
 
-function setWarning (state, warnings, roadbookId) {
-  const tickets = getRoadbookTickets (state, roadbookId);
-  for (var ticket of tickets) {
-    ticket.Warning = getWarning (warnings, ticket.id);
-  }
-}
-
-function setWarnings (state, warnings) {
-  for (var readbook of state.Roadbooks) {
-    setWarning (state, warnings, readbook.id);
-  }
-  for (var tray of state.TicketsTrays) {
-    const tickets = getTrayTickets (state, tray.id);
-    for (var ticket of tickets) {
-      ticket.Warning = null;
+function setWarning (list, warnings) {
+  for (let i = 0; i < list.Tickets.length; i++) {
+    const ticket = list.Tickets[i];
+    const text = getTextWarning (warnings, ticket.id);
+    if (ticket.Warning !== text) {  // changing ?
+      ticket.Warning = text;  // set or clear warning message
+      list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
     }
   }
 }
+
+// Set warnings to all ticket into Roadbooks and TicketsTrays.
+function setWarnings (state, warnings) {
+  for (var readbook of state.Roadbooks) {
+    setWarning (readbook, warnings);
+  }
+  for (var tray of state.TicketsTrays) {
+    setWarning (tray, warnings);
+  }
+}
+
+// ------------------------------------------------------------------------------------------
+
+function setListFlash (list, ids) {
+  for (let i = 0; i < list.Tickets.length; i++) {
+    const ticket = list.Tickets[i];
+    if (ids.indexOf (ticket.id) !== -1) {
+      if (ticket.Flash !== 'true') {  // changing ?
+        ticket.Flash = 'true';
+        list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
+      }
+    } else {
+      if (ticket.Flash === 'true') {  // changing ?
+        ticket.Flash = 'false';
+        list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
+      }
+    }
+  }
+}
+
+// Set flash mode to all modified tickets.
+// Note: Currently, flash mode is permanent. Eventually, it should only appear temporarily
+// and disappear gradually.
+function setFlash (state, ids) {
+  for (var readbook of state.Roadbooks) {
+    setListFlash (readbook, ids);
+  }
+  for (var tray of state.TicketsTrays) {
+    setListFlash (tray, ids);
+  }
+}
+
+// ------------------------------------------------------------------------------------------
 
 // Delete all residual tickets into Roadbooks and TicketsTrays.
 function deleteMission (state, missionId) {
@@ -303,36 +346,6 @@ function deleteMission (state, missionId) {
     for (ticket2 of array2) {
       deleteTicket (tray.Tickets, ticket2);
     }
-  }
-}
-
-// ------------------------------------------------------------------------------------------
-
-function setListFlash (list, ids) {
-  for (let i = 0; i < list.Tickets.length; i++) {
-    const ticket = list.Tickets[i];
-    if (ids.indexOf (ticket.id) !== -1) {
-      if (ticket.Flash !== 'true') {
-        ticket.Flash = 'true';
-        list.Tickets[i] = clone (ticket);
-      }
-    } else {
-      if (ticket.Flash === 'true') {
-        ticket.Flash = 'false';
-        list.Tickets[i] = clone (ticket);
-      }
-    }
-  }
-}
-// Set flash mode to all modified tickets.
-// Note: Currently, flash mode is permanent. Eventually, it should only appear temporarily
-// and disappear gradually.
-function setFlash (state, ids) {
-  for (var readbook of state.Roadbooks) {
-    setListFlash (readbook, ids);
-  }
-  for (var tray of state.TicketsTrays) {
-    setListFlash (tray, ids);
   }
 }
 
