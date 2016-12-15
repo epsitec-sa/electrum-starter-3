@@ -316,6 +316,7 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
     setFlash (state, [pick.id, drop.id]);
   } else if (toOwner.type === 'backlog' && ticket.Type !== 'pair') {
     ticket.Type = 'pair';
+    ticket.Status = 'pre-dispatched';
     addTicket (toOwner.tickets, toOrder, ticket);
     setFlash (state, [ticket.id]);
   } else {
