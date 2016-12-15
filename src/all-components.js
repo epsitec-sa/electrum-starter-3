@@ -6,8 +6,6 @@ import _Button$styles from './components/button.styles.js';
 import _Codispatch from './components/codispatch.component.js';
 import _Collection from './components/collection.component.js';
 import _CurrentActivityInfo from './components/current-activity-info.component.js';
-import _DispatchBacklog from './components/dispatch-backlog.component.js';
-import _DispatchDesk from './components/dispatch-desk.component.js';
 import _DispatchMessengers from './components/dispatch-messengers.component.js';
 import _DispatchTrips from './components/dispatch-trips.component.js';
 import _Label from './components/label.component.js';
@@ -16,8 +14,6 @@ export const Button = Electrum.wrap ('Button', _Button, {styles: _Button$styles}
 export const Codispatch = Electrum.wrap ('Codispatch', _Codispatch);
 export const Collection = Electrum.wrap ('Collection', _Collection);
 export const CurrentActivityInfo = Electrum.wrap ('CurrentActivityInfo', _CurrentActivityInfo);
-export const DispatchBacklog = Electrum.wrap ('DispatchBacklog', _DispatchBacklog);
-export const DispatchDesk = Electrum.wrap ('DispatchDesk', _DispatchDesk);
 export const DispatchMessengers = Electrum.wrap ('DispatchMessengers', _DispatchMessengers);
 export const DispatchTrips = Electrum.wrap ('DispatchTrips', _DispatchTrips);
 export const Label = Electrum.wrap ('Label', _Label);

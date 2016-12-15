@@ -23,7 +23,7 @@ export default class DispatchMessengers extends React.Component {
 
   constructor (props) {
     super (props);
-    window.document.dispatch = this;
+    window.document.dispatchMessenger = this;
     this.data = window.document.data;
   }
 
@@ -130,8 +130,8 @@ export default class DispatchMessengers extends React.Component {
     }
   }
 
-  // <Backlog {...this.link ()} />
-  // <Desk {...this.link ()} />
+  // <DispatchBacklog {...this.link ()} />
+  // <DispatchDesk {...this.link ()} />
 
   //  <Container kind='view-stretch' {...this.link ()} >
   //    <Container kind='pane-top' {...this.link ()} >
@@ -168,28 +168,8 @@ export default class DispatchMessengers extends React.Component {
           <Splitter kind='vertical' default-size={this.splitterBacklogWidth ()} min-size='0px'
             onSizeChanged={size => this.onSplitterBacklogChanged (size)}
             first-view-id='view-backlog' last-view-id='view-desk' {...this.link ()} >
-            <Container kind='view-stretch' {...this.link ()} >
-              <Container kind='pane-top' {...this.link ()} >
-                <TextFieldCombo hint-text='Date' combo-glyph='calendar'
-                  grow='1' spacing='large' combo-type='calendar'
-                  combo-direction='right' flying-balloon-anchor='bottom'
-                  {...this.link ('exp-date')} />
-                <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
-                  grow='1' spacing='large' combo-type='clock'
-                  flying-balloon-anchor='right' {...this.link ('exp-time')} />
-                <TextFieldCombo shape='rounded' hint-text='Chercher'
-                  grow='2' combo-glyph='Search' {...this.link ()} />
-              </Container>
-              <Container kind='panes' {...this.link ()} >
-                <Container kind='column' drag-controller='tickets' drag-source='backlog'
-                  view-parent-id='view-backlog' {...this.link ()} >
-                  {this.renderTickets (this.data.Backlog.Tickets, 'trip-box')}
-                </Container>
-              </Container>
-            </Container>
-            <Container kind='tickets-desk' {...this.link ()} >
-              {this.renderDesk (this.data.TicketsTrays)}
-            </Container>
+            <DispatchBacklog {...this.link ()} />
+            <DispatchDesk {...this.link ()} />
           </Splitter>
         </Splitter>
       </Container>
