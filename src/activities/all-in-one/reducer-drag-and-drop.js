@@ -206,6 +206,7 @@ function checkOrder (state, warnings, roadbookId) {
   }
 }
 
+// Check if picks are under drops into all Roadbooks.
 function checkOrders (state, warnings) {
   for (var readbook of state.Roadbooks) {
     checkOrder (state, warnings, readbook.id);
@@ -328,6 +329,7 @@ function setFlash (state, ids) {
   for (var tray of state.TicketsTrays) {
     setListFlash (tray, ids);
   }
+  setListFlash (state.Backlog, ids);
 }
 
 // ------------------------------------------------------------------------------------------
