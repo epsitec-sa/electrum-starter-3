@@ -38,16 +38,16 @@ function getOwner (state, ownerId) {
   throw new Error (`Owner not found for ${ownerId}`);
 }
 
-function getTicketsForMessenger (state, messengerId) {
+function getRoadbookTickets (state, roadbookId) {
   for (var readbook of state.Roadbooks) {
-    if (readbook.id === messengerId) {
+    if (readbook.id === roadbookId) {
       return readbook.Tickets;
     }
   }
-  throw new Error (`Messenger ${messengerId} does not exist`);
+  throw new Error (`Roadbook ${roadbookId} does not exist`);
 }
 
-function getTicketsForTray (state, trayId) {
+function getTrayTickets (state, trayId) {
   for (var tray of state.TicketsTrays) {
     if (tray.id === trayId) {
       return tray.Tickets;
@@ -145,9 +145,9 @@ function getNewTransit (ticket) {
   return n;
 }
 
-// Create a transit if a ticket is alone for a messenger.
-function createTransit (state, messengerId) {
-  const tickets = getTicketsForMessenger (state, messengerId);
+// Create a transit if a ticket is alone for a roadbook.
+function createTransit (state, roadbookId) {
+  const tickets = getRoadbookTickets (state, roadbookId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
     if (same.length === 1 && !isTicketIntoTray (state, ticket.Trip.MissionId)) {
@@ -168,11 +168,11 @@ function createTransits (state) {
   }
 }
 
-// Delete if there are unnecessary transits for a messenger.
+// Delete if there are unnecessary transits for a roadbook.
 // By example, if a transit is alone, it's unnecessary.
 // If there are 3 tickets, including 2 unnecessary, delete the 2 unnecessary tickets.
-function deleteTransit (state, messengerId) {
-  const tickets = getTicketsForMessenger (state, messengerId);
+function deleteTransit (state, roadbookId) {
+  const tickets = getRoadbookTickets (state, roadbookId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
     if (same.length > 0 && same.length % 2 === 1) {  // odd number of tickets ?
@@ -192,8 +192,8 @@ function deleteTransits (state) {
 }
 
 // Check if un pick is under a drop, and set the field 'warning'.
-function checkOrder (state, messengerId) {
-  const tickets = getTicketsForMessenger (state, messengerId);
+function checkOrder (state, roadbookId) {
+  const tickets = getRoadbookTickets (state, roadbookId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
     if (same.length === 2 && same[0].Type.startsWith ('drop') && same[1].Type.startsWith ('pick')) {
@@ -214,7 +214,7 @@ function checkOrders (state) {
 // If 2 tickets into tray are pick following by drop, merge it.
 // If it's drop following by pick, merge also.
 function mergeTray (state, trayId) {
-  const tickets = getTicketsForTray (state, trayId);
+  const tickets = getTrayTickets (state, trayId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
     if (same.length === 2 && (
@@ -264,6 +264,9 @@ function deleteMission (state, missionId) {
 
 // ------------------------------------------------------------------------------------------
 
+// Set flash mode to all modified tickets.
+// Note: Currently, flash mode is permanent. Eventually, it should only appear temporarily
+// and disappear gradually.
 function setFlash (state, ids) {
   for (var readbook of state.Roadbooks) {
     for (let i = 0; i < readbook.Tickets.length; i++) {
@@ -293,6 +296,7 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
     toOrder++;
   }
 
+  // Delete the source.
   const ticket = fromOwner.tickets[fromOrder];
   if (toOwner.type === 'backlog' && ticket.Type !== 'pair') {
     deleteMission (state, ticket.Trip.MissionId);
@@ -300,6 +304,7 @@ function changeGeneric (state, fromId, fromOwner, toId, toOwner, toPosition) {
     deleteTicket (fromOwner.tickets, ticket);
   }
 
+  // Set the destination.
   ticket.OwnerId = toOwner.id;
   if (toOwner.type === 'roadbooks' && ticket.Type === 'pair') {
     const pick = clone (ticket);
@@ -336,27 +341,30 @@ function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
   return state;
 }
 
-function usefull (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
+// Indicates whether the operation 'drop' will perform on a useful action.
+// If destination is near source, the operation is not useful.
+function isUseful (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
   const fromOwner = getOwner (state, fromOwnerId);
   const toOwner   = getOwner (state, toOwnerId);
   if (fromOwner.id === toOwner.id) {
     let fromOrder = getTicketOrder (fromOwner.tickets, fromId);
     let toOrder   = getTicketOrder (toOwner.tickets, toId);
     if (fromOrder === toOrder) {
-      state.usefull = false;
+      state.useful = false;
     } else if (fromOrder === toOrder + 1 && toPosition === 'after') {
-      state.usefull = false;
+      state.useful = false;
     } else if (fromOrder === toOrder - 1 && toPosition === 'before') {
-      state.usefull = false;
+      state.useful = false;
     } else {
-      state.usefull = true;
+      state.useful = true;
     }
   } else {
-    state.usefull = true;
+    state.useful = true;
   }
   return state;
 }
 
+// This trick is necessary for update the UI !!!
 function cloneAll (state) {
   for (var readbook of state.Roadbooks) {
     for (let i = 0; i < readbook.Tickets.length; i++) {
@@ -402,8 +410,8 @@ export default function Reducer (state = {}, action = {}) {
     case 'DROP':
       state = drop (state, action.fromId, action.fromOwnerId, action.toId, action.toOwnerId, action.toPosition);
       break;
-    case 'USEFULL':
-      state = usefull (state, action.fromId, action.fromOwnerId, action.toId, action.toOwnerId, action.toPosition);
+    case 'IS_USEFUL':
+      state = isUseful (state, action.fromId, action.fromOwnerId, action.toId, action.toOwnerId, action.toPosition);
       break;
     case 'CLONE':
       state = cloneAll (state);
