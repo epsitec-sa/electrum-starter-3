@@ -308,25 +308,31 @@ function deleteMission (state, missionId) {
 
 // ------------------------------------------------------------------------------------------
 
+function setListFlash (list, ids) {
+  for (let i = 0; i < list.Tickets.length; i++) {
+    const ticket = list.Tickets[i];
+    if (ids.indexOf (ticket.id) !== -1) {
+      if (ticket.Flash !== 'true') {
+        ticket.Flash = 'true';
+        list.Tickets[i] = clone (ticket);
+      }
+    } else {
+      if (ticket.Flash === 'true') {
+        ticket.Flash = 'false';
+        list.Tickets[i] = clone (ticket);
+      }
+    }
+  }
+}
 // Set flash mode to all modified tickets.
 // Note: Currently, flash mode is permanent. Eventually, it should only appear temporarily
 // and disappear gradually.
 function setFlash (state, ids) {
   for (var readbook of state.Roadbooks) {
-    for (let i = 0; i < readbook.Tickets.length; i++) {
-      const ticket = readbook.Tickets[i];
-      if (ids.indexOf (ticket.id) !== -1) {
-        if (ticket.Flash !== 'true') {
-          ticket.Flash = 'true';
-          readbook.Tickets[i] = clone (ticket);
-        }
-      } else {
-        if (ticket.Flash === 'true') {
-          ticket.Flash = 'false';
-          readbook.Tickets[i] = clone (ticket);
-        }
-      }
-    }
+    setListFlash (readbook, ids);
+  }
+  for (var tray of state.TicketsTrays) {
+    setListFlash (tray, ids);
   }
 }
 
