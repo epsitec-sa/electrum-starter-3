@@ -281,34 +281,6 @@ function updateShapes (state) {
 
 // ------------------------------------------------------------------------------------------
 
-// If 2 tickets into tray are pick following by drop, merge it.
-// If it's drop following by pick, merge also.
-function mergeTray (state, warnings, trayId) {
-  const tickets = getTrayTickets (state, trayId);
-  for (var ticket of tickets) {
-    const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
-    if (same.length === 2 && (
-        (same[0].Type.startsWith ('pick') && same[1].Type.startsWith ('drop')) ||
-        (same[0].Type.startsWith ('drop') && same[1].Type.startsWith ('pick')))) {
-      const index = tickets.indexOf (same[0]);
-      deleteTicket (tickets, same[0]);
-      deleteTicket (tickets, same[1]);
-      const merged = clone (same[0]);
-      merged.Type = 'pair';
-      merged.Flash = 'true';
-      addTicket (tickets, index, merged);
-    }
-  }
-}
-
-function mergeTrays (state, warnings) {
-  for (var tray of state.TicketsTrays) {
-    mergeTray (state, warnings, tray.id);
-  }
-}
-
-// ------------------------------------------------------------------------------------------
-
 function getTextWarning (warnings, id) {
   for (var warning of warnings) {
     if (warning.id === id) {
@@ -455,8 +427,6 @@ function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
     deleteTransits (state, warnings);
     createTransits (state, warnings);
     checkOrders (state, warnings);
-  } else if (toOwner.type === 'desk') {
-    // mergeTrays (state, warnings);
   }
   updateShapes (state);
   checkAlones (state, warnings);
