@@ -51,6 +51,10 @@ export default class Codispatch extends React.Component {
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
+              <LabelTextField label-glyph='user'
+                hint-text='Nom du client' tab-index={1} {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
               <TextFieldCombo hint-text='Date' combo-glyph='calendar'
                 grow='1' spacing='large' combo-type='calendar'
                 combo-direction='right' flying-balloon-anchor='bottom'
@@ -60,10 +64,6 @@ export default class Codispatch extends React.Component {
                 flying-balloon-anchor='right' {...this.link ('exp-time')} />
               <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
                 grow='1' combo-type='zone' {...this.link ('exp-zone')} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='user'
-                hint-text='Nom du client' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
               <LabelTextField label-glyph='tag' hint-text='Référence client'
@@ -78,28 +78,9 @@ export default class Codispatch extends React.Component {
               <Label text='Prestation' grow='1' kind='title' {...this.link ()} />
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
-            <Container kind='row-pane' subkind='wrap' {...this.link ()} >
-              <Container kind='row-wrap' {...this.link ()} >
-                <Button text='Standard (1h)'    width='180px' {...this.link ()} />
-              </Container>
-              <Container kind='row-wrap' {...this.link ()} >
-                <Button text='Urgent (30 min)'  width='180px' {...this.link ()} />
-              </Container>
-              <Container kind='row-wrap' {...this.link ()} >
-                <Button text='Dring Dring'      width='180px' {...this.link ()} />
-              </Container>
-              <Container kind='row-wrap' {...this.link ()} >
-                <Button text='Course régulière' width='180px' {...this.link ()} />
-              </Container>
-              <Container kind='row-wrap' {...this.link ()} >
-                <Button text='Multi'            width='180px' {...this.link ()} />
-              </Container>
-              <Container kind='row-wrap' {...this.link ()} >
-                <Button text='Case postale'     width='180px' {...this.link ()} />
-              </Container>
-              <Container kind='row-wrap' {...this.link ()} >
-                <Button text='Dépôt'            width='180px' {...this.link ()} />
-              </Container>
+            <Container kind='row-pane' {...this.link ()} >
+              <TextFieldCombo hint-text='Type de la prestation' combo-glyph='archive'
+                grow='1' tab-index={3} {...this.link ()} />
             </Container>
           </Container>
 
@@ -114,6 +95,10 @@ export default class Codispatch extends React.Component {
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
+              <LabelTextField label-glyph='user'
+                hint-text='Nom du client' tab-index={2} {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
               <TextFieldCombo hint-text='Date' combo-glyph='calendar'
                 grow='1' spacing='large' combo-type='calendar'
                 combo-direction='right' {...this.link ('dest-date')} />
@@ -122,10 +107,6 @@ export default class Codispatch extends React.Component {
                 {...this.link ('dest-time')} />
               <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
                 grow='1' combo-type='zone' {...this.link ('dest-zone')} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='user'
-                hint-text='Nom du client' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
               <LabelTextField label-glyph='comment' hint-text='Remarque'
