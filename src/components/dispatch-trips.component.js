@@ -4,33 +4,53 @@ import React from 'react';
 import {
   Container,
   Trip,
-  TextFieldCombo,
-  DragController
+  TextFieldCombo
 } from 'electrum-arc';
 
 export default class DispatchTrips extends React.Component {
 
   constructor (props) {
     super (props);
-    this.data = window.document.data.Backlog;
   }
 
-  renderTicket (ticket, index) {
+  componentDidMount () {
+    if (window.document.mock) {
+      window.document.toUpdate.push (this);
+    }
+  }
+
+  componentWillUnmount () {
+    if (window.document.mock) {
+      const index = window.document.toUpdate.indexOf (this);
+      if (index !== -1) {
+        window.document.toUpdate.splice (index, 1);
+      }
+    }
+  }
+
+  renderTicket (ticket, dataDispatch, index) {
     return (
-      <Trip key={index} kind='trip-box' data={ticket} {...this.link ()} />
+      <Trip key={index} kind='trip-box' data={ticket} data-dispatch={dataDispatch} {...this.link ()} />
     );
   }
 
-  renderTickets (tickets) {
+  renderTickets (tickets, dataDispatch) {
     const result = [];
     let index = 0;
     for (var ticket of tickets) {
-      result.push (this.renderTicket (ticket, index++));
+      result.push (this.renderTicket (ticket, dataDispatch, index++));
     }
     return result;
   }
 
   render () {
+    let data = this.read ('data');
+    if (data) {
+      data = JSON.parse (data);
+    } else {
+      data = window.document.data;
+    }
+
     return (
       <Container kind='views' {...this.link ()} >
         <Container kind='view' width='800px' {...this.link ()} >
@@ -48,9 +68,8 @@ export default class DispatchTrips extends React.Component {
           </Container>
 
           <Container kind='panes' {...this.link ()} >
-            <DragController name='tickets' {...this.link ()} />
-            <Container kind='column' drag-controller='tickets' {...this.link ()} >
-              {this.renderTickets (this.data.Tickets)}
+            <Container kind='column' drag-controller='tickets' drag-source='backlog' {...this.link ()} >
+              {this.renderTickets (data.Backlog.Tickets, data)}
             </Container>
           </Container>
         </Container>
