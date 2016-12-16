@@ -841,7 +841,7 @@ const data =
             Weight: '1.2 kg',
             id: 't3'
           },
-          Type: 'pair',
+          Type: 'both',
           Warning: '',
           id: 'id-ticket-to-dispatch-0'
         },
@@ -898,7 +898,7 @@ const data =
             Weight: '1 kg',
             id: 't4'
           },
-          Type: 'pair',
+          Type: 'both',
           Warning: '',
           id: 'id-ticket-to-dispatch-1'
         },
@@ -953,7 +953,7 @@ const data =
             Weight: '1.4 kg',
             id: 't5'
           },
-          Type: 'pair',
+          Type: 'both',
           Warning: '',
           id: 'id-ticket-to-dispatch-2'
         },
@@ -1029,7 +1029,7 @@ const data =
             Weight: '1 kg',
             id: 't6'
           },
-          Type: 'pair',
+          Type: 'both',
           Warning: '',
           id: 'id-ticket-to-dispatch-3'
         },
@@ -1084,7 +1084,7 @@ const data =
             Weight: '2.2 kg',
             id: 't7'
           },
-          Type: 'pair',
+          Type: 'both',
           Warning: '',
           id: 'id-ticket-to-dispatch-4'
         },
@@ -1165,7 +1165,7 @@ const data =
             Weight: '0.6 kg',
             id: 't5'
           },
-          Type: 'pair',
+          Type: 'both',
           Warning: '',
           id: 'id-tray-0-ticket-0'
         },

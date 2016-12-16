@@ -382,7 +382,7 @@ function changeGeneric (state, warnings, fromId, fromOwner, toId, toOwner, toPos
   }
 
   // Delete the source.
-  if (toOwner.type === 'backlog' && ticket.Type !== 'pair') {
+  if (toOwner.type === 'backlog' && ticket.Type !== 'both') {
     deleteMission (state, ticket.Trip.MissionId);
   } else {
     deleteTicket (fromOwner.tickets, ticket);
@@ -390,7 +390,7 @@ function changeGeneric (state, warnings, fromId, fromOwner, toId, toOwner, toPos
 
   // Set the destination.
   ticket.OwnerId = toOwner.id;
-  if ((toOwner.type === 'roadbooks' || toOwner.type === 'desk') && ticket.Type === 'pair') {
+  if ((toOwner.type === 'roadbooks' || toOwner.type === 'desk') && ticket.Type === 'both') {
     const pick = clone (ticket);
     const drop = clone (ticket);
     pick.Type = 'pick';
@@ -398,8 +398,8 @@ function changeGeneric (state, warnings, fromId, fromOwner, toId, toOwner, toPos
     addTicket (toOwner.tickets, toOrder, drop);  // first drop, for have pick/drop in this order
     addTicket (toOwner.tickets, toOrder, pick);
     setFlash (state, [pick.id, drop.id]);
-  } else if (toOwner.type === 'backlog' && ticket.Type !== 'pair') {
-    ticket.Type = 'pair';
+  } else if (toOwner.type === 'backlog' && ticket.Type !== 'both') {
+    ticket.Type = 'both';
     ticket.Status = 'pre-dispatched';
     addTicket (toOwner.tickets, toOrder, ticket);
     setFlash (state, [ticket.id]);
