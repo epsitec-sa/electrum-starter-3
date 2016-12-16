@@ -385,7 +385,7 @@ function changeGeneric (state, warnings, fromId, fromOwner, toId, toOwner, toPos
 
   // Set the destination.
   ticket.OwnerId = toOwner.id;
-  if (toOwner.type === 'roadbooks' && ticket.Type === 'pair') {
+  if ((toOwner.type === 'roadbooks' || toOwner.type === 'desk') && ticket.Type === 'pair') {
     const pick = clone (ticket);
     const drop = clone (ticket);
     pick.Type = 'pick';

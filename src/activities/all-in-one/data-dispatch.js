@@ -1082,6 +1082,87 @@ const data =
           Warning: '',
           id: 'id-ticket-to-dispatch-4'
         },
+        {
+          Extended: 'false',
+          OwnerId: 'id-tray-0',
+          Selected: 'false',
+          Status: 'tray',
+          Trip: {
+            Description: '',
+            Drop: {
+              Contact: null,
+              LongDescription: 'Micro SA\\nAv. Dufour 4\\n1010 Renens',
+              Notes: [
+              ],
+              PlanedTime: '2016-11-30T16:00:03.9052723+01:00',
+              RealisedTime: '2016-12-01T10:07:12.7657601+01:00',
+              ShortDescription: 'Micro SA',
+              Status: 'init',
+              TripId: 't100',
+              Type: 'drop',
+              Zone: 'Zone A',
+              id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
+            },
+            MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6675',
+            Notes: [],
+            PackageCount: '1 colis',
+            Packages: [
+               {
+                  Content: 'Box standard B',
+                  Dimensions: '30x10x10',
+                  TripId: 't5',
+                  Weight: '0.4 kg',
+                  id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
+                },
+                {
+                  Content: 'Enveloppe',
+                  Dimensions: '30x21x1',
+                  TripId: 't5',
+                  Weight: '0.1 kg',
+                  id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
+                },
+                {
+                  Content: 'Sac en vrac',
+                  Dimensions: '20x20x20',
+                  TripId: 't5',
+                  Weight: '0.1 kg',
+                  id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
+                },
+            ],
+            Pick: {
+              Contact: null,
+              LongDescription: 'Tagada AG\\nRue de Sans Unique 18\\n1000 Lausanne',
+              Notes: [
+                {
+                  Content: 'Livraison selon les indications standards de la dispo',
+                  Glyphs: [
+                    {
+                      Name: 'bookmark-secondary',
+                      Glyph: 'bookmark-secondary',
+                      Description: '',
+                    },
+                  ],
+                },
+              ],
+              PlanedTime: '2016-11-30T11:15:03.9052723+01:00',
+              RealisedTime: '2016-12-01T10:07:12.7507283+01:00',
+              ShortDescription: 'Tagada AG',
+              Status: 'init',
+              TripId: 't100',
+              Type: 'pick',
+              Zone: 'Zone C',
+              id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
+            },
+            Price: '17 CHF',
+            Product: 'Standard',
+            Urgency: '0',
+            Weight: '0.6 kg',
+            id: 't5'
+          },
+          Type: 'pair',
+          Warning: '',
+          id: 'id-tray-0-ticket-0'
+        },
     ],
     id: 'id-to-dispatch'
   },
@@ -1089,138 +1170,49 @@ const data =
      {
         Name: 'Après-midi',
         Position: '30px,30px',
-        Tickets: [
-          {
-            Extended: 'false',
-            OwnerId: 'id-tray-0',
-            Selected: 'false',
-            Status: 'tray',
-            Trip: {
-              Description: '',
-              Drop: {
-                Contact: null,
-                LongDescription: 'Micro SA\\nAv. Dufour 4\\n1010 Renens',
-                Notes: [
-                ],
-                PlanedTime: '2016-11-30T16:00:03.9052723+01:00',
-                RealisedTime: '2016-12-01T10:07:12.7657601+01:00',
-                ShortDescription: 'Micro SA',
-                Status: 'init',
-                TripId: 't100',
-                Type: 'drop',
-                Zone: 'Zone A',
-                id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-              },
-              MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6675',
-              Notes: [],
-              PackageCount: '1 colis',
-              Packages: [
-                 {
-                    Content: 'Box standard B',
-                    Dimensions: '30x10x10',
-                    TripId: 't5',
-                    Weight: '0.4 kg',
-                    id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
-                  },
-                  {
-                    Content: 'Enveloppe',
-                    Dimensions: '30x21x1',
-                    TripId: 't5',
-                    Weight: '0.1 kg',
-                    id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
-                  },
-                  {
-                    Content: 'Sac en vrac',
-                    Dimensions: '20x20x20',
-                    TripId: 't5',
-                    Weight: '0.1 kg',
-                    id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
-                  },
-              ],
-              Pick: {
-                Contact: null,
-                LongDescription: 'Tagada AG\\nRue de Sans Unique 18\\n1000 Lausanne',
-                Notes: [
-                  {
-                    Content: 'Livraison selon les indications standards de la dispo',
-                    Glyphs: [
-                      {
-                        Name: 'bookmark-secondary',
-                        Glyph: 'bookmark-secondary',
-                        Description: '',
-                      },
-                    ],
-                  },
-                ],
-                PlanedTime: '2016-11-30T11:15:03.9052723+01:00',
-                RealisedTime: '2016-12-01T10:07:12.7507283+01:00',
-                ShortDescription: 'Tagada AG',
-                Status: 'init',
-                TripId: 't100',
-                Type: 'pick',
-                Zone: 'Zone C',
-                id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
-              },
-              Price: '17 CHF',
-              Product: 'Standard',
-              Urgency: '20',
-              Weight: '0.6 kg',
-              id: 't5'
-            },
-            Type: 'pair',
-            Warning: '',
-            id: 'id-tray-0-ticket-0'
-          },
-        ],
+        Tickets: [],
         id: 'id-tray-0'
       },
      {
         Name: 'Urgent',
         Position: '310px,30px',
-        Tickets: [
-        ],
+        Tickets: [],
         id: 'id-tray-1'
       },
       {
         Name: 'T3',
         Position: '590px,30px',
-        Tickets: [
-        ],
+        Tickets: [],
         id: 'id-tray-2'
       },
       {
         Name: 'T4',
         Position: '870px,30px',
-        Tickets: [
-        ],
+        Tickets: [],
         id: 'id-tray-3'
       },
       {
         Name: 'T5',
         Position: '1150px,30px',
-        Tickets: [
-        ],
+        Tickets: [],
         id: 'id-tray-4'
       },
       {
         Name: 'T6',
         Position: '1430px,30px',
-        Tickets: [
-        ],
+        Tickets: [],
         id: 'id-tray-5'
       },
       {
         Name: 'T7',
         Position: '1710px,30px',
-        Tickets: [
-        ],
+        Tickets: [],
         id: 'id-tray-6'
       },
       {
         Name: 'T8',
         Position: '1990px,30px',
-        Tickets: [
-        ],
+        Tickets: [],
         id: 'id-tray-7'
       },
   ],
