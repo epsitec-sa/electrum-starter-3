@@ -19,7 +19,7 @@ function getOwner (state, ownerId) {
       };
     }
   }
-  for (var tray of state.TicketsTrays) {
+  for (var tray of state.Desk) {
     if (tray.id === ownerId) {
       return {
         type:    'desk',
@@ -45,15 +45,6 @@ function getRoadbookTickets (state, roadbookId) {
     }
   }
   throw new Error (`Roadbook ${roadbookId} does not exist`);
-}
-
-function getTrayTickets (state, trayId) {
-  for (var tray of state.TicketsTrays) {
-    if (tray.id === trayId) {
-      return tray.Tickets;
-    }
-  }
-  throw new Error (`Tray ${trayId} does not exist`);
 }
 
 function addTicket (tickets, index, ticket) {
@@ -111,9 +102,9 @@ function clone (ticket) {
   return n;
 }
 
-// Search all tickets into Roadbooks and TicketsTrays.
+// Search all tickets into Roadbooks and Desk.
 function isTicketIntoTray (state, missionId) {
-  for (var tray of state.TicketsTrays) {
+  for (var tray of state.Desk) {
     for (var ticket2 of tray.Tickets) {
       if (ticket2.Trip.MissionId === missionId) {
         return true;
@@ -211,7 +202,7 @@ function checkOrders (state, warnings) {
   for (var readbook of state.Roadbooks) {
     checkOrder (readbook, warnings);
   }
-  for (var tray of state.TicketsTrays) {
+  for (var tray of state.Desk) {
     checkOrder (tray, warnings);
   }
 }
@@ -277,7 +268,7 @@ function updateShapes (state) {
   for (var readbook of state.Roadbooks) {
     updateShape (readbook);
   }
-  for (var tray of state.TicketsTrays) {
+  for (var tray of state.Desk) {
     updateShape (tray);
   }
 }
@@ -304,12 +295,12 @@ function setWarning (list, warnings) {
   }
 }
 
-// Set warnings to all ticket into Roadbooks and TicketsTrays.
+// Set warnings to all ticket into Roadbooks and Desk.
 function setWarnings (state, warnings) {
   for (var readbook of state.Roadbooks) {
     setWarning (readbook, warnings);
   }
-  for (var tray of state.TicketsTrays) {
+  for (var tray of state.Desk) {
     setWarning (tray, warnings);
   }
 }
@@ -340,7 +331,7 @@ function setFlash (state, ids) {
   for (var readbook of state.Roadbooks) {
     setListFlash (readbook, ids);
   }
-  for (var tray of state.TicketsTrays) {
+  for (var tray of state.Desk) {
     setListFlash (tray, ids);
   }
   setListFlash (state.Backlog, ids);
@@ -348,7 +339,7 @@ function setFlash (state, ids) {
 
 // ------------------------------------------------------------------------------------------
 
-// Delete all residual tickets into Roadbooks and TicketsTrays.
+// Delete all residual tickets into Roadbooks and Desk.
 function deleteMission (state, missionId) {
   for (var roadbook of state.Roadbooks) {
     const array1 = [];
@@ -361,7 +352,7 @@ function deleteMission (state, missionId) {
       deleteTicket (roadbook.Tickets, ticket1);
     }
   }
-  for (var tray of state.TicketsTrays) {
+  for (var tray of state.Desk) {
     const array2 = [];
     for (var ticket2 of tray.Tickets) {
       if (ticket2.Trip.MissionId === missionId) {

@@ -1172,7 +1172,7 @@ const data =
     ],
     id: 'id-to-dispatch'
   },
-  TicketsTrays: [
+  Desk: [
      {
         Name: 'Après-midi',
         Position: '30px,30px',
