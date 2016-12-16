@@ -17,11 +17,11 @@ import {
   FlyingBalloon,
   Separator,
   Notifications,
-  Notification
+  Notification,
+  DispatchMessengers
 } from 'electrum-arc';
 import {
   DispatchTrips,
-  DispatchMessengers,
   Codispatch
 } from '../../all-components.js';
 
