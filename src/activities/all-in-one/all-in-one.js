@@ -18,10 +18,10 @@ import {
   Separator,
   Notifications,
   Notification,
+  DispatchTrips,
   DispatchMessengers
 } from 'electrum-arc';
 import {
-  DispatchTrips,
   Codispatch
 } from '../../all-components.js';
 
