@@ -248,13 +248,17 @@ function updateShape (list) {
     let shape = 'normal';
     if (i < list.Tickets.length - 1) {
       const other = list.Tickets[i + 1];
-      if (ticket.Trip.MissionId === other.Trip.MissionId && ticket.Type.startsWith ('pick') && other.Type.startsWith ('drop')) {
+      if (ticket.Trip.MissionId === other.Trip.MissionId &&
+        ticket.Type.startsWith ('pick') &&
+        other.Type.startsWith ('drop')) {  // pick following by drop ?
         shape = 'first';
       }
     }
     if (i > 0) {
       const other = list.Tickets[i - 1];
-      if (ticket.Trip.MissionId === other.Trip.MissionId && ticket.Type.startsWith ('drop') && other.Type.startsWith ('pick')) {
+      if (ticket.Trip.MissionId === other.Trip.MissionId &&
+        ticket.Type.startsWith ('drop') &&
+        other.Type.startsWith ('pick')) {  // drop preceded by pick ?
         shape = 'last';
       }
     }
@@ -265,6 +269,7 @@ function updateShape (list) {
   }
 }
 
+// Update shapes to all tickets into Roadbooks and Desk, for showing pick directly following by drop.
 function updateShapes (state) {
   for (var readbook of state.Roadbooks) {
     updateShape (readbook);
