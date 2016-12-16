@@ -243,22 +243,24 @@ function checkAlones (state, warnings) {
 // ------------------------------------------------------------------------------------------
 
 function updateShape (list) {
-  for (let i = 0; i < list.Tickets.length - 1; i++) {
-    const t1 = list.Tickets[i + 0];
-    const t2 = list.Tickets[i + 1];
-    let s1 = 'normal';
-    let s2 = 'normal';
-    if (t1.Trip.MissionId === t2.Trip.MissionId && t1.Type.startsWith ('pick') && t2.Type.startsWith ('drop')) {
-      s1 = 'first';
-      s2 = 'last';
+  for (let i = 0; i < list.Tickets.length; i++) {
+    const ticket = list.Tickets[i];
+    let shape = 'normal';
+    if (i < list.Tickets.length - 1) {
+      const other = list.Tickets[i + 1];
+      if (ticket.Trip.MissionId === other.Trip.MissionId && ticket.Type.startsWith ('pick') && other.Type.startsWith ('drop')) {
+        shape = 'first';
+      }
     }
-    if (t1.Shape !== s1) {
-      t1.Shape = s1;
-      list.Tickets[i + 0] = clone (t1);
+    if (i > 0) {
+      const other = list.Tickets[i - 1];
+      if (ticket.Trip.MissionId === other.Trip.MissionId && ticket.Type.startsWith ('drop') && other.Type.startsWith ('pick')) {
+        shape = 'last';
+      }
     }
-    if (t2.Shape !== s2) {
-      t2.Shape = s2;
-      list.Tickets[i + 1] = clone (t2);
+    if (ticket.Shape !== shape) {  // changing ?
+      ticket.Shape = shape;
+      list.Tickets[i] = clone (ticket);
     }
   }
 }
