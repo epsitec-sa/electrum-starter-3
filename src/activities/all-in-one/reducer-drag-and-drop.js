@@ -417,7 +417,7 @@ function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
     createTransits (state, warnings);
     checkOrders (state, warnings);
   } else if (toOwner.type === 'desk') {
-    mergeTrays (state, warnings);
+    // mergeTrays (state, warnings);
   }
   checkAlones (state, warnings);
   setWarnings (state, warnings);
