@@ -195,10 +195,10 @@ function deleteTransits (state, warnings) {
 // ------------------------------------------------------------------------------------------
 
 // Check if un pick is under a drop, and set the field 'warning'.
-function checkOrder (state, warnings, roadbookId) {
-  const tickets = getRoadbookTickets (state, roadbookId);
-  for (var ticket of tickets) {
-    const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
+function checkOrder (list, warnings) {
+  for (let i = 0; i < list.Tickets.length; i++) {
+    const ticket = list.Tickets[i];
+    const same = getTicketsFromMissionId (list.Tickets, ticket.Trip.MissionId);
     if (same.length === 2 && same[0].Type.startsWith ('drop') && same[1].Type.startsWith ('pick')) {
       warnings.push ({id: same[0].id, text: 'Drop avant pick'});
       warnings.push ({id: same[1].id, text: 'Pick après drop'});
@@ -209,7 +209,10 @@ function checkOrder (state, warnings, roadbookId) {
 // Check if picks are under drops into all Roadbooks.
 function checkOrders (state, warnings) {
   for (var readbook of state.Roadbooks) {
-    checkOrder (state, warnings, readbook.id);
+    checkOrder (readbook, warnings);
+  }
+  for (var tray of state.TicketsTrays) {
+    checkOrder (tray, warnings);
   }
 }
 
@@ -426,11 +429,11 @@ function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
   if (toOwner.type === 'roadbooks') {
     deleteTransits (state, warnings);
     createTransits (state, warnings);
-    checkOrders (state, warnings);
   }
-  updateShapes (state);
+  checkOrders (state, warnings);
   checkAlones (state, warnings);
   setWarnings (state, warnings);
+  updateShapes (state);
   return state;
 }
 
