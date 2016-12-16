@@ -242,6 +242,38 @@ function checkAlones (state, warnings) {
 
 // ------------------------------------------------------------------------------------------
 
+function updateShape (list) {
+  for (let i = 0; i < list.Tickets.length - 1; i++) {
+    const t1 = list.Tickets[i + 0];
+    const t2 = list.Tickets[i + 1];
+    let s1 = 'normal';
+    let s2 = 'normal';
+    if (t1.Trip.MissionId === t2.Trip.MissionId && t1.Type.startsWith ('pick') && t2.Type.startsWith ('drop')) {
+      s1 = 'first';
+      s2 = 'last';
+    }
+    if (t1.Shape !== s1) {
+      t1.Shape = s1;
+      list.Tickets[i + 0] = clone (t1);
+    }
+    if (t2.Shape !== s2) {
+      t2.Shape = s2;
+      list.Tickets[i + 1] = clone (t2);
+    }
+  }
+}
+
+function updateShapes (state) {
+  for (var readbook of state.Roadbooks) {
+    updateShape (readbook);
+  }
+  for (var tray of state.TicketsTrays) {
+    updateShape (tray);
+  }
+}
+
+// ------------------------------------------------------------------------------------------
+
 // If 2 tickets into tray are pick following by drop, merge it.
 // If it's drop following by pick, merge also.
 function mergeTray (state, warnings, trayId) {
@@ -419,6 +451,7 @@ function drop (state, fromId, fromOwnerId, toId, toOwnerId, toPosition) {
   } else if (toOwner.type === 'desk') {
     // mergeTrays (state, warnings);
   }
+  updateShapes (state);
   checkAlones (state, warnings);
   setWarnings (state, warnings);
   return state;

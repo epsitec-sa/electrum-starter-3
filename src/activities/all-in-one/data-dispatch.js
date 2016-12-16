@@ -22,6 +22,7 @@ const data =
           Extended: 'false',
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
+          Shape: 'first',
           Status: 'dispatched',
           Trip: {
             Description: '',
@@ -96,6 +97,7 @@ const data =
           Extended: 'false',
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
+          Shape: 'last',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -180,6 +182,7 @@ const data =
           Extended: 'false',
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
+          Shape: 'first',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -254,6 +257,7 @@ const data =
           Extended: 'false',
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
+          Shape: 'last',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -357,6 +361,7 @@ const data =
           Extended: 'false',
           OwnerId: 'id-tickets-to-sandra',
           Selected: 'false',
+          Shape: 'first',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -431,6 +436,7 @@ const data =
           Extended: 'false',
           OwnerId: 'id-tickets-to-sandra',
           Selected: 'false',
+          Shape: 'last',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
