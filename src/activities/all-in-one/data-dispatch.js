@@ -1175,57 +1175,41 @@ const data =
   Desk: [
      {
         Name: 'Après-midi',
-        Top: '30px',
-        Left: '30px',
         Tickets: [],
         id: 'id-tray-0'
       },
      {
         Name: 'Urgent',
-        Top: '30px',
-        Left: '310px',
         Tickets: [],
         id: 'id-tray-1'
       },
       {
         Name: 'T3',
-        Top: '30px',
-        Left: '590px',
         Tickets: [],
         id: 'id-tray-2'
       },
       {
         Name: 'T4',
-        Top: '30px',
-        Left: '870px',
         Tickets: [],
         id: 'id-tray-3'
       },
       {
         Name: 'T5',
-        Top: '30px',
-        Left: '1150px',
         Tickets: [],
         id: 'id-tray-4'
       },
       {
         Name: 'T6',
-        Top: '30px',
-        Left: '1430px',
         Tickets: [],
         id: 'id-tray-5'
       },
       {
         Name: 'T7',
-        Top: '30px',
-        Left: '1710px',
         Tickets: [],
         id: 'id-tray-6'
       },
       {
         Name: 'T8',
-        Top: '30px',
-        Left: '1990px',
         Tickets: [],
         id: 'id-tray-7'
       },
