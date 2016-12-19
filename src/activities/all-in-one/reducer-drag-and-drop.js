@@ -383,7 +383,7 @@ function changeGeneric (state, warnings, from, to) {
     deleteMission (state, ticket.Trip.MissionId);
   } else {
     deleteTicket (from.tickets, ticket);
-    if (from.type === to.type && from.index < to.index) {
+    if (from.ownerId === to.ownerId && from.index < to.index) {
       to.index--;  // decrease to take account of the deleted item
     }
   }
