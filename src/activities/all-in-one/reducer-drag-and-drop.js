@@ -373,7 +373,7 @@ function deleteMission (state, missionId) {
 
 function changeGeneric (state, warnings, from, to) {
   const ticket = from.ticket;
-  if ((to.type === 'backlog' || to.type === 'desk') && ticket.Type.endsWith ('-transit')) {
+  if ((to.type === 'backlog' || to.type === 'tray') && ticket.Type.endsWith ('-transit')) {
     // Transit ticket does not move into backlog or desk.
     return;
   }
@@ -390,7 +390,7 @@ function changeGeneric (state, warnings, from, to) {
 
   // Set the destination.
   ticket.OwnerId = to.ownerId;
-  if ((to.type === 'roadbooks' || to.type === 'desk') && ticket.Type === 'both') {
+  if ((to.type === 'roadbook' || to.type === 'tray') && ticket.Type === 'both') {
     const pick = clone (ticket);
     const drop = clone (ticket);
     pick.Type = 'pick';
@@ -420,7 +420,7 @@ function drop (state, fromId, toId, toOwnerId) {
   const to   = searchId (state, toId, toOwnerId);
   const warnings = [];
   changeGeneric (state, warnings, from, to);
-  if (to.type === 'roadbooks') {
+  if (to.type === 'roadbook') {
     deleteTransits (state, warnings);
     createTransits (state, warnings);
   }
