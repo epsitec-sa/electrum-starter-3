@@ -5,6 +5,7 @@ import React from 'react';
 import {Theme} from 'electrum-theme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import getData from './activities/all-in-one/data-dispatch.js';
+import reducerDragAndDrop from './activities/all-in-one/reducer-drag-and-drop.js';
 
 import * as Colors from 'material-ui/styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
@@ -37,6 +38,7 @@ class _Root extends React.Component {
     super (props);
     window.document.data = getData ();
     window.document.mock = true;
+    window.document.reducerDragAndDrop = reducerDragAndDrop;
     window.document.toUpdate = [];
   }
 
