@@ -32,7 +32,7 @@ function searchTicket (root, items, type, id, ownerId) {
 }
 
 function searchId (state, id, ownerId) {
-  const m = searchTicket (state, state.Roadbooks, 'messengers', id, ownerId);
+  const m = searchTicket (state, state.Roadbooks, 'roadbooks', id, ownerId);
   if (m) {
     return m;
   }
@@ -41,13 +41,13 @@ function searchId (state, id, ownerId) {
     return r;
   }
   for (var roadbook of state.Roadbooks) {
-    const result = searchTicket (roadbook, roadbook.Tickets, 'roadbooks', id, ownerId);
+    const result = searchTicket (roadbook, roadbook.Tickets, 'roadbook', id, ownerId);
     if (result) {
       return result;
     }
   }
   for (var tray of state.Desk) {
-    const result = searchTicket (tray, tray.Tickets, 'desk', id, ownerId);
+    const result = searchTicket (tray, tray.Tickets, 'tray', id, ownerId);
     if (result) {
       return result;
     }
