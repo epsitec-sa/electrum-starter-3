@@ -414,12 +414,15 @@ function changeGeneric (state, warnings, from, to) {
 // fromId    -> id to item to move.
 // toId      -> id before which it is necessary to insert. If it was null, insert after the last item.
 // toOwnerId -> owner where it is necessary to insert. Useful when toId is null.
-function drop (state, fromId, toId, toOwnerId) {
+function drop (state, fromIds, toId, toOwnerId) {
   console.log ('Reducer.drop');
-  const from = searchId (state, fromId);
-  const to   = searchId (state, toId, toOwnerId);
   const warnings = [];
-  changeGeneric (state, warnings, from, to);
+  const to = searchId (state, toId, toOwnerId);
+  for (let i = fromIds.length - 1; i >= 0; i--) {
+    const fromId = fromIds[i];
+    const from = searchId (state, fromId);
+    changeGeneric (state, warnings, from, to);
+  }
   if (to.type === 'roadbook') {
     deleteTransits (state, warnings);
     createTransits (state, warnings);
@@ -472,7 +475,7 @@ function swapStatus (state, id) {
 export default function Reducer (state = {}, action = {}) {
   switch (action.type) {
     case 'DROP':
-      state = drop (state, action.fromId, action.toId, action.toOwnerId);
+      state = drop (state, action.fromIds, action.toId, action.toOwnerId);
       break;
     case 'CLONE':
       state = cloneAll (state);
