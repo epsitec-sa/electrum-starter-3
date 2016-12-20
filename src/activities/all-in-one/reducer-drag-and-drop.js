@@ -308,10 +308,14 @@ function setMisc (list, flashes, warnings) {
     const ticket = normalize (list.Tickets[i]);
     const w = getTextWarning (warnings, ticket.id);
     const f = (flashes.indexOf (ticket.id) === -1) ? 'false' : 'true';
-    if (ticket.Warning !== w || ticket.Flash !== f) {  // changing ?
-      ticket.Warning  = w;        // set or clear warning message
-      ticket.Flash    = f;        // set or clear flash mode
-      ticket.Selected = 'false';  // deselect ticket
+    let s = ticket.Selected;
+    if (f === 'true') {
+      s = 'false';  // if flash -> deselect item
+    }
+    if (ticket.Warning !== w || ticket.Flash !== f || ticket.Selected !== s) {  // changing ?
+      ticket.Warning  = w;  // set or clear warning message
+      ticket.Flash    = f;  // set or clear flash mode
+      ticket.Selected = s;  // select or deselect ticket
       list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
     }
   }
