@@ -264,7 +264,7 @@ function updateShape (list) {
     }
     if (ticket.Shape !== shape) {  // changing ?
       ticket.Shape = shape;
-      list.Tickets[i] = clone (ticket);
+      list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
     }
   }
 }
@@ -407,36 +407,31 @@ function drop (state, fromIds, toId, toOwnerId) {
   return state;
 }
 
-// This trick is necessary for update the UI !!!
-function cloneAll (state) {
-  for (var readbook of state.Roadbooks) {
-    for (let i = 0; i < readbook.Tickets.length; i++) {
-      const ticket = readbook.Tickets[i];
-      readbook.Tickets[i] = clone (ticket);
-    }
-  }
-  return state;
-}
-
 function swapSelected (state, id) {
   const search = searchId (state, id);
-  search.tickets[search.index].Selected = (search.tickets[search.index].Selected === 'true') ? 'false' : 'true';
+  const ticket = search.tickets[search.index];
+  ticket.Selected = (ticket.Selected === 'true') ? 'false' : 'true';
+  search.tickets[search.index] = clone (ticket);  // Trick necessary for update UI !!!
   return state;
 }
 
 function swapExtended (state, id) {
   const search = searchId (state, id);
-  search.tickets[search.index].Extended = (search.tickets[search.index].Extended === 'true') ? 'false' : 'true';
+  const ticket = search.tickets[search.index];
+  ticket.Extended = (ticket.Extended === 'true') ? 'false' : 'true';
+  search.tickets[search.index] = clone (ticket);  // Trick necessary for update UI !!!
   return state;
 }
 
 function swapStatus (state, id) {
   const search = searchId (state, id);
-  if (search.tickets[search.index].Status === 'dispatched') {
-    search.tickets[search.index].Status = 'pre-dispatched';
+  const ticket = search.tickets[search.index];
+  if (ticket.Status === 'dispatched') {
+    ticket.Status = 'pre-dispatched';
   } else {
-    search.tickets[search.index].Status = 'dispatched';
+    ticket.Status = 'dispatched';
   }
+  search.tickets[search.index] = clone (ticket);  // Trick necessary for update UI !!!
   return state;
 }
 
@@ -446,9 +441,6 @@ export default function Reducer (state = {}, action = {}) {
   switch (action.type) {
     case 'DROP':
       state = drop (state, action.fromIds, action.toId, action.toOwnerId);
-      break;
-    case 'CLONE':
-      state = cloneAll (state);
       break;
     case 'SWAP_SELECTED':
       state = swapSelected (state, action.id);
