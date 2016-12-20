@@ -468,9 +468,9 @@ function deselectAll (state) {
   deselectAllList (state.Backlog);
 }
 
-function swapSelected (state, id, event) {
+function swapSelected (state, id, shiftKey) {
   const result = searchId (state, id);
-  if (event.shiftKey) {
+  if (shiftKey) {
     if (result.tickets[result.index].Selected === 'true') {
       // Deselect all items.
       selectZone (result, 0, 9999, 'false');
@@ -494,7 +494,7 @@ function swapSelected (state, id, event) {
   return state;
 }
 
-function swapExtended (state, id, event) {
+function swapExtended (state, id, shiftKey) {
   const result = searchId (state, id);
   const ticket = result.tickets[result.index];
   ticket.Extended = (ticket.Extended === 'true') ? 'false' : 'true';
@@ -502,7 +502,7 @@ function swapExtended (state, id, event) {
   return state;
 }
 
-function swapStatus (state, id, event) {
+function swapStatus (state, id, shiftKey) {
   const result = searchId (state, id);
   const ticket = result.tickets[result.index];
   if (ticket.Status === 'dispatched') {
@@ -525,13 +525,13 @@ export default function Reducer (state = {}, action = {}) {
       state = deselectAll (state);
       break;
     case 'SWAP_SELECTED':
-      state = swapSelected (state, action.id, action.event);
+      state = swapSelected (state, action.id, action.shiftKey);
       break;
     case 'SWAP_EXTENDED':
-      state = swapExtended (state, action.id, action.event);
+      state = swapExtended (state, action.id, action.shiftKey);
       break;
     case 'SWAP_STATUS':
-      state = swapStatus (state, action.id, action.event);
+      state = swapStatus (state, action.id, action.shiftKey);
       break;
   }
   return state;
