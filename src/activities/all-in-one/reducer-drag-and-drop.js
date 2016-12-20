@@ -295,9 +295,11 @@ function setWarning (list, flashes, warnings) {
     const ticket = list.Tickets[i];
     const w = getTextWarning (warnings, ticket.id);
     const f = (flashes.indexOf (ticket.id) === -1) ? 'false' : 'true';
-    if (ticket.Warning !== w || ticket.Flash !== f) {  // changing ?
-      ticket.Warning = w;  // set or clear warning message
-      ticket.Flash = f;  // set or clear flash mode
+    const s = 'false';
+    if (ticket.Warning !== w || ticket.Flash !== f || ticket.Selected !== s) {  // changing ?
+      ticket.Warning = w;   // set or clear warning message
+      ticket.Flash = f;     // set or clear flash mode
+      ticket.Selected = s;  // deselect ticket
       list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
     }
   }
@@ -407,6 +409,26 @@ function drop (state, fromIds, toId, toOwnerId) {
   return state;
 }
 
+function deselectAllList (list) {
+  for (let i = 0; i < list.Tickets.length; i++) {
+    const ticket = list.Tickets[i];
+    if (ticket.Selected !== 'false') {  // changing ?
+      ticket.Selected = 'false';
+      list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
+    }
+  }
+}
+
+function deselectAll (state) {
+  for (var readbook of state.Roadbooks) {
+    deselectAllList (readbook);
+  }
+  for (var tray of state.Desk) {
+    deselectAllList (tray);
+  }
+  deselectAllList (state.Backlog);
+}
+
 function swapSelected (state, id) {
   const search = searchId (state, id);
   const ticket = search.tickets[search.index];
@@ -441,6 +463,9 @@ export default function Reducer (state = {}, action = {}) {
   switch (action.type) {
     case 'DROP':
       state = drop (state, action.fromIds, action.toId, action.toOwnerId);
+      break;
+    case 'DESELECT_ALL':
+      state = deselectAll (state);
       break;
     case 'SWAP_SELECTED':
       state = swapSelected (state, action.id);
