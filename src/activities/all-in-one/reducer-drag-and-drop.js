@@ -334,6 +334,29 @@ function setMiscs (state, flashes, warnings) {
 
 // ------------------------------------------------------------------------------------------
 
+function firstSelectedIndex (result) {
+  for (let i = 0; i < result.tickets.length; i++) {
+    const ticket = result.tickets[i];
+    if (ticket.Selected === 'true') {
+      return i;
+    }
+  }
+  return 0;
+}
+
+function selectZone (result, fromIndex, toIndex) {
+  for (let i = 0; i < result.tickets.length; i++) {
+    const ticket = result.tickets[i];
+    if (i >= fromIndex && i <= toIndex) {
+      ticket.Selected = 'true';
+      result.tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
+    }
+  }
+}
+
+
+// ------------------------------------------------------------------------------------------
+
 // Delete all residual tickets into Roadbooks and Desk.
 function deleteMission (state, missionId) {
   for (var roadbook of state.Roadbooks) {
@@ -445,31 +468,42 @@ function deselectAll (state) {
   deselectAllList (state.Backlog);
 }
 
-function swapSelected (state, id) {
-  const search = searchId (state, id);
-  const ticket = search.tickets[search.index];
-  ticket.Selected = (ticket.Selected === 'true') ? 'false' : 'true';
-  search.tickets[search.index] = clone (ticket);  // Trick necessary for update UI !!!
+function swapSelected (state, id, event) {
+  const result = searchId (state, id);
+  if (event.shiftKey) {
+    let fromIndex = firstSelectedIndex (result);
+    let toIndex = result.index;
+    if (fromIndex > toIndex) {
+      const x = fromIndex;
+      fromIndex = toIndex;
+      toIndex = x;
+    }
+    selectZone (result, fromIndex, toIndex);
+  } else {
+    const ticket = result.tickets[result.index];
+    ticket.Selected = (ticket.Selected === 'true') ? 'false' : 'true';
+    result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
+  }
   return state;
 }
 
-function swapExtended (state, id) {
-  const search = searchId (state, id);
-  const ticket = search.tickets[search.index];
+function swapExtended (state, id, event) {
+  const result = searchId (state, id);
+  const ticket = result.tickets[result.index];
   ticket.Extended = (ticket.Extended === 'true') ? 'false' : 'true';
-  search.tickets[search.index] = clone (ticket);  // Trick necessary for update UI !!!
+  result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
   return state;
 }
 
-function swapStatus (state, id) {
-  const search = searchId (state, id);
-  const ticket = search.tickets[search.index];
+function swapStatus (state, id, event) {
+  const result = searchId (state, id);
+  const ticket = result.tickets[result.index];
   if (ticket.Status === 'dispatched') {
     ticket.Status = 'pre-dispatched';
   } else {
     ticket.Status = 'dispatched';
   }
-  search.tickets[search.index] = clone (ticket);  // Trick necessary for update UI !!!
+  result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
   return state;
 }
 
@@ -484,13 +518,13 @@ export default function Reducer (state = {}, action = {}) {
       state = deselectAll (state);
       break;
     case 'SWAP_SELECTED':
-      state = swapSelected (state, action.id);
+      state = swapSelected (state, action.id, action.event);
       break;
     case 'SWAP_EXTENDED':
-      state = swapExtended (state, action.id);
+      state = swapExtended (state, action.id, action.event);
       break;
     case 'SWAP_STATUS':
-      state = swapStatus (state, action.id);
+      state = swapStatus (state, action.id, action.event);
       break;
   }
   return state;
