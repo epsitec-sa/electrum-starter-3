@@ -32,13 +32,13 @@ function searchTicket (root, items, type, id, ownerId) {
 }
 
 function searchId (state, id, ownerId) {
-  const m = searchTicket (state, state.Roadbooks, 'roadbooks', id, ownerId);
-  if (m) {
-    return m;
-  }
   const r = searchTicket (state.Backlog, state.Backlog.Tickets, 'backlog', id, ownerId);
   if (r) {
     return r;
+  }
+  const m = searchTicket (state, state.Roadbooks, 'roadbooks', id, ownerId);
+  if (m) {
+    return m;
   }
   for (var roadbook of state.Roadbooks) {
     const result = searchTicket (roadbook, roadbook.Tickets, 'roadbook', id, ownerId);
@@ -52,7 +52,7 @@ function searchId (state, id, ownerId) {
       return result;
     }
   }
-  throw new Error (`Id not found for ${id}`);
+  return null;
 }
 
 function getRoadbookTickets (state, roadbookId) {
@@ -432,10 +432,15 @@ function drop (state, fromIds, toId, toOwnerId) {
   const flashes = [];
   const warnings = [];
   const to = searchId (state, toId, toOwnerId);
+  if (!to) {
+    return;
+  }
   for (let i = fromIds.length - 1; i >= 0; i--) {
     const fromId = fromIds[i];
     const from = searchId (state, fromId);
-    changeGeneric (state, flashes, warnings, from, to);
+    if (from) {
+      changeGeneric (state, flashes, warnings, from, to);
+    }
   }
   if (to.type === 'roadbook') {
     deleteTransits (state, flashes, warnings);
