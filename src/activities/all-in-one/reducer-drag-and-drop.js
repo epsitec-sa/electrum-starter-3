@@ -138,17 +138,17 @@ function getNewTransit (ticket) {
     n.Trip.Pick.ShortDescription = 'Inconnu';
     n.Trip.Pick.Zone = null;
   }
-  n.Flash = 'true';
   return n;
 }
 
 // Create a transit if a ticket is alone for a roadbook.
-function createTransit (state, warnings, roadbookId) {
+function createTransit (state, flashes, warnings, roadbookId) {
   const tickets = getRoadbookTickets (state, roadbookId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
     if (same.length === 1 && !isTicketIntoTray (state, ticket.Trip.MissionId)) {
       const newTicket = getNewTransit (ticket);
+      flashes.push (newTicket.id);
       const index = tickets.indexOf (ticket);
       if (newTicket.Type.startsWith ('pick')) {
         addTicket (tickets, index, newTicket);
@@ -160,16 +160,16 @@ function createTransit (state, warnings, roadbookId) {
   }
 }
 
-function createTransits (state, warnings) {
+function createTransits (state, flashes, warnings) {
   for (var readbook of state.Roadbooks) {
-    createTransit (state, warnings, readbook.id);
+    createTransit (state, flashes, warnings, readbook.id);
   }
 }
 
 // Delete if there are unnecessary transits for a roadbook.
 // By example, if a transit is alone, it's unnecessary.
 // If there are 3 tickets, including 2 unnecessary, delete the 2 unnecessary tickets.
-function deleteTransit (state, warnings, roadbookId) {
+function deleteTransit (state, flashes, warnings, roadbookId) {
   const tickets = getRoadbookTickets (state, roadbookId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
@@ -183,16 +183,16 @@ function deleteTransit (state, warnings, roadbookId) {
   }
 }
 
-function deleteTransits (state, warnings) {
+function deleteTransits (state, flashes, warnings) {
   for (var readbook of state.Roadbooks) {
-    deleteTransit (state, warnings, readbook.id);
+    deleteTransit (state, flashes, warnings, readbook.id);
   }
 }
 
 // ------------------------------------------------------------------------------------------
 
 // Check if un pick is under a drop, and set the field 'warning'.
-function checkOrder (list, warnings) {
+function checkOrder (list, flashes, warnings) {
   for (let i = 0; i < list.Tickets.length; i++) {
     const ticket = list.Tickets[i];
     const same = getTicketsFromMissionId (list.Tickets, ticket.Trip.MissionId);
@@ -204,18 +204,18 @@ function checkOrder (list, warnings) {
 }
 
 // Check if picks are under drops into all Roadbooks.
-function checkOrders (state, warnings) {
+function checkOrders (state, flashes, warnings) {
   for (var readbook of state.Roadbooks) {
-    checkOrder (readbook, warnings);
+    checkOrder (readbook, flashes, warnings);
   }
   for (var tray of state.Desk) {
-    checkOrder (tray, warnings);
+    checkOrder (tray, flashes, warnings);
   }
 }
 
 // ------------------------------------------------------------------------------------------
 
-function checkAlone (state, warnings, roadbookId) {
+function checkAlone (state, flashes, warnings, roadbookId) {
   const tickets = getRoadbookTickets (state, roadbookId);
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
@@ -234,9 +234,9 @@ function checkAlone (state, warnings, roadbookId) {
 }
 
 // Add a warning to all tickets into Roadbooks we are alone.
-function checkAlones (state, warnings) {
+function checkAlones (state, flashes, warnings) {
   for (var readbook of state.Roadbooks) {
-    checkAlone (state, warnings, readbook.id);
+    checkAlone (state, flashes, warnings, readbook.id);
   }
 }
 
@@ -290,57 +290,28 @@ function getTextWarning (warnings, id) {
   return null;
 }
 
-function setWarning (list, warnings) {
+function setWarning (list, flashes, warnings) {
   for (let i = 0; i < list.Tickets.length; i++) {
     const ticket = list.Tickets[i];
-    const text = getTextWarning (warnings, ticket.id);
-    if (ticket.Warning !== text) {  // changing ?
-      ticket.Warning = text;  // set or clear warning message
+    const w = getTextWarning (warnings, ticket.id);
+    const f = (flashes.indexOf (ticket.id) === -1) ? 'false' : 'true';
+    if (ticket.Warning !== w || ticket.Flash !== f) {  // changing ?
+      ticket.Warning = w;  // set or clear warning message
+      ticket.Flash = f;  // set or clear flash mode
       list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
     }
   }
 }
 
-// Set warnings to all ticket into Roadbooks and Desk.
-function setWarnings (state, warnings) {
+// Set warnings to all ticket into Roadbooks, Desk and Backlog
+function setWarnings (state, flashes, warnings) {
   for (var readbook of state.Roadbooks) {
-    setWarning (readbook, warnings);
+    setWarning (readbook, flashes, warnings);
   }
   for (var tray of state.Desk) {
-    setWarning (tray, warnings);
+    setWarning (tray, flashes, warnings);
   }
-}
-
-// ------------------------------------------------------------------------------------------
-
-function setListFlash (list, ids) {
-  for (let i = 0; i < list.Tickets.length; i++) {
-    const ticket = list.Tickets[i];
-    if (ids.indexOf (ticket.id) !== -1) {
-      if (ticket.Flash !== 'true') {  // changing ?
-        ticket.Flash = 'true';
-        list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
-      }
-    } else {
-      if (ticket.Flash === 'true') {  // changing ?
-        ticket.Flash = 'false';
-        list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
-      }
-    }
-  }
-}
-
-// Set flash mode to all modified tickets.
-// Note: Currently, flash mode is permanent. Eventually, it should only appear temporarily
-// and disappear gradually.
-function setFlash (state, ids) {
-  for (var readbook of state.Roadbooks) {
-    setListFlash (readbook, ids);
-  }
-  for (var tray of state.Desk) {
-    setListFlash (tray, ids);
-  }
-  setListFlash (state.Backlog, ids);
+  setWarning (state.Backlog, flashes, warnings);
 }
 
 // ------------------------------------------------------------------------------------------
@@ -371,7 +342,7 @@ function deleteMission (state, missionId) {
   }
 }
 
-function changeGeneric (state, warnings, from, to) {
+function changeGeneric (state, flashes, warnings, from, to) {
   const ticket = from.ticket;
   if ((to.type === 'backlog' || to.type === 'tray') && ticket.Type.endsWith ('-transit')) {
     // Transit ticket does not move into backlog or desk.
@@ -397,15 +368,16 @@ function changeGeneric (state, warnings, from, to) {
     drop.Type = 'drop';
     addTicket (to.tickets, to.index, drop);  // first drop, for have pick/drop in this order
     addTicket (to.tickets, to.index, pick);
-    setFlash (state, [pick.id, drop.id]);
+    flashes.push (pick.id);
+    flashes.push (drop.id);
   } else if (to.type === 'backlog' && ticket.Type !== 'both') {
     ticket.Type = 'both';
     ticket.Status = 'pre-dispatched';
     addTicket (to.tickets, to.index, ticket);
-    setFlash (state, [ticket.id]);
+    flashes.push (ticket.id);
   } else {
     addTicket (to.tickets, to.index, ticket);
-    setFlash (state, [ticket.id]);
+    flashes.push (ticket.id);
   }
 }
 
@@ -416,20 +388,21 @@ function changeGeneric (state, warnings, from, to) {
 // toOwnerId -> owner where it is necessary to insert. Useful when toId is null.
 function drop (state, fromIds, toId, toOwnerId) {
   console.log ('Reducer.drop');
+  const flashes = [];
   const warnings = [];
   const to = searchId (state, toId, toOwnerId);
   for (let i = fromIds.length - 1; i >= 0; i--) {
     const fromId = fromIds[i];
     const from = searchId (state, fromId);
-    changeGeneric (state, warnings, from, to);
+    changeGeneric (state, flashes, warnings, from, to);
   }
   if (to.type === 'roadbook') {
-    deleteTransits (state, warnings);
-    createTransits (state, warnings);
+    deleteTransits (state, flashes, warnings);
+    createTransits (state, flashes, warnings);
   }
-  checkOrders (state, warnings);
-  checkAlones (state, warnings);
-  setWarnings (state, warnings);
+  checkOrders (state, flashes, warnings);
+  checkAlones (state, flashes, warnings);
+  setWarnings (state, flashes, warnings);
   updateShapes (state);
   return state;
 }
@@ -448,14 +421,12 @@ function cloneAll (state) {
 function swapSelected (state, id) {
   const search = searchId (state, id);
   search.tickets[search.index].Selected = (search.tickets[search.index].Selected === 'true') ? 'false' : 'true';
-  setFlash (state, []);
   return state;
 }
 
 function swapExtended (state, id) {
   const search = searchId (state, id);
   search.tickets[search.index].Extended = (search.tickets[search.index].Extended === 'true') ? 'false' : 'true';
-  setFlash (state, []);
   return state;
 }
 
@@ -466,7 +437,6 @@ function swapStatus (state, id) {
   } else {
     search.tickets[search.index].Status = 'dispatched';
   }
-  setFlash (state, []);
   return state;
 }
 
