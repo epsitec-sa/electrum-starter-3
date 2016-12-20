@@ -108,6 +108,19 @@ function clone (ticket) {
   return n;
 }
 
+function normalize (ticket) {
+  if (ticket.Selected !== 'true') {
+    ticket.Selected = 'false';
+  }
+  if (ticket.Flash !== 'true') {
+    ticket.Flash = 'false';
+  }
+  if (!ticket.Warning) {
+    ticket.Warning = null;
+  }
+  return ticket;
+}
+
 // Search all tickets into Roadbooks and Desk.
 function isTicketIntoTray (state, missionId) {
   for (var tray of state.Desk) {
@@ -290,30 +303,29 @@ function getTextWarning (warnings, id) {
   return null;
 }
 
-function setWarning (list, flashes, warnings) {
+function setMisc (list, flashes, warnings) {
   for (let i = 0; i < list.Tickets.length; i++) {
-    const ticket = list.Tickets[i];
+    const ticket = normalize (list.Tickets[i]);
     const w = getTextWarning (warnings, ticket.id);
     const f = (flashes.indexOf (ticket.id) === -1) ? 'false' : 'true';
-    const s = 'false';
-    if (ticket.Warning !== w || ticket.Flash !== f || ticket.Selected !== s) {  // changing ?
-      ticket.Warning = w;   // set or clear warning message
-      ticket.Flash = f;     // set or clear flash mode
-      ticket.Selected = s;  // deselect ticket
+    if (ticket.Warning !== w || ticket.Flash !== f) {  // changing ?
+      ticket.Warning  = w;        // set or clear warning message
+      ticket.Flash    = f;        // set or clear flash mode
+      ticket.Selected = 'false';  // deselect ticket
       list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
     }
   }
 }
 
-// Set warnings to all ticket into Roadbooks, Desk and Backlog
-function setWarnings (state, flashes, warnings) {
+// Set flashes and warnings to all ticket into Roadbooks, Desk and Backlog.
+function setMiscs (state, flashes, warnings) {
   for (var readbook of state.Roadbooks) {
-    setWarning (readbook, flashes, warnings);
+    setMisc (readbook, flashes, warnings);
   }
   for (var tray of state.Desk) {
-    setWarning (tray, flashes, warnings);
+    setMisc (tray, flashes, warnings);
   }
-  setWarning (state.Backlog, flashes, warnings);
+  setMisc (state.Backlog, flashes, warnings);
 }
 
 // ------------------------------------------------------------------------------------------
@@ -404,7 +416,7 @@ function drop (state, fromIds, toId, toOwnerId) {
   }
   checkOrders (state, flashes, warnings);
   checkAlones (state, flashes, warnings);
-  setWarnings (state, flashes, warnings);
+  setMiscs (state, flashes, warnings);
   updateShapes (state);
   return state;
 }
