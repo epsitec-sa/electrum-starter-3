@@ -344,11 +344,11 @@ function firstSelectedIndex (result) {
   return 0;
 }
 
-function selectZone (result, fromIndex, toIndex) {
+function selectZone (result, fromIndex, toIndex, value) {
   for (let i = 0; i < result.tickets.length; i++) {
     const ticket = result.tickets[i];
     if (i >= fromIndex && i <= toIndex) {
-      ticket.Selected = 'true';
+      ticket.Selected = value;
       result.tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
     }
   }
@@ -471,15 +471,22 @@ function deselectAll (state) {
 function swapSelected (state, id, event) {
   const result = searchId (state, id);
   if (event.shiftKey) {
-    let fromIndex = firstSelectedIndex (result);
-    let toIndex = result.index;
-    if (fromIndex > toIndex) {
-      const x = fromIndex;
-      fromIndex = toIndex;
-      toIndex = x;
+    if (result.tickets[result.index].Selected === 'true') {
+      // Deselect all items.
+      selectZone (result, 0, 9999, 'false');
+    } else {
+      // Select from first selected item to pointed item.
+      let fromIndex = firstSelectedIndex (result);
+      let toIndex = result.index;
+      if (fromIndex > toIndex) {
+        const x = fromIndex;
+        fromIndex = toIndex;  // fromIndex <-> toIndex
+        toIndex = x;
+      }
+      selectZone (result, fromIndex, toIndex, 'true');
     }
-    selectZone (result, fromIndex, toIndex);
   } else {
+    // Select or deselect pointed item.
     const ticket = result.tickets[result.index];
     ticket.Selected = (ticket.Selected === 'true') ? 'false' : 'true';
     result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
