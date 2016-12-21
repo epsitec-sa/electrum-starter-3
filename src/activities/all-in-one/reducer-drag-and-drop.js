@@ -501,21 +501,25 @@ function swapSelected (state, id, shiftKey) {
 
 function swapExtended (state, id, shiftKey) {
   const result = searchId (state, id);
-  const ticket = result.tickets[result.index];
-  ticket.Extended = (ticket.Extended === 'true') ? 'false' : 'true';
-  result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
+  if (result.type !== 'backlog') {
+    const ticket = result.tickets[result.index];
+    ticket.Extended = (ticket.Extended === 'true') ? 'false' : 'true';
+    result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
+  }
   return state;
 }
 
 function swapStatus (state, id, shiftKey) {
   const result = searchId (state, id);
-  const ticket = result.tickets[result.index];
-  if (ticket.Status === 'dispatched') {
-    ticket.Status = 'pre-dispatched';
-  } else {
-    ticket.Status = 'dispatched';
+  if (result.type === 'roadbook') {
+    const ticket = result.tickets[result.index];
+    if (ticket.Status === 'dispatched') {
+      ticket.Status = 'pre-dispatched';
+    } else {
+      ticket.Status = 'dispatched';
+    }
+    result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
   }
-  result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
   return state;
 }
 
