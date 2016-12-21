@@ -499,7 +499,7 @@ function swapSelected (state, id, shiftKey) {
   return state;
 }
 
-function swapExtended (state, id, shiftKey) {
+function swapExtended (state, id) {
   const result = searchId (state, id);
   if (result.type !== 'backlog') {
     const ticket = result.tickets[result.index];
@@ -509,7 +509,7 @@ function swapExtended (state, id, shiftKey) {
   return state;
 }
 
-function swapStatus (state, id, shiftKey) {
+function swapStatus (state, id) {
   const result = searchId (state, id);
   if (result.type === 'roadbook') {
     const ticket = result.tickets[result.index];
@@ -537,10 +537,10 @@ export default function Reducer (state = {}, action = {}) {
       state = swapSelected (state, action.id, action.shiftKey);
       break;
     case 'SWAP_EXTENDED':
-      state = swapExtended (state, action.id, action.shiftKey);
+      state = swapExtended (state, action.id);
       break;
     case 'SWAP_STATUS':
-      state = swapStatus (state, action.id, action.shiftKey);
+      state = swapStatus (state, action.id);
       break;
   }
   return state;
