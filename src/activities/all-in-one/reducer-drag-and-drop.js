@@ -347,7 +347,7 @@ function firstSelectedIndex (result) {
 function selectZone (result, fromIndex, toIndex, value) {
   for (let i = 0; i < result.tickets.length; i++) {
     const ticket = result.tickets[i];
-    if (i >= fromIndex && i <= toIndex) {
+    if (ticket.Status !== 'dispatched' && i >= fromIndex && i <= toIndex) {
       ticket.Selected = value;
       result.tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
     }
@@ -493,8 +493,10 @@ function swapSelected (state, id, shiftKey) {
   } else {
     // Select or deselect pointed item.
     const ticket = result.tickets[result.index];
-    ticket.Selected = (ticket.Selected === 'true') ? 'false' : 'true';
-    result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
+    if (ticket.Status !== 'dispatched') {
+      ticket.Selected = (ticket.Selected === 'true') ? 'false' : 'true';
+      result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
+    }
   }
   return state;
 }
@@ -517,6 +519,7 @@ function swapStatus (state, id) {
       ticket.Status = 'pre-dispatched';
     } else {
       ticket.Status = 'dispatched';
+      ticket.Selected = 'false';
     }
     result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
   }
