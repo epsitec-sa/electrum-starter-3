@@ -84,7 +84,7 @@ const data =
               id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
             },
             Price: '32 CHF',
-            Product: 'Standard',
+            Product: 'Dring-dring',
             Urgency: '100',
             Weight: '1.2 kg',
             id: 't1'
@@ -169,7 +169,7 @@ const data =
               id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
             },
             Price: '32 CHF',
-            Product: 'Standard',
+            Product: 'Dring-dring',
             Urgency: '100',
             Weight: '1.2 kg',
             id: 't2'
@@ -756,7 +756,7 @@ const data =
   Status: 'open',
   Backlog: {
     Filter: 'Tous',
-    Sort: 'Chronologique',
+    Sort: 'Par heure pick',
     Tickets: [
        {
           Extended: 'false',
@@ -950,7 +950,7 @@ const data =
               id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
             },
             Price: '52 CHF',
-            Product: 'Normal',
+            Product: 'Dring-dring',
             Urgency: '40',
             Weight: '1.4 kg',
             id: 't5'
@@ -1081,7 +1081,7 @@ const data =
               id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
             },
             Price: '17 CHF',
-            Product: 'Dring-dring',
+            Product: 'Urgent',
             Urgency: '0',
             Weight: '2.2 kg',
             id: 't7'
