@@ -755,6 +755,8 @@ const data =
   SplitterBacklogWidth: '700px',
   Status: 'open',
   Backlog: {
+    Filter: 'Tous',
+    Sort: 'Chronologique',
     Tickets: [
        {
           Extended: 'false',
