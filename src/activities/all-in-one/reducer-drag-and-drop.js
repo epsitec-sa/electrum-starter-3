@@ -2,6 +2,116 @@
 
 import reducerTickets from './reducer-tickets.js';
 
+// ------------------------------------------------------------------------------------------
+
+function isSelected (state, id) {
+  if (!state.Selections) {
+    state.Selections = [];
+  }
+  return state.Selections.indexOf (id) !== -1;
+}
+
+function putSelected (state, id, value) {
+  const i = state.Selections.indexOf (id);
+  if (i === -1 && value) {
+    state.Selections.push (id);
+  }
+  if (i !== -1 && !value) {
+    state.Selections.splice (i, 1);
+  }
+  return state;
+}
+
+function setSelected (state, id) {
+  const i = state.Selections.indexOf (id);
+  if (i === -1) {
+    state.Selections.push (id);
+  }
+  return state;
+}
+
+function clearSelected (state, id) {
+  const i = state.Selections.indexOf (id);
+  if (i !== -1) {
+    state.Selections.splice (i, 1);
+  }
+  return state;
+}
+
+// ------------------------------------------------------------------------------------------
+
+function isExtended (state, id) {
+  if (!state.Extendeds) {
+    state.Extendeds = [];
+  }
+  return state.Extendeds.indexOf (id) !== -1;
+}
+
+function putExtended (state, id, value) {
+  const i = state.Extendeds.indexOf (id);
+  if (i === -1 && value) {
+    state.Extendeds.push (id);
+  }
+  if (i !== -1 && !value) {
+    state.Extendeds.splice (i, 1);
+  }
+  return state;
+}
+
+function setExtended (state, id) {
+  const i = state.Extendeds.indexOf (id);
+  if (i === -1) {
+    state.Extendeds.push (id);
+  }
+  return state;
+}
+
+function clearExtended (state, id) {
+  const i = state.Extendeds.indexOf (id);
+  if (i !== -1) {
+    state.Extendeds.splice (i, 1);
+  }
+  return state;
+}
+
+// ------------------------------------------------------------------------------------------
+
+function isFlash (state, id) {
+  if (!state.Flashes) {
+    state.Flashes = [];
+  }
+  return state.Flashes.indexOf (id) !== -1;
+}
+
+function putFlash (state, id, value) {
+  const i = state.Flashes.indexOf (id);
+  if (i === -1 && value) {
+    state.Flashes.push (id);
+  }
+  if (i !== -1 && !value) {
+    state.Flashes.splice (i, 1);
+  }
+  return state;
+}
+
+function setFlash (state, id) {
+  const i = state.Flashes.indexOf (id);
+  if (i === -1) {
+    state.Flashes.push (id);
+  }
+  return state;
+}
+
+function clearFlash (state, id) {
+  const i = state.Flashes.indexOf (id);
+  if (i !== -1) {
+    state.Flashes.splice (i, 1);
+  }
+  return state;
+}
+
+// ------------------------------------------------------------------------------------------
+
 function searchTicket (root, items, type, id, ownerId) {
   if (id) {
     for (var i = 0, len = items.length; i < len; i++) {
@@ -98,10 +208,27 @@ function getNewId () {
     });
 }
 
+function updateId (state, oldId, newId) {
+  if (isSelected (state, oldId)) {
+    clearSelected (state, oldId);
+    setSelected (state, newId);
+  }
+  if (isExtended (state, oldId)) {
+    clearExtended (state, oldId);
+    setExtended (state, newId);
+  }
+  if (isFlash (state, oldId)) {
+    clearFlash (state, oldId);
+    setFlash (state, newId);
+  }
+}
+
 // Return a deep copy of ticket, with new ids.
-function clone (ticket) {
+function clone (state, ticket) {
   const n = JSON.parse (JSON.stringify (ticket));
+  const oldId = n.id;
   n.id = getNewId ();
+  updateId (state, oldId, n.id);
   n.Trip.id = getNewId ();
   n.Trip.Pick.id = getNewId ();
   n.Trip.Drop.id = getNewId ();
@@ -109,12 +236,6 @@ function clone (ticket) {
 }
 
 function normalize (ticket) {
-  if (ticket.Selected !== 'true') {
-    ticket.Selected = 'false';
-  }
-  if (ticket.Flash !== 'true') {
-    ticket.Flash = 'false';
-  }
   if (!ticket.Warning) {
     ticket.Warning = null;
   }
@@ -134,8 +255,8 @@ function isTicketIntoTray (state, missionId) {
 }
 
 // Return new ticket for transit. If it's a pick, create a drop zone for transit, and reverse.
-function getNewTransit (ticket) {
-  const n = clone (ticket);
+function getNewTransit (state, ticket) {
+  const n = clone (state, ticket);
   if (n.Type.startsWith ('pick')) {
     n.Type = 'drop-transit';
     n.Trip.Drop.LongDescription = null;
@@ -160,7 +281,7 @@ function createTransit (state, flashes, warnings, roadbookId) {
   for (var ticket of tickets) {
     const same = getTicketsFromMissionId (tickets, ticket.Trip.MissionId);
     if (same.length === 1 && !isTicketIntoTray (state, ticket.Trip.MissionId)) {
-      const newTicket = getNewTransit (ticket);
+      const newTicket = getNewTransit (state, ticket);
       flashes.push (newTicket.id);
       const index = tickets.indexOf (ticket);
       if (newTicket.Type.startsWith ('pick')) {
@@ -255,7 +376,7 @@ function checkAlones (state, flashes, warnings) {
 
 // ------------------------------------------------------------------------------------------
 
-function updateShape (list) {
+function updateShape (state, list) {
   for (let i = 0; i < list.Tickets.length; i++) {
     const ticket = list.Tickets[i];
     let shape = 'normal';
@@ -277,7 +398,7 @@ function updateShape (list) {
     }
     if (ticket.Shape !== shape) {  // changing ?
       ticket.Shape = shape;
-      list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
+      list.Tickets[i] = clone (state, ticket);  // Trick necessary for update UI !!!
     }
   }
 }
@@ -285,10 +406,10 @@ function updateShape (list) {
 // Update shapes to all tickets into Roadbooks and Desk, for showing pick directly following by drop.
 function updateShapes (state) {
   for (var readbook of state.Roadbooks) {
-    updateShape (readbook);
+    updateShape (state, readbook);
   }
   for (var tray of state.Desk) {
-    updateShape (tray);
+    updateShape (state, tray);
   }
 }
 
@@ -303,20 +424,22 @@ function getTextWarning (warnings, id) {
   return null;
 }
 
-function setMisc (list, flashes, warnings) {
+function setMisc (state, list, flashes, warnings) {
   for (let i = 0; i < list.Tickets.length; i++) {
     const ticket = normalize (list.Tickets[i]);
     const w = getTextWarning (warnings, ticket.id);
-    const f = (flashes.indexOf (ticket.id) === -1) ? 'false' : 'true';
-    let s = ticket.Selected;
-    if (f === 'true') {
-      s = 'false';  // if flash -> deselect item
+    const f = (flashes.indexOf (ticket.id) !== -1);
+    let s = isSelected (state, ticket.id);
+    if (f) {
+      s = false;  // if flash -> deselect item
     }
-    if (ticket.Warning !== w || ticket.Flash !== f || ticket.Selected !== s) {  // changing ?
+    if (ticket.Warning !== w ||
+        isFlash (state, ticket.id) !== f ||
+        isSelected (state, ticket.id) !== s) {  // changing ?
       ticket.Warning  = w;  // set or clear warning message
-      ticket.Flash    = f;  // set or clear flash mode
-      ticket.Selected = s;  // select or deselect ticket
-      list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
+      putFlash (state, ticket.id, f);  // set or clear flash mode
+      putSelected (state, ticket.id, s);  // select or deselect ticket
+      list.Tickets[i] = clone (state, ticket);  // Trick necessary for update UI !!!
     }
   }
 }
@@ -324,36 +447,35 @@ function setMisc (list, flashes, warnings) {
 // Set flashes and warnings to all ticket into Roadbooks, Desk and Backlog.
 function setMiscs (state, flashes, warnings) {
   for (var readbook of state.Roadbooks) {
-    setMisc (readbook, flashes, warnings);
+    setMisc (state, readbook, flashes, warnings);
   }
   for (var tray of state.Desk) {
-    setMisc (tray, flashes, warnings);
+    setMisc (state, tray, flashes, warnings);
   }
-  setMisc (state.Backlog, flashes, warnings);
+  setMisc (state, state.Backlog, flashes, warnings);
 }
 
 // ------------------------------------------------------------------------------------------
 
-function firstSelectedIndex (result) {
+function firstSelectedIndex (state, result) {
   for (let i = 0; i < result.tickets.length; i++) {
     const ticket = result.tickets[i];
-    if (ticket.Selected === 'true') {
+    if (isSelected (state, ticket.id)) {
       return i;
     }
   }
   return 0;
 }
 
-function selectZone (result, fromIndex, toIndex, value) {
+function selectZone (state, result, fromIndex, toIndex, value) {
   for (let i = 0; i < result.tickets.length; i++) {
     const ticket = result.tickets[i];
     if (ticket.Status !== 'dispatched' && i >= fromIndex && i <= toIndex) {
-      ticket.Selected = value;
-      result.tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
+      putSelected (state, ticket.id, value);
+      result.tickets[i] = clone (state, ticket);  // Trick necessary for update UI !!!
     }
   }
 }
-
 
 // ------------------------------------------------------------------------------------------
 
@@ -403,8 +525,8 @@ function changeGeneric (state, flashes, warnings, from, to) {
   // Set the destination.
   ticket.OwnerId = to.ownerId;
   if ((to.type === 'roadbook' || to.type === 'tray') && ticket.Type === 'both') {
-    const pick = clone (ticket);
-    const drop = clone (ticket);
+    const pick = clone (state, ticket);
+    const drop = clone (state, ticket);
     pick.Type = 'pick';
     drop.Type = 'drop';
     addTicket (to.tickets, to.index, drop);  // first drop, for have pick/drop in this order
@@ -453,49 +575,29 @@ function drop (state, fromIds, toId, toOwnerId) {
   return state;
 }
 
-function deselectAllList (list) {
-  for (let i = 0; i < list.Tickets.length; i++) {
-    const ticket = list.Tickets[i];
-    if (ticket.Selected !== 'false') {  // changing ?
-      ticket.Selected = 'false';
-      list.Tickets[i] = clone (ticket);  // Trick necessary for update UI !!!
-    }
-  }
-}
-
-function deselectAll (state) {
-  for (var readbook of state.Roadbooks) {
-    deselectAllList (readbook);
-  }
-  for (var tray of state.Desk) {
-    deselectAllList (tray);
-  }
-  deselectAllList (state.Backlog);
-}
-
 function swapSelected (state, id, shiftKey) {
   const result = searchId (state, id);
   if (shiftKey) {
-    if (result.tickets[result.index].Selected === 'true') {
+    if (isSelected (state, result.tickets[result.index].id)) {
       // Deselect all items.
-      selectZone (result, 0, 9999, 'false');
+      selectZone (state, result, 0, 9999, false);
     } else {
       // Select from first selected item to pointed item.
-      let fromIndex = firstSelectedIndex (result);
+      let fromIndex = firstSelectedIndex (state, result);
       let toIndex = result.index;
       if (fromIndex > toIndex) {
         const x = fromIndex;
         fromIndex = toIndex;  // fromIndex <-> toIndex
         toIndex = x;
       }
-      selectZone (result, fromIndex, toIndex, 'true');
+      selectZone (state, result, fromIndex, toIndex, true);
     }
   } else {
     // Select or deselect pointed item.
     const ticket = result.tickets[result.index];
     if (ticket.Status !== 'dispatched') {
-      ticket.Selected = (ticket.Selected === 'true') ? 'false' : 'true';
-      result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
+      putSelected (state, ticket.id, !isSelected (state, ticket.id));
+      result.tickets[result.index] = clone (state, ticket);  // Trick necessary for update UI !!!
     }
   }
   return state;
@@ -505,8 +607,12 @@ function swapExtended (state, id) {
   const result = searchId (state, id);
   if (result.type !== 'backlog') {
     const ticket = result.tickets[result.index];
-    ticket.Extended = (ticket.Extended === 'true') ? 'false' : 'true';
-    result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
+    if (isExtended (state, ticket.id)) {
+      clearExtended (state, ticket.id);
+    } else {
+      setExtended (state, ticket.id);
+    }
+    result.tickets[result.index] = clone (state, ticket);  // Trick necessary for update UI !!!
   }
   return state;
 }
@@ -519,9 +625,9 @@ function swapStatus (state, id) {
       ticket.Status = 'pre-dispatched';
     } else {
       ticket.Status = 'dispatched';
-      ticket.Selected = 'false';
+      clearSelected (state, ticket.id);
     }
-    result.tickets[result.index] = clone (ticket);  // Trick necessary for update UI !!!
+    result.tickets[result.index] = clone (state, ticket);  // Trick necessary for update UI !!!
   }
   return state;
 }
@@ -529,13 +635,12 @@ function swapStatus (state, id) {
 // ------------------------------------------------------------------------------------------
 
 export default function Reducer (state = {}, action = {}) {
+  console.log (`reducer action.type=${action.type}`);
   switch (action.type) {
     case 'DROP':
       state = drop (state, action.fromIds, action.toId, action.toOwnerId);
       break;
-    case 'DESELECT_ALL':
-      state = deselectAll (state);
-      break;
+
     case 'SWAP_SELECTED':
       state = swapSelected (state, action.id, action.shiftKey);
       break;
@@ -544,6 +649,36 @@ export default function Reducer (state = {}, action = {}) {
       break;
     case 'SWAP_STATUS':
       state = swapStatus (state, action.id);
+      break;
+
+    case 'IS_SELECTED':
+      state._isSelected = isSelected (state, action.id);
+      break;
+    case 'SET_SELECTED':
+      state = setSelected (state, action.id);
+      break;
+    case 'CLEAR_SELECTED':
+      state = clearSelected (state, action.id);
+      break;
+
+    case 'IS_EXTENDED':
+      state._isExtended = isExtended (state, action.id);
+      break;
+    case 'SET_EXTENDED':
+      state = setExtended (state, action.id);
+      break;
+    case 'CLEAR_EXTENDED':
+      state = clearExtended (state, action.id);
+      break;
+
+    case 'IS_FLASH':
+      state._isFlash = isFlash (state, action.id);
+      break;
+    case 'SET_FLASH':
+      state = setFlash (state, action.id);
+      break;
+    case 'CLEAR_FLASH':
+      state = clearFlash (state, action.id);
       break;
   }
   return state;
