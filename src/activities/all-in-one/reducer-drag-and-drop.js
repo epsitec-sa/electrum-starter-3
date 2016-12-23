@@ -635,7 +635,7 @@ function swapStatus (state, id) {
 // ------------------------------------------------------------------------------------------
 
 export default function Reducer (state = {}, action = {}) {
-  console.log (`reducer action.type=${action.type}`);
+  // console.log (`reducer action.type=${action.type}`);
   switch (action.type) {
     case 'DROP':
       state = drop (state, action.fromIds, action.toId, action.toOwnerId);
