@@ -2,6 +2,8 @@
 
 const data =
 {
+  BacklogFilter: 'Tous',
+  BacklogSort: 'Par heure pick',
   Roadbooks: [
     {
       Messenger: {
@@ -755,8 +757,6 @@ const data =
   SplitterBacklogWidth: '700px',
   Status: 'open',
   Backlog: {
-    Filter: 'Tous',
-    Sort: 'Par heure pick',
     Tickets: [
        {
           Extended: 'false',
