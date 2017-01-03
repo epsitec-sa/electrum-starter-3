@@ -20,7 +20,9 @@ import {
   Notifications,
   Notification,
   DispatchTrips,
-  DispatchMessengers
+  DispatchMessengers,
+  Router,
+  Route
 } from 'electrum-arc';
 import {
   Codispatch
@@ -349,14 +351,14 @@ export default class AllInOne extends React.Component {
       return null;
     } else if (this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') {
       return (
-        <Container kind='view-tab' {...this.link ()} >
-          <Button action={() => this.setStep ('dispatch-trips')}
+        <Router kind='view-tab' name='dispo' active='missions' {...this.link ()} >
+          <Route name='missions'
             text='Missions' kind='view-tab'
             active={this.activeStep ('dispatch-trips')} {...this.link ()} />
-          <Button action={() => this.setStep ('dispatch-messengers')}
+          <Route name='roadbooks'
             text='Coursiers' kind='view-tab'
             active={this.activeStep ('dispatch-messengers')} {...this.link ()} />
-        </Container>
+        </Router>
       );
     } else if (this.getStep () === 'codispatch') {
       return (
