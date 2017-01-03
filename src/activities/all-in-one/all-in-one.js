@@ -346,10 +346,7 @@ export default class AllInOne extends React.Component {
       return null;
     } else if (this.getStep () === 'mandats' ||
                this.getStep () === 'mandat-create') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-        </Container>
-      );
+      return null;
     } else if (this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') {
       return (
         <Container kind='view-tab' {...this.link ()} >
@@ -383,10 +380,7 @@ export default class AllInOne extends React.Component {
         </Container>
       );
     } else {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-        </Container>
-      );
+      return null;
     }
   }
 
@@ -838,15 +832,17 @@ export default class AllInOne extends React.Component {
         </Container>
 
         <Container kind='right' {...this.link ()} >
-          <Container kind='top-bar' {...this.link ()} >
-            {this.mainTab ()}
-            {this.loginZone ()}
+          <Container kind='content' {...this.link ()} >
+            <Container kind='top-bar' {...this.link ()} >
+              {this.mainTab ()}
+              {this.loginZone ()}
+            </Container>
+            <Container kind='second-bar' {...this.link ()} >
+              {this.viewTab ()}
+              {this.notificationsZone ()}
+            </Container>
+            {this.view ()}
           </Container>
-          <Container kind='second-bar' {...this.link ()} >
-            {this.viewTab ()}
-            {this.notificationsZone ()}
-          </Container>
-          {this.view ()}
           {this.footer ()}
           {this.viewNotifications ()}
         </Container>
