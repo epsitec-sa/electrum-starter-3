@@ -3,6 +3,7 @@
 import React from 'react';
 import {
   Container,
+  Footer,
   Dialog,
   Ticket,
   Button,
@@ -317,6 +318,9 @@ export default class AllInOne extends React.Component {
           <Button action={() => this.setStep ('team')}
             active={this.activeStep ('team')}
             text='Équipe' width='200px' kind='main-tab' {...this.link ()} />
+          <Button action={() => this.setStep ('empty')}
+            active={this.activeStep ('empty')}
+            text='Vide' width='200px' kind='main-tab' {...this.link ()} />
         </Container>
       );
     }
@@ -765,9 +769,7 @@ export default class AllInOne extends React.Component {
   }
 
   viewEmpty () {
-    return (
-      <Container kind='views' {...this.link ()} />
-    );
+    return null;
   }
 
   footer () {
@@ -777,11 +779,11 @@ export default class AllInOne extends React.Component {
       return null;
     } else {
       return (
-        <Container kind='footer' {...this.link ()} >
+        <Footer {...this.link ()} >
           {this.footerWarning ()}
           <Label text=' ' grow='1' kind='footer' {...this.link ()} />
           <Button glyph='gears' text='Options' kind='footer' {...this.link ()} />
-        </Container>
+        </Footer>
       );
     }
   }
