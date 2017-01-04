@@ -344,33 +344,20 @@ export default class AllInOne extends React.Component {
   }
 
   viewTab () {
-    if (this.getStep () === 'login' ||
-        this.getStep () === 'logout') {
-      return null;
-    } else if (this.getStep () === 'mandats' ||
-               this.getStep () === 'mandat-create') {
-      return null;
-    } else if (this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') {
+    if (this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') {
       return (
         <Router kind='view-tab' name='dispo' active='missions' {...this.link ()} >
-          <Route name='missions'
-            text='Missions' kind='view-tab'
-            active={this.activeStep ('dispatch-trips')} {...this.link ()} />
-          <Route name='roadbooks'
-            text='Coursiers' kind='view-tab'
-            active={this.activeStep ('dispatch-messengers')} {...this.link ()} />
+          <Route name='missions' text='Missions' kind='view-tab' {...this.link ()} />
+          <Route name='roadbooks' text='Coursiers' kind='view-tab' {...this.link ()} />
         </Router>
       );
     } else if (this.getStep () === 'codispatch') {
       return (
-        <Container kind='view-tab' {...this.link ()} >
-          <Button text='Nom du client | 10:42' kind='view-tab' active='true' {...this.link ()} />
-          <Button glyph='close' kind='view-tab' active='true' {...this.link ()} />
-          <Button text='Nom du client | 10:30' kind='view-tab' active='false' {...this.link ()} />
-          <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
-          <Button text='Nom de la mission | 09:56' kind='view-tab' active='false' {...this.link ()} />
-          <Button glyph='close' kind='view-tab' active='false' {...this.link ()} />
-        </Container>
+        <Router kind='view-tab' name='codispo' active='1' {...this.link ()} >
+          <Route name='1' text='Nom du client | 10:42' kind='view-tab' closable='true' {...this.link ()} />
+          <Route name='2' text='Nom du client | 10:30' kind='view-tab' closable='true' {...this.link ()} />
+          <Route name='3' text='Nom de la mission | 09:56' kind='view-tab' closable='true' {...this.link ()} />
+        </Router>
       );
     } else if (this.getStep () === 'fact') {
       return (
@@ -425,10 +412,10 @@ export default class AllInOne extends React.Component {
       return this.viewMandats ();
     } else if (this.getStep () === 'mandat-create') {
       return this.viewMandatCreate ();
-    } else if (this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') {
-      return this.viewDispatch ();
-    } else if (this.getStep () === 'codispatch') {
-      return this.viewCodispatch ();
+    } else if (this.getStep () === 'dispatch-trips' ||
+               this.getStep () === 'dispatch-messengers' ||
+               this.getStep () === 'codispatch') {
+      return this.viewAll ();
     } else if (this.getStep () === 'fact') {
       return this.viewFact ();
     } else if (this.getStep () === 'customers') {
@@ -625,17 +612,18 @@ export default class AllInOne extends React.Component {
     );
   }
 
-  viewDispatch () {
+  viewAll () {
     const result = [];
     let index = 0;
     result.push (this.viewDispatchTrips (index++));
     result.push (this.viewDispatchMessengers (index++));
+    result.push (this.viewCodispatch (index++));
     return result;
   }
 
   viewDispatchTrips (index) {
     return (
-      <View key={index} kind='views' router='dispo' route='missions'{...this.link ()} >
+      <View key={index} kind='views' router='dispo' route='missions' {...this.link ()} >
         <DispatchTrips {...this.link ()} />
       </View>
     );
@@ -643,17 +631,17 @@ export default class AllInOne extends React.Component {
 
   viewDispatchMessengers (index) {
     return (
-      <View key={index} kind='views' router='dispo' route='roadbooks'{...this.link ()} >
+      <View key={index} kind='views' router='dispo' route='roadbooks' {...this.link ()} >
         <DispatchMessengers {...this.link ()} />
       </View>
     );
   }
 
-  viewCodispatch () {
+  viewCodispatch (index) {
     return (
-      <Container kind='views' {...this.link ()} >
+      <View key={index} kind='views' router='codispo' route='1' {...this.link ()} >
         <Codispatch {...this.link ()} />
-      </Container>
+      </View>
     );
   }
 
