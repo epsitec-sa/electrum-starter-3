@@ -302,8 +302,7 @@ export default class AllInOne extends React.Component {
                this.getStep () === 'codispatch' ||
                this.getStep () === 'fact' ||
                this.getStep () === 'customers' ||
-               this.getStep () === 'team' ||
-               this.getStep () === 'empty') {
+               this.getStep () === 'team') {
       return (
         <Router kind='main-tab' name='main' active='codispo' {...this.link ()} >
           <Route name='dispo'     text='Dispo'       width='200px' kind='main-tab' {...this.link ()} />
@@ -311,7 +310,6 @@ export default class AllInOne extends React.Component {
           <Route name='fact'      text='Facturation' width='200px' kind='main-tab' {...this.link ()} />
           <Route name='customers' text='Clients'     width='200px' kind='main-tab' {...this.link ()} />
           <Route name='team'      text='Équipe'      width='200px' kind='main-tab' {...this.link ()} />
-          <Route name='empty'     text='Vide'        width='200px' kind='main-tab' {...this.link ()} />
         </Router>
       );
     }
@@ -347,16 +345,6 @@ export default class AllInOne extends React.Component {
           <Route name='3' text='Nom de la mission | 09:56' kind='view-tab' closable='true' {...this.link ()} />
         </Router>
       );
-    } else if (this.getStep () === 'fact') {
-      return (
-        <Container kind='view-tab' {...this.link ()} >
-          <Button text='Fournisseurs' kind='view-tab' active='false' {...this.link ()} />
-          <Button text='Commandes' kind='view-tab' active='false' {...this.link ()} />
-          <Button text='Articles' kind='view-tab' active='false' {...this.link ()} />
-          <Button text='Factures' kind='view-tab' active='true' {...this.link ()} />
-          <Button text='Clients' kind='view-tab' active='false' {...this.link ()} />
-        </Container>
-      );
     } else {
       return null;
     }
@@ -388,32 +376,6 @@ export default class AllInOne extends React.Component {
       );
     } else {
       return null;
-    }
-  }
-
-  view () {
-    if (this.getStep () === 'login') {
-      return this.viewLogin ();
-    } else if (this.getStep () === 'logout') {
-      return this.viewLogout ();
-    } else if (this.getStep () === 'mandats') {
-      return this.viewMandats ();
-    } else if (this.getStep () === 'mandat-create') {
-      return this.viewMandatCreate ();
-    } else if (this.getStep () === 'dispatch-trips' ||
-               this.getStep () === 'dispatch-messengers' ||
-               this.getStep () === 'codispatch') {
-      return this.viewAll ();
-    } else if (this.getStep () === 'fact') {
-      return this.viewFact ();
-    } else if (this.getStep () === 'customers') {
-      return this.viewCustomers ();
-    } else if (this.getStep () === 'team') {
-      return this.viewTeam ();
-    } else if (this.getStep () === 'empty') {
-      return this.viewEmpty ();
-    } else {
-      return this.viewComingSoon ();
     }
   }
 
@@ -639,110 +601,6 @@ export default class AllInOne extends React.Component {
     );
   }
 
-  viewFact () {
-    return (
-      <Container kind='views' {...this.link ()} >
-        <Container kind='view' width='1000px' {...this.link ()} >
-          <Container kind='panes' subkind='top-margin' {...this.link ()} >
-
-            <Container kind='boxes' {...this.link ()} >
-              <Ticket width='300px' height='90px' {...this.link ()} >
-                <Container kind='column' grow='1' {...this.link ()} >
-                  <Label text='125.30' font-weight='bold' {...this.link ()} />
-                  <Label glyph='warning' {...this.link ()} />
-                </Container>
-                <Container kind='column' grow='3' {...this.link ()} >
-                  <Label text='Jean Mayer' {...this.link ()} />
-                  <Label text='1010 Lausanne' {...this.link ()} />
-                </Container>
-              </Ticket>
-              <Ticket width='300px' height='90px' {...this.link ()} >
-                <Container kind='column' grow='1' {...this.link ()} >
-                  <Label text='2005.00' font-weight='bold' {...this.link ()} />
-                  <Label glyph='warning' {...this.link ()} />
-                </Container>
-                <Container kind='column' grow='3' {...this.link ()} >
-                  <Label text='Sandra Nicolet' {...this.link ()} />
-                  <Label text='1023 Crissier' {...this.link ()} />
-                </Container>
-              </Ticket>
-              <Ticket width='300px' height='90px' {...this.link ()} >
-                <Container kind='column' grow='1' {...this.link ()} >
-                  <Label text='175.00' font-weight='bold' {...this.link ()} />
-                  <Label glyph='close' {...this.link ()} />
-                </Container>
-                <Container kind='column' grow='3' {...this.link ()} >
-                  <Label text='Mecano SA' {...this.link ()} />
-                  <Label text='1002 Lausanne' {...this.link ()} />
-                </Container>
-              </Ticket>
-              <Ticket width='300px' height='90px' {...this.link ()} >
-                <Container kind='column' grow='1' {...this.link ()} >
-                  <Label text='300.75' font-weight='bold' {...this.link ()} />
-                  <Label glyph='check' {...this.link ()} />
-                </Container>
-                <Container kind='column' grow='3' {...this.link ()} >
-                  <Label text='Jean-Paul Herni' {...this.link ()} />
-                  <Label text='1005 Lausanne' {...this.link ()} />
-                </Container>
-              </Ticket>
-              <Ticket width='300px' height='90px' {...this.link ()} >
-                <Container kind='column' grow='1' {...this.link ()} >
-                  <Label text='37.90' font-weight='bold' {...this.link ()} />
-                  <Label glyph='warning' {...this.link ()} />
-                </Container>
-                <Container kind='column' grow='3' {...this.link ()} >
-                  <Label text='Factorum' {...this.link ()} />
-                  <Label text='1020 Renens' {...this.link ()} />
-                </Container>
-              </Ticket>
-            </Container>
-
-          </Container>
-          <Container kind='actions' {...this.link ()} >
-            <Button glyph='arrow-up' text='Nouvelle facture' width='0px' grow='1'
-              kind='action' place='left' {...this.link ()} />
-            <Button glyph='pencil' text='Modifier' width='0px' grow='1'
-              kind='action' place='middle' {...this.link ()} />
-            <Button glyph='trash' text='Supprimer' width='0px' grow='1'
-              kind='action' place='middle' {...this.link ()} />
-            <Button glyph='check' text='Valider' width='0px' grow='1'
-              kind='action' place='right' {...this.link ()} />
-          </Container>
-        </Container>
-      </Container>
-    );
-  }
-
-  viewCustomers () {
-    return this.viewComingSoon ();
-  }
-
-  viewTeam () {
-    return this.viewComingSoon ();
-  }
-
-  viewComingSoon () {
-    return (
-      <Container kind='views' {...this.link ()} >
-        <Container kind='view' width='700px' {...this.link ()} >
-          <Container kind='panes' subkind='top-margin' {...this.link ()} >
-
-            <Container kind='pane' {...this.link ()} >
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Polyphème' grow='1' kind='title' {...this.link ()} />
-              </Container>
-              <Container kind='row-pane' {...this.link ()} >
-                <Label text='Disponible prochainement...' grow='1' {...this.link ()} />
-              </Container>
-            </Container>
-
-          </Container>
-        </Container>
-      </Container>
-    );
-  }
-
   viewNotifications () {
     return (
       <Notifications
@@ -751,10 +609,6 @@ export default class AllInOne extends React.Component {
         generation={this.notificationGeneration}
         {...this.link ()} />
     );
-  }
-
-  viewEmpty () {
-    return null;
   }
 
   footer () {
@@ -807,11 +661,21 @@ export default class AllInOne extends React.Component {
   }
 
   mainAll () {
-    const result = [];
-    let index = 0;
-    result.push (this.mainDispo (index++));
-    result.push (this.mainCodispo (index++));
-    return result;
+    if (this.getStep () === 'login') {
+      return this.viewLogin ();
+    } else if (this.getStep () === 'logout') {
+      return this.viewLogout ();
+    } else if (this.getStep () === 'mandats') {
+      return this.viewMandats ();
+    } else if (this.getStep () === 'mandat-create') {
+      return this.viewMandatCreate ();
+    } else {
+      const result = [];
+      let index = 0;
+      result.push (this.mainDispo (index++));
+      result.push (this.mainCodispo (index++));
+      return result;
+    }
   }
 
   mainDispo (index) {
