@@ -305,26 +305,14 @@ export default class AllInOne extends React.Component {
                this.getStep () === 'team' ||
                this.getStep () === 'empty') {
       return (
-        <Container kind='main-tab' {...this.link ()} >
-          <Button action={() => this.setStep ('dispatch-trips')}
-            active={(this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') ? 'true' : 'false'}
-            text='dispo' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('codispatch')}
-            active={this.activeStep ('codispatch')}
-            text='co-dispo' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('fact')}
-            active={this.activeStep ('fact')}
-            text='Facturation' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('customers')}
-            active={this.activeStep ('customers')}
-            text='Clients' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('team')}
-            active={this.activeStep ('team')}
-            text='Équipe' width='200px' kind='main-tab' {...this.link ()} />
-          <Button action={() => this.setStep ('empty')}
-            active={this.activeStep ('empty')}
-            text='Vide' width='200px' kind='main-tab' {...this.link ()} />
-        </Container>
+        <Router kind='main-tab' name='main' active='codispo' {...this.link ()} >
+          <Route name='dispo'     text='Dispo'       width='200px' kind='main-tab' {...this.link ()} />
+          <Route name='codispo'   text='Co-dispo'    width='200px' kind='main-tab' {...this.link ()} />
+          <Route name='fact'      text='Facturation' width='200px' kind='main-tab' {...this.link ()} />
+          <Route name='customers' text='Clients'     width='200px' kind='main-tab' {...this.link ()} />
+          <Route name='team'      text='Équipe'      width='200px' kind='main-tab' {...this.link ()} />
+          <Route name='empty'     text='Vide'        width='200px' kind='main-tab' {...this.link ()} />
+        </Router>
       );
     }
   }
@@ -347,15 +335,15 @@ export default class AllInOne extends React.Component {
     if (this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') {
       return (
         <Router kind='view-tab' name='dispo' active='missions' {...this.link ()} >
-          <Route name='missions' text='Missions' kind='view-tab' {...this.link ()} />
+          <Route name='missions'  text='Missions'  kind='view-tab' {...this.link ()} />
           <Route name='roadbooks' text='Coursiers' kind='view-tab' {...this.link ()} />
         </Router>
       );
     } else if (this.getStep () === 'codispatch') {
       return (
         <Router kind='view-tab' name='codispo' active='1' {...this.link ()} >
-          <Route name='1' text='Nom du client | 10:42' kind='view-tab' closable='true' {...this.link ()} />
-          <Route name='2' text='Nom du client | 10:30' kind='view-tab' closable='true' {...this.link ()} />
+          <Route name='1' text='Nom du client | 10:42'     kind='view-tab' closable='true' {...this.link ()} />
+          <Route name='2' text='Nom du client | 10:30'     kind='view-tab' closable='true' {...this.link ()} />
           <Route name='3' text='Nom de la mission | 09:56' kind='view-tab' closable='true' {...this.link ()} />
         </Router>
       );
@@ -612,16 +600,22 @@ export default class AllInOne extends React.Component {
     );
   }
 
-  viewAll () {
+  viewDispo () {
     const result = [];
     let index = 0;
-    result.push (this.viewDispatchTrips (index++));
-    result.push (this.viewDispatchMessengers (index++));
+    result.push (this.viewDispatchMissions (index++));
+    result.push (this.viewDispatchRoadbooks (index++));
+    return result;
+  }
+
+  viewCodispo () {
+    const result = [];
+    let index = 0;
     result.push (this.viewCodispatch (index++));
     return result;
   }
 
-  viewDispatchTrips (index) {
+  viewDispatchMissions (index) {
     return (
       <View key={index} kind='views' router='dispo' route='missions' {...this.link ()} >
         <DispatchTrips {...this.link ()} />
@@ -629,7 +623,7 @@ export default class AllInOne extends React.Component {
     );
   }
 
-  viewDispatchMessengers (index) {
+  viewDispatchRoadbooks (index) {
     return (
       <View key={index} kind='views' router='dispo' route='roadbooks' {...this.link ()} >
         <DispatchMessengers {...this.link ()} />
@@ -812,6 +806,45 @@ export default class AllInOne extends React.Component {
     }
   }
 
+  mainAll () {
+    const result = [];
+    let index = 0;
+    result.push (this.mainDispo (index++));
+    result.push (this.mainCodispo (index++));
+    return result;
+  }
+
+  mainDispo (index) {
+    return (
+      <View key={index} kind='column' grow='1' router='main' route='dispo' {...this.link ()} >
+        <Container kind='second-bar' {...this.link ()} >
+          <Router kind='view-tab' name='dispo' active='missions' {...this.link ()} >
+            <Route name='missions'  text='Missions'  kind='view-tab' {...this.link ()} />
+            <Route name='roadbooks' text='Coursiers' kind='view-tab' {...this.link ()} />
+          </Router>
+          {this.notificationsZone ()}
+        </Container>
+        {this.viewDispo ()}
+      </View>
+    );
+  }
+
+  mainCodispo (index) {
+    return (
+      <View key={index} kind='column' grow='1' router='main' route='codispo' {...this.link ()} >
+        <Container kind='second-bar' {...this.link ()} >
+          <Router kind='view-tab' name='codispo' active='1' {...this.link ()} >
+            <Route name='1' text='Nom du client | 10:42'     kind='view-tab' closable='true' {...this.link ()} />
+            <Route name='2' text='Nom du client | 10:30'     kind='view-tab' closable='true' {...this.link ()} />
+            <Route name='3' text='Nom de la mission | 09:56' kind='view-tab' closable='true' {...this.link ()} />
+          </Router>
+          {this.notificationsZone ()}
+        </Container>
+        {this.viewCodispo ()}
+      </View>
+    );
+  }
+
   render () {
     const listTemplate = (state) => {
       const title = state.get ('title');
@@ -834,11 +867,7 @@ export default class AllInOne extends React.Component {
               {this.mainTab ()}
               {this.loginZone ()}
             </Container>
-            <Container kind='second-bar' {...this.link ()} >
-              {this.viewTab ()}
-              {this.notificationsZone ()}
-            </Container>
-            {this.view ()}
+            {this.mainAll ()}
           </Container>
           {this.footer ()}
           {this.viewNotifications ()}
