@@ -22,7 +22,8 @@ import {
   DispatchTrips,
   DispatchMessengers,
   Router,
-  Route
+  Route,
+  View
 } from 'electrum-arc';
 import {
   Codispatch
@@ -424,10 +425,8 @@ export default class AllInOne extends React.Component {
       return this.viewMandats ();
     } else if (this.getStep () === 'mandat-create') {
       return this.viewMandatCreate ();
-    } else if (this.getStep () === 'dispatch-trips') {
-      return this.viewDispatchTrips ();
-    } else if (this.getStep () === 'dispatch-messengers') {
-      return this.viewDispatchMessengers ();
+    } else if (this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') {
+      return this.viewDispatch ();
     } else if (this.getStep () === 'codispatch') {
       return this.viewCodispatch ();
     } else if (this.getStep () === 'fact') {
@@ -626,19 +625,27 @@ export default class AllInOne extends React.Component {
     );
   }
 
-  viewDispatchTrips () {
+  viewDispatch () {
+    const result = [];
+    let index = 0;
+    result.push (this.viewDispatchTrips (index++));
+    result.push (this.viewDispatchMessengers (index++));
+    return result;
+  }
+
+  viewDispatchTrips (index) {
     return (
-      <Container kind='views' {...this.link ()} >
+      <View key={index} kind='views' router='dispo' route='missions'{...this.link ()} >
         <DispatchTrips {...this.link ()} />
-      </Container>
+      </View>
     );
   }
 
-  viewDispatchMessengers () {
+  viewDispatchMessengers (index) {
     return (
-      <Container kind='views' {...this.link ()} >
+      <View key={index} kind='views' router='dispo' route='roadbooks'{...this.link ()} >
         <DispatchMessengers {...this.link ()} />
-      </Container>
+      </View>
     );
   }
 
