@@ -19,6 +19,7 @@ const data =
       },
       Name: 'Paul — 01.12.2016',
       Revenue: '250 CHF',
+      Extended: 'true',
       Tickets: [
         {
           Extended: 'false',
@@ -358,6 +359,7 @@ const data =
       },
       Name: 'Sandra — 01.12.2016',
       Revenue: '145 CHF',
+      Extended: 'true',
       Tickets: [
         {
           Extended: 'false',
@@ -537,6 +539,7 @@ const data =
       },
       Name: 'Géraldine — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
@@ -556,6 +559,7 @@ const data =
       },
       Name: 'Jean-Pierre — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
@@ -575,6 +579,7 @@ const data =
       },
       Name: 'François — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
@@ -594,6 +599,7 @@ const data =
       },
       Name: 'Frédérique — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
@@ -613,6 +619,7 @@ const data =
       },
       Name: 'Charlotte — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
@@ -632,6 +639,7 @@ const data =
       },
       Name: 'Béatrice — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
@@ -651,6 +659,7 @@ const data =
       },
       Name: 'Marc — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'car',
@@ -670,6 +679,7 @@ const data =
       },
       Name: 'Charles — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
@@ -689,6 +699,7 @@ const data =
       },
       Name: 'Henri — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
@@ -708,6 +719,7 @@ const data =
       },
       Name: 'Simone — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
@@ -727,6 +739,7 @@ const data =
       },
       Name: 'Véronique — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
@@ -746,6 +759,7 @@ const data =
       },
       Name: 'Alice — 01.12.2016',
       Revenue: '0 CHF',
+      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
