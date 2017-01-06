@@ -1094,7 +1094,7 @@ const data =
           Extended: 'false',
           OwnerId: 'id-tray-0',
           Selected: 'false',
-          Status: 'tray',
+          Status: 'backlog',
           Trip: {
             Description: '',
             Drop: {
