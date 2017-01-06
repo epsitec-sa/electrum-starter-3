@@ -6,6 +6,8 @@ const data =
   BacklogSort: 'Par heure pick',
   Roadbooks: [
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Paul',
         Photo: {
@@ -19,7 +21,6 @@ const data =
       },
       Name: 'Paul — 01.12.2016',
       Revenue: '250 CHF',
-      Extended: 'true',
       Tickets: [
         {
           Extended: 'false',
@@ -346,6 +347,8 @@ const data =
       id: 'id-tickets-to-paul'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Sandra',
         Photo: {
@@ -359,7 +362,6 @@ const data =
       },
       Name: 'Sandra — 01.12.2016',
       Revenue: '145 CHF',
-      Extended: 'true',
       Tickets: [
         {
           Extended: 'false',
@@ -526,6 +528,8 @@ const data =
       id: 'id-tickets-to-sandra'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Géraldine',
         Photo: {
@@ -539,13 +543,14 @@ const data =
       },
       Name: 'Géraldine — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
       id: 'id-tickets-to-Géraldine'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Jean-Pierre',
         Photo: {
@@ -559,13 +564,14 @@ const data =
       },
       Name: 'Jean-Pierre — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
       id: 'id-tickets-to-jp'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'François',
         Photo: {
@@ -579,13 +585,14 @@ const data =
       },
       Name: 'François — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
       id: 'id-tickets-to-François'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Frédérique',
         Photo: {
@@ -599,13 +606,14 @@ const data =
       },
       Name: 'Frédérique — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
       id: 'id-tickets-to-Frédérique'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Charlotte',
         Photo: {
@@ -619,13 +627,14 @@ const data =
       },
       Name: 'Charlotte — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
       id: 'id-tickets-to-Charlotte'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Béatrice',
         Photo: {
@@ -639,13 +648,14 @@ const data =
       },
       Name: 'Béatrice — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
       id: 'id-tickets-to-Béatrice'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Marc',
         Photo: {
@@ -659,13 +669,14 @@ const data =
       },
       Name: 'Marc — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'car',
       id: 'id-tickets-to-Marc'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Charles',
         Photo: {
@@ -679,13 +690,14 @@ const data =
       },
       Name: 'Charles — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
       id: 'id-tickets-to-Charles'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Henri',
         Photo: {
@@ -699,13 +711,14 @@ const data =
       },
       Name: 'Henri — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
       id: 'id-tickets-to-Henri'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Simone',
         Photo: {
@@ -719,13 +732,14 @@ const data =
       },
       Name: 'Simone — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
       id: 'id-tickets-to-Simone'
     },
     {
+      Compacted: 'false',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Véronique',
         Photo: {
@@ -739,13 +753,14 @@ const data =
       },
       Name: 'Véronique — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
       id: 'id-tickets-to-Véronique'
     },
     {
+      Compacted: 'true',
+      ShowHidden: 'false',
       Messenger: {
         Name: 'Alice',
         Photo: {
@@ -759,7 +774,6 @@ const data =
       },
       Name: 'Alice — 01.12.2016',
       Revenue: '0 CHF',
-      Extended: 'true',
       Tickets: [
       ],
       Transport: 'bicycle',
