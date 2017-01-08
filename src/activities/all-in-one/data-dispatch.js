@@ -759,7 +759,7 @@ const data =
       id: 'id-tickets-to-Véronique'
     },
     {
-      Compacted: 'true',
+      Compacted: 'false',
       ShowHidden: 'false',
       Messenger: {
         Name: 'Alice',
