@@ -52,7 +52,9 @@ export default class Codispatch extends React.Component {
             </Container>
             <Container kind='row-pane' {...this.link ()} >
               <LabelTextField label-glyph='user'
-                hint-text='Nom du client' tab-index={1} {...this.link ()} />
+                hint-text='Nom du client'
+                selected-value='Epsitec SA, rue de Neuchâtel 32, 1400 Yverdon-les-Bains'
+                tab-index={1} {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
               <TextFieldCombo hint-text='Date' combo-glyph='calendar'
