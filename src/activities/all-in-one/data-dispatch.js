@@ -24,6 +24,7 @@ const data =
       Tickets: [
         {
           Extended: 'false',
+          Order: 0,
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
           Shape: 'first',
@@ -99,6 +100,7 @@ const data =
         },
         {
           Extended: 'false',
+          Order: 1,
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
           Shape: 'last',
@@ -184,6 +186,7 @@ const data =
         },
         {
           Extended: 'false',
+          Order: 0,
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
           Shape: 'first',
@@ -259,6 +262,7 @@ const data =
         },
         {
           Extended: 'false',
+          Order: 1,
           OwnerId: 'id-tickets-to-paul',
           Selected: 'false',
           Shape: 'last',
@@ -365,6 +369,7 @@ const data =
       Tickets: [
         {
           Extended: 'false',
+          Order: 0,
           OwnerId: 'id-tickets-to-sandra',
           Selected: 'false',
           Shape: 'first',
@@ -440,6 +445,7 @@ const data =
         },
         {
           Extended: 'false',
+          Order: 1,
           OwnerId: 'id-tickets-to-sandra',
           Selected: 'false',
           Shape: 'last',
