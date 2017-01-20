@@ -5,6 +5,7 @@ import React from 'react';
 import {
   Container,
   Button,
+  CheckButton,
   TextField,
   LabelTextField,
   TextFieldCombo,
@@ -45,8 +46,7 @@ export default class Codispatch extends React.Component {
           <Container kind='pane' anchor='sender-exp' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Expéditeur' grow='1' kind='title' {...this.link ()} />
-              <Button glyph='toggle-off' text='Nouveau' border='none'
-                spacing='large' {...this.link ()} />
+              <CheckButton checked='false' text='Nouveau' kind='switch' spacing='large' {...this.link ()} />
               <Button glyph='plus' text='Ajouter' spacing='large' {...this.link ()} />
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
@@ -70,8 +70,7 @@ export default class Codispatch extends React.Component {
             <Container kind='row-pane' {...this.link ()} >
               <LabelTextField label-glyph='tag' hint-text='Référence client'
                 spacing='large' {...this.link ()} />
-              <Button glyph='check-square' text='facturé à' border='none'
-                glyph-position='right' {...this.link ()} />
+              <CheckButton checked='true' text='Facturé à' {...this.link ()} />
             </Container>
           </Container>
 
