@@ -618,11 +618,11 @@ export default class AllInOne extends React.Component {
       return null;
     } else {
       return (
-        <Footer {...this.link ()} >
+        <Container kind='footer' {...this.link ()} >
           {this.footerWarning ()}
           <Label text=' ' grow='1' kind='footer' {...this.link ()} />
           <Button glyph='gears' text='Options' kind='footer' {...this.link ()} />
-        </Footer>
+        </Container>
       );
     }
   }
