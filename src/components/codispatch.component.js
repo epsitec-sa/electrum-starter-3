@@ -54,6 +54,7 @@ export default class Codispatch extends React.Component {
               <LabelTextField label-glyph='user'
                 hint-text='Nom du client'
                 selected-value='Epsitec SA, rue de Neuchâtel 32, 1400 Yverdon-les-Bains'
+                action-glyph='rocket'
                 tab-index={1} {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
