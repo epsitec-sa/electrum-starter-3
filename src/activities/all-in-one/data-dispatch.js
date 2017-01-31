@@ -793,8 +793,6 @@ const data =
     },
   ],
   Name: 'New board',
-  SplitterRoadbooksHeight: '50%',
-  SplitterBacklogWidth: '700px',
   Status: 'open',
   Backlog: {
     Tickets: [
