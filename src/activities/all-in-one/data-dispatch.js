@@ -23,11 +23,8 @@ const data =
       Revenue: '250 CHF',
       Tickets: [
         {
-          Extended: 'false',
           Order: 0,
           OwnerId: 'id-tickets-to-paul',
-          Selected: 'false',
-          Shape: 'first',
           Status: 'dispatched',
           Trip: {
             Description: '',
@@ -103,11 +100,8 @@ const data =
           id: 'id-ticket-paul-0'
         },
         {
-          Extended: 'false',
           Order: 1,
           OwnerId: 'id-tickets-to-paul',
-          Selected: 'false',
-          Shape: 'last',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -193,11 +187,8 @@ const data =
           id: 'id-ticket-paul-1'
         },
         {
-          Extended: 'false',
           Order: 0,
           OwnerId: 'id-tickets-to-paul',
-          Selected: 'false',
-          Shape: 'first',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -273,11 +264,8 @@ const data =
           id: 'id-ticket-paul-2'
         },
         {
-          Extended: 'false',
           Order: 1,
           OwnerId: 'id-tickets-to-paul',
-          Selected: 'false',
-          Shape: 'last',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -384,11 +372,8 @@ const data =
       Revenue: '145 CHF',
       Tickets: [
         {
-          Extended: 'false',
           Order: 0,
           OwnerId: 'id-tickets-to-sandra',
-          Selected: 'false',
-          Shape: 'first',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -464,11 +449,8 @@ const data =
           id: 'id-ticket-sandra-0'
         },
         {
-          Extended: 'false',
           Order: 1,
           OwnerId: 'id-tickets-to-sandra',
-          Selected: 'false',
-          Shape: 'last',
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
@@ -817,9 +799,7 @@ const data =
   Backlog: {
     Tickets: [
        {
-          Extended: 'false',
           OwnerId: 'id-to-dispatch',
-          Selected: 'false',
           Status: 'backlog',
           Trip: {
             Description: '',
@@ -910,9 +890,7 @@ const data =
           id: 'id-ticket-to-dispatch-0'
         },
        {
-          Extended: 'false',
           OwnerId: 'id-to-dispatch',
-          Selected: 'false',
           Status: 'backlog',
           Trip: {
             Description: '',
@@ -971,9 +949,7 @@ const data =
           id: 'id-ticket-to-dispatch-1'
         },
         {
-          Extended: 'false',
           OwnerId: 'id-to-dispatch',
-          Selected: 'false',
           Status: 'backlog',
           Trip: {
             Description: '',
@@ -1030,9 +1006,7 @@ const data =
           id: 'id-ticket-to-dispatch-2'
         },
         {
-          Extended: 'false',
           OwnerId: 'id-to-dispatch',
-          Selected: 'false',
           Status: 'backlog',
           Trip: {
             Description: '',
@@ -1110,9 +1084,7 @@ const data =
           id: 'id-ticket-to-dispatch-3'
         },
         {
-          Extended: 'false',
           OwnerId: 'id-to-dispatch',
-          Selected: 'false',
           Status: 'backlog',
           Trip: {
             Description: '',
@@ -1169,9 +1141,7 @@ const data =
           id: 'id-ticket-to-dispatch-4'
         },
         {
-          Extended: 'false',
           OwnerId: 'id-tray-0',
-          Selected: 'false',
           Status: 'backlog',
           Trip: {
             Description: '',
