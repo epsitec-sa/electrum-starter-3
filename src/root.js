@@ -36,8 +36,7 @@ class _Root extends React.Component {
   constructor (props) {
     super (props);
     window.document.data = getData ();
-    // window.document.mock = true;
-    window.document.toUpdate = [];
+    window.document.mock = true;
   }
 
   componentWillMount () {
