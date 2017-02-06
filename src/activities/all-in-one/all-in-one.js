@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+
 import {
   Container,
   Footer,
@@ -21,10 +22,12 @@ import {
   Notification,
   DispatchTrips,
   DispatchMessengers,
+  DispatchEvents,
   Router,
   Route,
   View
 } from 'electrum-arc';
+
 import {
   Codispatch
 } from '../../all-components.js';
@@ -329,27 +332,6 @@ export default class AllInOne extends React.Component {
     }
   }
 
-  viewTab () {
-    if (this.getStep () === 'dispatch-trips' || this.getStep () === 'dispatch-messengers') {
-      return (
-        <Router kind='view-tab' name='dispo' active='missions' {...this.link ()} >
-          <Route name='missions'  text='Missions'  kind='view-tab' {...this.link ()} />
-          <Route name='roadbooks' text='Coursiers' kind='view-tab' {...this.link ()} />
-        </Router>
-      );
-    } else if (this.getStep () === 'codispatch') {
-      return (
-        <Router kind='view-tab' name='codispo' active='1' {...this.link ()} >
-          <Route name='1' text='Nom du client | 10:42'     kind='view-tab' closable='true' {...this.link ()} />
-          <Route name='2' text='Nom du client | 10:30'     kind='view-tab' closable='true' {...this.link ()} />
-          <Route name='3' text='Nom de la mission | 09:56' kind='view-tab' closable='true' {...this.link ()} />
-        </Router>
-      );
-    } else {
-      return null;
-    }
-  }
-
   notificationsZone() {
     if (this.getStep () === 'login' ||
         this.getStep () === 'logout') {
@@ -567,6 +549,7 @@ export default class AllInOne extends React.Component {
     let index = 0;
     result.push (this.viewDispatchMissions (index++));
     result.push (this.viewDispatchRoadbooks (index++));
+    result.push (this.viewDispatchEvents (index++));
     return result;
   }
 
@@ -589,6 +572,14 @@ export default class AllInOne extends React.Component {
     return (
       <View key={index} kind='views' router='dispo' route='roadbooks' {...this.link ()} >
         <DispatchMessengers {...this.link ()} />
+      </View>
+    );
+  }
+
+  viewDispatchEvents (index) {
+    return (
+      <View key={index} kind='views' router='dispo' route='events' {...this.link ()} >
+        <DispatchEvents {...this.link ()} />
       </View>
     );
   }
@@ -685,6 +676,7 @@ export default class AllInOne extends React.Component {
           <Router kind='view-tab' name='dispo' active='missions' {...this.link ()} >
             <Route name='missions'  text='Missions'  kind='view-tab' {...this.link ()} />
             <Route name='roadbooks' text='Coursiers' kind='view-tab' {...this.link ()} />
+            <Route name='events' text='Evénements' kind='view-tab' {...this.link ()} />
           </Router>
           {this.notificationsZone ()}
         </Container>

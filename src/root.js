@@ -4,7 +4,8 @@ import Electrum from 'electrum';
 import React from 'react';
 import {Theme} from 'electrum-theme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import getData from './activities/all-in-one/data-dispatch.js';
+import DataDispatch from './activities/all-in-one/data-dispatch.js';
+import DataEvents from './activities/all-in-one/data-events.js';
 
 import * as Colors from 'material-ui/styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
@@ -35,7 +36,8 @@ class _Root extends React.Component {
 
   constructor (props) {
     super (props);
-    window.document.data = getData ();
+    window.document.dataDispatch = DataDispatch.data;
+    window.document.dataEvents = DataEvents.data;
     // window.document.mock = true;
   }
 

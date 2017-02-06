@@ -1269,6 +1269,4 @@ const data =
   id: 'id-roadbooks'
 };
 
-export default function getData () {
-  return data;
-}
+module.exports = {data};
