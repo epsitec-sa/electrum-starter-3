@@ -294,7 +294,23 @@ export default class Codispatch extends React.Component {
     );
   }
 
-  hinterView () {
+  hinterViewDate () {
+    return (
+      <Container kind='view-short' width='400px' {...this.link ()} >
+        <Container kind='pane-navigator' {...this.link ()} >
+          <Button text='Chercher' width='0px' width='100%'
+            active='false'  kind='pane-navigator' {...this.link ()} />
+        </Container>
+        <Container kind='panes-short' {...this.link ()} >
+          <Container kind='pane' {...this.link ()} >
+            <Calendar {...this.link ()} />
+          </Container>
+        </Container>
+      </Container>
+    );
+  }
+
+  hinterViewList () {
     return (
       <Container kind='view-short' width='400px' {...this.link ()} >
         <Container kind='pane-navigator' {...this.link ()} >
@@ -395,6 +411,11 @@ export default class Codispatch extends React.Component {
         </Container>
       </Container>
     );
+  }
+
+  hinterView () {
+    return this.hinterViewDate ();
+    // return this.hinterViewList ();
   }
 
   navigatorType () {
