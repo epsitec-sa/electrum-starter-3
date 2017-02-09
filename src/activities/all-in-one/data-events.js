@@ -12,7 +12,7 @@ const data =
       ToTime: '14:30:00',
       Note:
       {
-        Content: 'Coucou',
+        Content: 'Café',
         Glyphs: [{Glyph: 'rocket'}],
       }
     },
@@ -23,8 +23,8 @@ const data =
       ToTime: '15:45:00',
       Note:
       {
-        Content: 'Tralala',
-        Glyphs: [{Glyph: 'car'},{Glyph: 'warning'}],
+        Content: 'Réserver billets CFF',
+        Glyphs: [{Glyph: 'train'},{Glyph: 'warning'}],
       }
     },
     {
@@ -34,7 +34,7 @@ const data =
       ToTime: '11:30:00',
       Note:
       {
-        Content: 'Ceci est un texte beaucoup plus long',
+        Content: 'Rendez-vous avec les services sociaux de la ville de Lausanne',
         Glyphs: [{Glyph: 'bicycle'}],
       }
     },
@@ -45,7 +45,8 @@ const data =
       ToTime: '11:25:00',
       Note:
       {
-        Content: 'Bonjour',
+        Content: 'SwissConnect',
+        Glyphs: [{Glyph: 'train'}],
       }
     },
     {
@@ -57,6 +58,27 @@ const data =
       {
         Content: 'Rendre le rapport',
         Glyphs: [{Glyph: 'bell'}],
+      }
+    },
+    {
+      FromDate: '2017-02-08',
+      FromTime: '14:20:00',
+      ToDate: '2017-02-08',
+      ToTime: '15:00:00',
+      Note:
+      {
+        Content: 'Sans glyph !',
+        Glyphs: [],
+      }
+    },
+    {
+      FromDate: '2017-02-08',
+      FromTime: '14:20:00',
+      ToDate: '2017-02-08',
+      ToTime: '15:00:00',
+      Note:
+      {
+        Glyphs: [{Glyph: 'bookmark'}],
       }
     },
     {
@@ -248,7 +270,7 @@ const data =
     },
     {
       FromDate: '2017-02-08',
-      FromTime: '14:45:00',
+      FromTime: '15:05:00',
       ToDate: '2017-02-08',
       ToTime: '15:10:00',
       Note:
@@ -259,7 +281,7 @@ const data =
     },
     {
       FromDate: '2017-02-08',
-      FromTime: '14:45:00',
+      FromTime: '15:05:00',
       ToDate: '2017-02-08',
       ToTime: '15:10:00',
       Note:
@@ -270,7 +292,7 @@ const data =
     },
     {
       FromDate: '2017-02-08',
-      FromTime: '14:45:00',
+      FromTime: '15:05:00',
       ToDate: '2017-02-08',
       ToTime: '15:10:00',
       Note:
@@ -281,7 +303,7 @@ const data =
     },
     {
       FromDate: '2017-02-08',
-      FromTime: '14:45:00',
+      FromTime: '15:05:00',
       ToDate: '2017-02-08',
       ToTime: '15:10:00',
       Note:
@@ -292,7 +314,7 @@ const data =
     },
     {
       FromDate: '2017-02-08',
-      FromTime: '14:45:00',
+      FromTime: '15:05:00',
       ToDate: '2017-02-08',
       ToTime: '15:10:00',
       Note:
@@ -303,7 +325,7 @@ const data =
     },
     {
       FromDate: '2017-02-08',
-      FromTime: '14:45:00',
+      FromTime: '15:05:00',
       ToDate: '2017-02-08',
       ToTime: '15:10:00',
       Note:
@@ -314,7 +336,7 @@ const data =
     },
     {
       FromDate: '2017-02-08',
-      FromTime: '14:45:00',
+      FromTime: '15:05:00',
       ToDate: '2017-02-08',
       ToTime: '15:10:00',
       Note:
@@ -325,7 +347,7 @@ const data =
     },
     {
       FromDate: '2017-02-08',
-      FromTime: '14:45:00',
+      FromTime: '15:05:00',
       ToDate: '2017-02-08',
       ToTime: '15:10:00',
       Note:
@@ -336,7 +358,7 @@ const data =
     },
     {
       FromDate: '2017-02-08',
-      FromTime: '14:45:00',
+      FromTime: '15:05:00',
       ToDate: '2017-02-08',
       ToTime: '15:10:00',
       Note:
@@ -352,8 +374,8 @@ const data =
       ToTime: '19:00:00',
       Note:
       {
-        Content: 'Ceci est le dernier événement pour cette magnifique journée !',
-        Glyphs: [{Glyph: 'truck'}],
+        Content: 'Nettoyer la cuisine et les vestiaires',
+        Glyphs: [{Glyph: 'leaf'}],
       }
     },
     {
@@ -363,8 +385,85 @@ const data =
       ToTime: '17:00:00',
       Note:
       {
-        Content: 'Suite',
+        Content: 'Dentiste',
         Glyphs: [{Glyph: 'user'}],
+      }
+    },
+    {
+      FromDate: '2017-02-11',
+      FromTime: '16:30:00',
+      ToDate: '2017-02-11',
+      ToTime: '17:00:00',
+      Note:
+      {
+        Content: 'Fermer les stores',
+        Glyphs: [{Glyph: 'check-square'}],
+      }
+    },
+    {
+      FromDate: '2017-02-13',
+      FromTime: '11:05:00',
+      ToDate: '2017-02-13',
+      ToTime: '11:25:00',
+      Note:
+      {
+        Content: 'SwissConnect',
+        Glyphs: [{Glyph: 'train'}],
+      }
+    },
+    {
+      FromDate: '2017-02-13',
+      FromTime: '13:18:00',
+      ToDate: '2017-02-13',
+      ToTime: '13:25:00',
+      Note:
+      {
+        Content: 'SwissConnect',
+        Glyphs: [{Glyph: 'rocket'}],
+      }
+    },
+    {
+      FromDate: '2017-02-15',
+      FromTime: '16:55:00',
+      ToDate: '2017-02-15',
+      ToTime: '17:00:00',
+      Note:
+      {
+        Content: 'SwissConnect',
+        Glyphs: [{Glyph: 'train'}],
+      }
+    },
+    {
+      FromDate: '2017-02-16',
+      FromTime: '08:00:00',
+      ToDate: '2017-02-16',
+      ToTime: '08:25:00',
+      Note:
+      {
+        Content: 'SwissConnect',
+        Glyphs: [{Glyph: 'train'}],
+      }
+    },
+    {
+      FromDate: '2017-02-20',
+      FromTime: '08:00:00',
+      ToDate: '2017-02-20',
+      ToTime: '08:25:00',
+      Note:
+      {
+        Content: 'SwissConnectAndFrenchConnect',
+        Glyphs: [{Glyph: 'train'}],
+      }
+    },
+    {
+      FromDate: '2017-02-21',
+      FromTime: '11:20:00',
+      ToDate: '2017-02-21',
+      ToTime: '11:25:00',
+      Note:
+      {
+        Content: 'Connect',
+        Glyphs: [{Glyph: 'train'}],
       }
     },
   ],
