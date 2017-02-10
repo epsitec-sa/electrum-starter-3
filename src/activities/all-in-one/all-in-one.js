@@ -23,6 +23,7 @@ import {
   DispatchTrips,
   DispatchMessengers,
   DispatchEvents,
+  DispatchChronos,
   Router,
   Route,
   View
@@ -550,6 +551,7 @@ export default class AllInOne extends React.Component {
     result.push (this.viewDispatchMissions (index++));
     result.push (this.viewDispatchRoadbooks (index++));
     result.push (this.viewDispatchEvents (index++));
+    result.push (this.viewDispatchChronos (index++));
     return result;
   }
 
@@ -580,6 +582,14 @@ export default class AllInOne extends React.Component {
     return (
       <View key={index} kind='views' router='dispo' route='events' {...this.link ()} >
         <DispatchEvents {...this.link ()} />
+      </View>
+    );
+  }
+
+  viewDispatchChronos (index) {
+    return (
+      <View key={index} kind='views' router='dispo' route='chronos' {...this.link ()} >
+        <DispatchChronos {...this.link ()} />
       </View>
     );
   }
@@ -677,6 +687,7 @@ export default class AllInOne extends React.Component {
             <Route name='missions'  text='Missions'  kind='view-tab' {...this.link ()} />
             <Route name='roadbooks' text='Coursiers' kind='view-tab' {...this.link ()} />
             <Route name='events' text='Evénements' kind='view-tab' {...this.link ()} />
+            <Route name='chronos' text='Chronos' kind='view-tab' {...this.link ()} />
           </Router>
           {this.notificationsZone ()}
         </Container>

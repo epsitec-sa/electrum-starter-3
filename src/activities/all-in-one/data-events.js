@@ -51,9 +51,31 @@ const data =
     },
     {
       FromDate: '2017-02-08',
+      FromTime: '14:05:00',
+      ToDate: '2017-02-08',
+      ToTime: '14:10:00',
+      Note:
+      {
+        Content: 'A',
+        Glyphs: [{Glyph: 'truck'}],
+      }
+    },
+    {
+      FromDate: '2017-02-08',
+      FromTime: '14:10:00',
+      ToDate: '2017-02-08',
+      ToTime: '14:20:00',
+      Note:
+      {
+        Content: 'B',
+        Glyphs: [{Glyph: 'truck'}],
+      }
+    },
+    {
+      FromDate: '2017-02-08',
       FromTime: '14:20:00',
       ToDate: '2017-02-08',
-      ToTime: '15:00:00',
+      ToTime: '14:30:00',
       Note:
       {
         Content: 'Rendre le rapport',
@@ -75,7 +97,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:20:00',
       ToDate: '2017-02-08',
-      ToTime: '15:00:00',
+      ToTime: '14:30:00',
       Note:
       {
         Glyphs: [{Glyph: 'bookmark'}],
@@ -83,31 +105,9 @@ const data =
     },
     {
       FromDate: '2017-02-08',
-      FromTime: '14:05:00',
-      ToDate: '2017-02-08',
-      ToTime: '15:10:00',
-      Note:
-      {
-        Content: 'A',
-        Glyphs: [{Glyph: 'truck'}],
-      }
-    },
-    {
-      FromDate: '2017-02-08',
-      FromTime: '14:10:00',
-      ToDate: '2017-02-08',
-      ToTime: '15:10:00',
-      Note:
-      {
-        Content: 'B',
-        Glyphs: [{Glyph: 'truck'}],
-      }
-    },
-    {
-      FromDate: '2017-02-08',
       FromTime: '14:20:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '14:25:00',
       Note:
       {
         Content: 'C',
@@ -118,7 +118,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:20:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '14:25:00',
       Note:
       {
         Content: 'D',
@@ -129,7 +129,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:25:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '14:30:00',
       Note:
       {
         Content: 'E',
@@ -140,7 +140,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:30:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '14:35:00',
       Note:
       {
         Content: 'F',
@@ -151,7 +151,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:40:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '14:45:00',
       Note:
       {
         Content: 'G',
@@ -162,7 +162,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:45:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '14:50:00',
       Note:
       {
         Content: 'H',
@@ -173,7 +173,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:45:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '14:50:00',
       Note:
       {
         Content: 'I',
@@ -184,7 +184,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:50:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '14:55:00',
       Note:
       {
         Content: 'J',
@@ -195,7 +195,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:50:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '14:55:00',
       Note:
       {
         Content: 'K',
@@ -206,7 +206,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:55:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:00:00',
       Note:
       {
         Content: 'L',
@@ -217,7 +217,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:55:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:00:00',
       Note:
       {
         Content: 'M',
@@ -228,7 +228,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:55:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:00:00',
       Note:
       {
         Content: 'N',
@@ -239,7 +239,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:55:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:00:00',
       Note:
       {
         Content: 'O',
@@ -250,7 +250,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:55:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:00:00',
       Note:
       {
         Content: 'P',
@@ -261,7 +261,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:59:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:00:00',
       Note:
       {
         Content: 'Q',
@@ -272,7 +272,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '15:05:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:06:00',
       Note:
       {
         Content: 'R',
@@ -283,7 +283,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '15:06:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:07:00',
       Note:
       {
         Content: 'S',
@@ -294,7 +294,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '15:07:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:08:00',
       Note:
       {
         Content: 'T',
@@ -305,7 +305,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '15:08:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:09:00',
       Note:
       {
         Content: 'U',
@@ -327,7 +327,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '15:10:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:22:00',
       Note:
       {
         Content: 'W',
@@ -338,7 +338,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '15:22:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:31:00',
       Note:
       {
         Content: 'X',
@@ -349,7 +349,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '15:31:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:44:00',
       Note:
       {
         Content: 'Y',
@@ -360,7 +360,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '15:44:00',
       ToDate: '2017-02-08',
-      ToTime: '15:10:00',
+      ToTime: '15:50:00',
       Note:
       {
         Content: 'Z',
@@ -426,7 +426,7 @@ const data =
       FromDate: '2017-02-15',
       FromTime: '16:55:00',
       ToDate: '2017-02-15',
-      ToTime: '17:00:00',
+      ToTime: '18:00:00',
       Note:
       {
         Content: 'SwissConnect',
@@ -459,7 +459,7 @@ const data =
       FromDate: '2017-02-21',
       FromTime: '11:20:00',
       ToDate: '2017-02-21',
-      ToTime: '11:25:00',
+      ToTime: '15:20:00',
       Note:
       {
         Content: 'Connect',
