@@ -86,7 +86,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:20:00',
       ToDate: '2017-02-08',
-      ToTime: '15:00:00',
+      ToTime: '14:30:00',
       Note:
       {
         Content: 'Sans glyph !',
@@ -118,7 +118,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:20:00',
       ToDate: '2017-02-08',
-      ToTime: '14:25:00',
+      ToTime: '14:27:00',
       Note:
       {
         Content: 'D',
@@ -173,7 +173,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:45:00',
       ToDate: '2017-02-08',
-      ToTime: '14:50:00',
+      ToTime: '14:49:00',
       Note:
       {
         Content: 'I',
@@ -217,7 +217,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:55:00',
       ToDate: '2017-02-08',
-      ToTime: '15:00:00',
+      ToTime: '14:58:00',
       Note:
       {
         Content: 'M',
@@ -228,7 +228,7 @@ const data =
       FromDate: '2017-02-08',
       FromTime: '14:55:00',
       ToDate: '2017-02-08',
-      ToTime: '15:00:00',
+      ToTime: '15:03:00',
       Note:
       {
         Content: 'N',
@@ -424,6 +424,28 @@ const data =
     },
     {
       FromDate: '2017-02-15',
+      FromTime: '09:00:00',
+      ToDate: '2017-02-15',
+      ToTime: '12:00:00',
+      Note:
+      {
+        Content: 'SwissConnect',
+        Glyphs: [{Glyph: 'train'}],
+      }
+    },
+    {
+      FromDate: '2017-02-15',
+      FromTime: '10:30:00',
+      ToDate: '2017-02-15',
+      ToTime: '11:00:00',
+      Note:
+      {
+        Content: 'SwissConnect',
+        Glyphs: [{Glyph: 'train'}],
+      }
+    },
+    {
+      FromDate: '2017-02-15',
       FromTime: '16:55:00',
       ToDate: '2017-02-15',
       ToTime: '18:00:00',
@@ -438,6 +460,28 @@ const data =
       FromTime: '08:00:00',
       ToDate: '2017-02-16',
       ToTime: '08:25:00',
+      Note:
+      {
+        Content: 'SwissConnect',
+        Glyphs: [{Glyph: 'train'}],
+      }
+    },
+    {
+      FromDate: '2017-02-16',
+      FromTime: '08:25:00',
+      ToDate: '2017-02-16',
+      ToTime: '11:00:00',
+      Note:
+      {
+        Content: 'SwissConnect',
+        Glyphs: [{Glyph: 'train'}],
+      }
+    },
+    {
+      FromDate: '2017-02-16',
+      FromTime: '11:00:00',
+      ToDate: '2017-02-16',
+      ToTime: '12:00:00',
       Note:
       {
         Content: 'SwissConnect',
