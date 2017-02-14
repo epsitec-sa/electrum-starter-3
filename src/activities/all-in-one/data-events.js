@@ -2,8 +2,8 @@
 
 const data =
 {
-  FromDate: '2017-02-06',
-  ToDate: '2017-02-12',
+  FromDate: '2017-01-01',
+  ToDate: '2017-12-31',
   Events: [
     {
       FromDate: '2017-02-07',
