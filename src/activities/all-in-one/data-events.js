@@ -39,6 +39,17 @@ const data =
       }
     },
     {
+      FromDate: '2017-02-07',
+      FromTime: '22:00:00',
+      ToDate: '2017-02-07',
+      ToTime: '22:30:00',
+      Note:
+      {
+        Content: 'Aller dormir pour être en forme demain',
+        Glyphs: [{Glyph: 'bed'}],
+      }
+    },
+    {
       FromDate: '2017-02-08',
       FromTime: '09:30:00',
       ToDate: '2017-02-08',
