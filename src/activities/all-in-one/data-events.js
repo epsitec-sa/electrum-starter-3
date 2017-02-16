@@ -529,7 +529,7 @@ const data =
       Note:
       {
         Content: 'SwissConnect',
-        Glyphs: [{Glyph: 'train'}],
+        Glyphs: [{Glyph: 'train'},{Glyph: 'rocket'},{Glyph: 'warning'}],
       }
     },
     {
@@ -563,6 +563,28 @@ const data =
       {
         Content: 'SwissConnect',
         Glyphs: [{Glyph: 'train'}],
+      }
+    },
+    {
+      FromDate: '2017-05-19',
+      FromTime: '14:20:00',
+      ToDate: '2017-02-21',
+      ToTime: '15:25:00',
+      Note:
+      {
+        Content: 'Dring-dring Nicolet',
+        Glyphs: [{Glyph: 'bell'}],
+      }
+    },
+    {
+      FromDate: '2017-05-19',
+      FromTime: '14:20:00',
+      ToDate: '2017-02-21',
+      ToTime: '14:27:00',
+      Note:
+      {
+        Content: 'Dring-dring Bertoli',
+        Glyphs: [{Glyph: 'bell'},{Glyph: 'warning'}],
       }
     },
     {

@@ -235,8 +235,8 @@ const data =
                   Content: 'Livraison selon les indications standards de la dispo',
                   Glyphs: [
                     {
-                      Name: 'bookmark-secondary',
-                      Glyph: 'bookmark-secondary',
+                      Name: 'warning',
+                      Glyph: 'warning',
                       Description: '',
                     },
                   ],
@@ -279,16 +279,6 @@ const data =
                     {
                       Name: 'bookmark-primary',
                       Glyph: 'bookmark-primary',
-                      Description: '',
-                    },
-                  ],
-                },
-                {
-                  Content: 'Attention:\\nPaiement comptant exigé !',
-                  Glyphs: [
-                    {
-                      Name: 'bookmark-base',
-                      Glyph: 'bookmark-base',
                       Description: '',
                     },
                   ],
@@ -383,7 +373,7 @@ const data =
               Notes: [
               ],
               PlanedDate: '2016-11-30',
-              PlanedTime: '14:30:03',
+              PlanedTime: '15:30:03',
               RealisedDate: '0001-01-01',
               RealisedTime: '00:00:00',
               ShortDescription: 'Muhler A.',
@@ -480,7 +470,7 @@ const data =
                 },
               ],
               PlanedDate: '2016-11-30',
-              PlanedTime: '14:30:03',
+              PlanedTime: '15:30:03',
               RealisedDate: '0001-01-01',
               RealisedTime: '00:00:00',
               ShortDescription: 'Muhler A.',
