@@ -38,7 +38,7 @@ class _Root extends React.Component {
     super (props);
     window.document.dataDispatch = DataDispatch.data;
     window.document.dataEvents = DataEvents.data;
-    window.document.mock = true;
+    // window.document.mock = true;
   }
 
   componentWillMount () {
