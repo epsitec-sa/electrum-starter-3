@@ -901,7 +901,7 @@ const data =
               LongDescription: 'Peter Mercier',
               Notes: [],
               PlanedDate: '2016-11-30',
-              StartPlanedTime: '13:30:00',
+              StartPlanedTime: '11:45:00',
               EndPlanedTime: '14:30:00',
               RealisedDate: '0001-01-01',
               RealisedTime: '00:00:00',
@@ -927,12 +927,10 @@ const data =
             Pick: {
               Contact: null,
               LongDescription: 'Migros SA\\nRue du Pont Neuf 26\\n1009 Prilly',
-              Notes: [
-
-              ],
+              Notes: [],
               PlanedDate: '2016-11-30',
               StartPlanedTime: '10:45:00',
-              EndPlanedTime: '11:45:00',
+              EndPlanedTime: '14:00:00',
               RealisedDate: '0001-01-01',
               RealisedTime: '00:00:00',
               ShortDescription: 'Migros Pont-Neuf',

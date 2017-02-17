@@ -18,6 +18,19 @@ const data =
     },
     {
       FromDate: '2017-02-07',
+      StartFromTime: '14:10:00',
+      EndFromTime: '15:15:00',
+      ToDate: '2017-02-07',
+      StartToTime: '16:15:00',
+      EndToTime: '17:45:00',
+      Note:
+      {
+        Content: 'Livraison Me Moulin',
+        Glyphs: [{Glyph: 'bicycle'}],
+      }
+    },
+    {
+      FromDate: '2017-02-07',
       FromTime: '15:10:00',
       ToDate: '2017-02-07',
       ToTime: '15:45:00',
