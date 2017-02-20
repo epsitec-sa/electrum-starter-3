@@ -1128,7 +1128,7 @@ const data =
               Notes: [],
               PlanedDate: '2016-11-30',
               StartPlanedTime: '11:45:00',
-              EndPlanedTime: '12:15:00',
+              EndPlanedTime: '11:45:00',
               RealisedDate: '0001-01-01',
               RealisedTime: '00:00:00',
               ShortDescription: 'Etude Leclerc',
