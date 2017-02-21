@@ -64,6 +64,17 @@ const data =
     },
     {
       FromDate: '2017-02-08',
+      FromTime: '04:00:00',
+      ToDate: '2017-02-08',
+      ToTime: '10:15:00',
+      Note:
+      {
+        Content: 'Départ matinal pour Zurich pour le meeting des chefs de groupe avec Béatrice',
+        Glyphs: [{Glyph: 'warning'}],
+      }
+    },
+    {
+      FromDate: '2017-02-08',
       FromTime: '09:30:00',
       ToDate: '2017-02-08',
       ToTime: '11:30:00',
