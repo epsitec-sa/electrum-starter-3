@@ -415,9 +415,9 @@ const data =
     },
     {
       FromDate: '2017-02-09',
-      FromTime: '18:00:00',
+      FromTime: '18:40:00',
       ToDate: '2017-02-09',
-      ToTime: '19:00:00',
+      ToTime: '19:55:00',
       Note:
       {
         Content: 'Nettoyer la cuisine et les vestiaires',
