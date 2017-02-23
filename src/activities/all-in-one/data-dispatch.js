@@ -3,7 +3,7 @@
 const data =
 {
   BacklogFilter: 'all',
-  BacklogSort: 'byPickTime',
+  BacklogSort: 'byTime',
   Roadbooks: [
     {
       Compacted: 'false',
@@ -28,23 +28,6 @@ const data =
           Status: 'dispatched',
           Trip: {
             Description: '',
-            Drop: {
-              Contact: null,
-              LongDescription: 'Juliette Dupond',
-              Notes: [
-              ],
-              PlanedDate: '2016-11-30',
-              StartPlanedTime: '14:00:00',
-              EndPlanedTime: '14:30:00',
-              RealisedDate: '0001-01-01',
-              RealisedTime: '00:00:00',
-              ShortDescription: 'Dupond J.',
-              Status: 'init',
-              TripId: 't1',
-              Type: 'drop',
-              Zone: 'Zone A',
-              id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-            },
             MissionId: 'id-ticket-paul-link-0',
             Notes: [],
             PackageCount: '1 colis',
@@ -64,7 +47,7 @@ const data =
                   id: 'd23724dd-ded8-4071-8a6b-150cd2add84e'
                 }
             ],
-            Pick: {
+            MeetingPoint: {
               Contact: null,
               LongDescription: 'Coop\\nPlace St. Laurent 12\\n1004 Lausanne',
               Notes: [
@@ -107,7 +90,7 @@ const data =
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
-            Drop: {
+            MeetingPoint: {
               Contact: null,
               LongDescription: 'Juliette Dupond',
               Notes: [
@@ -163,23 +146,6 @@ const data =
                   id: 'd23724dd-ded8-4071-8a6b-150cd2add84g'
                 }
             ],
-            Pick: {
-              Contact: null,
-              LongDescription: 'Coop\\nPlace St. Laurent 12\\n1004 Lausanne',
-              Notes: [
-              ],
-              PlanedDate: '2016-11-30',
-              StartPlanedTime: '11:00:00',
-              EndPlanedTime: '11:30:00',
-              RealisedDate: '0001-01-01',
-              RealisedTime: '00:00:00',
-              ShortDescription: 'Coop St. Laurent',
-              Status: 'init',
-              TripId: 't2',
-              Type: 'pick',
-              Zone: 'Zone C',
-              id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
-            },
             Price: '32 CHF',
             Product: 'Dring-dring',
             Urgency: '100',
@@ -196,23 +162,6 @@ const data =
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
-            Drop: {
-              Contact: null,
-              LongDescription: 'Bernard Franko',
-              Notes: [
-              ],
-              PlanedDate: '2016-11-30',
-              StartPlanedTime: '14:30:00',
-              EndPlanedTime: '14:40:00',
-              RealisedDate: '0001-01-01',
-              RealisedTime: '00:00:00',
-              ShortDescription: 'Franko B.',
-              Status: 'init',
-              TripId: 't1b',
-              Type: 'drop',
-              Zone: 'Zone A',
-              id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-            },
             MissionId: 'id-ticket-paul-link-2',
             Notes: [],
             PackageCount: '1 colis',
@@ -232,7 +181,7 @@ const data =
                   id: 'd23724dd-ded8-4071-8a6b-150cd2add84e'
                 }
             ],
-            Pick: {
+            MeetingPoint: {
               Contact: null,
               LongDescription: 'Flagada & Co\\nPlace St. Laurent 15\\n1004 Lausanne',
               Notes: [
@@ -275,7 +224,7 @@ const data =
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
-            Drop: {
+            MeetingPoint: {
               Contact: null,
               LongDescription: 'Bernard Franko',
               Notes: [
@@ -321,23 +270,6 @@ const data =
                   id: 'd23724dd-ded8-4071-8a6b-150cd2add84g'
                 }
             ],
-            Pick: {
-              Contact: null,
-              LongDescription: 'Flagada & Co\\nPlace St. Laurent 15\\n1004 Lausanne',
-              Notes: [
-              ],
-              PlanedDate: '2016-11-30',
-              StartPlanedTime: '11:45:00',
-              EndPlanedTime: '15:00:00',
-              RealisedDate: '0001-01-01',
-              RealisedTime: '00:00:00',
-              ShortDescription: 'Flagada & Co',
-              Status: 'init',
-              TripId: 't2b',
-              Type: 'pick',
-              Zone: 'Zone C',
-              id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
-            },
             Price: '32 CHF',
             Product: 'Standard',
             Urgency: '100',
@@ -375,23 +307,6 @@ const data =
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
-            Drop: {
-              Contact: null,
-              LongDescription: 'Bernard Franko',
-              Notes: [
-              ],
-              PlanedDate: '2016-11-30',
-              StartPlanedTime: '15:30:00',
-              EndPlanedTime: '15:45:00',
-              RealisedDate: '0001-01-01',
-              RealisedTime: '00:00:00',
-              ShortDescription: 'Muhler A.',
-              Status: 'init',
-              TripId: 't1c',
-              Type: 'drop',
-              Zone: 'Zone A',
-              id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-            },
             MissionId: 'id-ticket-sandra-link-0',
             Notes: [],
             PackageCount: '1 colis',
@@ -411,7 +326,7 @@ const data =
                   id: 'd23724dd-ded8-4071-8a6b-150cd2add84e'
                 }
             ],
-            Pick: {
+            MeetingPoint: {
               Contact: null,
               LongDescription: 'Flagada & Co\\nPlace St. Laurent 15\\n1004 Lausanne',
               Notes: [
@@ -454,7 +369,7 @@ const data =
           Status: 'pre-dispatched',
           Trip: {
             Description: '',
-            Drop: {
+            MeetingPoint: {
               Contact: null,
               LongDescription: 'Bernard Franko',
               Notes: [
@@ -510,23 +425,6 @@ const data =
                   id: 'd23724dd-ded8-4071-8a6b-150cd2add84g'
                 }
             ],
-            Pick: {
-              Contact: null,
-              LongDescription: 'Flagada & Co\\nPlace St. Laurent 15\\n1004 Lausanne',
-              Notes: [
-              ],
-              PlanedDate: '2016-11-30',
-              StartPlanedTime: '11:45:00',
-              EndPlanedTime: '12:15:00',
-              RealisedDate: '0001-01-01',
-              RealisedTime: '00:00:00',
-              ShortDescription: 'Blibli',
-              Status: 'init',
-              TripId: 't2c',
-              Type: 'pick',
-              Zone: 'Zone C',
-              id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
-            },
             Price: '32 CHF',
             Product: 'Standard',
             Urgency: '100',
@@ -803,33 +701,6 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
-            Contact: null,
-            LongDescription: 'Fiduciaire Kdo\\nMadame Valentia Markez\\nEn Budron 5b\\n1052 Le Mont-sur-Lausanne',
-            Notes: [
-              {
-                Content: 'En raison de travaux à la rue Centrale, tout le trafic passant par cette rue doit impérativement être dévié par la rue du Midi.',
-                Glyphs: [
-                  {
-                    Name: 'bookmark-primary',
-                    Glyph: 'bookmark-primary',
-                    Description: '',
-                  },
-                ],
-              },
-            ],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '11:15:00',
-            EndPlanedTime: '12:00:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Fiduciaire Kdo',
-            Status: 'init',
-            TripId: 't3',
-            Type: 'drop',
-            Zone: 'Zone A',
-            id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-          },
           MissionId: 'mission-0',
           Notes: [],
           PackageCount: '1 colis',
@@ -849,7 +720,7 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               }
           ],
-          Pick: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'Mecano SA\\nAv. des Alpes 5\\n1023 Crissier',
             Notes: [
@@ -896,7 +767,7 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'Fiduciaire Kdo\\nMadame Valentia Markez\\nEn Budron 5b\\n1052 Le Mont-sur-Lausanne',
             Notes: [
@@ -942,43 +813,11 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               }
           ],
-          Pick: {
-            Contact: null,
-            LongDescription: 'Mecano SA\\nAv. des Alpes 5\\n1023 Crissier',
-            Notes: [
-              {
-                Content: 'Attention:\\nPaiement comptant exigé !',
-                Glyphs: [
-                  {
-                    Name: 'warning',
-                    Glyph: 'warning',
-                    Description: 'Attention',
-                  },
-                  {
-                    Name: 'euro',
-                    Glyph: 'euro',
-                    Description: 'Paiement en Euro',
-                  },
-                ],
-              },
-            ],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '10:05:00',
-            EndPlanedTime: '11:05:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Mecano SA',
-            Status: 'init',
-            TripId: 't3',
-            Type: 'pick',
-            Zone: 'Zone A',
-            id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
-          },
-         Price: '32 CHF',
-         Product: 'Standard',
-         Urgency: '100',
-         Weight: '1.2 kg',
-         id: 't3'
+          Price: '32 CHF',
+          Product: 'Standard',
+          Urgency: '100',
+          Weight: '1.2 kg',
+          id: 't3'
         },
         Type: 'drop',
         Warning: '',
@@ -989,22 +828,6 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
-            Contact: null,
-            LongDescription: 'Peter Mercier',
-            Notes: [],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '11:45:00',
-            EndPlanedTime: '14:30:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Mercier P.',
-            Status: 'init',
-            TripId: 't4',
-            Type: 'drop',
-            Zone: 'Zone B',
-            id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-          },
           MissionId: 'mission-1',
           Notes: [],
           PackageCount: '1 colis',
@@ -1017,7 +840,7 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               }
           ],
-          Pick: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'Migros SA\\nRue du Pont Neuf 26\\n1009 Prilly',
             Notes: [],
@@ -1047,56 +870,40 @@ const data =
         OwnerId: 'id-to-dispatch',
         Status: 'backlog',
         Trip: {
-         Description: '',
-         Drop: {
-           Contact: null,
-           LongDescription: 'Peter Mercier',
-           Notes: [],
-           PlanedDate: '2016-11-30',
-           StartPlanedTime: '11:45:00',
-           EndPlanedTime: '14:30:00',
-           RealisedDate: '0001-01-01',
-           RealisedTime: '00:00:00',
-           ShortDescription: 'Mercier P.',
-           Status: 'init',
-           TripId: 't4',
-           Type: 'drop',
-           Zone: 'Zone B',
-           id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-         },
-         MissionId: 'mission-1',
-         Notes: [],
-         PackageCount: '1 colis',
-         Packages: [
-            {
-               Content: 'Stylos magiques',
-               Dimensions: '30x10x10',
-               TripId: 't4',
-               Weight: '1 kg',
-               id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
-             }
-         ],
-         Pick: {
-           Contact: null,
-           LongDescription: 'Migros SA\\nRue du Pont Neuf 26\\n1009 Prilly',
-           Notes: [],
-           PlanedDate: '2016-11-30',
-           StartPlanedTime: '10:45:00',
-           EndPlanedTime: '14:00:00',
-           RealisedDate: '0001-01-01',
-           RealisedTime: '00:00:00',
-           ShortDescription: 'Migros Pont-Neuf',
-           Status: 'init',
-           TripId: 't4',
-           Type: 'pick',
-           Zone: 'Zone B',
-           id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
-         },
-         Price: '17 CHF',
-         Product: 'Dring-dring',
-         Urgency: '80',
-         Weight: '1 kg',
-         id: 't4'
+          Description: '',
+          MeetingPoint: {
+            Contact: null,
+            LongDescription: 'Peter Mercier',
+            Notes: [],
+            PlanedDate: '2016-11-30',
+            StartPlanedTime: '11:45:00',
+            EndPlanedTime: '14:30:00',
+            RealisedDate: '0001-01-01',
+            RealisedTime: '00:00:00',
+            ShortDescription: 'Mercier P.',
+            Status: 'init',
+            TripId: 't4',
+            Type: 'drop',
+            Zone: 'Zone B',
+            id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
+          },
+          MissionId: 'mission-1',
+          Notes: [],
+          PackageCount: '1 colis',
+          Packages: [
+             {
+                Content: 'Stylos magiques',
+                Dimensions: '30x10x10',
+                TripId: 't4',
+                Weight: '1 kg',
+                id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
+              }
+          ],
+          Price: '17 CHF',
+          Product: 'Dring-dring',
+          Urgency: '80',
+          Weight: '1 kg',
+          id: 't4'
         },
         Type: 'drop',
         Warning: '',
@@ -1107,22 +914,6 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
-            Contact: null,
-            LongDescription: 'André Schmidt\\nClosalet 28A\\n1002 Lausanne',
-            Notes: [],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '13:40:00',
-            EndPlanedTime: '13:40:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Schmidt A.',
-            Status: 'init',
-            TripId: 't5',
-            Type: 'drop',
-            Zone: 'Zone A',
-            id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-          },
           MissionId: 'mission-2',
           Notes: [],
           PackageCount: '1 colis',
@@ -1135,7 +926,7 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               }
           ],
-          Pick: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'Migros SA\\nRue du Pont Neuf 26\\n1009 Prilly',
             Notes: [],
@@ -1166,7 +957,7 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'André Schmidt\\nClosalet 28A\\n1002 Lausanne',
             Notes: [],
@@ -1194,22 +985,6 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               }
           ],
-          Pick: {
-            Contact: null,
-            LongDescription: 'Migros SA\\nRue du Pont Neuf 26\\n1009 Prilly',
-            Notes: [],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '10:50:00',
-            EndPlanedTime: '11:00:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Migros Pont-Neuf',
-            Status: 'init',
-            TripId: 't5',
-            Type: 'pick',
-            Zone: 'Zone B',
-            id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
-          },
           Price: '52 CHF',
           Product: 'Dring-dring',
           Urgency: '40',
@@ -1225,22 +1000,6 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
-            Contact: null,
-            LongDescription: 'Aux belles fleurs\\nPlace du Marché 1\\n1000 Lausanne',
-            Notes: [],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '14:15:00',
-            EndPlanedTime: '14:30:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Aux belles fleurs',
-            Status: 'init',
-            TripId: 't6',
-            Type: 'drop',
-            Zone: 'Zone B',
-            id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-          },
           MissionId: 'mission-3',
           Notes: [],
           PackageCount: '1 colis',
@@ -1253,7 +1012,7 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               }
           ],
-          Pick: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'Arboressa SA\\nAv. du Tir Fédéral 102\\n1009 Prilly',
             Notes: [
@@ -1305,7 +1064,7 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'Aux belles fleurs\\nPlace du Marché 1\\n1000 Lausanne',
             Notes: [],
@@ -1333,43 +1092,6 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               }
           ],
-          Pick: {
-            Contact: null,
-            LongDescription: 'Arboressa SA\\nAv. du Tir Fédéral 102\\n1009 Prilly',
-            Notes: [
-              {
-                Content: 'En raison de travaux à la rue Centrale, tout le trafic passant par cette rue doit impérativement être dévié par la rue du Midi.',
-                Glyphs: [
-                  {
-                    Name: 'bookmark-base',
-                    Glyph: 'bookmark-base',
-                    Description: '',
-                  },
-                ],
-              },
-              {
-                Content: 'Code porte #45601.',
-                Glyphs: [
-                  {
-                    Name: 'bookmark-secondary',
-                    Glyph: 'bookmark-secondary',
-                    Description: '',
-                  },
-                ],
-              },
-            ],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '11:05:00',
-            EndPlanedTime: '12:25:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Arboressa',
-            Status: 'init',
-            TripId: 't6',
-            Type: 'pick',
-            Zone: 'Zone B',
-            id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
-          },
           Price: '17 CHF',
           Product: 'Urgent',
           Urgency: '10',
@@ -1385,22 +1107,6 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
-            Contact: null,
-            LongDescription: 'Fiduciaire Franko & Frères\\nMadame Darbelet\\nAv. Victor Ruffy 3\\n1004 Lausanne',
-            Notes: [],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '15:30:00',
-            EndPlanedTime: '16:00:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Fiduciaire Franko & Frères',
-            Status: 'init',
-            TripId: 't7',
-            Type: 'drop',
-            Zone: 'Zone B',
-            id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-          },
           MissionId: 'mission-4',
           Notes: [],
           PackageCount: '1 colis',
@@ -1413,7 +1119,7 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               }
           ],
-          Pick: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'Etude Leclerc et Me Giorgino\\n1032 Crissier',
             Notes: [],
@@ -1444,7 +1150,7 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'Fiduciaire Franko & Frères\\nMadame Darbelet\\nAv. Victor Ruffy 3\\n1004 Lausanne',
             Notes: [],
@@ -1472,22 +1178,6 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               }
           ],
-          Pick: {
-            Contact: null,
-            LongDescription: 'Etude Leclerc et Me Giorgino\\n1032 Crissier',
-            Notes: [],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '11:45:00',
-            EndPlanedTime: '11:45:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Etude Leclerc et Me Giorgino',
-            Status: 'init',
-            TripId: 't7',
-            Type: 'pick',
-            Zone: 'Zone A',
-            id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
-          },
           Price: '17 CHF',
           Product: 'Urgent',
           Urgency: '0',
@@ -1503,23 +1193,6 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
-            Contact: null,
-            LongDescription: 'Micro SA\\nAv. Dufour 4\\n1010 Renens',
-            Notes: [
-            ],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '16:00:00',
-            EndPlanedTime: '17:00:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Micro SA',
-            Status: 'init',
-            TripId: 't100',
-            Type: 'drop',
-            Zone: 'Zone A',
-            id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
-          },
           MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6675',
           Notes: [],
           PackageCount: '1 colis',
@@ -1546,7 +1219,7 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               },
           ],
-          Pick: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'Tagada AG\\nRue de Sans Unique 18\\n1000 Lausanne',
             Notes: [
@@ -1588,7 +1261,7 @@ const data =
         Status: 'backlog',
         Trip: {
           Description: '',
-          Drop: {
+          MeetingPoint: {
             Contact: null,
             LongDescription: 'Micro SA\\nAv. Dufour 4\\n1010 Renens',
             Notes: [
@@ -1631,33 +1304,6 @@ const data =
                 id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
               },
           ],
-          Pick: {
-            Contact: null,
-            LongDescription: 'Tagada AG\\nRue de Sans Unique 18\\n1000 Lausanne',
-            Notes: [
-              {
-                Content: 'Livraison selon les indications standards de la dispo',
-                Glyphs: [
-                  {
-                    Name: 'bookmark-secondary',
-                    Glyph: 'bookmark-secondary',
-                    Description: '',
-                  },
-                ],
-              },
-            ],
-            PlanedDate: '2016-11-30',
-            StartPlanedTime: '11:15:00',
-            EndPlanedTime: '13:00:00',
-            RealisedDate: '0001-01-01',
-            RealisedTime: '00:00:00',
-            ShortDescription: 'Tagada AG',
-            Status: 'init',
-            TripId: 't100',
-            Type: 'pick',
-            Zone: 'Zone C',
-            id: 'cd2308d1-42b6-4ffb-903c-9a1fe3bf2c3b'
-          },
           Price: '17 CHF',
           Product: 'Standard',
           Urgency: '0',
