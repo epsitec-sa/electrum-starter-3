@@ -803,6 +803,46 @@ const data =
         OwnerId: 'id-to-dispatch',
         Status: 'backlog',
         Description: '',
+        MeetingPoint: {
+          Contact: null,
+          LongDescription: 'Nourrir le chat\\nMonsieur Durand\\nPlace du Marché 56\\n1052 Le Mont-sur-Lausanne',
+          Notes: [
+            {
+              Content: 'Soin animal.',
+              Glyphs: [
+                {
+                  Name: 'cutlery',
+                  Glyph: 'cutlery',
+                  Description: '',
+                },
+              ],
+            },
+          ],
+          PlanedDate: '2016-11-30',
+          StartPlanedTime: '11:30:00',
+          EndPlanedTime: '12:00:00',
+          RealisedDate: '0001-01-01',
+          RealisedTime: '00:00:00',
+          ShortDescription: 'Nourrir le chat',
+          Status: 'init',
+          TripId: 't3',
+          Type: 'task',
+          Zone: 'Zone A',
+          id: 'c3da226c-dd9e-4260-a245-2d39f235aaaf'
+        },
+        MissionId: 'mission-x',
+        Notes: [],
+        NetPrice: '15 CHF',
+        Product: 'Standard',
+        Urgency: '90',
+        Type: 'task',
+        Warning: '',
+        id: 'id-ticket-to-dispatch-x'
+      },
+      {
+        OwnerId: 'id-to-dispatch',
+        Status: 'backlog',
+        Description: '',
         MissionId: 'mission-1',
         Notes: [],
         PackageCount: '1 colis',
@@ -1259,6 +1299,71 @@ const data =
         Type: 'drop',
         Warning: '',
         id: 'id-tray-0-ticket-0d'
+      },
+      {
+        OwnerId: 'id-tray-0',
+        Status: 'backlog',
+        Description: '',
+        MeetingPoint: {
+          Contact: null,
+          LongDescription: 'Arroser les plantes\\nCh. des Alpes 12\\n1007 Prilly',
+          Notes: [
+            {
+              Content: 'Arrosage',
+              Glyphs: [
+                {
+                  Name: 'leaf',
+                  Glyph: 'leaf',
+                  Description: '',
+                },
+              ],
+            },
+          ],
+          PlanedDate: '2016-11-30',
+          StartPlanedTime: '17:15:00',
+          EndPlanedTime: '17:30:00',
+          RealisedDate: '0001-01-01',
+          RealisedTime: '00:00:00',
+          ShortDescription: 'Arroser les plantes',
+          Status: 'init',
+          TripId: 't100',
+          Type: 'task',
+          Zone: 'Zone A',
+          id: 'c3da226c-dd9e-4260-a245-2d39f235aaae'
+        },
+        MissionId: 'c8b4f4ad-fe27-400b-9015-82f40c5c6675',
+        Notes: [],
+        PackageCount: '1 colis',
+        Packages: [
+           {
+              Content: 'Box standard B',
+              Dimensions: '30x10x10',
+              TripId: 't5',
+              Weight: '0.4 kg',
+              id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
+            },
+            {
+              Content: 'Enveloppe',
+              Dimensions: '30x21x1',
+              TripId: 't5',
+              Weight: '0.1 kg',
+              id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
+            },
+            {
+              Content: 'Sac en vrac',
+              Dimensions: '20x20x20',
+              TripId: 't5',
+              Weight: '0.1 kg',
+              id: 'd23724dd-ded8-4071-8a6b-150cd2add84d'
+            },
+        ],
+        NetPrice: '17 CHF',
+        Product: 'Standard',
+        Urgency: '0',
+        Weight: '0.6 kg',
+        Type: 'task',
+        Warning: '',
+        id: 'id-tray-0-ticket-0t'
       },
     ],
     id: 'id-to-dispatch'
