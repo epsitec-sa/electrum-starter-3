@@ -6,7 +6,6 @@ var output = './dist';
 
 module.exports = {
   target: 'web',
-  debug: true,
   devtool: 'source-map',
 
   entry: [
@@ -26,8 +25,8 @@ module.exports = {
   // recordsPath: path.resolve (path.join (output, 'webpack/webpack.records.json')),
 
   resolve: {
-    modulesDirectories: ['node_modules'],
-    extensions: ['', '.js'],
+    modules: ['node_modules'],
+    extensions: ['.js'],
     alias: {
       'electrum':       path.join (__dirname, '../electrum'),
       'electrum-arc':   path.join (__dirname, '../electrum-arc'),
@@ -36,6 +35,7 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.LoaderOptionsPlugin ({debug: true}),
     new webpack.HotModuleReplacementPlugin (),
     new webpack.NoErrorsPlugin (),
     new webpack.DefinePlugin ({
@@ -45,18 +45,15 @@ module.exports = {
         NODE_ENV: JSON.stringify ('development')
       }
     })
-
-    ],
+  ],
 
   module: {
-    loaders: [
-      {test: /\.js$/,  exclude: /node_modules|jquery/, loaders: ['babel-loader']},
-/*    {test: /\.css$/, loader: 'style-loader!css-loader'},
-      {test: /\.less$/, loader: 'style-loader!css-loader!less-loader'},
-      {test: /\.png$/, loader: 'url-loader?limit=100000&mimetype=image/png'},
-      {test: /\.gif$/, loader: 'url-loader?limit=100000&mimetype=image/gif'},
-      {test: /\.json$/, loader: 'json-loader'},
-      {test: /\.(jpg|ttf|eot|svg|woff)/, loader: 'file-loader'} */
+    rules: [
+      {
+        test: /\.js|\.jsx$/,
+        exclude: /node_modules|jquery/,
+        loader: 'babel-loader'
+      }
     ]
-  },
+  }
 };
