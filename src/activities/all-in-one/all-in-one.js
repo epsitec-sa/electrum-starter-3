@@ -310,7 +310,7 @@ export default class AllInOne extends React.Component {
                this.getStep () === 'customers' ||
                this.getStep () === 'team') {
       return (
-        <Router kind='main-tab' name='main' active='codispo' {...this.link ()} >
+        <Router kind='main-tab' name='main' view='codispo' {...this.link ()} >
           <Route name='dispo'     text='Dispo'       width='200px' kind='main-tab' {...this.link ()} />
           <Route name='codispo'   text='Co-dispo'    width='200px' kind='main-tab' {...this.link ()} />
           <Route name='fact'      text='Facturation' width='200px' kind='main-tab' {...this.link ()} />
@@ -703,7 +703,7 @@ export default class AllInOne extends React.Component {
     return (
       <View key={index} kind='column' grow='1' router='main' route='dispo' {...this.link ()} >
         <Container kind='second-bar' {...this.link ()} >
-          <Router kind='view-tab' name='dispo' active='missions' {...this.link ()} >
+          <Router kind='view-tab' name='dispo' view='missions' {...this.link ()} >
             <Route name='missions'  text='Missions'  kind='view-tab' {...this.link ()} />
             <Route name='roadbooks' text='Coursiers' kind='view-tab' {...this.link ()} />
             <Route name='events' text='Evénements' kind='view-tab' {...this.link ()} />
@@ -722,7 +722,7 @@ export default class AllInOne extends React.Component {
     return (
       <View key={index} kind='column' grow='1' router='main' route='codispo' {...this.link ()} >
         <Container kind='second-bar' {...this.link ()} >
-          <Router kind='view-tab' name='codispo' active='1' {...this.link ()} >
+          <Router kind='view-tab' name='codispo' view='1' {...this.link ()} >
             <Route name='1' text='Nom du client | 10:42'     kind='view-tab' closable='true' {...this.link ()} />
             <Route name='2' text='Nom du client | 10:30'     kind='view-tab' closable='true' {...this.link ()} />
             <Route name='3' text='Nom de la mission | 09:56' kind='view-tab' closable='true' {...this.link ()} />
