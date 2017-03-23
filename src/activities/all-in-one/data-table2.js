@@ -52,14 +52,15 @@ const data =
     {
       id: 'row1',
       Description: 'Crésus Facturation PRO',
-      Quantity: '2',
+      Quantity: '200',
       Unit: 'pce',
       PricePerUnit: '480.00',
-      FinalPrice: '960.00',
+      Discount: '100.00',
+      FinalPrice: '95900.00',
     },
     {
       id: 'row2',
-      Description: 'Formation compabilité',
+      Description: 'Formation compabilité mardi 10.02.2017',
       Quantity: '4.5',
       Unit: 'h',
       PricePerUnit: '150.00',
