@@ -15,7 +15,8 @@ import {
   Clock,
   Menu,
   FlyingBalloon,
-  Separator
+  Separator,
+  Table
 } from 'electrum-arc';
 
 export default class Codispatch extends React.Component {
@@ -38,6 +39,8 @@ export default class Codispatch extends React.Component {
             kind='pane-navigator' to-anchor='sender-parcel' {...this.link ()} />
           <Button text='Facture' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-bill' {...this.link ()} />
+          <Button text='Document' width='0px' grow='1'
+            kind='pane-navigator' to-anchor='sender-doc' {...this.link ()} />
           <Button text='Divers' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-misc' {...this.link ()} />
         </Container>
@@ -224,6 +227,16 @@ export default class Codispatch extends React.Component {
                 hint-text='Unité' grow='1' spacing='large' combo-type='box'
                 {...this.link ()} />
               <Button glyph='plus' {...this.link ()} />
+            </Container>
+          </Container>
+
+          <Container kind='pane' anchor='sender-doc' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
+              <Label text='Document' grow='1' kind='title' {...this.link ()} />
+              <Button glyph='ellipsis-v' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
+              <Table data={window.document.dataTable2} {...this.link ()} />
             </Container>
           </Container>
 
