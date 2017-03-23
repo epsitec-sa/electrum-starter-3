@@ -26,6 +26,8 @@ import {
   DispatchChronos,
   DispatchChronos1,
   DispatchChronos2,
+  DispatchTable1,
+  DispatchTable2,
   Router,
   Route,
   View
@@ -556,6 +558,8 @@ export default class AllInOne extends React.Component {
     result.push (this.viewDispatchChronos (index++));
     result.push (this.viewDispatchChronos1 (index++));
     result.push (this.viewDispatchChronos2 (index++));
+    result.push (this.viewDispatchTable1 (index++));
+    result.push (this.viewDispatchTable2 (index++));
     return result;
   }
 
@@ -610,6 +614,22 @@ export default class AllInOne extends React.Component {
     return (
       <View key={index} kind='views' router='dispo' route='chronos2' {...this.link ()} >
         <DispatchChronos2 {...this.link ()} />
+      </View>
+    );
+  }
+
+  viewDispatchTable1 (index) {
+    return (
+      <View key={index} kind='views' router='dispo' route='table1' {...this.link ()} >
+        <DispatchTable1 {...this.link ()} />
+      </View>
+    );
+  }
+
+  viewDispatchTable2 (index) {
+    return (
+      <View key={index} kind='views' router='dispo' route='table2' {...this.link ()} >
+        <DispatchTable2 {...this.link ()} />
       </View>
     );
   }
@@ -710,6 +730,8 @@ export default class AllInOne extends React.Component {
             <Route name='chronos' text='Chronos' kind='view-tab' {...this.link ()} />
             <Route name='chronos1' text='Chronos backlog' kind='view-tab' {...this.link ()} />
             <Route name='chronos2' text='Chronos roadbooks' kind='view-tab' {...this.link ()} />
+            <Route name='table1' text='Table 1' kind='view-tab' {...this.link ()} />
+            <Route name='table2' text='Table 2' kind='view-tab' {...this.link ()} />
           </Router>
           {this.notificationsZone ()}
         </Container>

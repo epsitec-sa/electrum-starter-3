@@ -6,6 +6,8 @@ import {Theme} from 'electrum-theme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import DataDispatch from './activities/all-in-one/data-dispatch.js';
 import DataEvents from './activities/all-in-one/data-events.js';
+import DataTable1 from './activities/all-in-one/data-table1.js';
+import DataTable2 from './activities/all-in-one/data-table2.js';
 
 import * as Colors from 'material-ui/styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
@@ -38,6 +40,8 @@ class _Root extends React.Component {
     super (props);
     window.document.dataDispatch = DataDispatch.data;
     window.document.dataEvents = DataEvents.data;
+    window.document.dataTable1 = DataTable1.data;
+    window.document.dataTable2 = DataTable2.data;
     window.document.mock = true;
   }
 
