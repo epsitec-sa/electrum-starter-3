@@ -39,6 +39,8 @@ export default class Codispatch extends React.Component {
             kind='pane-navigator' to-anchor='sender-parcel' {...this.link ()} />
           <Button text='Facture' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-bill' {...this.link ()} />
+          <Button text='Récurrence' width='0px' grow='1'
+            kind='pane-navigator' to-anchor='sender-recu' {...this.link ()} />
           <Button text='Document' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-doc' {...this.link ()} />
           <Button text='Divers' width='0px' grow='1'
@@ -227,6 +229,16 @@ export default class Codispatch extends React.Component {
                 hint-text='Unité' grow='1' spacing='large' combo-type='box'
                 {...this.link ()} />
               <Button glyph='plus' {...this.link ()} />
+            </Container>
+          </Container>
+
+          <Container kind='pane' anchor='sender-recu' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
+              <Label text='Récurrence' grow='1' kind='title' {...this.link ()} />
+              <Button glyph='ellipsis-v' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
+              <Calendar recurrence={window.document.dataRecurrence} {...this.link ()} />
             </Container>
           </Container>
 
@@ -427,8 +439,8 @@ export default class Codispatch extends React.Component {
   }
 
   hinterView () {
-    return this.hinterViewDate ();
-    // return this.hinterViewList ();
+    // return this.hinterViewDate ();
+    return this.hinterViewList ();
   }
 
   navigatorType () {

@@ -8,6 +8,7 @@ import DataDispatch from './activities/all-in-one/data-dispatch.js';
 import DataEvents from './activities/all-in-one/data-events.js';
 import DataTable1 from './activities/all-in-one/data-table1.js';
 import DataTable2 from './activities/all-in-one/data-table2.js';
+import DataRecurrence from './activities/all-in-one/data-recurrence.js';
 
 import * as Colors from 'material-ui/styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
@@ -42,6 +43,7 @@ class _Root extends React.Component {
     window.document.dataEvents = DataEvents.data;
     window.document.dataTable1 = DataTable1.data;
     window.document.dataTable2 = DataTable2.data;
+    window.document.dataRecurrence = DataRecurrence.data;
     window.document.mock = true;
   }
 
