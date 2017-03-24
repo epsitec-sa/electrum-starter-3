@@ -23,7 +23,7 @@ const data =
     },
     {
       Name: 'PricePerUnit',
-      Description: 'Prix unitaire',
+      Description: 'Prix',
       Grow: '1',
       TextAlign: 'right',
     },
