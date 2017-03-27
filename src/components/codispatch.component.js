@@ -16,7 +16,8 @@ import {
   Menu,
   FlyingBalloon,
   Separator,
-  Table
+  Table,
+  Splitter
 } from 'electrum-arc';
 
 export default class Codispatch extends React.Component {
@@ -27,7 +28,7 @@ export default class Codispatch extends React.Component {
 
   leftView () {
     return (
-      <Container kind='view' width='700px' {...this.link ()} >
+      <Container kind='view-stretch' {...this.link ()} >
         <Container kind='pane-navigator' navigation-for="sender" {...this.link ()} >
           <Button text='Expéditeur' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-exp' {...this.link ()} />
@@ -321,7 +322,7 @@ export default class Codispatch extends React.Component {
 
   hinterViewDate () {
     return (
-      <Container kind='view-short' width='400px' {...this.link ()} >
+      <Container kind='view-stretch' {...this.link ()} >
         <Container kind='pane-navigator' {...this.link ()} >
           <Button text='Chercher' width='0px' width='100%'
             active='false'  kind='pane-navigator' {...this.link ()} />
@@ -337,7 +338,7 @@ export default class Codispatch extends React.Component {
 
   hinterViewList () {
     return (
-      <Container kind='view-short' width='400px' {...this.link ()} >
+      <Container kind='view-stretch' {...this.link ()} >
         <Container kind='pane-navigator' {...this.link ()} >
           <Button text='Chercher' width='0px' width='100%'
             active='false'  kind='pane-navigator' {...this.link ()} />
@@ -444,8 +445,9 @@ export default class Codispatch extends React.Component {
   }
 
   navigatorType () {
-    return 'vnavigator';
-    // return 'hnavigator';
+    // return 'vnavigator';
+    // return 'hnavigator-icon';
+    return 'hnavigator-text';
   }
 
   vnavigator () {
@@ -470,10 +472,7 @@ export default class Codispatch extends React.Component {
     );
   }
 
-  hnavigator () {
-    if (this.navigatorType () !== 'hnavigator') {
-      return null;
-    }
+  hnavigatorIcon () {
     return (
       <Container kind='pane-hnavigator' navigation-for="details" {...this.link ()} >
         <Button glyph='building' tooltip='Adresse principale'
@@ -492,9 +491,38 @@ export default class Codispatch extends React.Component {
     );
   }
 
+  hnavigatorText () {
+    return (
+      <Container kind='pane-hnavigator' navigation-for="details" {...this.link ()} >
+        <Button text='Adresse principale' width='0px' grow='1'
+          kind='pane-navigator' to-anchor='details-address' {...this.link ()} />
+        <Button text='Contacts' width='0px' grow='1'
+          kind='pane-navigator' to-anchor='details-contacts' {...this.link ()} />
+        <Button text='Infomations' width='0px' grow='1'
+          kind='pane-navigator' to-anchor='details-infos' {...this.link ()} />
+        <Button text='Dernières missions' width='0px' grow='1'
+          kind='pane-navigator' to-anchor='details-missions' {...this.link ()} />
+        <Button text='Paramètres' width='0px' grow='1'
+          kind='pane-navigator' to-anchor='details-params' {...this.link ()} />
+        <Button text='Documents' width='0px' grow='1'
+          kind='pane-navigator' to-anchor='details-docs' {...this.link ()} />
+      </Container>
+    );
+  }
+
+  hnavigator () {
+    if (this.navigatorType () === 'hnavigator-icon') {
+      return this.hnavigatorIcon ();
+    } else if (this.navigatorType () === 'hnavigator-text') {
+      return this.hnavigatorText ();
+    } else {
+      return null;
+    }
+  }
+
   rightView () {
     return (
-      <Container kind='view-right' width='600px' {...this.link ()} >
+      <Container kind='view-stretch' {...this.link ()} >
         <Container kind='column-full' {...this.link ()} >
           {this.vnavigator ()}
           <Container kind='pane-header' {...this.link ()} >
@@ -824,10 +852,13 @@ export default class Codispatch extends React.Component {
   render () {
     return (
       <Container kind='views' {...this.link ()} >
-        {this.leftView ()}
-        {this.hinterView ()}
-        <Container kind='view-wedge' {...this.link ()} />
-        {this.rightView ()}
+        <Splitter kind='vertical' default-size='65%' {...this.link ()} >
+          <Splitter kind='vertical' default-size='50%' {...this.link ()} >
+            {this.leftView ()}
+            {this.hinterView ()}
+          </Splitter>
+          {this.rightView ()}
+        </Splitter>
       </Container>
     );
   }
