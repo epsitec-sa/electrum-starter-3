@@ -30,12 +30,10 @@ export default class Codispatch extends React.Component {
     return (
       <Container kind='view-stretch' {...this.link ()} >
         <Container kind='pane-navigator' navigation-for="sender" {...this.link ()} >
-          <Button text='Expéditeur' width='0px' grow='1'
-            kind='pane-navigator' to-anchor='sender-exp' {...this.link ()} />
           <Button text='Prestation' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-perf' {...this.link ()} />
-          <Button text='Destinataire' width='0px' grow='1'
-            kind='pane-navigator' to-anchor='sender-dest' {...this.link ()} />
+          <Button text='Contacts' width='0px' grow='1'
+            kind='pane-navigator' to-anchor='sender-contacts' {...this.link ()} />
           <Button text='Colis' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-parcel' {...this.link ()} />
           <Button text='Facture' width='0px' grow='1'
@@ -49,38 +47,6 @@ export default class Codispatch extends React.Component {
         </Container>
 
         <Container kind='panes' navigation-name="sender" {...this.link ()} >
-          <Container kind='pane' anchor='sender-exp' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='Expéditeur' grow='1' kind='title' {...this.link ()} />
-              <CheckButton checked='false' text='Nouveau' kind='switch' spacing='large' {...this.link ()} />
-              <Button glyph='plus' text='Ajouter' spacing='large' {...this.link ()} />
-              <Button glyph='ellipsis-v' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='user'
-                hint-text='Nom du client'
-                selected-value='Epsitec SA, rue de Neuchâtel 32, 1400 Yverdon-les-Bains'
-                action-glyph='rocket'
-                tab-index={1} {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <TextFieldCombo hint-text='Date' combo-glyph='calendar'
-                grow='1' spacing='large' combo-type='calendar'
-                combo-direction='right' flying-balloon-anchor='bottom'
-                {...this.link ('exp-date')} />
-              <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
-                grow='2' spacing='large' combo-type='clock'
-                flying-balloon-anchor='right' {...this.link ('exp-time')} />
-              <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
-                grow='1' combo-type='zone' {...this.link ('exp-zone')} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='tag' hint-text='Référence client'
-                spacing='large' {...this.link ()} />
-              <CheckButton checked='true' text='Facturé à' {...this.link ()} />
-            </Container>
-          </Container>
-
           <Container kind='pane' anchor='sender-perf' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Prestation' grow='1' kind='title' {...this.link ()} />
@@ -92,35 +58,66 @@ export default class Codispatch extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='pane' anchor='sender-dest' {...this.link ()} >
+          <Container kind='pane' anchor='sender-contacts' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
-              <Label text='Destinataire' grow='1' kind='title'
-                {...this.link ()} />
-              <Button glyph='toggle-off' text='Nouveau' border='none'
-                spacing='large' {...this.link ()} />
-              <Button glyph='plus' text='Ajouter' spacing='large'
-                {...this.link ()} />
-              <Button glyph='ellipsis-v' {...this.link ()} />
+              <Label text='Tickets' grow='1' kind='title' {...this.link ()} />
+              <Button glyph='plus' text='Ajouter' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='user'
-                hint-text='Nom du client' tab-index={2} {...this.link ()} />
+              <Container kind='subpane' {...this.link ()} >
+                <Container kind='row-pane' {...this.link ()} >
+                  <TextFieldCombo value='Pick' combo-glyph='cube' hint-text='Type' grow='1' {...this.link ()} />
+                  <CheckButton checked='true' text='Facturé à' spacing='large' {...this.link ()} />
+                  <Button glyph='trash' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='user'
+                    hint-text='Nom du client'
+                    selected-value='Epsitec SA, rue de Neuchâtel 32, 1400 Yverdon-les-Bains'
+                    action-glyph='rocket'
+                    tab-index={1} {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <TextFieldCombo hint-text='Date' combo-glyph='calendar'
+                    grow='1' spacing='large' combo-type='calendar'
+                    combo-direction='right' flying-balloon-anchor='bottom'
+                    {...this.link ('exp-date')} />
+                  <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
+                    grow='2' spacing='large' combo-type='clock'
+                    flying-balloon-anchor='right' {...this.link ('exp-time')} />
+                  <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
+                    grow='1' combo-type='zone' {...this.link ('exp-zone')} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='tag' hint-text='Référence client' {...this.link ()} />
+                </Container>
+              </Container>
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <TextFieldCombo hint-text='Date' combo-glyph='calendar'
-                grow='1' spacing='large' combo-type='calendar'
-                combo-direction='right' {...this.link ('dest-date')} />
-              <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
-                grow='2' spacing='large' combo-type='clock'
-                {...this.link ('dest-time')} />
-              <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
-                grow='1' combo-type='zone' {...this.link ('dest-zone')} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
-              <LabelTextField label-glyph='comment' hint-text='Remarque'
-                spacing='large' {...this.link ()} />
-              <Button glyph='comment' glyph='square-o' text='facturé à'
-                border='none' glyph-position='right' {...this.link ()} />
+              <Container kind='subpane' {...this.link ()} >
+                <Container kind='row-pane' {...this.link ()} >
+                  <TextFieldCombo value='Drop' combo-glyph='cube' hint-text='Type' grow='1' {...this.link ()} />
+                  <CheckButton checked='false' text='Facturé à' spacing='large' {...this.link ()} />
+                  <Button glyph='trash' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='user'
+                    hint-text='Nom du client' tab-index={2} {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <TextFieldCombo hint-text='Date' combo-glyph='calendar'
+                    grow='1' spacing='large' combo-type='calendar'
+                    combo-direction='right' {...this.link ('dest-date')} />
+                  <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
+                    grow='2' spacing='large' combo-type='clock'
+                    {...this.link ('dest-time')} />
+                  <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
+                    grow='1' combo-type='zone' {...this.link ('dest-zone')} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='comment' hint-text='Remarque' {...this.link ()} />
+                </Container>
+              </Container>
             </Container>
           </Container>
 
