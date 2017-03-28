@@ -66,8 +66,10 @@ export default class Codispatch extends React.Component {
             <Container kind='row-pane' {...this.link ()} >
               <Container kind='subpane' {...this.link ()} >
                 <Container kind='row-pane' {...this.link ()} >
-                  <TextFieldCombo value='Pick' combo-glyph='cube' hint-text='Type' grow='1' {...this.link ()} />
+                  <TextFieldCombo value='Pick' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
                   <CheckButton checked='true' text='Facturé à' spacing='large' {...this.link ()} />
+                  <Button glyph='caret-up' {...this.link ()} />
+                  <Button glyph='caret-down' spacing='large' {...this.link ()} />
                   <Button glyph='trash' {...this.link ()} />
                 </Container>
                 <Container kind='row-pane' {...this.link ()} >
@@ -96,8 +98,10 @@ export default class Codispatch extends React.Component {
             <Container kind='row-pane' {...this.link ()} >
               <Container kind='subpane' {...this.link ()} >
                 <Container kind='row-pane' {...this.link ()} >
-                  <TextFieldCombo value='Drop' combo-glyph='cube' hint-text='Type' grow='1' {...this.link ()} />
+                  <TextFieldCombo value='Drop' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
                   <CheckButton checked='false' text='Facturé à' spacing='large' {...this.link ()} />
+                  <Button glyph='caret-up' {...this.link ()} />
+                  <Button glyph='caret-down' spacing='large' {...this.link ()} />
                   <Button glyph='trash' {...this.link ()} />
                 </Container>
                 <Container kind='row-pane' {...this.link ()} >
