@@ -17,7 +17,8 @@ import {
   FlyingBalloon,
   Separator,
   Table,
-  Splitter
+  Splitter,
+  Ticket
 } from 'electrum-arc';
 
 export default class Codispatch extends React.Component {
@@ -64,7 +65,7 @@ export default class Codispatch extends React.Component {
               <Button glyph='plus' text='Ajouter' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <Container kind='subpane' {...this.link ()} >
+              <Ticket kind='subpane' {...this.link ()} >
                 <Container kind='row-pane' {...this.link ()} >
                   <TextFieldCombo value='Pick' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
                   <CheckButton checked='true' text='Facturé à' spacing='large' {...this.link ()} />
@@ -93,10 +94,10 @@ export default class Codispatch extends React.Component {
                 <Container kind='row-pane' {...this.link ()} >
                   <LabelTextField label-glyph='tag' hint-text='Référence client' {...this.link ()} />
                 </Container>
-              </Container>
+              </Ticket>
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <Container kind='subpane' {...this.link ()} >
+              <Ticket kind='subpane' {...this.link ()} >
                 <Container kind='row-pane' {...this.link ()} >
                   <TextFieldCombo value='Drop' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
                   <CheckButton checked='false' text='Facturé à' spacing='large' {...this.link ()} />
@@ -121,7 +122,7 @@ export default class Codispatch extends React.Component {
                 <Container kind='row-pane' {...this.link ()} >
                   <LabelTextField label-glyph='comment' hint-text='Remarque' {...this.link ()} />
                 </Container>
-              </Container>
+              </Ticket>
             </Container>
           </Container>
 
