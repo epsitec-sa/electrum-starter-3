@@ -76,6 +76,7 @@ export default class Codispatch extends React.Component {
                 drag-controller  = 'codispo-ticket'
                 drag-owner-id    = 'coucou.1'
                 direction        = 'vertical'
+                mode             = 'corner-top-left'
                 color            = {this.props.theme.palette.roadbookDragAndDropHover}
                 thickness        = {this.props.theme.shapes.dragAndDropTicketThickness}
                 over-spacing     = '0px'
@@ -117,6 +118,7 @@ export default class Codispatch extends React.Component {
                 drag-controller  = 'codispo-ticket'
                 drag-owner-id    = 'coucou.2'
                 direction        = 'vertical'
+                mode             = 'corner-top-left'
                 color            = {this.props.theme.palette.roadbookDragAndDropHover}
                 thickness        = {this.props.theme.shapes.dragAndDropTicketThickness}
                 over-spacing     = '0px'
@@ -154,6 +156,7 @@ export default class Codispatch extends React.Component {
                 drag-controller  = 'codispo-ticket'
                 drag-owner-id    = 'coucou.3'
                 direction        = 'vertical'
+                mode             = 'corner-top-left'
                 color            = {this.props.theme.palette.roadbookDragAndDropHover}
                 thickness        = {this.props.theme.shapes.dragAndDropTicketThickness}
                 over-spacing     = '0px'
