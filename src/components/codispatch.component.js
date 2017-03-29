@@ -19,7 +19,8 @@ import {
   Table,
   Splitter,
   Ticket,
-  DragCab
+  DragCab,
+  CodispatchTicket
 } from 'electrum-arc';
 
 export default class Codispatch extends React.Component {
@@ -71,124 +72,85 @@ export default class Codispatch extends React.Component {
               drag-source     = 'codispo-tickets'
               drag-owner-id   = 'coucou'
               {...this.link ()} >
-              <DragCab
-                key              = '1'
-                drag-controller  = 'codispo-ticket'
-                drag-owner-id    = 'coucou.1'
-                direction        = 'vertical'
-                mode             = 'corner-top-left'
-                color            = {this.props.theme.palette.roadbookDragAndDropHover}
-                thickness        = {this.props.theme.shapes.dragAndDropTicketThickness}
-                over-spacing     = '0px'
-                vertical-spacing = '0px'
-                radius           = '0px'
-                {...this.link ()}>
-                <Ticket kind='subpane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Pick' width='100px' kind='title' {...this.link ()} />
-                    <TextFieldCombo value='Pick' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
-                    <CheckButton checked='true' text='Facturé à' spacing='large' {...this.link ()} />
-                    <Button glyph='trash' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='user'
-                      hint-text='Nom du client'
-                      selected-value='Epsitec SA, rue de Neuchâtel 32, 1400 Yverdon-les-Bains'
-                      action-glyph='rocket'
-                      tab-index={1} {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar'
-                      grow='1' spacing='large' combo-type='calendar'
-                      combo-direction='right' flying-balloon-anchor='bottom'
-                      {...this.link ('exp-date')} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
-                      grow='2' spacing='large' combo-type='clock'
-                      flying-balloon-anchor='right' {...this.link ('exp-time')} />
-                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
-                      grow='1' combo-type='zone' {...this.link ('exp-zone')} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='tag' hint-text='Référence client' {...this.link ()} />
-                  </Container>
-                </Ticket>
-              </DragCab>
-              <DragCab
-                key              = '2'
-                drag-controller  = 'codispo-ticket'
-                drag-owner-id    = 'coucou.2'
-                direction        = 'vertical'
-                mode             = 'corner-top-left'
-                color            = {this.props.theme.palette.roadbookDragAndDropHover}
-                thickness        = {this.props.theme.shapes.dragAndDropTicketThickness}
-                over-spacing     = '0px'
-                vertical-spacing = '0px'
-                radius           = '0px'
-                {...this.link ()}>
-                <Ticket kind='subpane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Drop' width='100px' kind='title' {...this.link ()} />
-                    <TextFieldCombo value='Drop' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
-                    <CheckButton checked='false' text='Facturé à' spacing='large' {...this.link ()} />
-                    <Button glyph='trash' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='user'
-                      hint-text='Nom du client' tab-index={2} {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar'
-                      grow='1' spacing='large' combo-type='calendar'
-                      combo-direction='right' {...this.link ('dest-date')} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
-                      grow='2' spacing='large' combo-type='clock'
-                      {...this.link ('dest-time')} />
-                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
-                      grow='1' combo-type='zone' {...this.link ('dest-zone')} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='comment' hint-text='Remarque' {...this.link ()} />
-                  </Container>
-                </Ticket>
-              </DragCab>
-              <DragCab
-                key              = '3'
-                drag-controller  = 'codispo-ticket'
-                drag-owner-id    = 'coucou.3'
-                direction        = 'vertical'
-                mode             = 'corner-top-left'
-                color            = {this.props.theme.palette.roadbookDragAndDropHover}
-                thickness        = {this.props.theme.shapes.dragAndDropTicketThickness}
-                over-spacing     = '0px'
-                vertical-spacing = '0px'
-                radius           = '0px'
-                {...this.link ()}>
-                <Ticket kind='subpane' {...this.link ()} >
-                  <Container kind='row-pane' {...this.link ()} >
-                    <Label text='Task' width='100px' kind='title' {...this.link ()} />
-                    <TextFieldCombo value='Task' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
-                    <CheckButton checked='false' text='Facturé à' spacing='large' {...this.link ()} />
-                    <Button glyph='trash' {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='user'
-                      hint-text='Nom du client' tab-index={2} {...this.link ()} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <TextFieldCombo hint-text='Date' combo-glyph='calendar'
-                      grow='1' spacing='large' combo-type='calendar'
-                      combo-direction='right' {...this.link ('dest-date')} />
-                    <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
-                      grow='2' spacing='large' combo-type='clock'
-                      {...this.link ('dest-time')} />
-                    <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
-                      grow='1' combo-type='zone' {...this.link ('dest-zone')} />
-                  </Container>
-                  <Container kind='row-pane' {...this.link ()} >
-                    <LabelTextField label-glyph='comment' hint-text='Remarque' {...this.link ()} />
-                  </Container>
-                </Ticket>
-              </DragCab>
+              <CodispatchTicket ticket-id='1' {...this.link ()}>
+                <Container kind='row-pane' {...this.link ()} >
+                  <Label text='Pick' width='100px' kind='title' {...this.link ()} />
+                  <TextFieldCombo value='Pick' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
+                  <CheckButton checked='true' text='Facturé à' spacing='large' {...this.link ()} />
+                  <Button glyph='trash' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='user'
+                    hint-text='Nom du client'
+                    selected-value='Epsitec SA, rue de Neuchâtel 32, 1400 Yverdon-les-Bains'
+                    action-glyph='rocket'
+                    tab-index={1} {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <TextFieldCombo hint-text='Date' combo-glyph='calendar'
+                    grow='1' spacing='large' combo-type='calendar'
+                    combo-direction='right' flying-balloon-anchor='bottom'
+                    {...this.link ('exp-date')} />
+                  <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
+                    grow='2' spacing='large' combo-type='clock'
+                    flying-balloon-anchor='right' {...this.link ('exp-time')} />
+                  <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
+                    grow='1' combo-type='zone' {...this.link ('exp-zone')} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='tag' hint-text='Référence client' {...this.link ()} />
+                </Container>
+              </CodispatchTicket>
+              <CodispatchTicket ticket-id='2' {...this.link ()}>
+                <Container kind='row-pane' {...this.link ()} >
+                  <Label text='Drop' width='100px' kind='title' {...this.link ()} />
+                  <TextFieldCombo value='Drop' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
+                  <CheckButton checked='false' text='Facturé à' spacing='large' {...this.link ()} />
+                  <Button glyph='trash' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='user'
+                    hint-text='Nom du client' tab-index={2} {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <TextFieldCombo hint-text='Date' combo-glyph='calendar'
+                    grow='1' spacing='large' combo-type='calendar'
+                    combo-direction='right' {...this.link ('dest-date')} />
+                  <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
+                    grow='2' spacing='large' combo-type='clock'
+                    {...this.link ('dest-time')} />
+                  <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
+                    grow='1' combo-type='zone' {...this.link ('dest-zone')} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='comment' hint-text='Remarque' {...this.link ()} />
+                </Container>
+              </CodispatchTicket>
+              <CodispatchTicket ticket-id='3' {...this.link ()}>
+                <Container kind='row-pane' {...this.link ()} >
+                  <Label text='Task' width='100px' kind='title' {...this.link ()} />
+                  <TextFieldCombo value='Task' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
+                  <CheckButton checked='false' text='Facturé à' spacing='large' {...this.link ()} />
+                  <Button glyph='trash' {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='user'
+                    hint-text='Nom du client' tab-index={2} {...this.link ()} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <TextFieldCombo hint-text='Date' combo-glyph='calendar'
+                    grow='1' spacing='large' combo-type='calendar'
+                    combo-direction='right' {...this.link ('dest-date')} />
+                  <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
+                    grow='2' spacing='large' combo-type='clock'
+                    {...this.link ('dest-time')} />
+                  <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
+                    grow='1' combo-type='zone' {...this.link ('dest-zone')} />
+                </Container>
+                <Container kind='row-pane' {...this.link ()} >
+                  <LabelTextField label-glyph='comment' hint-text='Remarque' {...this.link ()} />
+                </Container>
+              </CodispatchTicket>
             </Container>
           </Container>
 
