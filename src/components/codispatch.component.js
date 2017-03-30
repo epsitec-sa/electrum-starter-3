@@ -12,6 +12,7 @@ import {
   Label,
   Badge,
   Calendar,
+  Recurrence,
   Clock,
   Menu,
   FlyingBalloon,
@@ -265,11 +266,11 @@ export default class Codispatch extends React.Component {
 
           <Container kind='pane' anchor='sender-recu' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
-              <Label text='Récurrence' grow='1' kind='title' {...this.link ()} />
+              <Label text='Récurrences' grow='1' kind='title' {...this.link ()} />
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <Calendar recurrence={window.document.dataRecurrence} {...this.link ()} />
+              <Recurrence recurrence={window.document.dataRecurrence} {...this.link ()} />
             </Container>
           </Container>
 

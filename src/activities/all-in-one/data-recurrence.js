@@ -20,11 +20,15 @@ const data =
       Date: '2017-04-20',  // supprime le jeudi 20 avril
       Time: '11:30:00',
     },
+    {
+      Date: '2017-05-18',  // supprime le jeudi 18 mai
+      Time: '11:30:00',
+    },
   ],
   Add: [
     {
-      Date: '2017-04-11',  // ajoute le mardi 10 avril
-      Time: '11:30:00',
+      Date: '2017-04-10',  // ajoute le mardi 10 avril
+      Time: '09:15:00',
     },
     {
       Date: '2017-04-19',  // ajoute le mercredi 19 avril
@@ -33,6 +37,10 @@ const data =
     {
       Date: '2017-04-28',  // ajoute le vendredi 28 avril
       Time: '16:00:00',
+    },
+    {
+      Date: '2017-05-18',  // ajoute le jeudi 18 mai
+      Time: '14:00:00',
     },
   ],
 };
