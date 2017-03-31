@@ -32,7 +32,7 @@ export default class Codispatch extends React.Component {
 
   leftView () {
     return (
-      <Container kind='view-stretch' {...this.link ()} >
+      <Container kind='view' width='800px' {...this.link ()} >
         <Container kind='pane-navigator' navigation-for="sender" {...this.link ()} >
           <Button text='Prestation' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-perf' {...this.link ()} />
@@ -369,7 +369,7 @@ export default class Codispatch extends React.Component {
 
   hinterViewList () {
     return (
-      <Container kind='view-stretch' {...this.link ()} >
+      <Container kind='view-short' {...this.link ()} >
         <Container kind='pane-navigator' {...this.link ()} >
           <Button text='Chercher' width='0px' width='100%'
             active='false'  kind='pane-navigator' {...this.link ()} />
@@ -476,9 +476,9 @@ export default class Codispatch extends React.Component {
   }
 
   navigatorType () {
-    // return 'vnavigator';
+    return 'vnavigator';
     // return 'hnavigator-icon';
-    return 'hnavigator-text';
+    // return 'hnavigator-text';
   }
 
   vnavigator () {
@@ -553,7 +553,7 @@ export default class Codispatch extends React.Component {
 
   rightView () {
     return (
-      <Container kind='view-stretch' {...this.link ()} >
+      <Container kind='view-right' width='800px' {...this.link ()} >
         <Container kind='column-full' {...this.link ()} >
           {this.vnavigator ()}
           <Container kind='pane-header' {...this.link ()} >
@@ -880,16 +880,32 @@ export default class Codispatch extends React.Component {
     );
   }
 
-  render () {
+  renderWith2Splitters () {
     return (
       <Container kind='views' {...this.link ()} >
         <Splitter kind='vertical' default-size='65%' {...this.link ()} >
-          <Splitter kind='vertical' default-size='50%' {...this.link ()} >
+          <Splitter kind='vertical' default-size='55%' {...this.link ()} >
             {this.leftView ()}
             {this.hinterView ()}
           </Splitter>
           {this.rightView ()}
         </Splitter>
+      </Container>
+    );
+  }
+
+  render () {
+    return (
+      <Container kind='views' {...this.link ()} >
+        {this.leftView ()}
+        <Container kind='row' {...this.link ()} >
+          <Splitter kind='vertical' default-size='90%' {...this.link ()} >
+            {this.hinterView ()}
+            <Container kind='row' {...this.link ()} />
+          </Splitter>
+        </Container>
+        <Container kind='view-wedge' {...this.link ()} />
+        {this.rightView ()}
       </Container>
     );
   }
