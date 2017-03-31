@@ -880,20 +880,6 @@ export default class Codispatch extends React.Component {
     );
   }
 
-  renderWith2Splitters () {
-    return (
-      <Container kind='views' {...this.link ()} >
-        <Splitter kind='vertical' default-size='65%' {...this.link ()} >
-          <Splitter kind='vertical' default-size='55%' {...this.link ()} >
-            {this.leftView ()}
-            {this.hinterView ()}
-          </Splitter>
-          {this.rightView ()}
-        </Splitter>
-      </Container>
-    );
-  }
-
   render () {
     return (
       <Container kind='views' {...this.link ()} >
