@@ -75,8 +75,8 @@ export default class Codispatch extends React.Component {
               {...this.link ()} >
               <CodispatchTicket ticket-id='1' {...this.link ()}>
                 <Container kind='row-pane' {...this.link ()} >
-                  <Label text='Pick' width='100px' kind='title' {...this.link ()} />
-                  <TextFieldCombo value='Pick' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
+                  <TextFieldCombo value='Pick' combo-glyph='cog' hint-text='Type' width='100' {...this.link ()} />
+                  <Label grow='1' {...this.link ()} />
                   <CheckButton checked='true' text='Facturé à' spacing='large' {...this.link ()} />
                   <Button glyph='trash' {...this.link ()} />
                 </Container>
@@ -92,8 +92,11 @@ export default class Codispatch extends React.Component {
                     grow='1' spacing='large' combo-type='calendar'
                     combo-direction='right' flying-balloon-anchor='bottom'
                     {...this.link ('exp-date')} />
-                  <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
-                    grow='2' spacing='large' combo-type='clock'
+                  <TextFieldCombo hint-text='Heure de début' combo-glyph='clock-o'
+                    grow='1' spacing='large' combo-type='clock'
+                    flying-balloon-anchor='right' {...this.link ('exp-time')} />
+                  <TextFieldCombo hint-text='Heure de fin' combo-glyph='clock-o'
+                    grow='1' spacing='large' combo-type='clock'
                     flying-balloon-anchor='right' {...this.link ('exp-time')} />
                   <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
                     grow='1' combo-type='zone' {...this.link ('exp-zone')} />
@@ -104,8 +107,8 @@ export default class Codispatch extends React.Component {
               </CodispatchTicket>
               <CodispatchTicket ticket-id='2' {...this.link ()}>
                 <Container kind='row-pane' {...this.link ()} >
-                  <Label text='Drop' width='100px' kind='title' {...this.link ()} />
-                  <TextFieldCombo value='Drop' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
+                  <TextFieldCombo value='Drop' combo-glyph='cog' hint-text='Type' width='100' {...this.link ()} />
+                  <Label grow='1' {...this.link ()} />
                   <CheckButton checked='false' text='Facturé à' spacing='large' {...this.link ()} />
                   <Button glyph='trash' {...this.link ()} />
                 </Container>
@@ -117,9 +120,12 @@ export default class Codispatch extends React.Component {
                   <TextFieldCombo hint-text='Date' combo-glyph='calendar'
                     grow='1' spacing='large' combo-type='calendar'
                     combo-direction='right' {...this.link ('dest-date')} />
-                  <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
-                    grow='2' spacing='large' combo-type='clock'
-                    {...this.link ('dest-time')} />
+                  <TextFieldCombo hint-text='Heure de début' combo-glyph='clock-o'
+                    grow='1' spacing='large' combo-type='clock'
+                    flying-balloon-anchor='right' {...this.link ('exp-time')} />
+                  <TextFieldCombo hint-text='Heure de fin' combo-glyph='clock-o'
+                    grow='1' spacing='large' combo-type='clock'
+                    flying-balloon-anchor='right' {...this.link ('exp-time')} />
                   <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
                     grow='1' combo-type='zone' {...this.link ('dest-zone')} />
                 </Container>
@@ -129,8 +135,8 @@ export default class Codispatch extends React.Component {
               </CodispatchTicket>
               <CodispatchTicket ticket-id='3' {...this.link ()}>
                 <Container kind='row-pane' {...this.link ()} >
-                  <Label text='Task' width='100px' kind='title' {...this.link ()} />
-                  <TextFieldCombo value='Task' combo-glyph='cog' hint-text='Type' grow='1' spacing='large' {...this.link ()} />
+                  <TextFieldCombo value='Task' combo-glyph='cog' hint-text='Type' width='100' {...this.link ()} />
+                  <Label grow='1' {...this.link ()} />
                   <CheckButton checked='false' text='Facturé à' spacing='large' {...this.link ()} />
                   <Button glyph='trash' {...this.link ()} />
                 </Container>
@@ -142,9 +148,12 @@ export default class Codispatch extends React.Component {
                   <TextFieldCombo hint-text='Date' combo-glyph='calendar'
                     grow='1' spacing='large' combo-type='calendar'
                     combo-direction='right' {...this.link ('dest-date')} />
-                  <TextFieldCombo hint-text='Période' combo-glyph='clock-o'
-                    grow='2' spacing='large' combo-type='clock'
-                    {...this.link ('dest-time')} />
+                  <TextFieldCombo hint-text='Heure de début' combo-glyph='clock-o'
+                    grow='1' spacing='large' combo-type='clock'
+                    flying-balloon-anchor='right' {...this.link ('exp-time')} />
+                  <TextFieldCombo hint-text='Heure de fin' combo-glyph='clock-o'
+                    grow='1' spacing='large' combo-type='clock'
+                    flying-balloon-anchor='right' {...this.link ('exp-time')} />
                   <TextFieldCombo hint-text='Zone' combo-glyph='map-marker'
                     grow='1' combo-type='zone' {...this.link ('dest-zone')} />
                 </Container>
