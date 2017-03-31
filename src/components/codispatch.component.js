@@ -72,7 +72,7 @@ export default class Codispatch extends React.Component {
               drag-controller  = 'codispo-ticket'
               drag-source      = 'codispo-tickets'
               drag-owner-id    = 'coucou'
-              drag-left-detect = {this.props.theme.shapes.containerMargin}
+              drag-left-detect = 'containerMargin'
               {...this.link ()} >
               <CodispatchTicket ticket-id='1' {...this.link ()}>
                 <Container kind='row-pane' {...this.link ()} >
