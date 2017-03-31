@@ -64,14 +64,15 @@ export default class Codispatch extends React.Component {
 
           <Container kind='pane' anchor='sender-contacts' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
-              <Label text='Tickets' grow='1' kind='title' {...this.link ()} />
+              <Label text='Etapes de livraison' grow='1' kind='title' {...this.link ()} />
               <Button glyph='plus' text='Ajouter' {...this.link ()} />
             </Container>
             <Container
-              kind            = 'row-pane-drag'
-              drag-controller = 'codispo-ticket'
-              drag-source     = 'codispo-tickets'
-              drag-owner-id   = 'coucou'
+              kind             = 'row-pane-drag'
+              drag-controller  = 'codispo-ticket'
+              drag-source      = 'codispo-tickets'
+              drag-owner-id    = 'coucou'
+              drag-left-detect = {this.props.theme.shapes.containerMargin}
               {...this.link ()} >
               <CodispatchTicket ticket-id='1' {...this.link ()}>
                 <Container kind='row-pane' {...this.link ()} >
