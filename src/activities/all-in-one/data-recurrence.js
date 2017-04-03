@@ -1,7 +1,7 @@
 const data =
   {
     StartDate: '2017-01-01',
-    EndDate:   '2017-12-31',
+    EndDate:   '2017-06-30',
     Cron:      '0 0 0 * * 1,4',  // tous les lundis et jeudis
     Delete:    [
       '2017-04-03',  // supprime le lundi 3 avril
