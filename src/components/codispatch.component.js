@@ -1,5 +1,5 @@
 // Co-dispatch view. 1234
-import React from 'react';
+import {React} from 'electrum';
 import {
   Container,
   Button,

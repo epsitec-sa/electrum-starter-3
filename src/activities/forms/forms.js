@@ -1,4 +1,4 @@
-import React from 'react';
+import {React} from 'electrum';
 import {Button} from '../../all-components';
 import act from './actuators.js';
 

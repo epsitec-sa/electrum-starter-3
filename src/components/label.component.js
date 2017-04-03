@@ -1,4 +1,4 @@
-import React from 'react';
+import {React} from 'electrum';
 
 export default class Label extends React.Component {
   render () {

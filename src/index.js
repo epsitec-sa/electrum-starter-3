@@ -4,7 +4,7 @@ import {Theme} from 'electrum-theme';
 
 /******************************************************************************/
 
-import React from 'react';
+import {React} from 'electrum';
 import ReactDOM from 'react-dom';
 import PocActivity from './activities/poc/';
 import FormsActivity from './activities/forms/';

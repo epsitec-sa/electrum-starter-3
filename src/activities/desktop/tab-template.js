@@ -1,4 +1,4 @@
-import React from 'react';
+import {React} from 'electrum';
 import act from './actuators.js';
 import {Label} from '../../all-components';
 import Electrum from 'electrum';

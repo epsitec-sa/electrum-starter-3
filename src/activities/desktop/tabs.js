@@ -1,5 +1,5 @@
 import Electrum from 'electrum';
-import React from 'react';
+import {React} from 'electrum';
 import {Collection} from '../../all-components';
 import tabTemplate from './tab-template.js';
 

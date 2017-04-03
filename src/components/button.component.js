@@ -1,4 +1,4 @@
-import React from 'react';
+import {React} from 'electrum';
 
 export default class Button extends React.Component {
   render () {

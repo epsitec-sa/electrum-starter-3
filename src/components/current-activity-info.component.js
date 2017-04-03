@@ -1,4 +1,4 @@
-import React from 'react';
+import {React} from 'electrum';
 
 export default class CurrentActivityInfo extends React.Component {
   render () {

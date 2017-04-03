@@ -1,4 +1,4 @@
-import React from 'react';
+import {React} from 'electrum';
 import {ActivityViewer, Label} from '../../all-components';
 import {Contextualizer} from './contextualizer.js';
 import {StatusBar} from './status-bar.js';

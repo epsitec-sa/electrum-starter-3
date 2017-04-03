@@ -1,5 +1,5 @@
 import Electrum from 'electrum';
-import React from 'react';
+import {React} from 'electrum';
 import act from './actuators.js';
 import {BasicList} from 'electrum-arc';
 import {Button} from '../../all-components';

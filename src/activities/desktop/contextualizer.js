@@ -1,5 +1,5 @@
 import Electrum from 'electrum';
-import React from 'react';
+import {React} from 'electrum';
 
 class _Contextualizer extends React.Component {
   render () {

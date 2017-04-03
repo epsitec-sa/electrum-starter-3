@@ -1,5 +1,5 @@
 import Electrum from 'electrum';
-import React from 'react';
+import {React} from 'electrum';
 export default class Activity {
   constructor (name, stateHandlers, actuators, parent) {
     this._id = Symbol.for ('[' + name + ']');

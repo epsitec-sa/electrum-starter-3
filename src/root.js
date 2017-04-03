@@ -1,5 +1,5 @@
 import Electrum from 'electrum';
-import React from 'react';
+import {React} from 'electrum';
 import {Theme} from 'electrum-theme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import DataDispatch from './activities/all-in-one/data-dispatch.js';
