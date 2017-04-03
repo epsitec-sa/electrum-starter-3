@@ -1,4 +1,3 @@
-'use strict';
 import Electrum from 'electrum';
 import _Boolean from './components/boolean.component.js';
 import _Button from './components/button.component.js';
