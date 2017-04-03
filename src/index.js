@@ -1,5 +1,3 @@
-'use strict';
-
 import Electrum from 'electrum';
 import {Store} from 'electrum-store';
 import {Theme} from 'electrum-theme';

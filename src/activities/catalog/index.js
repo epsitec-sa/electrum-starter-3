@@ -1,5 +1,3 @@
-'use strict';
-
 import Catalog from './catalog.js';
 import actuators from './actuators.js';
 import Activity from '../activity.js';
@@ -21,7 +19,7 @@ const onInit = (state) => {
 
   const multilineField = state.select ('multilineField');
   multilineField
-    .set ('value', `Hello,\ni am a multiline field!\nbye bye :)`)
+    .set ('value', 'Hello,\ni am a multiline field!\nbye bye :)')
     .set ('multiLine', true)
     .set ('rows', 2)
     .set ('rowsMax', 10)

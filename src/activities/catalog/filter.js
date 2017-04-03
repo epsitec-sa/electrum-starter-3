@@ -1,6 +1,4 @@
-'use strict';
-
-import { removeDiacritics } from './remove-diacritics';
+import {removeDiacritics} from './remove-diacritics';
 
 const Filter = {};
 

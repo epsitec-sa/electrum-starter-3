@@ -1,25 +1,13 @@
-'use strict';
-
 import React from 'react';
 
 import {
   Container,
-  Footer,
   Dialog,
-  Ticket,
   Button,
-  TextField,
   LabelTextField,
-  TextFieldCombo,
   Label,
-  Badge,
-  Calendar,
-  Clock,
-  Menu,
-  FlyingBalloon,
   Separator,
   Notifications,
-  Notification,
   DispatchTrips,
   DispatchMessengers,
   DispatchEvents,
@@ -84,15 +72,15 @@ export default class AllInOne extends React.Component {
         Color:   'primary',
         Message: 'La livraison n\'est pas possible en raison de travaux à Lausanne, rue du Midi, du 12.10.2016 au 25.10.2016.\\n' +
                  'Il faut accéder par la rue du Centre puis faire les derniers mètres à pied.',
-        Status:  'not-read',
+        Status: 'not-read',
       },
     ];
     this.state = {
       // currentStep: 'login',
-      currentStep: 'codispatch',
-      currentMandat: null,
-      showNotifications: false,
-      notifications: notifications,
+      currentStep:            'codispatch',
+      currentMandat:          null,
+      showNotifications:      false,
+      notifications:          notifications,
       notificationGeneration: this.notificationGeneration++,
     };
   }
@@ -337,7 +325,7 @@ export default class AllInOne extends React.Component {
     }
   }
 
-  notificationsZone() {
+  notificationsZone () {
     if (this.getStep () === 'login' ||
         this.getStep () === 'logout') {
       return null;
@@ -538,9 +526,9 @@ export default class AllInOne extends React.Component {
 
             <Container kind='actions' subkind='no-shadow' {...this.link ()} >
               <Button action={() => {
-                  this.setMandat ('Nouveau');
-                  this.setStep ('codispatch');
-                }} glyph='check'  text='Créer' kind='action' width='160px' place='left' {...this.link ()} />
+                this.setMandat ('Nouveau');
+                this.setStep ('codispatch');
+              }} glyph='check'  text='Créer' kind='action' width='160px' place='left' {...this.link ()} />
               <Button action={() => this.setStep ('mandats')} glyph='close'  text='Annuler' kind='action' width='160px' place='right' {...this.link ()} />
             </Container>
           </Container>

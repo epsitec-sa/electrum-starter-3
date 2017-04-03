@@ -1,4 +1,3 @@
-'use strict';
 import Electrum from 'electrum';
 import React from 'react';
 export default class Activity {
@@ -81,9 +80,9 @@ export default class Activity {
       console.dir (state);
       const MainView = state.get ('view');
       const viewerStyle = {
-        color: '#222222',
+        color:           '#222222',
         backgroundColor: '#f5f5f5',
-        width: '100%'
+        width:           '100%'
       };
       if (MainView) {
         return (

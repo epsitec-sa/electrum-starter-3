@@ -1,5 +1,3 @@
-'use strict';
-
 import Command from 'electrum-command';
 
 
@@ -9,5 +7,5 @@ const doSayHello = ({name}, state) => {
 
 
 export default {
-    TEST: Command ('TEST', doSayHello)
+  TEST: Command ('TEST', doSayHello)
 };

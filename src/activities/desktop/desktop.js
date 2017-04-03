@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import {ActivityViewer, Label} from '../../all-components';
 import {Contextualizer} from './contextualizer.js';
@@ -19,22 +17,22 @@ export default class Desktop extends React.Component {
       state.select (mainActivityPath).get ().view :
       null;
     const mainLayout = {
-      display: 'flex',
-      background: '#24415f',
-      alignItems: 'stretch',
+      display:       'flex',
+      background:    '#24415f',
+      alignItems:    'stretch',
       flexDirection: 'row',
       alignContents: 'stretch'
     };
 
     const deskStyle = {
-      display: 'flex',
-      alignItems: 'stretch',
+      display:       'flex',
+      alignItems:    'stretch',
       flexDirection: 'column',
-      width: '100%'
+      width:         '100%'
     };
 
     const mainContent = {
-      flex: 2,
+      flex:      2,
       borderTop: '.01em solid #cccccc'
     };
 
@@ -58,8 +56,8 @@ export default class Desktop extends React.Component {
           <Tabs {...this.link ()} />
           <main style={mainContent}>
             {mainActivityKey ?
-            <MainActivity {...this.link (mainActivityPath)} />
-            : null}
+            <MainActivity {...this.link (mainActivityPath)} /> :
+            null}
           </main>
           <StatusBar {...this.link ()}>
             OPTIONS

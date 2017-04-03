@@ -26,7 +26,6 @@ Simple activity:
 ```
 // Example activity:
 
-'use strict';
 import Activity from '../activity.js';
 import {MainView} from './component.js';
 import actuators from './actuators.js';

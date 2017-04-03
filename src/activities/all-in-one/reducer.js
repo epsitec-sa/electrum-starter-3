@@ -1,5 +1,3 @@
-'use strict';
-
 function addTrip (state, tripId, trip) {
   state[tripId] = trip;
   return state;

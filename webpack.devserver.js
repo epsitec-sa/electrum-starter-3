@@ -1,5 +1,3 @@
-'use strict';
-
 var webpack          = require ('webpack');
 var WebpackDevServer = require ('webpack-dev-server');
 var config           = require ('./webpack.config.js');
@@ -8,14 +6,14 @@ var compiler = webpack (config);
 
 var server = new WebpackDevServer (compiler, {
   contentBase: config.output.path,
-  publicPath: config.output.publicPath,
+  publicPath:  config.output.publicPath,
 
-  hot: true,
+  hot:                true,
   historyApiFallback: true,
 
-  quiet: true,
+  quiet:  true,
   noInfo: true,
-  stats: {colors: true},
+  stats:  {colors: true},
 });
 
 function displayStats (stats) {

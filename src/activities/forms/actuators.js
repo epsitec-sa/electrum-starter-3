@@ -1,4 +1,3 @@
-'use strict';
 import WizardHome from './views/wizard-home.js';
 import Command from 'electrum-command';
 import Forms from './forms.js';
@@ -11,5 +10,5 @@ const changeView = ({view}, state) => {
 
 export default {
   START_WIZARD: Command ('START_WIZARD', changeView) ({view: WizardHome}),
-  GO_HOME: Command ('GO_HOME', changeView) ({view: Forms})
+  GO_HOME:      Command ('GO_HOME', changeView) ({view: Forms})
 };

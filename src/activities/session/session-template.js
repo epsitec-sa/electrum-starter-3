@@ -1,4 +1,3 @@
-'use strict';
 import React from 'react';
 import act from './actuators.js';
 import {Button} from '../../all-components';

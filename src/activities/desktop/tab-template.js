@@ -1,4 +1,3 @@
-'use strict';
 import React from 'react';
 import act from './actuators.js';
 import {Label} from '../../all-components';
@@ -16,28 +15,28 @@ export default (state, props) => {
   }
   const tabLabel = {
     transformOrigin: 'initial',
-    cursor: 'pointer',
-    color: '#222222',
-    padding: '5px 30px',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap'
+    cursor:          'pointer',
+    color:           '#222222',
+    padding:         '5px 30px',
+    overflow:        'hidden',
+    textOverflow:    'ellipsis',
+    whiteSpace:      'nowrap'
   };
 
   const tabContainer = {
-    flex: 0.1,
+    flex:            0.1,
     backgroundColor: active ? '#cccccc' : 'none',
-    order: key,
-    content: `''`,
-    zIndex: 1,
-    transform: 'perspective(5px) rotateX(2deg)',
+    order:           key,
+    content:         '\'\'',
+    zIndex:          1,
+    transform:       'perspective(5px) rotateX(2deg)',
     transformOrigin: 'bottom',
-    borderTop: '.1em solid #cccccc',
-    borderLeft: '.1em solid #cccccc',
-    borderRight: '.1em solid #cccccc',
-    borderBottom: 'none',
-    borderRadius: '10px 10px 0 0',
-    boxShadow: '0 2px hsla(0,0%,100%,.5) inset'
+    borderTop:       '.1em solid #cccccc',
+    borderLeft:      '.1em solid #cccccc',
+    borderRight:     '.1em solid #cccccc',
+    borderBottom:    'none',
+    borderRadius:    '10px 10px 0 0',
+    boxShadow:       '0 2px hsla(0,0%,100%,.5) inset'
   };
 
   return (

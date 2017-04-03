@@ -1,5 +1,3 @@
-'use strict';
-
 import AllInOne from './all-in-one.js';
 import actuators from './actuators.js';
 import Activity from '../activity.js';

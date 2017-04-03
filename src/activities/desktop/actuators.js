@@ -1,4 +1,3 @@
-'use strict';
 import Command from 'electrum-command';
 
 const leaveDesktop = (cmd, state) => {
@@ -21,6 +20,6 @@ const selectTab = ({path}, state) => {
 
 export default {
   LEAVE_DESKTOP: Command ('LEAVE_DESKTOP', leaveDesktop),
-  START_MAIN: Command ('START_MAIN', startMain),
-  SELECT_TAB: Command ('SELECT_TAB', selectTab)
+  START_MAIN:    Command ('START_MAIN', startMain),
+  SELECT_TAB:    Command ('SELECT_TAB', selectTab)
 };

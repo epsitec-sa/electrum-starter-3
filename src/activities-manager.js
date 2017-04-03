@@ -1,4 +1,3 @@
-'use strict';
 /******************************************************************************/
 export default class ActivitiesManager {
   constructor (store) {
@@ -26,7 +25,7 @@ export default class ActivitiesManager {
 
   set mainActivityPath (path) {
     if (!path) {
-      throw new Error (`You must provide an activity path`);
+      throw new Error ('You must provide an activity path');
     }
     this.state.set ('mainActivityPath', path);
   }

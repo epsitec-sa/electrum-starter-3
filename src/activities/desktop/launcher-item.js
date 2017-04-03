@@ -1,5 +1,3 @@
-'use strict';
-
 import Electrum from 'electrum';
 import React from 'react';
 
@@ -8,28 +6,28 @@ class _LauncherItem extends React.Component {
     const {state} = this.props;
 
     const logoItem = {
-      flex: 2,
-      fontSize: '2rem',
-      cursor: 'pointer',
-      color: '#222222',
+      flex:            2,
+      fontSize:        '2rem',
+      cursor:          'pointer',
+      color:           '#222222',
       backgroundColor: '#FFFFFF',
-      alignSelf: 'center',
-      padding: '4 4 4 4'
+      alignSelf:       'center',
+      padding:         '4 4 4 4'
     };
 
     const activityItem = {
-      flex: 1,
-      fontSize: '2rem',
-      cursor: 'pointer',
-      ':hover': {
+      'flex':     1,
+      'fontSize': '2rem',
+      'cursor':   'pointer',
+      ':hover':   {
         background: '#FFFFFF'
       },
-      alignSelf: 'center'
+      'alignSelf': 'center'
     };
 
     const separatorItem = {
-      flex: 1,
-      fontSize: '2rem',
+      flex:      1,
+      fontSize:  '2rem',
       minHeight: '64px'
     };
 

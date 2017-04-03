@@ -1,11 +1,9 @@
-'use strict';
-
 var webpack = require ('webpack');
 var path = require ('path');
 var output = './dist';
 
 module.exports = {
-  target: 'web',
+  target:  'web',
   devtool: 'source-map',
 
   entry: [
@@ -15,8 +13,8 @@ module.exports = {
   ],
 
   output: {
-    filename: 'bundle.js',
-    path: path.resolve ('./src'),
+    filename:   'bundle.js',
+    path:       path.resolve ('./src'),
     publicPath: 'http://localhost:3000/',
     // hotUpdateChunkFilename: 'hot/[id].[hash].hot-update.js',
     // hotUpdateMainFilename: 'hot/[hash].hot-update.json'
@@ -25,9 +23,9 @@ module.exports = {
   // recordsPath: path.resolve (path.join (output, 'webpack/webpack.records.json')),
 
   resolve: {
-    modules: ['node_modules'],
-    extensions: ['.js'],
-    alias: {
+    modules:    [ 'node_modules' ],
+    extensions: [ '.js' ],
+    alias:      {
       'electrum':       path.join (__dirname, '../electrum'),
       'electrum-arc':   path.join (__dirname, '../electrum-arc'),
       'electrum-theme': path.join (__dirname, '../electrum-theme'),
@@ -39,10 +37,10 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin (),
     new webpack.NoErrorsPlugin (),
     new webpack.DefinePlugin ({
-      __DEV__: true,
+      '__DEV__':     true,
       'process.env': {
         BABEL_ENV: JSON.stringify ('development'),
-        NODE_ENV: JSON.stringify ('development')
+        NODE_ENV:  JSON.stringify ('development')
       }
     })
   ],
@@ -50,9 +48,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js|\.jsx$/,
+        test:    /\.js|\.jsx$/,
         exclude: /node_modules|jquery/,
-        loader: 'babel-loader'
+        loader:  'babel-loader'
       }
     ]
   }

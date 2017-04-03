@@ -1,4 +1,3 @@
-'use strict';
 import Command from 'electrum-command';
 function * coolName () {
   while (true) {

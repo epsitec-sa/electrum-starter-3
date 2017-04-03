@@ -1,6 +1,4 @@
 // Co-dispatch view. 1234
-'use strict';
-
 import React from 'react';
 import {
   Container,

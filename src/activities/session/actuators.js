@@ -1,4 +1,3 @@
-'use strict';
 import Command from 'electrum-command';
 
 const switchActivity = ({activity}, state) => {
@@ -14,5 +13,5 @@ const startActivity = (cmd, state) => {
 
 export default {
   SWITCH_SESSION: Command ('SWITCH_SESSION', switchActivity),
-  START_SESSION: Command ('START_SESSION', startActivity)
+  START_SESSION:  Command ('START_SESSION', startActivity)
 };

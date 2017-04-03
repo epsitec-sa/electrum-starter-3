@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 
 export default class Boolean extends React.Component {

@@ -1,5 +1,3 @@
-'use strict';
-
 import Electrum from 'electrum';
 import React from 'react';
 import {Theme} from 'electrum-theme';
