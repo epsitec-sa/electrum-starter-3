@@ -4,21 +4,15 @@ import {
   Container,
   Button,
   CheckButton,
-  TextField,
   LabelTextField,
   TextFieldCombo,
   Label,
   Badge,
   Calendar,
-  Recurrence,
-  Clock,
-  Menu,
-  FlyingBalloon,
+  Recurrences,
   Separator,
   Table,
   Splitter,
-  Ticket,
-  DragCab,
   CodispatchTicket
 } from 'electrum-arc';
 
@@ -278,7 +272,7 @@ export default class Codispatch extends React.Component {
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <Recurrence recurrence={window.document.dataRecurrence} {...this.link ()} />
+              <Recurrences recurrences={window.document.dataRecurrences} {...this.link ()} />
             </Container>
           </Container>
 
