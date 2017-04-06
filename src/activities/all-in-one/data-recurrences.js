@@ -11,6 +11,7 @@
 const data =
   [
     {
+      id:        'r1',
       StartDate: '2017-01-01',
       EndDate:   '2017-06-30',
       Cron:      '0 0 0 * * 1,4',  // tous les lundis et jeudis
@@ -22,6 +23,7 @@ const data =
       ],
     },
     {
+      id:        'r2',
       StartDate: '2017-07-01',
       EndDate:   '2017-07-31',
       Cron:      '0 0 0 * * 2',  // tous les mardis
@@ -29,6 +31,7 @@ const data =
       Add:       [],
     },
     {
+      id:        'r3',
       StartDate: '2017-08-01',
       EndDate:   '2017-12-31',
       Cron:      '0 0 0 * * 3',  // tous les mercredis
