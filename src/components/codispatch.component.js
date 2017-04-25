@@ -341,13 +341,13 @@ export default class Codispatch extends React.Component {
 
         <Container kind='actions' {...this.link ()} >
           <Button glyph='trash-o' text='Annuler' width='0px' grow='1'
-            kind='action' place='left' {...this.link ()} />
+            kind='action' place='1/4' {...this.link ()} />
           <Button glyph='paste' text='Modèle' width='0px' grow='1'
-            kind='action' place='middle' {...this.link ()} />
+            kind='action' place='2/4' {...this.link ()} />
           <Button glyph='inbox' text='Attendre' width='0px' grow='1'
-            kind='action' place='middle' {...this.link ()} />
+            kind='action' place='3/4' {...this.link ()} />
           <Button glyph='check' text='Valider' width='0px' grow='1'
-            kind='action' place='right' {...this.link ()} />
+            kind='action' place='4/4' {...this.link ()} />
         </Container>
       </Container>
     );
@@ -446,7 +446,7 @@ export default class Codispatch extends React.Component {
               <Button kind='container' width='100%' {...this.link ()}>
                 <Label text='Jean-<em>Pierre</em>-Etienne <em>von</em> Dutrèsprécieux' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
-                <Label text='Plan-les-Ouattes' kind='large-right' justify='left' grow='1'
+                <Label text='<em>Plan</em>-les-Ouattes' kind='large-right' justify='left' grow='1'
                   {...this.link ()} />
               </Button>
             </Container>
