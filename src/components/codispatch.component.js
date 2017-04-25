@@ -580,14 +580,14 @@ export default class Codispatch extends React.Component {
               </Container>
               <Container kind='row-pane' subkind='box' {...this.link ()} >
                 <Label glyph='map-marker'
-                  text='Mon <em>très beau</em> bouquet beaucoup trop long SA\nPlace du Marché <em>12</em>\n1002 Lausanne'
+                  text='Mon <em>très beau</em> bouquet beaucoup trop long SA, mais vraiment trop<br/>Place du Marché <em>12</em><br/>1002 Lausanne'
                   wrap='no' vpos='top' grow='2' {...this.link ()} />
                 <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch'
                   wrap='no' vpos='top' grow='1' {...this.link ()} />
               </Container>
               <Container kind='row-pane' subkind='box' {...this.link ()} >
                 <Label glyph='map-marker'
-                  text='<em>Mon</em> très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne'
+                  text='<em>Mon</em> très beau bouquet beaucoup trop long SA, mais vraiment trop\nPlace du Marché 12\n1002 Lausanne'
                   vpos='top' grow='2' {...this.link ()} />
                 <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch'
                   vpos='top' grow='1' {...this.link ()} />
@@ -624,7 +624,7 @@ export default class Codispatch extends React.Component {
               <Container kind='row-pane' subkind='box' {...this.link ()} >
                 <Button glyph='user' kind='round' spacing='large'
                   {...this.link ()} />
-                <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long'
+                <Label text='Marie-Jeanne-Francine van den Trucmuche-vraiment-très-long'
                   justify='left' grow='2' {...this.link ()} />
                 <Label text='+41 78 347 20 40 (domicile)' justify='left'
                   grow='1' {...this.link ()} />
@@ -636,7 +636,7 @@ export default class Codispatch extends React.Component {
               <Container kind='row-pane' subkind='box' {...this.link ()} >
                 <Button glyph='user' kind='round' spacing='large'
                   {...this.link ()} />
-                <Label text='Marie-Jeanne-Francine van den Trucmuche-très-long'
+                <Label text='Marie-Jeanne-Francine van den Trucmuche-vraiment-très-long'
                   justify='left' wrap='no' grow='2' {...this.link ()} />
                 <Label text='+41 78 347 20 40 (domicile)' justify='left'
                   wrap='no' grow='1' {...this.link ()} />
