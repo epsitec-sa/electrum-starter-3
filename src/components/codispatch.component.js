@@ -444,7 +444,7 @@ export default class Codispatch extends React.Component {
             </Container>
             <Container kind='row-pane' subkind='large-box' {...this.link ()} >
               <Button kind='container' width='100%' {...this.link ()}>
-                <Label text='Jean-Pierre-Etienne von Dutrèsprécieux' kind='large-left' justify='left' grow='2'
+                <Label text='Jean-<em>Pierre</em>-Etienne <em>von</em> Dutrèsprécieux' kind='large-left' justify='left' grow='2'
                   {...this.link ()} />
                 <Label text='Plan-les-Ouattes' kind='large-right' justify='left' grow='1'
                   {...this.link ()} />
@@ -580,14 +580,14 @@ export default class Codispatch extends React.Component {
               </Container>
               <Container kind='row-pane' subkind='box' {...this.link ()} >
                 <Label glyph='map-marker'
-                  text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne'
+                  text='Mon <em>très beau</em> bouquet beaucoup trop long SA\nPlace du Marché <em>12</em>\n1002 Lausanne'
                   wrap='no' vpos='top' grow='2' {...this.link ()} />
                 <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch'
                   wrap='no' vpos='top' grow='1' {...this.link ()} />
               </Container>
               <Container kind='row-pane' subkind='box' {...this.link ()} >
                 <Label glyph='map-marker'
-                  text='Mon très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne'
+                  text='<em>Mon</em> très beau bouquet beaucoup trop long SA\nPlace du Marché 12\n1002 Lausanne'
                   vpos='top' grow='2' {...this.link ()} />
                 <Label text='+41 21 650 20 20\ninformation@monbeaubouquet.ch'
                   vpos='top' grow='1' {...this.link ()} />
