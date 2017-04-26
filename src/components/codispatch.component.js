@@ -1,5 +1,5 @@
 // Co-dispatch view. 1234
-import {React} from 'electrum';
+import {React, Store, State} from 'electrum';
 import {
   Container,
   Button,
@@ -15,6 +15,12 @@ import {
   Splitter,
   CodispatchTicket
 } from 'electrum-arc';
+import DataRecurrences from '../activities/all-in-one/data-recurrences.js';
+
+const store = Store.create ();
+store.merge ('recurrences', DataRecurrences.data);
+console.log ('Codispatch.coucou !!!');
+console.dir (store);
 
 export default class Codispatch extends React.Component {
 
@@ -23,6 +29,8 @@ export default class Codispatch extends React.Component {
   }
 
   leftView () {
+    const recurrencesState = {...this.link (), state: store.select ('recurrences')};
+
     return (
       <Container kind='view' width='800px' {...this.link ()} >
         <Container kind='pane-navigator' navigation-for="sender" {...this.link ()} >
@@ -272,7 +280,7 @@ export default class Codispatch extends React.Component {
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <Recurrences recurrences={window.document.dataRecurrences} {...this.link ()} />
+              <Recurrences {...recurrencesState} />
             </Container>
           </Container>
 
