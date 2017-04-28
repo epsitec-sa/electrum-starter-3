@@ -18,9 +18,7 @@ import {
 import DataRecurrences from '../activities/all-in-one/data-recurrences.js';
 
 const store = Store.create ();
-store.merge ('recurrences', DataRecurrences.data);
-console.log ('Codispatch.coucou !!!');
-console.dir (store);
+store.select ('recurrences').set ('value', DataRecurrences.data);
 
 export default class Codispatch extends React.Component {
 
