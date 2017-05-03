@@ -46,7 +46,7 @@ const data =
             ],
             MeetingPoint: {
               Contact:         null,
-              LongDescription: 'Coop\\nPlace St. Laurent 12\\n1004 Lausanne',
+              LongDescription: 'Coop\nPlace St. Laurent 12\n1004 Lausanne',
               Notes:           [
                 {
                   Content: 'Livraison selon les indications standards de la dispo',
@@ -99,7 +99,7 @@ const data =
                   ],
                 },
                 {
-                  Content: 'Attention:\\nPaiement comptant exigé !',
+                  Content: 'Attention:\nPaiement comptant exigé !',
                   Glyphs:  [
                     {
                       Name:        'bookmark-base',
@@ -174,7 +174,7 @@ const data =
             ],
             MeetingPoint: {
               Contact:         null,
-              LongDescription: 'Flagada & Co\\nPlace St. Laurent 15\\n1004 Lausanne',
+              LongDescription: 'Flagada & Co\nPlace St. Laurent 15\n1004 Lausanne',
               Notes:           [
                 {
                   Content: 'Livraison selon les indications standards de la dispo',
@@ -313,7 +313,7 @@ const data =
             ],
             MeetingPoint: {
               Contact:         null,
-              LongDescription: 'Flagada & Co\\nPlace St. Laurent 15\\n1004 Lausanne',
+              LongDescription: 'Flagada & Co\nPlace St. Laurent 15\n1004 Lausanne',
               Notes:           [
                 {
                   Content: 'Livraison selon les indications standards de la dispo',
@@ -366,7 +366,7 @@ const data =
                   ],
                 },
                 {
-                  Content: 'Attention:\\nPaiement comptant exigé !',
+                  Content: 'Attention:\nPaiement comptant exigé !',
                   Glyphs:  [
                     {
                       Name:        'bookmark-base',
@@ -701,10 +701,10 @@ const data =
           ],
           MeetingPoint: {
             Contact:         null,
-            LongDescription: 'Mecano SA\\nAv. des Alpes 5\\n1023 Crissier',
+            LongDescription: 'Mecano SA\nAv. des Alpes 5\n1023 Crissier',
             Notes:           [
               {
-                Content: 'Attention:\\nPaiement comptant exigé !',
+                Content: 'Attention:\nPaiement comptant exigé !',
                 Glyphs:  [
                   {
                     Name:        'warning',
@@ -745,7 +745,7 @@ const data =
           Description:  '',
           MeetingPoint: {
             Contact:         null,
-            LongDescription: 'Fiduciaire Kdo\\nMadame Valentia Markez\\nEn Budron 5b\\n1052 Le Mont-sur-Lausanne',
+            LongDescription: 'Fiduciaire Kdo\nMadame Valentia Markez\nEn Budron 5b\n1052 Le Mont-sur-Lausanne',
             Notes:           [
               {
                 Content: 'En raison de travaux à la rue Centrale, tout le trafic passant par cette rue doit impérativement être dévié par la rue du Midi.',
@@ -803,7 +803,7 @@ const data =
           Description:  '',
           MeetingPoint: {
             Contact:         null,
-            LongDescription: 'Nourrir le chat\\nMonsieur Durand\\nPlace du Marché 56\\n1052 Le Mont-sur-Lausanne',
+            LongDescription: 'Nourrir le chat\nMonsieur Durand\nPlace du Marché 56\n1052 Le Mont-sur-Lausanne',
             Notes:           [
               {
                 Content: 'Soin animal.',
@@ -855,7 +855,7 @@ const data =
           ],
           MeetingPoint: {
             Contact:          null,
-            LongDescription:  'Migros SA\\nRue du Pont Neuf 26\\n1009 Prilly',
+            LongDescription:  'Migros SA\nRue du Pont Neuf 26\n1009 Prilly',
             Notes:            [],
             PlanedDate:       '2016-11-30',
             StartPlanedTime:  '10:45:00',
@@ -935,7 +935,7 @@ const data =
           ],
           MeetingPoint: {
             Contact:          null,
-            LongDescription:  'Migros SA\\nRue du Pont Neuf 26\\n1009 Prilly',
+            LongDescription:  'Migros SA\nRue du Pont Neuf 26\n1009 Prilly',
             Notes:            [],
             PlanedDate:       '2016-11-30',
             StartPlanedTime:  '10:50:00',
@@ -963,7 +963,7 @@ const data =
           Description:  '',
           MeetingPoint: {
             Contact:          null,
-            LongDescription:  'André Schmidt\\nClosalet 28A\\n1002 Lausanne',
+            LongDescription:  'André Schmidt\nClosalet 28A\n1002 Lausanne',
             Notes:            [],
             PlanedDate:       '2016-11-30',
             StartPlanedTime:  '13:40:00',
@@ -1015,7 +1015,7 @@ const data =
           ],
           MeetingPoint: {
             Contact:         null,
-            LongDescription: 'Arboressa SA\\nAv. du Tir Fédéral 102\\n1009 Prilly',
+            LongDescription: 'Arboressa SA\nAv. du Tir Fédéral 102\n1009 Prilly',
             Notes:           [
               {
                 Content: 'En raison de travaux à la rue Centrale, tout le trafic passant par cette rue doit impérativement être dévié par la rue du Midi.',
@@ -1064,7 +1064,7 @@ const data =
           Description:  '',
           MeetingPoint: {
             Contact:          null,
-            LongDescription:  'Aux belles fleurs\\nPlace du Marché 1\\n1000 Lausanne',
+            LongDescription:  'Aux belles fleurs\nPlace du Marché 1\n1000 Lausanne',
             Notes:            [],
             PlanedDate:       '2016-11-30',
             StartPlanedTime:  '14:15:00',
@@ -1116,7 +1116,7 @@ const data =
           ],
           MeetingPoint: {
             Contact:          null,
-            LongDescription:  'Etude Leclerc et Me Giorgino\\n1032 Crissier',
+            LongDescription:  'Etude Leclerc et Me Giorgino\n1032 Crissier',
             Notes:            [],
             PlanedDate:       '2016-11-30',
             StartPlanedTime:  '11:45:00',
@@ -1144,7 +1144,7 @@ const data =
           Description:  '',
           MeetingPoint: {
             Contact:          null,
-            LongDescription:  'Fiduciaire Franko & Frères\\nMadame Darbelet\\nAv. Victor Ruffy 3\\n1004 Lausanne',
+            LongDescription:  'Fiduciaire Franko & Frères\nMadame Darbelet\nAv. Victor Ruffy 3\n1004 Lausanne',
             Notes:            [],
             PlanedDate:       '2016-11-30',
             StartPlanedTime:  '15:30:00',
@@ -1210,7 +1210,7 @@ const data =
           ],
           MeetingPoint: {
             Contact:         null,
-            LongDescription: 'Tagada AG\\nRue de Sans Unique 18\\n1000 Lausanne',
+            LongDescription: 'Tagada AG\nRue de Sans Unique 18\n1000 Lausanne',
             Notes:           [
               {
                 Content: 'Livraison selon les indications standards de la dispo',
@@ -1249,7 +1249,7 @@ const data =
           Description:  '',
           MeetingPoint: {
             Contact:         null,
-            LongDescription: 'Micro SA\\nAv. Dufour 4\\n1010 Renens',
+            LongDescription: 'Micro SA\nAv. Dufour 4\n1010 Renens',
             Notes:           [
             ],
             PlanedDate:       '2016-11-30',
@@ -1304,7 +1304,7 @@ const data =
           Description:  '',
           MeetingPoint: {
             Contact:         null,
-            LongDescription: 'Arroser les plantes\\nCh. des Alpes 12\\n1007 Prilly',
+            LongDescription: 'Arroser les plantes\nCh. des Alpes 12\n1007 Prilly',
             Notes:           [
               {
                 Content: 'Arrosage',
