@@ -83,6 +83,7 @@ const data =
         FromTime: '09:30:00',
         ToDate:   '2017-02-08',
         ToTime:   '11:30:00',
+        Color:    '#f00',
         Note:
         {
           Content: 'Rendez-vous avec les services sociaux de la ville de Lausanne',
