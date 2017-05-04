@@ -4,6 +4,7 @@ const data =
     ToDate:   '2017-12-31',
     Events:   [
       {
+        id:       '2017-02-07',
         FromDate: '2017-02-07',
         FromTime: '14:00:00',
         ToDate:   '2017-02-07',
@@ -15,6 +16,7 @@ const data =
         }
       },
       {
+        id:            '2017-02-07',
         FromDate:      '2017-02-07',
         StartFromTime: '14:10:00',
         EndFromTime:   '15:15:00',
@@ -28,6 +30,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-07',
         FromDate: '2017-02-07',
         FromTime: '15:10:00',
         ToDate:   '2017-02-07',
@@ -39,6 +42,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-07',
         FromDate: '2017-02-07',
         FromTime: '17:10:00',
         ToDate:   '2017-02-07',
@@ -50,6 +54,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-07',
         FromDate: '2017-02-07',
         FromTime: '22:00:00',
         ToDate:   '2017-02-07',
@@ -61,6 +66,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '04:00:00',
         ToDate:   '2017-02-08',
@@ -72,6 +78,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '09:30:00',
         ToDate:   '2017-02-08',
@@ -83,6 +90,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '11:05:00',
         ToDate:   '2017-02-08',
@@ -94,6 +102,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:05:00',
         ToDate:   '2017-02-08',
@@ -105,6 +114,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:05:00',
         ToDate:   '2017-02-08',
@@ -116,6 +126,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:20:00',
         ToDate:   '2017-02-08',
@@ -127,6 +138,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:20:00',
         ToDate:   '2017-02-08',
@@ -138,6 +150,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:20:00',
         ToDate:   '2017-02-08',
@@ -148,6 +161,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:20:00',
         ToDate:   '2017-02-08',
@@ -159,6 +173,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:20:00',
         ToDate:   '2017-02-08',
@@ -170,6 +185,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:25:00',
         ToDate:   '2017-02-08',
@@ -181,6 +197,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:30:00',
         ToDate:   '2017-02-08',
@@ -192,6 +209,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:40:00',
         ToDate:   '2017-02-08',
@@ -203,6 +221,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:40:00',
         ToDate:   '2017-02-08',
@@ -214,6 +233,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:40:00',
         ToDate:   '2017-02-08',
@@ -225,6 +245,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:40:00',
         ToDate:   '2017-02-08',
@@ -236,6 +257,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:40:00',
         ToDate:   '2017-02-08',
@@ -247,6 +269,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:55:00',
         ToDate:   '2017-02-08',
@@ -258,6 +281,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:55:00',
         ToDate:   '2017-02-08',
@@ -269,6 +293,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:55:00',
         ToDate:   '2017-02-08',
@@ -280,6 +305,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:55:00',
         ToDate:   '2017-02-08',
@@ -291,6 +317,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-08',
         FromDate: '2017-02-08',
         FromTime: '14:55:00',
         ToDate:   '2017-02-08',
@@ -302,6 +329,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '08:15:00',
         ToDate:   '2017-02-09',
@@ -313,6 +341,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '08:30:00',
         ToDate:   '2017-02-09',
@@ -324,6 +353,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '10:00:00',
         ToDate:   '2017-02-09',
@@ -335,6 +365,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '10:05:00',
         ToDate:   '2017-02-09',
@@ -346,6 +377,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '11:00:00',
         ToDate:   '2017-02-09',
@@ -357,6 +389,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '12:00:00',
         ToDate:   '2017-02-09',
@@ -368,6 +401,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '15:10:00',
         ToDate:   '2017-02-09',
@@ -379,6 +413,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '15:22:00',
         ToDate:   '2017-02-09',
@@ -390,6 +425,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '15:31:00',
         ToDate:   '2017-02-09',
@@ -401,6 +437,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '16:45:00',
         ToDate:   '2017-02-09',
@@ -412,6 +449,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-09',
         FromDate: '2017-02-09',
         FromTime: '18:40:00',
         ToDate:   '2017-02-09',
@@ -423,6 +461,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-10',
         FromDate: '2017-02-10',
         FromTime: '08:00:00',
         ToDate:   '2017-02-10',
@@ -434,6 +473,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-11',
         FromDate: '2017-02-11',
         FromTime: '16:30:00',
         ToDate:   '2017-02-11',
@@ -445,6 +485,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-13',
         FromDate: '2017-02-13',
         FromTime: '11:05:00',
         ToDate:   '2017-02-13',
@@ -456,6 +497,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-13',
         FromDate: '2017-02-13',
         FromTime: '13:18:00',
         ToDate:   '2017-02-13',
@@ -467,6 +509,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-15',
         FromDate: '2017-02-15',
         FromTime: '09:00:00',
         ToDate:   '2017-02-15',
@@ -478,6 +521,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-15',
         FromDate: '2017-02-15',
         FromTime: '10:30:00',
         ToDate:   '2017-02-15',
@@ -489,6 +533,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-15',
         FromDate: '2017-02-15',
         FromTime: '16:55:00',
         ToDate:   '2017-02-15',
@@ -500,6 +545,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-16',
         FromDate: '2017-02-16',
         FromTime: '08:00:00',
         ToDate:   '2017-02-16',
@@ -511,6 +557,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-16',
         FromDate: '2017-02-16',
         FromTime: '08:25:00',
         ToDate:   '2017-02-16',
@@ -522,6 +569,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-16',
         FromDate: '2017-02-16',
         FromTime: '11:00:00',
         ToDate:   '2017-02-16',
@@ -533,6 +581,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-20',
         FromDate: '2017-02-20',
         FromTime: '08:00:00',
         ToDate:   '2017-02-20',
@@ -544,6 +593,7 @@ const data =
         }
       },
       {
+        id:       '2017-02-21',
         FromDate: '2017-02-21',
         FromTime: '11:20:00',
         ToDate:   '2017-02-21',
@@ -555,6 +605,7 @@ const data =
         }
       },
       {
+        id:       '2017-03-20',
         FromDate: '2017-03-20',
         FromTime: '11:20:00',
         ToDate:   '2017-02-21',
@@ -566,6 +617,7 @@ const data =
         }
       },
       {
+        id:       '2017-04-22',
         FromDate: '2017-04-22',
         FromTime: '11:20:00',
         ToDate:   '2017-02-21',
@@ -577,6 +629,7 @@ const data =
         }
       },
       {
+        id:       '2017-05-19',
         FromDate: '2017-05-19',
         FromTime: '11:20:00',
         ToDate:   '2017-02-21',
@@ -588,6 +641,7 @@ const data =
         }
       },
       {
+        id:       '2017-05-19',
         FromDate: '2017-05-19',
         FromTime: '14:20:00',
         ToDate:   '2017-02-21',
@@ -599,6 +653,7 @@ const data =
         }
       },
       {
+        id:       '2017-05-19',
         FromDate: '2017-05-19',
         FromTime: '14:20:00',
         ToDate:   '2017-02-21',
@@ -610,6 +665,7 @@ const data =
         }
       },
       {
+        id:       '2017-11-21',
         FromDate: '2017-11-21',
         FromTime: '11:20:00',
         ToDate:   '2017-02-21',
