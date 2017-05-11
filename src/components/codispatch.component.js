@@ -1,5 +1,5 @@
 // Co-dispatch view. 1234
-import {React, Store, State} from 'electrum';
+import {React, Store} from 'electrum';
 import {
   Container,
   Button,
@@ -10,15 +10,18 @@ import {
   Badge,
   Calendar,
   Recurrences,
+  Notes,
   Separator,
   Table,
   Splitter,
   CodispatchTicket
 } from 'electrum-arc';
 import DataRecurrences from '../activities/all-in-one/data-recurrences.js';
+import DataNotes from '../activities/all-in-one/data-notes.js';
 
 const store = Store.create ();
 store.select ('recurrences').set ('value', DataRecurrences.data);
+store.select ('notes').set ('value', DataNotes.data);
 
 export default class Codispatch extends React.Component {
 
@@ -28,6 +31,7 @@ export default class Codispatch extends React.Component {
 
   leftView () {
     const recurrencesState = {...this.link (), state: store.select ('recurrences')};
+    const notesState = {...this.link (), state: store.select ('notes')};
 
     return (
       <Container kind='view' width='800px' {...this.link ()} >
@@ -279,6 +283,16 @@ export default class Codispatch extends React.Component {
             </Container>
             <Container kind='row-pane' {...this.link ()} >
               <Recurrences {...recurrencesState} />
+            </Container>
+          </Container>
+
+          <Container kind='pane' anchor='sender-recu' {...this.link ()} >
+            <Container kind='row-pane' {...this.link ()} >
+              <Label text='Notes' grow='1' kind='title' {...this.link ()} />
+              <Button glyph='ellipsis-v' {...this.link ()} />
+            </Container>
+            <Container kind='row-pane' {...this.link ()} >
+              <Notes {...notesState} />
             </Container>
           </Container>
 
