@@ -296,7 +296,7 @@ export default class Codispatch extends React.Component {
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <Notes {...notesState} />
+              <Notes {...notesState} glyphs={DataGlyphs.data} />
             </Container>
           </Container>
 
@@ -306,7 +306,7 @@ export default class Codispatch extends React.Component {
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
-              <Glyphs {...glyphsState} />
+              <Glyphs {...glyphsState} glyphs={DataGlyphs.data} />
             </Container>
           </Container>
 
