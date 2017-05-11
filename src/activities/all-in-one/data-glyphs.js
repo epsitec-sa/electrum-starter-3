@@ -36,6 +36,18 @@ const data =
       Glyph:       'bus',
       Description: 'Autocar comme moyen de transport',
     },
+    {
+      id:          'g7',
+      Name:        'Train',
+      Glyph:       'train',
+      Description: 'Train comme moyen de transport',
+    },
+    {
+      id:          'g8',
+      Name:        'Fusée',
+      Glyph:       'rocket',
+      Description: 'Fusée interplanétaire',
+    },
   ];
 
 module.exports = {data};
