@@ -9,6 +9,7 @@ import DataTable2 from './activities/all-in-one/data-table2.js';
 import DataRecurrence from './activities/all-in-one/data-recurrence.js';
 import DataRecurrences from './activities/all-in-one/data-recurrences.js';
 import DataNotes from './activities/all-in-one/data-notes.js';
+import DataGlyphs from './activities/all-in-one/data-glyphs.js';
 
 import * as Colors from 'material-ui/styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
@@ -46,6 +47,7 @@ class _Root extends React.Component {
     window.document.dataRecurrence = DataRecurrence.data;
     window.document.dataRecurrences = DataRecurrences.data;
     window.document.dataNotes = DataNotes.data;
+    window.document.dataGlyphs = DataGlyphs.data;
     window.document.mock = true;
   }
 
