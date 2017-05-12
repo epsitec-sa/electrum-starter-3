@@ -48,8 +48,12 @@ export default class Codispatch extends React.Component {
             kind='pane-navigator' to-anchor='sender-parcel' {...this.link ()} />
           <Button text='Facture' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-bill' {...this.link ()} />
-          <Button text='Récurrence' width='0px' grow='1'
+          <Button text='Récurrences' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-recu' {...this.link ()} />
+          <Button text='Notes' width='0px' grow='1'
+            kind='pane-navigator' to-anchor='sender-note' {...this.link ()} />
+          <Button text='Pictogrammes' width='0px' grow='1'
+            kind='pane-navigator' to-anchor='sender-picto' {...this.link ()} />
           <Button text='Document' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-doc' {...this.link ()} />
           <Button text='Divers' width='0px' grow='1'
@@ -290,7 +294,7 @@ export default class Codispatch extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='pane' anchor='sender-recu' {...this.link ()} >
+          <Container kind='pane' anchor='sender-note' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Notes' grow='1' kind='title' {...this.link ()} />
               <Button glyph='ellipsis-v' {...this.link ()} />
@@ -300,9 +304,9 @@ export default class Codispatch extends React.Component {
             </Container>
           </Container>
 
-          <Container kind='pane' anchor='sender-recu' {...this.link ()} >
+          <Container kind='pane' anchor='sender-picto' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
-              <Label text='Glyphs' grow='1' kind='title' {...this.link ()} />
+              <Label text='Pictogrammes' grow='1' kind='title' {...this.link ()} />
               <Button glyph='ellipsis-v' {...this.link ()} />
             </Container>
             <Container kind='row-pane' {...this.link ()} >
