@@ -19,9 +19,15 @@ const data =
       Description: 'Triangle attention',
     },
     {
+      id:          'g3b',
+      Name:        'Alerte',
+      Glyph:       'warning-primary',
+      Description: 'Alerte niveau 5',
+    },
+    {
       id:          'g6',
       Name:        'Validation',
-      Glyph:       'check',
+      Glyph:       'check-#ad00ff',
       Description: '',
     },
     {
@@ -47,6 +53,24 @@ const data =
       Name:        'Fusée',
       Glyph:       'rocket',
       Description: 'Fusée interplanétaire',
+    },
+    {
+      id:          'g10',
+      Name:        'Pick',
+      Glyph:       'plus-square-pick',
+      Description: 'Prendre un colis',
+    },
+    {
+      id:          'g11',
+      Name:        'Drop',
+      Glyph:       'minus-square-drop',
+      Description: 'Déposer un colis',
+    },
+    {
+      id:          'g12',
+      Name:        'Task',
+      Glyph:       'square-base',
+      Description: 'Tâche',
     },
   ];
 
