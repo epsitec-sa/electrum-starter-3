@@ -49,6 +49,12 @@ const data =
       Description: 'Train comme moyen de transport',
     },
     {
+      id:          'g7b',
+      Name:        'Voiture',
+      Glyph:       'car',
+      Description: 'Voiture comme moyen de transport',
+    },
+    {
       id:          'g8',
       Name:        'Fusée',
       Glyph:       'rocket',
