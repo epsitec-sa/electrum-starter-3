@@ -55,7 +55,7 @@ const data =
         {
           id:          'g6',
           Name:        'Validation',
-          Glyph:       'check',
+          Glyph:       'check-#ad00ff',
           Description: '',
         },
       ],
