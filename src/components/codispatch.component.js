@@ -82,7 +82,6 @@ export default class Codispatch extends React.Component {
               drag-controller  = 'codispo-ticket'
               drag-source      = 'codispo-tickets'
               drag-owner-id    = 'coucou'
-              drag-left-detect = 'containerMargin'
               {...this.link ()} >
               <CodispatchTicket ticket-id='1' {...this.link ()}>
                 <Container kind='row-pane' {...this.link ()} >
@@ -295,11 +294,7 @@ export default class Codispatch extends React.Component {
           </Container>
 
           <Container kind='pane' anchor='sender-note' {...this.link ()} >
-            <Container kind='row-pane' {...this.link ()} >
-              <Label text='Notes' grow='1' kind='title' {...this.link ()} />
-              <Button glyph='ellipsis-v' {...this.link ()} />
-            </Container>
-            <Container kind='row-pane' {...this.link ()} >
+            <Container kind='row-pane' subkind='light-box' {...this.link ()} >
               <Notes {...notesState} glyphs={DataGlyphs.data} />
             </Container>
           </Container>
