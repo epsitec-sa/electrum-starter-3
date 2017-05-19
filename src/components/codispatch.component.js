@@ -39,7 +39,7 @@ export default class Codispatch extends React.Component {
 
     return (
       <Container kind='view' width='800px' {...this.link ()} >
-        <Container kind='pane-navigator' navigation-for="sender" {...this.link ()} >
+        <Container kind='pane-navigator' navigation-for='sender' {...this.link ()} >
           <Button text='Prestation' width='0px' grow='1'
             kind='pane-navigator' to-anchor='sender-perf' {...this.link ()} />
           <Button text='Contacts' width='0px' grow='1'
@@ -60,7 +60,7 @@ export default class Codispatch extends React.Component {
             kind='pane-navigator' to-anchor='sender-misc' {...this.link ()} />
         </Container>
 
-        <Container kind='panes' navigation-name="sender" {...this.link ()} >
+        <Container kind='panes' navigation-name='sender' {...this.link ()} >
           <Container kind='pane' anchor='sender-perf' {...this.link ()} >
             <Container kind='row-pane' {...this.link ()} >
               <Label text='Prestation' grow='1' kind='title' {...this.link ()} />
@@ -394,9 +394,9 @@ export default class Codispatch extends React.Component {
   hinterViewDate () {
     return (
       <Container kind='view-stretch' {...this.link ()} >
-        <Container kind='pane-navigator' {...this.link ()} >
-          <Button text='Chercher' width='0px' width='100%'
-            active='false'  kind='pane-navigator' {...this.link ()} />
+        <Container kind='pane-navigator' navigation-for='hinter' {...this.link ()} >
+          <Button text='Chercher' width='0px' grow='1'
+            active='false' kind='pane-navigator' {...this.link ()} />
         </Container>
         <Container kind='panes-short' {...this.link ()} >
           <Container kind='pane' {...this.link ()} >
@@ -410,9 +410,9 @@ export default class Codispatch extends React.Component {
   hinterViewList () {
     return (
       <Container kind='view-short' {...this.link ()} >
-        <Container kind='pane-navigator' {...this.link ()} >
-          <Button text='Chercher' width='0px' width='100%'
-            active='false'  kind='pane-navigator' {...this.link ()} />
+        <Container kind='pane-navigator' navigation-for='hinter' {...this.link ()} >
+          <Button text='Chercher' width='0px' grow='1'
+            kind='pane-navigator' {...this.link ()} />
         </Container>
         <Container kind='panes-short' {...this.link ()} >
           <Container kind='pane' {...this.link ()} >
@@ -526,7 +526,7 @@ export default class Codispatch extends React.Component {
       return null;
     }
     return (
-      <Container kind='pane-vnavigator' navigation-for="details" {...this.link ()} >
+      <Container kind='pane-vnavigator' navigation-for='details' {...this.link ()} >
         <Button glyph='building' tooltip='Adresse principale'
           kind='pane-vnavigator' to-anchor='details-address' {...this.link ()} />
         <Button glyph='user' tooltip='Contacts'
@@ -545,7 +545,7 @@ export default class Codispatch extends React.Component {
 
   hnavigatorIcon () {
     return (
-      <Container kind='pane-hnavigator' navigation-for="details" {...this.link ()} >
+      <Container kind='pane-hnavigator' navigation-for='details' {...this.link ()} >
         <Button glyph='building' tooltip='Adresse principale'
           kind='pane-hnavigator' to-anchor='details-address' {...this.link ()} />
         <Button glyph='user' tooltip='Contacts'
@@ -564,7 +564,7 @@ export default class Codispatch extends React.Component {
 
   hnavigatorText () {
     return (
-      <Container kind='pane-hnavigator' navigation-for="details" {...this.link ()} >
+      <Container kind='pane-hnavigator' navigation-for='details' {...this.link ()} >
         <Button text='Adresse principale' width='0px' grow='1'
           kind='pane-navigator' to-anchor='details-address' {...this.link ()} />
         <Button text='Contacts' width='0px' grow='1'
@@ -602,7 +602,7 @@ export default class Codispatch extends React.Component {
           </Container>
           {this.hnavigator ()}
 
-          <Container kind='panes' navigation-name="details" {...this.link ()} >
+          <Container kind='panes' navigation-name='details' {...this.link ()} >
             <Container kind='pane' anchor='details-address' {...this.link ()} >
               <Container kind='row-pane' {...this.link ()} >
                 <Label glyph='building' text='Adresse principale'
