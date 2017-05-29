@@ -35,7 +35,6 @@ export default class Codispatch extends React.Component {
   leftView () {
     const recurrencesState = {...this.link (), state: store.select ('recurrences')};
     const notesState       = {...this.link (), state: store.select ('notes')};
-    const glyphsState      = {...this.link (), state: store.select ('glyphs')};
 
     return (
       <Container kind='view' width='800px' {...this.link ()} >
